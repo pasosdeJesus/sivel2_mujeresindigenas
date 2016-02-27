@@ -1,0 +1,31 @@
+<%= f.input :id, label: "Código", readonly: true%>
+
+<%= s.input :fecharec, 
+  :input_html => { "data-behaviour" => "datepicker" },
+  :as => :string, :label => "Fecha de Recepción" 
+%>
+
+<%= s.association :usuario,
+  collection: Usuario.all.order(:nombre),
+  include_blank: false,
+  label: "Analista",
+  label_method: :nusuario, 
+  value_method: :id 
+%>
+
+<%= s.association :oficina,
+  collection: Sip::Oficina.habilitados,
+  include_blank: false,
+  label: "Organización",
+  label_method: :nombre, 
+  value_method: :id 
+%>
+
+<%= f.input :fecha, :input_html => { 
+  "data-behaviour" => "datepicker" },
+  :as => :string, :label => "F. Acto Emblemático",
+  wrapper_html: { style: "padding-bottom: 18px;" }
+%>
+
+<%= f.input :memo, label: 'Descripción' %>
+
