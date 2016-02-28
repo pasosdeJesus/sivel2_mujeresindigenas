@@ -101,7 +101,7 @@ group :development do
   #gem "byebug"
   
   # Consola irb en páginas con excepciones o usando <%= console %> en vistasA
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
 
 
 end
