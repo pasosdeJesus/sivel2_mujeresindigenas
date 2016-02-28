@@ -25,5 +25,8 @@ module Sivel2Mujeresindigenas
 
     # Esquema en SQL
     config.active_record.schema_format = :sql
+
+    config.relative_url_root = "/mujeresindigenas/sivel2"
+
   end
 end
