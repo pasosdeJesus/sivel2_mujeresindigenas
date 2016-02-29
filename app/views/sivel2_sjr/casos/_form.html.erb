@@ -1,0 +1,86 @@
+<%- if current_usuario.nil?  %>
+  <li><a href="usuarios/sign_in">Iniciar Sesión</a>
+<%- else  %>
+  <article>
+  <%= simple_form_for @caso, :html => { :class => 'form-horizontal' } do |f| %>
+    <div data-role="content" class="form-inputs">
+
+      <div id="errores">
+        <% if f.object.errors.any? %>
+          <div id="error_explanation">
+            <div class="alert alert-error">
+              El formulario tiene 
+              <%= pluralize(f.object.errors.count, "error") %>.
+            </div>
+            <ul>
+              <% f.object.errors.full_messages.each do |msg| %>
+                <li>* <%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <%= f.error_notification %>
+      </div> <!-- errores -->
+
+      <div role="tabpanel">       
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#basicos" 
+            class="fichacambia" aria-controls="basicos" role="tab" 
+            data-toggle="tab">Datos Básicos</a></li>
+          <li role="presentation"><a href="#fuentes" class="fichacambia" 
+            aria-controls="fuentes" role="tab" 
+            data-toggle="tab">Fuentes</a></li>
+          <li role="presentation"><a href="#contacto" class="fichacambia" 
+            aria-controls="contacto" role="tab" 
+            data-toggle="tab">Datos de la Víctima</a></li>
+          <li role="presentation"><a href="#actosseg" class="fichacambia" 
+            aria-controls="actosseg" role="tab" 
+            data-toggle="tab">Actos de Violencia y Seguimiento</a></li>
+          <li role="presentation"><a href="#anexos" class="fichacambia" 
+            aria-controls="anexos" role="tab" 
+            data-toggle="tab">Anexos</a></li>
+          <li role="presentation"><a href="#etiquetas" class="fichacambia" 
+            aria-controls="etiquetas" role="tab" 
+            data-toggle="tab">Etiquetas</a></li>
+        </ul>
+        <div class="tab-content">
+          <%= f.simple_fields_for :casosjr do |s| %>
+            <div role="tabpanel" class="tab-pane active" id="basicos" > 
+              <%= render 'basicos', :f => f, :s => s %>
+            </div> 
+
+            <div role="tabpanel" class="tab-pane" id="fuentes" > 
+              <%= render 'sivel2_gen/casos/fotras', :f => f  %>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="contacto" > 
+              <%= render 'contacto', :f => f, :s => s %>
+            </div>
+          <% end %>
+
+          <div role="tabpanel" class="tab-pane" id="actosseg" > 
+            <%= render 'actosseg', :f => f %>
+          </div>
+  
+          <div role="tabpanel" class="tab-pane" id="anexos"> 
+            <%= render 'sivel2_gen/casos/anexos', :f => f  %>
+          </div>
+
+          <div role="tabpanel" class="tab-pane" id="etiquetas"> 
+            <%= render 'etiquetas', :f => f  %>
+          </div> 
+
+        </div> <!-- tab-content -->
+      </div> <!-- tabpanel -->
+    </div> <!-- form-inputs -->
+
+    <div class="form-actions">
+      <%= f.button :submit, 'Validar y Guardar', :class => 'btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+        casos_path, :class => 'btn' 
+      %>
+    </div> <!-- form-action -->
+  <% end %> <!-- simple_form_for @caso -->
+  </article>
+<% end %> <!-- else -->
+
