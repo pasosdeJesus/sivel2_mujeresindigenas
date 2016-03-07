@@ -4,10 +4,10 @@ es:
     attributes:
       "sivel2_sjr/casosjr":
         fecharec: F. Documentación Ini.
-        regionsjr: Organizacion que diligencia
+        oficina: Organizacion que diligencia
         contacto: Víctima
       "sivel2_gen/caso":
         fecharec: F. Documentación Ini.
-        regionsjr: Organizacion que diligencia
+        oficina: Organizacion que diligencia
         contacto: Víctima
 

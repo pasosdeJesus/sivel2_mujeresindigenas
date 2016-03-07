@@ -1,0 +1,15 @@
+<%= f.simple_fields_for :evento do |e| %>
+  <%= render 'evento_campos', :f => e %>
+<% end %>
+<div class="links">
+  <%= link_to_add_association 'Añadir Evento y Seguimiento', f, 
+    :evento, {
+    :class => 'btn-primary', 
+    "data-ajax" => File.join(
+      Rails.configuration.relative_url_root, 
+      "eventos/nuevo"
+    ), 
+    partial: 'evento_campos',
+    "data-ajaxdata" => "caso_id" }
+  %>
+</div>

@@ -28,5 +28,12 @@ class Ability < Sivel2Sjr::Ability
       ['Sivel2Sjr', 'proteccion'],
       ['Sivel2Sjr', 'tipodesp']
   ]
+
+  def initialize(usuario)
+    super(usuario)
+    can :nuevo, ::Evento
+  end
+
+
 end
 

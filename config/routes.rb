@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     get "/actos/eliminar" => 'sivel2_sjr/actos#eliminar'
     get "/personas" => 'sivel2_sjr/personas#index'
     get "/personas/remplazar" => 'sivel2_sjr/personas#remplazar'
+     get '/eventos/nuevo' => 'eventos#nuevo'  
   end
 
   mount Sivel2Sjr::Engine, at: '/mujeresindigenas/sivel2', as: 'sivel2_sjr'
