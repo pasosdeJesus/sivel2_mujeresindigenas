@@ -1,7 +1,14 @@
 es:
   attributes:
   activerecord:
+    models:
+      "sip/oficina":
+        one: "Organización que diligencia"
+        other: "Organizaciones que diligencian"
     attributes:
+      "sip/oficina":
+        oficina: "Organización que diligencia"
+        oficinas: "Organizaciones que diligencian"
       "sivel2_sjr/casosjr":
         fecharec: F. Documentación Ini.
         regionsjr: Organizacion que diligencia

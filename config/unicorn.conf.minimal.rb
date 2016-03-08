@@ -6,10 +6,10 @@
 # See also http://unicorn.bogomips.org/examples/unicorn.conf.rb for
 # a more verbose configuration using more features.
 
-listen 2010 # by default Unicorn listens on port 8080
+listen 3010 # by default Unicorn listens on port 8080
 APP_PATH = "/var/www/htdocs/sivel2_mujeresindigenas"
 working_directory APP_PATH
-worker_processes 6 # this should be >= nr_cpus
+worker_processes 3 # this should be >= nr_cpus
 pid APP_PATH + "/tmp/pids/unicorn.pid"
 stderr_path APP_PATH + "/log/unicorn.stderr.log"
 stdout_path APP_PATH + "/log/unicorn.stderr.log"
