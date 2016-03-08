@@ -1207,6 +1207,41 @@ CREATE TABLE emprendimiento_respuesta (
 
 
 --
+-- Name: evento; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE evento (
+    id integer NOT NULL,
+    caso_id integer,
+    fecha date,
+    mesinexacto boolean,
+    diainexacto boolean,
+    diasemana integer,
+    hora time without time zone,
+    ubicacion_id integer
+);
+
+
+--
+-- Name: evento_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE evento_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: evento_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE evento_id_seq OWNED BY evento.id;
+
+
+--
 -- Name: fotra_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1732,7 +1767,8 @@ CREATE TABLE sivel2_gen_acto (
     id_caso integer NOT NULL,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    id integer DEFAULT nextval('acto_seq'::regclass) NOT NULL
+    id integer DEFAULT nextval('acto_seq'::regclass) NOT NULL,
+    evento_id integer
 );
 
 
@@ -3613,6 +3649,13 @@ ALTER TABLE ONLY cor1440_gen_rangoedadac ALTER COLUMN id SET DEFAULT nextval('co
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY evento ALTER COLUMN id SET DEFAULT nextval('evento_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY refugio ALTER COLUMN id SET DEFAULT nextval('refugio_id_seq'::regclass);
 
 
@@ -4137,6 +4180,14 @@ ALTER TABLE ONLY sip_etiqueta
 
 ALTER TABLE ONLY sivel2_gen_etnia
     ADD CONSTRAINT etnia_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: evento_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY evento
+    ADD CONSTRAINT evento_pkey PRIMARY KEY (id);
 
 
 --
@@ -5815,6 +5866,14 @@ ALTER TABLE ONLY cor1440_gen_actividad_proyectofinanciero
 
 
 --
+-- Name: fk_rails_58d7621b3b; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_gen_acto
+    ADD CONSTRAINT fk_rails_58d7621b3b FOREIGN KEY (evento_id) REFERENCES evento(id);
+
+
+--
 -- Name: fk_rails_617626a841; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6587,4 +6646,8 @@ INSERT INTO schema_migrations (version) VALUES ('20151124110943');
 INSERT INTO schema_migrations (version) VALUES ('20151127102425');
 
 INSERT INTO schema_migrations (version) VALUES ('20151130101417');
+
+INSERT INTO schema_migrations (version) VALUES ('20160304104001');
+
+INSERT INTO schema_migrations (version) VALUES ('20160304104113');
 

@@ -1,0 +1,28 @@
+<div class='control-group nested-fields'>
+  <div class="controls">
+    <%= f.input :id, as: :hidden %>
+    <%= f.input :fecha, 
+      :input_html => { "data-behaviour" => "datepicker"},
+      :as => :string, :label => "Fecha" %>
+
+    <%= f.input :mesinexacto,
+      boolean_style: :nested,
+      inline_label: "Mes Inexacto"
+    %>
+    <%= f.input :diainexacto,
+      boolean_style: :nested,
+      inline_label: "Mes Inexacto"
+    %>
+    <%= f.input(:diasemana, collection: [
+      [:DOMINGO, 0], [:LUNES, 1], [:MARTES, 2], [:MIERCOLES, 3],
+      [:JUEVES, 4], [:VIERNES, 5], [:SABADO, 6],
+      ], label: "Dia de la Semana") 
+    %>
+
+    <%= f.input :hora %>
+
+    <%= link_to_remove_association "Eliminar Evento", f, 
+      {:class => 'btn-danger', :'data-existing' => 'true'} 
+    %>
+  </div>
+</div>
