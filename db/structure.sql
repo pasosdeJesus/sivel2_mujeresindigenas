@@ -936,7 +936,9 @@ CREATE TABLE cor1440_gen_informe (
     dificultades character varying(5000),
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    filtroproyectofinanciero integer
+    filtroproyectofinanciero integer,
+    filtroresponsable integer,
+    filtrooficina integer
 );
 
 
@@ -5810,6 +5812,14 @@ ALTER TABLE ONLY cor1440_gen_informe
 
 
 --
+-- Name: fk_rails_2bd685d2b3; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY cor1440_gen_informe
+    ADD CONSTRAINT fk_rails_2bd685d2b3 FOREIGN KEY (filtroresponsable) REFERENCES usuario(id);
+
+
+--
 -- Name: fk_rails_395faa0882; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -5943,6 +5953,14 @@ ALTER TABLE ONLY cor1440_gen_actividad_sip_anexo
 
 ALTER TABLE ONLY cor1440_gen_actividad_proyecto
     ADD CONSTRAINT fk_rails_cf5d592625 FOREIGN KEY (proyecto_id) REFERENCES cor1440_gen_proyecto(id);
+
+
+--
+-- Name: fk_rails_daf0af8605; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY cor1440_gen_informe
+    ADD CONSTRAINT fk_rails_daf0af8605 FOREIGN KEY (filtrooficina) REFERENCES sip_oficina(id);
 
 
 --
@@ -6650,4 +6668,6 @@ INSERT INTO schema_migrations (version) VALUES ('20151130101417');
 INSERT INTO schema_migrations (version) VALUES ('20160304104001');
 
 INSERT INTO schema_migrations (version) VALUES ('20160304104113');
+
+INSERT INTO schema_migrations (version) VALUES ('20160308213334');
 
