@@ -26,3 +26,7 @@
 .panel-heading {
 	text-align: center;
 }
+
+.caso_evento_hora {
+	display: inline-flex;
+}

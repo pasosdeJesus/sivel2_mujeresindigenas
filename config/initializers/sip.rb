@@ -7,5 +7,5 @@ Sip.setup do |config|
       if !ENV["HEROKU_POSTGRESQL_GREEN_URL"].nil?
         config.ruta_anexos = "#{Rails.root}/tmp/"
       end
-      config.titulo = "SIVeL - Mujeres Indigenas " + Sivel2Gen::VERSION
+      config.titulo = "Mujeres Indigenas " + Sivel2Gen::VERSION
 end
