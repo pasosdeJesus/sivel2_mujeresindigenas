@@ -9,6 +9,8 @@ es:
       "sip/oficina":
         oficina: "Organización que diligencia"
         oficinas: "Organizaciones que diligencian"
+        Oficina: "Organización que diligencia"
+        Oficinas: "Organizaciones que diligencian"
       "sivel2_sjr/casosjr":
         fecharec: F. Documentación Ini.
         oficina: Organizacion que diligencia
