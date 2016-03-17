@@ -6,13 +6,11 @@
 <% content_for :menu do %>
   <%= menu_group do %>
     <% if !current_usuario.nil? %>
-      <% if can? :read, Sivel2Gen::Caso then %>
         <%= drop_down "Casos" do %>
           <%= menu_item "Listado", sivel2_gen.casos_path %>
           <%= menu_item "Nuevo", sivel2_gen.new_caso_path %>
           <%= menu_item "Conteo Demografía Víctimas", sivel2_sjr.conteos_personas_path %>
         <% end %>
-      <% end %>
     <% end %>
   <% end %>
   <%= menu_group :pull => :right do %>

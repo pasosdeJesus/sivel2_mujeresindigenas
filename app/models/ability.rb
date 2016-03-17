@@ -39,6 +39,7 @@ class Ability < Sivel2Sjr::Ability
     super(usuario)
     can :nuevo, ::Evento
     can :contar, Sip::Ubicacion
+    can :manage, Sivel2Gen::GruposperController
   end
 
 
