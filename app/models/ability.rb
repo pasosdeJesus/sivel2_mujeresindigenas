@@ -38,6 +38,7 @@ class Ability < Sivel2Sjr::Ability
   def initialize(usuario)
     super(usuario)
     can :nuevo, ::Evento
+    can :contar, Sip::Ubicacion
   end
 
 
