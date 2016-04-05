@@ -24,6 +24,31 @@
 	    <%= f.input :hora, wrapper_html: {style: 'display: inline-flex'} %>
     </div>
 
+
+    <table border=1 width="100%">
+      <thead>
+        <tr>
+          <th>Presunto Responsable</th>
+          <th>Agresión Particular</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="actosevento">
+      <%= f.simple_fields_for :actoevento do |a| %>
+        <%= render 'actoevento_campos', :f => a %>
+      <% end %>
+      </tbody>
+    </table>
+    <div class="links">
+      <%= link_to_add_association 'Añadir Acto', f, 
+        :actoevento,
+        :"data-association-insertion-node" => "tbody#actosevento", 
+        :"data-association-insertion-method" => "append", 
+        partial: 'actoevento_campos',
+        :class => 'btn-primary'
+      %>
+    </div>
+
     <%= link_to_remove_association "Eliminar Evento", f, 
       {:class => 'btn-danger', :'data-existing' => 'true'} 
     %>
