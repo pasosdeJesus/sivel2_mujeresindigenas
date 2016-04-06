@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/pasosdeJesus/cor1440_gen.git
-  revision: 4ad90cff70bf4d81e55689968edba5410e257f2f
+  revision: 1d185b1f3d32e07d8600f59c18fcd21412ea5f64
   specs:
     cor1440_gen (1.0.a6)
       devise
@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: git://github.com/pasosdeJesus/sip.git
-  revision: 99893c18ed3461902eb4e7335ed738f689b6f5d6
+  revision: 78957039a28ff96bbe2ee8d99c1c4506f452a6ef
   specs:
     sip (2.0.a7)
       bootstrap-datepicker-rails
@@ -31,7 +31,7 @@ GIT
 
 GIT
   remote: git://github.com/pasosdeJesus/sivel2_gen.git
-  revision: 7a41e3142e11975d565c8a495a0b87a72e7b388b
+  revision: 440dcc8ddeba7cdf31ea8106f4e271ff14b8af77
   specs:
     sivel2_gen (2.0.a8)
       devise
@@ -40,7 +40,7 @@ GIT
 
 GIT
   remote: git://github.com/pasosdeJesus/sivel2_sjr.git
-  revision: 63f91292341a3484bdd6710830121691d1204c17
+  revision: a5fb4c839a7a288adb0875fa2d814aa26a14f2a3
   specs:
     sivel2_sjr (2.0.a8)
       rails
@@ -99,7 +99,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (6.0.3)
-    autoprefixer-rails (6.3.5)
+    autoprefixer-rails (6.3.6)
       execjs
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
@@ -149,7 +149,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    devise-i18n (1.0.0)
+    devise-i18n (1.0.1)
     diff-lcs (1.2.5)
     docile (1.1.5)
     erubis (2.7.0)
