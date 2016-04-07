@@ -24,7 +24,6 @@
 	    <%= f.input :hora, wrapper_html: {style: 'display: inline-flex'} %>
     </div>
 
-
     <table border=1 width="100%">
       <thead>
         <tr>
@@ -34,7 +33,7 @@
         </tr>
       </thead>
       <tbody id="actosevento">
-      <%= f.simple_fields_for :actoevento do |a| %>
+      <% f.simple_fields_for :actoevento do |a| %>
         <%= render 'actoevento_campos', :f => a %>
       <% end %>
       </tbody>

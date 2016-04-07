@@ -166,6 +166,41 @@ CREATE SEQUENCE acto_seq
     CACHE 1;
 
 
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: actoevento; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE actoevento (
+    id integer NOT NULL,
+    evento_id integer NOT NULL,
+    presponsable_id integer NOT NULL,
+    categoria_id integer NOT NULL
+);
+
+
+--
+-- Name: actoevento_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE actoevento_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: actoevento_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE actoevento_id_seq OWNED BY actoevento.id;
+
+
 --
 -- Name: anexo_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
@@ -201,10 +236,6 @@ CREATE SEQUENCE aspsicosocial_seq
     NO MAXVALUE
     CACHE 1;
 
-
-SET default_tablespace = '';
-
-SET default_with_oids = false;
 
 --
 -- Name: aspsicosocial; Type: TABLE; Schema: public; Owner: -; Tablespace: 
@@ -3580,6 +3611,13 @@ CREATE MATERIALIZED VIEW vvictimasoundexesp AS
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY actoevento ALTER COLUMN id SET DEFAULT nextval('actoevento_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY cor1440_gen_actividad ALTER COLUMN id SET DEFAULT nextval('cor1440_gen_actividad_id_seq'::regclass);
 
 
@@ -3740,6 +3778,14 @@ ALTER TABLE ONLY sivel2_gen_acto
 
 ALTER TABLE ONLY sivel2_gen_actocolectivo
     ADD CONSTRAINT actocolectivo_pkey PRIMARY KEY (id_presponsable, id_categoria, id_grupoper, id_caso);
+
+
+--
+-- Name: actoevento_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY actoevento
+    ADD CONSTRAINT actoevento_pkey PRIMARY KEY (id);
 
 
 --
@@ -5594,6 +5640,14 @@ ALTER TABLE ONLY sivel2_sjr_progestado_derecho
 
 
 --
+-- Name: fk_rails_1d7193a924; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY actoevento
+    ADD CONSTRAINT fk_rails_1d7193a924 FOREIGN KEY (categoria_id) REFERENCES sivel2_gen_categoria(id);
+
+
+--
 -- Name: fk_rails_294895347e; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -5631,6 +5685,14 @@ ALTER TABLE ONLY sivel2_sjr_ayudasjr_derecho
 
 ALTER TABLE ONLY cor1440_gen_informe
     ADD CONSTRAINT fk_rails_40cb623d50 FOREIGN KEY (filtroproyectofinanciero) REFERENCES cor1440_gen_proyectofinanciero(id);
+
+
+--
+-- Name: fk_rails_4246a1a735; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY actoevento
+    ADD CONSTRAINT fk_rails_4246a1a735 FOREIGN KEY (presponsable_id) REFERENCES sivel2_gen_presponsable(id);
 
 
 --
@@ -5759,6 +5821,14 @@ ALTER TABLE ONLY cor1440_gen_informe
 
 ALTER TABLE ONLY sivel2_sjr_progestado_derecho
     ADD CONSTRAINT fk_rails_e8dedd8c1d FOREIGN KEY (progestado_id) REFERENCES sivel2_sjr_progestado(id);
+
+
+--
+-- Name: fk_rails_f8f93ca7e5; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY actoevento
+    ADD CONSTRAINT fk_rails_f8f93ca7e5 FOREIGN KEY (evento_id) REFERENCES evento(id);
 
 
 --
@@ -6534,4 +6604,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160316100624');
 INSERT INTO schema_migrations (version) VALUES ('20160316100625');
 
 INSERT INTO schema_migrations (version) VALUES ('20160316100626');
+
+INSERT INTO schema_migrations (version) VALUES ('20160407102539');
 

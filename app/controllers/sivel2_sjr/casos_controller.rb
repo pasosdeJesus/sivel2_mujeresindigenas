@@ -33,10 +33,12 @@ module Sivel2Sjr
         end
         caso_params[:victima_attributes].first[1][:persona_attributes][:nombres]  = 'N'
         caso_params[:victima_attributes].first[1][:persona_attributes][:apellidos]  = 'N'
+        caso_params[:victima_attributes].first[1][:persona_attributes][:id_pais]  = 170
         @caso.persona.first.apellidos = 'N'
         @caso.persona.first.nombres = 'N'
-        #byebug
+        @caso.persona.first.id_pais = 170
         @caso.current_usuario = current_usuario
+        @caso.fecha = caso_params[:casosjr_attributes][:fecharec]
         if @caso.update(caso_params)
           format.html { redirect_to @caso, notice: 'Caso actualizado.' }
           format.json { head :no_content }
@@ -117,19 +119,16 @@ module Sivel2Sjr
           :bloque, :frente, :brigada, :batallon, :division, :otro, 
           :_destroy
         ],
-        :acto_attributes => [
-          :id, :id_presponsable, :id_categoria, :id_persona, :_destroy,
-          :actosjr_attributes => [
-            :id, :id_acto, :fecha, :desplazamiento_id, :_destroy
-          ]
-        ],
         :evento_attributes => [
           :id,
           :fecha, 
           :mesinexacto, 
           :diainexacto,
           :diasemana,
-          :hora 
+          :hora,
+          :actoevento_attributes => [
+            :id, :presponsable_id, :categoria_id, :_destroy,
+          ]
         ],
         :anexo_caso_attributes => [
           :id, 

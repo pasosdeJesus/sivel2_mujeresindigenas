@@ -2,7 +2,7 @@
 
 <%= s.input :fecharec, 
   :input_html => { "data-behaviour" => "datepicker" },
-  :as => :string#, :label => "Fecha de Documentacion Inicial" 
+  :as => :string
 %>
 
 <%= s.association :usuario,
@@ -19,11 +19,4 @@
   label_method: :nombre, 
   value_method: :id 
 %>
-
-<%= f.input :fecha, :input_html => { 
-  "data-behaviour" => "datepicker" },
-  :as => :string, :label => "F. Acto Emblemático",
-  wrapper_html: { style: "padding-bottom: 18px;" }
-%>
-
 
