@@ -110,7 +110,6 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.2)
-    byebug (8.2.2)
     camertron-eprun (1.1.0)
     cancancan (1.13.1)
     capybara (2.6.2)
@@ -355,7 +354,6 @@ DEPENDENCIES
   bcrypt
   bootstrap-datepicker-rails
   bootstrap-sass
-  byebug
   cancancan
   capybara
   capybara-webkit
