@@ -1388,7 +1388,7 @@ CREATE SEQUENCE resagresion_seq
 --
 
 CREATE TABLE schema_migrations (
-    version character varying NOT NULL
+    version character varying(255) NOT NULL
 );
 
 
