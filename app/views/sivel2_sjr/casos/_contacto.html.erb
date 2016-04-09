@@ -6,13 +6,13 @@
       <%= render 'sip/personas/persona_fields', :f => p %>
     <% end %>
 
-    <!--%= s.input :direccion, label: "Dirección actual" %-->
-    <!--%= s.input :telefono, label: 'Teléfono' %-->
   
     <%= victima.simple_fields_for :victimasjr do |victimasjr| %>
       <%= render 'victima_campos2', victima: victima, victimasjr: victimasjr %>
     <% end %> <!-- simple_fields_for :victimasjr -->
   
+    <!--%= s.input :direccion, label: "Dirección actual" %-->
+    <!--%= s.input :telefono, label: 'Teléfono' %-->
     <!--%= s.input :concentimientosjr, 
       boolean_style: :nested,
       inline_label: "Consentimiento Informado compartir SJR"

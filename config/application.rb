@@ -28,5 +28,7 @@ module Sivel2Mujeresindigenas
 
     config.relative_url_root = "/mujeresindigenas/sivel2"
 
+    # config.x.formato_fecha = 'yyyy-mm-dd'
+    # Recordar que si se cambia a dd/M/yyyy deben declararse campos de fecha en modelo con fecha_ddMyy, ver https://github.com/pasosdeJesus/sip/wiki/Localizaci%C3%B3n-de-cantidades-monetarias-y-fechas
   end
 end

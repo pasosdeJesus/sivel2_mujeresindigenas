@@ -31,7 +31,7 @@
   <%= f.input :mesnac, label: 'Mes Nacimiento' %>
   <%= f.input :dianac, label: 'Día Nacimiento' %>
   <%= f.input :sexo, collection: [["SIN INFORMACIÓN", :S], 
-    ["FEMENINO", :F], ["MASCULINO", :M]], 
+    ["MUJER", :F], ["HOMBRE", :M]], 
     include_blank: false 
   %>
   <!--%= f.association :nacional,
@@ -40,16 +40,16 @@
     label_method: :nombre,
     value_method: :id 
   %-->
-  <%= f.association :pais,
+  <!--%= f.association :pais,
     collection: Sip::Pais.habilitados,
     label: "País de Nacimiento",
     label_method: :nombre,
     value_method: :id 
-  %>
+  %-->
   <%= f.association :departamento,
     collection: (Sip::Departamento.habilitados.where(
-      id_pais: f.object.id_pais)),
-    label: "Estado/Departamento de Nacimiento",
+      id_pais: 170)),
+    label: "Departamento de Nacimiento",
     label_method: :nombre,
     value_method: :id 
   %>
