@@ -10,14 +10,14 @@
              <div class="panel-heading">Privado ACIN</div>
              <div class="panel-body">
                <%= render 'victima_acin', :fvictima => victima, 
-                 :fvictimasjr => victimasjr, :fpersona => p 
+                  :fvictimasjr => victimasjr, :fpersona => p 
                %>
              </div>
            </div>
-         <% end %>
-
+        <% end %>
+  
         <%= render 'sip/personas/persona_fields', :f => p %>
-
+  
         <%= render 'victima_campos2', victima: victima, victimasjr: victimasjr %>
       <% end %>
     <% end %> <!-- simple_fields_for :victimasjr -->

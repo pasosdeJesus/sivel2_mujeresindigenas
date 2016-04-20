@@ -48,6 +48,16 @@
       %>
     </div>
 
+    <% if f.object.caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
+       <div class="panel panel-default">
+         <div class="panel-heading">Privado ACIN</div>
+         <div class="panel-body">
+           <%= render 'evento_acin_campos', :f => f %>
+         </div>
+       </div>
+    <% end %>
+  
+
     <%= link_to_remove_association "Eliminar Evento", f, 
       {:class => 'btn-danger', :'data-existing' => 'true'} 
     %>
