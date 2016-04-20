@@ -20,3 +20,14 @@
   value_method: :id 
 %>
 
+<% if can? :edit, :casosacin then %>
+  <div class="panel panel-default">
+    <div class="panel-heading">Privado ACIN</div>
+    <div class="panel-body">
+      <%= s.input :concentimientosjr, 
+        boolean_style: :nested,
+        inline_label: 'Consentimiento'
+      %>
+    </div>
+  </div>
+<% end %>
