@@ -5,17 +5,11 @@
 	label_method: :rango, 
 	value_method: :id 
 %>
+
 <%= victima.association :etnia,
 	collection: Sivel2Gen::Etnia.habilitados,
 	include_blank: false,
 	label: "Etnia",
-	label_method: :nombre, 
-	value_method: :id 
-%>
-<%= victima.association :iglesia,
-	collection: Sivel2Gen::Iglesia.habilitados,
-	include_blank: false,
-	label: "Religión/Iglesia",
 	label_method: :nombre, 
 	value_method: :id 
 %>
@@ -29,6 +23,7 @@
   label_method: :nombre, 
   value_method: :id 
 %>
+
 <%= victimasjr.input(:ndiscapacidad, collection: [
                      ['FÍSICA', 'FÍSICA'], 
                      ['NINGUNA', 'NINGUNA'], 
@@ -37,7 +32,9 @@
 ], 
   label: "Discapacidad") 
 %>
+
 <%= victimasjr.input :enfermedad %>
+
 <%= victimasjr.association :actividadoficio,
   collection: Sivel2Gen::Actividadoficio.habilitados,
   include_blank: false,
@@ -46,6 +43,7 @@
   value_method: :id,
   wrapper_html: { style: "padding-bottom: 18px;" }
 %>
+
 <%= victimasjr.association :escolaridad,
   collection: Sivel2Gen::Escolaridad.habilitados,
   include_blank: false,
@@ -53,4 +51,5 @@
   label_method: :nombre, 
   value_method: :id
 %>
+
 <%= victimasjr.input :id_victima, as: :hidden %>

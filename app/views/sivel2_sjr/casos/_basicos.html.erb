@@ -20,11 +20,11 @@
   value_method: :id 
 %>
 
-<% if can? :edit, :casosacin then %>
+<% if s.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
   <div class="panel panel-default">
     <div class="panel-heading">Privado ACIN</div>
     <div class="panel-body">
-      <%= s.input :concentimientosjr, 
+      <%= s.input :consentimientosjr, 
         boolean_style: :nested,
         inline_label: 'Consentimiento'
       %>

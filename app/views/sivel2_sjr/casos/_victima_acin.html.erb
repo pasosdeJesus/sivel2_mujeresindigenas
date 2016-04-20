@@ -1,0 +1,23 @@
+<%= fpersona.input :nombres, placeholder: 'N',
+  value_method: lambda {|t| '' if t.nombres == 'N'}
+%>
+
+<%= fpersona.input :apellidos, placeholder: 'N',
+  value_method: lambda {|t| '' if t.apellidos == 'N'}
+%>
+
+<%= fpersona.input :tdocumento_id,
+  collection: Sip::Tdocumento.habilitados,
+  label: "Tipo de Documento",
+  label_method: :nombre,
+  value_method: :id 
+%>
+
+<%= fvictima.association :iglesia,
+	collection: Sivel2Gen::Iglesia.habilitados,
+	include_blank: false,
+	label: "Religión",
+	label_method: :nombre, 
+	value_method: :id 
+%>
+
