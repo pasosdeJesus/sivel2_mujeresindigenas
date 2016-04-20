@@ -9,7 +9,7 @@ module Sivel2Sjr
 
     # Campos por presentar en listado index
     def incluir_inicial
-      ['casoid', 'contacto', 'fecharec', 'oficina',
+      ['casoid', 'fecharec', 'oficina',
        'nusuario', 'fecha', 'memo'
       ]
     end
@@ -63,7 +63,7 @@ module Sivel2Sjr
           :dependen, :sustento, :leerescribir, 
           :ingresomensual, :gastos, :estrato, :id_statusmigratorio,
           :id_proteccion, :id_idioma,
-          :concentimientosjr, :concentimientobd,
+          :consentimientosjr, :consentimientobd,
           :fechasalida, :id_salida, 
           :fechallegada, :id_llegada, 
           :categoriaref,
