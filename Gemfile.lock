@@ -9,20 +9,8 @@ GIT
       rails
 
 GIT
-  remote: git://github.com/vtamara/cocoon.git
-  revision: 20f8f3bab2fee21309c57b586f5fab9921ac0894
-  specs:
-    cocoon (1.2.6)
-
-GIT
-  remote: https://github.com/kristianmandrup/jquery-ui-bootstrap-rails
-  revision: 944cf4164ea511a2977f91031cc7f69d3e06e6cb
-  specs:
-    jquery-ui-bootstrap-rails (0.1.1)
-      rails
-
-PATH
-  remote: ../sip
+  remote: git://github.com/pasosdeJesus/sip.git
+  revision: 74574b290e04f373a174bfd796e1d1a635fc2bfe
   specs:
     sip (2.0.a7)
       bootstrap-datepicker-rails
@@ -41,20 +29,35 @@ PATH
       twitter_cldr
       will_paginate
 
-PATH
-  remote: ../sivel2_gen
+GIT
+  remote: git://github.com/pasosdeJesus/sivel2_gen.git
+  revision: 743cf5253e8597e78644649b6784301e5741bf83
   specs:
     sivel2_gen (2.0.a9)
       devise
       jquery-rails
       rails
 
-PATH
-  remote: ../sivel2_sjr
+GIT
+  remote: git://github.com/pasosdeJesus/sivel2_sjr.git
+  revision: 80a221f7326acd66822999b692a099eac9b554d9
   specs:
     sivel2_sjr (2.0.a8)
       rails
       sivel2_gen
+
+GIT
+  remote: git://github.com/vtamara/cocoon.git
+  revision: 20f8f3bab2fee21309c57b586f5fab9921ac0894
+  specs:
+    cocoon (1.2.6)
+
+GIT
+  remote: https://github.com/kristianmandrup/jquery-ui-bootstrap-rails
+  revision: 944cf4164ea511a2977f91031cc7f69d3e06e6cb
+  specs:
+    jquery-ui-bootstrap-rails (0.1.1)
+      rails
 
 GEM
   remote: https://rubygems.org/
@@ -107,7 +110,6 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.2)
-    byebug (8.2.2)
     camertron-eprun (1.1.0)
     cancancan (1.13.1)
     capybara (2.7.0)
@@ -351,7 +353,6 @@ DEPENDENCIES
   bcrypt
   bootstrap-datepicker-rails
   bootstrap-sass
-  byebug
   cancancan
   capybara
   capybara-webkit
