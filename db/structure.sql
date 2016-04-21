@@ -432,7 +432,10 @@ CREATE TABLE sivel2_sjr_casosjr (
     id_llegada integer,
     categoriaref integer,
     observacionesref character varying(5000),
-    comosupo_id integer DEFAULT 1
+    comosupo_id integer DEFAULT 1,
+    consentimiento character varying(1) DEFAULT 'I'::character varying,
+    estadocaso character varying(1) DEFAULT 'A'::character varying,
+    tipoacomp character varying(1) DEFAULT 'J'::character varying
 );
 
 
@@ -1291,7 +1294,31 @@ CREATE TABLE evento (
     diainexacto boolean,
     diasemana integer,
     hora time without time zone,
-    ubicacion_id integer
+    ubicacion_id integer,
+    situacionriesgo character varying(1) DEFAULT 'I'::character varying,
+    solicitomedidas character varying(1) DEFAULT 'I'::character varying,
+    denuncia character varying(1) DEFAULT 'I'::character varying,
+    testigo character varying(1) DEFAULT 'I'::character varying,
+    afectacionotra character varying(1) DEFAULT 'I'::character varying,
+    quisieradenunciar character varying(1) DEFAULT 'I'::character varying,
+    recibidoreparacion character varying(1) DEFAULT 'I'::character varying,
+    denunciaante character varying(1) DEFAULT 'I'::character varying,
+    valoracionjusticia character varying(1) DEFAULT 'R'::character varying,
+    resguardo character varying(500),
+    comunidad character varying(500),
+    medidasrecibidas character varying(5000),
+    brindadaproteccion character varying(5000),
+    fechadenuncia date,
+    descripcionafectacion character varying(5000),
+    relacionprespvic character varying(500),
+    numvecesantes integer,
+    actividadesdejadas character varying(5000),
+    reaccionfamiliaycomunidad character varying(5000),
+    avancescaso character varying(5000),
+    etapaproceso character varying(500),
+    compromisosadquiridos character varying(5000),
+    observaciones character varying(5000),
+    acompnecesita character varying(5000)
 );
 
 
@@ -3587,7 +3614,19 @@ CREATE TABLE sivel2_sjr_victimasjr (
     id_victima integer NOT NULL,
     id_pais integer,
     enfermedad character varying(5000),
-    ndiscapacidad character varying(100)
+    ndiscapacidad character varying(100),
+    tienetierra character varying(1) DEFAULT 'I'::character varying,
+    incluidoruv character varying(1) DEFAULT 'I'::character varying,
+    cabezahogar character varying(1) DEFAULT 'I'::character varying,
+    sistemasalud character varying(1) DEFAULT 'I'::character varying,
+    vicconflicto character varying(1) DEFAULT 'A'::character varying,
+    liderazgo character varying(1) DEFAULT 'I'::character varying,
+    residencia character varying(5000),
+    areatierra integer,
+    comotierra character varying(5000),
+    resguardonac character varying(500),
+    comunidadnac character varying(500),
+    organizacionfilial character varying(500)
 );
 
 
@@ -6609,4 +6648,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160316100626');
 INSERT INTO schema_migrations (version) VALUES ('20160407102539');
 
 INSERT INTO schema_migrations (version) VALUES ('20160420080511');
+
+INSERT INTO schema_migrations (version) VALUES ('20160420202859');
 

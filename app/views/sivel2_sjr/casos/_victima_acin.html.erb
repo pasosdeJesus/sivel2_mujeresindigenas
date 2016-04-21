@@ -6,9 +6,12 @@
   value_method: lambda {|t| '' if t.apellidos == 'N'}
 %>
 
+<%= fvictima.input :hijos %>
+
+<%= fvictimasjr.input :residencia %>
+
 <%= fpersona.input :tdocumento_id,
   collection: Sip::Tdocumento.habilitados,
-  label: "Tipo de Documento",
   label_method: :nombre,
   value_method: :id 
 %>
@@ -16,8 +19,20 @@
 <%= fvictima.association :iglesia,
 	collection: Sivel2Gen::Iglesia.habilitados,
 	include_blank: false,
-	label: "Religión",
 	label_method: :nombre, 
 	value_method: :id 
 %>
+
+<%= fvictimasjr.input(
+  :tienetierra, 
+  collection: [
+    [:NO, :N],
+    [:SI, :S], 
+    ["SIN INFORMACIÓN", :I],
+  ],
+  include_blank: false ) 
+%>
+
+<%= fvictimasjr.input :areatierra %>
+
 

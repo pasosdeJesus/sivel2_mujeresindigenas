@@ -3,26 +3,37 @@
     <%= f.input :id, as: :hidden %>
     <%= f.input :fecha, 
 	    :input_html => { "data-behaviour" => "datepicker"},
-	    :as => :string, :label => "Fecha" 
+	    :as => :string
     %>
 
     <%= f.input :mesinexacto,
-      boolean_style: :nested,
-      inline_label: "Mes Inexacto"
+      boolean_style: :nested
     %>
     <%= f.input :diainexacto,
-      boolean_style: :nested,
-      inline_label: "Día Inexacto"
+      boolean_style: :nested
     %>
-    <%= f.input(:diasemana, collection: [
-      [:DOMINGO, 0], [:LUNES, 1], [:MARTES, 2], [:MIERCOLES, 3],
-      [:JUEVES, 4], [:VIERNES, 5], [:SABADO, 6],
-      ], label: "Dia de la Semana") 
+    <%= f.input(
+      :diasemana, 
+      collection: [
+        [:DOMINGO, 0], 
+        [:LUNES, 1], 
+        [:MARTES, 2], 
+        [:MIERCOLES, 3],
+        [:JUEVES, 4], 
+        [:VIERNES, 5], 
+        [:SABADO, 6] 
+      ]) 
     %>
 
     <div class="hora">
 	    <%= f.input :hora, wrapper_html: {style: 'display: inline-flex'} %>
     </div>
+
+    <%= f.input :resguardo %>
+
+    <%= f.input :comunidad %>
+
+    <%= f.input :numvecesantes %>
 
     <table border=1 width="100%">
       <thead>
@@ -47,6 +58,80 @@
         :class => 'btn-primary'
       %>
     </div>
+
+    <%= f.input :testigo, 
+      collection: [
+        ['NO', :N],
+        ['SI', :S], 
+        ['SIN INFORMACIÓN', :I]
+      ],
+      include_blank: false
+    %>
+
+    <%= f.input :acompnecesita %>
+
+    <%= f.input(
+      :situacionriesgo, 
+      collection: [
+        ['NO', :N],
+        ['SI', :S], 
+        ['SIN INFORMACIÓN', :I]
+      ],
+      include_blank: false)
+    %>
+
+    <%= f.input(
+      :solicitomedidas, 
+      collection: [
+        ['NO', :N],
+        ['SI', :S], 
+        ['SIN INFORMACIÓN', :I]
+      ],
+      include_blank: false)
+    %>
+
+    <%= f.input :medidasrecibidas %>
+
+    <%= f.input :brindadaproteccion %>
+
+    <%= f.input :denuncia, 
+      collection: [
+        ['NO', :N],
+        ['SI', :S], 
+        ['SIN INFORMACIÓN', :I]
+      ],
+      include_blank: false
+    %>
+
+    <%= f.input :denunciaante, 
+      collection: [
+        ['AMBOS SISTEMAS', :A],
+        ['ORDINARIA', :O], 
+        ['PROPIA', :P], 
+        ['SIN INFORMACIÓN', :I]
+      ],
+      include_blank: false
+    %>
+
+    <%= f.input :fechadenuncia %>
+
+    <%= f.input :valoracionjusticia, 
+      collection: [
+        ['BUENA', :B],
+        ['MALA', :M], 
+        ['REGULAR', :R]
+      ],
+      include_blank: false
+     %>
+
+    <%= f.input :quisieradenunciar, 
+      collection: [
+        ['NO', :N],
+        ['SI', :S], 
+        ['SIN INFORMACIÓN', :I]
+      ],
+      include_blank: false
+    %>
 
     <% if f.object.caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
        <div class="panel panel-default">

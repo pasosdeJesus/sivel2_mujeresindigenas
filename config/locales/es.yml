@@ -6,18 +6,64 @@ es:
         one: "Organización que diligencia"
         other: "Organizaciones que diligencian"
     attributes:
+      "evento":
+        acompnecesita: Acompañamiento que necesita
+        actividadesdejadas: Actividades que se dejaron de hacer
+        afectacionotra: Afectación a otra persona
+        avancescaso: Avances del caso
+        brindadaproteccion: ¿Le ha brindado protección?
+        compromisosadquiridos: Compromisos adquiridos ¿Cuales y con quien?
+        descripcionafectacion: Descripción de la afectación
+        denuncia: Denuncia
+        etapaproceso: Etapa del proceso
+        fecha: Fecha
+        fechadenuncia: Fecha de la denuncia
+        denunciaante: ¿Denuncia ante quien?
+        diainexacto: Día inexacto
+        diasemana: Día de la semana
+        medidasrecibidas: Medidas recibidas
+        mesinexacto: Mes inexacto
+        numvecesantes: Número de veces antes
+        observaciones: Observaciones generales
+        quisieradenunciar: ¿Quisiera denunciar?
+        reaccionfamiliaycomunidad: Reacción de la familia y la comunidad
+        recibidoreparacion: ¿Ha recibido reparación?
+        relacionprespvic: Relación entre presunto responsable y víctima
+        situacionriesgo: Situación de riesgo
+        solicitomedidas: ¿Ha solicitado medidas al estado?
+        testigo: Testigo
+        valoracionjusticia: Valoración de la atención en materia d
+      "sip/persona":
+        tdocumento_id: Tipo de documento de identidad
       "sip/oficina":
         oficina: "Organización que diligencia"
         oficinas: "Organizaciones que diligencian"
         Oficina: "Organización que diligencia"
         Oficinas: "Organizaciones que diligencian"
       "sivel2_sjr/casosjr":
-        fecharec: F. Documentación Ini.
-        oficina: Organizacion que diligencia
         contacto: Víctima
+        estadocaso: Estado del caso
+        fecharec: Fecha documentación ini.
+        oficina: Organizacion que diligencia
+        tipoacomp: Tipo de acopañamiento
       "sivel2_gen/caso":
-        fecharec: F. Documentación Ini.
-        oficina: Organizacion que diligencia
         contacto: Víctima
-      "sip/usuario":
-        oficina: "Organización"
+        fecharec: Fecha documentación ini.
+        oficina: Organizacion que diligencia
+      "sivel2_gen/victima":
+        etnia: Pueblo indigena
+        rangoedad: Rango de edad
+      "sivel2_sjr/victimasjr":
+        areatierra: Área tierra
+        cabezahogar: Cabeza del hogar
+        comunidadnac: Comunidad de nacimiento
+        escolaridad: Último grado en educación ordinaria
+        incluidoruv: Incluido en RUV
+        ndiscapacidad: Condición de discapacidad
+        organizacionfilial: Organización Filial
+        resguardonac: Resguardo de nacimiento
+        sistemasalud: Sistema de salud
+        tienetierra: Tiene tierra
+        vicconflicto: Víctima del conflicto
+        estadocivil: Estado civil
+

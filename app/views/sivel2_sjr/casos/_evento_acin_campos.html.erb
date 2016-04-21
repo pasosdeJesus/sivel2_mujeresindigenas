@@ -1,1 +1,36 @@
-<%= f.input :id %>
+
+<%= f.input :descripcionafectacion %>
+
+<%= f.input :relacionprespvic %>
+
+<%= f.input :actividadesdejadas %>
+
+<%= f.input :reaccionfamiliaycomunidad %>
+
+<%= f.input :afectacionotra, 
+  collection: [
+    ['NO', :N],
+    ['SI', :S], 
+    ['SIN INFORMACIÓN', :I]
+  ],
+  include_blank: false
+%>
+
+<%= f.input :avancescaso %>
+
+<%= f.input :etapaproceso %>
+
+<%= f.input :recibidoreparacion, 
+  collection: [
+    ['NO', :N],
+    ['SI', :S], 
+    ['SIN INFORMACIÓN', :I]
+  ],
+  include_blank: false
+%>
+
+<%= f.input :compromisosadquiridos %>
+
+<%= f.input :observaciones %>
+
+

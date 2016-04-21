@@ -1,32 +1,5 @@
 <div class='campos_persona'>
-  <!-- %= f.input :id, readonly: true %-->
   <%= f.input :id, as: :hidden %>
-  <% 
-    ph = 'N'
-    ac = {'data-autocompleta' => 'no' }
-    #debugger
-     if (!f.object.nombres || f.object.nombres == 'N' || f.object.nombres == '')
-       ph = 'Buscar'
-       ac = { }
-     end
-  %>
-  <!--%= f.input :nombres, placeholder: ph,
-    value_method: lambda {|t| '' if t.nombres == 'N'},
-    :input_html => ac
-  %-->
-  <%= f.input :apellidos, :as => :hidden, 
-    :input_html => { :value => "N" } %>
-  <%= f.input :nombres, :as => :hidden, 
-    :input_html => { :value => "N" } %>
-  <!--placeholder: 'N', value_method: lambda {|t| '' if t.apellidos == 'N'}
-  %-->
-  <!--%= f.input :tdocumento_id,
-    collection: Sip::Tdocumento.habilitados,
-    label: "Tipo de Documento",
-    label_method: :nombre,
-    value_method: :id 
-  %-->
-  <!--%= f.input :numerodocumento, label: 'Número Documento'%-->
   <%= f.input :anionac, label: 'Año Nacimiento' %>
   <%= f.input :mesnac, label: 'Mes Nacimiento' %>
   <%= f.input :dianac, label: 'Día Nacimiento' %>
@@ -34,18 +7,6 @@
     ["MUJER", :F], ["HOMBRE", :M]], 
     include_blank: false 
   %>
-  <!--%= f.association :nacional,
-    collection: Sip::Pais.habilitados,
-    label: "País de Nacionalidad",
-    label_method: :nombre,
-    value_method: :id 
-  %-->
-  <!--%= f.association :pais,
-    collection: Sip::Pais.habilitados,
-    label: "País de Nacimiento",
-    label_method: :nombre,
-    value_method: :id 
-  %-->
   <%= f.association :departamento,
     collection: (Sip::Departamento.habilitados.where(
       id_pais: 170)),

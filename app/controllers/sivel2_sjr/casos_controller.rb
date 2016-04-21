@@ -31,9 +31,9 @@ module Sivel2Sjr
             end
           }
         end
-        caso_params[:victima_attributes].first[1][:persona_attributes][:nombres]  = 'N'
-        caso_params[:victima_attributes].first[1][:persona_attributes][:apellidos]  = 'N'
-        caso_params[:victima_attributes].first[1][:persona_attributes][:id_pais]  = 170
+#        caso_params[:victima_attributes].first[1][:persona_attributes][:nombres]  = 'N'
+#        caso_params[:victima_attributes].first[1][:persona_attributes][:apellidos]  = 'N'
+#        caso_params[:victima_attributes].first[1][:persona_attributes][:id_pais]  = 170
         @caso.persona.first.apellidos = 'N'
         @caso.persona.first.nombres = 'N'
         @caso.persona.first.id_pais = 170
@@ -58,17 +58,9 @@ module Sivel2Sjr
         :id, :fecha, 
         :memo, 
         :casosjr_attributes => [
-          :id, :fecharec, :asesor, :oficina_id, :direccion, 
-          :telefono, :comosupo_id, :contacto, :detcomosupo,
-          :dependen, :sustento, :leerescribir, 
-          :ingresomensual, :gastos, :estrato, :id_statusmigratorio,
-          :id_proteccion, :id_idioma,
-          :consentimientosjr, :consentimientobd,
-          :fechasalida, :id_salida, 
-          :fechallegada, :id_llegada, 
-          :categoriaref,
-          :observacionesref,
-          :memo1612,
+          :id, :asesor, :oficina_id, :fecharec,
+          :id_idioma,
+          :estadocaso, :tipoacomp, :consentimiento,
           :_destroy
         ], 
         :caso_fotra_attributes => [
@@ -78,21 +70,20 @@ module Sivel2Sjr
         ],
         :victima_attributes => [
           :id, :id_persona, :id_profesion, :id_rangoedad, :id_etnia, 
-          :id_filiacion, :id_organizacion, :id_vinculoestado, :anotaciones,
-          :id_iglesia, :orientacionsexual, 
+          :id_iglesia, :hijos, 
           :_destroy, 
           :persona_attributes => [
             :id, :nombres, :apellidos, :anionac, :mesnac, :dianac, 
             :id_pais, :id_departamento, :id_municipio, :id_clase, 
-            :nacionalde, :numerodocumento, :sexo, :tdocumento_id
+            :sexo, :tdocumento_id
           ],
           :victimasjr_attributes => [
-            :id, :id_victima, :id_rolfamilia,
-            :id_actividadoficio, :id_estadocivil, 
+            :id, :id_victima, :residencia, :tienetierra, :areatierra,
             :id_maternidad, :ndiscapacidad, :enfermedad, 
             :id_escolaridad,
-            :sindocumento, :cabezafamilia, :asisteescuela, 
-            :id_regimensalud, :eps, :tienesisben
+            :cabezafamilia, :asisteescuela, :id_estadocivil, :id_actividadoficio,
+            :organizacionfilial, :comunidadnac, :resguardonac,
+            :vicconflicto, :incluidoruv, :cabeahogar
           ]
         ], 
         :ubicacion_attributes => [
@@ -126,6 +117,30 @@ module Sivel2Sjr
           :diainexacto,
           :diasemana,
           :hora,
+          :situacionriesgo,
+          :solicitomedidas,
+          :denuncia,
+          :denunciaante,
+          :testigo,
+          :afectacionotra,
+          :quisieradenunciar,
+          :recibidoreparacion,
+          :valoracionjusticia,
+          :resguardo,
+          :comunidad,
+          :medidasrecibidas,
+          :brindadaproteccion,
+          :fechadenuncia,
+          :descripcionafectacion,
+          :relacionprespvic,
+          :numvecesantes,
+          :actividadesdejadas,
+          :reaccionfamiliaycomunidad,
+          :avancescaso,
+          :etapaproceso,
+          :compromisosadquiridos,
+          :observaciones,
+          :acompnecesita,
           :actoevento_attributes => [
             :id, :presponsable_id, :categoria_id, :_destroy,
           ]
