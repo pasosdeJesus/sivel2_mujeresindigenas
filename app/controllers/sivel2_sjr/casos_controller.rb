@@ -10,7 +10,7 @@ module Sivel2Sjr
     # Campos por presentar en listado index
     def incluir_inicial
       ['casoid', 'fecharec', 'oficina',
-       'nusuario', 'fecha', 'memo'
+       'nusuario'
       ]
     end
 

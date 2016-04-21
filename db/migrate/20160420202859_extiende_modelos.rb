@@ -34,28 +34,28 @@ class ExtiendeModelos < ActiveRecord::Migration
     # B -> Buena, M -> Mala, R -> Regular
     add_column :evento, :valoracionjusticia, :string, limit: 1, default: :R
 
-    add_column :sivel2_sjr_victimasjr, :residencia, :string, limit: 5000
+    add_column :sivel2_sjr_victimasjr, :residencia, :string, limit: 5000, default: ''
     add_column :sivel2_sjr_victimasjr, :areatierra, :integer
-    add_column :sivel2_sjr_victimasjr, :comotierra, :string, limit: 5000
+    add_column :sivel2_sjr_victimasjr, :comotierra, :string, limit: 5000, default: ''
     
-    add_column :sivel2_sjr_victimasjr, :resguardonac, :string, limit: 500
-    add_column :sivel2_sjr_victimasjr, :comunidadnac, :string, limit: 500
-    add_column :sivel2_sjr_victimasjr, :organizacionfilial, :string, limit: 500
+    add_column :sivel2_sjr_victimasjr, :resguardonac, :string, limit: 500, default: ''
+    add_column :sivel2_sjr_victimasjr, :comunidadnac, :string, limit: 500, default: ''
+    add_column :sivel2_sjr_victimasjr, :organizacionfilial, :string, limit: 500, default: ''
     
-    add_column :evento, :resguardo, :string, limit: 500
-    add_column :evento, :comunidad, :string, limit: 500
-    add_column :evento, :medidasrecibidas, :string, limit: 5000
-    add_column :evento, :brindadaproteccion, :string, limit: 5000
+    add_column :evento, :resguardo, :string, limit: 500, default: ''
+    add_column :evento, :comunidad, :string, limit: 500, default: ''
+    add_column :evento, :medidasrecibidas, :string, limit: 5000, default: ''
+    add_column :evento, :brindadaproteccion, :string, limit: 5000, default: ''
     add_column :evento, :fechadenuncia, :date
-    add_column :evento, :descripcionafectacion, :string, limit: 5000
-    add_column :evento, :relacionprespvic, :string, limit: 500
+    add_column :evento, :descripcionafectacion, :string, limit: 5000, default: ''
+    add_column :evento, :relacionprespvic, :string, limit: 500, default: '', default: ''
     add_column :evento, :numvecesantes, :integer
-    add_column :evento, :actividadesdejadas, :string, limit: 5000
-    add_column :evento, :reaccionfamiliaycomunidad, :string, limit: 5000
-    add_column :evento, :avancescaso, :string, limit: 5000
-    add_column :evento, :etapaproceso, :string, limit: 500
-    add_column :evento, :compromisosadquiridos, :string, limit: 5000
-    add_column :evento, :observaciones, :string, limit: 5000
-    add_column :evento, :acompnecesita, :string, limit: 5000
+    add_column :evento, :actividadesdejadas, :string, limit: 5000, default: ''
+    add_column :evento, :reaccionfamiliaycomunidad, :string, limit: 5000, default: ''
+    add_column :evento, :avancescaso, :string, limit: 5000, default: ''
+    add_column :evento, :etapaproceso, :string, limit: 500, default: ''
+    add_column :evento, :compromisosadquiridos, :string, limit: 5000, default: ''
+    add_column :evento, :observaciones, :string, limit: 5000, default: ''
+    add_column :evento, :acompnecesita, :string, limit: 5000, default: ''
   end
 end
