@@ -460,7 +460,7 @@ CREATE VIEW cben1 AS
     sivel2_sjr_casosjr casosjr,
     sivel2_gen_victima victima,
     sip_persona persona
-  WHERE ((((((casosjr.fecharec >= '2016-03-02'::date) AND (casosjr.fecharec <= '2016-04-01'::date)) AND (caso.id = victima.id_caso)) AND (caso.id = casosjr.id_caso)) AND (caso.id = victima.id_caso)) AND (persona.id = victima.id_persona));
+  WHERE ((((caso.id = victima.id_caso) AND (caso.id = casosjr.id_caso)) AND (caso.id = victima.id_caso)) AND (persona.id = victima.id_persona));
 
 
 --
