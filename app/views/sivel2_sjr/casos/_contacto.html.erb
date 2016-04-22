@@ -14,6 +14,11 @@
                %>
              </div>
            </div>
+         <% else %>
+           <%= p.input :apellidos, :as => :hidden, 
+             :input_html => { :value => "N" } %>
+           <%= p.input :nombres, :as => :hidden, 
+             :input_html => { :value => "N" } %>
         <% end %>
   
         <%= render 'sip/personas/persona_fields', :f => p %>

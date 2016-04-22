@@ -31,9 +31,6 @@ module Sivel2Sjr
             end
           }
         end
-#        caso_params[:victima_attributes].first[1][:persona_attributes][:nombres]  = 'N'
-#        caso_params[:victima_attributes].first[1][:persona_attributes][:apellidos]  = 'N'
-#        caso_params[:victima_attributes].first[1][:persona_attributes][:id_pais]  = 170
         @caso.persona.first.apellidos = 'N'
         @caso.persona.first.nombres = 'N'
         @caso.persona.first.id_pais = 170
