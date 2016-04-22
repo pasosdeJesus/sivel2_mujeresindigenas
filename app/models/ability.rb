@@ -19,9 +19,9 @@ class Ability < Sivel2Sjr::Ability
     Sivel2Sjr::Ability::BASICAS_PROPIAS + 
     BASICAS_PROPIAS  - [
       ['Sivel2Gen', 'filiacion'],
+      ['Sivel2Gen', 'iglesia'],
       ['Sivel2Gen', 'intervalo'],
       ['Sivel2Gen', 'frontera'],
-      ['Sivel2Gen', 'iglesia'],
       ['Sivel2Gen', 'intervalo'],
       ['Sivel2Gen', 'organizacion'],
       ['Sivel2Gen', 'pconsolidado'],
