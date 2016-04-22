@@ -32,7 +32,7 @@ es:
         situacionriesgo: Situación de riesgo
         solicitomedidas: ¿Ha solicitado medidas al estado?
         testigo: Testigo
-        valoracionjusticia: Valoración de la atención en materia d
+        valoracionjusticia: Valoración de la atención en materia de justicia
       "sip/persona":
         tdocumento_id: Tipo de documento de identidad
       "sip/oficina":
