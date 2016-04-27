@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: git://github.com/pasosdeJesus/sip.git
-  revision: 74574b290e04f373a174bfd796e1d1a635fc2bfe
+  revision: f9943d10a2e3967c48504320a002e3ef5bf98e6d
   specs:
     sip (2.0.a7)
       bootstrap-datepicker-rails
@@ -31,7 +31,7 @@ GIT
 
 GIT
   remote: git://github.com/pasosdeJesus/sivel2_gen.git
-  revision: 743cf5253e8597e78644649b6784301e5741bf83
+  revision: bb70dd33ca29c440064f6cbc2179822507f4aa58
   specs:
     sivel2_gen (2.0.a9)
       devise
@@ -40,7 +40,7 @@ GIT
 
 GIT
   remote: git://github.com/pasosdeJesus/sivel2_sjr.git
-  revision: 80a221f7326acd66822999b692a099eac9b554d9
+  revision: 10316a6d642d0e3d73813200144c3aed74c663de
   specs:
     sivel2_sjr (2.0.a8)
       rails
@@ -119,7 +119,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-webkit (1.10.1)
+    capybara-webkit (1.11.0)
       capybara (>= 2.3.0, < 2.8.0)
       json
     chartkick (1.4.2)
@@ -142,7 +142,7 @@ GEM
     commonjs (0.2.7)
     concurrent-ruby (1.0.1)
     debug_inspector (0.0.2)
-    devise (4.0.0)
+    devise (4.0.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 5.1)
@@ -158,7 +158,7 @@ GEM
     factory_girl_rails (4.7.0)
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
-    foreman (0.78.0)
+    foreman (0.81.0)
       thor (~> 0.19.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -193,7 +193,7 @@ GEM
     mimemagic (0.3.0)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
-    multi_json (1.11.2)
+    multi_json (1.11.3)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
