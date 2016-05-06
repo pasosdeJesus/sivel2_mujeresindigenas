@@ -435,7 +435,7 @@ CREATE TABLE sivel2_sjr_casosjr (
     comosupo_id integer DEFAULT 1,
     consentimiento character varying(1) DEFAULT 'I'::character varying,
     estadocaso character varying(1) DEFAULT 'A'::character varying,
-    tipoacomp character varying(1) DEFAULT 'J'::character varying
+    tipoacomp character varying(1) DEFAULT 'N'::character varying
 );
 
 
@@ -6650,4 +6650,8 @@ INSERT INTO schema_migrations (version) VALUES ('20160407102539');
 INSERT INTO schema_migrations (version) VALUES ('20160420080511');
 
 INSERT INTO schema_migrations (version) VALUES ('20160420202859');
+
+INSERT INTO schema_migrations (version) VALUES ('20160506015049');
+
+INSERT INTO schema_migrations (version) VALUES ('20160506022054');
 

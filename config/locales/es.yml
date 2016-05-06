@@ -33,23 +33,29 @@ es:
         solicitomedidas: ¿Ha solicitado medidas al estado?
         testigo: Testigo
         valoracionjusticia: Valoración de la atención en materia de justicia
-      "sip/persona":
-        tdocumento_id: Tipo de documento de identidad
+      "sip/fuenteprensa":
+        Fuenteprensa: Fuente
+        Fuentesprensa: Fuentes
       "sip/oficina":
         oficina: "Organización que diligencia"
         oficinas: "Organizaciones que diligencian"
         Oficina: "Organización que diligencia"
         Oficinas: "Organizaciones que diligencian"
+      "sip/persona":
+        tdocumento_id: Tipo de documento de identidad
+      "sivel2_gen/caso":
+        contacto: Víctima
+        fecharec: Fecha documentación ini.
+        oficina: Organizacion que diligencia
       "sivel2_sjr/casosjr":
         contacto: Víctima
         estadocaso: Estado del caso
         fecharec: Fecha documentación ini.
         oficina: Organizacion que diligencia
+        residencia: Residencia actual
         tipoacomp: Tipo de acopañamiento
-      "sivel2_gen/caso":
-        contacto: Víctima
-        fecharec: Fecha documentación ini.
-        oficina: Organizacion que diligencia
+      "sivel2_gen/caso_fuenteprensa":
+        ubicacion: "Detalle Otra"
       "sivel2_gen/victima":
         etnia: Pueblo indigena
         rangoedad: Rango de edad

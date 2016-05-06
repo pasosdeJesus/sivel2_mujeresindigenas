@@ -14,9 +14,9 @@ class ExtiendeModelos < ActiveRecord::Migration
     add_column :evento, :quisieradenunciar, :string, limit: 1, default: :I
     add_column :evento, :recibidoreparacion, :string, limit: 1, default: :I
     
-    # D -> Documentado, A -> Acompañado
+    # D -> Documentado, A -> Acompañado, R -> Registrado
     add_column :sivel2_sjr_casosjr, :estadocaso, :string, limit: 1, default: :A
-    # J -> Jurídico, P -> Psicosocial, C -> Cultural
+    # J -> Jurídico, P -> Psicosocial, C -> Cultural, N -> Ninguno
     add_column :sivel2_sjr_casosjr, :tipoacomp, :string, limit: 1, default: :J
 
     # P -> Propio, O -> Ordinario, N -> Ninguno, I -> SIN INFORMACIÓN
