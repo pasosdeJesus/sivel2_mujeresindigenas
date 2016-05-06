@@ -8,7 +8,9 @@
 
 <%= fvictima.input :hijos %>
 
-<%= fvictimasjr.input :residencia %>
+<%= fvictimasjr.input :residencia,
+  label: 'Residencia actual'
+ %>
 
 <%= fpersona.input :tdocumento_id,
   collection: Sip::Tdocumento.habilitados,
