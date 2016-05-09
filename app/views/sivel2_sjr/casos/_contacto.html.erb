@@ -3,6 +3,7 @@
     victima.object.persona.id == @caso.casosjr.contacto.id 
   %>
     <%= victima.simple_fields_for :victimasjr do |victimasjr| %>
+      <div class='campos_persona'> 
       <%= victima.simple_fields_for :persona do |p| %>
 
         <% if s.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
@@ -25,6 +26,7 @@
   
         <%= render 'victima_campos2', victima: victima, victimasjr: victimasjr %>
       <% end %>
+      </div>
     <% end %> <!-- simple_fields_for :victimasjr -->
   
   <% end %>  <!-- if -->
