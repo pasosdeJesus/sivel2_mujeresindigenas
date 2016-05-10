@@ -460,7 +460,7 @@ CREATE VIEW cben1 AS
     sivel2_sjr_casosjr casosjr,
     sivel2_gen_victima victima,
     sip_persona persona
-  WHERE ((((((casosjr.fecharec >= '2016-03-02'::date) AND (casosjr.fecharec <= '2016-04-01'::date)) AND (caso.id = victima.id_caso)) AND (caso.id = casosjr.id_caso)) AND (caso.id = victima.id_caso)) AND (persona.id = victima.id_persona));
+  WHERE ((((caso.id = victima.id_caso) AND (caso.id = casosjr.id_caso)) AND (caso.id = victima.id_caso)) AND (persona.id = victima.id_persona));
 
 
 --
@@ -1304,21 +1304,21 @@ CREATE TABLE evento (
     recibidoreparacion character varying(1) DEFAULT 'I'::character varying,
     denunciaante character varying(1) DEFAULT 'I'::character varying,
     valoracionjusticia character varying(1) DEFAULT 'R'::character varying,
-    resguardo character varying(500),
-    comunidad character varying(500),
-    medidasrecibidas character varying(5000),
-    brindadaproteccion character varying(5000),
+    resguardo character varying(500) DEFAULT ''::character varying,
+    comunidad character varying(500) DEFAULT ''::character varying,
+    medidasrecibidas character varying(5000) DEFAULT ''::character varying,
+    brindadaproteccion character varying(5000) DEFAULT ''::character varying,
     fechadenuncia date,
-    descripcionafectacion character varying(5000),
-    relacionprespvic character varying(500),
+    descripcionafectacion character varying(5000) DEFAULT ''::character varying,
+    relacionprespvic character varying(500) DEFAULT ''::character varying,
     numvecesantes integer,
-    actividadesdejadas character varying(5000),
-    reaccionfamiliaycomunidad character varying(5000),
-    avancescaso character varying(5000),
-    etapaproceso character varying(500),
-    compromisosadquiridos character varying(5000),
-    observaciones character varying(5000),
-    acompnecesita character varying(5000)
+    actividadesdejadas character varying(5000) DEFAULT ''::character varying,
+    reaccionfamiliaycomunidad character varying(5000) DEFAULT ''::character varying,
+    avancescaso character varying(5000) DEFAULT ''::character varying,
+    etapaproceso character varying(500) DEFAULT ''::character varying,
+    compromisosadquiridos character varying(5000) DEFAULT ''::character varying,
+    observaciones character varying(5000) DEFAULT ''::character varying,
+    acompnecesita character varying(5000) DEFAULT ''::character varying
 );
 
 
@@ -3621,12 +3621,12 @@ CREATE TABLE sivel2_sjr_victimasjr (
     sistemasalud character varying(1) DEFAULT 'I'::character varying,
     vicconflicto character varying(1) DEFAULT 'A'::character varying,
     liderazgo character varying(1) DEFAULT 'I'::character varying,
-    residencia character varying(5000),
+    residencia character varying(5000) DEFAULT ''::character varying,
     areatierra integer,
-    comotierra character varying(5000),
-    resguardonac character varying(500),
-    comunidadnac character varying(500),
-    organizacionfilial character varying(500)
+    comotierra character varying(5000) DEFAULT ''::character varying,
+    resguardonac character varying(500) DEFAULT ''::character varying,
+    comunidadnac character varying(500) DEFAULT ''::character varying,
+    organizacionfilial character varying(500) DEFAULT ''::character varying
 );
 
 
