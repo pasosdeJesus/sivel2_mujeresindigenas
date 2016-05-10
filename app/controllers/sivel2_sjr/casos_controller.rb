@@ -60,9 +60,8 @@ module Sivel2Sjr
           :estadocaso, :tipoacomp, :consentimiento,
           :_destroy
         ], 
-        :caso_fotra_attributes => [
-                :id, :fecha, :nombre, :anotacion, 
-                :tfuente, :ubicacionfisica, :anexo_caso_id, 
+        :caso_fuenteprensa_attributes => [
+                :id, :fecha, :fuenteprensa_id, :ubicacion, 
                 :_destroy
         ],
         :victima_attributes => [
@@ -78,9 +77,11 @@ module Sivel2Sjr
             :id, :id_victima, :residencia, :tienetierra, :areatierra,
             :id_maternidad, :ndiscapacidad, :enfermedad, 
             :id_escolaridad,
-            :cabezafamilia, :asisteescuela, :id_estadocivil, :id_actividadoficio,
+            :cabezafamilia, :asisteescuela, :id_estadocivil, 
+            :id_actividadoficio,
             :organizacionfilial, :comunidadnac, :resguardonac,
-            :vicconflicto, :incluidoruv, :cabeahogar
+            :vicconflicto, :incluidoruv, :cabeahogar,
+            :sistemasalud, :cabezahogar, :liderazgo
           ]
         ], 
         :ubicacion_attributes => [
