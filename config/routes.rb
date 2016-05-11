@@ -16,8 +16,8 @@ Rails.application.routes.draw do
     resources :usuarios, path_names: { new: 'nuevo', edit: 'edita' } 
   
     root 'sip/hogar#index'
-    patch "/actos/agregar" => 'sivel2_sjr/actos#agregar'
-    get "/actos/eliminar" => 'sivel2_sjr/actos#eliminar'
+#    patch "/actos/agregar" => 'sivel2_sjr/actos#agregar'
+    get "/actosevento/eliminar" => 'actosevento#eliminar'
     get "/personas" => 'sivel2_sjr/personas#index'
     get "/personas/remplazar" => 'sivel2_sjr/personas#remplazar'
      get '/eventos/nuevo' => 'eventos#nuevo'  

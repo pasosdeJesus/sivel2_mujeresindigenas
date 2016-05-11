@@ -7,7 +7,7 @@ module Sivel2Gen
     include Sivel2Gen::Concerns::Models::Categoria
 
     has_many :actoevento, class_name: '::Actoevento',
-      foreign_key: "categoria_id", validate:true
+      foreign_key: "categoria_id"#, validate:true
 
   end
 end

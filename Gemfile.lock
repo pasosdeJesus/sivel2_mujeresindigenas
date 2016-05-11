@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/pasosdeJesus/cor1440_gen.git
-  revision: 1d185b1f3d32e07d8600f59c18fcd21412ea5f64
+  revision: a39897ee78d358b3fae2ff3d9860345b4ba24639
   specs:
     cor1440_gen (1.0.a6)
       devise
@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: git://github.com/pasosdeJesus/sip.git
-  revision: f9943d10a2e3967c48504320a002e3ef5bf98e6d
+  revision: 6af482ba8a6e1c3bcd342edad4b12d783f020ae6
   specs:
     sip (2.0.a7)
       bootstrap-datepicker-rails
@@ -31,7 +31,7 @@ GIT
 
 GIT
   remote: git://github.com/pasosdeJesus/sivel2_gen.git
-  revision: bb70dd33ca29c440064f6cbc2179822507f4aa58
+  revision: fe08a6dd45827314438ba6f216afeac388651d65
   specs:
     sivel2_gen (2.0.a9)
       devise
@@ -40,7 +40,7 @@ GIT
 
 GIT
   remote: git://github.com/pasosdeJesus/sivel2_sjr.git
-  revision: 10316a6d642d0e3d73813200144c3aed74c663de
+  revision: 60a06b162fbe8d3d4d57ca4ac81a00a512b824cb
   specs:
     sivel2_sjr (2.0.a8)
       rails
@@ -112,17 +112,17 @@ GEM
     builder (3.2.2)
     camertron-eprun (1.1.0)
     cancancan (1.13.1)
-    capybara (2.7.0)
+    capybara (2.7.1)
       addressable
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-webkit (1.11.0)
+    capybara-webkit (1.11.1)
       capybara (>= 2.3.0, < 2.8.0)
       json
-    chartkick (1.4.2)
+    chartkick (1.5.2)
     cldr-plurals-runtime-rb (1.0.1)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -140,9 +140,9 @@ GEM
     coffee-script-source (1.10.0)
     colorize (0.7.7)
     commonjs (0.2.7)
-    concurrent-ruby (1.0.1)
+    concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
-    devise (4.0.1)
+    devise (4.1.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 5.1)
@@ -193,7 +193,7 @@ GEM
     mimemagic (0.3.0)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
-    multi_json (1.11.3)
+    multi_json (1.12.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
@@ -262,7 +262,7 @@ GEM
     rake (11.1.2)
     rdoc (4.2.2)
       json (~> 1.4)
-    responders (2.1.2)
+    responders (2.2.0)
       railties (>= 4.2.0, < 5.1)
     rspec-core (3.4.4)
       rspec-support (~> 3.4.0)

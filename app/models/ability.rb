@@ -73,6 +73,7 @@ class Ability < Sivel2Sjr::Ability
       end
       case usuario.rol 
       when Ability::ROLANALI
+        can :manage, ::Evento
         can :read, Sivel2Gen::Caso
         can :new, Sivel2Gen::Caso
         can [:update, :create, :destroy], Sivel2Gen::Caso, 
@@ -85,6 +86,7 @@ class Ability < Sivel2Sjr::Ability
         can :manage, Sivel2Gen::Acto
         can :manage, Sip::Persona
       when Ability::ROLCOOR
+        can :manage, ::Evento
         can :read, Sivel2Gen::Caso
         can :new, Sivel2Gen::Caso
         can [:update, :create, :destroy, :poneretcomp], Sivel2Gen::Caso, 
@@ -99,6 +101,7 @@ class Ability < Sivel2Sjr::Ability
         can :new, Usuario
         can [:read, :manage], Usuario, oficina: { id: usuario.oficina_id}
       when Ability::ROLADMIN, Ability::ROLDIR
+        can :manage, ::Evento
         can :edit, :casosacin
         can :manage, Sivel2Gen::Caso
         can :manage, Cor1440Gen::Actividad

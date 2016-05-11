@@ -44,9 +44,19 @@
         </tr>
       </thead>
       <tbody id="actosevento">
-      <% f.simple_fields_for :actoevento do |a| %>
-        <%= render 'actoevento_campos', :f => a %>
-      <% end %>
+        <% f.object.actoevento.try(:each) do |ae| %>
+          <tr class='nested-fields'>
+            <td><%= ae.presponsable.nombre %></td>
+            <td><%= ae.categoria.nombre %></td>
+            <td>
+                <div class="input hidden caso_evento_actoevento_id"><input class="hidden form-control" type="hidden" name="caso[evento_attributes][0][actoevento_attributes][<%= ae.id %>][id]" id="caso_evento_attributes_0_actoevento_attributes_<%= ae.id %>_id"></div>
+                <input type="hidden" name="caso[evento_attributes][0][actoevento_attributes][<%= ae.id %>][_destroy]" id="caso_evento_attributes_0_actoevento_attributes_<%= ae.id %>__destroy" value="false"><a data-eliminaractoevento='<%= ae.id %>' class="btn-danger remove_fields dynamic eliminaractoevento" href="#">Eliminar</a>
+            </td>
+          </tr>
+        <% end %>
+        <% f.simple_fields_for :actoevento do |ae| %>
+           <%= render 'actoevento_campos', :f => ae %>
+        <% end %>
       </tbody>
     </table>
     <div class="links">
