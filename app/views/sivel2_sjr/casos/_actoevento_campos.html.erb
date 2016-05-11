@@ -1,4 +1,4 @@
-<tr class='nested-fields'>
+<tr class='campos-actoevento'>
   <td>
     <%= f.association :presponsable, 
       collection: Sivel2Gen::Presponsable.habilitados.order(:nombre),
@@ -20,6 +20,7 @@
   <td>
     <%= f.input :id, as: :hidden %>
     <%= link_to_remove_association "Eliminar", f, 
+        wrapper_class: 'campos-actoevento',
         :class => 'btn-danger' 
     %>
     <div><%= f.error_notification %></div>

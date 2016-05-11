@@ -35,39 +35,7 @@
 
     <%= f.input :numvecesantes %>
 
-    <table border=1 width="100%">
-      <thead>
-        <tr>
-          <th>Presunto Responsable</th>
-          <th>Agresión Particular</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="actosevento">
-        <% f.object.actoevento.try(:each) do |ae| %>
-          <tr class='nested-fields'>
-            <td><%= ae.presponsable.nombre %></td>
-            <td><%= ae.categoria.nombre %></td>
-            <td>
-                <div class="input hidden caso_evento_actoevento_id"><input class="hidden form-control" type="hidden" name="caso[evento_attributes][0][actoevento_attributes][<%= ae.id %>][id]" id="caso_evento_attributes_0_actoevento_attributes_<%= ae.id %>_id"></div>
-                <input type="hidden" name="caso[evento_attributes][0][actoevento_attributes][<%= ae.id %>][_destroy]" id="caso_evento_attributes_0_actoevento_attributes_<%= ae.id %>__destroy" value="false"><a data-eliminaractoevento='<%= ae.id %>' class="btn-danger remove_fields dynamic eliminaractoevento" href="#">Eliminar</a>
-            </td>
-          </tr>
-        <% end %>
-        <% f.simple_fields_for :actoevento do |ae| %>
-           <%= render 'actoevento_campos', :f => ae %>
-        <% end %>
-      </tbody>
-    </table>
-    <div class="links">
-      <%= link_to_add_association 'Añadir Acto', f, 
-        :actoevento,
-        :"data-association-insertion-node" => "tbody#actosevento", 
-        :"data-association-insertion-method" => "append", 
-        partial: 'actoevento_campos',
-        :class => 'btn-primary'
-      %>
-    </div>
+    <%= render 'actosevento_din', :f => f %>
 
     <%= f.input :testigo, 
       collection: [

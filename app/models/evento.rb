@@ -7,9 +7,9 @@ class Evento < ActiveRecord::Base
 
   has_many :actoevento, 
     class_name: "::Actoevento",  
-    foreign_key: "evento_id", validate:true, dependent: :destroy
+    foreign_key: "evento_id", validate:true, dependent: :delete_all
   accepts_nested_attributes_for :actoevento,
-    reject_if: :all_blank, update_only: true
+    reject_if: :all_blank, allow_destroy: true
 
   validates :situacionriesgo, length: { maximum: 1 }
   validates :solicitomedidas, length: {maximum: 1}
