@@ -16,7 +16,7 @@ class CreateTafectacion < ActiveRecord::Migration
     INSERT INTO tafectacion (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (4, 'ECONÓMICA', '2016-06-07', NULL, '2016-06-07', '2016-06-07', NULL);
     INSERT INTO tafectacion (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (5, 'PSICOSOCIAL', '2016-06-07', NULL, '2016-06-07', '2016-06-07', NULL);
     INSERT INTO tafectacion (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (6, 'COMUNITARIA', '2016-06-07', NULL, '2016-06-07', '2016-06-07', NULL);
-    INSERT INTO tafectacion (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (7, 'FAMILIARES', '2016-06-07', NULL, '2016-06-07', '2016-06-07', NULL);
+    INSERT INTO tafectacion (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (7, 'FAMILIAR', '2016-06-07', NULL, '2016-06-07', '2016-06-07', NULL);
     INSERT INTO tafectacion (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (8, 'INDIVIDUAL', '2016-06-07', NULL, '2016-06-07', '2016-06-07', NULL);
     EOF
   end

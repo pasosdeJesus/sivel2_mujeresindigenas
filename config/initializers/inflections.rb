@@ -15,7 +15,9 @@
 #   inflect.acronym 'RESTful'
 # end
 ActiveSupport::Inflector.inflections do |inflect|
+	inflect.irregular 'educacionpropia', 'educacionespropias'
+	inflect.irregular 'motivonodenuncia', 'motivosnodenuncia'
 	inflect.irregular 'religion', 'religiones'
-	inflect.irregular 'educacionpropia', 'educacionpropia'
-	inflect.irregular 'tafectacion', 'tafectacion'
+	inflect.irregular 'tafectacion', 'tafectaciones'
+	inflect.irregular 'tapoyo', 'tapoyos'
 end

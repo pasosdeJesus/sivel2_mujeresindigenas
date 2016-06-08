@@ -142,6 +142,8 @@ module Sivel2Sjr
           :observaciones,
           :acompnecesita,
           :tafectacion_id,
+          :tapoyo_id,
+          :motivonodenuncia_id,
           :_destroy,
           :actoevento_attributes => [
             :id, :presponsable_id, :categoria_id, :_destroy,

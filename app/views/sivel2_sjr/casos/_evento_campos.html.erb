@@ -54,6 +54,13 @@
       value_method: :id
     %>
 
+    <%= f.association :tapoyo,
+      collection: ::Tapoyo.habilitados,
+      include_blank: false,
+      label_method: :nombre, 
+      value_method: :id
+    %>
+
     <%= f.input :acompnecesita %>
 
     <%= f.input(
@@ -102,6 +109,13 @@
     <%= f.input :fechadenuncia,
 	    :input_html => { "data-behaviour" => "datepicker"},
 	    :as => :string
+    %>
+
+    <%= f.association :motivonodenuncia,
+      collection: ::Motivonodenuncia.habilitados,
+      include_blank: false,
+      label_method: :nombre, 
+      value_method: :id
     %>
 
     <%= f.input :valoracionjusticia, 

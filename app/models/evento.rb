@@ -4,9 +4,12 @@ class Evento < ActiveRecord::Base
 
   belongs_to :caso, class_name: "Sivel2Gen::Caso", 
     foreign_key: "caso_id"
-  
+  belongs_to :motivonodenuncia, class_name: "::Motivonodenuncia", 
+    foreign_key: "motivonodenuncia_id"
   belongs_to :tafectacion, class_name: "::Tafectacion", 
     foreign_key: "tafectacion_id"
+  belongs_to :tapoyo, class_name: "::Tapoyo", 
+    foreign_key: "tapoyo_id"
 
   has_many :actoevento, 
     class_name: "::Actoevento",  
