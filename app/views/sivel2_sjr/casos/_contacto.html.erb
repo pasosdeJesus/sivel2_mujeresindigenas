@@ -11,7 +11,8 @@
              <div class="panel-heading">Privado ACIN</div>
              <div class="panel-body">
                <%= render 'victima_acin', :fvictima => victima, 
-                  :fvictimasjr => victimasjr, :fpersona => p 
+                 :fvictimasjr => victimasjr, :fpersona => p,
+                 :fcasosjr => s
                %>
              </div>
            </div>
@@ -24,7 +25,7 @@
   
         <%= render 'sip/personas/persona_fields', :f => p %>
   
-	<%= render 'victima_campos2', casosjr: s, victima: victima, 
+	<%= render 'victima_campos2', fcasosjr: s, victima: victima, 
 		victimasjr: victimasjr %>
       <% end %>
       </div>

@@ -8,6 +8,20 @@
 
 <%= fvictima.input :hijos %>
 
+<%= fcasosjr.association :idioma,
+  collection: Sivel2Sjr::Idioma.habilitados,
+  include_blank: false,
+  label_method: :nombre, 
+  value_method: :id 
+%>
+
+<%= fvictimasjr.association :religion,
+  collection: ::Religion.habilitados,
+  include_blank: false,
+  label_method: :nombre, 
+  value_method: :id 
+%>
+
 <%= fvictimasjr.input :residencia,
   label: 'Residencia actual'
  %>

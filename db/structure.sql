@@ -3660,7 +3660,8 @@ CREATE TABLE sivel2_sjr_victimasjr (
     comotierra character varying(5000),
     resguardonac character varying(500),
     comunidadnac character varying(500),
-    organizacionfilial character varying(500)
+    organizacionfilial character varying(500),
+    religion_id integer DEFAULT 0
 );
 
 
@@ -5905,6 +5906,14 @@ ALTER TABLE ONLY cor1440_gen_informe
 
 
 --
+-- Name: fk_rails_db4e1db76f; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_sjr_victimasjr
+    ADD CONSTRAINT fk_rails_db4e1db76f FOREIGN KEY (religion_id) REFERENCES religion(id);
+
+
+--
 -- Name: fk_rails_e8dedd8c1d; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6707,4 +6716,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160506022054');
 INSERT INTO schema_migrations (version) VALUES ('20160519195544');
 
 INSERT INTO schema_migrations (version) VALUES ('20160608060056');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608082447');
 

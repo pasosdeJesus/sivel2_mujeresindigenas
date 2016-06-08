@@ -4,6 +4,9 @@ require 'sivel2_sjr/concerns/models/victimasjr'
 class Sivel2Sjr::Victimasjr < ActiveRecord::Base
   include Sivel2Sjr::Concerns::Models::Victimasjr
 
+  belongs_to :religion, class_name: '::Religion',
+    foreign_key: 'religion_id', validate: true
+
   validates :cabezahogar, length: { maximum: 1}
   validates :comotierra, length: { maximum: 5000 }
   validates :comunidadnac, length: { maximum: 500 }
