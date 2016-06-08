@@ -4,6 +4,10 @@ class Evento < ActiveRecord::Base
 
   belongs_to :caso, class_name: "Sivel2Gen::Caso", 
     foreign_key: "caso_id"
+  belongs_to :consecuenciaindividual, class_name: "::Consecuenciaindividual", 
+    foreign_key: "consecuenciaindividual_id"
+  belongs_to :consecuenciafamiliar, class_name: "::Consecuenciafamiliar", 
+    foreign_key: "consecuenciafamiliar_id"
   belongs_to :motivonodenuncia, class_name: "::Motivonodenuncia", 
     foreign_key: "motivonodenuncia_id"
   belongs_to :tafectacion, class_name: "::Tafectacion", 

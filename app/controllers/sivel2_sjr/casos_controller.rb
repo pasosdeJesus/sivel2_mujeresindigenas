@@ -144,6 +144,8 @@ module Sivel2Sjr
           :tafectacion_id,
           :tapoyo_id,
           :motivonodenuncia_id,
+          :consecuenciafamiliar_id,
+          :consecuenciaindividual_id,
           :_destroy,
           :actoevento_attributes => [
             :id, :presponsable_id, :categoria_id, :_destroy,

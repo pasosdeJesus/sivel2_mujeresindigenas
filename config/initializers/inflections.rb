@@ -15,6 +15,8 @@
 #   inflect.acronym 'RESTful'
 # end
 ActiveSupport::Inflector.inflections do |inflect|
+	inflect.irregular 'consecuenciafamiliar', 'consecuenciasfamiliares'
+	inflect.irregular 'consecuenciaindividual', 'consecuenciasindividuales'
 	inflect.irregular 'educacionpropia', 'educacionespropias'
 	inflect.irregular 'motivonodenuncia', 'motivosnodenuncia'
 	inflect.irregular 'religion', 'religiones'

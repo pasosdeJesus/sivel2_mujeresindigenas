@@ -19,4 +19,7 @@ class CreateMotivonodenuncia < ActiveRecord::Migration
     INSERT INTO motivonodenuncia (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (8, 'FALTA DE CREDIBILIDAD EN ENTIDADES ESTATALS', '2016-06-07', NULL, '2016-06-07', '2016-06-07', NULL);
     SQL
   end
+  def down
+    drop_table :motivonodenuncia
+  end
 end

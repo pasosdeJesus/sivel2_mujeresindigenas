@@ -674,6 +674,74 @@ CREATE VIEW cben2 AS
 
 
 --
+-- Name: consecuenciafamiliar; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE consecuenciafamiliar (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: consecuenciafamiliar_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE consecuenciafamiliar_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: consecuenciafamiliar_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE consecuenciafamiliar_id_seq OWNED BY consecuenciafamiliar.id;
+
+
+--
+-- Name: consecuenciaindividual; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE consecuenciaindividual (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: consecuenciaindividual_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE consecuenciaindividual_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: consecuenciaindividual_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE consecuenciaindividual_id_seq OWNED BY consecuenciaindividual.id;
+
+
+--
 -- Name: contexto_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1355,7 +1423,9 @@ CREATE TABLE evento (
     acompnecesita character varying(5000),
     tafectacion_id integer DEFAULT 0,
     tapoyo_id integer DEFAULT 0,
-    motivonodenuncia_id integer DEFAULT 0
+    motivonodenuncia_id integer DEFAULT 0,
+    consecuenciaindividual_id integer DEFAULT 0,
+    consecuenciafamiliar_id integer DEFAULT 0
 );
 
 
@@ -3833,6 +3903,20 @@ ALTER TABLE ONLY actoevento ALTER COLUMN id SET DEFAULT nextval('actoevento_id_s
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY consecuenciafamiliar ALTER COLUMN id SET DEFAULT nextval('consecuenciafamiliar_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY consecuenciaindividual ALTER COLUMN id SET DEFAULT nextval('consecuenciaindividual_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY cor1440_gen_actividad ALTER COLUMN id SET DEFAULT nextval('cor1440_gen_actividad_id_seq'::regclass);
 
 
@@ -4260,6 +4344,22 @@ ALTER TABLE ONLY sivel2_gen_categoria
 
 ALTER TABLE ONLY sivel2_sjr_clasifdesp
     ADD CONSTRAINT clasifdesp_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: consecuenciafamiliar_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY consecuenciafamiliar
+    ADD CONSTRAINT consecuenciafamiliar_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: consecuenciaindividual_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY consecuenciaindividual
+    ADD CONSTRAINT consecuenciaindividual_pkey PRIMARY KEY (id);
 
 
 --
@@ -6050,6 +6150,14 @@ ALTER TABLE ONLY sivel2_sjr_ayudasjr_derecho
 
 
 --
+-- Name: fk_rails_832e115503; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY evento
+    ADD CONSTRAINT fk_rails_832e115503 FOREIGN KEY (consecuenciaindividual_id) REFERENCES consecuenciaindividual(id);
+
+
+--
 -- Name: fk_rails_863c4c40a3; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6079,6 +6187,14 @@ ALTER TABLE ONLY cor1440_gen_actividad_proyectofinanciero
 
 ALTER TABLE ONLY sivel2_sjr_victimasjr
     ADD CONSTRAINT fk_rails_b645b4caf9 FOREIGN KEY (educacionpropia_id) REFERENCES educacionpropia(id);
+
+
+--
+-- Name: fk_rails_bbb1476bbe; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY evento
+    ADD CONSTRAINT fk_rails_bbb1476bbe FOREIGN KEY (consecuenciafamiliar_id) REFERENCES consecuenciafamiliar(id);
 
 
 --
@@ -6966,4 +7082,12 @@ INSERT INTO schema_migrations (version) VALUES ('20160608105822');
 INSERT INTO schema_migrations (version) VALUES ('20160608114028');
 
 INSERT INTO schema_migrations (version) VALUES ('20160608115006');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608121317');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608121352');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608122717');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608122726');
 

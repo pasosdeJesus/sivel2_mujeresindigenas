@@ -6,6 +6,12 @@ es:
         one: "Organización que diligencia"
         other: "Organizaciones que diligencian"
     attributes:
+      "consecuenciafamiliar":
+        Consecuenciafamiliar: Consecuencia familiar
+        Consecuenciasfamiliares: Consecuencias familiares
+      "consecuenciaindividual":
+        Consecuenciaindividual: Consecuencia individual
+        Consecuenciasindividuales: Consecuencias individuales
       "educacionpropia":
         Educacionpropia: Forma de educación propia
         Educacionespropias: Formas de educación propia
@@ -16,6 +22,8 @@ es:
         avancescaso: Avances del caso
         brindadaproteccion: ¿Le ha brindado protección?
         compromisosadquiridos: Compromisos adquiridos ¿Cuales y con quien?
+        consecuenciafamiliar: Consecuencia familiar
+        consecuenciaindividual: Consecuencia individual
         descripcionafectacion: Descripción de la afectación
         denuncia: Denuncia
         etapaproceso: Etapa del proceso

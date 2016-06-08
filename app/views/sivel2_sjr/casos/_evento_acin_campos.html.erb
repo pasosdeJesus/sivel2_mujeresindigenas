@@ -3,6 +3,20 @@
 
 <%= f.input :relacionprespvic %>
 
+<%= f.association :consecuenciaindividual,
+  collection: ::Consecuenciaindividual.habilitados,
+  include_blank: false,
+  label_method: :nombre, 
+  value_method: :id
+%>
+
+<%= f.association :consecuenciafamiliar,
+  collection: ::Consecuenciafamiliar.habilitados,
+  include_blank: false,
+  label_method: :nombre, 
+  value_method: :id
+%>
+
 <%= f.input :actividadesdejadas %>
 
 <%= f.input :reaccionfamiliaycomunidad %>
