@@ -33,6 +33,9 @@ es:
         solicitomedidas: ¿Ha solicitado medidas al estado?
         testigo: Testigo
         valoracionjusticia: Valoración de la atención en materia de justicia
+      "religion":
+        Religion: Religion
+        Relligiones: Religiones
       "sip/fuenteprensa":
         Fuenteprensa: Fuente
         Fuentesprensa: Fuentes
@@ -53,7 +56,7 @@ es:
         fecharec: Fecha documentación ini.
         oficina: Organizacion que diligencia
         residencia: Residencia actual
-        tipoacomp: Tipo de acopañamiento
+        tipoacomp: Acopañamiento
       "sivel2_gen/caso_fuenteprensa":
         ubicacion: "Detalle Otra"
       "sivel2_gen/victima":

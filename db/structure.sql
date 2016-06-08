@@ -1439,6 +1439,40 @@ CREATE SEQUENCE regimensalud_seq
 
 
 --
+-- Name: religion; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE religion (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: religion_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE religion_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: religion_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE religion_id_seq OWNED BY religion.id;
+
+
+--
 -- Name: resagresion_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -3749,6 +3783,13 @@ ALTER TABLE ONLY refugio ALTER COLUMN id SET DEFAULT nextval('refugio_id_seq'::r
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY religion ALTER COLUMN id SET DEFAULT nextval('religion_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY sip_anexo ALTER COLUMN id SET DEFAULT nextval('sip_anexo_id_seq'::regclass);
 
 
@@ -4458,6 +4499,14 @@ ALTER TABLE ONLY sivel2_gen_region
 
 ALTER TABLE ONLY sip_oficina
     ADD CONSTRAINT regionsjr_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: religion_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY religion
+    ADD CONSTRAINT religion_pkey PRIMARY KEY (id);
 
 
 --
@@ -6656,4 +6705,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160506015049');
 INSERT INTO schema_migrations (version) VALUES ('20160506022054');
 
 INSERT INTO schema_migrations (version) VALUES ('20160519195544');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608060056');
 

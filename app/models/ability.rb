@@ -14,6 +14,10 @@ class Ability < Sivel2Sjr::Ability
     ["Analista", ROLANALI], 
   ]
 
+  BASICAS_PROPIAS = [
+	  ['', 'religion']
+  ]
+
   @@tablasbasicas = Sip::Ability::BASICAS_PROPIAS + 
     Sivel2Gen::Ability::BASICAS_PROPIAS + 
     Sivel2Sjr::Ability::BASICAS_PROPIAS + 

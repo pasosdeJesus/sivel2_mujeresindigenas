@@ -27,6 +27,13 @@
   value_method: :id 
 %>
 
+<%= casosjr.association :idioma,
+  collection: Sivel2Sjr::Idioma.habilitados,
+  include_blank: false,
+  label_method: :nombre, 
+  value_method: :id 
+%>
+
 <%= victimasjr.association :escolaridad,
   collection: Sivel2Gen::Escolaridad.habilitados,
   include_blank: false,

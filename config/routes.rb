@@ -14,7 +14,18 @@ Rails.application.routes.draw do
               :as => 'registro_usuario'            
     end
     resources :usuarios, path_names: { new: 'nuevo', edit: 'edita' } 
-  
+ 
+    namespace :admin do
+      ::Ability.tablasbasicas.each do |t|
+        if (t[0] == "") 
+          c = t[1].pluralize
+          resources c.to_sym, 
+            path_names: { new: 'nueva', edit: 'edita' }
+        end
+      end
+    end
+
+ 
     root 'sip/hogar#index'
     get "/personas" => 'sivel2_sjr/personas#index'
     get "/personas/remplazar" => 'sivel2_sjr/personas#remplazar'
@@ -26,14 +37,4 @@ Rails.application.routes.draw do
   mount Sip::Engine, at: '/mujeresindigenas/sivel2', as: 'sip'
 
 end
-#
-#  namespace :admin do
-#    ::Ability.tablasbasicas.each do |t|
-#      if (t[0] == "") 
-#        c = t[1].pluralize
-#        resources c.to_sym, 
-#          path_names: { new: 'nueva', edit: 'edita' }
-#      end
-#    end
-
 

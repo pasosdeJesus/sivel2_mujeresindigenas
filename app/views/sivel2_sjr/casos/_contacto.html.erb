@@ -24,7 +24,8 @@
   
         <%= render 'sip/personas/persona_fields', :f => p %>
   
-        <%= render 'victima_campos2', victima: victima, victimasjr: victimasjr %>
+	<%= render 'victima_campos2', casosjr: s, victima: victima, 
+		victimasjr: victimasjr %>
       <% end %>
       </div>
     <% end %> <!-- simple_fields_for :victimasjr -->
