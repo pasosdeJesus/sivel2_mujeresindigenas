@@ -6,6 +6,8 @@ class Sivel2Sjr::Victimasjr < ActiveRecord::Base
 
   belongs_to :religion, class_name: '::Religion',
     foreign_key: 'religion_id', validate: true
+  belongs_to :educacionpropia, class_name: '::Educacionpropia',
+    foreign_key: 'educacionpropia_id', validate: true
 
   validates :cabezahogar, length: { maximum: 1}
   validates :comotierra, length: { maximum: 5000 }

@@ -16,4 +16,5 @@
 # end
 ActiveSupport::Inflector.inflections do |inflect|
 	inflect.irregular 'religion', 'religiones'
+	inflect.irregular 'educacionpropio', 'educacionpropia'
 end

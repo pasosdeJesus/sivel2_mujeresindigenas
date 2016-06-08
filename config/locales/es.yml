@@ -6,6 +6,8 @@ es:
         one: "Organización que diligencia"
         other: "Organizaciones que diligencian"
     attributes:
+      "educacionpropia":
+        Educacionpropia: Educación propia
       "evento":
         acompnecesita: Acompañamiento que necesita
         actividadesdejadas: Actividades que se dejaron de hacer
@@ -66,7 +68,9 @@ es:
         areatierra: Área tierra
         cabezahogar: Cabeza del hogar
         comunidadnac: Comunidad de nacimiento
+        educacionpropia: Educación propia
         escolaridad: Último grado en educación ordinaria
+        estadocivil: Estado civil
         incluidoruv: Incluido en RUV
         ndiscapacidad: Condición de discapacidad
         organizacionfilial: Organización Filial
@@ -74,6 +78,5 @@ es:
         sistemasalud: Sistema de salud
         tienetierra: Tiene tierra
         vicconflicto: Víctima del conflicto
-        estadocivil: Estado civil
       "usuario":
         oficina: Organización

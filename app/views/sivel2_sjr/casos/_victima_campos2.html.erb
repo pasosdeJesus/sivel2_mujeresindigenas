@@ -34,6 +34,13 @@
   value_method: :id
 %>
 
+<%= victimasjr.association :educacionpropia,
+  collection: ::Educacionpropia.habilitados,
+  include_blank: false,
+  label_method: :nombre, 
+  value_method: :id
+%>
+
 <%= victimasjr.input(
   :ndiscapacidad, 
   collection: [

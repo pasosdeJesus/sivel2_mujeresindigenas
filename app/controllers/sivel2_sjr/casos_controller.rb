@@ -80,6 +80,7 @@ module Sivel2Sjr
             :cabezafamilia, :asisteescuela, :id_estadocivil, 
             :id_actividadoficio,
             :religion_id,
+            :educacionpropia_id,
             :organizacionfilial, :comunidadnac, :resguardonac,
             :vicconflicto, :incluidoruv, :cabeahogar,
             :sistemasalud, :cabezahogar, :liderazgo

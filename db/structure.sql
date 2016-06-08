@@ -1244,6 +1244,40 @@ CREATE VIEW cres1 AS
 
 
 --
+-- Name: educacionpropia; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE educacionpropia (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: educacionpropia_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE educacionpropia_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: educacionpropia_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE educacionpropia_id_seq OWNED BY educacionpropia.id;
+
+
+--
 -- Name: emprendimiento_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -3661,8 +3695,43 @@ CREATE TABLE sivel2_sjr_victimasjr (
     resguardonac character varying(500),
     comunidadnac character varying(500),
     organizacionfilial character varying(500),
-    religion_id integer DEFAULT 0
+    religion_id integer DEFAULT 0,
+    educacionpropia_id integer DEFAULT 0
 );
+
+
+--
+-- Name: tafectacion; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tafectacion (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: tafectacion_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tafectacion_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: tafectacion_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tafectacion_id_seq OWNED BY tafectacion.id;
 
 
 --
@@ -3770,6 +3839,13 @@ ALTER TABLE ONLY cor1440_gen_rangoedadac ALTER COLUMN id SET DEFAULT nextval('co
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY educacionpropia ALTER COLUMN id SET DEFAULT nextval('educacionpropia_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY evento ALTER COLUMN id SET DEFAULT nextval('evento_id_seq'::regclass);
 
 
@@ -3820,6 +3896,13 @@ ALTER TABLE ONLY sivel2_sjr_comosupo ALTER COLUMN id SET DEFAULT nextval('sivel2
 --
 
 ALTER TABLE ONLY sivel2_sjr_etiqueta_usuario ALTER COLUMN id SET DEFAULT nextval('sivel2_sjr_etiqueta_usuario_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tafectacion ALTER COLUMN id SET DEFAULT nextval('tafectacion_id_seq'::regclass);
 
 
 --
@@ -4212,6 +4295,14 @@ ALTER TABLE ONLY sivel2_sjr_desplazamiento
 
 ALTER TABLE ONLY sivel2_sjr_desplazamiento
     ADD CONSTRAINT desplazamiento_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: educacionpropia_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY educacionpropia
+    ADD CONSTRAINT educacionpropia_pkey PRIMARY KEY (id);
 
 
 --
@@ -4820,6 +4911,14 @@ ALTER TABLE ONLY sivel2_sjr_etiqueta_usuario
 
 ALTER TABLE ONLY sivel2_sjr_statusmigratorio
     ADD CONSTRAINT statusmigratorio_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: tafectacion_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tafectacion
+    ADD CONSTRAINT tafectacion_pkey PRIMARY KEY (id);
 
 
 --
@@ -5866,6 +5965,14 @@ ALTER TABLE ONLY cor1440_gen_actividad_proyectofinanciero
 
 
 --
+-- Name: fk_rails_b645b4caf9; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_sjr_victimasjr
+    ADD CONSTRAINT fk_rails_b645b4caf9 FOREIGN KEY (educacionpropia_id) REFERENCES educacionpropia(id);
+
+
+--
 -- Name: fk_rails_c02831dd89; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6718,4 +6825,10 @@ INSERT INTO schema_migrations (version) VALUES ('20160519195544');
 INSERT INTO schema_migrations (version) VALUES ('20160608060056');
 
 INSERT INTO schema_migrations (version) VALUES ('20160608082447');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608084429');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608084935');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608090947');
 
