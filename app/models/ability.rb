@@ -40,7 +40,6 @@ class Ability < Sivel2Sjr::Ability
       ['Sivel2Sjr', 'ayudaestado'],
       ['Sivel2Sjr', 'clasifdesp'],
       ['Sivel2Sjr', 'comosupo'],
-      ['Sivel2Sjr', 'idioma'],
       ['Sivel2Sjr', 'inclusion'],
       ['Sivel2Sjr', 'modalidadtierra'],
       ['Sivel2Sjr', 'declaroante'],
