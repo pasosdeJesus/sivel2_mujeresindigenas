@@ -708,6 +708,40 @@ ALTER SEQUENCE consecuenciafamiliar_id_seq OWNED BY consecuenciafamiliar.id;
 
 
 --
+-- Name: consecuenciafisica; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE consecuenciafisica (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: consecuenciafisica_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE consecuenciafisica_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: consecuenciafisica_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE consecuenciafisica_id_seq OWNED BY consecuenciafisica.id;
+
+
+--
 -- Name: consecuenciaindividual; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -1425,7 +1459,8 @@ CREATE TABLE evento (
     tapoyo_id integer DEFAULT 0,
     motivonodenuncia_id integer DEFAULT 0,
     consecuenciaindividual_id integer DEFAULT 0,
-    consecuenciafamiliar_id integer DEFAULT 0
+    consecuenciafamiliar_id integer DEFAULT 0,
+    consecuenciafisica_id integer DEFAULT 0
 );
 
 
@@ -3910,6 +3945,13 @@ ALTER TABLE ONLY consecuenciafamiliar ALTER COLUMN id SET DEFAULT nextval('conse
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY consecuenciafisica ALTER COLUMN id SET DEFAULT nextval('consecuenciafisica_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY consecuenciaindividual ALTER COLUMN id SET DEFAULT nextval('consecuenciaindividual_id_seq'::regclass);
 
 
@@ -4352,6 +4394,14 @@ ALTER TABLE ONLY sivel2_sjr_clasifdesp
 
 ALTER TABLE ONLY consecuenciafamiliar
     ADD CONSTRAINT consecuenciafamiliar_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: consecuenciafisica_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY consecuenciafisica
+    ADD CONSTRAINT consecuenciafisica_pkey PRIMARY KEY (id);
 
 
 --
@@ -6174,6 +6224,14 @@ ALTER TABLE ONLY sivel2_sjr_motivosjr_derecho
 
 
 --
+-- Name: fk_rails_9d0db0995d; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY evento
+    ADD CONSTRAINT fk_rails_9d0db0995d FOREIGN KEY (consecuenciafisica_id) REFERENCES consecuenciafisica(id);
+
+
+--
 -- Name: fk_rails_a8489e0d62; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7090,4 +7148,8 @@ INSERT INTO schema_migrations (version) VALUES ('20160608121352');
 INSERT INTO schema_migrations (version) VALUES ('20160608122717');
 
 INSERT INTO schema_migrations (version) VALUES ('20160608122726');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608205638');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608211647');
 

@@ -9,6 +9,9 @@ es:
       "consecuenciafamiliar":
         Consecuenciafamiliar: Consecuencia familiar
         Consecuenciasfamiliares: Consecuencias familiares
+      "consecuenciafisica":
+        Consecuenciafisica: Consecuencia física
+        Consecuenciasfisicas: Consecuencias físicas
       "consecuenciaindividual":
         Consecuenciaindividual: Consecuencia individual
         Consecuenciasindividuales: Consecuencias individuales
@@ -23,6 +26,7 @@ es:
         brindadaproteccion: ¿Le ha brindado protección?
         compromisosadquiridos: Compromisos adquiridos ¿Cuales y con quien?
         consecuenciafamiliar: Consecuencia familiar
+        consecuenciafisica: Consecuencia física
         consecuenciaindividual: Consecuencia individual
         descripcionafectacion: Descripción de la afectación
         denuncia: Denuncia

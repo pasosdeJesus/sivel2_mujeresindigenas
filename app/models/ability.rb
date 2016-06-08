@@ -16,6 +16,7 @@ class Ability < Sivel2Sjr::Ability
 
   BASICAS_PROPIAS = [
     ['', 'consecuenciafamiliar'],
+    ['', 'consecuenciafisica'],
     ['', 'consecuenciaindividual'],
 	  ['', 'educacionpropia'],
     ['', 'motivonodenuncia'],

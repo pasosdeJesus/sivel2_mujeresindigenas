@@ -9,27 +9,6 @@ GIT
       rails
 
 GIT
-  remote: git://github.com/pasosdeJesus/sip.git
-  revision: c8447d676dd43ea5e7ebfaef40de64dc7f1ffc06
-  specs:
-    sip (2.0.a7)
-      bootstrap-datepicker-rails
-      cancancan
-      colorize
-      devise
-      devise-i18n
-      jquery-rails
-      jquery-ui-bootstrap-rails
-      jquery-ui-rails
-      paperclip
-      rails
-      rails-i18n
-      simple_form
-      twitter-bootstrap-rails
-      twitter_cldr
-      will_paginate
-
-GIT
   remote: git://github.com/pasosdeJesus/sivel2_gen.git
   revision: cfafc16e32450920ed39568029f294a5a2dfb024
   specs:
@@ -58,6 +37,26 @@ GIT
   specs:
     jquery-ui-bootstrap-rails (0.1.1)
       rails
+
+PATH
+  remote: ../sip
+  specs:
+    sip (2.0.a7)
+      bootstrap-datepicker-rails
+      cancancan
+      colorize
+      devise
+      devise-i18n
+      jquery-rails
+      jquery-ui-bootstrap-rails
+      jquery-ui-rails
+      paperclip
+      rails
+      rails-i18n
+      simple_form
+      twitter-bootstrap-rails
+      twitter_cldr
+      will_paginate
 
 GEM
   remote: https://rubygems.org/
