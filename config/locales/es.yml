@@ -78,5 +78,7 @@ es:
         sistemasalud: Sistema de salud
         tienetierra: Tiene tierra
         vicconflicto: Víctima del conflicto
+      "tafectacion":
+        Tafectacion: Tipo de afectacion
       "usuario":
         oficina: Organización

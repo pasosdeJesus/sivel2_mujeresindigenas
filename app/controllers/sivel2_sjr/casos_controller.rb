@@ -141,6 +141,7 @@ module Sivel2Sjr
           :compromisosadquiridos,
           :observaciones,
           :acompnecesita,
+          :tafectacion_id,
           :_destroy,
           :actoevento_attributes => [
             :id, :presponsable_id, :categoria_id, :_destroy,

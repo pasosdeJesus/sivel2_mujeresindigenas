@@ -1352,7 +1352,8 @@ CREATE TABLE evento (
     etapaproceso character varying(500),
     compromisosadquiridos character varying(5000),
     observaciones character varying(5000),
-    acompnecesita character varying(5000)
+    acompnecesita character varying(5000),
+    tafectacion_id integer DEFAULT 0
 );
 
 
@@ -5821,6 +5822,14 @@ ALTER TABLE ONLY cor1440_gen_financiador_proyectofinanciero
 
 
 --
+-- Name: fk_rails_1567bde4aa; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY evento
+    ADD CONSTRAINT fk_rails_1567bde4aa FOREIGN KEY (tafectacion_id) REFERENCES tafectacion(id);
+
+
+--
 -- Name: fk_rails_1b764c2a63; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6831,4 +6840,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160608084429');
 INSERT INTO schema_migrations (version) VALUES ('20160608084935');
 
 INSERT INTO schema_migrations (version) VALUES ('20160608090947');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608093529');
 

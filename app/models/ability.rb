@@ -16,7 +16,8 @@ class Ability < Sivel2Sjr::Ability
 
   BASICAS_PROPIAS = [
 	  ['', 'educacionpropia'],
-	  ['', 'religion']
+	  ['', 'religion'],
+	  ['', 'tafectacion']
   ]
 
   @@tablasbasicas = Sip::Ability::BASICAS_PROPIAS + 
