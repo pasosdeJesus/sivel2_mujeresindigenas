@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   scope 'mujeresindigenas/sivel2' do
     devise_scope :usuario do
       get 'sign_out' => 'devise/sessions#destroy'
+      post '/mujeresindigenas/sivel2/usuarios/sign_in', 
+        to: 'devise/sessions#create'
     end
     devise_for :usuarios, :skip => [:registrations], module: :devise
       as :usuario do
@@ -25,11 +27,15 @@ Rails.application.routes.draw do
       end
     end
 
- 
     root 'sip/hogar#index'
     get "/personas" => 'sivel2_sjr/personas#index'
     get "/personas/remplazar" => 'sivel2_sjr/personas#remplazar'
-     get '/eventos/nuevo' => 'eventos#nuevo'  
+    get '/eventos/nuevo' => 'eventos#nuevo'  
+
+    # El siguiente para superar mala generación del action en el formulario
+    # cuando se autentica mal (genera 
+    # /mujeresindigenas/sivel2/mujeresindigenas/sivel2/usuarios/sign_in )
+    ruta = File.join(Rails.configuration.relative_url_root, 'usuarios/sign_in')
   end
 
   mount Sivel2Sjr::Engine, at: '/mujeresindigenas/sivel2', as: 'sivel2_sjr'

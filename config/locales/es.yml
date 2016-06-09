@@ -77,7 +77,7 @@ es:
       "sivel2_gen/caso_fuenteprensa":
         ubicacion: "Detalle Otra"
       "sivel2_gen/victima":
-        etnia: Pueblo indigena
+        etnia: Pueblo indigena / Etnia
         rangoedad: Rango de edad
       "sivel2_sjr/victimasjr":
         areatierra: Área tierra

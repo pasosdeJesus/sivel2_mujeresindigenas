@@ -22,11 +22,6 @@ INSERT INTO sip_fuenteprensa (id, nombre, tfuente, fechacreacion, fechadeshabili
 INSERT INTO sip_fuenteprensa (id, nombre, tfuente, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (106, 'REMISIÓN DE OTRO CABILDO', NULL, '2016-05-05', NULL, '2016-05-05 00:00:00', NULL, NULL);
 INSERT INTO sip_fuenteprensa (id, nombre, tfuente, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (107, 'OTRO', NULL, '2016-05-05', NULL, '2016-05-05 00:00:00', NULL, NULL);
 
-
---
--- Name: sip_fuenteprensa_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
---
-
 SELECT pg_catalog.setval('sip_fuenteprensa_id_seq', 107, true);
 
 
@@ -39,10 +34,6 @@ INSERT INTO sip_oficina (id, nombre, fechacreacion, fechadeshabilitacion, create
 INSERT INTO sip_oficina (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (103, 'OIK', '2016-02-29', NULL, '2016-03-01 01:00:11.831346', '2016-03-01 01:00:11.831346', '');
 INSERT INTO sip_oficina (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (104, 'ACIN', '2016-02-29', NULL, '2016-03-01 01:00:25.009325', '2016-03-01 01:00:25.009325', '');
 
-
---
--- Name: sip_oficina_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
---
 
 SELECT pg_catalog.setval('sip_oficina_id_seq', 104, true);
 
@@ -63,7 +54,7 @@ INSERT INTO sivel2_gen_supracategoria (codigo, nombre, fechacreacion, fechadesha
 --
 
 UPDATE sivel2_gen_categoria SET fechadeshabilitacion='2016-06-07' WHERE
-	id NOT IN ( '79', '75', '41', '3009') AND (id<4000 OR id>4999);
+	id NOT IN ( '75', '41', '3009') AND (id<4000 OR id>4999);
 
 INSERT INTO sivel2_gen_categoria (id, nombre, fechacreacion, fechadeshabilitacion, id_pconsolidado, contadaen, tipocat, created_at, updated_at, observaciones, supracategoria_id) VALUES (4000, 'ACCESO CARNAL - VIOLACIÓN (VIOLENCIA SEXUAL)', '2016-06-07', NULL, NULL, NULL, 'I', NULL, NULL, '421', 400);
 INSERT INTO sivel2_gen_categoria (id, nombre, fechacreacion, fechadeshabilitacion, id_pconsolidado, contadaen, tipocat, created_at, updated_at, observaciones, supracategoria_id) VALUES (4001, 'ACTO SEXUAL (VIOLENCIA SEXUAL)', '2016-06-07', NULL, NULL, NULL, 'I', NULL, NULL, '426', 400);
@@ -93,16 +84,18 @@ INSERT INTO sivel2_gen_categoria (id, nombre, fechacreacion, fechadeshabilitacio
 INSERT INTO sivel2_gen_categoria (id, nombre, fechacreacion, fechadeshabilitacion, id_pconsolidado, contadaen, tipocat, created_at, updated_at, observaciones, supracategoria_id) VALUES (4400, 'TRATA DE PERSONAS', '2016-06-07', NULL, NULL, NULL, 'I', NULL, NULL, NULL, 400);
 
 
-INSERT INTO sivel2_gen_categoria (id, nombre, fechacreacion, fechadeshabilitacion, id_pconsolidado, contadaen, tipocat, created_at, updated_at, observaciones, supracategoria_id) VALUES (4500, 'DETENCIÓN ARBITRARIA', '2016-06-07', NULL, NULL, NULL, 'I', NULL, NULL, '14', 400);
---INSERT INTO sivel2_gen_categoria (id, nombre, fechacreacion, fechadeshabilitacion, id_pconsolidado, contadaen, tipocat, created_at, updated_at, observaciones, supracategoria_id) VALUES (79, 'DESAPARICIÓN', '2002-07-23', '2002-07-23', NULL, NULL, 'I', NULL, NULL, NULL, 4);
+INSERT INTO sivel2_gen_categoria (id, nombre, fechacreacion, fechadeshabilitacion, id_pconsolidado, contadaen, tipocat, created_at, updated_at, observaciones, supracategoria_id) VALUES (4500, 'DETENCIÓN ILEGAL', '2016-06-07', NULL, NULL, NULL, 'I', NULL, NULL, '14', 400);
+INSERT INTO sivel2_gen_categoria (id, nombre, fechacreacion, fechadeshabilitacion, id_pconsolidado, contadaen, tipocat, created_at, updated_at, observaciones, supracategoria_id) VALUES (4501, 'DESAPARICIÓN FORZADA', '2016-06-07', NULL, NULL, NULL, 'I', NULL, NULL, NULL, 400);
+INSERT INTO sivel2_gen_categoria (id, nombre, fechacreacion, fechadeshabilitacion, id_pconsolidado, contadaen, tipocat, created_at, updated_at, observaciones, supracategoria_id) VALUES (4503, 'PERSECUCIÓN', '2016-06-07', NULL, NULL, NULL, 'I', NULL, NULL, NULL, 400);
+INSERT INTO sivel2_gen_categoria (id, nombre, fechacreacion, fechadeshabilitacion, id_pconsolidado, contadaen, tipocat, created_at, updated_at, observaciones, supracategoria_id) VALUES (4504, 'CAMPO MINADO', '2016-06-07', NULL, NULL, NULL, 'I', NULL, NULL, NULL, 400);
+
 --INSERT INTO sivel2_gen_categoria (id, nombre, fechacreacion, fechadeshabilitacion, id_pconsolidado, contadaen, tipocat, created_at, updated_at, observaciones, supracategoria_id) VALUES (75, 'RECLUTAMIENTO DE MENORES', '2000-08-09', NULL, 20, NULL, 'I', NULL, NULL, NULL, 4);
 
---INSERT INTO sivel2_gen_categoria (id, nombre, fechacreacion, fechadeshabilitacion, id_pconsolidado, contadaen, tipocat, created_at, updated_at, observaciones, supracategoria_id) VALUES (3009, 'DESPLAZAMIENTO FORZADO', '2016-06-07', NULL, NULL, NULL, 'I', NULL, NULL, NULL, 2);
+INSERT INTO sivel2_gen_categoria (id, nombre, fechacreacion, fechadeshabilitacion, id_pconsolidado, contadaen, tipocat, created_at, updated_at, observaciones, supracategoria_id) VALUES (3009, 'DESPLAZAMIENTO FORZADO', '2016-06-07', NULL, NULL, NULL, 'I', NULL, NULL, NULL, 400);
 
 --INSERT INTO sivel2_gen_categoria (id, nombre, fechacreacion, fechadeshabilitacion, id_pconsolidado, contadaen, tipocat, created_at, updated_at, observaciones, supracategoria_id) VALUES (41, 'SECUESTRO', '2000-08-09', NULL, 23, NULL, 'I', NULL, NULL, NULL, 2);
 
-INSERT INTO sivel2_gen_categoria (id, nombre, fechacreacion, fechadeshabilitacion, id_pconsolidado, contadaen, tipocat, created_at, updated_at, observaciones, supracategoria_id) VALUES (4501, 'CONFINAMIENTO', '2016-06-07', NULL, NULL, NULL, 'I', NULL, NULL, NULL, 2);
-
+INSERT INTO sivel2_gen_categoria (id, nombre, fechacreacion, fechadeshabilitacion, id_pconsolidado, contadaen, tipocat, created_at, updated_at, observaciones, supracategoria_id) VALUES (4505, 'CONFINAMIENTO', '2016-06-07', NULL, NULL, NULL, 'I', NULL, NULL, NULL, 400);
 
 --
 -- Data for Name: sivel2_gen_escolaridad; Type: TABLE DATA; Schema: public; Owner: -
@@ -180,10 +173,6 @@ INSERT INTO sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadesha
 INSERT INTO sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (133, 'YERAL', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 22:23:32.961683', '2016-05-05 22:23:32.961683', '');
 
 
---
--- Name: sivel2_gen_etnia_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
---
-
 SELECT pg_catalog.setval('sivel2_gen_etnia_id_seq', 133, true);
 
 
@@ -193,8 +182,8 @@ SELECT pg_catalog.setval('sivel2_gen_etnia_id_seq', 133, true);
 --
 
 UPDATE sivel2_gen_presponsable SET fechadeshabilitacion='2016-06-07' WHERE 
-	id NOT IN ('1', '14', '2', '25', '26', '27', '28', '35', 
-		'36', '37', '4', '7', '5');
+id NOT IN ('1', '14', '2', '25', '26', '27', '28', '35', 
+	'36', '37', '4', '7', '5', '105', '106', '107', '109', '112', '113');
 
 
 -- INSERT INTO sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (1, 'ESTADO COLOMBIANO', 39, '2001-01-30', NULL, NULL, NULL, NULL); --INSTITUCIÓN ESTATAL
@@ -219,13 +208,12 @@ UPDATE sivel2_gen_presponsable SET nombre='ACTOR ARMADO NO IDENTIFICADO' WHERE i
 INSERT INTO sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (105, 'FAMILIA', NULL, '2016-03-02', NULL, '2016-03-03 00:39:49.41372', '2016-03-03 00:39:49.41372', '');
 INSERT INTO sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (106, 'VINCULADO AL NARCOTRÁFICO', NULL, '2016-03-02', NULL, '2016-03-03 00:43:16.701619', '2016-03-03 00:43:16.701619', '');
 INSERT INTO sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (107, 'ESMAD', NULL, '2016-03-02', NULL, '2016-03-03 00:46:33.569338', '2016-03-03 00:46:33.569338', '');
+INSERT INTO sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (109, 'COMUNIDAD', NULL, '2016-03-02', NULL, '2016-03-03 00:46:33.569338', '2016-03-03 00:46:33.569338', '');
+INSERT INTO sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (112, 'DESMOVILIZADO GUERRILLA', NULL, '2016-03-02', NULL, '2016-03-03 00:46:33.569338', '2016-03-03 00:46:33.569338', '');
+INSERT INTO sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (113, 'DESMOVILIZADO PARAILITAR', NULL, '2016-03-02', NULL, '2016-03-03 00:46:33.569338', '2016-03-03 00:46:33.569338', '');
 
 
---
--- Name: sivel2_gen_presponsable_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
---
-
-SELECT pg_catalog.setval('sivel2_gen_presponsable_id_seq', 111, true);
+SELECT pg_catalog.setval('sivel2_gen_presponsable_id_seq', 113, true);
 
 
 
@@ -243,10 +231,6 @@ INSERT INTO sivel2_gen_rangoedad (id, nombre, rango, limiteinferior, limitesuper
 INSERT INTO sivel2_gen_rangoedad (id, nombre, rango, limiteinferior, limitesuperior, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (106, '60-125 AD. MAYORES', '60-125 AD. MAYORES', 60, 125, '2016-03-17', NULL, '2016-03-17 12:37:25.707854', '2016-03-17 12:37:25.707854', '');
 
 
---
--- Name: sivel2_gen_rangoedad_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
---
-
 SELECT pg_catalog.setval('sivel2_gen_rangoedad_id_seq', 106, true);
 
 --
@@ -261,10 +245,6 @@ UPDATE sivel2_sjr_idioma SET fechadeshabilitacion='2016-06-07'
 INSERT INTO sivel2_sjr_idioma (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (100, 'NASA YUWE', '2016-06-07', NULL, '2016-06-07', '2016-06-07', NULL);
 INSERT INTO sivel2_sjr_idioma (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (101, 'ESPAÑOL Y NASA YUWE', '2016-06-07', NULL, '2016-06-07', '2016-06-07', NULL);
 
-
---
--- Name: sivel2_sjr_idioma_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
---
 
 SELECT pg_catalog.setval('sivel2_sjr_idioma_id_seq', 101, true);
 

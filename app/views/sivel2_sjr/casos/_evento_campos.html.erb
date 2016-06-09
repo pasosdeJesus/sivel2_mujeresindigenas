@@ -1,17 +1,17 @@
 <div class='control-group nested-fields'>
   <div class="controls">
     <%= f.input :id, as: :hidden %>
-    <%= f.input :fecha, 
-	    :input_html => { "data-behaviour" => "datepicker"},
-	    :as => :string
-    %>
 
-    <%= f.input :mesinexacto,
-      boolean_style: :nested
+    <%= f.input :anio, 
+      collection: @anios,
+      label: 'Año' 
     %>
-    <%= f.input :diainexacto,
-      boolean_style: :nested
+    <%= f.input :mes, 
+      collection: @meses,
+      label: 'Mes'
     %>
+    <%= f.input :dia, collection: @dias, label: 'Día' %>
+
     <%= f.input(
       :diasemana, 
       collection: [
@@ -106,10 +106,17 @@
       include_blank: false
     %>
 
-    <%= f.input :fechadenuncia,
-	    :input_html => { "data-behaviour" => "datepicker"},
-	    :as => :string
+    <%= f.input :aniodenuncia, 
+      collection: @anios,
+      label: 'Año denuncia' 
     %>
+    <%= f.input :mesdenuncia, 
+      collection: @meses,
+      label: 'Mes denuncia'
+    %>
+    <%= f.input :diadenuncia, 
+      collection: @dias, 
+      label: 'Día denuncia' %>
 
     <%= f.association :motivonodenuncia,
       collection: ::Motivonodenuncia.habilitados,
@@ -120,9 +127,10 @@
 
     <%= f.input :valoracionjusticia, 
       collection: [
+        ['SIN INFORMACIÓN', :S],
         ['BUENA', :B],
-        ['MALA', :M], 
-        ['REGULAR', :R]
+        ['REGULAR', :R],
+        ['MALA', :M] 
       ],
       include_blank: false
      %>

@@ -91,20 +91,6 @@ module Sivel2Sjr
           :lugar, :sitio, :latitud, :longitud, :id_tsitio, 
           :_destroy
         ],
-        :desplazamiento_attributes => [
-          :id, :fechaexpulsion, :id_expulsion, 
-          :fechallegada, :id_llegada, :descripcion, 
-          :id_clasifdesp, :id_tipodesp, :otrosdatos,
-          :declaro, :hechosdeclarados, :fechadeclaracion,
-          :id_declaroante, :id_inclusion,
-          :id_acreditacion, :retornado,
-          :reubicado, :connacionalretorno,
-          :acompestado, :connacionaldeportado,
-          :oficioantes, :id_modalidadtierra,
-          :materialesperdidos, :inmaterialesperdidos,
-          :protegiorupta, :documentostierra,
-          :_destroy
-        ],
         :caso_presponsable_attributes => [
           :id, :id_presponsable, :tipo, 
           :bloque, :frente, :brigada, :batallon, :division, :otro, 
@@ -112,7 +98,12 @@ module Sivel2Sjr
         ],
         :evento_attributes => [
           :id,
-          :fecha, 
+          :anio, 
+          :mes, 
+          :dia, 
+          :aniodenuncia, 
+          :mesdenuncia, 
+          :diadenuncia, 
           :mesinexacto, 
           :diainexacto,
           :diasemana,
