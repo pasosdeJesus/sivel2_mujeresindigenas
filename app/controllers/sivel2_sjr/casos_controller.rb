@@ -138,6 +138,8 @@ module Sivel2Sjr
           :consecuenciafamiliar_id,
           :consecuenciaindividual_id,
           :consecuenciafisica_id,
+          :departamento_id,
+          :municipio_id,
           :_destroy,
           :actoevento_attributes => [
             :id, :presponsable_id, :categoria_id, :_destroy,

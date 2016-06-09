@@ -1438,7 +1438,9 @@ CREATE TABLE evento (
     diadenuncia integer,
     mesdenuncia integer,
     aniodenuncia integer,
-    consecuenciafisica_id integer DEFAULT 0
+    consecuenciafisica_id integer DEFAULT 0,
+    departamento_id integer,
+    municipio_id integer
 );
 
 
@@ -6233,6 +6235,14 @@ ALTER TABLE ONLY sivel2_sjr_ayudaestado_derecho
 
 
 --
+-- Name: fk_rails_983eca7e75; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY evento
+    ADD CONSTRAINT fk_rails_983eca7e75 FOREIGN KEY (municipio_id) REFERENCES sip_municipio(id);
+
+
+--
 -- Name: fk_rails_9cf4a23afe; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6342,6 +6352,14 @@ ALTER TABLE ONLY evento
 
 ALTER TABLE ONLY sivel2_sjr_progestado_derecho
     ADD CONSTRAINT fk_rails_e8dedd8c1d FOREIGN KEY (progestado_id) REFERENCES sivel2_sjr_progestado(id);
+
+
+--
+-- Name: fk_rails_f10bf1ea91; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY evento
+    ADD CONSTRAINT fk_rails_f10bf1ea91 FOREIGN KEY (departamento_id) REFERENCES sip_departamento(id);
 
 
 --
@@ -7171,4 +7189,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160608205638');
 INSERT INTO schema_migrations (version) VALUES ('20160608211647');
 
 INSERT INTO schema_migrations (version) VALUES ('20160609113525');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608213541');
 
