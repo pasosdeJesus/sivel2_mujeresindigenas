@@ -38,7 +38,7 @@
     
     <%= f.association :municipio,
       collection: ( Sip::Municipio.habilitados.where(
-        id_departamento: f.object.id_departamento)),
+        id_departamento: f.object.departamento_id)),
       include_blank: true,
       label_method: :nombre, 
       value_method: :id
