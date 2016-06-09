@@ -8,6 +8,8 @@ class Evento < ActiveRecord::Base
     foreign_key: "consecuenciaindividual_id"
   belongs_to :consecuenciafamiliar, class_name: "::Consecuenciafamiliar", 
     foreign_key: "consecuenciafamiliar_id"
+  belongs_to :consecuenciafisica, class_name: "::Consecuenciafisica", 
+    foreign_key: "consecuenciafisica_id"
   belongs_to :motivonodenuncia, class_name: "::Motivonodenuncia", 
     foreign_key: "motivonodenuncia_id"
   belongs_to :tafectacion, class_name: "::Tafectacion", 

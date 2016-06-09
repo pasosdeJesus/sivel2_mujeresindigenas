@@ -16,6 +16,7 @@
 # end
 ActiveSupport::Inflector.inflections do |inflect|
 	inflect.irregular 'consecuenciafamiliar', 'consecuenciasfamiliares'
+	inflect.irregular 'consecuenciafisica', 'consecuenciasfisicas'
 	inflect.irregular 'consecuenciaindividual', 'consecuenciasindividuales'
 	inflect.irregular 'educacionpropia', 'educacionespropias'
 	inflect.irregular 'motivonodenuncia', 'motivosnodenuncia'
