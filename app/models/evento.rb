@@ -10,8 +10,14 @@ class Evento < ActiveRecord::Base
     foreign_key: "consecuenciafamiliar_id"
   belongs_to :consecuenciafisica, class_name: "::Consecuenciafisica", 
     foreign_key: "consecuenciafisica_id"
+  belongs_to :departamento, class_name: "Sip::Departamento", 
+    foreign_key: "departamento_id"
+  belongs_to :departamento, class_name: "::Consecuenciafisica", 
+    foreign_key: "departamento_id"
   belongs_to :motivonodenuncia, class_name: "::Motivonodenuncia", 
     foreign_key: "motivonodenuncia_id"
+  belongs_to :municipio, class_name: "Sip::Municipio", 
+    foreign_key: "municipio_id"
   belongs_to :tafectacion, class_name: "::Tafectacion", 
     foreign_key: "tafectacion_id"
   belongs_to :tapoyo, class_name: "::Tapoyo", 
