@@ -87,13 +87,17 @@ es:
         areatierra: Área tierra
         cabezahogar: Cabeza del hogar
         comunidadnac: Comunidad de nacimiento
+        comunidadres: Comunidad de residencia
+        departamentores: Departamento de residencia
         educacionpropia: Educación propia
         escolaridad: Último grado en educación ordinaria
         estadocivil: Estado civil
         incluidoruv: Incluido en RUV
+        municipiores: Municipio de residencia
         ndiscapacidad: Condición de discapacidad
         organizacionfilial: Organización Filial
         resguardonac: Resguardo de nacimiento
+        resguardores: Resguardo de residencia
         sistemasalud: Sistema de salud
         tienetierra: Tiene tierra
         vicconflicto: Víctima del conflicto
