@@ -3,32 +3,17 @@
     victima.object.persona.id == @caso.casosjr.contacto.id 
   %>
     <%= victima.simple_fields_for :victimasjr do |victimasjr| %>
-      <div class='campos_persona'> 
       <%= victima.simple_fields_for :persona do |p| %>
-
-        <% if s.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
-           <div class="panel panel-default">
-             <div class="panel-heading">Privado ACIN</div>
-             <div class="panel-body">
-               <%= render 'victima_acin', :fvictima => victima, 
-                 :fvictimasjr => victimasjr, :fpersona => p,
-                 :fcasosjr => s
-               %>
-             </div>
-           </div>
-         <% else %>
-           <%= p.input :apellidos, :as => :hidden, 
-             :input_html => { :value => "N" } %>
-           <%= p.input :nombres, :as => :hidden, 
-             :input_html => { :value => "N" } %>
-        <% end %>
-  
-        <%= render 'sip/personas/persona_fields', :f => p %>
-  
-	<%= render 'victima_campos2', fcasosjr: s, victima: victima, 
-		victimasjr: victimasjr %>
+        
+        <div class='campos_persona'> 
+          <%= render 'victima_camposmezclados',
+            :fvictima => victima, 
+            :fvictimasjr => victimasjr, 
+            :fpersona => p,
+            :fcasosjr => s 
+          %>
+        </div>
       <% end %>
-      </div>
     <% end %> <!-- simple_fields_for :victimasjr -->
   
   <% end %>  <!-- if -->
