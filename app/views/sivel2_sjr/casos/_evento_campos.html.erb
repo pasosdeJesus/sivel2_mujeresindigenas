@@ -48,6 +48,13 @@
     <%= f.input :comunidad %>
 
     <%= f.input :numvecesantes %>
+    
+    <%= f.input :relacionadocon,
+      collection: [ 
+        ['ARMADO', :A], 
+        ['SOCIAL', :S] ],
+      include_blank: false
+    %>
 
     <%= render 'actosevento_din', :f => f %>
 

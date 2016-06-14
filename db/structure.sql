@@ -1464,7 +1464,8 @@ CREATE TABLE evento (
     anio integer,
     diadenuncia integer,
     mesdenuncia integer,
-    aniodenuncia integer
+    aniodenuncia integer,
+    relacionadocon character varying(1)
 );
 
 
@@ -7198,4 +7199,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160608213541');
 INSERT INTO schema_migrations (version) VALUES ('20160609113525');
 
 INSERT INTO schema_migrations (version) VALUES ('20160610063404');
+
+INSERT INTO schema_migrations (version) VALUES ('20160614023632');
 
