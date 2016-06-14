@@ -3857,7 +3857,11 @@ CREATE TABLE sivel2_sjr_victimasjr (
     comunidadnac character varying(500) DEFAULT ''::character varying,
     organizacionfilial character varying(500) DEFAULT ''::character varying,
     religion_id integer DEFAULT 0,
-    educacionpropia_id integer DEFAULT 0
+    educacionpropia_id integer DEFAULT 0,
+    departamentores_id integer,
+    municipiores_id integer,
+    resguardores character varying(500),
+    comunidadres character varying(500)
 );
 
 
@@ -6259,11 +6263,27 @@ ALTER TABLE ONLY evento
 
 
 --
+-- Name: fk_rails_9ffea98e74; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_sjr_victimasjr
+    ADD CONSTRAINT fk_rails_9ffea98e74 FOREIGN KEY (departamentores_id) REFERENCES sip_departamento(id);
+
+
+--
 -- Name: fk_rails_a8489e0d62; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY cor1440_gen_actividad_proyectofinanciero
     ADD CONSTRAINT fk_rails_a8489e0d62 FOREIGN KEY (actividad_id) REFERENCES cor1440_gen_actividad(id);
+
+
+--
+-- Name: fk_rails_b5a91788a4; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_sjr_victimasjr
+    ADD CONSTRAINT fk_rails_b5a91788a4 FOREIGN KEY (municipiores_id) REFERENCES sip_municipio(id);
 
 
 --
@@ -7191,4 +7211,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160608211647');
 INSERT INTO schema_migrations (version) VALUES ('20160608213541');
 
 INSERT INTO schema_migrations (version) VALUES ('20160609113525');
+
+INSERT INTO schema_migrations (version) VALUES ('20160610063404');
 

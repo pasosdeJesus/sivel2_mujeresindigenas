@@ -83,7 +83,9 @@ module Sivel2Sjr
             :educacionpropia_id,
             :organizacionfilial, :comunidadnac, :resguardonac,
             :vicconflicto, :incluidoruv, :cabeahogar,
-            :sistemasalud, :cabezahogar, :liderazgo
+            :sistemasalud, :cabezahogar, :liderazgo,
+            :departamentores_id, :municipiores_id, 
+            :resguardores, :comunidadres
           ]
         ], 
         :ubicacion_attributes => [

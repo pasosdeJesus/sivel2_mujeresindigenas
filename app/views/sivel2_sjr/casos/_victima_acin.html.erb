@@ -22,9 +22,26 @@
   value_method: :id 
 %>
 
-<%= fvictimasjr.input :residencia,
-  label: 'Residencia actual'
- %>
+<%= fvictimasjr.association :departamentores,
+  collection: Sip::Departamento.habilitados,
+  include_blank: true,
+  label_method: :nombre, 
+  value_method: :id 
+%>
+
+<%= fvictimasjr.association :municipiores,
+  collection: 
+  ( Sip::Municipio.habilitados.where(
+    id_departamento: fvictimasjr.object.departamentores_id
+  )),
+  include_blank: true,
+  label_method: :nombre, 
+  value_method: :id 
+%>
+
+<%= fvictimasjr.input :resguardores %>
+
+<%= fvictimasjr.input :comunidadres %>
 
 <%= fpersona.input :tdocumento_id,
   collection: Sip::Tdocumento.habilitados,

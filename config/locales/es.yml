@@ -22,6 +22,8 @@ es:
         acompnecesita: Acompañamiento que necesita
         actividadesdejadas: Actividades que se dejaron de hacer
         afectacionotra: Afectación a otra persona
+        anio: Año
+        aniodenuncia: Año denuncia
         avancescaso: Avances del caso
         brindadaproteccion: ¿Le ha brindado protección?
         compromisosadquiridos: Compromisos adquiridos ¿Cuales y con quien?
@@ -30,6 +32,8 @@ es:
         consecuenciaindividual: Consecuencia individual
         descripcionafectacion: Descripción de la afectación
         denuncia: Denuncia
+        dia: Día
+        diadenuncia: Día denuncia
         etapaproceso: Etapa del proceso
         fecha: Fecha
         fechadenuncia: Fecha de la denuncia
@@ -37,7 +41,8 @@ es:
         diainexacto: Día inexacto
         diasemana: Día de la semana
         medidasrecibidas: Medidas recibidas
-        mesinexacto: Mes inexacto
+        mes: Mes
+        mesdenuncia: Mes denuncia
         motivonodenuncia: Motivo para no denunciar
         numvecesantes: Número de veces antes
         observaciones: Observaciones generales
@@ -68,6 +73,7 @@ es:
       "sip/persona":
         tdocumento_id: Tipo de documento de identidad
       "sivel2_gen/caso":
+        id: Código
         contacto: Víctima
         fecharec: Fecha documentación ini.
         oficina: Organizacion que diligencia
@@ -87,13 +93,17 @@ es:
         areatierra: Área tierra
         cabezahogar: Cabeza del hogar
         comunidadnac: Comunidad de nacimiento
+        comunidadres: Comunidad de residencia
+        departamentores: Departamento de residencia
         educacionpropia: Educación propia
         escolaridad: Último grado en educación ordinaria
         estadocivil: Estado civil
         incluidoruv: Incluido en RUV
+        municipiores: Municipio de residencia
         ndiscapacidad: Condición de discapacidad
         organizacionfilial: Organización Filial
         resguardonac: Resguardo de nacimiento
+        resguardores: Resguardo de residencia
         sistemasalud: Sistema de salud
         tienetierra: Tiene tierra
         vicconflicto: Víctima del conflicto
