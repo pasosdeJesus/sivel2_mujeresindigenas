@@ -49,6 +49,7 @@ es:
         quisieradenunciar: ¿Quisiera denunciar?
         reaccionfamiliaycomunidad: Reacción de la familia y la comunidad
         recibidoreparacion: ¿Ha recibido reparación?
+        relacionadocon: Relacionado con conflicto
         relacionprespvic: Relación entre presunto responsable y víctima
         situacionriesgo: Situación de riesgo
         solicitomedidas: ¿Ha solicitado medidas al estado?
@@ -106,7 +107,6 @@ es:
         resguardores: Resguardo de residencia
         sistemasalud: Sistema de salud
         tienetierra: Tiene tierra
-        vicconflicto: Víctima del conflicto
       "tafectacion":
         Tafectacion: Tipo de afectación
         Tafectaciones: Tipos de afectación

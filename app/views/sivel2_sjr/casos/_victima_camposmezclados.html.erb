@@ -1,0 +1,223 @@
+  
+<% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
+  <%= fpersona.input :nombres, placeholder: 'N',
+    value_method: lambda {|t| '' if t.nombres == 'N'} %>
+
+  <%= fpersona.input :apellidos, placeholder: 'N',
+    value_method: lambda {|t| '' if t.apellidos == 'N'} %>
+  
+  <%= fpersona.input :tdocumento_id,
+    collection: Sip::Tdocumento.habilitados,
+    label_method: :nombre,
+    value_method: :id %>
+
+<% else %>
+  <%= fpersona.input :apellidos, :as => :hidden, 
+    :input_html => { :value => "N" } %>
+  <%= fpersona.input :nombres, :as => :hidden, 
+    :input_html => { :value => "N" } %>
+<% end %>
+
+<%= fpersona.input :id, as: :hidden %>
+<% @anios = *(1950..Date.today.year) %>
+<%= fpersona.input :anionac, 
+  collection: @anios,
+  label: 'Año Nacimiento' %>
+<% @meses = [
+  ["ENERO", 1], 
+  ["FEBRERO", 2], 
+  ["MARZO", 3], 
+  ["ABRIL", 4], 
+  ["MAYO", 5], 
+  ["JUNIO", 6], 
+  ["JULIO", 7], 
+  ["AGOSTO", 8], 
+  ["SEPTIEMBRE", 9], 
+  ["OCTUBRE", 10], 
+  ["NOVIEMBRE", 11], 
+  ["DICIEMBRE", 12]] %>
+<%= fpersona.input :mesnac, 
+  collection: @meses,
+  label: 'Mes Nacimiento' %>
+<% @dias = *(1..31) %>
+<%= fpersona.input :dianac, collection: @dias, label: 'Día Nacimiento' %>
+
+<% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
+  <%= fvictimasjr.association :departamentores,
+    collection: Sip::Departamento.habilitados,
+    include_blank: true,
+    label_method: :nombre, 
+    value_method: :id %>
+
+  <%= fvictimasjr.association :municipiores,
+    collection: 
+    ( Sip::Municipio.habilitados.where(
+      id_departamento: fvictimasjr.object.departamentores_id
+    )),
+    include_blank: true,
+    label_method: :nombre, 
+    value_method: :id %>
+
+  <%= fvictimasjr.input :resguardores %>
+
+  <%= fvictimasjr.input :comunidadres %>
+<% end %>
+
+<%= fvictima.association :rangoedad,
+  collection: Sivel2Gen::Rangoedad.habilitados,
+  include_blank: false,
+  label_method: :rango, 
+  value_method: :id 
+%>
+
+<% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
+  <%= fvictima.input :hijos %>
+
+  <%= fcasosjr.association :idioma,
+    collection: Sivel2Sjr::Idioma.habilitados,
+    include_blank: false,
+    label_method: :nombre, 
+    value_method: :id 
+  %>
+<% end %>
+
+<%= fvictima.association :etnia,
+	collection: Sivel2Gen::Etnia.habilitados,
+	include_blank: false,
+	label_method: :nombre, 
+	value_method: :id 
+%>
+
+<%= fvictimasjr.association :estadocivil,
+  collection: Sivel2Gen::Estadocivil.habilitados,
+  include_blank: false,
+  label_method: :nombre, 
+  value_method: :id 
+%>
+
+<%= fvictimasjr.association :escolaridad,
+  collection: Sivel2Gen::Escolaridad.habilitados,
+  include_blank: false,
+  label_method: :nombre, 
+  value_method: :id
+%>
+
+<%= fvictimasjr.association :educacionpropia,
+  collection: ::Educacionpropia.habilitados,
+  include_blank: false,
+  label_method: :nombre, 
+  value_method: :id
+%>
+
+<%= fvictimasjr.input(
+  :sistemasalud, 
+  collection: [
+    ['PROPIO', :P], 
+    ['ORDINARIO', :O], 
+    ['SIN INFORMACIÓN', :I]
+  ],
+  include_blank: false
+)
+%>
+
+<% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
+
+  <%= fvictimasjr.association :religion,
+    collection: ::Religion.habilitados,
+    include_blank: false,
+    label_method: :nombre, 
+    value_method: :id %>
+
+  <%= fvictimasjr.input(
+    :tienetierra, 
+    collection: [
+      [:NO, :N],
+      [:SI, :S], 
+      ["SIN INFORMACIÓN", :I],
+    ],
+    include_blank: false ) %>
+
+  <%= fvictimasjr.input :areatierra %>
+
+<% end %>
+
+<%= fpersona.input :sexo, 
+  collection: [["SIN INFORMACIÓN", :S], 
+               ["MUJER", :F], ["HOMBRE", :M]], 
+  include_blank: false 
+%>
+<%= fpersona.association :departamento,
+  collection: (Sip::Departamento.habilitados.where(id_pais: 170)),
+  label: "Departamento de Nacimiento", label_method: :nombre,
+  value_method: :id 
+%>
+<%= fpersona.association :municipio,
+  collection: 
+  ( Sip::Municipio.habilitados.where(
+    id_departamento: fpersona.object.id_departamento)
+  ),
+  label: "Municipio de Nacimiento",
+  label_method: :nombre,
+  value_method: :id 
+%>
+<%= fpersona.association :clase,
+  collection: 
+  (Sip::Clase.habilitados.where(
+    id_municipio: fpersona.object.id_municipio)
+  ),
+  label: "Centro Poblado de Nacimiento",
+  label_method: :nombre,
+  value_method: :id 
+%>
+
+<%= fvictimasjr.input :resguardonac %>
+
+<%= fvictimasjr.input :comunidadnac %>
+
+<%= fvictimasjr.input :organizacionfilial %>
+
+<%= fvictima.input :id, as: :hidden %>
+
+<%= fvictimasjr.input(
+  :ndiscapacidad, 
+  collection: [
+    ['NO', 'NO'],
+    ['SI', 'SI'], 
+    ['SIN INFORMACIÓN', 'SIN INFORMACIÓN']
+  ],
+  include_blank: false
+)
+%>
+
+<%= fvictimasjr.input(
+  :incluidoruv, 
+  collection: [
+    ['NO', :N],
+    ['SI', :S], 
+    ['SIN INFORMACIÓN', :I]
+  ],
+  include_blank: false)
+%>
+
+<%= fvictimasjr.input(
+  :cabezahogar, 
+  collection: [
+    ['NO', :N],
+    ['SI', :S], 
+    ['SIN INFORMACIÓN', :I]
+  ],
+  include_blank: false)
+%>
+
+<%= fvictimasjr.input(
+  :liderazgo, 
+  collection: [
+    ['EN ZONAS DE CONFLICTO', :Z],
+    ['NO', :N],
+    ['SI', :S], 
+    ['SIN INFORMACIÓN', :I]
+  ],
+  include_blank: false)
+%>
+
+<%= fvictimasjr.input :id_victima, as: :hidden %>

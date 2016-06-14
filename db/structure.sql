@@ -1441,6 +1441,8 @@ CREATE TABLE evento (
     consecuenciafisica_id integer DEFAULT 0,
     departamento_id integer,
     municipio_id integer
+    municipio_id integer,
+    relacionadocon character varying(1)
 );
 
 
@@ -7213,4 +7215,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160608213541');
 INSERT INTO schema_migrations (version) VALUES ('20160609113525');
 
 INSERT INTO schema_migrations (version) VALUES ('20160610063404');
+
+INSERT INTO schema_migrations (version) VALUES ('20160614023632');
 

@@ -38,7 +38,7 @@ class Evento < ActiveRecord::Base
   validates :quisieradenunciar, length: {maximum: 1}
   validates :recibidoreparacion, length: {maximum: 1}
   validates :valoracionjusticia, length: {maximum: 1}
- 
+  validates :relacionadocon, length: { maximum: 1}
 
   validates :resguardo, length: {maximum: 500}
   validates :comunidad, length: {maximum: 500}
