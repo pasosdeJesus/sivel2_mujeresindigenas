@@ -67,55 +67,63 @@
       include_blank: false
     %>
 
+  <div class="panel panel-default">
+    <div class="panel-heading">Afectaciones</div>
+    <div class="panel-body">
 
-    <%= f.association :tafectacion,
-      collection: ::Tafectacion.habilitados,
-      include_blank: false,
-      label_method: :nombre, 
-      value_method: :id
-    %>
+      <%= f.association :tafectacion,
+        collection: ::Tafectacion.habilitados,
+        include_blank: false,
+        label_method: :nombre, 
+        value_method: :id %> 
+      <%= f.association :tapoyo,
+        collection: ::Tapoyo.habilitados,
+        include_blank: false,
+        label_method: :nombre, 
+        value_method: :id %>
+    </div>
+  </div>
 
-    <%= f.association :tapoyo,
-      collection: ::Tapoyo.habilitados,
-      include_blank: false,
-      label_method: :nombre, 
-      value_method: :id
-    %>
+  <div class="panel panel-default">
+    <div class="panel-heading">Protección</div>
+    <div class="panel-body">
 
-    <%= f.input :acompnecesita %>
 
-    <%= f.input(
-      :situacionriesgo, 
-      collection: [
+      <%= f.input :acompnecesita %>
+
+      <%= f.input(
+        :situacionriesgo, 
+        collection: [
+          ['NO', :N],
+          ['SI', :S], 
+          ['SIN INFORMACIÓN', :I]
+        ],
+        include_blank: false) %>
+
+      <%= f.input(
+        :solicitomedidas, 
+        collection: [
+          ['NO', :N],
+          ['SI', :S], 
+          ['SIN INFORMACIÓN', :I]
+        ],
+        include_blank: false) %>
+
+      <%= f.input :medidasrecibidas %>
+
+      <%= f.input :brindadaproteccion %>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Acceso a la Justicia</div>
+    <div class="panel-body">
+
+      <%= f.input :denuncia, collection: [
         ['NO', :N],
         ['SI', :S], 
-        ['SIN INFORMACIÓN', :I]
-      ],
-      include_blank: false)
-    %>
-
-    <%= f.input(
-      :solicitomedidas, 
-      collection: [
-        ['NO', :N],
-        ['SI', :S], 
-        ['SIN INFORMACIÓN', :I]
-      ],
-      include_blank: false)
-    %>
-
-    <%= f.input :medidasrecibidas %>
-
-    <%= f.input :brindadaproteccion %>
-
-    <%= f.input :denuncia, 
-      collection: [
-        ['NO', :N],
-        ['SI', :S], 
-        ['SIN INFORMACIÓN', :I]
-      ],
-      include_blank: false
-    %>
+        ['SIN INFORMACIÓN', :I] ],
+      include_blank: false %>
 
     <%= f.input :denunciaante, 
       collection: [
@@ -123,45 +131,40 @@
         ['ORDINARIA', :O], 
         ['PROPIA', :P], 
         ['SIN INFORMACIÓN', :I]
-      ],
-      include_blank: false
-    %>
+    ],
+    include_blank: false %>
 
-    <%= f.input :aniodenuncia, 
-      collection: @anios
-    %>
-    <%= f.input :mesdenuncia, 
-      collection: @meses
-    %>
-    <%= f.input :diadenuncia, 
-      collection: @dias
-    %>
+  <%= f.input :aniodenuncia, 
+    collection: @anios %>
+  <%= f.input :mesdenuncia, 
+    collection: @meses %>
+  <%= f.input :diadenuncia, 
+    collection: @dias %>
 
-    <%= f.association :motivonodenuncia,
-      collection: ::Motivonodenuncia.habilitados,
-      include_blank: false,
-      label_method: :nombre, 
-      value_method: :id
-    %>
+  <%= f.association :motivonodenuncia,
+    collection: ::Motivonodenuncia.habilitados,
+    include_blank: false,
+    label_method: :nombre, 
+    value_method: :id %>
 
-    <%= f.input :valoracionjusticia, 
-      collection: [
-        ['SIN INFORMACIÓN', :S],
-        ['BUENA', :B],
-        ['REGULAR', :R],
-        ['MALA', :M] 
-      ],
-      include_blank: false
-     %>
+  <%= f.input :valoracionjusticia, 
+    collection: [
+      ['SIN INFORMACIÓN', :S],
+      ['BUENA', :B],
+      ['REGULAR', :R],
+      ['MALA', :M] 
+  ],
+  include_blank: false %>
 
-    <%= f.input :quisieradenunciar, 
-      collection: [
-        ['NO', :N],
-        ['SI', :S], 
-        ['SIN INFORMACIÓN', :I]
-      ],
-      include_blank: false
-    %>
+<%= f.input :quisieradenunciar, 
+  collection: [
+    ['NO', :N],
+    ['SI', :S], 
+    ['SIN INFORMACIÓN', :I]
+],
+include_blank: false %>
+    </div>
+  </div>
 
     <% if f.object.caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
        <div class="panel panel-default">
