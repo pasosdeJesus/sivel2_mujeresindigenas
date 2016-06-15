@@ -1,0 +1,24 @@
+<table border=1 width="100%">
+  <thead>
+    <tr>
+      <th>Presunto Responsable</th>
+      <th>Agresión Particular</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="actosevento">
+    <%= f.simple_fields_for :actoevento do |ae| %>
+      <%= render 'actoevento_campos', :f => ae %>
+    <% end %>
+  </tbody>
+</table>
+<div class="links">
+  <%= link_to_add_association 'Añadir Acto', f, 
+    :actoevento,
+    :"data-association-insertion-node" => "tbody#actosevento", 
+    :"data-association-insertion-method" => "append", 
+    partial: 'actoevento_campos',
+    :class => 'btn-primary'
+  %>
+</div>
+

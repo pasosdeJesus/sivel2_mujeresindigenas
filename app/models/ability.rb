@@ -14,6 +14,17 @@ class Ability < Sivel2Sjr::Ability
     ["Analista", ROLANALI], 
   ]
 
+  BASICAS_PROPIAS = [
+    ['', 'consecuenciafamiliar'],
+    ['', 'consecuenciafisica'],
+    ['', 'consecuenciaindividual'],
+	  ['', 'educacionpropia'],
+    ['', 'motivonodenuncia'],
+	  ['', 'religion'],
+	  ['', 'tafectacion'],
+	  ['', 'tapoyo']
+  ]
+
   @@tablasbasicas = Sip::Ability::BASICAS_PROPIAS + 
     Sivel2Gen::Ability::BASICAS_PROPIAS + 
     Sivel2Sjr::Ability::BASICAS_PROPIAS + 
@@ -34,7 +45,6 @@ class Ability < Sivel2Sjr::Ability
       ['Sivel2Sjr', 'ayudaestado'],
       ['Sivel2Sjr', 'clasifdesp'],
       ['Sivel2Sjr', 'comosupo'],
-      ['Sivel2Sjr', 'idioma'],
       ['Sivel2Sjr', 'inclusion'],
       ['Sivel2Sjr', 'modalidadtierra'],
       ['Sivel2Sjr', 'declaroante'],
@@ -73,6 +83,7 @@ class Ability < Sivel2Sjr::Ability
       end
       case usuario.rol 
       when Ability::ROLANALI
+        can :manage, ::Evento
         can :read, Sivel2Gen::Caso
         can :new, Sivel2Gen::Caso
         can [:update, :create, :destroy], Sivel2Gen::Caso, 
@@ -85,6 +96,7 @@ class Ability < Sivel2Sjr::Ability
         can :manage, Sivel2Gen::Acto
         can :manage, Sip::Persona
       when Ability::ROLCOOR
+        can :manage, ::Evento
         can :read, Sivel2Gen::Caso
         can :new, Sivel2Gen::Caso
         can [:update, :create, :destroy, :poneretcomp], Sivel2Gen::Caso, 
@@ -99,6 +111,7 @@ class Ability < Sivel2Sjr::Ability
         can :new, Usuario
         can [:read, :manage], Usuario, oficina: { id: usuario.oficina_id}
       when Ability::ROLADMIN, Ability::ROLDIR
+        can :manage, ::Evento
         can :edit, :casosacin
         can :manage, Sivel2Gen::Caso
         can :manage, Cor1440Gen::Actividad

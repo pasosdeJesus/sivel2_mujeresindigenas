@@ -1,4 +1,4 @@
-<%= f.input :id, label: "Código", readonly: true%>
+<%= f.input :id, readonly: true%>
 
 <%= s.input :fecharec, 
   :input_html => { "data-behaviour" => "datepicker" },
@@ -8,7 +8,7 @@
 <%= s.association :usuario,
   collection: Usuario.all.order(:nombre),
   include_blank: false,
-  label: "Usuario(a) que diligencia",
+  #label: "Usuario(a) que diligencia",
   label_method: :nusuario, 
   value_method: :id 
 %>
@@ -24,7 +24,8 @@
   :estadocaso, 
   collection: [
     ["ACOMPAÑADO", :A],
-    [:DOCUMENTADO, :D] 
+    [:DOCUMENTADO, :D] ,
+    [:REGISTRADO, :R] 
   ],
   include_blank: false ) 
 %>
@@ -34,11 +35,11 @@
   collection: [
     ["CULTURAL", :C],
     ["JURÍDICO", :J], 
+    ["NINGUNO", :N], 
     ["PSICOSOCIAL", :P]
   ],
   include_blank: false ) 
 %>
-
 
 <% if s.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
   <div class="panel panel-default">

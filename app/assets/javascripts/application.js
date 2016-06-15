@@ -12,5 +12,3 @@
 //
 //= require sivel2_sjr/application
 //= require_tree .
-
-

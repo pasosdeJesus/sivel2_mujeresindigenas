@@ -6,15 +6,34 @@ es:
         one: "Organización que diligencia"
         other: "Organizaciones que diligencian"
     attributes:
+      "consecuenciafamiliar":
+        Consecuenciafamiliar: Consecuencia familiar
+        Consecuenciasfamiliares: Consecuencias familiares
+      "consecuenciafisica":
+        Consecuenciafisica: Consecuencia física
+        Consecuenciasfisicas: Consecuencias físicas
+      "consecuenciaindividual":
+        Consecuenciaindividual: Consecuencia individual
+        Consecuenciasindividuales: Consecuencias individuales
+      "educacionpropia":
+        Educacionpropia: Forma de educación propia
+        Educacionespropias: Formas de educación propia
       "evento":
         acompnecesita: Acompañamiento que necesita
         actividadesdejadas: Actividades que se dejaron de hacer
         afectacionotra: Afectación a otra persona
+        anio: Año
+        aniodenuncia: Año denuncia
         avancescaso: Avances del caso
         brindadaproteccion: ¿Le ha brindado protección?
         compromisosadquiridos: Compromisos adquiridos ¿Cuales y con quien?
+        consecuenciafamiliar: Consecuencia familiar
+        consecuenciafisica: Consecuencia física
+        consecuenciaindividual: Consecuencia individual
         descripcionafectacion: Descripción de la afectación
         denuncia: Denuncia
+        dia: Día
+        diadenuncia: Día denuncia
         etapaproceso: Etapa del proceso
         fecha: Fecha
         fechadenuncia: Fecha de la denuncia
@@ -22,49 +41,77 @@ es:
         diainexacto: Día inexacto
         diasemana: Día de la semana
         medidasrecibidas: Medidas recibidas
-        mesinexacto: Mes inexacto
+        mes: Mes
+        mesdenuncia: Mes denuncia
+        motivonodenuncia: Motivo para no denunciar
         numvecesantes: Número de veces antes
         observaciones: Observaciones generales
         quisieradenunciar: ¿Quisiera denunciar?
         reaccionfamiliaycomunidad: Reacción de la familia y la comunidad
         recibidoreparacion: ¿Ha recibido reparación?
+        relacionadocon: Relacionado con conflicto
         relacionprespvic: Relación entre presunto responsable y víctima
         situacionriesgo: Situación de riesgo
         solicitomedidas: ¿Ha solicitado medidas al estado?
+        tafectacion: Tipo de afectación
+        tapoyo: Tipo de apoyo
         testigo: Testigo
         valoracionjusticia: Valoración de la atención en materia de justicia
-      "sip/persona":
-        tdocumento_id: Tipo de documento de identidad
+      "motivonodenuncia":
+        Motivonodenuncia: Motivo para no denunciar
+        Motivosnodenuncia: Motivos para no denunciar
+      "religion":
+        Religion: Religion
+        Relligiones: Religiones
+      "sip/fuenteprensa":
+        Fuenteprensa: Fuente
+        Fuentesprensa: Fuentes
       "sip/oficina":
         oficina: "Organización que diligencia"
         oficinas: "Organizaciones que diligencian"
         Oficina: "Organización que diligencia"
         Oficinas: "Organizaciones que diligencian"
+      "sip/persona":
+        tdocumento_id: Tipo de documento de identidad
+      "sivel2_gen/caso":
+        id: Código
+        contacto: Víctima
+        fecharec: Fecha documentación ini.
+        oficina: Organizacion que diligencia
       "sivel2_sjr/casosjr":
         contacto: Víctima
         estadocaso: Estado del caso
         fecharec: Fecha documentación ini.
         oficina: Organizacion que diligencia
-        tipoacomp: Tipo de acopañamiento
-      "sivel2_gen/caso":
-        contacto: Víctima
-        fecharec: Fecha documentación ini.
-        oficina: Organizacion que diligencia
+        residencia: Residencia actual
+        tipoacomp: Acopañamiento
+      "sivel2_gen/caso_fuenteprensa":
+        ubicacion: "Detalle Otra"
       "sivel2_gen/victima":
-        etnia: Pueblo indigena
+        etnia: Pueblo indigena / Etnia
         rangoedad: Rango de edad
       "sivel2_sjr/victimasjr":
         areatierra: Área tierra
         cabezahogar: Cabeza del hogar
         comunidadnac: Comunidad de nacimiento
+        comunidadres: Comunidad de residencia
+        departamentores: Departamento de residencia
+        educacionpropia: Educación propia
         escolaridad: Último grado en educación ordinaria
+        estadocivil: Estado civil
         incluidoruv: Incluido en RUV
+        municipiores: Municipio de residencia
         ndiscapacidad: Condición de discapacidad
         organizacionfilial: Organización Filial
         resguardonac: Resguardo de nacimiento
+        resguardores: Resguardo de residencia
         sistemasalud: Sistema de salud
         tienetierra: Tiene tierra
-        vicconflicto: Víctima del conflicto
-        estadocivil: Estado civil
+      "tafectacion":
+        Tafectacion: Tipo de afectación
+        Tafectaciones: Tipos de afectación
+      "tapoyo":
+        Tapoyo: Tipo de apoyo
+        Tapoyos: Tipos de apoyo
       "usuario":
         oficina: Organización

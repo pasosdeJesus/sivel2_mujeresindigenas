@@ -2,45 +2,210 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
+
 <dl class="dl-horizontal">
-  <dt><strong><%= Sivel2Gen::Caso.human_attribute_name(:id) %>:</strong></dt>
-  <dd><%= @caso.id %></dd>
-  <dt><strong><%= Sivel2Sjr::Casosjr.human_attribute_name(:fecharec) %>:</strong></dt>
-  <dd><%= @caso.casosjr.fecharec if @caso.casosjr %></dd>
-  <dt><strong><%= Sivel2Sjr::Casosjr.human_attribute_name(:oficina) %>:</strong></dt>
-  <dd><%= @caso.casosjr.oficina.nombre if @caso.casosjr && @caso.casosjr.oficina %></dd>
-  <dt><strong><%= Sivel2Gen::Caso.human_attribute_name(:fecha) %>:</strong></dt>
-  <dd><%= @caso.fecha %></dd>
-  <% if @caso.memo && @caso.memo != '' %>
-    <dt><strong><%= Sivel2Gen::Caso.human_attribute_name(:memo) %>:</strong></dt>
-    <dd><%= @caso.memo %></dd>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Datos básicos</div>
+    <div class="panel-body">
+
+      <dt><strong><%= Sivel2Gen::Caso.human_attribute_name(:id) %>:</strong></dt>
+      <dd><%= @caso.id %></dd>
+
+      <dt><strong><%= Sivel2Sjr::Casosjr.human_attribute_name(:fecharec) %>:</strong></dt>
+      <dd><%= @caso.casosjr.fecharec if @caso.casosjr %></dd>
+
+      <dt><strong><%= Sivel2Sjr::Casosjr.human_attribute_name(:usuario) %>:</strong></dt>
+      <dd><%= @caso.casosjr.usuario.nusuario if @caso.casosjr && @caso.casosjr.usuario %></dd>
+
+      <dt><strong><%= Sivel2Sjr::Casosjr.human_attribute_name(:oficina) %>:</strong></dt>
+      <dd><%= @caso.casosjr.oficina.nombre if @caso.casosjr && @caso.casosjr.oficina %></dd>
+
+      <dt><strong><%= Sivel2Sjr::Casosjr.human_attribute_name(:estadocaso) %>:</strong></dt>
+      <dd><%= @caso.casosjr.estadocaso if @caso.casosjr && @caso.casosjr.estadocaso %></dd>
+
+      <dt><strong><%= Sivel2Sjr::Casosjr.human_attribute_name(:tipoacomp) %>:</strong></dt>
+      <dd><%= @caso.casosjr.tipoacomp if @caso.casosjr && @caso.casosjr.tipoacomp %></dd>
+
+      <dt><strong><%= Sivel2Gen::Caso.human_attribute_name(:fecha) %>:</strong></dt>
+      <dd><%= @caso.fecha %></dd>
+
+      <dt><strong><%= Sivel2Gen::Caso.human_attribute_name(:created_at) %>:</strong></dt>
+      <dd><%= @caso.created_at %></dd>
+
+    </div>
+  </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Fuentes</div>
+    <div class="panel-body">
+
+  <% @caso.caso_fuenteprensa.each do |cfuente| %>
+    <dt><strong><%= Sivel2Gen::Caso.human_attribute_name(:fuente) %>:</strong></dt>
+    <dd><%= cfuente.fecha %> <%= cfuente.fuenteprensa.nombre %> <%= cfuente.ubicacion if cfuente.ubicacion %></dd>
   <% end %>
-  <dt><strong><%= Sivel2Gen::Caso.human_attribute_name(:created_at) %>:</strong></dt>
-  <dd><%= @caso.created_at %></dd>
-  <dt><strong><%= Sivel2Sjr::Casosjr.human_attribute_name(:asesor) %>:</strong></dt>
-  <dd><%= @caso.casosjr.usuario.nusuario if @caso.casosjr %></dd>
-  <% if @caso.casosjr && @caso.casosjr.contacto %>
-    <dt><strong><%= Sivel2Sjr::Casosjr.human_attribute_name(:contacto) %>:</strong></dt>
-    <dd><%= (@caso.casosjr.contacto.nombres + " " + @caso.casosjr.contacto.apellidos) %></dd>
-  <% end %>
-  <% if @caso.casosjr && @caso.casosjr.direccion != '' %>
-    <dt><strong><%= Sivel2Sjr::Casosjr.human_attribute_name(:direccion) %>:</strong></dt>
-    <dd><%= @caso.casosjr.direccion %></dd>
-  <% end %>
-  <% if @caso.casosjr && @caso.casosjr.telefono != '' %>
-    <dt><strong><%= Sivel2Sjr::Casosjr.human_attribute_name(:telefono) %>:</strong></dt>
-    <dd><%= @caso.casosjr.telefono %></dd>
-  <% end %>
-  <% #byebug %>
-  <% if @caso.casosjr && @caso.casosjr.respuesta && @caso.casosjr.respuesta.count > 0 %>
-    <dt><strong>Atenciones:</strong></dt>
-    <dd>
-      <% @caso.casosjr.respuesta.each do |r| %>
-        <strong><%= r.fechaatencion %></strong>: <%= r.detallear %><br/>
-      <% end %>
-    </dd>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Víctima</div>
+    <div class="panel-body">
+
+      <% @caso.victima.each do |victima| %>
+        <dt><strong><%= Sivel2Sjr::Casosjr.human_attribute_name(:fechanac) %>:</strong></dt>
+        <dd><%= victima.persona.anionac if victima.persona.anionac %>-
+        <%= victima.persona.mesnac if victima.persona.mesnac %>-
+        <%= victima.persona.dianac if victima.persona.dianac %></dd>
+
+        <dt><strong><%= Sip::Persona.human_attribute_name(:sexo) %>:</strong></dt>
+        <dd><%= victima.persona.sexo %></dd>
+
+        <dt><strong><%= Sip::Persona.human_attribute_name(:departamento) %>:</strong></dt>
+        <dd><%= victima.persona.departamento.nombre if victima.persona.departamento %> </dd>
+
+        <dt><strong><%= Sip::Persona.human_attribute_name(:municipio) %>:</strong></dt>
+        <dd><%= victima.persona.municipio.nombre if victima.persona.municipio %> </dd>
+
+        <dt><strong><%= Sip::Persona.human_attribute_name(:clase) %>:</strong></dt>
+        <dd><%= victima.persona.clase.nombre if victima.persona.clase %> </dd>
+
+        <dt><strong><%= Sivel2Sjr::Victimasjr.human_attribute_name(:resguardonac) %>:</strong></dt>
+        <dd><%= victima.victimasjr.resguardonac %></dd>
+
+        <dt><strong><%= Sivel2Sjr::Victimasjr.human_attribute_name(:comunidadnac) %>:</strong></dt>
+        <dd><%= victima.victimasjr.comunidadnac %></dd>
+
+        <dt><strong><%= Sivel2Gen::Victima.human_attribute_name(:rangoedad) %>:</strong></dt>
+        <dd><%= victima.rangoedad.nombre %></dd>
+
+        <dt><strong><%= Sivel2Gen::Victima.human_attribute_name(:etnia) %>:</strong></dt>
+        <dd><%= victima.etnia.nombre %></dd>
+
+        <dt><strong><%= Sivel2Sjr::Victimasjr.human_attribute_name(:organizacionfilial) %>:</strong></dt>
+        <dd><%= victima.victimasjr.organizacionfilial %></dd>
+
+        <dt><strong><%= Sivel2Sjr::Victimasjr.human_attribute_name(:estadocivil) %>:</strong></dt>
+        <dd><%= victima.victimasjr.estadocivil.nombre %></dd>
+
+        <dt><strong><%= Sivel2Sjr::Victimasjr.human_attribute_name(:escolaridad) %>:</strong></dt>
+        <dd><%= victima.victimasjr.escolaridad.nombre %></dd>
+
+        <dt><strong><%= Sivel2Sjr::Victimasjr.human_attribute_name(:educacionpropia) %>:</strong></dt>
+        <dd><%= victima.victimasjr.educacionpropia.nombre %></dd>
+
+        <dt><strong><%= Sivel2Sjr::Victimasjr.human_attribute_name(:ndiscapacidad) %>:</strong></dt>
+        <dd><%= victima.victimasjr.ndiscapacidad %></dd>
+
+        <dt><strong><%= Sivel2Sjr::Victimasjr.human_attribute_name(:sistemasalud) %>:</strong></dt>
+        <dd><%= victima.victimasjr.sistemasalud %></dd>
+
+        <dt><strong><%= Sivel2Sjr::Victimasjr.human_attribute_name(:incluidoruv) %>:</strong></dt>
+        <dd><%= victima.victimasjr.incluidoruv %></dd>
+
+        <dt><strong><%= Sivel2Sjr::Victimasjr.human_attribute_name(:cabezahogar) %>:</strong></dt>
+        <dd><%= victima.victimasjr.cabezahogar %></dd>
+
+        <dt><strong><%= Sivel2Sjr::Victimasjr.human_attribute_name(:liderazgo) %>:</strong></dt>
+        <dd><%= victima.victimasjr.liderazgo %></dd>
+
+      <%end %>
+
+    </div>
+  </div>
+
+  <% if @caso.evento && @caso.evento.count > 0 %>
+    <div class="panel panel-default">
+      <div class="panel-heading">Eventos</div>
+      <div class="panel-body">
+        <% @caso.evento.each do |evento| %>
+          <dt><strong><%= ::Evento.human_attribute_name(:fecha) %>:</strong></dt>
+          <dd><%= evento.anio if evento.anio %>-
+          <%= evento.mes if evento.mes %>-
+          <%= evento.dia if evento.dia %>
+          <%= evento.diasemana if evento.diasemana %>
+          </dd>
+
+          <dt><strong><%= ::Evento.human_attribute_name(:ubicacion) %>:</strong></dt>
+          <dd>
+          <%= evento.departamento.nombre if evento.departamento %>
+          <% if evento.municipio %>
+            / <%= evento.municipio.nombre %>
+          <% end %>
+          <%= evento.resguardo %>
+          <%= evento.comunidad %>
+          </dd>
+
+
+          <dt><strong><%= ::Evento.human_attribute_name(:numvecesantes) %>:</strong></dt>
+          <dd><%= evento.numvecesantes %></dd>
+
+          <dt><strong>Actos:</strong></dt>
+          <dd>
+          <% evento.actoevento.each do |actoevento| %>
+            <p><% actoevento.presponsable.nombre %> - <% actoevento.categoria.nombre %></p>
+          <% end %>
+          </dd>
+
+          <dt><strong><%= ::Evento.human_attribute_name(:testigo) %>:</strong></dt>
+          <dd><%= evento.testigo %></dd>
+
+          <dt><strong><%= ::Evento.human_attribute_name(:tafectacion) %>:</strong></dt>
+          <dd><%= evento.tafectacion.nombre if evento.tafectacion %></dd>
+
+          <dt><strong><%= ::Evento.human_attribute_name(:tapoyo) %>:</strong></dt>
+          <dd><%= evento.tapoyo.nombre if evento.tapoyo %></dd>
+
+          <dt><strong><%= ::Evento.human_attribute_name(:acompnecesita) %>:</strong></dt>
+          <dd><%= evento.acompnecesita %></dd>
+
+          <dt><strong><%= ::Evento.human_attribute_name(:situacionriesgo) %>:</strong></dt>
+          <dd><%= evento.situacionriesgo %></dd>
+
+          <dt><strong><%= ::Evento.human_attribute_name(:solicitomedidas) %>:</strong></dt>
+          <dd><%= evento.solicitomedidas %></dd>
+
+          <dt><strong><%= ::Evento.human_attribute_name(:medidasrecibidas) %>:</strong></dt>
+          <dd><%= evento.medidasrecibidas %></dd>
+
+          <dt><strong><%= ::Evento.human_attribute_name(:brindadaproteccion) %>:</strong></dt>
+          <dd><%= evento.brindadaproteccion %></dd>
+
+
+          <dt><strong><%= ::Evento.human_attribute_name(:denuncia) %>:</strong></dt>
+          <dd><%= evento.denuncia %></dd>
+
+          <dt><strong><%= ::Evento.human_attribute_name(:denunciaante) %>:</strong></dt>
+          <dd><%= evento.denunciaante %></dd>
+
+          <dt><strong><%= ::Evento.human_attribute_name(:fechadenuncia) %>:</strong></dt>
+          <dd><%= evento.aniodenuncia if evento.aniodenuncia %>-
+          <%= evento.mesdenuncia if evento.mesdenuncia %>-
+          <%= evento.diadenuncia if evento.diadenuncia %>
+          </dd>
+
+          <dt><strong><%= ::Evento.human_attribute_name(:motivonodenuncia) %>:</strong></dt>
+          <dd><%= evento.motivonodenuncia.nombre if evento.motivonodenuncia %></dd>
+
+          <dt><strong><%= ::Evento.human_attribute_name(:valoracionjusticia) %>:</strong></dt>
+          <dd><%= evento.valoracionjusticia %></dd>
+
+          <dt><strong><%= ::Evento.human_attribute_name(:quisieradenunciar) %>:</strong></dt>
+          <dd><%= evento.quisieradenunciar %></dd>
+
+        <%end %>
+      </div>
+    </div>
   <% end %>
 
+  <% if @caso.caso_etiqueta && @caso.caso_etiqueta.count > 0 %>
+    <dt><strong>Etiqueta(s):</strong></dt>
+    <dd>
+    <% @caso.etiqueta.each do |e| %>
+      <strong><%= e.fecha %></strong>: <%= e.etiqueta.nombre %><br/>
+    <% end %>
+    </dd>
+  <% end %>
 
 </dl>
 

@@ -10,6 +10,7 @@
           <%= menu_item "Listado", sivel2_gen.casos_path %>
           <%= menu_item "Nuevo", sivel2_gen.new_caso_path %>
           <%= menu_item "Conteo Demografía Víctimas", sivel2_sjr.conteos_personas_path %>
+          <%= menu_item "Validaciones", sivel2_gen.validarcasos_path %>
         <% end %>
     <% end %>
   <% end %>
@@ -17,7 +18,7 @@
     <%= menu_item "Documentacion", sivel2_gen.acercade_path %>
     <% if !current_usuario.nil? %>
       <%= drop_down "Administrar" do %>
-        <%= menu_item "Clave", sip.editar_registro_usuario_path %>
+        <%= menu_item "Clave", main_app.editar_registro_usuario_path %>
         <% if session[:capturacaso_acordeon] %>
 		<li><a id="fichacasovertical" href="<%= sivel2_gen.fichacasovertical_path %>">Ficha caso vertical ✓</a></li>
         <% else %>
@@ -25,17 +26,17 @@
         <% end %>
 
         <% if can? :manage, ::Usuario %>
-          <%= menu_item "Usuarios", sivel2_gen.usuarios_path %>
+          <%= menu_item "Usuarios", main_app.usuarios_path %>
         <% end %>
         <% if current_usuario.rol == Ability::ROLADMIN || 
           current_usuario.rol == Ability::ROLDIR %>
           <%= menu_item "Tablas Básicas", sivel2_gen.tablasbasicas_path %>
         <% end %>
       <% end %>
-      <%= menu_item "Salir #{current_usuario.nusuario}", sivel2_gen.sign_out_path %>
+      <%= menu_item "Salir #{current_usuario.nusuario}", main_app.sign_out_path %>
     <% else %>
       <%= menu_item "Acerca de", sivel2_gen.acercade_path %>
-      <%= menu_item "Iniciar Sesión", sivel2_gen.new_usuario_session_path %> 
+      <%= menu_item "Iniciar Sesión", main_app.new_usuario_session_path %> 
     <% end %>
   <% end %>
 <% end %> 

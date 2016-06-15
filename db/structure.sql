@@ -435,7 +435,7 @@ CREATE TABLE sivel2_sjr_casosjr (
     comosupo_id integer DEFAULT 1,
     consentimiento character varying(1) DEFAULT 'I'::character varying,
     estadocaso character varying(1) DEFAULT 'A'::character varying,
-    tipoacomp character varying(1) DEFAULT 'J'::character varying
+    tipoacomp character varying(1) DEFAULT 'N'::character varying
 );
 
 
@@ -671,6 +671,108 @@ CREATE VIEW cben2 AS
      LEFT JOIN sip_municipio municipio ON ((ubicacion.id_municipio = municipio.id)))
      LEFT JOIN sip_clase clase ON ((ubicacion.id_clase = clase.id)))
   GROUP BY cben1.id_caso, cben1.id_persona, cben1.contacto, cben1.beneficiario, cben1.npersona, cben1.sexo, ubicacion.id_departamento, departamento.nombre, ubicacion.id_municipio, municipio.nombre, ubicacion.id_clase, clase.nombre;
+
+
+--
+-- Name: consecuenciafamiliar; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE consecuenciafamiliar (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: consecuenciafamiliar_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE consecuenciafamiliar_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: consecuenciafamiliar_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE consecuenciafamiliar_id_seq OWNED BY consecuenciafamiliar.id;
+
+
+--
+-- Name: consecuenciafisica; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE consecuenciafisica (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: consecuenciafisica_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE consecuenciafisica_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: consecuenciafisica_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE consecuenciafisica_id_seq OWNED BY consecuenciafisica.id;
+
+
+--
+-- Name: consecuenciaindividual; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE consecuenciaindividual (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: consecuenciaindividual_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE consecuenciaindividual_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: consecuenciaindividual_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE consecuenciaindividual_id_seq OWNED BY consecuenciaindividual.id;
 
 
 --
@@ -1244,6 +1346,40 @@ CREATE VIEW cres1 AS
 
 
 --
+-- Name: educacionpropia; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE educacionpropia (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: educacionpropia_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE educacionpropia_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: educacionpropia_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE educacionpropia_id_seq OWNED BY educacionpropia.id;
+
+
+--
 -- Name: emprendimiento_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1289,9 +1425,6 @@ CREATE TABLE emprendimiento_respuesta (
 CREATE TABLE evento (
     id integer NOT NULL,
     caso_id integer,
-    fecha date,
-    mesinexacto boolean,
-    diainexacto boolean,
     diasemana integer,
     hora time without time zone,
     ubicacion_id integer,
@@ -1308,7 +1441,6 @@ CREATE TABLE evento (
     comunidad character varying(500),
     medidasrecibidas character varying(5000),
     brindadaproteccion character varying(5000),
-    fechadenuncia date,
     descripcionafectacion character varying(5000),
     relacionprespvic character varying(500),
     numvecesantes integer,
@@ -1318,7 +1450,22 @@ CREATE TABLE evento (
     etapaproceso character varying(500),
     compromisosadquiridos character varying(5000),
     observaciones character varying(5000),
-    acompnecesita character varying(5000)
+    acompnecesita character varying(5000),
+    tafectacion_id integer DEFAULT 0,
+    tapoyo_id integer DEFAULT 0,
+    motivonodenuncia_id integer DEFAULT 0,
+    consecuenciaindividual_id integer DEFAULT 0,
+    consecuenciafamiliar_id integer DEFAULT 0,
+    consecuenciafisica_id integer DEFAULT 0,
+    departamento_id integer,
+    municipio_id integer,
+    dia integer,
+    mes integer,
+    anio integer,
+    diadenuncia integer,
+    mesdenuncia integer,
+    aniodenuncia integer,
+    relacionadocon character varying(1)
 );
 
 
@@ -1390,6 +1537,40 @@ CREATE SEQUENCE motivoconsulta_seq
 
 
 --
+-- Name: motivonodenuncia; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE motivonodenuncia (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: motivonodenuncia_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE motivonodenuncia_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: motivonodenuncia_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE motivonodenuncia_id_seq OWNED BY motivonodenuncia.id;
+
+
+--
 -- Name: refugio; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -1436,6 +1617,40 @@ CREATE SEQUENCE regimensalud_seq
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
+
+
+--
+-- Name: religion; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE religion (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: religion_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE religion_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: religion_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE religion_id_seq OWNED BY religion.id;
 
 
 --
@@ -3626,8 +3841,82 @@ CREATE TABLE sivel2_sjr_victimasjr (
     comotierra character varying(5000),
     resguardonac character varying(500),
     comunidadnac character varying(500),
-    organizacionfilial character varying(500)
+    organizacionfilial character varying(500),
+    religion_id integer DEFAULT 0,
+    educacionpropia_id integer DEFAULT 0,
+    departamentores_id integer,
+    municipiores_id integer,
+    resguardores character varying(500),
+    comunidadres character varying(500)
 );
+
+
+--
+-- Name: tafectacion; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tafectacion (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: tafectacion_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tafectacion_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: tafectacion_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tafectacion_id_seq OWNED BY tafectacion.id;
+
+
+--
+-- Name: tapoyo; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tapoyo (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: tapoyo_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tapoyo_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: tapoyo_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tapoyo_id_seq OWNED BY tapoyo.id;
 
 
 --
@@ -3652,6 +3941,27 @@ CREATE MATERIALIZED VIEW vvictimasoundexesp AS
 --
 
 ALTER TABLE ONLY actoevento ALTER COLUMN id SET DEFAULT nextval('actoevento_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY consecuenciafamiliar ALTER COLUMN id SET DEFAULT nextval('consecuenciafamiliar_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY consecuenciafisica ALTER COLUMN id SET DEFAULT nextval('consecuenciafisica_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY consecuenciaindividual ALTER COLUMN id SET DEFAULT nextval('consecuenciaindividual_id_seq'::regclass);
 
 
 --
@@ -3735,6 +4045,13 @@ ALTER TABLE ONLY cor1440_gen_rangoedadac ALTER COLUMN id SET DEFAULT nextval('co
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY educacionpropia ALTER COLUMN id SET DEFAULT nextval('educacionpropia_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY evento ALTER COLUMN id SET DEFAULT nextval('evento_id_seq'::regclass);
 
 
@@ -3742,7 +4059,21 @@ ALTER TABLE ONLY evento ALTER COLUMN id SET DEFAULT nextval('evento_id_seq'::reg
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY motivonodenuncia ALTER COLUMN id SET DEFAULT nextval('motivonodenuncia_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY refugio ALTER COLUMN id SET DEFAULT nextval('refugio_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY religion ALTER COLUMN id SET DEFAULT nextval('religion_id_seq'::regclass);
 
 
 --
@@ -3778,6 +4109,20 @@ ALTER TABLE ONLY sivel2_sjr_comosupo ALTER COLUMN id SET DEFAULT nextval('sivel2
 --
 
 ALTER TABLE ONLY sivel2_sjr_etiqueta_usuario ALTER COLUMN id SET DEFAULT nextval('sivel2_sjr_etiqueta_usuario_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tafectacion ALTER COLUMN id SET DEFAULT nextval('tafectacion_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tapoyo ALTER COLUMN id SET DEFAULT nextval('tapoyo_id_seq'::regclass);
 
 
 --
@@ -4053,6 +4398,30 @@ ALTER TABLE ONLY sivel2_sjr_clasifdesp
 
 
 --
+-- Name: consecuenciafamiliar_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY consecuenciafamiliar
+    ADD CONSTRAINT consecuenciafamiliar_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: consecuenciafisica_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY consecuenciafisica
+    ADD CONSTRAINT consecuenciafisica_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: consecuenciaindividual_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY consecuenciaindividual
+    ADD CONSTRAINT consecuenciaindividual_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: contexto_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -4170,6 +4539,14 @@ ALTER TABLE ONLY sivel2_sjr_desplazamiento
 
 ALTER TABLE ONLY sivel2_sjr_desplazamiento
     ADD CONSTRAINT desplazamiento_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: educacionpropia_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY educacionpropia
+    ADD CONSTRAINT educacionpropia_pkey PRIMARY KEY (id);
 
 
 --
@@ -4333,6 +4710,14 @@ ALTER TABLE ONLY sivel2_sjr_motivoconsulta
 
 
 --
+-- Name: motivonodenuncia_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY motivonodenuncia
+    ADD CONSTRAINT motivonodenuncia_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: motivosjr_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -4458,6 +4843,14 @@ ALTER TABLE ONLY sivel2_gen_region
 
 ALTER TABLE ONLY sip_oficina
     ADD CONSTRAINT regionsjr_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: religion_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY religion
+    ADD CONSTRAINT religion_pkey PRIMARY KEY (id);
 
 
 --
@@ -4770,6 +5163,22 @@ ALTER TABLE ONLY sivel2_sjr_etiqueta_usuario
 
 ALTER TABLE ONLY sivel2_sjr_statusmigratorio
     ADD CONSTRAINT statusmigratorio_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: tafectacion_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tafectacion
+    ADD CONSTRAINT tafectacion_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: tapoyo_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tapoyo
+    ADD CONSTRAINT tapoyo_pkey PRIMARY KEY (id);
 
 
 --
@@ -5672,6 +6081,14 @@ ALTER TABLE ONLY cor1440_gen_financiador_proyectofinanciero
 
 
 --
+-- Name: fk_rails_1567bde4aa; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY evento
+    ADD CONSTRAINT fk_rails_1567bde4aa FOREIGN KEY (tafectacion_id) REFERENCES tafectacion(id);
+
+
+--
 -- Name: fk_rails_1b764c2a63; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -5792,11 +6209,27 @@ ALTER TABLE ONLY sivel2_sjr_ayudasjr_derecho
 
 
 --
+-- Name: fk_rails_832e115503; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY evento
+    ADD CONSTRAINT fk_rails_832e115503 FOREIGN KEY (consecuenciaindividual_id) REFERENCES consecuenciaindividual(id);
+
+
+--
 -- Name: fk_rails_863c4c40a3; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_sjr_ayudaestado_derecho
     ADD CONSTRAINT fk_rails_863c4c40a3 FOREIGN KEY (ayudaestado_id) REFERENCES sivel2_sjr_ayudaestado(id);
+
+
+--
+-- Name: fk_rails_983eca7e75; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY evento
+    ADD CONSTRAINT fk_rails_983eca7e75 FOREIGN KEY (municipio_id) REFERENCES sip_municipio(id);
 
 
 --
@@ -5808,11 +6241,51 @@ ALTER TABLE ONLY sivel2_sjr_motivosjr_derecho
 
 
 --
+-- Name: fk_rails_9d0db0995d; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY evento
+    ADD CONSTRAINT fk_rails_9d0db0995d FOREIGN KEY (consecuenciafisica_id) REFERENCES consecuenciafisica(id);
+
+
+--
+-- Name: fk_rails_9ffea98e74; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_sjr_victimasjr
+    ADD CONSTRAINT fk_rails_9ffea98e74 FOREIGN KEY (departamentores_id) REFERENCES sip_departamento(id);
+
+
+--
 -- Name: fk_rails_a8489e0d62; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY cor1440_gen_actividad_proyectofinanciero
     ADD CONSTRAINT fk_rails_a8489e0d62 FOREIGN KEY (actividad_id) REFERENCES cor1440_gen_actividad(id);
+
+
+--
+-- Name: fk_rails_b5a91788a4; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_sjr_victimasjr
+    ADD CONSTRAINT fk_rails_b5a91788a4 FOREIGN KEY (municipiores_id) REFERENCES sip_municipio(id);
+
+
+--
+-- Name: fk_rails_b645b4caf9; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_sjr_victimasjr
+    ADD CONSTRAINT fk_rails_b645b4caf9 FOREIGN KEY (educacionpropia_id) REFERENCES educacionpropia(id);
+
+
+--
+-- Name: fk_rails_bbb1476bbe; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY evento
+    ADD CONSTRAINT fk_rails_bbb1476bbe FOREIGN KEY (consecuenciafamiliar_id) REFERENCES consecuenciafamiliar(id);
 
 
 --
@@ -5856,11 +6329,43 @@ ALTER TABLE ONLY cor1440_gen_informe
 
 
 --
+-- Name: fk_rails_db4e1db76f; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_sjr_victimasjr
+    ADD CONSTRAINT fk_rails_db4e1db76f FOREIGN KEY (religion_id) REFERENCES religion(id);
+
+
+--
+-- Name: fk_rails_e5971f991a; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY evento
+    ADD CONSTRAINT fk_rails_e5971f991a FOREIGN KEY (motivonodenuncia_id) REFERENCES motivonodenuncia(id);
+
+
+--
+-- Name: fk_rails_e7aea91b7a; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY evento
+    ADD CONSTRAINT fk_rails_e7aea91b7a FOREIGN KEY (tapoyo_id) REFERENCES tapoyo(id);
+
+
+--
 -- Name: fk_rails_e8dedd8c1d; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_sjr_progestado_derecho
     ADD CONSTRAINT fk_rails_e8dedd8c1d FOREIGN KEY (progestado_id) REFERENCES sivel2_sjr_progestado(id);
+
+
+--
+-- Name: fk_rails_f10bf1ea91; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY evento
+    ADD CONSTRAINT fk_rails_f10bf1ea91 FOREIGN KEY (departamento_id) REFERENCES sip_departamento(id);
 
 
 --
@@ -6650,4 +7155,50 @@ INSERT INTO schema_migrations (version) VALUES ('20160407102539');
 INSERT INTO schema_migrations (version) VALUES ('20160420080511');
 
 INSERT INTO schema_migrations (version) VALUES ('20160420202859');
+
+INSERT INTO schema_migrations (version) VALUES ('20160506015049');
+
+INSERT INTO schema_migrations (version) VALUES ('20160506022054');
+
+INSERT INTO schema_migrations (version) VALUES ('20160519195544');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608060056');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608082447');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608084429');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608084935');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608090947');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608093529');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608103650');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608105822');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608114028');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608115006');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608121317');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608121352');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608122717');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608122726');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608205638');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608211647');
+
+INSERT INTO schema_migrations (version) VALUES ('20160608213541');
+
+INSERT INTO schema_migrations (version) VALUES ('20160609113525');
+
+INSERT INTO schema_migrations (version) VALUES ('20160610063404');
+
+INSERT INTO schema_migrations (version) VALUES ('20160614023632');
 

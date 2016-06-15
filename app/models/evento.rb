@@ -4,12 +4,30 @@ class Evento < ActiveRecord::Base
 
   belongs_to :caso, class_name: "Sivel2Gen::Caso", 
     foreign_key: "caso_id"
+  belongs_to :consecuenciaindividual, class_name: "::Consecuenciaindividual", 
+    foreign_key: "consecuenciaindividual_id"
+  belongs_to :consecuenciafamiliar, class_name: "::Consecuenciafamiliar", 
+    foreign_key: "consecuenciafamiliar_id"
+  belongs_to :consecuenciafisica, class_name: "::Consecuenciafisica", 
+    foreign_key: "consecuenciafisica_id"
+  belongs_to :departamento, class_name: "Sip::Departamento", 
+    foreign_key: "departamento_id"
+  belongs_to :departamento, class_name: "::Consecuenciafisica", 
+    foreign_key: "departamento_id"
+  belongs_to :motivonodenuncia, class_name: "::Motivonodenuncia", 
+    foreign_key: "motivonodenuncia_id"
+  belongs_to :municipio, class_name: "Sip::Municipio", 
+    foreign_key: "municipio_id"
+  belongs_to :tafectacion, class_name: "::Tafectacion", 
+    foreign_key: "tafectacion_id"
+  belongs_to :tapoyo, class_name: "::Tapoyo", 
+    foreign_key: "tapoyo_id"
 
   has_many :actoevento, 
     class_name: "::Actoevento",  
-    foreign_key: "evento_id", validate:true, dependent: :destroy
+    foreign_key: "evento_id", validate:true, dependent: :delete_all
   accepts_nested_attributes_for :actoevento,
-    reject_if: :all_blank, update_only: true
+    reject_if: :all_blank, allow_destroy: true
 
   validates :situacionriesgo, length: { maximum: 1 }
   validates :solicitomedidas, length: {maximum: 1}
@@ -20,7 +38,7 @@ class Evento < ActiveRecord::Base
   validates :quisieradenunciar, length: {maximum: 1}
   validates :recibidoreparacion, length: {maximum: 1}
   validates :valoracionjusticia, length: {maximum: 1}
- 
+  validates :relacionadocon, length: { maximum: 1}
 
   validates :resguardo, length: {maximum: 500}
   validates :comunidad, length: {maximum: 500}
