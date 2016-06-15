@@ -31,7 +31,6 @@ spec/dummy/.sass-cache
 tmp/
 herram/
 
-doc/
 *.png
 db/*sql
 
@@ -48,6 +47,7 @@ db/*sql
 /tmp/
 
 public/mujeresindigenas/sivel2/assets/
+public/mujeresindigenas/sivel2/doc/
 
 ## Specific to RubyMotion:
 .dat*

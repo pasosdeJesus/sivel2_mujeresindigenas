@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "/usr/local/share/xml/docbook/4.2/docbookx.dtd"[
+
+<!ENTITY % confv SYSTEM "confv.ent">
+<!ENTITY % personaliza SYSTEM "personaliza.ent">
+<!ENTITY % infoversion SYSTEM "infoversion.ent">
+%confv;
+%personaliza;
+%infoversion;
+
+<!ENTITY introduccion SYSTEM "introduccion.xdbk">
+<!ENTITY recursos_humanos SYSTEM "recursos_humanos.xdbk">
+<!ENTITY infraestructura_tecnologica SYSTEM "infraestructura_tecnologica.xdbk">
+<!ENTITY uso SYSTEM "uso.xdbk">
+<!ENTITY listado_de_casos SYSTEM "listado_de_casos.xdbk">
+<!ENTITY administracion SYSTEM "administracion.xdbk">
+<!ENTITY administrativas_interprete_comandos SYSTEM "administrativas_interprete_comandos.xdbk">
+
+<!ENTITY novedades SYSTEM "novedades.xdbk">
+<!ENTITY creditos SYSTEM "creditos.xdbk">
+<!ENTITY bibliografia SYSTEM "bibliografia.xdbk">
+  
+
+
+<!--ENTITY indice SYSTEM "genindice.xdbk"-->
+]> 
+
+<article lang="es">
+  <title>&PRY-DESC;</title>
+  <articleinfo>
+    <authorgroup>
+      <author>
+	<firstname>Vladimir</firstname>
+	<surname>Támara Patiño (vtamara@pasosdeJesus.org)</surname>
+      </author> 
+      <author>
+	<firstname>Blanca</firstname>
+	<surname>Acosta (blanca@pasosdeJesus.org)</surname>
+      </author> 
+
+    </authorgroup>
+    
+    <abstract>
+      <para>Estas notas buscan ayudar a usuarios que desean emplear
+	      por primera vez el sistema seguro adJ.  
+      </para>
+    </abstract>
+
+    <legalnotice>
+	    <para>
+SIVeL2 se dedica a Dios y a las víctimas. Su código fuente se libera al Dominio Público de acuerdo a la legislación colombiana, sin garantías. Se registró como obra de dominio público ante la Dirección Nacional de Derechos de Autor de Colombia el --- de --- de 2016. Oramos para que no sea utilizado por estructuras armadas. Esta documentación fue actualizada por última vez en 29/01/2016
+
+En Internet puede descargar el código [fuente de SIVeL](https://github.com/pasosdeJesus/sivel2_mujeresindigenas/tree/master).
+	  </para>
+    </legalnotice>
+
+  </articleinfo>
+
+  &introduccion;
+  &recursos_humanos;
+  &infraestructura_tecnologica;
+  &uso;
+  &listado_de_casos;
+  &administracion;
+  &administrativas_interprete_comandos;
+  &novedades;
+  &creditos;
+  &bibliografia;
+
+</article>
