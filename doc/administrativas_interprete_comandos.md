@@ -9,7 +9,7 @@ Como las operaciones que se presentan a continuación deben realizarse desde una
 
 Saca volcado de la base (i.e un volcado es un archivo con instrucciones SQL para reconstruir la base completa), lo almacena junto con los del último mes en el directorio de respaldo configurado --que por defecto es ```/var/www/resbase/sivel2_sjrven``` que en OpenBSD adJ está cifrado.
 
-![Aviso](https://github.com/BlancaInesAcosta/sivel2_mujeresindigenas_doc/blob/master/aviso.png?raw=true)
+![Aviso](img/aviso.png)
 *Aviso*  
 Los volcados generados incluyen las fuentes de información. Debe mantenerlos cifrados y con permisos que no permitan lectura por parte de usuarios no autorizados.
 
