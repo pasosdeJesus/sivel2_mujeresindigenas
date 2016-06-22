@@ -51,6 +51,6 @@ Podrá añadir nuevos usuarios y sus contraseñas (como se presenta en la siguie
 
 Cuando un usuario deje de laborar con la organización es recomendable dejar la cuenta --pues tiene un historial asociado-- pero deshabilitarla poniendo una fecha de deshabilitación.
 
-![Nuevo Usuario](https://github.com/BlancaInesAcosta/sivel2_mujeresindigenas_doc/blob/master/nuevo_usuario.png?raw=true)
+![Nuevo Usuario](img/nuevo_usuario.png)
 
 
