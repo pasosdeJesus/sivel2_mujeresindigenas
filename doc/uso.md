@@ -41,7 +41,7 @@ Hemos procurado que la operación de SIVeL2 sea simple, basta que tenga en cuent
 
 * Los cuadros de selección múltiple permiten seleccionar/deseleccionar varias opciones. Para hacerlo presione la tecla **Control** mientras pulsa el botón izquierdo del ratón.
 
-![Cuadro de Selección Múltiple](https://github.com/BlancaInesAcosta/sivel2_mujeresindigenas_doc/blob/master/selmultiple.png)
+![Cuadro de Selección Múltiple](img/selmultiple.png)
 
 * En cuadros de selección podrá comenzar a escribir la palabra con la que comienza la opción que desea elegir.
 
@@ -51,21 +51,21 @@ Desde un computador seguro (preferiblemente con OpenBSD o Ubuntu) ingrese a su n
 
 ![Autenticación](https://github.com/BlancaInesAcosta/sivel2_mujeresindigenas_doc/blob/master/autenticacion.png?raw=true)
 
-![Aviso](https://github.com/BlancaInesAcosta/sivel2_mujeresindigenas_doc/blob/master/aviso.png)	
+![Aviso](img/aviso.png)	
 **Aviso**
 
 * Note que el URL comienza con *https* es decir se transmite información del servidor a su computador con el protocolo del web típico (HTTP) pero con cifrado fuerte SSL. Este cifrado requiere que el servidor web tenga un certificado, como empleamos un certificado autofirmado, su navegador reportará la situación como problemática, aún cuando no lo es.
 
 Para iniciar una sesión debe ingresar su nombre de usuario y su clave (que debió ser creada por un usuario con rol administrador).
 
-![Aviso](https://github.com/BlancaInesAcosta/sivel2_mujeresindigenas_doc/blob/master/aviso.png)	
+![Aviso](img/aviso.png)	
 **Aviso**
 
 * SIVeL2 no almacena su clave directamente sino una especie de huella digital de la misma (condensado bcrypt). Por esto puede emplear la clave que prefiera con la confianza que no podrá ser conocida por administradores que tengan acceso a la base. Se recomienda que tenga números, letras y caracteres especiales. Es conveniente cambiarla periódicamente, puede hacerlo desde Administración->Clave.
 
 Una vez autenticado verá el menú principal.
 
-![Menu Principal](https://github.com/BlancaInesAcosta/sivel2_mujeresindigenas_doc/blob/master/menu_principal.png)
+![Menu Principal](img/menu_principal.png)
 Dependiendo del rol de su usuario (ver Sección 2, “Recurso Humano”) tendrá o no tendrá acceso a las opciones del menú: Por ejemplo una persona con rol analista no tendrá acceso al menú Administración->Usuarios. --que si puede ser usado por
 quien tenga rol administrador o administrador de oficina.
 
