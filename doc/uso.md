@@ -49,7 +49,7 @@ Hemos procurado que la operación de SIVeL2 sea simple, basta que tenga en cuent
 
 Desde un computador seguro (preferiblemente con OpenBSD o Ubuntu) ingrese a su navegador y en la barra de direcciones digite: https://defensor.info/mujeresindigenas/sivel2/.
 
-![Autenticación](https://github.com/BlancaInesAcosta/sivel2_mujeresindigenas_doc/blob/master/autenticacion.png?raw=true)
+![Autenticación](img/autenticacion.png)
 
 ![Aviso](img/aviso.png)	
 **Aviso**
