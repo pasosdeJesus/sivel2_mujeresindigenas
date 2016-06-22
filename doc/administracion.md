@@ -17,7 +17,7 @@ En la interfaz web un usuario que no tenga el rol de Administrador no podrá ing
 
 Ingresando por el menú Administración->Tablas Básicas puede cambiar parametros de cualquiera de las tablas básicas.
 
-![Tablas Básicas](tablas_basicas.png)
+![Tablas Básicas](img/tablas_basicas.png)
 
 Al elegir una de las tablas, verá los registros que tiene y podrá bien crear uno nuevo (con el enlace Nuevo al final de los registros) o bien editar o eliminar un registro. La siguiente figura ejemplifica los registros de Estados civiles.
 
