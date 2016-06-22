@@ -31,7 +31,7 @@ https://github.com/pasosdeJesus/sivel2_mujeresindigenas
 
 + Recomendamos de manera especial OpenBSD por sus niveles de seguridad y adJ por su interfaz en español y porque por defecto las bases de datos y respaldos de SIVeL2 quedan cifrados con una clave que debe darse durante el arranque. Por lo mismo en caso de hurto la información no será visible para quien hurta, y en caso de una inspección ilegitima basta apagar o desconectar el computador.
 
-![](http://manual.winmerge.org/images/warning.gif)
+![Aviso](img/aviso.png)
 **Aviso**
 
 Reconocemos como fallas de seguridad críticas sólo las que puedan explotarse en la versión estable operando sobre la plataforma de operación recomendada (i.e la configuración por defecto de la distribución Aprendiendo de Jesús http://aprendiendo.pasosdeJesus.org).
