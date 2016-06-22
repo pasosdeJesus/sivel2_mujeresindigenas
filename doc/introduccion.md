@@ -39,7 +39,6 @@ Reconocemos como fallas de seguridad críticas sólo las que puedan explotarse e
 [1]: Buscando un buen balance entre seguridad y facilidad.
 # falta la fecha exacta de inicio
 # falta la direcció exacta de las fuentes
-# yo creo que toca agregar a Anzorc y mujeres indigenas ¿o no?
- 
+
 
 
