@@ -21,11 +21,11 @@ Ingresando por el menú Administración->Tablas Básicas puede cambiar parametro
 
 Al elegir una de las tablas, verá los registros que tiene y podrá bien crear uno nuevo (con el enlace Nuevo al final de los registros) o bien editar o eliminar un registro. La siguiente figura ejemplifica los registros de Estados civiles.
 
-![Estados civiles](https://github.com/BlancaInesAcosta/sivel2_mujeresindigenas_doc/blob/master/estados_civiles.png?raw=true)
+![Estados civiles](img/estados_civiles.png)
 
 Para no perder compatibilidad entre su instalación de SIVeL2 y la de otras organizaciones, pero a la vez para permitirle personalizar el sistema a sus necesidades de sistematización de información, sugerimos no cambiar ni eliminar los registros de las tablas básicas, sino agregar los que necesite su organización y deshabilitar (poniendo una fecha de deshabilitación) los registros que no requiera. En la siguiente figura se presenta el formulario para añadir un nuevo Estado civil:
 
-![Nuevo Estado civil](https://github.com/BlancaInesAcosta/sivel2_mujeresindigenas_doc/blob/master/nuevo_estado_civil.png?raw=true)
+![Nuevo Estado civil](img/nuevo_estado_civil.png)
 
 Cada entrada (i.e registro) de una tabla básica tiene una llave, que puede constar de uno o más datos (i.e campos) del registro. Al actualizar tablas básicas tenga en cuenta que no pueden modificarse las llaves. Por ejemplo en una categoría ya ingresada no es posible modificar supracategoría o fecha de violencia. Si requiere actualizar una llave en un registro, debe primero eliminarlo de la tabla básica y después volverlo a añadir haciendo los cambios apropiados.
 
@@ -45,7 +45,7 @@ En general la información de cada tabla básica es autoexplicativa, algunas que
 
 Esta opción del menú presenta el listado de usuarios de la base (como se presenta en la figura)
 
-![Usuarios](https://github.com/BlancaInesAcosta/sivel2_mujeresindigenas_doc/blob/master/usuario.png?raw=true)
+![Usuarios](img/usuario.png)
 
 Podrá añadir nuevos usuarios y sus contraseñas (como se presenta en la siguiente figura), o cambiar datos, rol y contraseñas de usuarios ya existentes. También puede desbloquear un usuario que haya dado su clave errada más de 5 veces consecutivas, para esto deje en blanco los campos Intentos fallidos, Testigo para desbloquear y Hora del Bloqueo.
 
