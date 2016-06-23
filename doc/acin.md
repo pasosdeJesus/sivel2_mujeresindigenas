@@ -15,7 +15,7 @@ consentimiento
 * Consecuencia individual
 * Consecuencia familiar
 * Consecuencia física
-* Actividades que se dejaron de hacer:Se refiere al que desempeñara la víctima en el momento de la agresión.
+* Actividades que se dejaron de hacer: Se refiere al que desempeñara la víctima en el momento de la agresión.
 * Reacción de la familia y la comunidad
 * Afectación a otra persona
 * Avances del caso
@@ -23,7 +23,6 @@ consentimiento
 * ¿Ha recibido reparación?
 * Compromisos adquiridos ¿Cuales y con quien?
 * Observaciones generales
-* 
-* Profesión: 
+
 
 
