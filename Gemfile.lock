@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/pasosdeJesus/cor1440_gen.git
-  revision: 3aa728b61c8faf07ad09269c6695764564ea17ad
+  revision: 6613688f5dd389b9834e88bde280f02862054ca0
   specs:
     cor1440_gen (1.0.a6)
       devise
@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: git://github.com/pasosdeJesus/sip.git
-  revision: 0611837fa82b20d37f5de47227cb0a337a359651
+  revision: 6fba18d2869f0fbddd8561c74b0c4baa8235f569
   specs:
     sip (2.0.a7)
       bootstrap-datepicker-rails
@@ -31,7 +31,7 @@ GIT
 
 GIT
   remote: git://github.com/pasosdeJesus/sivel2_gen.git
-  revision: e5c7f3ca09d67bc1f8136f0cd63e8a540369d5a0
+  revision: 5e9d55a76e2740f995b4cf3180d1227ca61c9c21
   specs:
     sivel2_gen (2.0.a9)
       devise
@@ -306,7 +306,7 @@ GEM
     spring (1.7.1)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
-    sprockets (3.6.0)
+    sprockets (3.6.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.0.4)
@@ -340,7 +340,7 @@ GEM
       raindrops (~> 0.7)
     warden (1.2.6)
       rack (>= 1.0)
-    web-console (3.2.1)
+    web-console (3.3.0)
       activemodel (>= 4.2)
       debug_inspector
       railties (>= 4.2)
