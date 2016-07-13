@@ -7,14 +7,14 @@ es:
         other: "Organizaciones que diligencian"
     attributes:
       "consecuenciafamiliar":
-        Consecuenciafamiliar: Consecuencia familiar
-        Consecuenciasfamiliares: Consecuencias familiares
+        Consecuenciafamiliar: Afectación familiar
+        Consecuenciasfamiliares: Afectaciones familiares
       "consecuenciafisica":
-        Consecuenciafisica: Consecuencia física
-        Consecuenciasfisicas: Consecuencias físicas
+        Consecuenciafisica: Afectacón física
+        Consecuenciasfisicas: Afectaciones físicas
       "consecuenciaindividual":
-        Consecuenciaindividual: Consecuencia individual
-        Consecuenciasindividuales: Consecuencias individuales
+        Consecuenciaindividual: Afectación individual
+        Consecuenciasindividuales: Afectaciones individuales
       "educacionpropia":
         Educacionpropia: Forma de educación propia
         Educacionespropias: Formas de educación propia
@@ -27,9 +27,9 @@ es:
         avancescaso: Avances del caso
         brindadaproteccion: ¿Le ha brindado protección?
         compromisosadquiridos: Compromisos adquiridos ¿Cuales y con quien?
-        consecuenciafamiliar: Consecuencia familiar
-        consecuenciafisica: Consecuencia física
-        consecuenciaindividual: Consecuencia individual
+        consecuenciafamiliar: Afectación familiar
+        consecuenciafisica: Afectación física
+        consecuenciaindividual: Afectación individual
         descripcionafectacion: Descripción de la afectación
         denuncia: Denuncia
         dia: Día
@@ -62,7 +62,7 @@ es:
         Motivosnodenuncia: Motivos para no denunciar
       "religion":
         Religion: Religion
-        Relligiones: Religiones
+        Religiones: Religiones
       "sip/fuenteprensa":
         Fuenteprensa: Fuente
         Fuentesprensa: Fuentes
@@ -84,9 +84,9 @@ es:
         fecharec: Fecha documentación ini.
         oficina: Organizacion que diligencia
         residencia: Residencia actual
-        tipoacomp: Acopañamiento
+        tipoacomp: Acompañamiento
       "sivel2_gen/caso_fuenteprensa":
-        ubicacion: "Detalle Otra"
+        ubicacion: "Detalle Otra Fuente"
       "sivel2_gen/victima":
         etnia: Pueblo indigena / Etnia
         rangoedad: Rango de edad
