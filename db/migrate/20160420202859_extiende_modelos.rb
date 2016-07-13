@@ -19,7 +19,7 @@ class ExtiendeModelos < ActiveRecord::Migration
     # J -> Jurídico, P -> Psicosocial, C -> Cultural, N -> Ninguno
     add_column :sivel2_sjr_casosjr, :tipoacomp, :string, limit: 1, default: :J
 
-    # P -> Propio, O -> Ordinario, N -> Ninguno, I -> SIN INFORMACIÓN
+    # P -> Propio, O -> Ordinario, N -> Ninguno, I -> SIN INFORMACIÓN, J -> Justicia Propia
     add_column :sivel2_sjr_victimasjr, :sistemasalud, :string, limit: 1, default: :I
 
     # A -> Armado, S -> Social
