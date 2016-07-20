@@ -9,6 +9,7 @@ consentimiento
 * Religion 
 * Tiene tierra 
 * Área tierra 
+
 # Evento de violencia y seguimiento
 * Descripción de la afectación
 * Relación entre presunto responsable y víctima
