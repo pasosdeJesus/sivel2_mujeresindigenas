@@ -67,7 +67,10 @@ if (test "$?" != "0") then {
 RAILS_ENV=test bundle exec rake db:structure:dump
 b=`git branch | grep "^*" | sed -e  "s/^* //g"`
 git status -s
-git commit -a
+if (test "$MENSCONS" = "") then {
+	MENSCONS="Actualiza"
+} fi;
+git commit -m "$MENSCONS" -a
 git push origin ${b}
 if (test "$?" != "0") then {
 	echo "No pudo subirse el cambio a github";
