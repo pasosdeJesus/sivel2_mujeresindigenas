@@ -15,7 +15,7 @@
     <% end %>
   <% end %>
   <%= menu_group :pull => :right do %>
-    <%= menu_item "Documentacion", sivel2_gen.acercade_path %>
+    <%= menu_item "Documentacion", File.join(Rails.configuration.relative_url_root, 'doc/index.html') %>
     <% if !current_usuario.nil? %>
       <%= drop_down "Administrar" do %>
         <%= menu_item "Clave", main_app.editar_registro_usuario_path %>

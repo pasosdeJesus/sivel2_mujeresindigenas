@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 #ruby "2.1.5"
 
 # Rails (internacionalización)
-gem "rails", '~> 4.2.0'
+gem "rails", '~> 5.0.0'
 gem "rails-i18n"
 
 # PDF
@@ -13,6 +13,8 @@ gem "prawn-table"
 
 # Postgresql
 gem "pg"
+
+gem 'puma'
 
 # Maneja variables de ambiente (como claves y secretos) en .env
 gem "foreman"
@@ -28,15 +30,14 @@ gem "sass-rails"
 gem "colorize"
 
 # Uglifier comprime recursos Javascript
-gem "uglifier", '>= 1.3.0'
+gem "uglifier"
 
 # CoffeeScript para recuersos .js.coffee y vistas
-gem "coffee-rails", '~> 4.1.0'
+gem "coffee-rails"
 
 # jquery como librería JavaScript
 gem "jquery-rails"
 gem "jquery-ui-rails"
-gem "jquery-ui-bootstrap-rails", git: "https://github.com/kristianmandrup/jquery-ui-bootstrap-rails"
 
 # Seguir enlaces más rápido. Ver: https://github.com/rails/turbolinks
 gem "turbolinks", '2.5.3'
@@ -49,7 +50,6 @@ gem "bootstrap-sass"
 gem "chartkick"
 
 # Formularios simples 
-#gem "simple_form", git: "https://github.com/plataformatec/simple_form"
 gem "simple_form"
 
 # Formularios anidados (algunos con ajax)
@@ -68,7 +68,7 @@ gem "will_paginate"
 gem 'twitter_cldr'
 
 # Maneja adjuntos
-gem "paperclip", "~> 4.1"
+gem "paperclip"
 
 # Zonas horarias
 gem "tzinfo"
@@ -117,10 +117,12 @@ group :test do
   gem 'rspec-rails'
 
   # Un proceso para cada prueba -- acelera
-  gem 'spork', '~> 1.0rc'
+  gem 'spork'
+
+  gem 'rails-controller-testing'
 
   # Maneja datos de prueba
-  gem "factory_girl_rails", "~> 4.0", group: [:development, :test]
+  gem "factory_girl_rails", group: [:development, :test]
 
   # https://www.relishapp.com/womply/rails-style-guide/docs/developing-rails-applications/bundler
   # Lanza programas para examinar resultados
