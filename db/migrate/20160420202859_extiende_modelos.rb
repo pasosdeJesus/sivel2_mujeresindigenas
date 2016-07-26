@@ -48,7 +48,7 @@ class ExtiendeModelos < ActiveRecord::Migration
     add_column :evento, :brindadaproteccion, :string, limit: 5000, default: ''
     add_column :evento, :fechadenuncia, :date
     add_column :evento, :descripcionafectacion, :string, limit: 5000, default: ''
-    add_column :evento, :relacionprespvic, :string, limit: 500, default: '', default: ''
+    add_column :evento, :relacionprespvic, :string, limit: 500, default: ''
     add_column :evento, :numvecesantes, :integer
     add_column :evento, :actividadesdejadas, :string, limit: 5000, default: ''
     add_column :evento, :reaccionfamiliaycomunidad, :string, limit: 5000, default: ''
