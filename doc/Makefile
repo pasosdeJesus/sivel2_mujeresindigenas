@@ -104,7 +104,7 @@ limpiamas: limpia
 
 # Elimina backups y archivos temporales
 limpia:
-	rm -f *bak *~ *tmp confaux.tmp $(PROYECTO)-$(PRY_VERSION)_html.tar.gz
+	rm -f *bak *~ *.tmp confaux.tmp $(PROYECTO)-$(PRY_VERSION)_html.tar.gz
 	rm -f $(PROYECTO)-4.1.*
 
 

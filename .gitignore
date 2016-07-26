@@ -70,3 +70,13 @@ build/
 ## unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 #.rvmrc
 
+doc/*xdbk
+doc/HTML.index.m
+doc/Make.inc
+doc/confaux.sed
+doc/confaux.tmp
+doc/confv.bak
+doc/confv.ent
+doc/confv.sh
+doc/genindice.xdbk.m
+
