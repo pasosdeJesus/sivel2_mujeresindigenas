@@ -22,7 +22,11 @@
       <dd><%= @caso.casosjr.oficina.nombre if @caso.casosjr && @caso.casosjr.oficina %></dd>
 
       <dt><strong><%= Sivel2Sjr::Casosjr.human_attribute_name(:estadocaso) %>:</strong></dt>
-      <dd><%= @caso.casosjr.estadocaso if @caso.casosjr && @caso.casosjr.estadocaso %></dd>
+      <dd><%= @caso.casosjr.estadocaso.inject("") { 
+        |memo, i| 
+        (memo == "" ? "" : memo + ", ") + i.nombre } if @caso.casosjr && 
+          @caso.casosjr.estadocaso 
+        %></dd>
 
       <dt><strong><%= Sivel2Sjr::Casosjr.human_attribute_name(:tipoacomp) %>:</strong></dt>
       <dd><%= @caso.casosjr.tipoacomp if @caso.casosjr && @caso.casosjr.tipoacomp %></dd>
@@ -151,10 +155,23 @@
           <dd><%= evento.testigo %></dd>
 
           <dt><strong><%= ::Evento.human_attribute_name(:tafectacion) %>:</strong></dt>
-          <dd><%= evento.tafectacion.nombre if evento.tafectacion %></dd>
+          <dd><%= if evento.tafectacion then
+                    evento.tafectacion.inject("") { 
+                      |memo, i| 
+                      (memo == "" ? "" : memo + ", ") + i.nombre } 
+                  end 
+              %>
+          </dd>
 
           <dt><strong><%= ::Evento.human_attribute_name(:tapoyo) %>:</strong></dt>
-          <dd><%= evento.tapoyo.nombre if evento.tapoyo %></dd>
+          <dd><%= if evento.tapoyo then
+                    evento.tapoyo.inject("") { 
+                      |memo, i| 
+                      (memo == "" ? "" : memo + ", ") + i.nombre } 
+                  end 
+              %>
+          </dd>
+
 
           <dt><strong><%= ::Evento.human_attribute_name(:acompnecesita) %>:</strong></dt>
           <dd><%= evento.acompnecesita %></dd>

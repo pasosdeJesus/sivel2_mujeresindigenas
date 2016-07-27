@@ -4,12 +4,6 @@ class Evento < ActiveRecord::Base
 
   belongs_to :caso, class_name: "Sivel2Gen::Caso", 
     foreign_key: "caso_id"
-  belongs_to :consecuenciaindividual, class_name: "::Consecuenciaindividual", 
-    foreign_key: "consecuenciaindividual_id"
-  belongs_to :consecuenciafamiliar, class_name: "::Consecuenciafamiliar", 
-    foreign_key: "consecuenciafamiliar_id"
-  belongs_to :consecuenciafisica, class_name: "::Consecuenciafisica", 
-    foreign_key: "consecuenciafisica_id"
   belongs_to :departamento, class_name: "Sip::Departamento", 
     foreign_key: "departamento_id"
   belongs_to :departamento, class_name: "::Consecuenciafisica", 
@@ -18,10 +12,21 @@ class Evento < ActiveRecord::Base
     foreign_key: "motivonodenuncia_id"
   belongs_to :municipio, class_name: "Sip::Municipio", 
     foreign_key: "municipio_id"
-  belongs_to :tafectacion, class_name: "::Tafectacion", 
-    foreign_key: "tafectacion_id"
-  belongs_to :tapoyo, class_name: "::Tapoyo", 
-    foreign_key: "tapoyo_id"
+
+  has_many :consecuenciaindividual_evento, validate: true
+  has_many :consecuenciaindividual, through: :consecuenciaindividual_evento
+
+  has_many :consecuenciafamiliar_evento, validate: true
+  has_many :consecuenciafamiliar, through: :consecuenciafamiliar_evento
+
+  has_many :consecuenciafisica_evento, validate: true
+  has_many :consecuenciafisica, through: :consecuenciafisica_evento
+
+  has_many :evento_tafectacion, validate: true
+  has_many :tafectacion, through: :evento_tafectacion
+
+  has_many :evento_tapoyo, validate: true
+  has_many :tapoyo, through: :evento_tapoyo
 
   has_many :actoevento, 
     class_name: "::Actoevento",  
