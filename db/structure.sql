@@ -293,6 +293,16 @@ CREATE SEQUENCE caso_presponsable_seq
 
 
 --
+-- Name: casosjr_estadocaso; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE casosjr_estadocaso (
+    estadocaso_id integer NOT NULL,
+    sivel2_sjr_casosjr_id integer NOT NULL
+);
+
+
+--
 -- Name: sip_persona_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -438,7 +448,6 @@ CREATE TABLE sivel2_sjr_casosjr (
     observacionesref character varying(5000),
     comosupo_id integer DEFAULT 1,
     consentimiento character varying(1) DEFAULT 'I'::character varying,
-    estadocaso character varying(1) DEFAULT 'A'::character varying,
     tipoacomp character varying(1) DEFAULT 'N'::character varying
 );
 
@@ -693,6 +702,16 @@ CREATE TABLE consecuenciafamiliar (
 
 
 --
+-- Name: consecuenciafamiliar_evento; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE consecuenciafamiliar_evento (
+    consecuenciafamiliar_id integer NOT NULL,
+    evento_id integer NOT NULL
+);
+
+
+--
 -- Name: consecuenciafamiliar_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -727,6 +746,16 @@ CREATE TABLE consecuenciafisica (
 
 
 --
+-- Name: consecuenciafisica_evento; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE consecuenciafisica_evento (
+    consecuenciafisica_id integer NOT NULL,
+    evento_id integer NOT NULL
+);
+
+
+--
 -- Name: consecuenciafisica_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -757,6 +786,16 @@ CREATE TABLE consecuenciaindividual (
     fechadeshabilitacion date,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: consecuenciaindividual_evento; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE consecuenciaindividual_evento (
+    consecuenciaindividual_id integer NOT NULL,
+    evento_id integer NOT NULL
 );
 
 
@@ -1423,6 +1462,40 @@ CREATE TABLE emprendimiento_respuesta (
 
 
 --
+-- Name: estadocaso; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE estadocaso (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: estadocaso_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE estadocaso_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: estadocaso_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE estadocaso_id_seq OWNED BY estadocaso.id;
+
+
+--
 -- Name: evento; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1455,12 +1528,7 @@ CREATE TABLE evento (
     compromisosadquiridos character varying(5000),
     observaciones character varying(5000),
     acompnecesita character varying(5000),
-    tafectacion_id integer DEFAULT 0,
-    tapoyo_id integer DEFAULT 0,
     motivonodenuncia_id integer DEFAULT 0,
-    consecuenciaindividual_id integer DEFAULT 0,
-    consecuenciafamiliar_id integer DEFAULT 0,
-    consecuenciafisica_id integer DEFAULT 0,
     departamento_id integer,
     municipio_id integer,
     dia integer,
@@ -1490,6 +1558,26 @@ CREATE SEQUENCE evento_id_seq
 --
 
 ALTER SEQUENCE evento_id_seq OWNED BY evento.id;
+
+
+--
+-- Name: evento_tafectacion; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE evento_tafectacion (
+    evento_id integer NOT NULL,
+    tafectacion_id integer NOT NULL
+);
+
+
+--
+-- Name: evento_tapoyo; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE evento_tapoyo (
+    evento_id integer NOT NULL,
+    tapoyo_id integer NOT NULL
+);
 
 
 --
@@ -4156,6 +4244,13 @@ ALTER TABLE ONLY educacionpropia ALTER COLUMN id SET DEFAULT nextval('educacionp
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY estadocaso ALTER COLUMN id SET DEFAULT nextval('estadocaso_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY evento ALTER COLUMN id SET DEFAULT nextval('evento_id_seq'::regclass);
 
 
@@ -4697,6 +4792,14 @@ ALTER TABLE ONLY emprendimiento_respuesta
 
 ALTER TABLE ONLY sivel2_gen_escolaridad
     ADD CONSTRAINT escolaridad_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: estadocaso_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY estadocaso
+    ADD CONSTRAINT estadocaso_pkey PRIMARY KEY (id);
 
 
 --
@@ -6237,14 +6340,6 @@ ALTER TABLE ONLY cor1440_gen_financiador_proyectofinanciero
 
 
 --
--- Name: fk_rails_1567bde4aa; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY evento
-    ADD CONSTRAINT fk_rails_1567bde4aa FOREIGN KEY (tafectacion_id) REFERENCES tafectacion(id);
-
-
---
 -- Name: fk_rails_1b764c2a63; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6373,14 +6468,6 @@ ALTER TABLE ONLY sivel2_sjr_ayudasjr_derecho
 
 
 --
--- Name: fk_rails_832e115503; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY evento
-    ADD CONSTRAINT fk_rails_832e115503 FOREIGN KEY (consecuenciaindividual_id) REFERENCES consecuenciaindividual(id);
-
-
---
 -- Name: fk_rails_863c4c40a3; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6410,14 +6497,6 @@ ALTER TABLE ONLY evento
 
 ALTER TABLE ONLY sivel2_sjr_motivosjr_derecho
     ADD CONSTRAINT fk_rails_9cf4a23afe FOREIGN KEY (derecho_id) REFERENCES sivel2_sjr_derecho(id);
-
-
---
--- Name: fk_rails_9d0db0995d; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY evento
-    ADD CONSTRAINT fk_rails_9d0db0995d FOREIGN KEY (consecuenciafisica_id) REFERENCES consecuenciafisica(id);
 
 
 --
@@ -6458,14 +6537,6 @@ ALTER TABLE ONLY sivel2_sjr_victimasjr
 
 ALTER TABLE ONLY sivel2_sjr_victimasjr
     ADD CONSTRAINT fk_rails_b645b4caf9 FOREIGN KEY (educacionpropia_id) REFERENCES educacionpropia(id);
-
-
---
--- Name: fk_rails_bbb1476bbe; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY evento
-    ADD CONSTRAINT fk_rails_bbb1476bbe FOREIGN KEY (consecuenciafamiliar_id) REFERENCES consecuenciafamiliar(id);
 
 
 --
@@ -6538,14 +6609,6 @@ ALTER TABLE ONLY sivel2_gen_combatiente
 
 ALTER TABLE ONLY evento
     ADD CONSTRAINT fk_rails_e5971f991a FOREIGN KEY (motivonodenuncia_id) REFERENCES motivonodenuncia(id);
-
-
---
--- Name: fk_rails_e7aea91b7a; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY evento
-    ADD CONSTRAINT fk_rails_e7aea91b7a FOREIGN KEY (tapoyo_id) REFERENCES tapoyo(id);
 
 
 --
@@ -7082,6 +7145,6 @@ ALTER TABLE ONLY sivel2_sjr_victimasjr
 
 SET search_path TO "$user", public;
 
-INSERT INTO schema_migrations (version) VALUES ('20131128151014'), ('20131204135932'), ('20131204140000'), ('20131204143718'), ('20131204183530'), ('20131205233111'), ('20131206081531'), ('20131210221541'), ('20131220103409'), ('20131223175141'), ('20140117212555'), ('20140129151136'), ('20140207102709'), ('20140207102739'), ('20140211162355'), ('20140211164659'), ('20140211172443'), ('20140217100541'), ('20140313012209'), ('20140317121823'), ('20140514142421'), ('20140518120059'), ('20140527110223'), ('20140528043115'), ('20140611110441'), ('20140611111020'), ('20140613044320'), ('20140613200951'), ('20140620112004'), ('20140704035033'), ('20140804194616'), ('20140804200235'), ('20140804202100'), ('20140804202101'), ('20140804202958'), ('20140804210000'), ('20140805030341'), ('20140814184537'), ('20140815111351'), ('20140815111352'), ('20140815121224'), ('20140815123542'), ('20140815124157'), ('20140815124606'), ('20140827142659'), ('20140901105741'), ('20140901106000'), ('20140902101425'), ('20140904033941'), ('20140904211823'), ('20140904213327'), ('20140905121420'), ('20140909141336'), ('20140909165233'), ('20140918115412'), ('20140922102737'), ('20140922110956'), ('20141002140242'), ('20141111102451'), ('20141111203313'), ('20141112111129'), ('20141126085907'), ('20141222174237'), ('20141222174247'), ('20141222174257'), ('20141222174267'), ('20150213114933'), ('20150217185859'), ('20150225140336'), ('20150313153722'), ('20150317084149'), ('20150317084737'), ('20150317090631'), ('20150413000000'), ('20150413160156'), ('20150413160157'), ('20150413160158'), ('20150413160159'), ('20150416074423'), ('20150416090140'), ('20150416095646'), ('20150416101228'), ('20150417071153'), ('20150417180000'), ('20150417180314'), ('20150419000000'), ('20150420104520'), ('20150420110000'), ('20150420125522'), ('20150420153835'), ('20150420200255'), ('20150503120915'), ('20150510125926'), ('20150513112126'), ('20150513130058'), ('20150513130510'), ('20150513160835'), ('20150520115257'), ('20150521092657'), ('20150521181918'), ('20150521191227'), ('20150528100944'), ('20150602094513'), ('20150602095241'), ('20150602104342'), ('20150609094809'), ('20150609094820'), ('20150612203808'), ('20150615024318'), ('20150616095023'), ('20150616100351'), ('20150616100551'), ('20150624200701'), ('20150707164448'), ('20150709203137'), ('20150710012947'), ('20150710114451'), ('20150716085420'), ('20150716171420'), ('20150716192356'), ('20150717101243'), ('20150717161539'), ('20150720115701'), ('20150720120236'), ('20150723233138'), ('20150724000152'), ('20150724003736'), ('20150724024110'), ('20150724032940'), ('20150803082520'), ('20150809032138'), ('20150826000000'), ('20150929112313'), ('20151006105402'), ('20151020203420'), ('20151020203421'), ('20151030094611'), ('20151124110943'), ('20151127102425'), ('20151130101417'), ('20160304104001'), ('20160304104113'), ('20160308213334'), ('20160316093659'), ('20160316094627'), ('20160316100620'), ('20160316100621'), ('20160316100622'), ('20160316100623'), ('20160316100624'), ('20160316100625'), ('20160316100626'), ('20160407102539'), ('20160420080511'), ('20160420202859'), ('20160506015049'), ('20160506022054'), ('20160519195544'), ('20160608060056'), ('20160608082447'), ('20160608084429'), ('20160608084935'), ('20160608090947'), ('20160608093529'), ('20160608103650'), ('20160608105822'), ('20160608114028'), ('20160608115006'), ('20160608121317'), ('20160608121352'), ('20160608122717'), ('20160608122726'), ('20160608205638'), ('20160608211647'), ('20160608213541'), ('20160609113525'), ('20160610063404'), ('20160614023632'), ('20160719195853'), ('20160719214520'), ('20160724160049'), ('20160724164110'), ('20160725123242'), ('20160725125929'), ('20160725131347');
+INSERT INTO schema_migrations (version) VALUES ('20131128151014'), ('20131204135932'), ('20131204140000'), ('20131204143718'), ('20131204183530'), ('20131205233111'), ('20131206081531'), ('20131210221541'), ('20131220103409'), ('20131223175141'), ('20140117212555'), ('20140129151136'), ('20140207102709'), ('20140207102739'), ('20140211162355'), ('20140211164659'), ('20140211172443'), ('20140217100541'), ('20140313012209'), ('20140317121823'), ('20140514142421'), ('20140518120059'), ('20140527110223'), ('20140528043115'), ('20140611110441'), ('20140611111020'), ('20140613044320'), ('20140613200951'), ('20140620112004'), ('20140704035033'), ('20140804194616'), ('20140804200235'), ('20140804202100'), ('20140804202101'), ('20140804202958'), ('20140804210000'), ('20140805030341'), ('20140814184537'), ('20140815111351'), ('20140815111352'), ('20140815121224'), ('20140815123542'), ('20140815124157'), ('20140815124606'), ('20140827142659'), ('20140901105741'), ('20140901106000'), ('20140902101425'), ('20140904033941'), ('20140904211823'), ('20140904213327'), ('20140905121420'), ('20140909141336'), ('20140909165233'), ('20140918115412'), ('20140922102737'), ('20140922110956'), ('20141002140242'), ('20141111102451'), ('20141111203313'), ('20141112111129'), ('20141126085907'), ('20141222174237'), ('20141222174247'), ('20141222174257'), ('20141222174267'), ('20150213114933'), ('20150217185859'), ('20150225140336'), ('20150313153722'), ('20150317084149'), ('20150317084737'), ('20150317090631'), ('20150413000000'), ('20150413160156'), ('20150413160157'), ('20150413160158'), ('20150413160159'), ('20150416074423'), ('20150416090140'), ('20150416095646'), ('20150416101228'), ('20150417071153'), ('20150417180000'), ('20150417180314'), ('20150419000000'), ('20150420104520'), ('20150420110000'), ('20150420125522'), ('20150420153835'), ('20150420200255'), ('20150503120915'), ('20150510125926'), ('20150513112126'), ('20150513130058'), ('20150513130510'), ('20150513160835'), ('20150520115257'), ('20150521092657'), ('20150521181918'), ('20150521191227'), ('20150528100944'), ('20150602094513'), ('20150602095241'), ('20150602104342'), ('20150609094809'), ('20150609094820'), ('20150612203808'), ('20150615024318'), ('20150616095023'), ('20150616100351'), ('20150616100551'), ('20150624200701'), ('20150707164448'), ('20150709203137'), ('20150710012947'), ('20150710114451'), ('20150716085420'), ('20150716171420'), ('20150716192356'), ('20150717101243'), ('20150717161539'), ('20150720115701'), ('20150720120236'), ('20150723233138'), ('20150724000152'), ('20150724003736'), ('20150724024110'), ('20150724032940'), ('20150803082520'), ('20150809032138'), ('20150826000000'), ('20150929112313'), ('20151006105402'), ('20151020203420'), ('20151020203421'), ('20151030094611'), ('20151124110943'), ('20151127102425'), ('20151130101417'), ('20160304104001'), ('20160304104113'), ('20160308213334'), ('20160316093659'), ('20160316094627'), ('20160316100620'), ('20160316100621'), ('20160316100622'), ('20160316100623'), ('20160316100624'), ('20160316100625'), ('20160316100626'), ('20160407102539'), ('20160420080511'), ('20160420202859'), ('20160506015049'), ('20160506022054'), ('20160519195544'), ('20160608060056'), ('20160608082447'), ('20160608084429'), ('20160608084935'), ('20160608090947'), ('20160608093529'), ('20160608103650'), ('20160608105822'), ('20160608114028'), ('20160608115006'), ('20160608121317'), ('20160608121352'), ('20160608122717'), ('20160608122726'), ('20160608205638'), ('20160608211647'), ('20160608213541'), ('20160609113525'), ('20160610063404'), ('20160614023632'), ('20160719195853'), ('20160719214520'), ('20160724160049'), ('20160724164110'), ('20160725123242'), ('20160725125929'), ('20160725131347'), ('20160727033937'), ('20160727103116'), ('20160727133219');
 
 
