@@ -29,12 +29,7 @@
 
 <%= s.input(
   :tipoacomp, 
-  collection: [
-    ["CULTURAL", :C],
-    ["JURÍDICO", :J], 
-    ["NINGUNO", :N], 
-    ["PSICOSOCIAL", :P]
-  ],
+  collection: ApplicationHelper::TIPOACOMP,
   include_blank: false ) 
 %>
 
@@ -44,11 +39,7 @@
     <div class="panel-body">
       <%= s.input(
         :consentimiento, 
-        collection: [
-          [:NO, :N],
-          [:SI, :S], 
-          ["SIN INFORMACIÓN", :I]
-        ],
+        collection: ApplicationHelper::NOSI,
         include_blank: false ) 
       %>
     </div>

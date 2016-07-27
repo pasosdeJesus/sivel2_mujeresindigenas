@@ -11,16 +11,9 @@
     <%= f.input :dia, collection: @dias %>
 
     <%= f.input(
-      :diasemana, 
-      collection: [
-        [:DOMINGO, 0], 
-        [:LUNES, 1], 
-        [:MARTES, 2], 
-        [:MIERCOLES, 3],
-        [:JUEVES, 4], 
-        [:VIERNES, 5], 
-        [:SABADO, 6] 
-      ]) 
+            :diasemana, 
+            collection: ApplicationHelper::DIASEMANA
+      ) 
     %>
 
     <div class="hora">
@@ -50,20 +43,14 @@
     <%= f.input :numvecesantes %>
     
     <%= f.input :relacionadocon,
-      collection: [ 
-        ['ARMADO', :A], 
-        ['SOCIAL', :S] ],
-      include_blank: false
+            collection: ApplicationHelper::TIPOCONFLICTO,
+            include_blank: false
     %>
 
     <%= render 'actosevento_din', :f => f %>
 
     <%= f.input :testigo, 
-      collection: [
-        ['NO', :N],
-        ['SI', :S], 
-        ['SIN INFORMACIÓN', :I]
-      ],
+      collection: ApplicationHelper::NOSI,
       include_blank: false
     %>
 
@@ -93,20 +80,12 @@
 
       <%= f.input(
         :situacionriesgo, 
-        collection: [
-          ['NO', :N],
-          ['SI', :S], 
-          ['SIN INFORMACIÓN', :I]
-        ],
+        collection: ApplicationHelper::NOSI,
         include_blank: false) %>
 
       <%= f.input(
         :solicitomedidas, 
-        collection: [
-          ['NO', :N],
-          ['SI', :S], 
-          ['SIN INFORMACIÓN', :I]
-        ],
+        collection: ApplicationHelper::NOSI,
         include_blank: false) %>
 
       <%= f.input :medidasrecibidas %>
@@ -119,20 +98,15 @@
     <div class="panel-heading">Acceso a la Justicia</div>
     <div class="panel-body">
 
-      <%= f.input :denuncia, collection: [
-        ['NO', :N],
-        ['SI', :S], 
-        ['SIN INFORMACIÓN', :I] ],
-      include_blank: false %>
+            <%= f.input :denuncia, 
+                    collection: ApplicationHelper::NOSI, 
+                    include_blank: false 
+            %>
 
     <%= f.input :denunciaante, 
-      collection: [
-        ['AMBOS SISTEMAS', :A],
-        ['ORDINARIA', :O], 
-        ['PROPIA', :P], 
-        ['SIN INFORMACIÓN', :I]
-    ],
-    include_blank: false %>
+      collection: ApplicationHelper::DENUNCIAANTE,
+      include_blank: false 
+    %>
 
   <%= f.input :aniodenuncia, 
     collection: @anios %>
@@ -148,21 +122,14 @@
     value_method: :id %>
 
   <%= f.input :valoracionjusticia, 
-    collection: [
-      ['SIN INFORMACIÓN', :S],
-      ['BUENA', :B],
-      ['REGULAR', :R],
-      ['MALA', :M] 
-  ],
-  include_blank: false %>
+    collection: ApplicationHelper::VALORACIONBRM,
+    include_blank: false 
+  %>
 
 <%= f.input :quisieradenunciar, 
-  collection: [
-    ['NO', :N],
-    ['SI', :S], 
-    ['SIN INFORMACIÓN', :I]
-],
-include_blank: false %>
+  collection: ApplicationHelper::NOSI,
+  include_blank: false 
+%>
     </div>
   </div>
 

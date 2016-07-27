@@ -23,21 +23,8 @@
 <%= fpersona.input :anionac, 
   collection: @anios,
   label: 'Año Nacimiento' %>
-<% @meses = [
-  ["ENERO", 1], 
-  ["FEBRERO", 2], 
-  ["MARZO", 3], 
-  ["ABRIL", 4], 
-  ["MAYO", 5], 
-  ["JUNIO", 6], 
-  ["JULIO", 7], 
-  ["AGOSTO", 8], 
-  ["SEPTIEMBRE", 9], 
-  ["OCTUBRE", 10], 
-  ["NOVIEMBRE", 11], 
-  ["DICIEMBRE", 12]] %>
 <%= fpersona.input :mesnac, 
-  collection: @meses,
+  collection: ApplicationHelper::MESES,
   label: 'Mes Nacimiento' %>
 <% @dias = *(1..31) %>
 <%= fpersona.input :dianac, collection: @dias, label: 'Día Nacimiento' %>
@@ -111,11 +98,7 @@
 
 <%= fvictimasjr.input(
   :sistemasalud, 
-  collection: [
-    ['PROPIO', :P], 
-    ['ORDINARIO', :O], 
-    ['SIN INFORMACIÓN', :I]
-  ],
+  collection: ApplicationHelper::SISTEMASALUD,
   include_blank: false
 )
 %>
@@ -130,20 +113,16 @@
 
   <%= fvictimasjr.input(
     :tienetierra, 
-    collection: [
-      [:NO, :N],
-      [:SI, :S], 
-      ["SIN INFORMACIÓN", :I],
-    ],
-    include_blank: false ) %>
+    collection: ApplicationHelper::NOSI,
+    include_blank: false ) 
+  %>
 
   <%= fvictimasjr.input :areatierra %>
 
 <% end %>
 
 <%= fpersona.input :sexo, 
-  collection: [["SIN INFORMACIÓN", :S], 
-               ["MUJER", :F], ["HOMBRE", :M]], 
+  collection:ApplicationHelper::SEXO,
   include_blank: false 
 %>
 <%= fpersona.association :departamento,
@@ -180,43 +159,26 @@
 
 <%= fvictimasjr.input(
   :ndiscapacidad, 
-  collection: [
-    ['NO', 'NO'],
-    ['SI', 'SI'], 
-    ['SIN INFORMACIÓN', 'SIN INFORMACIÓN']
-  ],
+  collection: ApplicationHelper::NOSI,
   include_blank: false
 )
 %>
 
 <%= fvictimasjr.input(
   :incluidoruv, 
-  collection: [
-    ['NO', :N],
-    ['SI', :S], 
-    ['SIN INFORMACIÓN', :I]
-  ],
+  collection: ApplicationHelper::NOSI,
   include_blank: false)
 %>
 
 <%= fvictimasjr.input(
   :cabezahogar, 
-  collection: [
-    ['NO', :N],
-    ['SI', :S], 
-    ['SIN INFORMACIÓN', :I]
-  ],
+  collection: ApplicationHelper::NOSI,
   include_blank: false)
 %>
 
 <%= fvictimasjr.input(
   :liderazgo, 
-  collection: [
-    ['EN ZONAS DE CONFLICTO', :Z],
-    ['NO', :N],
-    ['SI', :S], 
-    ['SIN INFORMACIÓN', :I]
-  ],
+  collection: ApplicationHelper::LIDERAZGO,
   include_blank: false)
 %>
 

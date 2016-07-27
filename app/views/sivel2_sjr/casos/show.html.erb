@@ -29,7 +29,9 @@
         %></dd>
 
       <dt><strong><%= Sivel2Sjr::Casosjr.human_attribute_name(:tipoacomp) %>:</strong></dt>
-      <dd><%= @caso.casosjr.tipoacomp if @caso.casosjr && @caso.casosjr.tipoacomp %></dd>
+      <dd><%= ApplicationHelper.etiqueta(
+        ApplicationHelper::TIPOACOMP, @caso.casosjr.tipoacomp) if 
+        @caso.casosjr && @caso.casosjr.tipoacomp %></dd>
 
       <dt><strong><%= Sivel2Gen::Caso.human_attribute_name(:fecha) %>:</strong></dt>
       <dd><%= @caso.fecha %></dd>
@@ -63,7 +65,9 @@
         <%= victima.persona.dianac if victima.persona.dianac %></dd>
 
         <dt><strong><%= Sip::Persona.human_attribute_name(:sexo) %>:</strong></dt>
-        <dd><%= victima.persona.sexo %></dd>
+        <dd><%= ApplicationHelper.etiqueta(
+        ApplicationHelper::SEXO, victima.persona.sexo ) %></dd>
+
 
         <dt><strong><%= Sip::Persona.human_attribute_name(:departamento) %>:</strong></dt>
         <dd><%= victima.persona.departamento.nombre if victima.persona.departamento %> </dd>
@@ -81,7 +85,7 @@
         <dd><%= victima.victimasjr.comunidadnac %></dd>
 
         <dt><strong><%= Sivel2Gen::Victima.human_attribute_name(:rangoedad) %>:</strong></dt>
-        <dd><%= victima.rangoedad.nombre %></dd>
+        <dd><%= victima.rangoedad.rango %></dd>
 
         <dt><strong><%= Sivel2Gen::Victima.human_attribute_name(:etnia) %>:</strong></dt>
         <dd><%= victima.etnia.nombre %></dd>

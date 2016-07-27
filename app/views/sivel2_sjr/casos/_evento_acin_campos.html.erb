@@ -29,11 +29,7 @@
 <%= f.input :reaccionfamiliaycomunidad %>
 
 <%= f.input :afectacionotra, 
-  collection: [
-    ['NO', :N],
-    ['SI', :S], 
-    ['SIN INFORMACIÓN', :I]
-  ],
+  collection: ApplicationHelper::NOSI,
   include_blank: false
 %>
 
@@ -42,11 +38,7 @@
 <%= f.input :etapaproceso %>
 
 <%= f.input :recibidoreparacion, 
-  collection: [
-    ['NO', :N],
-    ['SI', :S], 
-    ['SIN INFORMACIÓN', :I]
-  ],
+  collection: ApplicationHelper::NOSI,
   include_blank: false
 %>
 
