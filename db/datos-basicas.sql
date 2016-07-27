@@ -4,12 +4,53 @@
 -- PostgreSQL database dump
 --
 
+-- Dumped from database version 9.5.3
+-- Dumped by pg_dump version 9.5.3
+
 SET statement_timeout = 0;
 
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
+SET row_security = off;
+
+SET search_path = public, pg_catalog;
+
+--
+-- Data for Name: estadocaso; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO estadocaso (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (1, 'ACOMPAÑADO', NULL, '2016-07-27', NULL, '2016-07-27 00:00:00', '2016-07-27 00:00:00');
+INSERT INTO estadocaso (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (2, 'DOCUMENTADO', NULL, '2016-07-27', NULL, '2016-07-27 00:00:00', '2016-07-27 00:00:00');
+INSERT INTO estadocaso (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (3, 'REGISTRADO', NULL, '2016-07-27', NULL, '2016-07-27 00:00:00', '2016-07-27 00:00:00');
+
+
+--
+-- Name: estadocaso_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('estadocaso_id_seq', 1, false);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.5.3
+-- Dumped by pg_dump version 9.5.3
+
+SET statement_timeout = 0;
+
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
 
 SET search_path = public, pg_catalog;
 
@@ -31,7 +72,7 @@ INSERT INTO consecuenciafamiliar (id, nombre, observaciones, fechacreacion, fech
 -- Name: consecuenciafamiliar_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('consecuenciafamiliar_id_seq', 101, true);
+SELECT pg_catalog.setval('consecuenciafamiliar_id_seq', 100, true);
 
 
 --
@@ -42,12 +83,16 @@ SELECT pg_catalog.setval('consecuenciafamiliar_id_seq', 101, true);
 -- PostgreSQL database dump
 --
 
+-- Dumped from database version 9.5.3
+-- Dumped by pg_dump version 9.5.3
+
 SET statement_timeout = 0;
 
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
+SET row_security = off;
 
 SET search_path = public, pg_catalog;
 
@@ -111,7 +156,7 @@ INSERT INTO consecuenciafisica (id, nombre, observaciones, fechacreacion, fechad
 -- Name: consecuenciafisica_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('consecuenciafisica_id_seq', 101, true);
+SELECT pg_catalog.setval('consecuenciafisica_id_seq', 100, true);
 
 
 --
@@ -122,12 +167,16 @@ SELECT pg_catalog.setval('consecuenciafisica_id_seq', 101, true);
 -- PostgreSQL database dump
 --
 
+-- Dumped from database version 9.5.3
+-- Dumped by pg_dump version 9.5.3
+
 SET statement_timeout = 0;
 
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
+SET row_security = off;
 
 SET search_path = public, pg_catalog;
 
@@ -159,7 +208,7 @@ INSERT INTO consecuenciaindividual (id, nombre, observaciones, fechacreacion, fe
 -- Name: consecuenciaindividual_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('consecuenciaindividual_id_seq', 101, true);
+SELECT pg_catalog.setval('consecuenciaindividual_id_seq', 100, true);
 
 
 --
@@ -170,12 +219,16 @@ SELECT pg_catalog.setval('consecuenciaindividual_id_seq', 101, true);
 -- PostgreSQL database dump
 --
 
+-- Dumped from database version 9.5.3
+-- Dumped by pg_dump version 9.5.3
+
 SET statement_timeout = 0;
 
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
+SET row_security = off;
 
 SET search_path = public, pg_catalog;
 
@@ -195,7 +248,7 @@ INSERT INTO educacionpropia (id, nombre, observaciones, fechacreacion, fechadesh
 -- Name: educacionpropia_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('educacionpropia_id_seq', 101, true);
+SELECT pg_catalog.setval('educacionpropia_id_seq', 100, true);
 
 
 --
@@ -206,12 +259,16 @@ SELECT pg_catalog.setval('educacionpropia_id_seq', 101, true);
 -- PostgreSQL database dump
 --
 
+-- Dumped from database version 9.5.3
+-- Dumped by pg_dump version 9.5.3
+
 SET statement_timeout = 0;
 
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
+SET row_security = off;
 
 SET search_path = public, pg_catalog;
 
@@ -234,7 +291,7 @@ INSERT INTO motivonodenuncia (id, nombre, observaciones, fechacreacion, fechades
 -- Name: motivonodenuncia_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('motivonodenuncia_id_seq', 101, true);
+SELECT pg_catalog.setval('motivonodenuncia_id_seq', 100, true);
 
 
 --
@@ -245,12 +302,16 @@ SELECT pg_catalog.setval('motivonodenuncia_id_seq', 101, true);
 -- PostgreSQL database dump
 --
 
+-- Dumped from database version 9.5.3
+-- Dumped by pg_dump version 9.5.3
+
 SET statement_timeout = 0;
 
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
+SET row_security = off;
 
 SET search_path = public, pg_catalog;
 
@@ -281,12 +342,16 @@ SELECT pg_catalog.setval('religion_id_seq', 102, true);
 -- PostgreSQL database dump
 --
 
+-- Dumped from database version 9.5.3
+-- Dumped by pg_dump version 9.5.3
+
 SET statement_timeout = 0;
 
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
+SET row_security = off;
 
 SET search_path = public, pg_catalog;
 
@@ -309,7 +374,7 @@ INSERT INTO tafectacion (id, nombre, observaciones, fechacreacion, fechadeshabil
 -- Name: tafectacion_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('tafectacion_id_seq', 101, true);
+SELECT pg_catalog.setval('tafectacion_id_seq', 100, true);
 
 
 --
@@ -320,12 +385,16 @@ SELECT pg_catalog.setval('tafectacion_id_seq', 101, true);
 -- PostgreSQL database dump
 --
 
+-- Dumped from database version 9.5.3
+-- Dumped by pg_dump version 9.5.3
+
 SET statement_timeout = 0;
 
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
+SET row_security = off;
 
 SET search_path = public, pg_catalog;
 
@@ -346,7 +415,7 @@ INSERT INTO tapoyo (id, nombre, observaciones, fechacreacion, fechadeshabilitaci
 -- Name: tapoyo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('tapoyo_id_seq', 101, true);
+SELECT pg_catalog.setval('tapoyo_id_seq', 100, true);
 
 
 --

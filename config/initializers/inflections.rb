@@ -19,6 +19,7 @@ ActiveSupport::Inflector.inflections do |inflect|
 	inflect.irregular 'consecuenciafisica', 'consecuenciasfisicas'
 	inflect.irregular 'consecuenciaindividual', 'consecuenciasindividuales'
 	inflect.irregular 'educacionpropia', 'educacionespropias'
+	inflect.irregular 'estadocaso', 'estadoscaso'
 	inflect.irregular 'motivonodenuncia', 'motivosnodenuncia'
 	inflect.irregular 'religion', 'religiones'
 	inflect.irregular 'tafectacion', 'tafectaciones'

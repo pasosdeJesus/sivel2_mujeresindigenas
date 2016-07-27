@@ -5,6 +5,9 @@ es:
       "sip/oficina":
         one: "Organización que diligencia"
         other: "Organizaciones que diligencian"
+      "estadocaso":
+        one: "Estado del caso"
+        other: "Estados de caso"
     attributes:
       "consecuenciafamiliar":
         Consecuenciafamiliar: Afectación familiar
@@ -18,6 +21,9 @@ es:
       "educacionpropia":
         Educacionpropia: Forma de educación propia
         Educacionespropias: Formas de educación propia
+      "estadocaso":
+        Estadocaso: Estado de caso
+        Estadoscaso: Estados de caso
       "evento":
         acompnecesita: Acompañamiento que necesita
         actividadesdejadas: Actividades que se dejaron de hacer
@@ -80,7 +86,6 @@ es:
         oficina: Organizacion que diligencia
       "sivel2_sjr/casosjr":
         contacto: Víctima
-        estadocaso: Estado del caso
         fecharec: Fecha documentación ini.
         oficina: Organizacion que diligencia
         residencia: Residencia actual

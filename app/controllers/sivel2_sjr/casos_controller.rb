@@ -56,13 +56,13 @@ module Sivel2Sjr
         :memo, 
         :casosjr_attributes => [
           :id, :asesor, :oficina_id, :fecharec,
-          :id_idioma,
-          :estadocaso, :tipoacomp, :consentimiento,
-          :_destroy
+          :id_idioma, :tipoacomp, :consentimiento,
+          :_destroy,
+          :estadocaso_ids => []
         ], 
         :caso_fuenteprensa_attributes => [
-                :id, :fecha, :fuenteprensa_id, :ubicacion, 
-                :_destroy
+          :id, :fecha, :fuenteprensa_id, :ubicacion, 
+          :_destroy
         ],
         :victima_attributes => [
           :id, :id_persona, :id_profesion, :id_rangoedad, :id_etnia, 
@@ -108,9 +108,6 @@ module Sivel2Sjr
           :brindadaproteccion,
           :comunidad,
           :compromisosadquiridos,
-          :consecuenciafamiliar_id,
-          :consecuenciafisica_id,
-          :consecuenciaindividual_id,
           :denuncia,
           :denunciaante,
           :departamento_id,
@@ -137,14 +134,17 @@ module Sivel2Sjr
           :resguardo,
           :situacionriesgo,
           :solicitomedidas,
-          :tafectacion_id,
-          :tapoyo_id,
           :testigo,
           :valoracionjusticia,
           :_destroy,
           :actoevento_attributes => [
             :id, :presponsable_id, :categoria_id, :_destroy,
-          ]
+          ],
+          :consecuenciafamiliar_ids => [],
+          :consecuenciafisica_ids => [],
+          :consecuenciaindividual_ids => [],
+          :tafectacion_ids => [],
+          :tapoyo_ids => []
         ],
         :anexo_caso_attributes => [
           :id, 
