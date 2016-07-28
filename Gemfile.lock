@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/pasosdeJesus/cor1440_gen.git
-  revision: 80b3dc4081034af89142a46c34cb43e013d8760c
+  revision: f3e91af5615039f44a53e574f055c94c0723b7de
   specs:
     cor1440_gen (1.0.b1)
       devise
@@ -92,7 +92,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     addressable (2.4.0)
-    arel (7.1.0)
+    arel (7.1.1)
     autoprefixer-rails (6.3.7)
       execjs
     bcrypt (3.1.11)
@@ -104,7 +104,6 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.2)
-    byebug (9.0.5)
     camertron-eprun (1.1.0)
     cancancan (1.15.0)
     capybara (2.7.1)
@@ -358,7 +357,6 @@ DEPENDENCIES
   bcrypt
   bootstrap-datepicker-rails
   bootstrap-sass
-  byebug
   cancancan
   capybara
   capybara-webkit
