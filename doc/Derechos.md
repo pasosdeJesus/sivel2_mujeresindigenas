@@ -6,7 +6,7 @@ Blanca Inés Acosta (blanca@pasosdeJesus.org). 2016
 Este documento y sus fuentes son obra de amor cedidas al dominio
 público de acuerdo a la legislación colombiana desde 2016.
 
-http://www.pasosdejesus.org/dominio_publico_colombia.html
+<http://www.pasosdejesus.org/dominio_publico_colombia.html>
 
 No se ofrece garantía alguna, por el contrario se aprecia que se envíen
 correcciones y sugerencias a los autores. Este escrito se dedica a Dios:

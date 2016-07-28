@@ -8,7 +8,7 @@ include Make.inc
 
 EXT_DOCBOOK=xdbk
 
-FUENTESDB=introduccion.xdbk recursos_humanos.xdbk infraestructura_tecnologica.xdbk uso.xdbk listado_de_casos.xdbk administracion.xdbk administrativas_interprete_comandos.xdbk novedades.xdbk creditos.xdbk bibliografia.xdbk
+FUENTESDB=introduccion.xdbk recursos_humanos.xdbk infraestructura_tecnologica.xdbk uso.xdbk listado_de_casos.xdbk ingresos.xdbk administracion.xdbk novedades.xdbk creditos.xdbk bibliografia.xdbk
 
 SOURCES=$(PROYECTO).$(EXT_DOCBOOK) $(FUENTESDB)
 # Listado de fuentes XML. Preferiblmente en el orden de inclusión.

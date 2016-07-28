@@ -12,9 +12,9 @@
 <!ENTITY recursos_humanos SYSTEM "recursos_humanos.xdbk">
 <!ENTITY infraestructura_tecnologica SYSTEM "infraestructura_tecnologica.xdbk">
 <!ENTITY uso SYSTEM "uso.xdbk">
+<!ENTITY ingresos SYSTEM "ingresos.xdbk">
 <!ENTITY listado_de_casos SYSTEM "listado_de_casos.xdbk">
 <!ENTITY administracion SYSTEM "administracion.xdbk">
-<!ENTITY administrativas_interprete_comandos SYSTEM "administrativas_interprete_comandos.xdbk">
 
 <!ENTITY novedades SYSTEM "novedades.xdbk">
 <!ENTITY creditos SYSTEM "creditos.xdbk">
@@ -42,15 +42,18 @@
     
     <abstract>
       <para>Estas notas buscan ayudar a usuarios que desean emplear
-	      por primera vez el sistema seguro adJ.  
+	      por primera vez el sistema de información.  
       </para>
     </abstract>
 
     <legalnotice>
 	    <para>
-SIVeL2 se dedica a Dios y a las víctimas. Su código fuente se libera al Dominio Público de acuerdo a la legislación colombiana, sin garantías. Se registró como obra de dominio público ante la Dirección Nacional de Derechos de Autor de Colombia el --- de --- de 2016. Oramos para que no sea utilizado por estructuras armadas. Esta documentación fue actualizada por última vez en 29/01/2016
+SIVeL2 se dedica a Dios y a las víctimas. Su código fuente se libera al 
+Dominio Público de acuerdo a la legislación colombiana, sin garantías. 
+Oramos para que no sea utilizado por estructuras armadas. 
+Esta documentación fue actualizada por última vez en &FECHA-ACT;.
 
-En Internet puede descargar el código [fuente de SIVeL](https://github.com/pasosdeJesus/sivel2_mujeresindigenas/tree/master).
+En Internet puede descargar el <ulink url="https://github.com/pasosdeJesus/sivel2_mujeresindigenas/tree/master">código fuente de este sistema</ulink>.
 	  </para>
     </legalnotice>
 
@@ -61,8 +64,8 @@ En Internet puede descargar el código [fuente de SIVeL](https://github.com/paso
   &infraestructura_tecnologica;
   &uso;
   &listado_de_casos;
+  &ingresos;
   &administracion;
-  &administrativas_interprete_comandos;
   &novedades;
   &creditos;
   &bibliografia;
