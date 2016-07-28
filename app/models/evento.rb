@@ -45,20 +45,20 @@ class Evento < ActiveRecord::Base
   validates :valoracionjusticia, length: {maximum: 1}
   validates :relacionadocon, length: { maximum: 1}
 
-  validates :resguardo, length: {maximum: 500}
-  validates :comunidad, length: {maximum: 500}
-  validates :medidasrecibidas, length: {maximum: 5000}
-  validates :brindadaproteccion, length: {maximum: 5000}
-  #validates :fechadenuncia, :date
-  validates :descripcionafectacion, length: {maximum: 5000}
-  validates :relacionprespvic, length: {maximum: 500}
-  #validates :numvecesantes, :integer
-  validates :actividadesdejadas, length: {maximum: 5000}
-  validates :reaccionfamiliaycomunidad, length: {maximum: 5000}
-  validates :avancescaso, length: {maximum: 5000}
-  validates :etapaproceso, length: {maximum: 500}
-  validates :compromisosadquiridos, length: {maximum: 5000}
-  validates :observaciones, length: {maximum: 5000}
   validates :acompnecesita, length: {maximum: 5000}
+  validates :actividadesdejadas, length: {maximum: 5000}
+  validates :avancescaso, length: {maximum: 5000}
+  validates :brindadaproteccion, length: {maximum: 5000}
+  validates :compromisosadquiridos, length: {maximum: 5000}
+  validates :comunidad, length: {maximum: 500}
+  validates :descripcionafectacion, length: {maximum: 5000}
+  validates :etapaproceso, length: {maximum: 500}
+  validates :medidasrecibidas, length: {maximum: 5000}
+  validates :observaciones, length: {maximum: 5000}
+  validates :relacionprespvic, length: {maximum: 500}
+  validates :resguardo, length: {maximum: 500}
+  validates :reaccionfamiliaycomunidad, length: {maximum: 5000}
+  validates :seguimientojudicial, length: {maximum: 5000}
+  validates :seguimientopsicosocial, length: {maximum: 5000}
 
 end

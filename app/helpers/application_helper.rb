@@ -78,13 +78,13 @@ module ApplicationHelper
   ]
 
   def self.etiqueta(a, l)
-    r = a.select do |r|
+    res = a.select do |r|
       r[1].to_s == l.to_s
     end
-    if r.length == 0
+    if res.length == 0
       "ERROR-CON-#{a}-Y-#{l}-FAVOR-REPORTAR"
     else
-      r[0][0]
+      res[0][0]
     end
   end
 

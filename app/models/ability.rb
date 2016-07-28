@@ -82,6 +82,9 @@ class Ability < Sivel2Sjr::Ability
       if usuario.oficina && usuario.oficina.id  == 104
         can :edit, :casosacin
       end
+      if usuario.oficina && usuario.oficina.id  == 103
+        can :edit, :casosoik
+      end
       case usuario.rol 
       when Ability::ROLANALI
         can :manage, ::Evento
@@ -114,6 +117,7 @@ class Ability < Sivel2Sjr::Ability
       when Ability::ROLADMIN, Ability::ROLDIR
         can :manage, ::Evento
         can :edit, :casosacin
+        can :edit, :casosoik
         can :manage, Sivel2Gen::Caso
         can :manage, Cor1440Gen::Actividad
         can :manage, Cor1440Gen::Informe

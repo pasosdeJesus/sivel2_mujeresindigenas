@@ -132,6 +132,8 @@ module Sivel2Sjr
           :relacionadocon,
           :relacionprespvic,
           :resguardo,
+          :seguimientojudicial,
+          :seguimientopsicosocial,
           :situacionriesgo,
           :solicitomedidas,
           :testigo,

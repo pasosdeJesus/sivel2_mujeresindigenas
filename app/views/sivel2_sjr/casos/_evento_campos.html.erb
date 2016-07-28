@@ -141,6 +141,15 @@
          </div>
        </div>
     <% end %>
+
+    <% if f.object.caso.casosjr.oficina_id == 103 && can?(:edit, :casosoik) then %>
+       <div class="panel panel-default">
+         <div class="panel-heading">Privado OIK</div>
+         <div class="panel-body">
+           <%= render 'evento_oik_campos', :f => f %>
+         </div>
+       </div>
+    <% end %>
   
 
     <%= link_to_remove_association "Eliminar Evento", f, 
