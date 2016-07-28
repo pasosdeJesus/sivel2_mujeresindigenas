@@ -66,7 +66,7 @@
 
         <dt><strong><%= Sip::Persona.human_attribute_name(:sexo) %>:</strong></dt>
         <dd><%= ApplicationHelper.etiqueta(
-        ApplicationHelper::SEXO, victima.persona.sexo ) %></dd>
+        ApplicationHelper::SEXO, victima.persona.sexo ) if victima.persona.sexo %></dd>
 
 
         <dt><strong><%= Sip::Persona.human_attribute_name(:departamento) %>:</strong></dt>
@@ -103,19 +103,29 @@
         <dd><%= victima.victimasjr.educacionpropia.nombre %></dd>
 
         <dt><strong><%= Sivel2Sjr::Victimasjr.human_attribute_name(:ndiscapacidad) %>:</strong></dt>
-        <dd><%= victima.victimasjr.ndiscapacidad %></dd>
+        <dd><%= ApplicationHelper.etiqueta(
+          ApplicationHelper::NOSI, victima.victimasjr.ndiscapacidad) if 
+          victima.victimasjr.ndiscapacidad %></dd>
 
         <dt><strong><%= Sivel2Sjr::Victimasjr.human_attribute_name(:sistemasalud) %>:</strong></dt>
-        <dd><%= victima.victimasjr.sistemasalud %></dd>
+        <dd><%= ApplicationHelper.etiqueta(
+          ApplicationHelper::SISTEMASALUD, victima.victimasjr.sistemasalud) if
+          victima.victimasjr.sistemasalud %></dd>
 
         <dt><strong><%= Sivel2Sjr::Victimasjr.human_attribute_name(:incluidoruv) %>:</strong></dt>
-        <dd><%= victima.victimasjr.incluidoruv %></dd>
+        <dd><%= ApplicationHelper.etiqueta(
+          ApplicationHelper::NOSI, victima.victimasjr.incluidoruv) if 
+          victima.victimasjr.incluidoruv %></dd>
 
         <dt><strong><%= Sivel2Sjr::Victimasjr.human_attribute_name(:cabezahogar) %>:</strong></dt>
-        <dd><%= victima.victimasjr.cabezahogar %></dd>
+        <dd><%= ApplicationHelper.etiqueta(
+          ApplicationHelper::NOSI, victima.victimasjr.cabezahogar) if 
+          victima.victimasjr.cabezahogar %></dd>
 
         <dt><strong><%= Sivel2Sjr::Victimasjr.human_attribute_name(:liderazgo) %>:</strong></dt>
-        <dd><%= victima.victimasjr.liderazgo %></dd>
+        <dd><%= ApplicationHelper.etiqueta(
+          ApplicationHelper::LIDERAZGO, victima.victimasjr.liderazgo) if 
+          victima.victimasjr.liderazgo %></dd>
 
       <%end %>
 
@@ -131,7 +141,8 @@
           <dd><%= evento.anio if evento.anio %>-
           <%= evento.mes if evento.mes %>-
           <%= evento.dia if evento.dia %>
-          <%= evento.diasemana if evento.diasemana %>
+          <%= ApplicationHelper.etiqueta(
+            ApplicationHelper::DIASEMANA, evento.diasemana) if evento.diasemana %>
           </dd>
 
           <dt><strong><%= ::Evento.human_attribute_name(:ubicacion) %>:</strong></dt>
@@ -147,6 +158,11 @@
 
           <dt><strong><%= ::Evento.human_attribute_name(:numvecesantes) %>:</strong></dt>
           <dd><%= evento.numvecesantes %></dd>
+          
+          <dt><strong><%= ::Evento.human_attribute_name(:relacionadocon) %>:</strong></dt>
+          <dd><%= ApplicationHelper.etiqueta(
+            ApplicationHelper::TIPOCONFLICTO, evento.relacionadocon) if 
+            evento.relacionadocon %></dd>
 
           <dt><strong>Actos:</strong></dt>
           <dd>
@@ -156,7 +172,9 @@
           </dd>
 
           <dt><strong><%= ::Evento.human_attribute_name(:testigo) %>:</strong></dt>
-          <dd><%= evento.testigo %></dd>
+          <dd><%= ApplicationHelper.etiqueta(
+            ApplicationHelper::NOSI, evento.testigo) if 
+            evento.testigo %></dd>
 
           <dt><strong><%= ::Evento.human_attribute_name(:tafectacion) %>:</strong></dt>
           <dd><%= if evento.tafectacion then
@@ -181,10 +199,14 @@
           <dd><%= evento.acompnecesita %></dd>
 
           <dt><strong><%= ::Evento.human_attribute_name(:situacionriesgo) %>:</strong></dt>
-          <dd><%= evento.situacionriesgo %></dd>
+          <dd><%= ApplicationHelper.etiqueta(
+            ApplicationHelper::NOSI, evento.situacionriesgo) if 
+            evento.situacionriesgo %></dd>
 
           <dt><strong><%= ::Evento.human_attribute_name(:solicitomedidas) %>:</strong></dt>
-          <dd><%= evento.solicitomedidas %></dd>
+          <dd><%= ApplicationHelper.etiqueta(
+            ApplicationHelper::NOSI, evento.solicitomedidas) if 
+            evento.solicitomedidas %></dd>
 
           <dt><strong><%= ::Evento.human_attribute_name(:medidasrecibidas) %>:</strong></dt>
           <dd><%= evento.medidasrecibidas %></dd>
@@ -194,10 +216,13 @@
 
 
           <dt><strong><%= ::Evento.human_attribute_name(:denuncia) %>:</strong></dt>
-          <dd><%= evento.denuncia %></dd>
+          <dd><%= ApplicationHelper.etiqueta(
+            ApplicationHelper::NOSI, evento.denuncia) if evento.denuncia %></dd>
 
           <dt><strong><%= ::Evento.human_attribute_name(:denunciaante) %>:</strong></dt>
-          <dd><%= evento.denunciaante %></dd>
+          <dd><%= ApplicationHelper.etiqueta(
+            ApplicationHelper::DENUNCIAANTE, evento.denunciaante) if 
+            evento.denunciaante %></dd>
 
           <dt><strong><%= ::Evento.human_attribute_name(:fechadenuncia) %>:</strong></dt>
           <dd><%= evento.aniodenuncia if evento.aniodenuncia %>-
@@ -209,10 +234,14 @@
           <dd><%= evento.motivonodenuncia.nombre if evento.motivonodenuncia %></dd>
 
           <dt><strong><%= ::Evento.human_attribute_name(:valoracionjusticia) %>:</strong></dt>
-          <dd><%= evento.valoracionjusticia %></dd>
+          <dd><%= ApplicationHelper.etiqueta(
+            ApplicationHelper::VALORACIONBRM, evento.valoracionjusticia) if 
+            evento.valoracionjusticia %></dd>
 
           <dt><strong><%= ::Evento.human_attribute_name(:quisieradenunciar) %>:</strong></dt>
-          <dd><%= evento.quisieradenunciar %></dd>
+          <dd><%= ApplicationHelper.etiqueta(
+            ApplicationHelper::NOSI, evento.quisieradenunciar) if 
+            evento.quisieradenunciar %></dd>
 
         <%end %>
       </div>
