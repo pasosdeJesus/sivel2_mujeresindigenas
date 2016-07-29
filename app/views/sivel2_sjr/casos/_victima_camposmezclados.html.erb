@@ -143,15 +143,6 @@
   label_method: :nombre,
   value_method: :id 
 %>
-<%= fpersona.association :clase,
-  collection: 
-  (Sip::Clase.habilitados.where(
-    id_municipio: fpersona.object.id_municipio)
-  ),
-  label: "Centro Poblado de Nacimiento",
-  label_method: :nombre,
-  value_method: :id 
-%>
 
 <%= fvictimasjr.input :resguardonac %>
 
