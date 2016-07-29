@@ -79,13 +79,13 @@ module Sivel2Sjr
             :id_escolaridad,
             :cabezafamilia, :asisteescuela, :id_estadocivil, 
             :id_actividadoficio,
-            :religion_id,
+            :religion_id, :comoingresos,
             :educacionpropia_id,
             :organizacionfilial, :comunidadnac, :resguardonac,
             :vicconflicto, :incluidoruv, :cabeahogar,
-            :sistemasalud, :cabezahogar, :liderazgo,
+            :sistemasalud, :cabezahogar, :liderazgo, :tipoliderazgo,
             :departamentores_id, :municipiores_id, 
-            :resguardores, :comunidadres
+            :resguardores, :comunidadres, :veredares
           ]
         ], 
         :ubicacion_attributes => [

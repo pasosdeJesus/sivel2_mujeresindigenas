@@ -101,6 +101,7 @@ es:
       "sivel2_sjr/victimasjr":
         areatierra: Área tierra
         cabezahogar: Cabeza del hogar
+        comoingresos: ¿Cómo genera ingresos económicos?
         comunidadnac: Comunidad de nacimiento
         comunidadres: Comunidad de residencia
         departamentores: Departamento de residencia
@@ -115,6 +116,8 @@ es:
         resguardores: Resguardo de residencia
         sistemasalud: Tiene carnet de salud
         tienetierra: Tiene tierra
+        tipoliderazgo: Tipo de liderazgo
+        veredares: Vereda de residencia
       "tafectacion":
         Tafectacion: Tipo de afectación
         Tafectaciones: Tipos de afectación

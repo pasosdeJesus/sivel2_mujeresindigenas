@@ -48,6 +48,8 @@
   <%= fvictimasjr.input :resguardores %>
 
   <%= fvictimasjr.input :comunidadres %>
+
+  <%= fvictimasjr.input :veredares %>
 <% end %>
 
 <%= fvictima.association :rangoedad,
@@ -110,6 +112,8 @@
     include_blank: false,
     label_method: :nombre, 
     value_method: :id %>
+
+  <%= fvictimasjr.input :comoingresos %>
 
   <%= fvictimasjr.input(
     :tienetierra, 
@@ -181,5 +185,9 @@
   collection: ApplicationHelper::LIDERAZGO,
   include_blank: false)
 %>
+
+<% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
+  <%= fvictimasjr.input :tipoliderazgo %>
+<% end %>
 
 <%= fvictimasjr.input :id_victima, as: :hidden %>
