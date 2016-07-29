@@ -60,7 +60,7 @@ es:
         seguimientojudicial: Seguimiento Judicial
         seguimientopsicosocial: Seguimiento Psicosocial
         situacionriesgo: Situación de riesgo
-        solicitomedidas: ¿Ha solicitado medidas al estado?
+        solicitomedidas: Ante quien ha solicitado medidas
         tafectacion: Tipo de afectación
         tapoyo: Tipo de apoyo
         testigo: Testigo
@@ -88,6 +88,7 @@ es:
         oficina: Organizacion que diligencia
       "sivel2_sjr/casosjr":
         contacto: Víctima
+        estadocaso: "Estado del caso"
         fecharec: Fecha documentación ini.
         oficina: Organizacion que diligencia
         residencia: Residencia actual

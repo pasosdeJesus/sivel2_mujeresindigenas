@@ -1,5 +1,13 @@
 module ApplicationHelper
 
+  ANTEQUIENMEDIDAS = [
+    ['CABILDO', :C],
+    ['ESTADO', :E],
+    ['ESTADO Y CABILDO', :Y],
+    ['NINGUNO', :N],
+    ['SIN INFORMACIÓN', :I]
+  ]
+
   DENUNCIAANTE = [ 
     ['AMBOS SISTEMAS', :A],
     ['ORDINARIA', :O], 
