@@ -5,8 +5,12 @@
     %>
 
     <%= f.input :fecha, 
-      :input_html => { "data-behaviour" => "datepicker" },
-      :as => :string, :label => "Fecha" 
+      input_html: { 
+        "data-behaviour" => "datepicker",
+        "value" => @caso.fecha
+      },
+      :as => :string, 
+      :label => "Fecha" 
     %>
 
     <%= f.association :fuenteprensa,
