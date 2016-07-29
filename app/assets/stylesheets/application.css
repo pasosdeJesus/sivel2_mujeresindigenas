@@ -14,3 +14,12 @@
  *= require sivel2_sjr/application.css
  *= require_tree .
  */
+
+.trescolumnas {
+	-webkit-column-count: 3; /* Chrome, Safari, Opera */
+	-moz-column-count: 3; /* Firefox */
+	column-count: 3;
+}
+label.collection_check_boxes {
+	margin-left: 20px;
+}
