@@ -84,6 +84,7 @@ module ApplicationHelper
 
   TIPOCONFLICTO = [ 
     ['ARMADO', :A], 
+    ['SIN INFORMACIÓN', :I],
     ['SOCIAL', :S] 
   ]
 
