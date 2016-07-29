@@ -65,6 +65,15 @@ module ApplicationHelper
     ['SIN INFORMACIÓN', :I]
   ]
 
+  TIENETIERRA = [
+    ["ADJUDICADO", :A],
+    ["COMPRO", :C],
+    [:NO, :N],
+    ["OTRA", :O],
+    [:SI, :S], 
+    ["SIN INFORMACIÓN", :I]
+  ]
+
   TIPOACOMP = [
     ["CULTURAL", :C],
     ["JURÍDICO", :J], 
