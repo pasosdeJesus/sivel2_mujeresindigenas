@@ -57,8 +57,12 @@
   <div class="panel panel-default">
     <div class="panel-heading">Víctima</div>
     <div class="panel-body">
-
+      <% numvic = 0 %>
       <% @caso.victima.each do |victima| %>
+        <% if numvic > 0 %>
+          <hr>
+        <% end %>
+        <% numvic += 1 %>
         <dt><strong><%= Sivel2Sjr::Casosjr.human_attribute_name(:fechanac) %>:</strong></dt>
         <dd><%= victima.persona.anionac if victima.persona.anionac %>-
         <%= victima.persona.mesnac if victima.persona.mesnac %>-
@@ -136,7 +140,12 @@
     <div class="panel panel-default">
       <div class="panel-heading">Eventos</div>
       <div class="panel-body">
+        <% numev = 0 %>
         <% @caso.evento.each do |evento| %>
+          <% if numev > 0 %>
+            <hr>
+          <% end %>
+          <% numev += 1 %>
           <dt><strong><%= ::Evento.human_attribute_name(:fecha) %>:</strong></dt>
           <dd><%= evento.anio if evento.anio %>-
           <%= evento.mes if evento.mes %>-
@@ -205,8 +214,8 @@
 
           <dt><strong><%= ::Evento.human_attribute_name(:solicitomedidas) %>:</strong></dt>
           <dd><%= ApplicationHelper.etiqueta(
-            ApplicationHelper::NOSI, evento.solicitomedidas) if 
-            evento.solicitomedidas %></dd>
+            ApplicationHelper::ANTEQUIENMEDIDAS, 
+            evento.solicitomedidas) if evento.solicitomedidas %></dd>
 
           <dt><strong><%= ::Evento.human_attribute_name(:medidasrecibidas) %>:</strong></dt>
           <dd><%= evento.medidasrecibidas %></dd>
@@ -242,7 +251,6 @@
           <dd><%= ApplicationHelper.etiqueta(
             ApplicationHelper::NOSI, evento.quisieradenunciar) if 
             evento.quisieradenunciar %></dd>
-
         <%end %>
       </div>
     </div>
