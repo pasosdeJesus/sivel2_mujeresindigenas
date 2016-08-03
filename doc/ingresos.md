@@ -142,7 +142,7 @@ http://words.carlus.cat/como-podemos-traducir-responsive-web-design/.
 * Idioma: El principal
 
 #### Evento de violencia y seguimiento {#evento_de_violencia_y_seguimiento}
-* Actividades que se dejaron de hacer: Se refiere a la actividad que desempeñara la víctima en el 
+* Actividades que se dejaron de hacer: Se refiere a la actividad que desempeñaba la víctima en el 
   momento de la agresión.
 
 ### Datos privados OIK {#datos_privados_acin}
