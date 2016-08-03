@@ -119,7 +119,7 @@ directorio de respaldo configurado --que por defecto es
 ```/var/www/resbase/sivel2_mujeresindigenas``` que en adJ está cifrado.
 
 ![Aviso](img/aviso.png)
-*Aviso*  
+***Aviso***  
 Los volcados generados incluyen las fuentes de información. Debe mantenerlos cifrados 
 y con permisos que no permitan lectura por parte de usuarios no autorizados.
 
