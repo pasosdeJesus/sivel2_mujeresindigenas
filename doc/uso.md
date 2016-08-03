@@ -73,6 +73,6 @@ tendrá acceso a las opciones del menú: Por ejemplo una persona con rol analist
 tendrá acceso al menú Administración->Usuarios. --que si puede ser usado por
 quien tenga rol administrador o administrador de oficina.
 
-Los usuarios ACIN veran un menú más amplio que las otras organizaaciones. 
+Los usuarios ACIN veran un menú más amplio que las otras organizaciones. 
 
 
