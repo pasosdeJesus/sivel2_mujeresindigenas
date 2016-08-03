@@ -40,7 +40,7 @@ registro. La siguiente figura ejemplifica los registros de Estados civiles.
 
 ![Estados civiles](img/estados_civiles.png)
 
-Para no perder compatibilidad entre su instalación de SIVeL2 y la de otras 
+Para no perder compatibilidad entre su instalación de SIVeL2 Mujeres Indígenas y la de otras 
 organizaciones, pero a la vez para permitirle personalizar el sistema a sus 
 necesidades de sistematización de información, sugerimos no cambiar ni eliminar 
 los registros de las tablas básicas, sino agregar los que necesite su organización 
