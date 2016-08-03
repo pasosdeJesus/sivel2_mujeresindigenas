@@ -11,7 +11,7 @@ desempeñen roles y de una infraestructura tecnológica que opere de manera cont
 Estos temas, precedidos de los principios que han guiado el desarrollo de SIVeL2, 
 se presentan en el resto de este capítulo.
 
-## Principios para el desarrollo de SIVeL {#principios_para_el_desarrollo_de_sivel2}
+## Principios para el desarrollo de SIVeL2 {#principios_para_el_desarrollo_de_sivel2}
 
 Para el desarrollo de SIVeL2 se han procurado seguir los siguientes principios para 
 manejo de información sobre violencia política, sugeridos por el sacerdote jesuita 
@@ -66,6 +66,7 @@ Por lo mismo en caso de hurto la información no será visible para quien hurta,
 y en caso de una inspección ilegitima basta apagar o desconectar el computador.
 
 ![Aviso](img/aviso.png)
+***Aviso***
 
 Reconocemos como fallas de seguridad críticas sólo las que puedan explotarse en la 
 versión estable operando sobre la plataforma de operación recomendada 
