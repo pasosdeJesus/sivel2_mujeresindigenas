@@ -35,8 +35,8 @@ Con SIVeL2 puede editar diversos casos simultanemaente abriendo varias ventanas 
 varias pestaña de su navegador.
 
 La interfaz debe mejorarse continuamente, pero se diseñó con el principio 
-"primero movil," por lo que resulta posible llenar un caso desde un teléfono intel
-igente con poco ancho de pantalla y como es un diseño adaptativo[4] se ajusta 
+"primero movil," por lo que resulta posible llenar un caso desde un teléfono 
+inteligente con poco ancho de pantalla y como es un diseño adaptativo[4] se ajusta 
 automáticamente a tabletas de diferentes dimensiones --puede probarlo desde una 
 computador de escritorio al cambiar el tamaño de la ventana del navegador para ver 
 como se reorganizan los menús, se escala la imágen de la pantalla inicial y en 
@@ -60,9 +60,6 @@ usuarios con rol de analista.
 biográficos de la víctima (como edad, discapacidades, etc).  Si no se conoce
 con precisión el día se recomienda dejar 15 y agregar etiqueta DIA_INEXACTO.
 Si no se conoce el mes se recomienda dejar Junio y la etiqueta MES_INEXACTO.
-
-* Organización que diligencia:   
-
 * Estado del caso: Se refiere a si la víctima tiene un seguimiento esta acompañado, 
 pero tambien puede ser que se tienen solo la documentación, o solo puede ser 
 registrado o sea que solo se sabe que paso.    
@@ -128,9 +125,9 @@ listado de casos (ver Sección 2, “Listado de Casos”) o las funcionalidades 
 http://words.carlus.cat/como-podemos-traducir-responsive-web-design/.
 
 
-### Datos privados Acin
+### Datos privados Acin {#datos_privados_acin}
 
-#### Datos básico
+#### Datos básicos {#datos_básicos}
 * Consentimiento
 
 #### Datos de la víctima
@@ -144,13 +141,13 @@ http://words.carlus.cat/como-podemos-traducir-responsive-web-design/.
 * Hijos: Cantidad
 * Idioma: El principal
 
-#### Evento de violencia y seguimiento
+#### Evento de violencia y seguimiento {#evento_de_violencia_y_seguimiento}
 * Actividades que se dejaron de hacer: Se refiere a la actividad que desempeñara la víctima en el 
   momento de la agresión.
 
-### Datos privados OIK
+### Datos privados OIK {#datos_privados_acin}
 
-#### Evento de violencia y seguimiento
+#### Evento de violencia y seguimiento {#evento_de_violencia_y_seguimiento}
 * Seguimiento jurídico
 * Seguimiento psicosocial y cultural
 
