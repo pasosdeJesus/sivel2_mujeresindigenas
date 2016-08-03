@@ -5,13 +5,13 @@ capacitadas, distribuidas en organizaciones que se conectan desde diversas parte
 y que cumplan con los siguiente roles:
 
 Analista: Que recolecta, analiza, clasifica e ingresa información periódicamente 
-para su organiación. Es deseable que se entreviste directamente con las víctimas. 
+para su organización. Es deseable que se entreviste directamente con las víctimas. 
 Aprovecha el sistema para hacer consultas y conteos. Puede ver y editar los casos 
 de su organización (es responsable de todos los casos de su organización por cuanto
 puede editarlos todos).
 
 Administrador(a) de Organización: Realiza las misma labores de un analista de su 
-organización. Es responsable del personal de su oficina que tiene acceso al 
+organización. Es responsable del personal de su organización que tiene acceso al 
 sistema de información y sus roles.
 
 Administrador(a): Debe ser de alta confianza pues porque puede realizar las labores 
