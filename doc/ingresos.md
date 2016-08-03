@@ -145,7 +145,7 @@ http://words.carlus.cat/como-podemos-traducir-responsive-web-design/.
 * Actividades que se dejaron de hacer: Se refiere a la actividad que desempeñaba la víctima en el 
   momento de la agresión.
 
-### Datos privados OIK {#datos_privados_acin}
+### Datos privados ACIN {#datos_privados_acin}
 
 #### Evento de violencia y seguimiento {#evento_de_violencia_y_seguimiento}
 * Seguimiento jurídico
