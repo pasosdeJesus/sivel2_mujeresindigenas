@@ -1,12 +1,12 @@
 
 ## Ingreso de nuevos casos y actualización  {#ingreso_de_nuevos_casos_y_actualizacion}
  
-### Ficha Común  {#ficha}
+### Ficha Común  {#ficha_comun}
 
 En este sistema de información un caso se asocia a una  víctima que acude a 
 alguna de las organizaciones del  Observatorio de violencias contra las mujeres 
 indígenas formado por las organizaciones CODACOP, ONIC, OIK y ACIN, esta víctima 
-puede haber sido agredida en una o varias oportunidades o haber recibido ayudas de 
+puede haber sido agredida en una o en varias oportunidades o haber recibido ayudas de 
 CODACOP, ONIC, OIK o ACIN  en diferentes momentos, pero sigue siendo un mismo caso 
 y todo el historial de apoyos y seguimientos institucionales y del Observatorio de 
 violencias contra las mujeres indígenas se registran en el mismo.
@@ -81,9 +81,8 @@ Se trata de los datos de la persona que ha sido agredida.
 Pueblo indígena, Estado civil, Último grado en educación ordinaria.
 * Rango de edad: Debe ser acorde con la edad (a menos que no se haya especificado 
 edad). Si especificó la edad, puede dejar esta casilla SIN INFORMACIÓN.
-* Año Nacimiento, Mes Nacimiento, Día Nacimiento
 * Cada sitio geográfico se específica de acuerdo a una división político 
-administrativa de Colombia.
+administrativa de Colombia DIVIPOLA.
 * Si entre las opciones que se le presentan no está el que busca puede agregar el 
 departamento, municipio o centro poblado en la tabla básica correspondiente (ver 
 [xref](#tablas_basicas)).
@@ -94,35 +93,14 @@ departamento, municipio o centro poblado en la tabla básica correspondiente (ve
 y sitios de un municipio de acuerdo a la División Político Administrativa.
 * Resguardo 
 * Comunidad: Dentro del resguardo
-* Sexo
-* Organización Filial
-* Estado civil
-* Último grado en educación ordinaria
-* Condición de discapacidad
-* Sistema de salud
-* Víctima del conflicto
-* Incluido en RUV
-* Cabeza del hogar
-* Liderazgo
+* RUV: Registro único de víctimas
 
 #### Eventos de violencia y seguimiento {#eventos_de_violencia_y_seguimiento}
 
-* Fecha, hora
 * Numero de veces: Cuantas veces fue agredida la víctima antes.
 * Presunto responsable: Permite elegir uno de los configurados en la tabla básica 
 Presuntos Responsables (ver [xref](#tablas_basicas)) ---que incluye SIN INFORMACIÓN 
 como posible opción.
-* Agresión Particular
-* Testigo
-* Acompañamiento que necesita
-* Situación de riesgo, 
-* ¿Ha solicitado medidas al estado?
-* Medidas recibidas 
-* Denuncia
-* ¿Denuncia ante quien?
-* Fecha de la denuncia 
-* Valoración de la atención en materia de justicia
-* ¿Quisiera denunciar?
 
 #### Anexos {#anexos}
 
@@ -165,26 +143,10 @@ http://words.carlus.cat/como-podemos-traducir-responsive-web-design/.
   de un número. El tipo de documento Otros permite letras y números arbitrariamente.
 * Hijos: Cantidad
 * Idioma: El principal
-* Religion 
-* Tiene tierra 
-* Área tierra 
 
 #### Evento de violencia y seguimiento
-* Descripción de la afectación
-* Relación entre presunto responsable y víctima
-* Afectación individuales
-* Afectación familiar
-* Afectación física
 * Actividades que se dejaron de hacer: Se refiere al que desempeñara la víctima en el 
   momento de la agresión.
-* Reacción de la familia y la comunidad
-* Afectación a otra persona
-* Avances del caso
-* Etapa del proceso
-* ¿Ha recibido reparación?
-* Compromisos adquiridos ¿Cuales y con quien?
-* Observaciones generales
-
 
 ### Datos privados OIK
 
