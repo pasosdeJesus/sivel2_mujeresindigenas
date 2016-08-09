@@ -259,7 +259,7 @@
   <% if @caso.caso_etiqueta && @caso.caso_etiqueta.count > 0 %>
     <dt><strong>Etiqueta(s):</strong></dt>
     <dd>
-    <% @caso.etiqueta.each do |e| %>
+    <% @caso.caso_etiqueta.each do |e| %>
       <strong><%= e.fecha %></strong>: <%= e.etiqueta.nombre %><br/>
     <% end %>
     </dd>
