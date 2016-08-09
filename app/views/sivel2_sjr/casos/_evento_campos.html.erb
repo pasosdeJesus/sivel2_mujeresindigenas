@@ -16,10 +16,6 @@
       ) 
     %>
 
-    <div class="hora">
-	    <%= f.input :hora, wrapper_html: {style: 'display: inline-flex'} %>
-    </div>
-
     <%= f.association :departamento,
       collection: Sip::Departamento.habilitados.where(id_pais: 170),
       include_blank: true,
