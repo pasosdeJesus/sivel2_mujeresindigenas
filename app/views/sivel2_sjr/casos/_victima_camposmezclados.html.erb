@@ -18,6 +18,8 @@
     :input_html => { :value => "N" } %>
 <% end %>
 
+<%= fvictima.input :edad, as: :integer %> 
+
 <%= fpersona.input :id, as: :hidden %>
 <% @anios = *(1950..Date.today.year) %>
 <%= fpersona.input :anionac, 
@@ -58,6 +60,8 @@
   label_method: :rango, 
   value_method: :id 
 %>
+
+<%= fvictima.input :edadactual, as: :integer %> 
 
 <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
   <%= fvictima.input :hijos %>

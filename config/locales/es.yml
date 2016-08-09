@@ -97,7 +97,8 @@ es:
         ubicacion: "Detalle Otra Fuente"
       "sivel2_gen/victima":
         etnia: Pueblo indigena / Etnia
-        rangoedad: Rango de edad
+        rangoedad: Rango de edad en fecha de documentacion
+        edad: Edad en fecha de documentación
       "sivel2_sjr/victimasjr":
         areatierra: Área tierra
         cabezahogar: Cabeza del hogar
