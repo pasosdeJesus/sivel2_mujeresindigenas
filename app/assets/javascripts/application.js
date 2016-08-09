@@ -10,5 +10,20 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require sivel2_sjr/application
+//= require sip/motor
+//= require sivel2_gen/motor
+//= require sivel2_sjr/motor
+//= require cor1440_gen/motor
 //= require_tree .
+
+$(document).on('turbolinks:load ready page:load', function() {
+	var root;
+	root = typeof exports !== "undefined" && exports !== null ? exports : window;
+	root.campo_fecha_ref_edad = 'caso_casosjr_attributes_fecharec'
+	sip_prepara_eventos_comunes(root);
+	sivel2_gen_prepara_eventos_comunes(root,'antecedentes/causas');
+	sivel2_sjr_prepara_eventos_comunes(root);
+	cor1440_gen_prepara_eventos_comunes(root);
+	sivel2_sjr_prepara_eventos_unicos(root);
+});
+
