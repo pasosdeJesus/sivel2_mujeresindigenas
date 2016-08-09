@@ -93,6 +93,7 @@ es:
         oficina: Organizacion que diligencia
         residencia: Residencia actual
         tipoacomp: Acompañamiento
+        usuario: Documentado por
       "sivel2_gen/caso_fuenteprensa":
         ubicacion: "Detalle Otra Fuente"
       "sivel2_gen/victima":
