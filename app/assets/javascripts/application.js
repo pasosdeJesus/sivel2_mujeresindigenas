@@ -17,13 +17,25 @@
 //= require_tree .
 
 $(document).on('turbolinks:load ready page:load', function() {
-	var root;
-	root = typeof exports !== "undefined" && exports !== null ? exports : window;
-	root.campo_fecha_ref_edad = 'caso_casosjr_attributes_fecharec'
-	sip_prepara_eventos_comunes(root);
-	sivel2_gen_prepara_eventos_comunes(root,'antecedentes/causas');
-	sivel2_sjr_prepara_eventos_comunes(root);
-	cor1440_gen_prepara_eventos_comunes(root);
-	sivel2_sjr_prepara_eventos_unicos(root);
+  var root;
+  root = typeof exports !== "undefined" && exports !== null ? exports : window;
+  root.campo_fecha_ref_edad = 'caso_casosjr_attributes_fecharec'
+  sip_prepara_eventos_comunes(root);
+  sivel2_gen_prepara_eventos_comunes(root,'antecedentes/causas');
+  sivel2_sjr_prepara_eventos_comunes(root);
+  cor1440_gen_prepara_eventos_comunes(root);
+  sivel2_sjr_prepara_eventos_unicos(root);
+
+  $('#caso_casosjr_attributes_fecharec').datepicker({
+    format: 'yyyy-mm-dd',
+    autoclose: true,
+    todayHighlight: true,
+    language: 'es'
+  }).on('changeDate', function (ev) {
+    //  Cambiar edades
+      $('[id^=caso_victima_attributes][id$=persona_attributes_anionac]').change()
+  }
+  )
+
 });
 
