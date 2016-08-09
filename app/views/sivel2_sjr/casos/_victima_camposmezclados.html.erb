@@ -18,13 +18,24 @@
     :input_html => { :value => "N" } %>
 <% end %>
 
-<%= fvictima.input :edad, as: :integer %> 
-
 <%= fpersona.input :id, as: :hidden %>
-<% @anios = *(1950..Date.today.year) %>
-<%= fpersona.input :anionac, 
-  collection: @anios,
-  label: 'Año Nacimiento' %>
+<table>
+  <tr>
+    <td>
+      <% @anios = *(1950..Date.today.year) %>
+      <%= fpersona.input :anionac, 
+        collection: @anios,
+        label: 'Año Nacimiento' %>
+    </td>
+    <td>
+      <%= fvictima.input :edad, as: :integer %> 
+    </td>
+    <td>
+      <%= fvictima.input :edadactual, as: :integer %> 
+    </td>
+  </tr>
+</table>
+
 <%= fpersona.input :mesnac, 
   collection: ApplicationHelper::MESES,
   label: 'Mes Nacimiento' %>
@@ -61,7 +72,6 @@
   value_method: :id 
 %>
 
-<%= fvictima.input :edadactual, as: :integer %> 
 
 <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
   <%= fvictima.input :hijos %>
