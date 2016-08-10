@@ -48,9 +48,8 @@ navegador y en la barra de direcciones digite:
 
 * Note que el URL comienza con *https* es decir se transmite información del servidor 
 a su computador con el protocolo del web típico (HTTP) pero con cifrado fuerte SSL. 
-Este cifrado requiere que el servidor web tenga un certificado, como empleamos un 
-certificado autofirmado, su navegador reportará la situación como problemática, 
-aún cuando no lo es.
+Este cifrado requiere que el servidor web tenga un certificado (como efectivamente
+ocurre en el caso de defensor.info).
 
 Para iniciar una sesión debe ingresar su nombre de usuario y su clave (que debió 
 ser creada por un usuario con rol administrador).
@@ -59,10 +58,12 @@ ser creada por un usuario con rol administrador).
 **Aviso**
 
 * SIVeL2 no almacena su clave directamente sino una especie de huella digital de la 
-misma (condensado bcrypt). Por esto puede emplear la clave que prefiera con la 
-confianza que no podrá ser conocida por administradores que tengan acceso a la base. 
+misma (condensado bcrypt). Por esto en el caso de SIVeL puede emplear la clave que 
+prefiera con la confianza que no podrá ser conocida por administradores que tengan acceso a la base. 
 Se recomienda que tenga números, letras y caracteres especiales. 
 Es conveniente cambiarla periódicamente, puede hacerlo desde Administración->Clave.
+Si otros sitios donde emplea claves no le garantizan esto mismo, por favor emplee una
+clave diferente.
 
 Una vez autenticado verá el menú principal.
 
@@ -72,7 +73,5 @@ Dependiendo del rol de su usuario (ver Sección 2, “Recurso Humano”) tendrá
 tendrá acceso a las opciones del menú: Por ejemplo una persona con rol analista no 
 tendrá acceso al menú Administración->Usuarios. --que si puede ser usado por
 quien tenga rol administrador o administrador de oficina.
-
-Los usuarios ACIN veran un menú más amplio que las otras organizaciones. 
 
 

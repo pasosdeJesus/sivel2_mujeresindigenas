@@ -11,20 +11,21 @@ de su organización (es responsable de todos los casos de su organización por c
 puede editarlos todos).
 
 Administrador(a) de Organización: Realiza las misma labores de un analista de su 
-organización. Es responsable del personal de su organización que tiene acceso al 
+organización, además es responsable del personal de su organización que tiene acceso al 
 sistema de información y sus roles.
 
-Administrador(a): Debe ser de alta confianza pues porque puede realizar las labores 
+Administrador(a): Debe ser de alta confianza porque puede realizar las labores 
 de administrador de organización para cualquiera de las organizaciones y además es 
-responsable de todos los casos (por cuanto puede editarlos), de 
-realizar ajustes a los parámetros del sistema (organizados en "tablas básicas"), que 
-incluyen la distribución de personal en las organizaciones y su rol.
+responsable de: (1) todos los casos (por cuanto puede editarlos), (2) de 
+realizar ajustes a los parámetros del sistema (organizados en "tablas básicas"), (3)
+del manejo de usuario de cualquier organizacioń y sus roles.
 
-Administrador del servidor: Mantiene y mejora la infraestructura tecnológica buscando 
-garantizar servicio continuo. Es responsable de sacar copias de respaldo 
-periódicamente y de mantener sistema operativo y sistema de información actualizados 
---se requiere actualizar versión mayor al menos cada 6 meses y librerías por lo
-menos cada meses.
+Administrador del servidor: También debe ser de alta confianza pues tiene acceso a 
+bajo nivel a todas las partes del sistema. Mantiene y mejora la infraestructura 
+tecnológica buscando garantizar servicio continuo. Es responsable de monitorear
+seguridad y sacar copias de respaldo periódicamente, así como de mantener sistema operativo 
+y sistema de información actualizados --se requiere actualizar versión mayor al 
+menos cada 6 meses y librerías por lo menos bimensual.
 
 Desarrollador(es) de SIVeL: Realiza personalizaciones avanzadas y las aporta 
 liberándolas al dominio público. En su labor tiene acceso como de administrador a la 
