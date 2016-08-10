@@ -4,9 +4,6 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.5.3
--- Dumped by pg_dump version 9.5.3
-
 SET statement_timeout = 0;
 
 SET client_encoding = 'UTF8';
@@ -29,7 +26,7 @@ INSERT INTO estadocaso (id, nombre, observaciones, fechacreacion, fechadeshabili
 -- Name: estadocaso_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('estadocaso_id_seq', 1, false);
+SELECT pg_catalog.setval('estadocaso_id_seq', 4, true);
 
 
 --
@@ -39,9 +36,6 @@ SELECT pg_catalog.setval('estadocaso_id_seq', 1, false);
 --
 -- PostgreSQL database dump
 --
-
--- Dumped from database version 9.5.3
--- Dumped by pg_dump version 9.5.3
 
 SET statement_timeout = 0;
 
@@ -70,7 +64,7 @@ INSERT INTO consecuenciafamiliar (id, nombre, observaciones, fechacreacion, fech
 -- Name: consecuenciafamiliar_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('consecuenciafamiliar_id_seq', 100, true);
+SELECT pg_catalog.setval('consecuenciafamiliar_id_seq', 101, true);
 
 
 --
@@ -80,9 +74,6 @@ SELECT pg_catalog.setval('consecuenciafamiliar_id_seq', 100, true);
 --
 -- PostgreSQL database dump
 --
-
--- Dumped from database version 9.5.3
--- Dumped by pg_dump version 9.5.3
 
 SET statement_timeout = 0;
 
@@ -132,9 +123,8 @@ INSERT INTO consecuenciafisica (id, nombre, observaciones, fechacreacion, fechad
 INSERT INTO consecuenciafisica (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (38, 'PIE DERECHO', NULL, '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-06-07 00:00:00');
 INSERT INTO consecuenciafisica (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (39, 'PIE IZQUIERDO', NULL, '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-06-07 00:00:00');
 INSERT INTO consecuenciafisica (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (4, 'FRENTE', NULL, '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-06-07 00:00:00');
-INSERT INTO consecuenciafisica (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (40, 'DEDOS DE LA MANO', NULL, '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-06-07 00:00:00');
-INSERT INTO consecuenciafisica (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (41, 'HOMBRO', NULL, '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-06-07 00:00:00');
-INSERT INTO consecuenciafisica (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (42, 'DERECHO', NULL, '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-06-07 00:00:00');
+INSERT INTO consecuenciafisica (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (40, 'DEDOS DE LA MANO', '', '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-07-29 13:54:40.102665');
+INSERT INTO consecuenciafisica (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (41, 'HOMBRO DERECHO', '', '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-07-28 22:21:02.543313');
 INSERT INTO consecuenciafisica (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (43, 'HOMBRO IZQUIERDO', NULL, '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-06-07 00:00:00');
 INSERT INTO consecuenciafisica (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (44, 'NALGA DERECHA', NULL, '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-06-07 00:00:00');
 INSERT INTO consecuenciafisica (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (45, 'NALGA IZQUIERDA', NULL, '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-06-07 00:00:00');
@@ -153,7 +143,7 @@ INSERT INTO consecuenciafisica (id, nombre, observaciones, fechacreacion, fechad
 -- Name: consecuenciafisica_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('consecuenciafisica_id_seq', 100, true);
+SELECT pg_catalog.setval('consecuenciafisica_id_seq', 101, true);
 
 
 --
@@ -163,9 +153,6 @@ SELECT pg_catalog.setval('consecuenciafisica_id_seq', 100, true);
 --
 -- PostgreSQL database dump
 --
-
--- Dumped from database version 9.5.3
--- Dumped by pg_dump version 9.5.3
 
 SET statement_timeout = 0;
 
@@ -193,7 +180,7 @@ INSERT INTO consecuenciaindividual (id, nombre, observaciones, fechacreacion, fe
 INSERT INTO consecuenciaindividual (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (2, 'DIFICULTADES EN EL TRABAJO', NULL, '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-06-07 00:00:00');
 INSERT INTO consecuenciaindividual (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (3, 'TEMOR A HABLAR EN PÚBLICO', NULL, '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-06-07 00:00:00');
 INSERT INTO consecuenciaindividual (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (4, 'DESEQUILIBRIO DE LOS PULSOS', NULL, '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-06-07 00:00:00');
-INSERT INTO consecuenciaindividual (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (5, 'INSEGUIRID PARA MOVERSE EN EL TERRITORIO', NULL, '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-06-07 00:00:00');
+INSERT INTO consecuenciaindividual (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (5, 'INSEGURIDAD PARA MOVERSE EN EL TERRITORIO', '', '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-07-28 21:33:48.797599');
 INSERT INTO consecuenciaindividual (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (6, 'SENTIMIENTO DE CULPA', NULL, '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-06-07 00:00:00');
 INSERT INTO consecuenciaindividual (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (7, 'PERDIDA DEL APETITO', NULL, '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-06-07 00:00:00');
 INSERT INTO consecuenciaindividual (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (8, 'DESEQUILIBRIO DEL SUEÑO', NULL, '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-06-07 00:00:00');
@@ -204,7 +191,7 @@ INSERT INTO consecuenciaindividual (id, nombre, observaciones, fechacreacion, fe
 -- Name: consecuenciaindividual_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('consecuenciaindividual_id_seq', 100, true);
+SELECT pg_catalog.setval('consecuenciaindividual_id_seq', 101, true);
 
 
 --
@@ -214,9 +201,6 @@ SELECT pg_catalog.setval('consecuenciaindividual_id_seq', 100, true);
 --
 -- PostgreSQL database dump
 --
-
--- Dumped from database version 9.5.3
--- Dumped by pg_dump version 9.5.3
 
 SET statement_timeout = 0;
 
@@ -243,7 +227,7 @@ INSERT INTO educacionpropia (id, nombre, observaciones, fechacreacion, fechadesh
 -- Name: educacionpropia_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('educacionpropia_id_seq', 100, true);
+SELECT pg_catalog.setval('educacionpropia_id_seq', 102, true);
 
 
 --
@@ -253,9 +237,6 @@ SELECT pg_catalog.setval('educacionpropia_id_seq', 100, true);
 --
 -- PostgreSQL database dump
 --
-
--- Dumped from database version 9.5.3
--- Dumped by pg_dump version 9.5.3
 
 SET statement_timeout = 0;
 
@@ -285,7 +266,7 @@ INSERT INTO motivonodenuncia (id, nombre, observaciones, fechacreacion, fechades
 -- Name: motivonodenuncia_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('motivonodenuncia_id_seq', 100, true);
+SELECT pg_catalog.setval('motivonodenuncia_id_seq', 102, true);
 
 
 --
@@ -295,9 +276,6 @@ SELECT pg_catalog.setval('motivonodenuncia_id_seq', 100, true);
 --
 -- PostgreSQL database dump
 --
-
--- Dumped from database version 9.5.3
--- Dumped by pg_dump version 9.5.3
 
 SET statement_timeout = 0;
 
@@ -324,7 +302,7 @@ INSERT INTO religion (id, nombre, observaciones, fechacreacion, fechadeshabilita
 -- Name: religion_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('religion_id_seq', 102, true);
+SELECT pg_catalog.setval('religion_id_seq', 103, true);
 
 
 --
@@ -334,9 +312,6 @@ SELECT pg_catalog.setval('religion_id_seq', 102, true);
 --
 -- PostgreSQL database dump
 --
-
--- Dumped from database version 9.5.3
--- Dumped by pg_dump version 9.5.3
 
 SET statement_timeout = 0;
 
@@ -366,7 +341,7 @@ INSERT INTO tafectacion (id, nombre, observaciones, fechacreacion, fechadeshabil
 -- Name: tafectacion_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('tafectacion_id_seq', 100, true);
+SELECT pg_catalog.setval('tafectacion_id_seq', 102, true);
 
 
 --
@@ -376,9 +351,6 @@ SELECT pg_catalog.setval('tafectacion_id_seq', 100, true);
 --
 -- PostgreSQL database dump
 --
-
--- Dumped from database version 9.5.3
--- Dumped by pg_dump version 9.5.3
 
 SET statement_timeout = 0;
 
@@ -406,7 +378,7 @@ INSERT INTO tapoyo (id, nombre, observaciones, fechacreacion, fechadeshabilitaci
 -- Name: tapoyo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('tapoyo_id_seq', 100, true);
+SELECT pg_catalog.setval('tapoyo_id_seq', 102, true);
 
 
 --
