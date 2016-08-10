@@ -1,6 +1,10 @@
 # Bibliografía {#bibliografia}
 
-[sivel1] SIVeL 1.0. <http://sivel.sf.net/1.0/> {#sivel1}
+[sivel12] SIVeL 1.2. <http://sivel.sf.net/1.2/> {#sivel12}
+
+[llamado12] Llamado público a auditar SIVeL 1.2 <http://sivel.sourceforge.net/1.2/llamado.html> {#llamado12}
+
+[hakiri] Ship Secure Ruby Apps. <https://hakiri.io/> {#hakiri}
 
 [secunia] Secunia Advisories. Secunia. <http://secunia.com/advisories/>. {#secunia}
 

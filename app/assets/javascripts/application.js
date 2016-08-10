@@ -13,7 +13,6 @@
 //= require sip/motor
 //= require sivel2_gen/motor
 //= require sivel2_sjr/motor
-//= require cor1440_gen/motor
 //= require_tree .
 
 $(document).on('turbolinks:load ready page:load', function() {
@@ -23,7 +22,6 @@ $(document).on('turbolinks:load ready page:load', function() {
   sip_prepara_eventos_comunes(root);
   sivel2_gen_prepara_eventos_comunes(root,'antecedentes/causas');
   sivel2_sjr_prepara_eventos_comunes(root);
-  cor1440_gen_prepara_eventos_comunes(root);
   sivel2_sjr_prepara_eventos_unicos(root);
 
   $('#caso_casosjr_attributes_fecharec').datepicker({
@@ -36,6 +34,10 @@ $(document).on('turbolinks:load ready page:load', function() {
       $('[id^=caso_victima_attributes][id$=persona_attributes_anionac]').change()
   }
   )
+
+  $(document).on('change', 'select[id$=_departamentores_id]', function(e) {
+    llena_municipio($(this), root);
+  })
 
 });
 

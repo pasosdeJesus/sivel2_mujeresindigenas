@@ -14,14 +14,17 @@ organización, usuario.
 
 ![Listado de casos](img/lista_de_casos.png)
 
-Podrá examinar breves detalles de un caso sin editarlo pulsando sobre la 
+Podrá examinar un caso cualquiera (i.e los campos comunes a todas las organizaciones) pulsando sobre la 
 identificación del caso (columna *Id*). Otra manera si ya conoce la identificación 
 del caso es empleando una URL de la forma 
-    *https://defensor.info/mujeresindigenas/casos/3*, cambiando 3 por la identificación.
+    *https://defensor.info/mujeresindigenas/casos/3*, cambiando *3* por la identificación.
 
 Podrá editar el caso presionando el botón *Editar* de la columna *Acciones* y podrá 
-eliminarlo (tras confirmar) con el botón *Eliminar* de la misma columna. 
-Si conoce el número de caso, también podrá editarlo empleando un URL de la 
-forma *https://defensor.info/mujeresindigenas/casos/3/edita*, cambiando 3 por la 
+eliminarlo (tras confirmar) con el botón *Eliminar* de la misma columna.  En el caso
+de analistas y adiministradores de una organización podrán efectuar estas operaciones sólo con
+los casos de su organización.
+
+Si conoce el número de caso y tiene permiso para editarlo, podrá editarlo empleando un URL de la 
+forma *https://defensor.info/mujeresindigenas/casos/3/edita*, cambiando *3* por la 
 identificación del caso.
 

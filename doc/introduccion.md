@@ -2,9 +2,10 @@
 
 A partir de Enero de 2016 el Observatorio de violencias contra las mujeres indígenas 
 constituido por CODACOP, ONIC, OIK y ACIN, por la gestión de Janeth Lozano,
-comenzó a financiar la personalización de SIVeL2 y el desarrollo de un sistema 
-de información para casos de violencia especialmente contra mujeres indígenas 
-desarrollado y personalizado por Vladimir Támara del proyecto Pasos de Jesús.
+comenzó a financiar una personalización de SIVeL2 para desarrollar un sistema 
+de información para casos de violencia especialmente contra mujeres indígenas.
+El desarrollo y personalizado han estado a cargo de Vladimir Támara, las pruebas
+y documentación a cargo de Blanca Acosta ambos del proyecto Pasos de Jesús.
 
 La operación continúa del nuevo sistema de información requiere de personas que 
 desempeñen roles y de una infraestructura tecnológica que opere de manera continua. 
@@ -38,15 +39,16 @@ desarrollo de SIVeL2:
 
 + El código fuente de SIVeL2 está abierto y disponible públicamente (i.e fuentes 
 abiertas), ver <http://github.com/pasosdeJesus/sivel2_mujeresindigenas/>. 
-También para versiones estables mantenemos abierta una convocatoria pública 
-a auditar las fuentes de SIVeL2 
-(ver [xref](#llamado)) 
+Para la versión predecesora (i.e SIVeL 1.2, ver [xref](#sivel12)) mantenemos abierta una convocatoria 
+pública a auditar las fuentes (ver [xref](#llamado12)) 
 y la distribución de referencia, premiando con dinero a quien encuentre alguna 
-falla de seguridad.
+falla de seguridad.  Proxiamente esperamos abrir una convocatoria análoga para
+SIVeL2.
 
-+ La implantación de SIVeL2. y sus fuentes ya han sido auditadas tanto por los 
++ La versión predecesora y sus fuentes ya han sido auditadas tanto por los 
 desarrolladores como por otras personas con experiencia en seguridad informática 
-(ver [xref](#creditos)).
+(ver [xref](#creditos)).  La versión 2 es auditada de manera automática y contínua 
+cada cambio por hakiri.io (ver [hakiri](#hakiri)).
 
 + Recomendamos una plataforma de operación segura, madura y ampliamente auditada, 
 i.e sistema operativo, herramientas complementarias y configuraciones (emplear una 
@@ -60,7 +62,7 @@ herramientas de dominio público o de licencias cercanas.
 [intro.1]: Buscando un buen balance entre seguridad y facilidad.
 
 + Recomendamos de manera especial OpenBSD por sus niveles de seguridad y adJ por 
-su interfaz en español y porque por defecto las bases de datos y respaldos de 
+su sopoerte al español y porque por defecto las bases de datos y respaldos de 
 SIVeL2 quedan cifrados con una clave que debe darse durante el arranque. 
 Por lo mismo en caso de hurto la información no será visible para quien hurta, 
 y en caso de una inspección ilegitima basta apagar o desconectar el computador.

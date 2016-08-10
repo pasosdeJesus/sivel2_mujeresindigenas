@@ -12,21 +12,20 @@ y todo el historial de apoyos y seguimientos institucionales y del Observatorio 
 violencias contra las mujeres indígenas se registran en el mismo.
 
 Por esto antes de ingresar un nuevo caso es recomendable que búsque si ya está 
-registrado por ejemplo utilizando el listado de casos empleando el codigo, el año, 
-el mes de la fecha de documentación inicial y/o lugar en el que ocurrió, usuario, 
-la organización.
+registrado por ejemplo utilizando el listado de casos empleando el codigo, la
+fecha de documentación (o parte de la misma), le lugar en el que ocurrió, el
+analista que documentó o la organización.
 
 Si está seguro que se trata de un caso nuevo, desde el listado de casos presione 
-el botón Nuevo. Comience a digitar la información en cada una de las secciones 
-del formulario sin indicar un número de caso explícito en la sección de datos 
-básicos --el sistema asignará un número consecutivo automáticamente[^ingresos.1].
+el botón Nuevo. Comience a digitar la información en cada una de las pestañas 
+del formulario --notará que el número de caso será asignado automáticamente[^ingresos.1].
 
 El sistema guarda con sólo cambiar de pestaña y finalmente oprimiendo el botón 
-Guardar.  Aunque se sugiere llenar los datos del caso en el orden de las secciones, 
-podrá pasar de una sección a otra e iniciar en la que prefiera. Esto por ejemplo 
+Guardar.  Aunque se sugiere llenar los datos del caso en el orden de las pestañas, 
+podrá pasar de una pestaña a otra e iniciar en la que prefiera. Esto por ejemplo 
 es útil para iniciar un caso del que acaba de recibir información digital pero 
 que no puede analizar en detalle en el momento, pues para crear un caso mínimo 
-basta la fecha del hecho.
+basta la fecha de documentación.
 Así que si no desea que se actualicen los cambios del caso que edita, no presione el 
 botón Guardar, sino devuelvase usando el botón del navegador o ubiquese en el 
 espacio con la dirección de la página (URL), digite la dirección 
@@ -36,11 +35,14 @@ varias pestaña de su navegador.
 
 La interfaz debe mejorarse continuamente, pero se diseñó con el principio 
 "primero movil," por lo que resulta posible llenar un caso desde un teléfono 
-inteligente con poco ancho de pantalla y como es un diseño adaptativo[4] se ajusta 
+inteligente con poco ancho de pantalla.  En estos casos es mejor que primer selección
+Administra->Ficha Vertical con lo que el formulario se presentará con
+secciones colapsables verticales en lugar de pestañas horizontales, como esa
+ficha verticla es un diseño adaptativo[4] se ajusta 
 automáticamente a tabletas de diferentes dimensiones --puede probarlo desde una 
 computador de escritorio al cambiar el tamaño de la ventana del navegador para ver 
 como se reorganizan los menús, se escala la imágen de la pantalla inicial y en 
-general puede usarse por ejemplo para editar un caso.
+general puede llenar un caso.
 
 #### Datos Básicos {#datos_basicos}
 
