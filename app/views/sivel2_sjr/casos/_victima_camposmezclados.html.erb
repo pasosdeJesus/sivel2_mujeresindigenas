@@ -44,7 +44,7 @@
 
 <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
   <%= fvictimasjr.association :departamentores,
-    collection: Sip::Departamento.habilitados,
+    collection: Sip::Departamento.habilitados.where(id_pais: 170),
     include_blank: true,
     label_method: :nombre, 
     value_method: :id %>
