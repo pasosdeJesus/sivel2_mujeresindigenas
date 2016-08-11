@@ -19,22 +19,22 @@
 <% end %>
 
 <%= fpersona.input :id, as: :hidden %>
-<table>
-  <tr>
-    <td>
-      <% @anios = *(1950..Date.today.year) %>
-      <%= fpersona.input :anionac, 
-        collection: @anios,
-        label: 'Año Nacimiento' %>
-    </td>
-    <td>
-      <%= fvictima.input :edad, as: :integer %> 
-    </td>
-    <td>
-      <%= fvictima.input :edadactual, as: :integer %> 
-    </td>
-  </tr>
-</table>
+
+<div class="row">
+  <div class="col-sm-4">
+    <% @anios = *(1900..Date.today.year) %>
+    <%= fpersona.input :anionac, 
+      collection: @anios,
+      label: 'Año Nacimiento'
+    %>
+  </div>
+  <div class="col-sm-4">
+    <%= fvictima.input :edad, as: :integer %>
+  </div>
+  <div class="col-sm-4">
+    <%= fvictima.input :edadactual, as: :integer %>
+  </div>
+</div>
 
 <%= fpersona.input :mesnac, 
   collection: ApplicationHelper::MESES,
