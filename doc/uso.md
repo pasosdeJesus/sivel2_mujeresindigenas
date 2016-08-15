@@ -6,7 +6,7 @@
 * Puede iniciar una sesión y distinguir posibilidad de uso según el rol y según la 
 organización.
 
-* Puede buscar casos por código y examinarlo.
+* Puede buscar casos por código y examinarlos.
 
 * Puede actualizar información de un caso o agregar casos nuevos
 
