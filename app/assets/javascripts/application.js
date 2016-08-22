@@ -13,6 +13,7 @@
 //= require sip/motor
 //= require sivel2_gen/motor
 //= require sivel2_sjr/motor
+//= require chosen-jquery
 //= require_tree .
 
 $(document).on('turbolinks:load ready page:load', function() {
@@ -39,5 +40,20 @@ $(document).on('turbolinks:load ready page:load', function() {
     llena_municipio($(this), root);
   })
 
+  $('.chosen-select').chosen({
+	  allow_single_deselect: true,
+	  no_results_text: 'No hay resultados',
+	  placeholder_text_multiple: 'Elije una o varias categorias de violencia',
+	  width: '100%'
+  })
+
+  $(document).on('cocoon:after-insert', function (e) {
+	  $('.chosen-select').chosen({
+		  allow_single_deselect: true,
+		  no_results_text: 'No hay resultados',
+	  	  placeholder_text_multiple: 'Elije una o varias categorias de violencia',
+		  width: '100%'
+	  })
+  })
 });
 

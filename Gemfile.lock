@@ -9,8 +9,21 @@ GIT
       rails
 
 GIT
-  remote: git://github.com/pasosdeJesus/sip.git
-  revision: 94392b92609e5fc8b4ff72ce86246817bdb4cf50
+  remote: git://github.com/pasosdeJesus/sivel2_sjr.git
+  revision: 6d30ba1f31e989c8ad1568612780504d07a04fe1
+  specs:
+    sivel2_sjr (2.0.b1)
+      rails
+      sivel2_gen
+
+GIT
+  remote: git://github.com/vtamara/cocoon.git
+  revision: 20f8f3bab2fee21309c57b586f5fab9921ac0894
+  specs:
+    cocoon (1.2.6)
+
+PATH
+  remote: ../sip
   specs:
     sip (2.0.b1)
       bootstrap-datepicker-rails
@@ -28,28 +41,13 @@ GIT
       twitter_cldr
       will_paginate
 
-GIT
-  remote: git://github.com/pasosdeJesus/sivel2_gen.git
-  revision: 8df217d2f7f98b0fa12ca1429ac58a66e347cee3
+PATH
+  remote: ../sivel2_gen
   specs:
     sivel2_gen (2.0b1)
       devise
       jquery-rails
       rails
-
-GIT
-  remote: git://github.com/pasosdeJesus/sivel2_sjr.git
-  revision: 6d30ba1f31e989c8ad1568612780504d07a04fe1
-  specs:
-    sivel2_sjr (2.0.b1)
-      rails
-      sivel2_gen
-
-GIT
-  remote: git://github.com/vtamara/cocoon.git
-  revision: 20f8f3bab2fee21309c57b586f5fab9921ac0894
-  specs:
-    cocoon (1.2.6)
 
 GEM
   remote: https://rubygems.org/
@@ -117,6 +115,10 @@ GEM
       capybara (>= 2.3.0, < 2.8.0)
       json
     chartkick (2.0.2)
+    chosen-rails (1.5.2)
+      coffee-rails (>= 3.2)
+      railties (>= 3.0)
+      sass-rails (>= 3.2)
     cldr-plurals-runtime-rb (1.0.1)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -361,6 +363,7 @@ DEPENDENCIES
   capybara
   capybara-webkit
   chartkick
+  chosen-rails
   cocoon!
   codeclimate-test-reporter
   coffee-rails

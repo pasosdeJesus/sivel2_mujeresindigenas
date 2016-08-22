@@ -34,6 +34,12 @@ class Evento < ActiveRecord::Base
   accepts_nested_attributes_for :actoevento,
     reject_if: :all_blank, allow_destroy: true
 
+  has_many :eventopresponsable, 
+    class_name: "::Eventopresponsable",  
+    foreign_key: "evento_id", validate:true, dependent: :delete_all
+  accepts_nested_attributes_for :eventopresponsable,
+    reject_if: :all_blank, allow_destroy: true
+
   validates :situacionriesgo, length: { maximum: 1 }
   validates :solicitomedidas, length: {maximum: 1}
   validates :denuncia, length: {maximum: 1}

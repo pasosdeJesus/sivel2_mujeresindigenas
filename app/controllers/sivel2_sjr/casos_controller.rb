@@ -146,7 +146,12 @@ module Sivel2Sjr
           :consecuenciafisica_ids => [],
           :consecuenciaindividual_ids => [],
           :tafectacion_ids => [],
-          :tapoyo_ids => []
+          :tapoyo_ids => [],
+          :eventopresponsable_attributes => [
+            :id, :presponsable_id, :_destroy,
+            :categoria_ids => [],
+          ]
+
         ],
         :anexo_caso_attributes => [
           :id, 
