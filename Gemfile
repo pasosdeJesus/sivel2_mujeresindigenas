@@ -78,12 +78,12 @@ gem "tzinfo"
 gem "tzinfo-data"
 
 # Motor SIP
-#gem 'sip', github: 'pasosdeJesus/sip'
-gem 'sip', path: '../sip'
+gem 'sip', github: 'pasosdeJesus/sip'
+#gem 'sip', path: '../sip'
 
 # Motor de SIVeL 2
-#gem 'sivel2_gen', github: 'pasosdeJesus/sivel2_gen'
-gem 'sivel2_gen', path: '../sivel2_gen'
+gem 'sivel2_gen', github: 'pasosdeJesus/sivel2_gen'
+#gem 'sivel2_gen', path: '../sivel2_gen'
 
 # Motor de SIVeL 2 - SJR
 gem 'sivel2_sjr', github: 'pasosdeJesus/sivel2_sjr'

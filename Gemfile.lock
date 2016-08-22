@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/pasosdeJesus/cor1440_gen.git
-  revision: 7cf6ca568952835d81598768a03d41fa6ab65a5c
+  revision: 66838e7f60ee9c8745f272ea1df16d309f177ada
   specs:
     cor1440_gen (1.0.b1)
       devise
@@ -9,21 +9,8 @@ GIT
       rails
 
 GIT
-  remote: git://github.com/pasosdeJesus/sivel2_sjr.git
-  revision: 6d30ba1f31e989c8ad1568612780504d07a04fe1
-  specs:
-    sivel2_sjr (2.0.b1)
-      rails
-      sivel2_gen
-
-GIT
-  remote: git://github.com/vtamara/cocoon.git
-  revision: 20f8f3bab2fee21309c57b586f5fab9921ac0894
-  specs:
-    cocoon (1.2.6)
-
-PATH
-  remote: ../sip
+  remote: git://github.com/pasosdeJesus/sip.git
+  revision: 59eeecf3f52c7dce8b65f9bfae60f7b1d071978f
   specs:
     sip (2.0.b1)
       bootstrap-datepicker-rails
@@ -41,13 +28,28 @@ PATH
       twitter_cldr
       will_paginate
 
-PATH
-  remote: ../sivel2_gen
+GIT
+  remote: git://github.com/pasosdeJesus/sivel2_gen.git
+  revision: 184e2fe9d0e8f83060db5793281a6e8be484c40d
   specs:
     sivel2_gen (2.0b1)
       devise
       jquery-rails
       rails
+
+GIT
+  remote: git://github.com/pasosdeJesus/sivel2_sjr.git
+  revision: 6d30ba1f31e989c8ad1568612780504d07a04fe1
+  specs:
+    sivel2_sjr (2.0.b1)
+      rails
+      sivel2_gen
+
+GIT
+  remote: git://github.com/vtamara/cocoon.git
+  revision: 20f8f3bab2fee21309c57b586f5fab9921ac0894
+  specs:
+    cocoon (1.2.6)
 
 GEM
   remote: https://rubygems.org/
