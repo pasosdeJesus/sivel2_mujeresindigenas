@@ -48,7 +48,21 @@ module Sivel2Sjr
       end
     end
 
-
+    def destroy
+      if @caso.evento
+        @caso.evento.each do |ev|
+          if ev.eventopresponsable
+            ev.eventopresponsable.each do |evp|
+              ::CategoriaEventopresponsable.delete_all(
+                eventopresponsable_id: evp.id
+              )
+            end
+          end
+          ::Eventopresponsable.delete_all(evento_id: ev.id)
+        end
+      end
+      sivel2_sjr_destroy
+    end
 
     def caso_params
       params.require(:caso).permit([
