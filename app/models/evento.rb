@@ -11,20 +11,24 @@ class Evento < ActiveRecord::Base
   belongs_to :municipio, class_name: "Sip::Municipio", 
     foreign_key: "municipio_id"
 
-  has_many :consecuenciaindividual_evento, validate: true
+  has_many :consecuenciaindividual_evento, validate: true, 
+    dependent: :delete_all
   has_many :consecuenciaindividual, through: :consecuenciaindividual_evento
 
-  has_many :consecuenciafamiliar_evento, validate: true
+  has_many :consecuenciafamiliar_evento, validate: true, dependent: :delete_all
   has_many :consecuenciafamiliar, through: :consecuenciafamiliar_evento
 
-  has_many :consecuenciafisica_evento, validate: true
+  has_many :consecuenciafisica_evento, validate: true, dependent: :delete_all
   has_many :consecuenciafisica, through: :consecuenciafisica_evento
 
-  has_many :evento_tafectacion, validate: true
+  has_many :evento_tafectacion, validate: true, dependent: :delete_all
   has_many :tafectacion, through: :evento_tafectacion
 
-  has_many :evento_tapoyo, validate: true
+  has_many :evento_tapoyo, validate: true, dependent: :delete_all
   has_many :tapoyo, through: :evento_tapoyo
+
+  has_many :evento_relacionprvic, validate: true, dependent: :delete_all
+  has_many :relacionprvic, through: :evento_relacionprvic
 
   has_many :actoevento, 
     class_name: "::Actoevento",  

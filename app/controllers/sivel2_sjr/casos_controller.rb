@@ -161,6 +161,7 @@ module Sivel2Sjr
           :consecuenciaindividual_ids => [],
           :tafectacion_ids => [],
           :tapoyo_ids => [],
+          :relacionprvic_ids => [],
           :eventopresponsable_attributes => [
             :id, :presponsable_id, :_destroy,
             :categoria_ids => [],

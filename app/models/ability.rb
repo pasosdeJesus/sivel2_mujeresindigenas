@@ -15,6 +15,7 @@ class Ability < Sivel2Sjr::Ability
   ]
 
   BASICAS_PROPIAS = [
+    ['', 'relacionprvic'],
     ['', 'estadocaso'],
     ['', 'consecuenciafamiliar'],
     ['', 'consecuenciafisica'],
