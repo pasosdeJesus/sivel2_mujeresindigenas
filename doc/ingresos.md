@@ -110,7 +110,6 @@ y sitios de un municipio de acuerdo a la División Político Administrativa.
 * Presunto responsable: Permite elegir uno de los configurados en la tabla básica 
 Presuntos Responsables (ver [xref](#tablas_basicas)) ---que incluye SIN INFORMACIÓN 
 como posible opción.
-
 * Agresión Particular
 * Testigo 
 * Acompañamiento que necesita
@@ -130,6 +129,9 @@ como posible opción.
 Permite anexar archivos. Si se configuró correctamente los archivos quedan 
 almacenados en una partición cifrada. Por ejemplo pueden anexarse fuentes y 
 después referenciarlas en las pestañas de fuentes.
+* Fecha:
+* Descripcion:
+* Archivo:
 
 #### Etiquetas {#etiquetas}
 
@@ -140,6 +142,10 @@ etiquetas (las cuales se especificar en la tabla básica Etiqueta), opcionalment
 poner un comentario. Es posible cambiar los comentarios --por ejemplo si se emplean 
 etiquetas para marcar casos que deben revisarse, una vez revisados debe quitarse o 
 cambiarse el comentario.
+* Fecha:
+* Usuario:
+* Observaciones:
+* Etiqueta:
 
 [^ingresos.1] La numeración es consecutiva --con saltos cuando se borran casos o se 
 insertan en lote de otro SIVeL. Para efectos de conteos es mejor emplear el 
