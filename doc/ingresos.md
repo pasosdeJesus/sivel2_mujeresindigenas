@@ -129,9 +129,9 @@ como posible opción.
 Permite anexar archivos. Si se configuró correctamente los archivos quedan 
 almacenados en una partición cifrada. Por ejemplo pueden anexarse fuentes y 
 después referenciarlas en las pestañas de fuentes.
-* Fecha:
-* Descripcion:
-* Archivo:
+* Fecha
+* Descripcion
+* Archivo
 
 #### Etiquetas {#etiquetas}
 
