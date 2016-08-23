@@ -105,7 +105,7 @@
   <%= f.input :aniodenuncia, 
     collection: @anios %>
   <%= f.input :mesdenuncia, 
-    collection: @meses %>
+    collection: ApplicationHelper::MESES %>
   <%= f.input :diadenuncia, 
     collection: @dias %>
 
@@ -145,9 +145,9 @@
        </div>
     <% end %>
   
-
-    <%= link_to_remove_association "Eliminar Evento", f, 
-      {:class => 'btn-danger', :'data-existing' => 'true'} 
-    %>
+    <center><%= link_to_remove_association "Eliminar Evento", f, 
+      {:class => 'btn-danger centrado', :'data-existing' => 'true'} 
+      %></center>
   </div>
 </div>
+<hr>

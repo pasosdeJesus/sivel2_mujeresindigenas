@@ -30,4 +30,7 @@
 .caso_evento_hora {
 	display: inline-flex;
 }
-
+.centrado {
+	margin-left: auto;
+	margin-right: auto;
+}

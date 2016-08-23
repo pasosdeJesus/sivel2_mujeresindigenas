@@ -95,12 +95,22 @@ module ApplicationHelper
       ['MALA', :M] 
   ]
 
-  def self.etiqueta(a, l)
+  def self.s_guiones(m)
+    if m == 'SIN INFORMACIÓN' 
+      return ' - -'
+    end 
+    m
+  end
+
+  def self.etiqueta(a, l, sininfoguion=false)
     res = a.select do |r|
       r[1].to_s == l.to_s
     end
     if res.length == 0
-      "ERROR-CON-#{a}-Y-#{l}-FAVOR-REPORTAR"
+      return "ERROR-CON-#{a}-Y-#{l}-FAVOR-REPORTAR"
+    end
+    if sininfoguion
+      s_guiones(res[0][0])
     else
       res[0][0]
     end

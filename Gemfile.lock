@@ -39,7 +39,7 @@ GIT
 
 GIT
   remote: git://github.com/pasosdeJesus/sivel2_sjr.git
-  revision: 6d30ba1f31e989c8ad1568612780504d07a04fe1
+  revision: 025a9157e3066566ca339501c1366f108c252cb5
   specs:
     sivel2_sjr (2.0.b1)
       rails
@@ -93,7 +93,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (7.1.1)
-    autoprefixer-rails (6.4.0.2)
+    autoprefixer-rails (6.4.0.3)
       execjs
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)

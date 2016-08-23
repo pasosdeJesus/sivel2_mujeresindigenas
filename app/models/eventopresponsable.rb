@@ -6,8 +6,8 @@ class Eventopresponsable < ActiveRecord::Base
     foreign_key: "presponsable_id"
 
   has_many :categoria_eventopresponsable, validate: true, 
-    dependent: :delete_all, inverse_of: :eventopresponsable
-    
+    dependent: :destroy, inverse_of: :eventopresponsable
+
   has_many :categoria, through: :categoria_eventopresponsable,
     class_name: 'Sivel2Gen::Categoria'
 
