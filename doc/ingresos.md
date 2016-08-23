@@ -142,10 +142,10 @@ etiquetas (las cuales se especificar en la tabla básica Etiqueta), opcionalment
 poner un comentario. Es posible cambiar los comentarios --por ejemplo si se emplean 
 etiquetas para marcar casos que deben revisarse, una vez revisados debe quitarse o 
 cambiarse el comentario.
-* Fecha:
-* Usuario:
-* Observaciones:
-* Etiqueta:
+* Fecha
+* Usuario
+* Observaciones
+* Etiqueta
 
 [^ingresos.1] La numeración es consecutiva --con saltos cuando se borran casos o se 
 insertan en lote de otro SIVeL. Para efectos de conteos es mejor emplear el 
