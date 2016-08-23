@@ -24,4 +24,5 @@ ActiveSupport::Inflector.inflections do |inflect|
 	inflect.irregular 'religion', 'religiones'
 	inflect.irregular 'tafectacion', 'tafectaciones'
 	inflect.irregular 'tapoyo', 'tapoyos'
+	inflect.irregular 'relacionprvic', 'relacionesprvic'
 end

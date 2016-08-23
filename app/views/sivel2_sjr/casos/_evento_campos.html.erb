@@ -45,6 +45,17 @@
 
     <%= render 'eventopresponsable', :f => f %>
 
+    <% if f.object.caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
+      <%= f.association :relacionprvic,
+        collection: ::Relacionprvic.habilitados,
+        include_blank: false,
+        label_method: :nombre, 
+        value_method: :id 
+      %> 
+
+    <% end %>
+
+
     <%= f.input :testigo, 
       collection: ApplicationHelper::NOSI,
       include_blank: false
