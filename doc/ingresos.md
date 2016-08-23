@@ -13,7 +13,7 @@ violencias contra las mujeres indígenas se registran en el mismo.
 
 Por esto antes de ingresar un nuevo caso es recomendable que búsque si ya está 
 registrado por ejemplo utilizando el listado de casos empleando el codigo, la
-fecha de documentación (o parte de la misma), le lugar en el que ocurrió, el
+fecha de documentación (o parte de la misma), el lugar en el que ocurrió, el
 analista que documentó o la organización.
 
 Si está seguro que se trata de un caso nuevo, desde el listado de casos presione 
@@ -92,14 +92,36 @@ departamento, municipio o centro poblado en la tabla básica correspondiente (ve
 y sitios de un municipio de acuerdo a la División Político Administrativa.
 * Resguardo 
 * Comunidad: Dentro del resguardo
-* RUV: Registro único de víctimas
+* Sexo
+* Organización Filial
+* Estado civil
+* Último grado en educación ordinaria
+* Condición de discapacidad
+* Sistema de salud
+* Víctima del conflicto
+* Incluido en RUV: Registro único de víctimas
+* Cabeza del hogar
+* Liderazgo
 
 #### Eventos de violencia y seguimiento {#eventos_de_violencia_y_seguimiento}
 
+* Fecha, hora
 * Numero de veces: Cuantas veces fue agredida la víctima antes.
 * Presunto responsable: Permite elegir uno de los configurados en la tabla básica 
 Presuntos Responsables (ver [xref](#tablas_basicas)) ---que incluye SIN INFORMACIÓN 
 como posible opción.
+
+* Agresión Particular
+* Testigo 
+* Acompañamiento que necesita
+* Situación de riesgo 
+* ¿Ha solicitado medidas al estado?
+* Medidas recibidas 
+* Denuncia
+* ¿Denuncia ante quien?
+* Fecha de la denuncia 
+* Valoración de la atención en materia de justicia
+* ¿Quisiera denunciar?
 
 #### Anexos {#anexos}
 
