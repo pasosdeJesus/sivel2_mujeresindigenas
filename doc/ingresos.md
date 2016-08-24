@@ -13,7 +13,7 @@ violencias contra las mujeres indígenas se registran en el mismo.
 
 Por esto antes de ingresar un nuevo caso es recomendable que búsque si ya está 
 registrado por ejemplo utilizando el listado de casos empleando el codigo, la
-fecha de documentación (o parte de la misma), le lugar en el que ocurrió, el
+fecha de documentación (o parte de la misma), el lugar en el que ocurrió, el
 analista que documentó o la organización.
 
 Si está seguro que se trata de un caso nuevo, desde el listado de casos presione 
@@ -92,14 +92,35 @@ departamento, municipio o centro poblado en la tabla básica correspondiente (ve
 y sitios de un municipio de acuerdo a la División Político Administrativa.
 * Resguardo 
 * Comunidad: Dentro del resguardo
-* RUV: Registro único de víctimas
+* Sexo
+* Organización Filial
+* Estado civil
+* Último grado en educación ordinaria
+* Condición de discapacidad
+* Sistema de salud
+* Víctima del conflicto
+* Incluido en RUV: Registro único de víctimas
+* Cabeza del hogar
+* Liderazgo
 
 #### Eventos de violencia y seguimiento {#eventos_de_violencia_y_seguimiento}
-
+* Se pueden agregar varios eventos y el uno queda debajo del otro pulsando el boton añadir evento y después de creado si queremos borrarlo podemos pulsar eliminar evento.
+* Fecha, hora
 * Numero de veces: Cuantas veces fue agredida la víctima antes.
 * Presunto responsable: Permite elegir uno de los configurados en la tabla básica 
 Presuntos Responsables (ver [xref](#tablas_basicas)) ---que incluye SIN INFORMACIÓN 
-como posible opción.
+como posible opción. Un presunto responsable puede ser autor de varias agresiones, a una misma víctima, en un mismo evento, y empezamos por añadir presunto responsable luego podemos escoger un hecho victimizante y luego otro  asi sucesivamente y puede agregar todas las que necesite y si se necesita borrar se borra con la x que está al lado derecho  o con el botón eliminar. 
+* Agresión Particular:
+* Testigo 
+* Acompañamiento que necesita
+* Situación de riesgo 
+* ¿Ha solicitado medidas al estado?
+* Medidas recibidas 
+* Denuncia
+* ¿Denuncia ante quien?
+* Fecha de la denuncia 
+* Valoración de la atención en materia de justicia
+* ¿Quisiera denunciar?
 
 #### Anexos {#anexos}
 
@@ -108,6 +129,9 @@ como posible opción.
 Permite anexar archivos. Si se configuró correctamente los archivos quedan 
 almacenados en una partición cifrada. Por ejemplo pueden anexarse fuentes y 
 después referenciarlas en las pestañas de fuentes.
+* Fecha
+* Descripcion
+* Archivo
 
 #### Etiquetas {#etiquetas}
 
@@ -118,6 +142,10 @@ etiquetas (las cuales se especificar en la tabla básica Etiqueta), opcionalment
 poner un comentario. Es posible cambiar los comentarios --por ejemplo si se emplean 
 etiquetas para marcar casos que deben revisarse, una vez revisados debe quitarse o 
 cambiarse el comentario.
+* Fecha
+* Usuario
+* Observaciones
+* Etiqueta
 
 [^ingresos.1] La numeración es consecutiva --con saltos cuando se borran casos o se 
 insertan en lote de otro SIVeL. Para efectos de conteos es mejor emplear el 
