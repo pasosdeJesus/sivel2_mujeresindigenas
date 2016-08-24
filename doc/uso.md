@@ -28,7 +28,12 @@ generalidades de la interacción con su navegador por ejemplo:
 
 * Campos
  Son cada uno de los espacios para completar información del caso por ejemplo en datos básicos: fecha de documentación, documentado por, organización, etc.  
- ![Campos](img/Captura%20de%20pantalla%20de%202016-08-22%2019-58-53.png?raw=true)
+ ![Campos](img/Captura%20de%20pantalla%20de%202016-08-22%2019-58-53.png)
+
+* Botones 
+Al colocar el mouse sobre ellos aparece una manita y significa que hay un enlace y al pulsar sobre ellos 
+podemos guardar informacion, crear o eliminar nuevos campos de acuerdo al botón y u función. 
+![](https://github.com/BlancaInesAcosta/Ejercicios/blob/master/Captura%20de%20pantalla%20de%202016-08-22%2019-55-05.png)
 
 * Los cuadros de selección única son desplegables y sólo permiten elegir una opción.
  
