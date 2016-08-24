@@ -6,32 +6,40 @@ class Evento < ActiveRecord::Base
     foreign_key: "caso_id"
   belongs_to :departamento, class_name: "Sip::Departamento", 
     foreign_key: "departamento_id"
-  belongs_to :departamento, class_name: "::Consecuenciafisica", 
-    foreign_key: "departamento_id"
   belongs_to :motivonodenuncia, class_name: "::Motivonodenuncia", 
     foreign_key: "motivonodenuncia_id"
   belongs_to :municipio, class_name: "Sip::Municipio", 
     foreign_key: "municipio_id"
 
-  has_many :consecuenciaindividual_evento, validate: true
+  has_many :consecuenciaindividual_evento, validate: true, 
+    dependent: :delete_all
   has_many :consecuenciaindividual, through: :consecuenciaindividual_evento
 
-  has_many :consecuenciafamiliar_evento, validate: true
+  has_many :consecuenciafamiliar_evento, validate: true, dependent: :delete_all
   has_many :consecuenciafamiliar, through: :consecuenciafamiliar_evento
 
-  has_many :consecuenciafisica_evento, validate: true
+  has_many :consecuenciafisica_evento, validate: true, dependent: :delete_all
   has_many :consecuenciafisica, through: :consecuenciafisica_evento
 
-  has_many :evento_tafectacion, validate: true
+  has_many :evento_tafectacion, validate: true, dependent: :delete_all
   has_many :tafectacion, through: :evento_tafectacion
 
-  has_many :evento_tapoyo, validate: true
+  has_many :evento_tapoyo, validate: true, dependent: :delete_all
   has_many :tapoyo, through: :evento_tapoyo
+
+  has_many :evento_relacionprvic, validate: true, dependent: :delete_all
+  has_many :relacionprvic, through: :evento_relacionprvic
 
   has_many :actoevento, 
     class_name: "::Actoevento",  
     foreign_key: "evento_id", validate:true, dependent: :delete_all
   accepts_nested_attributes_for :actoevento,
+    reject_if: :all_blank, allow_destroy: true
+
+  has_many :eventopresponsable, 
+    class_name: "::Eventopresponsable",  
+    foreign_key: "evento_id", validate:true, dependent: :delete_all
+  accepts_nested_attributes_for :eventopresponsable,
     reject_if: :all_blank, allow_destroy: true
 
   validates :situacionriesgo, length: { maximum: 1 }

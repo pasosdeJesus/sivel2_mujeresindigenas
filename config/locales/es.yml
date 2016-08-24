@@ -56,7 +56,7 @@ es:
         reaccionfamiliaycomunidad: Reacción de la familia y la comunidad
         recibidoreparacion: ¿Ha recibido reparación?
         relacionadocon: Relacionado con conflicto
-        relacionprespvic: Relación entre presunto responsable y víctima
+        relacionprvic: Relación entre presunto resp. y víctima
         seguimientojudicial: Seguimiento Judicial
         seguimientopsicosocial: Seguimiento Psicosocial
         situacionriesgo: Situación de riesgo
@@ -120,6 +120,9 @@ es:
         tienetierra: Tiene tierra
         tipoliderazgo: Tipo de liderazgo
         veredares: Vereda de residencia
+      "relacionprvic":
+        Relacionprvic: Relación entre presunto resp. y víctima
+        Relacionesprvic: Relaciones entre presunto resp. y víctima
       "tafectacion":
         Tafectacion: Tipo de afectación
         Tafectaciones: Tipos de afectación

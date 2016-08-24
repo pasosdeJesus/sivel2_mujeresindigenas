@@ -61,6 +61,9 @@ gem "devise-i18n"
 gem "cancancan"
 gem "bcrypt"
 
+# Cuadros de seleccion mejores
+gem 'chosen-rails'
+
 # Listados en páginas
 gem "will_paginate"
 
