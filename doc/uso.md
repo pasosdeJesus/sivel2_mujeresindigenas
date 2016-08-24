@@ -19,34 +19,48 @@ En cuanto a sistema operativo, como los virus evidencian potenciales huecos de
 seguridad que pueden hacer perder los esfuerzos de seguridad de SIVeL2, 
 recomendamos emplearlo desde computadores con OpenBSD/adJ o en su defecto Linux.
 
+
+### Generalidades sobre la interfaz {#generalidades_interfaz}
 Hemos procurado que la operación de SIVeL2 sea simple, basta que tenga en cuenta 
-generalidades de la interacción con su navegador por ejemplo:
+generalidades de la interacción con su navegador y los elementos visuales
+de la aplicación por ejemplo:
 
-* Pestañas
- Son los cuadritos que empiezan la pagina tales como Datos básicos, Fuentes, Datos de la víctima, Eventos de violencia, anexos, etiquetas y al pulsar sobre ellos cambian de color y despliegan los campos que correspoonden.
- ![Pestañas](img/Captura%20de%20pantalla%20de%202016-08-22%2019-46-02.png?raw=true)
+* Pestañas: Al ver la ficha de un caso en formato horizontal (como se presenta 
+por omisión), las pestañas corresponden a secciones de la ficha seleccionables 
+con los cuadritos de la parte superior.  Son: Datos básicos, Fuentes, 
+Datos de la víctima, Eventos de violencia, Anexos y Etiquetas.  
+Al pulsar sobre cada una para seleccionar una sección cambian de color y se 
+despliegan los campos que corresponden a la sección.
+ ![Pestañas](img/ej-pestanas.png)
 
-* Campos
- Son cada uno de los espacios para completar información del caso por ejemplo en datos básicos: fecha de documentación, documentado por, organización, etc.  
- ![Campos](img/Captura%20de%20pantalla%20de%202016-08-22%2019-58-53.png)
+* Campos: Son cada uno de los espacios para completar información del caso por 
+ejemplo en la pestaña Datos básicos Fecha de documentación, 
+Documentado por, Organización, etc.  
+![Campos](img/ej-campos.png)
 
-* Botones 
-Al colocar el mouse sobre ellos aparece una manita y significa que hay un enlace y al pulsar sobre ellos 
-podemos guardar informacion, crear o eliminar nuevos campos de acuerdo al botón y u función. 
-![](https://github.com/BlancaInesAcosta/Ejercicios/blob/master/Captura%20de%20pantalla%20de%202016-08-22%2019-55-05.png)
+	* Campo de selección única: Los identifica porque tienen al lado
+	derecho una pequeña flecha. Al pulsar en un campo de selección única se 
+	despliega una lista de opciones y sólo permite elegir una.
 
-* Los cuadros de selección única son desplegables y sólo permiten elegir una opción.
- 
-![Cuadro de Selección Unica](img/seleccion_unica.png)
+	![Campo de selección única](img/seleccion_unica.png)
 
-* Los cuadros de selección múltiple permiten seleccionar/deseleccionar varias 
-opciones. Para hacerlo presione la tecla **Control** mientras pulsa el botón 
-izquierdo del ratón.
+	En este tipo de campos selección para elegir más rápido una opción 
+	podrá comenzar a escribir la palabra con la que comienza.
 
-![Cuadro de Selección Múltiple](img/selmultiple.png)
+	* Campos de selección múltiple: permiten seleccionar/deseleccionar 
+	varias opciones. Para hacerlo presione la tecla **Control** mientras 
+	pulsa el botón izquierdo del ratón.
 
-* En cuadros de selección podrá comenzar a escribir la palabra con la que comienza 
-la opción que desea elegir.
+	![Campo de selección múltiple](img/selmultiple.png)
+
+* Botones: Son cajas de color (típicamente azul, gris  o rojo) con un texto 
+que describe la acción que realiza, al colocar el puntero del ratón sobre ellos 
+aparece una manito indicando que al pulsar se realiza la acción. En el
+ejemplo siguiente son botones los marcados con "Validar y Guardar" y 
+"Cancelar".
+
+![Botones](img/ej-botones.png)
+
 
 ### Inicio de una sesión y autenticación {#inicio_de_una_sesion_y_autenticacion}
 
