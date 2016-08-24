@@ -20,7 +20,11 @@ seguridad que pueden hacer perder los esfuerzos de seguridad de SIVeL2,
 recomendamos emplearlo desde computadores con OpenBSD/adJ o en su defecto Linux.
 
 Hemos procurado que la operación de SIVeL2 sea simple, basta que tenga en cuenta 
-generalidades de la interacción con su navegador por ejemplo si emplea los recomendados:
+generalidades de la interacción con su navegador por ejemplo:
+
+* Pestañas
+ Son los cuadritos que empiezan la pagina tales como Datos básicos, Fuentes, Datos de la víctima, Eventos de violencia, anexos, etiquetas y al pulsar sobre ellos cambian de color y despliegan los campos que correspoonden.
+ ![](img/Captura%20de%20pantalla%20de%202016-08-22%2019-46-02.png?raw=true)
 
 * Los cuadros de selección única son desplegables y sólo permiten elegir una opción.
  
