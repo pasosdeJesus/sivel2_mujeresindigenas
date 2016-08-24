@@ -24,7 +24,11 @@ generalidades de la interacción con su navegador por ejemplo:
 
 * Pestañas
  Son los cuadritos que empiezan la pagina tales como Datos básicos, Fuentes, Datos de la víctima, Eventos de violencia, anexos, etiquetas y al pulsar sobre ellos cambian de color y despliegan los campos que correspoonden.
- ![](img/Captura%20de%20pantalla%20de%202016-08-22%2019-46-02.png?raw=true)
+ ![Pestañas](img/Captura%20de%20pantalla%20de%202016-08-22%2019-46-02.png?raw=true)
+
+* Campos
+ Son cada uno de los espacios para completar información del caso por ejemplo en datos básicos: fecha de documentación, documentado por, organización, etc.  
+ ![Campos](img/Captura%20de%20pantalla%20de%202016-08-22%2019-58-53.png?raw=true)
 
 * Los cuadros de selección única son desplegables y sólo permiten elegir una opción.
  
