@@ -104,13 +104,13 @@ y sitios de un municipio de acuerdo a la División Político Administrativa.
 * Liderazgo
 
 #### Eventos de violencia y seguimiento {#eventos_de_violencia_y_seguimiento}
-
+* Se pueden agregar varios eventos y el uno queda debajo del otro pulsando el boton añadir evento y después de creado si queremos borrarlo podemos pulsar eliminar evento.
 * Fecha, hora
 * Numero de veces: Cuantas veces fue agredida la víctima antes.
 * Presunto responsable: Permite elegir uno de los configurados en la tabla básica 
 Presuntos Responsables (ver [xref](#tablas_basicas)) ---que incluye SIN INFORMACIÓN 
-como posible opción.
-* Agresión Particular
+como posible opción. Un presunto responsable puede ser autor de varias agresiones, a una misma víctima, en un mismo evento, y empezamos por añadir presunto responsable luego podemos escoger un hecho victimizante y luego otro  asi sucesivamente y puede agregar todas las que necesite y si se necesita borrar se borra con la x que está al lado derecho  o con el botón eliminar. 
+* Agresión Particular:
 * Testigo 
 * Acompañamiento que necesita
 * Situación de riesgo 
