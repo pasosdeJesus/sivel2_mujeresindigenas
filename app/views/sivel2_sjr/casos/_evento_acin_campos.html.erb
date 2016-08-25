@@ -1,8 +1,6 @@
 
 <%= f.input :descripcionafectacion %>
 
-<%= f.input :relacionprespvic %>
-
 <%= f.association :consecuenciaindividual,
   collection: ::Consecuenciaindividual.habilitados,
   include_blank: false,
