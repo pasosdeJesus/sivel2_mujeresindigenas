@@ -81,3 +81,5 @@ doc/confv.sh
 doc/genindice.xdbk.m
 archivos/
 .byebug_history
+doc/img/*eps
+doc/imp/

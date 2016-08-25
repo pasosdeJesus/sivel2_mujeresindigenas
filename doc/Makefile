@@ -63,7 +63,7 @@ GENACT=ghtodo $(PROYECTO)-$(PRY_VERSION)_html.tar.gz $(PRINT_DIR)/$(PROYECTO)-$(
 FILESACT=$(PROYECTO)-$(PRY_VERSION).tar.gz $(PROYECTO)-$(PRY_VERSION)_html.tar.gz $(HTML_DIR)/* #$(PRINT_DIR)/$(PROYECTO)-$(PRY_VERSION).ps.gz $(PRINT_DIR)/$(PROYECTO)-$(PRY_VERSION).pdf 
 # Archivos que se debe actualizar en sitio de Internet cuando se publica
 
-all: $(HTML_TARGET) #$(PRINT_DIR)/$(PROYECTO).ps $(PRINT_DIR)/$(PROYECTO).pdf
+all: $(HTML_TARGET) $(PRINT_DIR)/$(PROYECTO).ps $(PRINT_DIR)/$(PROYECTO).pdf
 
 cvstodo: distcvs 
 	rm -rf $(PROYECTO)-$(PRY_VERSION)
@@ -93,6 +93,7 @@ limpiadist: limpiamas
 
 # Elimina archivos generables
 limpiamas: limpia
+	rm -f $(FUENTESDB)
 	rm -f img/*.eps img/*.ps
 	rm -f $(PROYECTO)-$(PRY_VERSION).tar.gz
 	rm -f genindice.xdbk genindice.xdbk.m genindice.xml.m HTML.index.m
@@ -137,7 +138,8 @@ infoversion.ent:
 .md.xdbk:
 	mkdir -p tmp
 	$(PANDOC) -t docbook -o tmp/$@ $<
-	sed -e "s/<link linkend=\"\([^\"]*\)\">xref<\/link>/<xref linkend=\"\1\"\/>/g" tmp/$@ > $@
+	sed -e "s/<link linkend=\"\([^\"]*\)\">xref<\/link>/<xref linkend=\"\1\"\/>/g;s/inlinemediaobject/mediaobject/g;s/<imagedata fileref=\"img\/\([^.]*\).png\" \/>/<imagedata fileref=\"\1.eps\" format=\"EPS\" scale=\"30\" align=\"center\"\/><\/imageobject><imageobject>&/g" tmp/$@  > $@
+
 
 #contenido.xdbk: $(FUENTESMD)
 #	$(PANDOC) -t docbook -o pre-contenido.xdbk metadatos.yaml $(FUENTESMD)
