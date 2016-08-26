@@ -107,7 +107,7 @@ y sitios de un municipio de acuerdo a la División Político Administrativa.
 * Se pueden agregar varios eventos y el uno queda debajo del otro pulsando el boton añadir evento y después de creado si queremos borrarlo podemos pulsar eliminar evento.
 * Fecha, hora
 * Numero de veces: Cuantas veces fue agredida la víctima antes.
-* Presunto responsable: Permite elegir uno de los configurados en la tabla básica 
+* Grupo Presunto Responsable: Permite elegir uno de los configurados en la tabla básica 
 Presuntos Responsables (ver [xref](#tablas_basicas)) ---que incluye SIN INFORMACIÓN 
 como posible opción. Un presunto responsable puede ser autor de varias agresiones, a una misma víctima, en un mismo evento, y empezamos por añadir presunto responsable luego podemos escoger un hecho victimizante y luego otro  asi sucesivamente y puede agregar todas las que necesite y si se necesita borrar se borra con la x que está al lado derecho  o con el botón eliminar. 
 * Agresión Particular:
@@ -172,8 +172,19 @@ http://words.carlus.cat/como-podemos-traducir-responsive-web-design/.
 * Idioma: El principal
 
 #### Evento de violencia y seguimiento {#evento_de_violencia_y_seguimiento}
+* Relación entre presunto responsable y víctima
+* Afectación individual
+* Afectación familiar
+* Afectacion física* 
 * Actividades que se dejaron de hacer: Se refiere a la actividad que desempeñaba la víctima en el 
   momento de la agresión.
+* Reacción de la familia yla comunidad
+* Afectación a otra persona
+* Avances del caso
+* Etapas del proceso
+* ¿Ha recibido reparación?
+* Compromisos adquiridos ¿Cuales y con quien?
+* Observaciones generales
 
 ### Datos privados OIK {#datos_privados_oik}
 
