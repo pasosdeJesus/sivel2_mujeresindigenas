@@ -24,7 +24,10 @@ gem "jbuilder"
 
 # SCSS para hojas de estilo
 gem "sass"
-gem "sass-rails"
+
+gem 'font-awesome-rails'   
+
+gem 'chosen'
 
 # Colores en terminal
 gem "colorize"
@@ -81,7 +84,11 @@ gem "tzinfo-data"
 gem 'sip', git: "https://github.com/pasosdeJesus/sip.git"
 #gem 'sip', path: '../sip'
 
-# Motor de SIVeL 2
+# Motor de heb412
+gem 'heb412_gen', git: "https://github.com/pasosdeJesus/heb412_gen.git"
+#gem 'heb412_gen', path: '../heb412_gen'
+
+# Motor de sivel2
 gem 'sivel2_gen', git: "https://github.com/pasosdeJesus/sivel2_gen.git"
 #gem 'sivel2_gen', path: '../sivel2_gen'
 
