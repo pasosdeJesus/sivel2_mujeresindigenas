@@ -27,6 +27,8 @@ module Sivel2Mujeresindigenas
 
     config.relative_url_root = "/mujeresindigenas/sivel2"
 
+    config.x.formato_fecha = 'yyyy-mm-dd'
+
     config.x.heb412_ruta = Rails.root.join('public', 'heb412')
 
     # config.x.formato_fecha = 'yyyy-mm-dd'
