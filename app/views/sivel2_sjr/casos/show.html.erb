@@ -15,9 +15,30 @@
       <dd><%= @caso.id %></dd>
 
       <dt><strong>
+        <%= Sivel2Sjr::Casosjr.human_attribute_name(:consecorg) %>:
+      </strong></dt>
+      <dd><%= @caso.casosjr.consecorg if @caso.casosjr.consecorg %></dd>
+
+      <% if @caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
+        <div class="privado alert-info">
+          <dt><strong>
+            <%= Sivel2Sjr::Casosjr.human_attribute_name(:consentimiento) %>:
+          </strong></dt>
+          <dd><%= ApplicationHelper.etiqueta(
+            ApplicationHelper::NOSI, @caso.casosjr.consentimiento, true) if 
+            @caso.casosjr.consentimiento %></dd>
+        </div>
+      <% end %>
+
+      <dt><strong>
         <%= Sivel2Sjr::Casosjr.human_attribute_name(:fecharec) %>:
       </strong></dt>
       <dd><%= @caso.casosjr.fecharec if @caso.casosjr %></dd>
+
+      <dt><strong>
+        <%= Sivel2Sjr::Casosjr.human_attribute_name(:docterrenopor) %>:
+      </strong></dt>
+      <dd><%= @caso.casosjr.docterrenopor if @caso.casosjr.docterrenopor %></dd>
 
       <dt><strong>
         <%= Sivel2Sjr::Casosjr.human_attribute_name(:usuario) %>:
