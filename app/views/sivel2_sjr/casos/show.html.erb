@@ -301,6 +301,15 @@
             <%= ::Evento.human_attribute_name(:acompnecesita) %>:
           </strong></dt>
           <dd><%= evento.acompnecesita %></dd>
+    
+          <% if @caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
+            <div class="privado alert-info">
+              <dt><strong>
+                <%= Evento.human_attribute_name(:telcontacto) %>:
+              </strong></dt>
+              <dd><%= evento.telcontacto if evento.telcontacto %></dd>
+            </div>
+          <% end %>
 
           <dt><strong>
             <%= ::Evento.human_attribute_name(:situacionriesgo) %>:
@@ -368,6 +377,11 @@
           <dd><%= ApplicationHelper.etiqueta(
             ApplicationHelper::NOSI, evento.quisieradenunciar, true) if 
             evento.quisieradenunciar %></dd>
+
+          <% if @caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
+            <%= render 'muestra_evento_acin', :evento => evento %>
+          <% end %>
+
         <%end %>
       </div>
     </div>
