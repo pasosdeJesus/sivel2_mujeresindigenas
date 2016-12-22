@@ -2,6 +2,11 @@
   <div class="controls">
     <%= f.input :id, as: :hidden %>
 
+    <%= f.input :fechaseguimiento,
+      input_html: { "data-behaviour" => "datepicker" },
+      as: :string 
+    %>
+
     <%= f.input :anio, 
       collection: @anios
     %>

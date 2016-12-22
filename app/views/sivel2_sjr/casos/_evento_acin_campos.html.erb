@@ -45,6 +45,11 @@
 
 <%= f.input :quereparacion %>
 
+<%= f.input :sancionadovictimario, 
+  collection: ApplicationHelper::NOSI,
+  include_blank: false
+%>
+
 <%= f.input :compromisosadquiridos %>
 
 <%= f.input :observaciones %>

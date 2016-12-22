@@ -3,6 +3,15 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
+<% if @caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
+  <p style='text-align: right'>
+    <label>
+      Mostrar campos privados
+      <input type='checkbox' id='mostrarprivados' checked='1'/>
+    </label>
+  </p>
+<% end %>
+
 <dl class="dl-horizontal">
 
   <div class="panel panel-default">
@@ -223,6 +232,11 @@
             <hr>
           <% end %>
           <% numev += 1 %>
+          <dt><strong>
+            <%= ::Evento.human_attribute_name(:fechaseguimiento) %>:
+          </strong></dt>
+          <dd><%= evento.fechaseguimiento if evento.fechaseguimiento %></dd>
+ 
           <dt><strong><%= ::Evento.human_attribute_name(:fecha) %>:</strong></dt>
           <dd><%= evento.anio if evento.anio %>-
           <%= evento.mes if evento.mes %>-
