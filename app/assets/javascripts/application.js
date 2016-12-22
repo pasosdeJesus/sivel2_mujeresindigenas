@@ -56,5 +56,13 @@ $(document).on('turbolinks:load ready page:load', function() {
 		  width: '100%'
 	  })
   })
+
+  $(document).on('change', '#mostrarprivados', function(e) {
+	  if (this.checked) {
+		  $('.privado').show()
+	  } else {
+		  $('.privado').hide()
+	  }
+  })
 });
 
