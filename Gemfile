@@ -7,9 +7,6 @@ gem "rails", '~> 5.0.0'
 gem "rails-i18n"
 
 
-# Mientras solucionan https://github.com/sparklemotion/nokogiri/issues/1569
-gem 'nokogiri', '1.6.8.1' 
-
 # PDF
 gem "prawn"
 gem "prawnto_2",  :require => "prawnto"
