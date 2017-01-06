@@ -6,6 +6,7 @@ source 'https://rubygems.org'
 gem "rails", '~> 5.0.0'
 gem "rails-i18n"
 
+
 # PDF
 gem "prawn"
 gem "prawnto_2",  :require => "prawnto"
@@ -99,11 +100,6 @@ gem 'sivel2_sjr', git: "https://github.com/pasosdeJesus/sivel2_sjr.git"
 # Motor Cor1440_gen
 gem 'cor1440_gen', git: "https://github.com/pasosdeJesus/cor1440_gen.git"
 #gem "cor1440_gen", path: '../cor1440_gen'
-
-group :doc do
-    # Genera documentación en doc/api con bundle exec rake doc:rails
-    gem "sdoc", require: false
-end
 
 # Los siguientes son para desarrollo o para pruebas con generadores
 group :development do

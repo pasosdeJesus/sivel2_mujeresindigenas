@@ -3,6 +3,15 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
+<% if @caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
+  <p style='text-align: right'>
+    <label>
+      Mostrar campos privados
+      <input type='checkbox' id='mostrarprivados' checked='1'/>
+    </label>
+  </p>
+<% end %>
+
 <dl class="dl-horizontal">
 
   <div class="panel panel-default">
@@ -15,9 +24,30 @@
       <dd><%= @caso.id %></dd>
 
       <dt><strong>
+        <%= Sivel2Sjr::Casosjr.human_attribute_name(:consecorg) %>:
+      </strong></dt>
+      <dd><%= @caso.casosjr.consecorg if @caso.casosjr.consecorg %></dd>
+
+      <% if @caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
+        <div class="privado alert-info">
+          <dt><strong>
+            <%= Sivel2Sjr::Casosjr.human_attribute_name(:consentimiento) %>:
+          </strong></dt>
+          <dd><%= ApplicationHelper.etiqueta(
+            ApplicationHelper::NOSI, @caso.casosjr.consentimiento, true) if 
+            @caso.casosjr.consentimiento %></dd>
+        </div>
+      <% end %>
+
+      <dt><strong>
         <%= Sivel2Sjr::Casosjr.human_attribute_name(:fecharec) %>:
       </strong></dt>
       <dd><%= @caso.casosjr.fecharec if @caso.casosjr %></dd>
+
+      <dt><strong>
+        <%= Sivel2Sjr::Casosjr.human_attribute_name(:docterrenopor) %>:
+      </strong></dt>
+      <dd><%= @caso.casosjr.docterrenopor if @caso.casosjr.docterrenopor %></dd>
 
       <dt><strong>
         <%= Sivel2Sjr::Casosjr.human_attribute_name(:usuario) %>:
@@ -46,11 +76,6 @@
       <dd><%= ApplicationHelper.etiqueta(
         ApplicationHelper::TIPOACOMP, @caso.casosjr.tipoacomp, true) if 
         @caso.casosjr && @caso.casosjr.tipoacomp %></dd>
-
-      <dt><strong>
-        <%= Sivel2Gen::Caso.human_attribute_name(:fecha) %>:
-      </strong></dt>
-      <dd><%= @caso.fecha %></dd>
 
       <dt><strong>
         <%= Sivel2Gen::Caso.human_attribute_name(:created_at) %>:
@@ -207,6 +232,11 @@
             <hr>
           <% end %>
           <% numev += 1 %>
+          <dt><strong>
+            <%= ::Evento.human_attribute_name(:fechaseguimiento) %>:
+          </strong></dt>
+          <dd><%= evento.fechaseguimiento if evento.fechaseguimiento %></dd>
+ 
           <dt><strong><%= ::Evento.human_attribute_name(:fecha) %>:</strong></dt>
           <dd><%= evento.anio if evento.anio %>-
           <%= evento.mes if evento.mes %>-
@@ -285,6 +315,15 @@
             <%= ::Evento.human_attribute_name(:acompnecesita) %>:
           </strong></dt>
           <dd><%= evento.acompnecesita %></dd>
+    
+          <% if @caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
+            <div class="privado alert-info">
+              <dt><strong>
+                <%= Evento.human_attribute_name(:telcontacto) %>:
+              </strong></dt>
+              <dd><%= evento.telcontacto if evento.telcontacto %></dd>
+            </div>
+          <% end %>
 
           <dt><strong>
             <%= ::Evento.human_attribute_name(:situacionriesgo) %>:
@@ -352,6 +391,11 @@
           <dd><%= ApplicationHelper.etiqueta(
             ApplicationHelper::NOSI, evento.quisieradenunciar, true) if 
             evento.quisieradenunciar %></dd>
+
+          <% if @caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
+            <%= render 'muestra_evento_acin', :evento => evento %>
+          <% end %>
+
         <%end %>
       </div>
     </div>
