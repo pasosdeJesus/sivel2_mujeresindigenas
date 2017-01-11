@@ -179,6 +179,16 @@ CREATE TABLE acompanamiento (
 
 
 --
+-- Name: acompanamiento_casosjr; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE acompanamiento_casosjr (
+    acompanamiento_id integer NOT NULL,
+    sivel2_sjr_casosjr_id integer NOT NULL
+);
+
+
+--
 -- Name: acompanamiento_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -454,7 +464,6 @@ CREATE TABLE sivel2_sjr_casosjr (
     observacionesref character varying(5000),
     comosupo_id integer DEFAULT 1,
     consentimiento character varying(1) DEFAULT 'I'::character varying,
-    tipoacomp character varying(1) DEFAULT 'N'::character varying,
     docterrenopor character varying(512),
     consecorg character varying(16)
 );
@@ -7000,6 +7009,14 @@ ALTER TABLE ONLY cor1440_gen_informe
 
 
 --
+-- Name: acompanamiento_casosjr fk_rails_c6252a245a; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY acompanamiento_casosjr
+    ADD CONSTRAINT fk_rails_c6252a245a FOREIGN KEY (acompanamiento_id) REFERENCES acompanamiento(id);
+
+
+--
 -- Name: cor1440_gen_financiador_proyectofinanciero fk_rails_ca93eb04dc; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7077,6 +7094,14 @@ ALTER TABLE ONLY evento
 
 ALTER TABLE ONLY sivel2_sjr_progestado_derecho
     ADD CONSTRAINT fk_rails_e8dedd8c1d FOREIGN KEY (progestado_id) REFERENCES sivel2_sjr_progestado(id);
+
+
+--
+-- Name: acompanamiento_casosjr fk_rails_efad5b94f4; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY acompanamiento_casosjr
+    ADD CONSTRAINT fk_rails_efad5b94f4 FOREIGN KEY (sivel2_sjr_casosjr_id) REFERENCES sivel2_sjr_casosjr(id_caso);
 
 
 --
@@ -7833,6 +7858,7 @@ INSERT INTO schema_migrations (version) VALUES
 ('20161108102349'),
 ('20161219110016'),
 ('20170111104308'),
-('20170111104547');
+('20170111104547'),
+('20170111110923');
 
 

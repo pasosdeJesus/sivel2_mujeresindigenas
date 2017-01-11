@@ -71,11 +71,13 @@
         %></dd>
 
       <dt><strong>
-        <%= Sivel2Sjr::Casosjr.human_attribute_name(:tipoacomp) %>:
+        <%= Sivel2Sjr::Casosjr.human_attribute_name(:acompanamiento) %>:
       </strong></dt>
-      <dd><%= ApplicationHelper.etiqueta(
-        ApplicationHelper::TIPOACOMP, @caso.casosjr.tipoacomp, true) if 
-        @caso.casosjr && @caso.casosjr.tipoacomp %></dd>
+      <dd><%= @caso.casosjr.acompanamiento.inject("") { 
+        |memo, i| 
+        (memo == "" ? "" : memo + ", ") + i.nombre } if @caso.casosjr && 
+          @caso.casosjr.acompanamiento
+        %></dd>
 
       <dt><strong>
         <%= Sivel2Gen::Caso.human_attribute_name(:created_at) %>:

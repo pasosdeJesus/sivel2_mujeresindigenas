@@ -77,8 +77,8 @@ module Sivel2Sjr
           :id, 
           :id_idioma, 
           :oficina_id, 
-          :tipoacomp, 
           :_destroy,
+          :acompanamiento_ids => [],
           :estadocaso_ids => []
         ], 
         :caso_fuenteprensa_attributes => [

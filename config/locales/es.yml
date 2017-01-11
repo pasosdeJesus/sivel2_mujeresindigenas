@@ -97,6 +97,7 @@ es:
         fecharec: Fecha documentación ini.
         oficina: Organizacion que diligencia
       "sivel2_sjr/casosjr":
+        acompanamiento: "Acompañamiento"
         consecorg: Código en organización
         contacto: Víctima
         docterrenopor: Documentado en terreno por
