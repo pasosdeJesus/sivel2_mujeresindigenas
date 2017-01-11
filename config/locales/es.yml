@@ -2,13 +2,19 @@ es:
   attributes:
   activerecord:
     models:
-      "sip/oficina":
-        one: "Organización que diligencia"
-        other: "Organizaciones que diligencian"
+      "acompanamiento":
+        one: "Tipo de Acompañamiento"
+        other: "Tipos de Acompañamientos"
       "estadocaso":
         one: "Estado del caso"
         other: "Estados de caso"
+      "sip/oficina":
+        one: "Organización que diligencia"
+        other: "Organizaciones que diligencian"
     attributes:
+      "acompanamiento":
+        Acompanamiento: "Tipo de Acompañamiento"
+        Acompanamientos: "Tipos de Acompañamientos"
       "consecuenciafamiliar":
         Consecuenciafamiliar: Afectación familiar
         Consecuenciasfamiliares: Afectaciones familiares

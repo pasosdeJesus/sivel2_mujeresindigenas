@@ -159,6 +159,44 @@ END;
 $$;
 
 
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: acompanamiento; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE acompanamiento (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(500),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: acompanamiento_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE acompanamiento_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: acompanamiento_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE acompanamiento_id_seq OWNED BY acompanamiento.id;
+
+
 --
 -- Name: acto_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
@@ -170,10 +208,6 @@ CREATE SEQUENCE acto_seq
     NO MAXVALUE
     CACHE 1;
 
-
-SET default_tablespace = '';
-
-SET default_with_oids = false;
 
 --
 -- Name: actoevento; Type: TABLE; Schema: public; Owner: -
@@ -4387,6 +4421,13 @@ CREATE MATERIALIZED VIEW vvictimasoundexesp AS
 
 
 --
+-- Name: acompanamiento id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY acompanamiento ALTER COLUMN id SET DEFAULT nextval('acompanamiento_id_seq'::regclass);
+
+
+--
 -- Name: actoevento id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4636,6 +4677,14 @@ ALTER TABLE ONLY tafectacion ALTER COLUMN id SET DEFAULT nextval('tafectacion_id
 --
 
 ALTER TABLE ONLY tapoyo ALTER COLUMN id SET DEFAULT nextval('tapoyo_id_seq'::regclass);
+
+
+--
+-- Name: acompanamiento acompanamiento_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY acompanamiento
+    ADD CONSTRAINT acompanamiento_pkey PRIMARY KEY (id);
 
 
 --
@@ -7782,6 +7831,8 @@ INSERT INTO schema_migrations (version) VALUES
 ('20161103081041'),
 ('20161103083352'),
 ('20161108102349'),
-('20161219110016');
+('20161219110016'),
+('20170111104308'),
+('20170111104547');
 
 
