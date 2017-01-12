@@ -115,7 +115,7 @@
 
     <%= f.input :denunciaante, 
       collection: ApplicationHelper::DENUNCIAANTE,
-      include_blank: false 
+      include_blank: true
     %>
 
   <%= f.input :aniodenuncia, 
@@ -133,12 +133,12 @@
 
   <%= f.input :valoracionjusticia, 
     collection: ApplicationHelper::VALORACIONBRM,
-    include_blank: false 
+    include_blank: true
   %>
 
 <%= f.input :quisieradenunciar, 
   collection: ApplicationHelper::NOSI,
-  include_blank: false 
+  include_blank: true
 %>
     </div>
   </div>

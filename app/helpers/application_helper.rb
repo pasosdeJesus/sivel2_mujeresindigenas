@@ -95,6 +95,7 @@ module ApplicationHelper
   end
 
   def self.etiqueta(a, l, sininfoguion=false)
+    return '' if l == ''
     res = a.select do |r|
       r[1].to_s == l.to_s
     end
