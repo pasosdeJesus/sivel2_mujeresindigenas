@@ -31,6 +31,7 @@ es:
         Estadocaso: Estado de caso
         Estadoscaso: Estados de caso
       "evento":
+        acompanamiento: Tipo de acompañamiento que necesita
         acompnecesita: Acompañamiento que necesita
         actividadesdejadas: Actividades que se dejaron de hacer
         afectacionotra: Afectación a otra persona

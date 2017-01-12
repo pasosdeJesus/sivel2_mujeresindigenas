@@ -189,6 +189,16 @@ CREATE TABLE acompanamiento_casosjr (
 
 
 --
+-- Name: acompanamiento_evento; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE acompanamiento_evento (
+    acompanamiento_id integer NOT NULL,
+    evento_id integer NOT NULL
+);
+
+
+--
 -- Name: acompanamiento_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -6753,6 +6763,14 @@ ALTER TABLE ONLY cor1440_gen_financiador_proyectofinanciero
 
 
 --
+-- Name: acompanamiento_evento fk_rails_135b8955e2; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY acompanamiento_evento
+    ADD CONSTRAINT fk_rails_135b8955e2 FOREIGN KEY (evento_id) REFERENCES evento(id);
+
+
+--
 -- Name: categoria_eventopresponsable fk_rails_15665aea7a; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6870,6 +6888,14 @@ ALTER TABLE ONLY sivel2_sjr_ayudaestado_derecho
 
 ALTER TABLE ONLY cor1440_gen_actividad_proyectofinanciero
     ADD CONSTRAINT fk_rails_524486e06b FOREIGN KEY (proyectofinanciero_id) REFERENCES cor1440_gen_proyectofinanciero(id);
+
+
+--
+-- Name: acompanamiento_evento fk_rails_5564d830d8; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY acompanamiento_evento
+    ADD CONSTRAINT fk_rails_5564d830d8 FOREIGN KEY (acompanamiento_id) REFERENCES acompanamiento(id);
 
 
 --
@@ -7859,6 +7885,7 @@ INSERT INTO schema_migrations (version) VALUES
 ('20161219110016'),
 ('20170111104308'),
 ('20170111104547'),
-('20170111110923');
+('20170111110923'),
+('20170112104821');
 
 

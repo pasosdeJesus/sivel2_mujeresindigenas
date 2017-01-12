@@ -214,6 +214,7 @@ module Sivel2Sjr
           :testigo,
           :valoracionjusticia,
           :_destroy,
+          :acompanamiento_ids => [],
           :actoevento_attributes => [
             :categoria_id, 
             :id, 

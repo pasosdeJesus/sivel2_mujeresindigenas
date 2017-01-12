@@ -312,7 +312,17 @@
               %>
           </dd>
 
-
+          <dt><strong>
+            <%= ::Evento.human_attribute_name(:acompanamiento) %>:
+          </strong></dt>
+          <dd><%= if evento.acompanamiento then
+                    evento.acompanamiento.inject("") { 
+                      |memo, i| 
+                      (memo == "" ? "" : memo + ", ") + i.nombre } 
+                  end 
+              %>
+          </dd>
+ 
           <dt><strong>
             <%= ::Evento.human_attribute_name(:acompnecesita) %>:
           </strong></dt>

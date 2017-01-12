@@ -11,6 +11,10 @@ class Evento < ActiveRecord::Base
   belongs_to :municipio, class_name: "Sip::Municipio", 
     foreign_key: "municipio_id"
 
+  has_many :acompanamiento_evento, validate: true, 
+    dependent: :delete_all
+  has_many :acompanamiento, through: :acompanamiento_evento
+
   has_many :consecuenciaindividual_evento, validate: true, 
     dependent: :delete_all
   has_many :consecuenciaindividual, through: :consecuenciaindividual_evento
