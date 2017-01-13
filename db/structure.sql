@@ -1564,7 +1564,7 @@ CREATE TABLE evento (
     brindadaproteccion character varying(5000) DEFAULT ''::character varying,
     descripcionafectacion character varying(5000) DEFAULT ''::character varying,
     relacionprespvic character varying(500) DEFAULT ''::character varying,
-    numvecesantes integer,
+    numvecesantes character varying,
     actividadesdejadas character varying(5000) DEFAULT ''::character varying,
     reaccionfamiliaycomunidad character varying(5000) DEFAULT ''::character varying,
     avancescaso character varying(5000) DEFAULT ''::character varying,
@@ -7886,6 +7886,7 @@ INSERT INTO schema_migrations (version) VALUES
 ('20170111104308'),
 ('20170111104547'),
 ('20170111110923'),
-('20170112104821');
+('20170112104821'),
+('20170112111018');
 
 
