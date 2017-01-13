@@ -156,6 +156,25 @@
         </strong></dt>
         <dd><%= ApplicationHelper::s_guiones(victima.rangoedad.rango) %></dd>
 
+        <% if @caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
+          <div class="privado alert-info">
+            <dt><strong>
+              <%= Sivel2Gen::Victima.human_attribute_name(:hijos) %>:
+            </strong></dt>
+            <dd><%= victima.hijos %></dd>
+
+            <dt><strong>
+              <%= Sivel2Sjr::Victimasjr.human_attribute_name(:idioma) %>:
+            </strong></dt>
+            <dd><%= victima.victimasjr.idioma.inject("") { 
+              |memo, i| 
+              (memo == "" ? "" : memo + ", ") + i.nombre } if 
+                victima.victimasjr && victima.victimasjr.idioma
+            %></dd>
+          </div>
+        <% end %>
+
+
         <dt><strong>
           <%= Sivel2Gen::Victima.human_attribute_name(:etnia) %>:
         </strong></dt>

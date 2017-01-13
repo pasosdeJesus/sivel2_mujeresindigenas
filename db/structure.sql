@@ -463,7 +463,6 @@ CREATE TABLE sivel2_sjr_casosjr (
     estrato character(1),
     id_statusmigratorio integer DEFAULT 0,
     id_proteccion integer DEFAULT 0,
-    id_idioma integer DEFAULT 0,
     consentimientosjr boolean,
     consentimientobd boolean,
     fechasalida date,
@@ -1825,6 +1824,16 @@ CREATE SEQUENCE heb412_gen_plantillahcm_id_seq
 --
 
 ALTER SEQUENCE heb412_gen_plantillahcm_id_seq OWNED BY heb412_gen_plantillahcm.id;
+
+
+--
+-- Name: idioma_victimasjr; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE idioma_victimasjr (
+    sivel2_sjr_idioma_id integer NOT NULL,
+    sivel2_sjr_victimasjr_id integer NOT NULL
+);
 
 
 --
@@ -6531,14 +6540,6 @@ ALTER TABLE ONLY sivel2_sjr_casosjr
 
 
 --
--- Name: sivel2_sjr_casosjr casosjr_id_idioma_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY sivel2_sjr_casosjr
-    ADD CONSTRAINT casosjr_id_idioma_fkey FOREIGN KEY (id_idioma) REFERENCES sivel2_sjr_idioma(id);
-
-
---
 -- Name: sivel2_sjr_casosjr casosjr_id_llegada_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6995,6 +6996,14 @@ ALTER TABLE ONLY evento_relacionprvic
 
 
 --
+-- Name: idioma_victimasjr fk_rails_af399be27d; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY idioma_victimasjr
+    ADD CONSTRAINT fk_rails_af399be27d FOREIGN KEY (sivel2_sjr_victimasjr_id) REFERENCES sivel2_sjr_victimasjr(id_victima);
+
+
+--
 -- Name: sivel2_gen_combatiente fk_rails_af43e915a6; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7032,6 +7041,14 @@ ALTER TABLE ONLY sivel2_gen_combatiente
 
 ALTER TABLE ONLY cor1440_gen_informe
     ADD CONSTRAINT fk_rails_c02831dd89 FOREIGN KEY (filtroactividadarea) REFERENCES cor1440_gen_actividadarea(id);
+
+
+--
+-- Name: idioma_victimasjr fk_rails_c0a9d93add; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY idioma_victimasjr
+    ADD CONSTRAINT fk_rails_c0a9d93add FOREIGN KEY (sivel2_sjr_idioma_id) REFERENCES sivel2_sjr_idioma(id);
 
 
 --
@@ -7887,6 +7904,7 @@ INSERT INTO schema_migrations (version) VALUES
 ('20170111104547'),
 ('20170111110923'),
 ('20170112104821'),
-('20170112111018');
+('20170112111018'),
+('20170113101237');
 
 

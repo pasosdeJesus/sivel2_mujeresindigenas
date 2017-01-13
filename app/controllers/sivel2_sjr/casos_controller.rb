@@ -75,7 +75,6 @@ module Sivel2Sjr
           :docterrenopor,
           :fecharec,
           :id, 
-          :id_idioma, 
           :oficina_id, 
           :_destroy,
           :acompanamiento_ids => [],
@@ -141,7 +140,8 @@ module Sivel2Sjr
             :tienetierra, 
             :tipoliderazgo,
             :veredares,
-            :vicconflicto
+            :vicconflicto,
+            :idioma_ids => [], 
           ]
         ], 
         :ubicacion_attributes => [

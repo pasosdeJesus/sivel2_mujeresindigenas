@@ -74,14 +74,15 @@
 
 
 <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
-  <%= fvictima.input :hijos %>
+  <div class="privado alert-info">
+    <%= fvictima.input :hijos %>
 
-  <%= fcasosjr.association :idioma,
-    collection: Sivel2Sjr::Idioma.habilitados,
-    include_blank: false,
-    label_method: :nombre, 
-    value_method: :id 
-  %>
+    <%= fvictimasjr.association :idioma,
+      collection: Sivel2Sjr::Idioma.habilitados,
+      include_blank: false,
+      label_method: :nombre, 
+      value_method: :id %>
+  </div>
 <% end %>
 
 <%= fvictima.association :etnia,
