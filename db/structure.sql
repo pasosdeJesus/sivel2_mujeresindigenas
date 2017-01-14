@@ -1610,6 +1610,16 @@ ALTER SEQUENCE evento_id_seq OWNED BY evento.id;
 
 
 --
+-- Name: evento_motivonodenuncia; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE evento_motivonodenuncia (
+    evento_id integer NOT NULL,
+    motivonodenuncia_id integer NOT NULL
+);
+
+
+--
 -- Name: evento_relacionprvic; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -4358,8 +4368,7 @@ CREATE TABLE sivel2_sjr_victimasjr (
     resguardores character varying(500),
     comunidadres character varying(500),
     comoingresos character varying(5000),
-    tipoliderazgo character varying(5000),
-    veredares character varying(500)
+    tipoliderazgo character varying(5000)
 );
 
 
@@ -6756,6 +6765,14 @@ ALTER TABLE ONLY emprendimiento_respuesta
 
 
 --
+-- Name: evento_motivonodenuncia fk_rails_0561cf5aee; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY evento_motivonodenuncia
+    ADD CONSTRAINT fk_rails_0561cf5aee FOREIGN KEY (motivonodenuncia_id) REFERENCES motivonodenuncia(id);
+
+
+--
 -- Name: cor1440_gen_financiador_proyectofinanciero fk_rails_0cd09d688c; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6833,6 +6850,14 @@ ALTER TABLE ONLY heb412_gen_doc
 
 ALTER TABLE ONLY cor1440_gen_actividad_proyecto
     ADD CONSTRAINT fk_rails_395faa0882 FOREIGN KEY (actividad_id) REFERENCES cor1440_gen_actividad(id);
+
+
+--
+-- Name: evento_motivonodenuncia fk_rails_3e3dd2d2ca; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY evento_motivonodenuncia
+    ADD CONSTRAINT fk_rails_3e3dd2d2ca FOREIGN KEY (evento_id) REFERENCES evento(id);
 
 
 --
@@ -7905,6 +7930,8 @@ INSERT INTO schema_migrations (version) VALUES
 ('20170111110923'),
 ('20170112104821'),
 ('20170112111018'),
-('20170113101237');
+('20170113101237'),
+('20170114022359'),
+('20170114040246');
 
 

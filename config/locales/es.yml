@@ -11,6 +11,9 @@ es:
       "sip/oficina":
         one: "Organización que diligencia"
         other: "Organizaciones que diligencian"
+      "sivel2_gen/categoria":
+        one: "Hecho Victimizante"
+        other: "Hechos Victimizantes"
     attributes:
       "acompanamiento":
         Acompanamiento: "Tipo de Acompañamiento"
@@ -111,6 +114,9 @@ es:
         usuario: Sistematizado por
       "sivel2_gen/caso_fuenteprensa":
         ubicacion: "Detalle Otra Fuente"
+      "sivel2_gen/categoria":
+        Categoria: "Hecho Victimizante"
+        Categorias: "Hechos Victimizantes"
       "sivel2_gen/victima":
         etnia: Pueblo indigena / Etnia
         rangoedad: Rango de edad en fecha de documentacion
