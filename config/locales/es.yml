@@ -40,6 +40,7 @@ es:
         avancescaso: Avances del caso
         brindadaproteccion: ¿Le ha brindado protección?
         compromisosadquiridos: Compromisos adquiridos ¿Cuales y con quien?
+        comunidad: Comunidad/vereda
         consecuenciafamiliar: Afectación familiar
         consecuenciafisica: Afectación física
         consecuenciaindividual: Afectación individual
@@ -133,7 +134,6 @@ es:
         sistemasalud: Tiene carnet de salud
         tienetierra: Tiene tierra
         tipoliderazgo: Tipo de liderazgo
-        veredares: Vereda de residencia
       "relacionprvic":
         Relacionprvic: Relación entre presunto resp. y víctima
         Relacionesprvic: Relaciones entre presunto resp. y víctima

@@ -406,8 +406,10 @@
           <dt><strong>
             <%= ::Evento.human_attribute_name(:motivonodenuncia) %>:
           </strong></dt>
-          <dd><%= ApplicationHelper::s_guiones(
-            evento.motivonodenuncia.nombre) if evento.motivonodenuncia %></dd>
+          <dd><%= evento.motivonodenuncia.inject("") { 
+            |memo, i| (memo == "" ? "" : memo + ", ") + i.nombre 
+          } if evento.motivonodenuncia %></dd>
+
 
           <dt><strong>
             <%= ::Evento.human_attribute_name(:valoracionjusticia) %>:

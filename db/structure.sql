@@ -4358,8 +4358,8 @@ CREATE TABLE sivel2_sjr_victimasjr (
     resguardores character varying(500),
     comunidadres character varying(500),
     comoingresos character varying(5000),
-    veredares character varying(500),
-    tipoliderazgo character varying(5000)
+    tipoliderazgo character varying(5000),
+    veredares character varying(500)
 );
 
 
