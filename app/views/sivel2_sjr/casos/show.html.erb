@@ -363,6 +363,33 @@
             ApplicationHelper::DIASEMANA, evento.diasemana, true) if 
             evento.diasemana %>
           </dd>
+          <% if @caso.casosjr.oficina_id == 104 && 
+               can?(:edit, :casosacin) then %>
+             <div class="privado alert-info">
+
+               <dt><strong>
+                 <%= Evento.human_attribute_name(:avancescaso) %>:
+               </strong></dt>
+               <dd><%= evento.avancescaso if evento.avancescaso %></dd>
+
+               <dt><strong>
+                 <%= Evento.human_attribute_name(:etapaproceso) %>:
+               </strong></dt>
+               <dd><%= evento.etapaproceso if evento.etapaproceso %></dd>
+
+               <dt><strong>
+                 <%= Evento.human_attribute_name(:recibidoreparacion) %>:
+               </strong></dt>
+               <dd><%= ApplicationHelper.etiqueta(
+                 ApplicationHelper::NOSI, evento.recibidoreparacion, true) if 
+                 evento.recibidoreparacion %> </dd>
+
+               <dt><strong>
+                 <%= Evento.human_attribute_name(:quereparacion) %>:
+               </strong></dt>
+               <dd><%= evento.quereparacion if evento.quereparacion %></dd>
+             </div>
+           <% end %>
 
           <dt><strong>
           <%= ::Evento.human_attribute_name(:ubicacion) %>:</strong></dt>

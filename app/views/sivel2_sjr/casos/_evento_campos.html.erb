@@ -14,22 +14,27 @@
       collection: ApplicationHelper::MESES
     %>
     <%= f.input :dia, collection: @dias %>
-   <%= f.input :avancescaso %>
-
-   <%= f.input :etapaproceso %>
-
-   <%= f.input :recibidoreparacion, 
-   collection: ApplicationHelper::NOSI,
-   include_blank: false
-   %>
-
-<%= f.input :quereparacion %>
-
     <%= f.input(
             :diasemana, 
             collection: ApplicationHelper::DIASEMANA
       ) 
     %>
+    <% if f.object.caso.casosjr.oficina_id == 104 && 
+       can?(:edit, :casosacin) then %>
+      <div class="privado alert-info">
+
+        <%= f.input :avancescaso %>
+
+        <%= f.input :etapaproceso %>
+
+        <%= f.input :recibidoreparacion, 
+          collection: ApplicationHelper::NOSI,
+          include_blank: false
+        %>
+
+        <%= f.input :quereparacion %>
+      </div>
+    <% end %>
 
     <%= f.association :departamento,
       collection: Sip::Departamento.habilitados.where(id_pais: 170),
@@ -45,7 +50,6 @@
       label_method: :nombre, 
       value_method: :id
     %>
-
 
     <%= f.input :resguardo %>
 
