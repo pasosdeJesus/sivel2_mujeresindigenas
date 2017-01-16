@@ -1,6 +1,11 @@
  
 # Apéndice A. Novedades {#novedades}
-
+* Versión 2.0b2
+        * R-355 Nuevo menú Adminsitrar->Respaldo Cifrado para descargar copia de respaldo reciente. Va a formulario que solicita clave y confirmación, usa esa clave para comprimir y cifrar el respaldo (algoritmo fuerte de cifrado AES-256), descarga la copia que contiene volcado de la base de datos y anexos.  Para poder descomprimirla y descifrarla se requiere el programa 7-zip disponible en http://7-zip.org
+	*
+	*
+	* Fallas resueltas
+	      * F-449 Al agregar una fuente y volver a editar el caso, la fuente tomaba la fecha del caso.
 * 9.Ago.2016 Carrera 4 terminada
 * 29.Jul.2016 Carrera 4 pasa a ensayo
 * 14.Jun.2016 Carrera 3 pasa a ensayo
