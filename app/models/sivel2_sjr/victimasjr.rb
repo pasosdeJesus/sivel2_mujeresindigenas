@@ -32,6 +32,6 @@ class Sivel2Sjr::Victimasjr < ActiveRecord::Base
   validates :sistemasalud, length: { maximum: 1 }
   validates :tienetierra, length: { maximum: 1}
   validates :tipoliderazgo, length: { maximum: 5000 }
-  validates :veredares, length: { maximum: 500 }
+  #validates :veredares, length: { maximum: 500 }
   validates :vicconflicto, length: { maximum: 1}
 end

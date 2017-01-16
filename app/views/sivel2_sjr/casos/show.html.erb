@@ -112,12 +112,69 @@
           <hr>
         <% end %>
         <% numvic += 1 %>
+  
+        <% if @caso.casosjr.oficina_id == 104 && 
+             can?(:edit, :casosacin) then %>
+          <div class="privado alert-info">
+            <dt><strong>
+              <%= Sivel2Sjr::Casosjr.human_attribute_name(:nombres) %>:
+            </strong></dt>
+            <dd><%= victima.persona.nombres if victima.persona.nombres %></dd>
+
+            <dt><strong>
+              <%= Sivel2Sjr::Casosjr.human_attribute_name(:apellidos) %>:
+            </strong></dt>
+            <dd><%= victima.persona.apellidos if victima.persona.apellidos %></dd>
+
+            <dt><strong>
+              <%= Sivel2Sjr::Casosjr.human_attribute_name(:tdocumento_id) %>:
+            </strong></dt>
+            <dd><%= victima.persona.tdocumento_id if victima.persona.tdocumento_id %></dd>
+
+          </div>
+        <% end %>
+
+
         <dt><strong>
           <%= Sivel2Sjr::Casosjr.human_attribute_name(:fechanac) %>:
         </strong></dt>
         <dd><%= victima.persona.anionac if victima.persona.anionac %>-
         <%= victima.persona.mesnac if victima.persona.mesnac %>-
         <%= victima.persona.dianac if victima.persona.dianac %></dd>
+
+        <% if @caso.casosjr.oficina_id == 104 && 
+             can?(:edit, :casosacin) then %>
+          <div class="privado alert-info">
+            <dt><strong>
+              <%= Sivel2Sjr::Victimasjr.human_attribute_name(:religion) %>:
+            </strong></dt>
+            <dd><%= victima.victimasjr.religion.nombre if 
+            victima.victimasjr.religion %> </dd>
+
+            <dt><strong>
+              <%= Sivel2Sjr::Victimasjr.human_attribute_name(:comoingresos) %>:
+            </strong></dt>
+            <dd><%= victima.victimasjr.comoingresos if 
+            victima.victimasjr.comoingresos %> </dd>
+
+            <dt><strong>
+              <%= Sivel2Sjr::Victimasjr.human_attribute_name(:tienetierra) %>:
+            </strong></dt>
+            <dd> <%= ApplicationHelper.etiqueta(
+              ApplicationHelper::TIENETIERRA, 
+              victima.victimasjr.tienetierra, true ) if 
+              victima.victimasjr.tienetierra %> </dd>
+
+            <dt><strong>
+              <%= Sivel2Sjr::Victimasjr.human_attribute_name(:areatierra) %>:
+            </strong></dt>
+            <dd><%= victima.victimasjr.areatierra if 
+            victima.victimasjr.areatierra %> </dd>
+
+
+
+          </div>
+        <% end %>
 
         <dt><strong>
           <%= Sip::Persona.human_attribute_name(:sexo) %>:
@@ -150,6 +207,34 @@
           <%= Sivel2Sjr::Victimasjr.human_attribute_name(:comunidadnac) %>:
         </strong></dt>
         <dd><%= victima.victimasjr.comunidadnac %></dd>
+        <% if @caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
+          <div class="privado alert-info">
+            <dt><strong>
+              <%= Sivel2Sjr::Victimasjr.human_attribute_name(:departamentores) %>:
+            </strong></dt>
+            <dd><%= victima.victimasjr.departamentores.nombre if 
+            victima.victimasjr.departamentores %> </dd>
+
+            <dt><strong>
+              <%= Sivel2Sjr::Victimasjr.human_attribute_name(:municipiores) %>:
+            </strong></dt>
+            <dd><%= victima.victimasjr.municipiores.nombre if 
+            victima.victimasjr.municipiores %> </dd>
+
+            <dt><strong>
+              <%= Sivel2Sjr::Victimasjr.human_attribute_name(:resguardores) %>:
+            </strong></dt>
+            <dd><%= victima.victimasjr.resguardores if 
+              victima.victimasjr.resguardores %> </dd>
+            
+            <dt><strong>
+              <%= Sivel2Sjr::Victimasjr.human_attribute_name(:comunidadres) %>:
+            </strong></dt>
+            <dd><%= victima.victimasjr.comunidadres if 
+              victima.victimasjr.comunidadres %> </dd>
+
+          </div>
+        <% end %>
 
         <dt><strong>
           <%= Sivel2Gen::Victima.human_attribute_name(:rangoedad) %>:
@@ -238,6 +323,18 @@
           ApplicationHelper::LIDERAZGO, victima.victimasjr.liderazgo, true) if 
           victima.victimasjr.liderazgo %></dd>
 
+        <% if @caso.casosjr.oficina_id == 104 && 
+             can?(:edit, :casosacin) then %>
+          <div class="privado alert-info">
+            <dt><strong>
+              <%= Sivel2Sjr::Victimasjr.human_attribute_name(:tipoliderazgo) %>:
+            </strong></dt>
+            <dd><%= victima.victimasjr.tipoliderazgo if 
+            victima.victimasjr.tipoliderazgo %> </dd>
+          </div>
+        <% end %>
+
+
       <%end %>
 
     </div>
@@ -290,6 +387,21 @@
           <dd><%= ApplicationHelper.etiqueta(
             ApplicationHelper::TIPOCONFLICTO, evento.relacionadocon, true) if 
             evento.relacionadocon %></dd>
+  
+ 
+          <% if @caso.casosjr.oficina_id == 104 && 
+               can?(:edit, :casosacin) then %>
+             <div class="privado alert-info">
+               <dt><strong>
+                 <%= ::Evento.human_attribute_name(:relacionprvic) %>:
+               </strong></dt>
+               <dd><%= evento.relacionprvic.inject("") { 
+                 |memo, i| 
+                 (memo == "" ? "" : memo + ", ") + i.nombre } if 
+               evento.relacionprvic %></dd>
+
+            </div>
+          <% end %>
 
           <dt><strong>Actos de violencia:</strong></dt>
           <dd>
@@ -316,8 +428,7 @@
                     evento.tafectacion.inject("") { 
                       |memo, i| 
                       (memo == "" ? "" : memo + ", ") + i.nombre } 
-                  end 
-              %>
+                  end %> 
           </dd>
 
           <dt><strong>
@@ -427,6 +538,10 @@
 
           <% if @caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
             <%= render 'muestra_evento_acin', :evento => evento %>
+          <% end %>
+
+          <% if @caso.casosjr.oficina_id == 103 && can?(:edit, :casosoik) then %>
+            <%= render 'muestra_evento_oik', :evento => evento %>
           <% end %>
 
         <%end %>

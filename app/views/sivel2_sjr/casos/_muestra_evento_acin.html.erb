@@ -1,11 +1,85 @@
 <div class="privado alert-info">
+  
   <dt><strong>
-    <%= Evento.human_attribute_name(:quereparacion) %>:
+    <%= Evento.human_attribute_name(:descripcionafectacion) %>:
+  </strong></dt>
+  <dd><%= evento.descripcionafectacion if evento.descripcionafectacion %></dd>
+  
+  <dt><strong>
+    <%= Evento.human_attribute_name(:consecuenciaindividual) %>:
   </strong>
   </dt>
-  <dd>
-  <%= evento.quereparacion if evento.quereparacion %>
+  <dd><%= if evento.consecuenciaindividual then
+            evento.consecuenciaindividual.inject("") { 
+              |memo, i| 
+              (memo == "" ? "" : memo + ", ") + i.nombre } 
+          end %> 
   </dd>
+
+  <dt><strong>
+    <%= Evento.human_attribute_name(:consecuenciafamiliar) %>:
+  </strong>
+  </dt>
+  <dd><%= if evento.consecuenciafamiliar then
+            evento.consecuenciafamiliar.inject("") { 
+              |memo, i| 
+              (memo == "" ? "" : memo + ", ") + i.nombre } 
+          end %> 
+  </dd>
+
+  <dt><strong>
+    <%= Evento.human_attribute_name(:consecuenciafisica) %>:
+  </strong></dt>
+  <dd><%= if evento.consecuenciafisica then
+            evento.consecuenciafisica.inject("") { 
+              |memo, i| 
+              (memo == "" ? "" : memo + ", ") + i.nombre } 
+          end %> 
+  </dd>
+
+  <dt><strong>
+    <%= Evento.human_attribute_name(:actividadesdejadas) %>:
+  </strong></dt>
+  <dd><%= evento.actividadesdejadas if evento.actividadesdejadas %></dd>
+
+  <dt><strong>
+    <%= Evento.human_attribute_name(:reaccionfamiliaycomunidad) %>:
+  </strong></dt>
+  <dd><%= evento.reaccionfamiliaycomunidad if evento.reaccionfamiliaycomunidad %></dd>
+
+  <dt><strong>
+    <%= Evento.human_attribute_name(:afectacionotra) %>:
+  </strong></dt>
+  <dd><%= ApplicationHelper.etiqueta(
+    ApplicationHelper::NOSI, evento.afectacionotra, true) if 
+    evento.afectacionotra %> </dd>
+
+  <dt><strong>
+    <%= Evento.human_attribute_name(:avancescaso) %>:
+  </strong></dt>
+  <dd><%= evento.avancescaso if evento.avancescaso %></dd>
+
+  <dt><strong>
+    <%= Evento.human_attribute_name(:etapaproceso) %>:
+  </strong></dt>
+  <dd><%= evento.etapaproceso if evento.etapaproceso %></dd>
+
+  <dt><strong>
+    <%= Evento.human_attribute_name(:recibidoreparacion) %>:
+  </strong></dt>
+  <dd><%= ApplicationHelper.etiqueta(
+    ApplicationHelper::NOSI, evento.recibidoreparacion, true) if 
+    evento.recibidoreparacion %> </dd>
+
+  <dt><strong>
+    <%= Evento.human_attribute_name(:quereparacion) %>:
+  </strong></dt>
+  <dd><%= evento.quereparacion if evento.quereparacion %></dd>
+
+  <dt><strong>
+    <%= Evento.human_attribute_name(:quereparacion) %>:
+  </strong></dt>
+  <dd><%= evento.quereparacion if evento.quereparacion %></dd>
 
   <dt><strong>
     <%= Evento.human_attribute_name(:sancionadovictimario) %>:
@@ -13,5 +87,15 @@
   <dd><%= ApplicationHelper.etiqueta(
     ApplicationHelper::NOSI, evento.sancionadovictimario, true) if 
     evento.sancionadovictimario%></dd>
+  
+  <dt><strong>
+    <%= Evento.human_attribute_name(:compromisosadquiridos) %>:
+  </strong></dt>
+  <dd><%= evento.compromisosadquiridos if evento.compromisosadquiridos %></dd>
+
+  <dt><strong>
+    <%= Evento.human_attribute_name(:observaciones) %>:
+  </strong></dt>
+  <dd><%= evento.observaciones if evento.observaciones %></dd>
 
 </div>

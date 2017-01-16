@@ -3,15 +3,11 @@
 <%= s.input :consecorg %>
 
 <% if s.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
-  <div class="panel panel-default">
-    <div class="panel-heading alert-info">Privado ACIN</div>
-    <div class="panel-body">
-      <%= s.input :consentimiento, 
-        collection: ApplicationHelper::NOSI,
-        #input_html: {class: 'alert-info'},
-        include_blank: false  
-      %>
-    </div>
+  <div class="privado alert-info">
+    <%= s.input :consentimiento, 
+      collection: ApplicationHelper::NOSI,
+      #input_html: {class: 'alert-info'},
+      include_blank: false  %>
   </div>
 <% end %>
 

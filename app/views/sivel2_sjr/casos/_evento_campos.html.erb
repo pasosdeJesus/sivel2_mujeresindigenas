@@ -45,16 +45,17 @@
     
     <%= f.input :relacionadocon,
             collection: ApplicationHelper::TIPOCONFLICTO,
-            include_blank: false
-    %>
+            include_blank: false %>
 
-    <% if f.object.caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
-      <%= f.association :relacionprvic,
-        collection: ::Relacionprvic.habilitados,
-        include_blank: false,
-        label_method: :nombre, 
-        value_method: :id 
-      %> 
+    <% if f.object.caso.casosjr.oficina_id == 104 && 
+       can?(:edit, :casosacin) then %>
+      <div class="privado alert-info">
+        <%= f.association :relacionprvic,
+          collection: ::Relacionprvic.habilitados,
+          include_blank: false,
+          label_method: :nombre, 
+          value_method: :id %> 
+      </div>
     <% end %>
 
     <%= render 'eventopresponsable', :f => f %>
@@ -149,21 +150,17 @@
     </div>
   </div>
 
-    <% if f.object.caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
-       <div class="panel panel-default">
-         <div class="panel-heading">Privado ACIN</div>
-         <div class="panel-body">
-           <%= render 'evento_acin_campos', :f => f %>
-         </div>
+    <% if f.object.caso.casosjr.oficina_id == 104 && 
+       can?(:edit, :casosacin) then %>
+      <div class="privado alert-info">
+         <%= render 'evento_acin_campos', :f => f %>
        </div>
     <% end %>
 
-    <% if f.object.caso.casosjr.oficina_id == 103 && can?(:edit, :casosoik) then %>
-       <div class="panel panel-default">
-         <div class="panel-heading">Privado OIK</div>
-         <div class="panel-body">
-           <%= render 'evento_oik_campos', :f => f %>
-         </div>
+    <% if f.object.caso.casosjr.oficina_id == 103 && 
+         can?(:edit, :casosoik) then %>
+      <div class="privado alert-info">
+         <%= render 'evento_oik_campos', :f => f %>
        </div>
     <% end %>
   
