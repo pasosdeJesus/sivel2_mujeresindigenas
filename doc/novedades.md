@@ -1,7 +1,7 @@
  
 # Apéndice A. Novedades {#novedades}
 * Versión 2.0b2
-        * R-355 Nuevo menú Adminsitrar->Respaldo Cifrado para descargar copia de respaldo reciente. Va a formulario que solicita clave y confirmación, usa esa clave para comprimir y cifrar el respaldo (algoritmo fuerte de cifrado AES-256), descarga la copia que contiene volcado de la base de datos y anexos.  Para poder descomprimirla y descifrarla se requiere el programa 7-zip disponible en http://7-zip.org
+	* R-355 Nuevo menú Adminsitrar->Respaldo Cifrado para descargar copia de respaldo reciente. Va a formulario que solicita clave y confirmación, usa esa clave para comprimir y cifrar el respaldo (algoritmo fuerte de cifrado AES-256), descarga la copia que contiene volcado de la base de datos y anexos.  Para poder descomprimirla y descifrarla se requiere el programa 7-zip disponible en http://7-zip.org
 	*
 	*
 	* Fallas resueltas
