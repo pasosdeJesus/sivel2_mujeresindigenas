@@ -7,7 +7,7 @@
     <%= f.input :fecha, 
       input_html: { 
         "data-behaviour" => "datepicker",
-        "value" => @caso.fecha
+        "value" => f.object.fecha || @caso.fecha
       },
       :as => :string, 
       :label => "Fecha" 

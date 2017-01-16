@@ -24,13 +24,14 @@
         <% else %>
           <li><a id="fichacasovertical" href="<%= sivel2_gen.fichacasovertical_path %>">Ficha caso vertical</a></li>
         <% end %>
-
         <% if can? :manage, ::Usuario %>
           <%= menu_item "Usuarios", main_app.usuarios_path %>
         <% end %>
-        <% if current_usuario.rol == Ability::ROLADMIN || 
-          current_usuario.rol == Ability::ROLDIR %>
+        <% if can? :manage, :tablasbasicas %>
           <%= menu_item "Tablas Básicas", sivel2_gen.tablasbasicas_path %>
+        <% end %>
+        <% if can? :manage, Sip::Respaldo7z %>
+          <%= menu_item "Respaldo cifrado", sip.respaldo7z_path %>
         <% end %>
       <% end %>
       <%= menu_item "Salir #{current_usuario.nusuario}", main_app.sign_out_path %>

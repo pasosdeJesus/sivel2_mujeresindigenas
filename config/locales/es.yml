@@ -2,13 +2,22 @@ es:
   attributes:
   activerecord:
     models:
-      "sip/oficina":
-        one: "Organización que diligencia"
-        other: "Organizaciones que diligencian"
+      "acompanamiento":
+        one: "Tipo de Acompañamiento"
+        other: "Tipos de Acompañamientos"
       "estadocaso":
         one: "Estado del caso"
         other: "Estados de caso"
+      "sip/oficina":
+        one: "Organización que diligencia"
+        other: "Organizaciones que diligencian"
+      "sivel2_gen/categoria":
+        one: "Hecho Victimizante"
+        other: "Hechos Victimizantes"
     attributes:
+      "acompanamiento":
+        Acompanamiento: "Tipo de Acompañamiento"
+        Acompanamientos: "Tipos de Acompañamientos"
       "consecuenciafamiliar":
         Consecuenciafamiliar: Afectación familiar
         Consecuenciasfamiliares: Afectaciones familiares
@@ -25,6 +34,7 @@ es:
         Estadocaso: Estado de caso
         Estadoscaso: Estados de caso
       "evento":
+        acompanamiento: Tipo de acompañamiento que necesita
         acompnecesita: Acompañamiento que necesita
         actividadesdejadas: Actividades que se dejaron de hacer
         afectacionotra: Afectación a otra persona
@@ -33,6 +43,7 @@ es:
         avancescaso: Avances del caso
         brindadaproteccion: ¿Le ha brindado protección?
         compromisosadquiridos: Compromisos adquiridos ¿Cuales y con quien?
+        comunidad: Comunidad/vereda
         consecuenciafamiliar: Afectación familiar
         consecuenciafisica: Afectación física
         consecuenciaindividual: Afectación individual
@@ -91,6 +102,7 @@ es:
         fecharec: Fecha documentación inicial en terreno.
         oficina: Organizacion que diligencia
       "sivel2_sjr/casosjr":
+        acompanamiento: "Acompañamiento"
         consecorg: Código en organización
         contacto: Víctima
         docterrenopor: Documentado en terreno por
@@ -102,6 +114,9 @@ es:
         usuario: Sistematizado por
       "sivel2_gen/caso_fuenteprensa":
         ubicacion: "Detalle Otra Fuente"
+      "sivel2_gen/categoria":
+        Categoria: "Hecho Victimizante"
+        Categorias: "Hechos Victimizantes"
       "sivel2_gen/victima":
         etnia: Pueblo indigena / Etnia
         rangoedad: Rango de edad en fecha de documentacion
@@ -125,7 +140,6 @@ es:
         sistemasalud: Tiene carnet de salud
         tienetierra: Tiene tierra
         tipoliderazgo: Tipo de liderazgo
-        veredares: Vereda de residencia
       "relacionprvic":
         Relacionprvic: Relación entre presunto resp. y víctima
         Relacionesprvic: Relaciones entre presunto resp. y víctima

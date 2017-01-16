@@ -75,10 +75,9 @@ module Sivel2Sjr
           :docterrenopor,
           :fecharec,
           :id, 
-          :id_idioma, 
           :oficina_id, 
-          :tipoacomp, 
           :_destroy,
+          :acompanamiento_ids => [],
           :estadocaso_ids => []
         ], 
         :caso_fuenteprensa_attributes => [
@@ -140,8 +139,8 @@ module Sivel2Sjr
             :sistemasalud, 
             :tienetierra, 
             :tipoliderazgo,
-            :veredares,
-            :vicconflicto
+            :vicconflicto,
+            :idioma_ids => [], 
           ]
         ], 
         :ubicacion_attributes => [
@@ -194,7 +193,6 @@ module Sivel2Sjr
           :medidasrecibidas,
           :mes, 
           :mesdenuncia, 
-          :motivonodenuncia_id,
           :municipio_id,
           :numvecesantes,
           :observaciones,
@@ -214,6 +212,8 @@ module Sivel2Sjr
           :testigo,
           :valoracionjusticia,
           :_destroy,
+
+          :acompanamiento_ids => [],
           :actoevento_attributes => [
             :categoria_id, 
             :id, 
@@ -223,16 +223,16 @@ module Sivel2Sjr
           :consecuenciafamiliar_ids => [],
           :consecuenciafisica_ids => [],
           :consecuenciaindividual_ids => [],
-          :tafectacion_ids => [],
-          :tapoyo_ids => [],
-          :relacionprvic_ids => [],
           :eventopresponsable_attributes => [
             :presponsable_id, 
             :id, 
             :_destroy,
             :categoria_ids => [],
-          ]
-
+          ],
+          :motivonodenuncia_ids => [],
+          :relacionprvic_ids => [],
+          :tafectacion_ids => [],
+          :tapoyo_ids => []
         ],
         :anexo_caso_attributes => [
           :fecha,

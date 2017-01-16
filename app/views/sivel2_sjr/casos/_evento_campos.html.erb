@@ -86,6 +86,12 @@
     <div class="panel-body">
 
 
+      <%= f.association :acompanamiento,  
+        collection: ::Acompanamiento.habilitados,
+        include_blank: false,
+        label_method: :nombre, 
+        value_method: :id
+      %>
       <%= f.input :acompnecesita %>
       
       <%= f.input :telcontacto %>
@@ -115,7 +121,7 @@
 
     <%= f.input :denunciaante, 
       collection: ApplicationHelper::DENUNCIAANTE,
-      include_blank: false 
+      include_blank: true
     %>
 
   <%= f.input :aniodenuncia, 
@@ -133,12 +139,12 @@
 
   <%= f.input :valoracionjusticia, 
     collection: ApplicationHelper::VALORACIONBRM,
-    include_blank: false 
+    include_blank: true
   %>
 
 <%= f.input :quisieradenunciar, 
   collection: ApplicationHelper::NOSI,
-  include_blank: false 
+  include_blank: true
 %>
     </div>
   </div>

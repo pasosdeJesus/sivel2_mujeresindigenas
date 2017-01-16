@@ -6,10 +6,18 @@ class Evento < ActiveRecord::Base
     foreign_key: "caso_id"
   belongs_to :departamento, class_name: "Sip::Departamento", 
     foreign_key: "departamento_id"
-  belongs_to :motivonodenuncia, class_name: "::Motivonodenuncia", 
-    foreign_key: "motivonodenuncia_id"
   belongs_to :municipio, class_name: "Sip::Municipio", 
     foreign_key: "municipio_id"
+
+  has_many :acompanamiento_evento, validate: true, 
+    dependent: :delete_all
+  has_many :acompanamiento, through: :acompanamiento_evento
+
+  has_many :actoevento, 
+    class_name: "::Actoevento",  
+    foreign_key: "evento_id", validate:true, dependent: :delete_all
+  accepts_nested_attributes_for :actoevento,
+    reject_if: :all_blank, allow_destroy: true
 
   has_many :consecuenciaindividual_evento, validate: true, 
     dependent: :delete_all
@@ -30,17 +38,17 @@ class Evento < ActiveRecord::Base
   has_many :evento_relacionprvic, validate: true, dependent: :delete_all
   has_many :relacionprvic, through: :evento_relacionprvic
 
-  has_many :actoevento, 
-    class_name: "::Actoevento",  
-    foreign_key: "evento_id", validate:true, dependent: :delete_all
-  accepts_nested_attributes_for :actoevento,
-    reject_if: :all_blank, allow_destroy: true
-
   has_many :eventopresponsable, 
     class_name: "::Eventopresponsable",  
     foreign_key: "evento_id", validate:true, dependent: :delete_all
   accepts_nested_attributes_for :eventopresponsable,
     reject_if: :all_blank, allow_destroy: true
+
+  has_many :evento_motivonodenuncia, 
+    class_name: '::EventoMotivonodenuncia',
+    foreign_key: "evento_id", validate:true, dependent: :delete_all
+  has_many :motivonodenuncia, through: :evento_motivonodenuncia,
+    class_name: "::Motivonodenuncia"
 
   validates :situacionriesgo, length: { maximum: 1 }
   validates :solicitomedidas, length: {maximum: 1}
