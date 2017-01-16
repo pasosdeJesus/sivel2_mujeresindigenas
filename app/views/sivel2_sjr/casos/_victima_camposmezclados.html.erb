@@ -42,6 +42,26 @@
 <% @dias = *(1..31) %>
 <%= fpersona.input :dianac, collection: @dias, label: 'Día Nacimiento' %>
 
+<%= fpersona.association :departamento,
+  collection: (Sip::Departamento.habilitados.where(id_pais: 170)),
+  label: "Departamento de Nacimiento", label_method: :nombre,
+  value_method: :id 
+%>
+<%= fpersona.association :municipio,
+  collection: 
+  ( Sip::Municipio.habilitados.where(
+    id_departamento: fpersona.object.id_departamento)
+  ),
+  label: "Municipio de Nacimiento",
+  label_method: :nombre,
+  value_method: :id 
+%>
+
+<%= fvictimasjr.input :resguardonac %>
+
+<%= fvictimasjr.input :comunidadnac %>
+
+
 <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
   <%= fvictimasjr.association :departamentores,
     collection: Sip::Departamento.habilitados.where(id_pais: 170),
@@ -143,24 +163,6 @@
   collection:ApplicationHelper::SEXO,
   include_blank: false 
 %>
-<%= fpersona.association :departamento,
-  collection: (Sip::Departamento.habilitados.where(id_pais: 170)),
-  label: "Departamento de Nacimiento", label_method: :nombre,
-  value_method: :id 
-%>
-<%= fpersona.association :municipio,
-  collection: 
-  ( Sip::Municipio.habilitados.where(
-    id_departamento: fpersona.object.id_departamento)
-  ),
-  label: "Municipio de Nacimiento",
-  label_method: :nombre,
-  value_method: :id 
-%>
-
-<%= fvictimasjr.input :resguardonac %>
-
-<%= fvictimasjr.input :comunidadnac %>
 
 <%= fvictimasjr.input :organizacionfilial %>
 

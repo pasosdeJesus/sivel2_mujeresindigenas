@@ -28,7 +28,7 @@ es:
         acompnecesita: Acompañamiento que necesita
         actividadesdejadas: Actividades que se dejaron de hacer
         afectacionotra: Afectación a otra persona
-        anio: Año
+        anio: Año hecho
         aniodenuncia: Año denuncia
         avancescaso: Avances del caso
         brindadaproteccion: ¿Le ha brindado protección?
@@ -38,17 +38,17 @@ es:
         consecuenciaindividual: Afectación individual
         descripcionafectacion: Breve descripción de los hechos
         denuncia: Denuncia
-        dia: Día
+        dia: Día hecho
         diadenuncia: Día denuncia
         etapaproceso: Etapa del proceso
-        fecha: Fecha
+        fecha: Fecha hecho 
         fechadenuncia: Fecha de la denuncia
         fechaseguimiento: Fecha del seguimiento
         denunciaante: ¿Denuncia ante quien?
         diainexacto: Día inexacto
         diasemana: Día de la semana
         medidasrecibidas: Medidas recibidas
-        mes: Mes
+        mes: Mes hecho
         mesdenuncia: Mes denuncia
         motivonodenuncia: Motivo para no denunciar
         numvecesantes: Número de veces antes
@@ -88,14 +88,14 @@ es:
       "sivel2_gen/caso":
         id: Código
         contacto: Víctima
-        fecharec: Fecha documentación ini.
+        fecharec: Fecha documentación inicial en terreno.
         oficina: Organizacion que diligencia
       "sivel2_sjr/casosjr":
         consecorg: Código en organización
         contacto: Víctima
         docterrenopor: Documentado en terreno por
         estadocaso: "Estado del caso"
-        fecharec: Fecha documentación ini.
+        fecharec: Fecha documentación iniicial en terreno.
         oficina: Organizacion que diligencia
         residencia: Residencia actual
         tipoacomp: Acompañamiento
@@ -136,4 +136,3 @@ es:
         Tapoyo: Tipo de apoyo
         Tapoyos: Tipos de apoyo
       "usuario":
-        oficina: Organización
