@@ -42,7 +42,10 @@
 	*
 	*
 	* Fallas resueltas
-	      * F-449 Al agregar una fuente y volver a editar el caso, la fuente tomaba la fecha del caso.
+		* F-449 Al agregar una fuente y volver a editar el caso, la fuente tomaba la fecha del caso.
+	      	* F-447 En sitio de producción no permitía agregar casos (reportó Zulhy de OIA).
+		* F-448 En sitio de producción no presentaba pestañas Anexos ni Etiquetas (reportó Zulhy de OIA).
+
 * 9.Ago.2016 Carrera 4 terminada
 * 29.Jul.2016 Carrera 4 pasa a ensayo
 * 14.Jun.2016 Carrera 3 pasa a ensayo
