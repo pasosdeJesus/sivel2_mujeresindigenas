@@ -1,7 +1,19 @@
  
 # Apéndice A. Novedades {#novedades}
 * Versión 2.0b2
-	* R-355 Nuevo menú Adminsitrar->Respaldo Cifrado para descargar copia de respaldo reciente. Va a formulario que solicita clave y confirmación, usa esa clave para comprimir y cifrar el respaldo (algoritmo fuerte de cifrado AES-256), descarga la copia que contiene volcado de la base de datos y anexos.  Para poder descomprimirla y descifrarla se requiere el programa 7-zip disponible en http://7-zip.org
+	* R-427-3 En ficha caso retiradas secciones que decía "Privado ACIN" y "Privado OIK" y remplazadas por borde azul en 		campos privados.
+	* R-442-1 En pestaña seguimiento renombrados Año, mes, dia por Año hecho, mes hecho, día hecho
+	* R-429 En pestaña básicos renombrado "Fecha documentación ini." por "Fecha de documentación inicial en terreno"
+	* R-416 En Pestaña Víctima Subir Departamento de Nacimiento, Municipio de Nacimiento, Resguardo de Nacimiento, 		   Coumunidad de Nacimiento a continuación de Fecha de Nacimiento (ficha ACIN Nov.2016)
+	* R-415 En pestaña Fuente intercambiar orden de Fuente y Fecha
+	* R-423 En ACIN pestaña eventos y seguimientos reubicar avances del caso, etapa del proceso y ha recibido reparación 		después de fecha de la denuncia
+	* R-420 En ACIN pestaña eventos y seguimientos reubicar afectaciones individuales, afectaciones culturales, 		  familiares y comunitarias entre Tipo de Afectación y Tipo de Apoyo
+	* R-419 En ACIN pestaña eventos y seguimientos reubicar breve descripción de hechos para que quede después de 		  Relacionado con el conflicto
+	* R-421 En ACIN pestaña eventos y seguimientos reubicar actividades que se dejaron de hacer, reacción de familia y 	     comunidad, afectación a otra persona después de Tipo de Apoyo.
+	* R-421-1 Fecha de seguimiento en pestaña evento por omisión es fecha de documentación inicial en terreno.
+	* R-421-3 Orden de la ficha comparado con el de la ficha ACIN y hoja de cálculo enviada por Anita
+
+	* R-355 Nuevo menú Adminsitrar->Respaldo Cifrado para descargar copia de respaldo reciente. Va a formulario que 	  solicita clave y confirmación, usa esa clave para comprimir y cifrar el respaldo (algoritmo fuerte de cifrado AES-	      256), descarga la copia que contiene volcado de la base de datos y anexos.  Para poder descomprimirla y descifrarla 	    se requiere el programa 7-zip disponible en http://7-zip.org
 	*
 	*
 	* Fallas resueltas
