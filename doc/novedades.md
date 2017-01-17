@@ -1,6 +1,22 @@
  
 # Apéndice A. Novedades {#novedades}
 * Versión 2.0b2
+	* R-440 Renombrar tabla básica "Categoria" para que sea "Hechos
+	  Victimizantes" (reunión Nov.2016)
+	* R-430 Cambiar vereda por comunidad/vereda y donde están las 2
+	  unificar por "Comunidad/Vereda" (reunión Nov.2016) [0.6]. En víctima
+	  unificadas vereda residencia y comunidad residcencia en
+	  comunidad/vereda de residencia (se homologan uniendo y separan con |
+	  ). En evento renombrando Comunidad por Comunidad/vereda.
+	* R-398 En pestaña eventos y seguimientos "Motivo para no denunciar":
+	  Permitir seleccionar múltiples opciones (ficha ACIN Nov.2016)
+	* R-407 En pestaña "Víctima" permitir marcar varias opciones para el idioma
+	* R-418 En pestaña eventos y seguimientos cambiar "número de veces
+	  antes" para que no sólo permite números sino texto (ficha ACIN
+	  Nov.2016)
+	* R-432 En pestaña eventos y seguimientos tipo de apoyo que sea de
+	  selección múltiple (ONIC reunión Nov.2016)
+
 	* R-427-3 En ficha caso retiradas secciones que decía "Privado ACIN" y "Privado OIK" y remplazadas por borde azul en 		campos privados.
 	* R-442-1 En pestaña seguimiento renombrados Año, mes, dia por Año hecho, mes hecho, día hecho
 	* R-429 En pestaña básicos renombrado "Fecha documentación ini." por "Fecha de documentación inicial en terreno"
