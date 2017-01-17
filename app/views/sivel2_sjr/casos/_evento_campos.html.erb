@@ -2,8 +2,9 @@
   <div class="controls">
     <%= f.input :id, as: :hidden %>
 
-    <%= f.input :fechaseguimiento,
-      input_html: { "data-behaviour" => "datepicker" },
+    <%= f.input :fechaseguimiento, input_html: { 
+      "data-behaviour" => "datepicker",
+      "value" => f.object.fechaseguimiento || @caso.fecha },
       as: :string 
     %>
 
@@ -19,23 +20,6 @@
             collection: ApplicationHelper::DIASEMANA
       ) 
     %>
-    <% if f.object.caso.casosjr.oficina_id == 104 && 
-       can?(:edit, :casosacin) then %>
-      <div class="privado alert-info">
-
-        <%= f.input :avancescaso %>
-
-        <%= f.input :etapaproceso %>
-
-        <%= f.input :recibidoreparacion, 
-          collection: ApplicationHelper::NOSI,
-          include_blank: false
-        %>
-
-        <%= f.input :quereparacion %>
-      </div>
-    <% end %>
-
     <%= f.association :departamento,
       collection: Sip::Departamento.habilitados.where(id_pais: 170),
       include_blank: true,
@@ -64,11 +48,15 @@
     <% if f.object.caso.casosjr.oficina_id == 104 && 
        can?(:edit, :casosacin) then %>
       <div class="privado alert-info">
+
+        <%= f.input :descripcionafectacion %>
+
         <%= f.association :relacionprvic,
           collection: ::Relacionprvic.habilitados,
           include_blank: false,
           label_method: :nombre, 
           value_method: :id %> 
+
       </div>
     <% end %>
 
@@ -88,11 +76,56 @@
         include_blank: false,
         label_method: :nombre, 
         value_method: :id %> 
+
+      <% if f.object.caso.casosjr.oficina_id == 104 && 
+           can?(:edit, :casosacin) then %>
+        <div class="privado alert-info">
+
+          <%= f.association :consecuenciaindividual,
+            collection: ::Consecuenciaindividual.habilitados,
+            include_blank: false,
+            label_method: :nombre, 
+            value_method: :id %>
+
+          <%= f.association :consecuenciafamiliar,
+            collection: ::Consecuenciafamiliar.habilitados,
+            include_blank: false,
+            label_method: :nombre, 
+            value_method: :id %>
+
+        </div>
+      <% end %>
+
       <%= f.association :tapoyo,
         collection: ::Tapoyo.habilitados,
         include_blank: false,
         label_method: :nombre, 
         value_method: :id %>
+
+      <% if f.object.caso.casosjr.oficina_id == 104 && 
+           can?(:edit, :casosacin) then %>
+         <div class="privado alert-info">
+
+          <%= f.association :consecuenciafisica,
+            collection: ::Consecuenciafisica.habilitados,
+            as: :check_boxes,
+            wrapper_html: { class: 'trescolumnas' },
+            input_html: { style: 'height: initial; left: 0px; width: 60px; margin-left: 0px;' },
+            include_blank: false,
+            label_method: :nombre, 
+            value_method: :id 
+          %>
+
+          <%= f.input :actividadesdejadas %>
+
+          <%= f.input :reaccionfamiliaycomunidad %>
+
+          <%= f.input :afectacionotra, 
+            collection: ApplicationHelper::NOSI,
+            include_blank: false
+          %>
+        </div>
+      <% end %>
     </div>
   </div>
 
@@ -105,11 +138,14 @@
         collection: ::Acompanamiento.habilitados,
         include_blank: false,
         label_method: :nombre, 
-        value_method: :id
-      %>
-      <%= f.input :acompnecesita %>
-      
-      <%= f.input :telcontacto %>
+        value_method: :id %>
+
+      <% if f.object.caso.casosjr.oficina_id == 104 && 
+           can?(:edit, :casosacin) then %>
+         <div class="privado alert-info">
+           <%= f.input :telcontacto %>
+         </div>
+       <% end %>
 
       <%= f.input(
         :situacionriesgo, 
@@ -129,47 +165,73 @@
     <div class="panel-heading">Acceso a la Justicia</div>
     <div class="panel-body">
 
-            <%= f.input :denuncia, 
-                    collection: ApplicationHelper::NOSI, 
-                    include_blank: false 
-            %>
+      <%= f.input :denuncia, 
+        collection: ApplicationHelper::NOSI, 
+        include_blank: false %>
 
-    <%= f.input :denunciaante, 
-      collection: ApplicationHelper::DENUNCIAANTE,
-      include_blank: true
-    %>
+      <%= f.input :denunciaante, 
+        collection: ApplicationHelper::DENUNCIAANTE,
+        include_blank: true %>
 
-  <%= f.input :aniodenuncia, 
-    collection: @anios %>
-  <%= f.input :mesdenuncia, 
-    collection: ApplicationHelper::MESES %>
-  <%= f.input :diadenuncia, 
-    collection: @dias %>
+      <%= f.input :aniodenuncia, 
+        collection: @anios %>
 
-  <%= f.association :motivonodenuncia,
-    collection: ::Motivonodenuncia.habilitados,
-    include_blank: false,
-    label_method: :nombre, 
-    value_method: :id %>
+      <%= f.input :mesdenuncia, 
+        collection: ApplicationHelper::MESES %>
 
-  <%= f.input :valoracionjusticia, 
-    collection: ApplicationHelper::VALORACIONBRM,
-    include_blank: true
-  %>
+      <%= f.input :diadenuncia, 
+        collection: @dias %>
+  
+      <% if f.object.caso.casosjr.oficina_id == 104 && 
+       can?(:edit, :casosacin) then %>
+       <div class="privado alert-info">
 
-<%= f.input :quisieradenunciar, 
-  collection: ApplicationHelper::NOSI,
-  include_blank: true
-%>
+         <%= f.input :avancescaso %>
+
+         <%= f.input :etapaproceso %>
+
+         <%= f.input :recibidoreparacion, 
+           collection: ApplicationHelper::NOSI,
+           include_blank: false %>
+
+         <%= f.input :quereparacion %>
+
+         <%= f.input :sancionadovictimario, 
+           collection: ApplicationHelper::NOSI,
+           include_blank: false %>
+
+       </div>
+     <% end %>
+
+
+      <%= f.association :motivonodenuncia,
+        collection: ::Motivonodenuncia.habilitados,
+        include_blank: false,
+        label_method: :nombre, 
+        value_method: :id %>
+
+      <%= f.input :valoracionjusticia, 
+        collection: ApplicationHelper::VALORACIONBRM,
+        include_blank: true %>
+
+      <%= f.input :quisieradenunciar, 
+        collection: ApplicationHelper::NOSI,
+        include_blank: true %>
+
+      <% if f.object.caso.casosjr.oficina_id == 104 && 
+           can?(:edit, :casosacin) then %>
+         <div class="privado alert-info">
+
+           <%= f.input :compromisosadquiridos %>
+
+           <%= f.input :observaciones %>
+
+         </div>
+       <% end %>
+
     </div>
   </div>
 
-    <% if f.object.caso.casosjr.oficina_id == 104 && 
-       can?(:edit, :casosacin) then %>
-      <div class="privado alert-info">
-         <%= render 'evento_acin_campos', :f => f %>
-       </div>
-    <% end %>
 
     <% if f.object.caso.casosjr.oficina_id == 103 && 
          can?(:edit, :casosoik) then %>

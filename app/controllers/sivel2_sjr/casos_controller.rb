@@ -169,7 +169,6 @@ module Sivel2Sjr
           :_destroy
         ],
         :evento_attributes => [
-          :acompnecesita,
           :actividadesdejadas,
           :afectacionotra,
           :anio, 

@@ -43,6 +43,13 @@
 <% @dias = *(1..31) %>
 <%= fpersona.input :dianac, collection: @dias, label: 'Día Nacimiento' %>
 
+<%= fvictima.association :rangoedad,
+  collection: Sivel2Gen::Rangoedad.habilitados,
+  include_blank: false,
+  label_method: :rango, 
+  value_method: :id 
+%>
+
 <%= fpersona.association :departamento,
   collection: (Sip::Departamento.habilitados.where(id_pais: 170)),
   label: "Departamento de Nacimiento", label_method: :nombre,
@@ -83,19 +90,7 @@
     <%= fvictimasjr.input :resguardores %>
 
     <%= fvictimasjr.input :comunidadres %>
-  </div>
-<% end %>
 
-<%= fvictima.association :rangoedad,
-  collection: Sivel2Gen::Rangoedad.habilitados,
-  include_blank: false,
-  label_method: :rango, 
-  value_method: :id 
-%>
-
-
-<% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
-  <div class="privado alert-info">
     <%= fvictima.input :hijos %>
 
     <%= fvictimasjr.association :idioma,

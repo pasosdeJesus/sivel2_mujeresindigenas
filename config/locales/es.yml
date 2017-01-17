@@ -19,8 +19,8 @@ es:
         Acompanamiento: "Tipo de Acompañamiento"
         Acompanamientos: "Tipos de Acompañamientos"
       "consecuenciafamiliar":
-        Consecuenciafamiliar: Afectación familiar
-        Consecuenciasfamiliares: Afectaciones familiares
+        Consecuenciafamiliar: Afectación cultural/familiar/comunitaria
+        Consecuenciasfamiliares: Afectaciones culturales, familiares y comunitarias
       "consecuenciafisica":
         Consecuenciafisica: Afectación física
         Consecuenciasfisicas: Afectaciones físicas
@@ -44,7 +44,7 @@ es:
         brindadaproteccion: ¿Le ha brindado protección?
         compromisosadquiridos: Compromisos adquiridos ¿Cuales y con quien?
         comunidad: Comunidad/vereda
-        consecuenciafamiliar: Afectación familiar
+        consecuenciafamiliar: Afectación cultural/familiar/comunitaria
         consecuenciafisica: Afectación física
         consecuenciaindividual: Afectación individual
         descripcionafectacion: Breve descripción de los hechos
@@ -99,7 +99,7 @@ es:
       "sivel2_gen/caso":
         id: Código
         contacto: Víctima
-        fecharec: Fecha documentación inicial en terreno.
+        fecharec: Fecha documentación inicial en terreno
         oficina: Organizacion que diligencia
       "sivel2_sjr/casosjr":
         acompanamiento: "Acompañamiento"
@@ -107,7 +107,8 @@ es:
         contacto: Víctima
         docterrenopor: Documentado en terreno por
         estadocaso: "Estado del caso"
-        fecharec: Fecha documentación iniicial en terreno.
+        fecharec: Fecha documentación inicial en terreno
+        fechanac: Fecha de nacimiento
         oficina: Organizacion que diligencia
         residencia: Residencia actual
         tipoacomp: Acompañamiento
@@ -119,8 +120,8 @@ es:
         Categorias: "Hechos Victimizantes"
       "sivel2_gen/victima":
         etnia: Pueblo indigena / Etnia
-        rangoedad: Rango de edad en fecha de documentacion
-        edad: Edad en fecha de documentación
+        rangoedad: Rango de edad en fecha de documentacion inicial en terreno
+        edad: Edad en fecha de documentación inicial en terreno
       "sivel2_sjr/victimasjr":
         areatierra: Área tierra
         cabezahogar: Cabeza del hogar
