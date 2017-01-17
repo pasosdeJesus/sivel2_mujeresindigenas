@@ -40,9 +40,9 @@
 
 	* R-355 Nuevo menú Adminsitrar->Respaldo Cifrado para descargar copia de respaldo reciente. Va a formulario que 	  solicita clave y confirmación, usa esa clave para comprimir y cifrar el respaldo (algoritmo fuerte de cifrado AES-	      256), descarga la copia que contiene volcado de la base de datos y anexos.  Para poder descomprimirla y descifrarla 	    se requiere el programa 7-zip disponible en http://7-zip.org
 	* Fallas resueltas
-		* F-449 Al agregar una fuente y volver a editar el caso, la fuente tomaba la fecha del caso.
-	      	* F-447 En sitio de producción no permitía agregar casos (reportó Zulhy de OIA).
-		* F-448 En sitio de producción no presentaba pestañas Anexos ni Etiquetas (reportó Zulhy de OIA).
+			* F-449 Al agregar una fuente y volver a editar el caso, la fuente tomaba la fecha del caso.
+	      		* F-447 En sitio de producción no permitía agregar casos (reportó Zulhy de OIA).
+			* F-448 En sitio de producción no presentaba pestañas Anexos ni Etiquetas (reportó Zulhy de OIA).
 
 * 9.Ago.2016 Carrera 4 terminada
 * 29.Jul.2016 Carrera 4 pasa a ensayo
