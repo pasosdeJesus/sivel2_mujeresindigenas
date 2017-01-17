@@ -1,6 +1,15 @@
  
 # Apéndice A. Novedades {#novedades}
 * Versión 2.0b2
+	* R-445 En pestaña eventos y seguimientos agregar campo cerrado "Tipo
+	  de Ayuda que necesita" con opciones "cultural", "juridico" y
+	  "psicosocial" --las mismas de tipo de acompañamiento de pestaña Datos
+	  Básicos
+	* R-418 En pestaña eventos y seguimientos cambiar "número de veces
+	  antes" para que no sólo permite números sino texto (ficha ACIN
+	  Nov.2016)
+	* R-407 En pestaña "Víctima" permitir marcar varias opciones para el idioma
+
 	* R-440 Renombrar tabla básica "Categoria" para que sea "Hechos
 	  Victimizantes" (reunión Nov.2016)
 	* R-430 Cambiar vereda por comunidad/vereda y donde están las 2
