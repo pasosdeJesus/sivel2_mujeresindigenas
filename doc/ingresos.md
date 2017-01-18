@@ -113,7 +113,7 @@ y sitios de un municipio de acuerdo a la División Político Administrativa.
 * Pueblo indigena / Etnia
 * Estado civil
 * Último grado en educación ordinaria
-* Educaión propia
+* Educación propia
 * Tiene carnet de salud
 * Sexo
 * Organización Filial
@@ -149,15 +149,13 @@ y sitios de un municipio de acuerdo a la División Político Administrativa.
 * Denuncia: no, si, sin información.
 * ¿Denuncia ante quien?: Ambos sistemas, ordinaria, propia, sin información.
 * Año denuncia
-* Mesdenuncia 
+* Mes denuncia 
 * Día denuncia
-* Valoración de la atención en materia de justicia
-* ¿Quisiera denunciar?
-
-* Condición de discapacidad
-* Sistema de salud
-* Víctima del conflicto
-
+* Motivo para no denunciar: desconocimiento de donde denunciar, falta de credibiidad en autoridad indígena, 
+  falta de credibiidad en entidades estatales, miedo a posibles retaeaciones, no considera quel los hechos son
+  violación a sus derechos, otro, prevenir habladuria, sin información, vergüenza
+* Valoración de la atención en materia de justicia: sin información, buena, regular, mala.
+* ¿Quisiera denunciar?: no, si, sin información.
 
 #### Anexos {#anexos}
 
@@ -193,6 +191,7 @@ http://words.carlus.cat/como-podemos-traducir-responsive-web-design/.
 
 
 ### Datos privados Acin {#datos_privados_acin}
+
 
 #### Datos básicos {#datos_básicos}
 * Consentimiento
