@@ -93,7 +93,7 @@ Se trata de los datos de la persona que ha sido agredida.
 (ver  [xref](#tablas_basicas)) típicamente con el mismo nombre: Rango de Edad, 
 Pueblo indígena, Estado civil, Último grado en educación ordinaria.
 * Año de nacimiento: Al elegir el año de nacimiento, automáticamente se genera la 
-  edad de documentacion y aniversario.
+  edad de documentacion y aniversario actual.
 * Edad en fecha de documentación inicial e terreno
 * Edad/aniversario actual
 * Rango de edad: Debe ser acorde con la edad (a menos que no se haya especificado 
@@ -115,7 +115,7 @@ departamento, municipio o centro poblado en la tabla básica correspondiente (ve
 * Tiene carnet de salud
 * Sexo
 * Organización Filial
-* Incluido en RUV: Registro único de víctimas
+* Incluido en RUV: Registro único de víctimas en Colombia.
 * Cabeza del hogar
 * Liderazgo
 
@@ -162,9 +162,10 @@ departamento, municipio o centro poblado en la tabla básica correspondiente (ve
 Permite anexar archivos. Si se configuró correctamente los archivos quedan 
 almacenados en una partición cifrada. Para bajar un articulo de prensa en internet,
 se guarda en el PC en formato PDF y luego se anexa.
-* Fecha:La fecha del archivoe
+* Fecha: Si es un artículo de prensa la fecha será la misma del artículo.
 * Descripcion
-* Archivo: Da la opción de descargar el archivo. 
+* Archivo: Da la opción de descargar el archivo del computador. 
+
 #### Etiquetas {#etiquetas}
 
  ![Etiquetas](img/etiquetas.png)
@@ -180,6 +181,7 @@ cambiarse el comentario.
    para este caso.
 * Etiqueta: Permite hacer énfasis en algo que queremos tener en cuenta especialmente, 
   y también se puede utilizar para hacer conteos.
+  
 [^ingresos.1] La numeración es consecutiva --con saltos cuando se borran casos o se 
 insertan en lote de otro SIVeL. Para efectos de conteos es mejor emplear el 
 listado de casos (ver Sección 2, “Listado de Casos”) o las funcionalidades de conteos.
@@ -194,6 +196,7 @@ Los datos privados de Acin se verán con un color azul diferente a
 los demás tanto en la ficha como en el resumén.
 En el resumén hay un botón en la parte superior derecha para habilitar y 
 deshabilitar ver campo privados.
+
 #### Datos básicos {#datos_básicos}
 
 * Consentimiento: no, si, sin información. 
