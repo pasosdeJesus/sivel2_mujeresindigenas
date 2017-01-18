@@ -238,6 +238,9 @@ deshabilitar ver campo privados.
 
 ### Datos privados OIK {#datos_privados_oik}
 
+Los datos privados de Oik se verán con un color azul diferente a 
+los demás tanto en la ficha como en el resumén.
+
 #### Evento de violencia y seguimiento {#evento_de_violencia_y_seguimiento}
 * Seguimiento jurídico
 * Seguimiento psicosocial y cultural
