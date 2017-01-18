@@ -106,8 +106,6 @@ departamento, municipio o centro poblado en la tabla básica correspondiente (ve
 * Departamento: El país es Colombia y se puede elegir uno de sus departamentos 
 (mientras esta información se haya especificado en las respectivas tablas básicas).
 * Municipio: Una vez elija el departamento puede elegirse entre sus municipios.
-* Centro Poblado: Una vez llene el municipio, aparecen posibles centros poblados 
-y sitios de un municipio de acuerdo a la División Político Administrativa.
 * Resguardo 
 * Comunidad/Vereda
 * Pueblo indigena / Etnia
@@ -197,11 +195,13 @@ los demás tanto en la ficha como en el resumén.
 En el resumén hay un botón en la parte superior derecha para habilitar y 
 deshabilitar ver campo privados.
 #### Datos básicos {#datos_básicos}
+
 * Consentimiento: no, si, sin información. 
 
 #### Datos de la víctima
+
 * Nombres 
-* Apellidos: Se recomienda escribirlos en mayúsculas y con tildes como 
+* Apellidos: Se recomienda escribir los nombres y apellidos en mayúsculas y con tildes como 
   aparecen en el documento de identificación principal.
 * Tipo de documento de identidad:  Especifique el tipo y el número. Algunos tipos 
   de documentos no se especifican con un número, sino por ejemplo también con letras. 
@@ -214,7 +214,6 @@ deshabilitar ver campo privados.
 * Comunidad/Vereda de residencia 
 * Hijos: Cantidad
 * Idioma: Se puede seleccionar uno o varios idiomas
-* Religión
 * ¿Cómo genera ingresos económicos?
 * Tiene tierra
 * Área tierra
