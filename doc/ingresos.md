@@ -194,32 +194,49 @@ http://words.carlus.cat/como-podemos-traducir-responsive-web-design/.
 
 
 #### Datos básicos {#datos_básicos}
-* Consentimiento
+* Consentimiento: no, si, sin información. 
 
 #### Datos de la víctima
-* Nombres y Apellidos: Se recomienda escribirlos en mayúsculas y con tildes como 
+* Nombres 
+* Apellidos: Se recomienda escribirlos en mayúsculas y con tildes como 
   aparecen en el documento de identificación principal.
 * Tipo de documento de identidad:  Especifique el tipo y el número. Algunos tipos 
   de documentos no se especifican con un número, sino por ejemplo también con letras. 
   En el momento los documentos provisionales deben constar de una letra mayúscula 
   seguida de un guion y un número, mientras que los pasaportes de una letra seguida 
   de un número. El tipo de documento Otros permite letras y números arbitrariamente.
+* Departamento de residencia 
+* Municipio de residencia 
+* Resguardo de residencia 
+* Comunidad/Vereda de residencia 
 * Hijos: Cantidad
-* Idioma: El principal
+* Idioma: Se puede seleccionar uno o varios idiomas
+* Religión
+* ¿Cómo genera ingresos económicos?
+* Tiene tierra
+* Área tierra
+* Tipo de liderazgo 
+
 
 #### Evento de violencia y seguimiento {#evento_de_violencia_y_seguimiento}
-* Relación entre presunto responsable y víctima
+
+* Breve descripción de los hechos
+* Relación entre presunto responsable y víctima: abuelo,  amigo, amigo de la familia,
+	 esposo, hermano, ninguna, novio, padrastro, padre, primo, tío, vecino
 * Afectación individual
-* Afectación familiar
-* Afectacion física* 
+* Afectación cultural/familiar/comunitaria
+* Afectacion física
 * Actividades que se dejaron de hacer: Se refiere a la actividad que desempeñaba la víctima en el 
   momento de la agresión.
 * Reacción de la familia yla comunidad
 * Afectación a otra persona
+* Teléfono de contacto
 * Avances del caso
 * Etapas del proceso
 * ¿Ha recibido reparación?
-* Compromisos adquiridos ¿Cuales y con quien?
+* ¿Cuál reparación?
+* ¿Ha sido sancionado el victimario?
+* Compromisos ¿Cuales y con quien?
 * Observaciones generales
 
 ### Datos privados OIK {#datos_privados_oik}
