@@ -35,10 +35,10 @@ varias pestaña de su navegador.
 
 La interfaz debe mejorarse continuamente, pero se diseñó con el principio 
 "primero movil," por lo que resulta posible llenar un caso desde un teléfono 
-inteligente con poco ancho de pantalla.  En estos casos es mejor que primer selección
-Administra->Ficha Vertical con lo que el formulario se presentará con
+inteligente con poco ancho de pantalla.  En estos casos es mejor que primero seleccione
+Administrar->Ficha Vertical con lo que el formulario se presentará con
 secciones colapsables verticales en lugar de pestañas horizontales, como esa
-ficha verticla es un diseño adaptativo[4] se ajusta 
+ficha vertical es un diseño adaptativo[4] se ajusta 
 automáticamente a tabletas de diferentes dimensiones --puede probarlo desde una 
 computador de escritorio al cambiar el tamaño de la ventana del navegador para ver 
 como se reorganizan los menús, se escala la imágen de la pantalla inicial y en 
@@ -55,13 +55,22 @@ SIN INFORMACIÓN.
 
 * Código: Es asignado automáticamente por el sistema.
 
-* Administrador y Organizacion que diligencia no pueden ser modificados por 
+* Código en organización: Es el número de orden interno de cada organización.
+
+* Administrador y Organización que diligencia no pueden ser modificados por 
 usuarios con rol de analista.
 
-* Fecha de documentación inicial:  Sera la fecha de referencia para los datos 
+* Fecha de documentación inicial en terreno:  Sera la fecha de referencia para los datos 
 biográficos de la víctima (como edad, discapacidades, etc).  Si no se conoce
 con precisión el día se recomienda dejar 15 y agregar etiqueta DIA_INEXACTO.
 Si no se conoce el mes se recomienda dejar Junio y la etiqueta MES_INEXACTO.
+
+* Documentado en terreno por
+
+* Sistematizado por
+
+* 
+
 * Estado del caso: Se refiere a si la víctima tiene un seguimiento esta acompañado, 
 pero tambien puede ser que se tienen solo la documentación, o solo puede ser 
 registrado o sea que solo se sabe que paso.    
