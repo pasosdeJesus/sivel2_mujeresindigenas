@@ -52,6 +52,11 @@ Sistematizado por, Organización, etc.
 	pulsa el botón izquierdo del ratón.
 
 	![Campo de selección múltiple](img/selmultiple.png)
+	
+	* Campos cerrados: Son campos donde se puede escoger una o varias de las opciones
+	  ya establecidas puede ser por una tabla básica.	
+	  * Campos abiertos: Son campos donde se puede escribir cualquier palabra o número 
+	    sin restricciones.
 
 * Botones: Son cajas de color (típicamente azul, gris  o rojo) con un texto 
 que describe la acción que realiza, al colocar el puntero del ratón sobre ellos 
