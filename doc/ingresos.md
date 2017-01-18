@@ -181,14 +181,6 @@ cambiarse el comentario.
    para este caso.
 * Etiqueta: Permite hacer énfasis en algo que queremos tener en cuenta especialmente, 
   y también se puede utilizar para hacer conteos.
-  
-[^ingresos.1] La numeración es consecutiva --con saltos cuando se borran casos o se 
-insertan en lote de otro SIVeL. Para efectos de conteos es mejor emplear el 
-listado de casos (ver Sección 2, “Listado de Casos”) o las funcionalidades de conteos.
-
-[^ingresos.2] En inglés responsive, traducción sugerida en 
-http://words.carlus.cat/como-podemos-traducir-responsive-web-design/.
-
 
 ### Datos privados Acin {#datos_privados_acin}
 
@@ -229,11 +221,11 @@ deshabilitar ver campo privados.
 * Relación entre presunto responsable y víctima: abuelo,  amigo, amigo de la familia,
 	 esposo, hermano, ninguna, novio, padrastro, padre, primo, tío, vecino
 * Afectación individual
-* Afectación cultural/familiar/comunitaria
+* Afectación cultural /familiar /comunitaria
 * Afectacion física
 * Actividades que se dejaron de hacer: Se refiere a la actividad que desempeñaba la víctima en el 
   momento de la agresión.
-* Reacción de la familia yla comunidad
+* Reacción de la familia y la comunidad
 * Afectación a otra persona
 * Teléfono de contacto
 * Avances del caso
@@ -249,4 +241,12 @@ deshabilitar ver campo privados.
 #### Evento de violencia y seguimiento {#evento_de_violencia_y_seguimiento}
 * Seguimiento jurídico
 * Seguimiento psicosocial y cultural
+
+  
+[^ingresos.1] La numeración es consecutiva --con saltos cuando se borran casos o se 
+insertan en lote de otro SIVeL. Para efectos de conteos es mejor emplear el 
+listado de casos (ver Sección 2, “Listado de Casos”) o las funcionalidades de conteos.
+
+[^ingresos.2] En inglés responsive, traducción sugerida en 
+http://words.carlus.cat/como-podemos-traducir-responsive-web-design/.
 
