@@ -192,7 +192,10 @@ http://words.carlus.cat/como-podemos-traducir-responsive-web-design/.
 
 ### Datos privados Acin {#datos_privados_acin}
 
-
+Los datos privados de Acin se verán con un color azul diferente a 
+los demás tanto en la ficha como en el resumén.
+En el resumén hay un botón en la parte superior derecha para habilitar y 
+deshabilitar ver campo privados.
 #### Datos básicos {#datos_básicos}
 * Consentimiento: no, si, sin información. 
 
