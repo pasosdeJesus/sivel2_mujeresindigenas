@@ -69,14 +69,19 @@ Si no se conoce el mes se recomienda dejar Junio y la etiqueta MES_INEXACTO.
 
 * Sistematizado por
 
-* 
+* Estado del caso: acompañado, documentacdo, o registrado.    
 
-* Estado del caso: Se refiere a si la víctima tiene un seguimiento esta acompañado, 
-pero tambien puede ser que se tienen solo la documentación, o solo puede ser 
-registrado o sea que solo se sabe que paso.    
+* Acompañamiento: cultural, juridico, justicia propia,ninguno psicosocial.
 
-* Tipo de acompañamiento: Puede ser cultural, juridico, psicosocial de acuerdo a 
-las necesidades de la víctima.
+### Fuentes (#fuentes)
+![]()
+
+* Fuente: familiar, medio de comunicación, otra persona, otro, remisión de otro
+  cabildo, remisión institucional, víctima.
+
+* Fecha:
+
+* Detalle Otra Fuente:
 
 #### Datos de la Víctima {#datos_de_la_victima}
 
@@ -87,9 +92,13 @@ Se trata de los datos de la persona que ha sido agredida.
 * La mayoría de cuadros de selección pueden configurarse en tablas básicas 
 (ver  [xref](#tablas_basicas)) típicamente con el mismo nombre: Rango de Edad, 
 Pueblo indígena, Estado civil, Último grado en educación ordinaria.
+* Año de nacimiento: Al elegir el año de nacimiento, automáticamente se genera la 
+  edad de documentacion y aniversario.
+* Edad en fecha de documentación inicial e terreno
+* Edad/aniversario actual
 * Rango de edad: Debe ser acorde con la edad (a menos que no se haya especificado 
 edad). Si especificó la edad, puede dejar esta casilla SIN INFORMACIÓN.
-* Cada sitio geográfico se específica de acuerdo a una división político 
+* Cada sitio geográfico se específica de acuerdo a la división político 
 administrativa de Colombia DIVIPOLA.
 * Si entre las opciones que se le presentan no está el que busca puede agregar el 
 departamento, municipio o centro poblado en la tabla básica correspondiente (ver 
@@ -100,62 +109,81 @@ departamento, municipio o centro poblado en la tabla básica correspondiente (ve
 * Centro Poblado: Una vez llene el municipio, aparecen posibles centros poblados 
 y sitios de un municipio de acuerdo a la División Político Administrativa.
 * Resguardo 
-* Comunidad: Dentro del resguardo
-* Sexo
-* Organización Filial
+* Comunidad/Vereda
+* Pueblo indigena / Etnia
 * Estado civil
 * Último grado en educación ordinaria
-* Condición de discapacidad
-* Sistema de salud
-* Víctima del conflicto
+* Educaión propia
+* Tiene carnet de salud
+* Sexo
+* Organización Filial
 * Incluido en RUV: Registro único de víctimas
 * Cabeza del hogar
 * Liderazgo
 
 #### Eventos de violencia y seguimiento {#eventos_de_violencia_y_seguimiento}
 * Se pueden agregar varios eventos y el uno queda debajo del otro pulsando el boton añadir evento y después de creado si queremos borrarlo podemos pulsar eliminar evento.
-* Fecha, hora
-* Numero de veces: Cuantas veces fue agredida la víctima antes.
+* Fecha del seguimiento
+* Año del hecho
+* Mes del hecho
+* Día del hecho
+* Día de la semana
+* Departamento
+* Municipio
+* Resguardo
+* Comunidad/vereda
+* Numero de veces: Cuantas veces fue agredida la víctima antes. Se puede referenciar en números 
+  o en letras.
+* Relacionado con conflicto: Armado, sin información y social.
 * Grupo Presunto Responsable: Permite elegir uno de los configurados en la tabla básica 
-Presuntos Responsables (ver [xref](#tablas_basicas)) ---que incluye SIN INFORMACIÓN 
-como posible opción. Un presunto responsable puede ser autor de varias agresiones, a una misma víctima, en un mismo evento, y empezamos por añadir presunto responsable luego podemos escoger un hecho victimizante y luego otro  asi sucesivamente y puede agregar todas las que necesite y si se necesita borrar se borra con la x que está al lado derecho  o con el botón eliminar. 
-* Agresión Particular:
+  Presuntos Responsables (ver [xref](#tablas_basicas)) ---que incluye SIN INFORMACIÓN 
+  como posible opción. Un presunto responsable puede ser autor de varias agresiones, a una misma víctima, en un mismo       evento, y empezamos por añadir presunto responsable luego podemos escoger un hecho victimizante y luego otro  asi    sucesivamente y puede agregar todos los hechos que sea necesario y si se necesita borrar se borra con la x que está al lado   derecho  o con el botón eliminar. 
+* Hecho Victimizante:
 * Testigo 
-* Acompañamiento que necesita
-* Situación de riesgo 
-* ¿Ha solicitado medidas al estado?
+* Tipo de afectación: comunitaria, cultural, económica, familiar, fisica, individuual, otra, psicosocial y sin información. 
+* Tipo de apoyo: Comunitario, familiar, institución estatal, Ong, organización índigena, otro, sin informacón.
+* Acompañamiento que necesita: Cultural, jurídico, justicia propia, ninguno, sin información.
+* Situación de riesgo: no, si, sin información.
+* Ante quien ha solicitado medidas: Cabildo, estado, estado y cabildo, ninguno, sin información.
 * Medidas recibidas 
-* Denuncia
-* ¿Denuncia ante quien?
-* Fecha de la denuncia 
+* Denuncia: no, si, sin información.
+* ¿Denuncia ante quien?: Ambos sistemas, ordinaria, propia, sin información.
+* Año denuncia
+* Mesdenuncia 
+* Día denuncia
 * Valoración de la atención en materia de justicia
 * ¿Quisiera denunciar?
+
+* Condición de discapacidad
+* Sistema de salud
+* Víctima del conflicto
+
 
 #### Anexos {#anexos}
 
 ![Anexos](img/anexos.png)
 
 Permite anexar archivos. Si se configuró correctamente los archivos quedan 
-almacenados en una partición cifrada. Por ejemplo pueden anexarse fuentes y 
-después referenciarlas en las pestañas de fuentes.
-* Fecha
+almacenados en una partición cifrada. Para bajar un articulo de prensa en internet,
+se guarda en el PC en formato PDF y luego se anexa.
+* Fecha:La fecha del archivoe
 * Descripcion
-* Archivo
-
+* Archivo: Da la opción de descargar el archivo. 
 #### Etiquetas {#etiquetas}
 
  ![Etiquetas](img/etiquetas.png)
  
  Permite poner etiquetas con comentarios al caso. Note que debe elegir una de las 
-etiquetas (las cuales se especificar en la tabla básica Etiqueta), opcionalmente 
+etiquetas (las cuales se especifican en la tabla básica Etiqueta), opcionalmente 
 poner un comentario. Es posible cambiar los comentarios --por ejemplo si se emplean 
 etiquetas para marcar casos que deben revisarse, una vez revisados debe quitarse o 
 cambiarse el comentario.
-* Fecha
-* Usuario
-* Observaciones
-* Etiqueta
-
+* Fecha:
+* Usuario: Se refiere al sistematizador.
+* Observaciones: Se puede hacer una descripción del porque es importante esta etiqueta,
+   para este caso.
+* Etiqueta: Permite hacer énfasis en algo que queremos tener en cuenta especialmente, 
+  y también se puede utilizar para hacer conteos.
 [^ingresos.1] La numeración es consecutiva --con saltos cuando se borran casos o se 
 insertan en lote de otro SIVeL. Para efectos de conteos es mejor emplear el 
 listado de casos (ver Sección 2, “Listado de Casos”) o las funcionalidades de conteos.
