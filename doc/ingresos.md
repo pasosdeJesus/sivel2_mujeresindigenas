@@ -69,7 +69,7 @@ Si no se conoce el mes se recomienda dejar Junio y la etiqueta MES_INEXACTO.
 
 * Sistematizado por
 
-* Estado del caso: acompañado, documentacdo, o registrado.    
+* Estado del caso: acompañado, documentado, o registrado.    
 
 * Acompañamiento: cultural, juridico, justicia propia,ninguno psicosocial.
 
@@ -92,18 +92,20 @@ Se trata de los datos de la persona que ha sido agredida.
 * La mayoría de cuadros de selección pueden configurarse en tablas básicas 
 (ver  [xref](#tablas_basicas)) típicamente con el mismo nombre: Rango de Edad, 
 Pueblo indígena, Estado civil, Último grado en educación ordinaria.
-* Año de nacimiento: Al elegir el año de nacimiento, automáticamente se genera la 
-  edad de documentacion y aniversario actual.
-* Edad en fecha de documentación inicial e terreno
-* Edad/aniversario actual
+* Año de nacimiento: Al elegir el año de nacimiento, automáticamente se 
+  completan automaticamente los campos de edad y el rango de edad.
+* Edad en fecha de documentación inicial e terreno: Al escribirla se 
+  completan automaticamente el año de nacimiento y el otro campo de edad.
+* Edad/aniversario actual: Al escribirla se completan automaticamente el 
+  año de nacimiento y el otro campo de edad.
 * Rango de edad: Es una clasificación para la edad y
-  es útil para conteos. Ejemplo: niñas de 0 a 10 años.
-  Si especificó la edad, puede dejar esta casilla SIN INFORMACIÓN.
+  es útil para conteos. Ejemplo: niñas de 0 a 10 años. Se completa 
+  automáticamente al elegir Año de nacimiento o alguno de los campos de edad.
 * Cada sitio geográfico se específica de acuerdo a la división político 
   administrativa de Colombia DIVIPOLA.
 * Si entre las opciones que se le presentan no está el que busca puede agregar el 
-  departamento, municipio o centro poblado en la tabla básica correspondiente (ver 
-  [xref](#tablas_basicas)).
+  departamento, municipio o centro poblado en la tabla básica correspondiente 
+  (ver [xref](#tablas_basicas)).
 * Departamento: El país es Colombia y se puede elegir uno de sus departamentos 
 (mientras esta información se haya especificado en las respectivas tablas básicas).
 * Municipio: Una vez elija el departamento puede elegirse entre sus municipios.
@@ -121,7 +123,8 @@ Pueblo indígena, Estado civil, Último grado en educación ordinaria.
 * Liderazgo
 
 #### Eventos de violencia y seguimiento {#eventos_de_violencia_y_seguimiento}
-* Se pueden agregar varios eventos y el uno queda debajo del otro pulsando el boton añadir evento y después de creado si queremos borrarlo podemos pulsar eliminar evento.
+* Se pueden agregar varios eventos, que quedaran consecutivos uno después de otro.  Para agregar se pulsa el boton __Añadir evento__ y después de creado 
+si queremos borrarlo se pulsa __Eliminar evento__.
 * Fecha del seguimiento
 * Año del hecho
 * Mes del hecho
@@ -131,21 +134,35 @@ Pueblo indígena, Estado civil, Último grado en educación ordinaria.
 * Municipio
 * Resguardo
 * Comunidad/vereda
-* Numero de veces: Cuantas veces fue agredida la víctima antes. Se puede referenciar en números 
+* Número de veces: Cuantas veces fue agredida la víctima antes. Se puede referenciar en números 
   o en letras.
 * Relacionado con conflicto: Armado, sin información y social.
-* Grupo Presunto Responsable: Permite elegir uno de los configurados en la tabla básica 
-  Presuntos Responsables (ver [xref](#tablas_basicas)) ---que incluye SIN INFORMACIÓN 
-  como posible opción. Un presunto responsable puede ser autor de varias agresiones, a una misma víctima, en un mismo       evento, y empezamos por añadir presunto responsable luego podemos escoger un hecho victimizante y luego otro  asi    sucesivamente y puede agregar todos los hechos que sea necesario y si se necesita borrar se borra con la x que está al lado   derecho  o con el botón eliminar. 
-* Hecho Victimizante:
+* Tabla Grupo Presunto Responsable y Hecho Victimizante:  Un presunto 
+  responsable puede ser autor de varias agresiones, a una misma víctima, 
+  en un mismo evento.   Esta tabla tiene en cada fila un presunto responsable
+  diferente al de las demás filas y los hechos victimizantes que se le 
+  atribuyen.
+  Comience por añadir una fila con el botón __Añadir Presunto Responsable__
+  Esto abrirá una nueva fila con tres columnas.
+  En la columna de la izquierda elija el presunto responsable (se puede elejir
+  de entre los configurados en la tabla básica Presuntos Responsables,
+  ver [xref](#tablas_basicas)). 
+  Luego en la columna central elija un primer 
+  hecho victimizante atribuido al presunto responsable de la fila esto
+  creará un botón con el hecho victimizante.  
+  Continúe elijiendo otros hechos victimizantes que le correspondan al mismo 
+  presunto responsable.  
+  Si necesita borrar un Hecho victimizante pulse la __x__ del botón.
+  Si necesita borrar una fila pulse el botón __Eliminar__ de la tercera
+  columna.
 * Testigo 
 * Tipo de afectación: comunitaria, cultural, económica, familiar, fisica, individuual, otra, psicosocial y sin información. 
 * Tipo de apoyo: Comunitario, familiar, institución estatal, Ong, organización índigena, otro, sin informacón.
 * Acompañamiento que necesita: Cultural, jurídico, justicia propia, ninguno, sin información.
-* Situación de riesgo: no, si, sin información.
+* Situación de riesgo: No, si, sin información.
 * Ante quien ha solicitado medidas: Cabildo, estado, estado y cabildo, ninguno, sin información.
 * Medidas recibidas 
-* Denuncia: no, si, sin información.
+* Denuncia: No, si, sin información.
 * ¿Denuncia ante quien?: Ambos sistemas, ordinaria, propia, sin información.
 * Año denuncia
 * Mes denuncia 
@@ -154,7 +171,7 @@ Pueblo indígena, Estado civil, Último grado en educación ordinaria.
   falta de credibiidad en entidades estatales, miedo a posibles retaeaciones, no considera quel los hechos son
   violación a sus derechos, otro, prevenir habladuria, sin información, vergüenza
 * Valoración de la atención en materia de justicia: sin información, buena, regular, mala.
-* ¿Quisiera denunciar?: no, si, sin información.
+* ¿Quisiera denunciar?: No, si, sin información.
 
 #### Anexos {#anexos}
 
@@ -191,12 +208,12 @@ cambiarse el comentario.
 
 Los datos privados de Acin se verán con un color azul diferente a 
 los demás tanto en la ficha como en el resumén.
-En el resumén hay un botón en la parte superior derecha para habilitar y 
-deshabilitar ver campo privados.
+En el resumén hay un botón en la parte superior derecha para ver o
+esconder los campos privados.
 
 #### Datos básicos {#datos_básicos}
 
-* Consentimiento: no, si, sin información. 
+* Consentimiento: No, si, sin información. 
 
 #### Datos de la víctima
 
@@ -243,8 +260,12 @@ deshabilitar ver campo privados.
 
 ### Datos privados OIK {#datos_privados_oik}
 
-Los datos privados de Oik se verán con un color azul diferente a 
+Los datos privados de OIK se verán con un color azul diferente a 
 los demás tanto en la ficha como en el resumén.
+
+En el resumén hay un botón en la parte superior derecha para ver o
+esconder los campos privados.
+
 
 #### Evento de violencia y seguimiento {#evento_de_violencia_y_seguimiento}
 * Seguimiento jurídico

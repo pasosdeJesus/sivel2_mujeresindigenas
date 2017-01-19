@@ -8,9 +8,9 @@ Los créditos hasta la versión 1.2 pueden consultarse en http://sivel.sourcefor
 * Diseño: SIVeL2 con cambios exigidos por Ruby on Rails.
 * Datos de tablas básicas: SIVeL2, Divisiones Políticas oficiales de Colombia.
 
-* Pruebas: Automáticas con rspec. De usuario por
+* Pruebas: Automáticas con rspec. 
 
-* Logos: 
+* Logos: CODACOP
 
 * Interfaz y Usabilidad: Ruby on Rails y muchas gemas incluyendo plantilla 
 Bootstrap de Twitter, Devise, CanCan, JQuery.
@@ -22,7 +22,9 @@ Bootstrap de Twitter, Devise, CanCan, JQuery.
 
 * Documentación: Adaptada de SIVeL 2
 
-* Sugerencias, reportes de fallas y requerimientos: 
+* Sugerencias, reportes de fallas y requerimientos: Lizeth Villada, 
+  Anita Linares,  integrantes del observatorio de violencia contra las mujeres
+  de OIK, ONIC, ACIN y OIA.
 
 * Herramientas: Entre otras OpenBSD adJ, PostgreSQL, nginx, Ruby, Ruby on Rails.
 
