@@ -96,13 +96,14 @@ Pueblo indígena, Estado civil, Último grado en educación ordinaria.
   edad de documentacion y aniversario actual.
 * Edad en fecha de documentación inicial e terreno
 * Edad/aniversario actual
-* Rango de edad: Debe ser acorde con la edad (a menos que no se haya especificado 
-edad). Si especificó la edad, puede dejar esta casilla SIN INFORMACIÓN.
+* Rango de edad: Es una clasificación para la edad y
+  es útil para conteos. Ejemplo: niñas de 0 a 10 años.
+  Si especificó la edad, puede dejar esta casilla SIN INFORMACIÓN.
 * Cada sitio geográfico se específica de acuerdo a la división político 
-administrativa de Colombia DIVIPOLA.
+  administrativa de Colombia DIVIPOLA.
 * Si entre las opciones que se le presentan no está el que busca puede agregar el 
-departamento, municipio o centro poblado en la tabla básica correspondiente (ver 
-[xref](#tablas_basicas)).
+  departamento, municipio o centro poblado en la tabla básica correspondiente (ver 
+  [xref](#tablas_basicas)).
 * Departamento: El país es Colombia y se puede elegir uno de sus departamentos 
 (mientras esta información se haya especificado en las respectivas tablas básicas).
 * Municipio: Una vez elija el departamento puede elegirse entre sus municipios.
@@ -163,7 +164,7 @@ Permite anexar archivos. Si se configuró correctamente los archivos quedan
 almacenados en una partición cifrada. Para bajar un articulo de prensa en internet,
 se guarda en el PC en formato PDF y luego se anexa.
 * Fecha: Si es un artículo de prensa la fecha será la misma del artículo.
-* Descripcion
+* Descripcion: Siempre se debe escribir algún cometario.
 * Archivo: Da la opción de descargar el archivo del computador. 
 
 #### Etiquetas {#etiquetas}
@@ -181,6 +182,10 @@ cambiarse el comentario.
    para este caso.
 * Etiqueta: Permite hacer énfasis en algo que queremos tener en cuenta especialmente, 
   y también se puede utilizar para hacer conteos.
+  
+  Para llegar al resumen de un caso se puede: 
+  * Editar el caso y presionar "Guardar y Validar" o
+  * Desde el listado de casos con el código del caso que es el enlace de la primera columna.
 
 ### Datos privados Acin {#datos_privados_acin}
 
