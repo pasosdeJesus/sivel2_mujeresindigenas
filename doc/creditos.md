@@ -8,7 +8,7 @@ Los créditos hasta la versión 1.2 pueden consultarse en http://sivel.sourcefor
 * Diseño: SIVeL2 con cambios exigidos por Ruby on Rails.
 * Datos de tablas básicas: SIVeL2, Divisiones Políticas oficiales de Colombia.
 
-* Pruebas: Automáticas con rspec. 
+* Pruebas: Automáticas a fuentes con minitest. 
 
 * Logos: CODACOP
 
