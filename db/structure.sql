@@ -1562,7 +1562,7 @@ CREATE TABLE evento (
     solicitomedidas character varying(1) DEFAULT 'I'::character varying,
     denuncia character varying(1) DEFAULT 'I'::character varying,
     testigo character varying(1) DEFAULT 'I'::character varying,
-    afectacionotra character varying(1) DEFAULT 'I'::character varying,
+    afectacionotra character varying(500) DEFAULT 'I'::character varying,
     quisieradenunciar character varying(1) DEFAULT 'I'::character varying,
     recibidoreparacion character varying(1) DEFAULT 'I'::character varying,
     denunciaante character varying(1) DEFAULT 'I'::character varying,
@@ -4359,7 +4359,6 @@ CREATE TABLE sivel2_sjr_victimasjr (
     id_pais integer,
     enfermedad character varying(5000),
     ndiscapacidad character varying(100),
-    tienetierra character varying(1) DEFAULT 'I'::character varying,
     incluidoruv character varying(1) DEFAULT 'I'::character varying,
     cabezahogar character varying(1) DEFAULT 'I'::character varying,
     sistemasalud character varying(1) DEFAULT 'I'::character varying,
@@ -4448,6 +4447,50 @@ CREATE SEQUENCE tapoyo_id_seq
 --
 
 ALTER SEQUENCE tapoyo_id_seq OWNED BY tapoyo.id;
+
+
+--
+-- Name: tienetierra; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE tienetierra (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(500),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: tienetierra_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tienetierra_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: tienetierra_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tienetierra_id_seq OWNED BY tienetierra.id;
+
+
+--
+-- Name: tienetierra_victimasjr; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE tienetierra_victimasjr (
+    tienetierra_id integer NOT NULL,
+    sivel2_sjr_victimasjr_id integer NOT NULL
+);
 
 
 --
@@ -4724,6 +4767,13 @@ ALTER TABLE ONLY tafectacion ALTER COLUMN id SET DEFAULT nextval('tafectacion_id
 --
 
 ALTER TABLE ONLY tapoyo ALTER COLUMN id SET DEFAULT nextval('tapoyo_id_seq'::regclass);
+
+
+--
+-- Name: tienetierra id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tienetierra ALTER COLUMN id SET DEFAULT nextval('tienetierra_id_seq'::regclass);
 
 
 --
@@ -5876,6 +5926,14 @@ ALTER TABLE ONLY tapoyo
 
 ALTER TABLE ONLY sip_tclase
     ADD CONSTRAINT tclase_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: tienetierra tienetierra_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tienetierra
+    ADD CONSTRAINT tienetierra_pkey PRIMARY KEY (id);
 
 
 --
@@ -7079,6 +7137,14 @@ ALTER TABLE ONLY sivel2_sjr_victimasjr
 
 
 --
+-- Name: tienetierra_victimasjr fk_rails_b6bcd29bac; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tienetierra_victimasjr
+    ADD CONSTRAINT fk_rails_b6bcd29bac FOREIGN KEY (tienetierra_id) REFERENCES tienetierra(id);
+
+
+--
 -- Name: sivel2_gen_combatiente fk_rails_bfb49597e1; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7124,6 +7190,14 @@ ALTER TABLE ONLY cor1440_gen_financiador_proyectofinanciero
 
 ALTER TABLE ONLY cor1440_gen_actividad_sip_anexo
     ADD CONSTRAINT fk_rails_cc9d44f9de FOREIGN KEY (actividad_id) REFERENCES cor1440_gen_actividad(id);
+
+
+--
+-- Name: tienetierra_victimasjr fk_rails_ccc78f721a; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tienetierra_victimasjr
+    ADD CONSTRAINT fk_rails_ccc78f721a FOREIGN KEY (sivel2_sjr_victimasjr_id) REFERENCES sivel2_sjr_victimasjr(id_victima);
 
 
 --
@@ -7959,6 +8033,10 @@ INSERT INTO schema_migrations (version) VALUES
 ('20170113101237'),
 ('20170114022359'),
 ('20170114040246'),
-('20170119013801');
+('20170119013801'),
+('20170119034040'),
+('20170119034234'),
+('20170119035252'),
+('20170119143359');
 
 

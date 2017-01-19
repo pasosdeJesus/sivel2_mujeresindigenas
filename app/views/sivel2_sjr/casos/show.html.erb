@@ -262,10 +262,11 @@
             <dt><strong>
               <%= Sivel2Sjr::Victimasjr.human_attribute_name(:tienetierra) %>:
             </strong></dt>
-            <dd> <%= ApplicationHelper.etiqueta(
-              ApplicationHelper::TIENETIERRA, 
-              victima.victimasjr.tienetierra, true ) if 
-               victima.victimasjr && victima.victimasjr.tienetierra %> </dd>
+            <dd><%= victima.victimasjr.tienetierra.inject("") { 
+              |memo, i| 
+              (memo == "" ? "" : memo + ", ") + i.nombre } if 
+                victima.victimasjr && victima.victimasjr.tienetierra
+            %></dd>
 
             <dt><strong>
               <%= Sivel2Sjr::Victimasjr.human_attribute_name(:areatierra) %>:
@@ -286,7 +287,7 @@
         <dt><strong>
           <%= Sivel2Sjr::Victimasjr.human_attribute_name(:organizacionfilial) %>:
         </strong></dt>
-        <dd><%= victima.victimasjr.organizacionfilial if  victima.victimasjr && victima.victimasjr.organizacionfilia %></dd>
+        <dd><%= victima.victimasjr.organizacionfilial if  victima.victimasjr && victima.victimasjr.organizacionfilial %></dd>
 
         <dt><strong>
           <%= Sivel2Sjr::Victimasjr.human_attribute_name(:incluidoruv) %>:
@@ -488,9 +489,7 @@
                <dt><strong>
                  <%= Evento.human_attribute_name(:afectacionotra) %>:
                </strong></dt>
-               <dd><%= ApplicationHelper.etiqueta(
-                 ApplicationHelper::NOSI, evento.afectacionotra, true) if 
-                 evento.afectacionotra %> </dd>
+               <dd><%= evento.afectacionotra if evento.afectacionotra %> </dd>
              </div>
            <% end %>
 

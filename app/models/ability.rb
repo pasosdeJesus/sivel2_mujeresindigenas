@@ -25,7 +25,8 @@ class Ability < Sivel2Sjr::Ability
     ['', 'relacionprvic'],
 	  ['', 'religion'],
 	  ['', 'tafectacion'],
-	  ['', 'tapoyo']
+	  ['', 'tapoyo'],
+    ['', 'tienetierra']
   ]
 
   def tablasbasicas 

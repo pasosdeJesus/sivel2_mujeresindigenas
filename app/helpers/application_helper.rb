@@ -65,15 +65,6 @@ module ApplicationHelper
     ['SIN INFORMACIÓN', :I]
   ]
 
-  TIENETIERRA = [
-    ["ADJUDICADO", :A],
-    ["COMPRO", :C],
-    [:NO, :N],
-    ["OTRA", :O],
-    [:SI, :S], 
-    ["SIN INFORMACIÓN", :I]
-  ]
-
   TIPOCONFLICTO = [ 
     ['ARMADO', :A], 
     ['SIN INFORMACIÓN', :I],

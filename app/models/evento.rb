@@ -61,13 +61,13 @@ class Evento < ActiveRecord::Base
   validates :denuncia, length: {maximum: 1}
   validates :denunciaante, length: {maximum: 1}
   validates :testigo, length: {maximum: 1}
-  validates :afectacionotra, length: {maximum: 1}
   validates :quisieradenunciar, length: {maximum: 1}
   validates :recibidoreparacion, length: {maximum: 1}
   validates :valoracionjusticia, length: {maximum: 1}
   validates :relacionadocon, length: { maximum: 1}
 
   validates :acompnecesita, length: {maximum: 5000}
+  validates :afectacionotra, length: {maximum: 500}
   validates :actividadesdejadas, length: {maximum: 5000}
   validates :avancescaso, length: {maximum: 5000}
   validates :brindadaproteccion, length: {maximum: 5000}

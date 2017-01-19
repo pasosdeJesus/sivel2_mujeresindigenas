@@ -137,10 +137,10 @@ module Sivel2Sjr
             :resguardonac,
             :residencia, 
             :sistemasalud, 
-            :tienetierra, 
             :tipoliderazgo,
             :vicconflicto,
             :idioma_ids => [], 
+            :tienetierra_ids => [], 
           ]
         ], 
         :ubicacion_attributes => [

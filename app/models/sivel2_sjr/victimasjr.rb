@@ -17,6 +17,14 @@ class Sivel2Sjr::Victimasjr < ActiveRecord::Base
     foreign_key: "sivel2_sjr_victimasjr_id", validate: true
   has_many :idioma, through: :idioma_victimasjr, class_name: "Sivel2Sjr::Idioma"
 
+
+  has_many :tienetierra_victimasjr, 
+    class_name: "::TienetierraVictimasjr", 
+    foreign_key: "sivel2_sjr_victimasjr_id", validate: true
+  has_many :tienetierra, through: :tienetierra_victimasjr, 
+    class_name: "::Tienetierra"
+
+
   #validates :areatierra, null o positivo
   validates :cabezahogar, length: { maximum: 1}
   validates :comoingresos, length: { maximum: 5000 }

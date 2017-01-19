@@ -146,10 +146,11 @@
 
     <%= fvictimasjr.input :comoingresos %>
 
-    <%= fvictimasjr.input(
-      :tienetierra, 
-      collection: ApplicationHelper::TIENETIERRA,
-      include_blank: false ) %>
+    <%= fvictimasjr.association :tienetierra,
+      collection: ::Tienetierra.habilitados,
+      include_blank: false,
+      label_method: :nombre, 
+      value_method: :id %>
 
     <%= fvictimasjr.input :areatierra %>
   </div>
