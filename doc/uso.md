@@ -28,14 +28,14 @@ de la aplicación por ejemplo:
 * Pestañas: Al ver la ficha de un caso en formato horizontal (como se presenta 
 por omisión), las pestañas corresponden a secciones de la ficha seleccionables 
 con los cuadritos de la parte superior.  Son: Datos básicos, Fuentes, 
-Datos de la víctima, Eventos de violencia, Anexos y Etiquetas.  
+Datos de la víctima, Eventos de violencia y Seguimiento, Anexos y Etiquetas.  
 Al pulsar sobre cada una para seleccionar una sección cambian de color y se 
 despliegan los campos que corresponden a la sección.
  ![Pestañas](img/ej-pestanas.png)
 
 * Campos: Son cada uno de los espacios para completar información del caso por 
-ejemplo en la pestaña Datos básicos Fecha de documentación, 
-Documentado por, Organización, etc.  
+ejemplo en la pestaña Datos básicos Fecha de documentación inicial en terreno, 
+Sistematizado por, Organización, etc.  
 ![Campos](img/ej-campos.png)
 
 	* Campo de selección única: Los identifica porque tienen al lado
@@ -52,6 +52,11 @@ Documentado por, Organización, etc.
 	pulsa el botón izquierdo del ratón.
 
 	![Campo de selección múltiple](img/selmultiple.png)
+	
+	* Campos cerrados: Son campos donde se puede escoger una o varias de las opciones
+	  ya establecidas puede ser por una tabla básica.	
+	  * Campos abiertos: Son campos donde se puede escribir cualquier palabra o número 
+	    sin restricciones.
 
 * Botones: Son cajas de color (típicamente azul, gris  o rojo) con un texto 
 que describe la acción que realiza, al colocar el puntero del ratón sobre ellos 
