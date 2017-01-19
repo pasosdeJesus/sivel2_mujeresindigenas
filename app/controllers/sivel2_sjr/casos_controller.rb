@@ -213,6 +213,7 @@ module Sivel2Sjr
           :_destroy,
 
           :acompanamiento_ids => [],
+          :acompanamientorec_ids => [],
           :actoevento_attributes => [
             :categoria_id, 
             :id, 

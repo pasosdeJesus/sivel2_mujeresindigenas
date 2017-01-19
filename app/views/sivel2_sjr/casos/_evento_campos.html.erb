@@ -105,6 +105,12 @@
       <% if f.object.caso.casosjr.oficina_id == 104 && 
            can?(:edit, :casosacin) then %>
          <div class="privado alert-info">
+     
+           <%= f.association :acompanamientorec,
+             collection: ::Acompanamiento.habilitados,
+             include_blank: false,
+             label_method: :nombre, 
+             value_method: :id %>
 
           <%= f.association :consecuenciafisica,
             collection: ::Consecuenciafisica.habilitados,

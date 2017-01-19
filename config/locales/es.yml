@@ -44,10 +44,11 @@ es:
         avancescaso: Avances del caso
         brindadaproteccion: ¿Le ha brindado protección?
         compromisosadquiridos: Compromisos adquiridos ¿Cuales y con quien?
-        comunidad: Comunidad/vereda
+        comunidad: Comunidad/vereda del hecho
         consecuenciafamiliar: Afectación cultural/familiar/comunitaria
         consecuenciafisica: Afectación física
         consecuenciaindividual: Afectación individual
+        departamento: Departamento del hecho
         descripcionafectacion: Breve descripción de los hechos
         denuncia: Denuncia
         dia: Día hecho
@@ -63,6 +64,7 @@ es:
         mes: Mes hecho
         mesdenuncia: Mes denuncia
         motivonodenuncia: Motivo para no denunciar
+        municipio: Municipio del hecho
         numvecesantes: Número de veces antes
         observaciones: Observaciones generales
         quereparacion: ¿Cúal reparación?
@@ -71,13 +73,14 @@ es:
         recibidoreparacion: ¿Ha recibido reparación?
         relacionadocon: Relacionado con conflicto
         relacionprvic: Relación entre presunto resp. y víctima
+        resguardo: Resguardo del hecho
         sancionadovictimario: ¿Ha sido sancionado el victimario?
         seguimientojudicial: Seguimiento Judicial
         seguimientopsicosocial: Seguimiento Psicosocial
         situacionriesgo: Situación de riesgo
         solicitomedidas: Ante quien ha solicitado medidas
         tafectacion: Tipo de afectación
-        tapoyo: Tipo de apoyo
+        tapoyo: Tipo de apoyo que ha recibido
         telcontacto: Teléfono de contacto
         testigo: Testigo
         valoracionjusticia: Valoración de la atención en materia de justicia

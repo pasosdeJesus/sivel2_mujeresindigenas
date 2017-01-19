@@ -218,6 +218,16 @@ ALTER SEQUENCE acompanamiento_id_seq OWNED BY acompanamiento.id;
 
 
 --
+-- Name: acompanamientorec_evento; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE acompanamientorec_evento (
+    acompanamiento_id integer NOT NULL,
+    evento_id integer NOT NULL
+);
+
+
+--
 -- Name: acto_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -6821,6 +6831,14 @@ ALTER TABLE ONLY heb412_gen_campohc
 
 
 --
+-- Name: acompanamientorec_evento fk_rails_207c5a7932; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY acompanamientorec_evento
+    ADD CONSTRAINT fk_rails_207c5a7932 FOREIGN KEY (evento_id) REFERENCES evento(id);
+
+
+--
 -- Name: cor1440_gen_informe fk_rails_294895347e; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6962,6 +6980,14 @@ ALTER TABLE ONLY sivel2_sjr_ayudasjr_derecho
 
 ALTER TABLE ONLY sivel2_sjr_ayudaestado_derecho
     ADD CONSTRAINT fk_rails_863c4c40a3 FOREIGN KEY (ayudaestado_id) REFERENCES sivel2_sjr_ayudaestado(id);
+
+
+--
+-- Name: acompanamientorec_evento fk_rails_935f78da72; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY acompanamientorec_evento
+    ADD CONSTRAINT fk_rails_935f78da72 FOREIGN KEY (acompanamiento_id) REFERENCES acompanamiento(id);
 
 
 --
@@ -7932,6 +7958,7 @@ INSERT INTO schema_migrations (version) VALUES
 ('20170112111018'),
 ('20170113101237'),
 ('20170114022359'),
-('20170114040246');
+('20170114040246'),
+('20170119013801');
 
 

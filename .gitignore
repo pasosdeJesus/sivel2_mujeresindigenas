@@ -82,3 +82,4 @@ doc/genindice.xdbk.m
 archivos/
 .byebug_history
 config/initializers/sip.rb
+config/application.rb

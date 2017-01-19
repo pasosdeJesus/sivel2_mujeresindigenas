@@ -13,6 +13,12 @@ class Evento < ActiveRecord::Base
     dependent: :delete_all
   has_many :acompanamiento, through: :acompanamiento_evento
 
+  has_many :acompanamientorec_evento, validate: true, 
+    dependent: :delete_all
+  has_many :acompanamientorec, class_name: '::Acompanamiento',
+    through: :acompanamientorec_evento
+
+
   has_many :actoevento, 
     class_name: "::Actoevento",  
     foreign_key: "evento_id", validate:true, dependent: :delete_all
