@@ -54,6 +54,7 @@ Sistematizado por, Organización, etc.
 	 	  seleccionar/deseleccionar varias opciones. Para hacerlo 
 		  presione la tecla **Control** mientras pulsa el botón 
 		  izquierdo del ratón.
+		  
 		  ![Campo de selección múltiple](img/selmultiple.png)
 	
 * Botones: Son cajas de color (típicamente azul, gris  o rojo) con un texto 
