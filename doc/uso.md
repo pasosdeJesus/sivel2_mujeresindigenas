@@ -59,8 +59,8 @@ Sistematizado por, Organización, etc.
 	
 * Botones: Son cajas de color (típicamente azul, gris  o rojo) con un texto 
 que describe la acción que realiza, al colocar el puntero del ratón sobre ellos 
-aparece una manito indicando que al pulsar se realiza la acción. En el
-ejemplo siguiente son botones los marcados con "Validar y Guardar" y 
+aparece una manita indicando que al pulsar se realiza la acción. En el
+ejemplo siguiente son botones los marcados con "Validar y Guardar",  
 "Cancelar".
 
 ![Botones](img/ej-botones.png)
