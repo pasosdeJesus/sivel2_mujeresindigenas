@@ -42,7 +42,7 @@ abiertas), ver <http://github.com/pasosdeJesus/sivel2_mujeresindigenas/>.
 Para la versión predecesora (i.e SIVeL 1.2, ver [xref](#sivel12)) mantenemos abierta una convocatoria 
 pública a auditar las fuentes (ver [xref](#llamado12)) 
 y la distribución de referencia, premiando con dinero a quien encuentre alguna 
-falla de seguridad.  Proxiamente esperamos abrir una convocatoria análoga para
+falla de seguridad.  Proximamente esperamos abrir una convocatoria análoga para
 SIVeL2.
 
 + La versión predecesora y sus fuentes ya han sido auditadas tanto por los 
@@ -59,7 +59,6 @@ Aprendiendo de Jesús (adJ) conforme a la plataforma de operación recomendada,
 procurando que también sea segura, liviana, usable[^intro.1] y constituida por 
 herramientas de dominio público o de licencias cercanas.
 
-[intro.1]: Buscando un buen balance entre seguridad y facilidad.
 
 + Recomendamos de manera especial OpenBSD por sus niveles de seguridad y adJ por 
 su sopoerte al español y porque por defecto las bases de datos y respaldos de 
@@ -75,5 +74,5 @@ versión estable operando sobre la plataforma de operación recomendada
 (i.e la configuración por defecto de la distribución Aprendiendo de Jesús 
 <http://aprendiendo.pasosdeJesus.org>).
 
-
+[intro.1]: Buscando un buen balance entre seguridad y facilidad.
 
