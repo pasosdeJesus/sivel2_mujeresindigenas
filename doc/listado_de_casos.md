@@ -21,7 +21,7 @@ del caso es empleando una URL de la forma
 
 Podrá editar el caso presionando el botón *Editar* de la columna *Acciones* y podrá 
 eliminarlo (tras confirmar) con el botón *Eliminar* de la misma columna.  En el caso
-de analistas y adiministradores de una organización podrán efectuar estas operaciones sólo con
+de analistas y adiministradores de oficina de una organización podrán efectuar estas operaciones sólo con
 los casos de su organización.
 
 Si conoce el número de caso y tiene permiso para editarlo, podrá editarlo empleando un URL de la 
