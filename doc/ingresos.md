@@ -75,7 +75,7 @@ Si no se conoce el mes se recomienda dejar Junio y la etiqueta MES_INEXACTO.
 * Acompañamiento: cultural, juridico, justicia propia, ninguno, psicosocial.
 
 ### Fuentes (#fuentes)
-![]()
+![Fuentes](img/fuentes.png)
 
 * Fuente: familiar, medio de comunicación, otra persona, otro, remisión de otro
   cabildo, remisión institucional, víctima.
@@ -208,7 +208,7 @@ cambiarse el comentario.
   * Editar el caso y presionar "Guardar y Validar" o
   * Desde el listado de casos con el código del caso que es el enlace de la primera columna.
    
-   ![](resumen)
+   ![Resumen](img/resumen.png)
 
 ### Datos privados Acin {#datos_privados_acin}
 
