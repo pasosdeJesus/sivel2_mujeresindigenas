@@ -10,12 +10,13 @@ Aprovecha el sistema para hacer consultas y conteos. Puede ver y editar los caso
 de su organización (es responsable de todos los casos de su organización por cuanto
 puede editarlos todos).
 
-Administrador(a) de Organización: Realiza las misma labores de un analista de su 
+Administrador(a) de Oficina: Realiza las misma labores de un analista de su 
 organización, además es responsable del personal de su organización que tiene acceso al 
-sistema de información y sus roles.
+sistema de información y sus roles. Puede crear o deshabilitar usuarios de su organización,
+puede cambiar parámetros del sistema (organizados en "tablas básicas").
 
 Administrador(a): Debe ser de alta confianza porque puede realizar las labores 
-de administrador de organización para cualquiera de las organizaciones y además es 
+de administrador de oficina para cualquiera de las organizaciones y además es 
 responsable de: (1) todos los casos (por cuanto puede editarlos), (2) de 
 realizar ajustes a los parámetros del sistema (organizados en "tablas básicas"), (3)
 del manejo de usuario de cualquier organizacioń y sus roles.
