@@ -5,7 +5,7 @@
 
 En este sistema de información un caso se asocia a una  víctima que acude a 
 alguna de las organizaciones del  Observatorio de violencias contra las mujeres 
-indígenas formado por las organizaciones CODACOP, ONIC, OIK y ACIN, esta víctima 
+indígenas formado por CODACOP, ONIC, OIK y ACIN, esta víctima 
 puede haber sido agredida en una o en varias oportunidades o haber recibido ayudas de 
 CODACOP, ONIC, OIK o ACIN  en diferentes momentos, pero sigue siendo un mismo caso 
 y todo el historial de apoyos y seguimientos institucionales y del Observatorio de 
@@ -60,9 +60,10 @@ SIN INFORMACIÓN.
 * Administrador y Organización que diligencia no pueden ser modificados por 
 usuarios con rol de analista.
 
-* Fecha de documentación inicial en terreno:  Sera la fecha de referencia para los datos 
-biográficos de la víctima (como edad, discapacidades, etc).  Si no se conoce
-con precisión el día se recomienda dejar 15 y agregar etiqueta DIA_INEXACTO.
+* Fecha de documentación inicial en terreno:  Sera la fecha de referencia para 
+los datos biográficos de la víctima (como edad, discapacidades, etc).  
+Si no se conoce con precisión el día se recomienda dejar 15 y agregar etiqueta 
+DIA_INEXACTO.
 Si no se conoce el mes se recomienda dejar Junio y la etiqueta MES_INEXACTO.
 
 * Documentado en terreno por
@@ -71,7 +72,7 @@ Si no se conoce el mes se recomienda dejar Junio y la etiqueta MES_INEXACTO.
 
 * Estado del caso: acompañado, documentado, o registrado.    
 
-* Acompañamiento: cultural, juridico, justicia propia,ninguno psicosocial.
+* Acompañamiento: cultural, juridico, justicia propia, ninguno, psicosocial.
 
 ### Fuentes (#fuentes)
 ![]()
@@ -92,15 +93,14 @@ Se trata de los datos de la persona que ha sido agredida.
 * La mayoría de cuadros de selección pueden configurarse en tablas básicas 
 (ver  [xref](#tablas_basicas)) típicamente con el mismo nombre: Rango de Edad, 
 Pueblo indígena, Estado civil, Último grado en educación ordinaria.
-* Año de nacimiento: Al elegir el año de nacimiento, automáticamente se 
-  completan automaticamente los campos de edad y el rango de edad.
-* Edad en fecha de documentación inicial e terreno: Al escribirla se 
-  completan automaticamente el año de nacimiento y el otro campo de edad.
+* Año de nacimiento: Al elegir el año de nacimiento, se 
+  completan automaticamente los campos de edad en fecha de documentación 
+  inicial en terreno, edad aniversario actual y rango de edad.
 * Edad/aniversario actual: Al escribirla se completan automaticamente el 
   año de nacimiento y el otro campo de edad.
-* Rango de edad: Es una clasificación para la edad y
-  es útil para conteos. Ejemplo: niñas de 0 a 10 años. Se completa 
-  automáticamente al elegir Año de nacimiento o alguno de los campos de edad.
+* Rango de edad: Es una clasificación para la edad y es útil para conteos. 
+  Ejemplo: niñas de 0 a 10 años. Y se completa automáticamente al elegir 
+  Año de nacimiento o alguno de los campos de edad.
 * Cada sitio geográfico se específica de acuerdo a la división político 
   administrativa de Colombia DIVIPOLA.
 * Si entre las opciones que se le presentan no está el que busca puede agregar el 
@@ -123,8 +123,10 @@ Pueblo indígena, Estado civil, Último grado en educación ordinaria.
 * Liderazgo
 
 #### Eventos de violencia y seguimiento {#eventos_de_violencia_y_seguimiento}
-* Se pueden agregar varios eventos, que quedaran consecutivos uno después de otro.  Para agregar se pulsa el boton __Añadir evento__ y después de creado 
-si queremos borrarlo se pulsa __Eliminar evento__.
+
+* Se pueden agregar varios eventos, que quedaran consecutivos uno después de otro.  
+  Para agregar se pulsa el boton __Añadir evento__ y después de creado 
+ si queremos borrarlo se pulsa __Eliminar evento__.
 * Fecha del seguimiento
 * Año del hecho
 * Mes del hecho
@@ -150,14 +152,16 @@ si queremos borrarlo se pulsa __Eliminar evento__.
   Luego en la columna central elija un primer 
   hecho victimizante atribuido al presunto responsable de la fila esto
   creará un botón con el hecho victimizante.  
-  Continúe elijiendo otros hechos victimizantes que le correspondan al mismo 
+  Continúe eligiendo otros hechos victimizantes que le correspondan al mismo 
   presunto responsable.  
   Si necesita borrar un Hecho victimizante pulse la __x__ del botón.
   Si necesita borrar una fila pulse el botón __Eliminar__ de la tercera
   columna.
 * Testigo 
-* Tipo de afectación: comunitaria, cultural, económica, familiar, fisica, individuual, otra, psicosocial y sin información. 
-* Tipo de apoyo: Comunitario, familiar, institución estatal, Ong, organización índigena, otro, sin informacón.
+* Tipo de afectación: comunitaria, cultural, económica, familiar, fisica, individuual, otra, 
+  psicosocial y sin información. 
+* Tipo de apoyo: Comunitario, familiar, institución estatal, Ong, organización índigena, 
+  otro, sin informacón.
 * Acompañamiento que necesita: Cultural, jurídico, justicia propia, ninguno, sin información.
 * Situación de riesgo: No, si, sin información.
 * Ante quien ha solicitado medidas: Cabildo, estado, estado y cabildo, ninguno, sin información.
@@ -203,6 +207,8 @@ cambiarse el comentario.
   Para llegar al resumen de un caso se puede: 
   * Editar el caso y presionar "Guardar y Validar" o
   * Desde el listado de casos con el código del caso que es el enlace de la primera columna.
+   
+   ![](resumen)
 
 ### Datos privados Acin {#datos_privados_acin}
 
@@ -210,6 +216,8 @@ Los datos privados de Acin se verán con un color azul diferente a
 los demás tanto en la ficha como en el resumén.
 En el resumén hay un botón en la parte superior derecha para ver o
 esconder los campos privados.
+
+![Campos privados Acin](campos_privados_acin)
 
 #### Datos básicos {#datos_básicos}
 
@@ -241,7 +249,7 @@ esconder los campos privados.
 
 * Breve descripción de los hechos
 * Relación entre presunto responsable y víctima: abuelo,  amigo, amigo de la familia,
-	 esposo, hermano, ninguna, novio, padrastro, padre, primo, tío, vecino
+  esposo, hermano, ninguna, novio, padrastro, padre, primo, tío, vecino
 * Afectación individual
 * Afectación cultural /familiar /comunitaria
 * Afectacion física
@@ -263,14 +271,10 @@ esconder los campos privados.
 Los datos privados de OIK se verán con un color azul diferente a 
 los demás tanto en la ficha como en el resumén.
 
-En el resumén hay un botón en la parte superior derecha para ver o
-esconder los campos privados.
-
-
 #### Evento de violencia y seguimiento {#evento_de_violencia_y_seguimiento}
+
 * Seguimiento jurídico
 * Seguimiento psicosocial y cultural
-
   
 [^ingresos.1] La numeración es consecutiva --con saltos cuando se borran casos o se 
 insertan en lote de otro SIVeL. Para efectos de conteos es mejor emplear el 
