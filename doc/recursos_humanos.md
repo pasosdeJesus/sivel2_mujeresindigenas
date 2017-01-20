@@ -1,8 +1,8 @@
 # Recursos humanos {#recursos_humanos}
 
 Para usar el sistema de información de manera continua se requieren personas 
-capacitadas, distribuidas en organizaciones que se conectan desde diversas partes 
-y que cumplan con los siguientes roles:
+capacitadas, distribuidas en oficinas de las organizaciones que se 
+conectan desde diversas partes y que cumplan con los siguientes roles:
 
 Analista: Que recolecta, analiza, clasifica e ingresa información periódicamente 
 para su organización. Es deseable que se entreviste directamente con las víctimas. 
