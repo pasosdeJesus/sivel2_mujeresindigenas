@@ -98,7 +98,7 @@ clave diferente.
 
 Una vez autenticado verá el menú principal.
 
-![Menu Principal](img/menu_principal.png)
+![Menu Principal](img/menu_prin.png)
 
 Dependiendo del rol de su usuario (ver Sección 2, “Recurso Humano”) tendrá o no 
 tendrá acceso a las opciones del menú: Por ejemplo una persona con rol analista no 
