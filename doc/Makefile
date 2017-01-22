@@ -13,7 +13,7 @@ FUENTESDB=introduccion.xdbk recursos_humanos.xdbk infraestructura_tecnologica.xd
 SOURCES=$(PROYECTO).$(EXT_DOCBOOK) $(FUENTESDB)
 # Listado de fuentes XML. Preferiblmente en el orden de inclusión.
 
-IMAGES= img/anexos.png img/autenticacion.png img/aviso.png img/editar_caso.png img/ej-botones.png img/ej-campos.png img/ej-pestanas.png img/estados_civiles.png img/etiquetas.png img/fuentes.png img/lista_de_casos.png img/menu_prin.png img/menu_principal.png img/nivel6.png img/nuevo_estado_civil.png img/nuevo_usuario.png img/seleccion_unica.png img/selmultiple.png img/selunica.png img/tablas_basicas.png img/usuario.png img/victima.png
+IMAGES= img/acin.png img/anexos.png img/autenticacion.png img/aviso.png img/editar_caso.png img/ej-botones.png img/ej-campos.png img/ej-menus.png img/ej-pestanas.png img/estados_civiles.png img/etiquetas.png img/eventos.png img/fuentes.png img/lista_de_casos.png img/menu_prin.png img/menu_principal.png img/nivel6.png img/nuevo_estado_civil.png img/resumen.png img/nuevo_usuario.png img/oik.png img/seleccion_unica.png img/selmultiple.png img/selunica.png img/tablas_basicas.png img/usuario.png img/victima.png
 
 # Listado de imagenes, preferiblemente en formato PNG
 
