@@ -1,0 +1,128 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>7. Administración</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Documentacion del sistema de información para el observatorio de violencia contra mujeres indigenas"><link rel="up" href="index.html" title="Documentacion del sistema de información para el observatorio de violencia contra mujeres indigenas"><link rel="prev" href="ingreso_de_nuevos_casos_y_actualizacion.html" title="6. Ingreso de nuevos casos y actualización"><link rel="next" href="novedades.html" title="8. Apéndice A. Novedades"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">7. Administración</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ingreso_de_nuevos_casos_y_actualizacion.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="novedades.html">Siguiente</a></td></tr></table><hr></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="administracion"></a>7. Administración</h2></div></div></div><p>
+    <span class="strong"><strong>Logros</strong></span>
+  </p><div class="itemizedlist"><ul type="disc"><li><p>
+        Añade y elimina registros a tablas básicas.
+      </p></li><li><p>
+        Puede hacer volcados de la base de datos y sacar copias de forma
+        segura.
+      </p></li></ul></div><p>
+    Un usuario con el rol de Administrador, podrá realizar diversas
+    operaciones desde la interfaz de SIVeL2: administrar usuarios,
+    modificar tablas básicas (con opciones de algunos de los campos de
+    la ficha). El administrador desde su cuenta en el sistema operativo
+    podrá: sacar copias de respaldo manualmente, programar copias
+    automáticas y recuperar copias de respaldo (en la misma base o en
+    otra nueva). También consideramos que debe realizar otras labores
+    con el sistema operativo y la infraestructura de red como:
+    actualizar SIVeL2 y la distribución adJ del sistema operativo cuando
+    se publiquen nuevas versiones (cada 6 meses); auditar seguridad del
+    servidor y solucionar problemas en caso de fallas. Consideramos que
+    también es importante para el administrador sugerir mejoras a la
+    infraestructura tecnológica (ver Sección 3, “Infraestructura
+    Tecnológica”) de su organización, capacitar y dar soporte a los
+    usuarios y en general consideramos que debe ayudar a garantizar que
+    la base esté disponible permanentemente sólo para los usuarios
+    autorizados de la organización.
+  </p><p>
+    En la interfaz web un usuario que no tenga el rol de Administrador
+    no podrá ingresar a modificar tablas básicas ni a manejar usuarios.
+  </p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="labores_administrativas_desde_la_interfaz_web"></a>7.1. Labores administrativas desde la interfaz web</h3></div></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="tablas_basicas"></a>7.1.1. Tablas básicas</h4></div></div></div><p>
+        Ingresando por el menú Administración-&gt;Tablas Básicas puede
+        cambiar parametros de cualquiera de las tablas básicas.
+      </p><div class="figure"><a name="idp1452100464"></a><p class="title"><b>Figura 13. Tablas Básicas</b></p><div class="mediaobject"><img src="img/tablas_basicas.png" alt="Tablas Básicas"></div></div><p>
+        Al elegir una de las tablas, verá los registros que tiene y
+        podrá bien crear uno nuevo (con el enlace Nuevo al final de los
+        registros) o bien editar o eliminar un registro. La siguiente
+        figura ejemplifica los registros de Estados civiles.
+      </p><div class="figure"><a name="idm2477212304"></a><p class="title"><b>Figura 14. Estados civiles</b></p><div class="mediaobject"><img src="img/estados_civiles.png" alt="Estados civiles"></div></div><p>
+        Para no perder compatibilidad entre su instalación de SIVeL2
+        Mujeres Indígenas y la de otras organizaciones, pero a la vez
+        para permitirle personalizar el sistema a sus necesidades de
+        sistematización de información, sugerimos no cambiar ni eliminar
+        los registros de las tablas básicas, sino agregar los que
+        necesite su organización y deshabilitar (poniendo una fecha de
+        deshabilitación) los registros que no requiera. En la siguiente
+        figura se presenta el formulario para añadir un nuevo Estado
+        civil:
+      </p><div class="figure"><a name="idp1452101616"></a><p class="title"><b>Figura 15. Nuevo Estado civil</b></p><div class="mediaobject"><img src="img/nuevo_estado_civil.png" alt="Nuevo Estado civil"></div></div><p>
+        Cada entrada (i.e registro) de una tabla básica tiene una llave,
+        que puede constar de uno o más datos (i.e campos) del registro.
+        Al actualizar tablas básicas tenga en cuenta que no pueden
+        modificarse las llaves. Por ejemplo en una categoría ya
+        ingresada no es posible modificar supracategoría o fecha de
+        violencia. Si requiere actualizar una llave en un registro, debe
+        primero eliminarlo de la tabla básica y después volverlo a
+        añadir haciendo los cambios apropiados.
+      </p><p>
+        En general si añade datos a una tabla cuya llave sea un dato
+        numérico, no necesitará elegir un número para la llave pues el
+        sistema lo hará automáticamente.
+      </p><p>
+        En general la información de cada tabla básica es
+        autoexplicativa, algunas que pueden requerir aclaración
+        adicional son:
+      </p><div class="itemizedlist"><ul type="disc"><li><p>
+            Categoría: No se numeran automáticamente para que cada
+            organización pueda proponer su codificación. El campo
+            "Contada también como Categoría" permite indicar
+            que categorías se replican, para excluirlas de requerirse en
+            conteos. Por ejemplo en el marco conceptual del Banco de
+            Datos del CINEP toda ejecución extrajudicial por persecución
+            política (A10) también es un Homicidio Intencional a Persona
+            Protegida (D701) por lo que en el registro A10 de la tabla
+            Categoría el campo "Contada también como
+            Categoría" debe ser 701.
+          </p></li><li><p>
+            La tabla Presuntos Responsables describe una jerarquía de
+            estructuras, por ejemplo Paramilitares incluye AUC, ACCU,
+            AUTODEFENSAS DEL CASANARE, etc.
+          </p></li><li><p>
+            Al ingresar o editar un presunto responsable se debe
+            especificar si es subestructura de otro presunto
+            responsable. En el marco conceptual por defecto los
+            presuntos responsable que no son subestructura son: POLO
+            ESTATAL, POLO INSURGENTE, OTROS y SIN INFORMACIÓN. Los demás
+            presuntos responsables se clasifican como subestructuras de
+            estos o de otros que a su vez descienden de estos. No deben
+            generarse ciclos al especificar subestructuras --por ejemplo
+            que un presunto responsable A sea subestructura de B y B sea
+            subestructura de A.
+          </p></li></ul></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="usuarios"></a>7.1.2. Usuarios</h4></div></div></div><p>
+        Esta opción del menú presenta el listado de usuarios de la base
+        (como se presenta en la figura)
+      </p><div class="figure"><a name="idp472642160"></a><p class="title"><b>Figura 16. Usuarios</b></p><div class="mediaobject"><img src="img/usuario.png" alt="Usuarios"></div></div><p>
+        Podrá añadir nuevos usuarios y sus contraseñas (como se presenta
+        en la siguiente figura), o cambiar datos, rol y contraseñas de
+        usuarios ya existentes. También puede desbloquear un usuario que
+        haya dado su clave errada más de 3 veces consecutivas, para esto
+        deje en blanco los campos Intentos fallidos, Testigo para
+        desbloquear y Hora del Bloqueo.
+      </p><p>
+        Cuando un usuario deje de laborar con la organización es
+        recomendable dejar la cuenta --pues tiene un historial
+        asociado-- pero deshabilitarla poniendo una fecha de
+        deshabilitación.
+      </p><div class="figure"><a name="idp472645232"></a><p class="title"><b>Figura 17. Nuevo Usuario</b></p><div class="mediaobject"><img src="img/nuevo_usuario.png" alt="Nuevo Usuario"></div></div></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="labores_administrativas_desde_el_interprete_de_comandos"></a>7.2. Labores administrativas desde el interprete de
+    comandos</h3></div></div></div><p>
+      Como las operaciones que se presentan a continuación deben
+      realizarse desde una terminal con un interprete de comandos,
+      recomendamos que lea al respecto (ver por ejemplo
+      ???) y que conozca la
+      ubicación de las fuentes de SIVeL y del sitio o sitios que maneje.
+      Por ejemplo en adJ las fuentes estarán en
+      <code class="literal">/var/www/htdocs/sivel2_mujeresindigenas</code>.
+    </p><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="copias_de_respaldo"></a>7.2.1. Copias de respaldo</h4></div></div></div><p>
+        <code class="literal">RAILS_ENV=production rake sivel2:vuelca</code>
+      </p><p>
+        Saca volcado de la base (i.e un volcado es un archivo con
+        instrucciones SQL para reconstruir la base completa), lo
+        almacena junto con los del último mes en el directorio de
+        respaldo configurado --que por defecto es
+        <code class="literal">/var/www/resbase/sivel2_mujeresindigenas</code> que
+        en adJ está cifrado.
+      </p><div class="literallayout"><p><span class="inlinemediaobject"><img src="img/aviso.png"></span> <span class="strong"><strong><span class="emphasis"><em>Aviso</em></span></strong></span><br>
+Los volcados generados incluyen las fuentes de información. Debe mantenerlos cifrados y con permisos que no permitan lectura por parte de usuarios no autorizados.</p></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="configuraciones"></a>7.2.2. Configuraciones</h4></div></div></div><p>
+        El directorio de respaldo y la ruta donde se guardan anexos se
+        configuran en
+        <code class="literal">config/initializers/sivel2_gen.rb</code>
+      </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ingreso_de_nuevos_casos_y_actualizacion.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="novedades.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">6. Ingreso de nuevos casos y actualización </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 8. Apéndice A. Novedades</td></tr></table></div></body></html>
