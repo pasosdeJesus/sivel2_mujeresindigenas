@@ -20,6 +20,12 @@ Si está seguro que se trata de un caso nuevo, desde el listado de casos presion
 el botón Nuevo. Comience a digitar la información en cada una de las pestañas 
 del formulario --notará que el número de caso será asignado automáticamente[^ingresos.1].
 
+[^ingresos.1]: La numeración es consecutiva --con saltos cuando se 
+	borran casos o se insertan en lote de otro SIVeL. Para efectos 
+	de conteos es mejor emplear el listado de casos (ver Sección 2, 
+	“Listado de Casos”) o las funcionalidades de conteos.
+
+
 El sistema guarda con sólo cambiar de pestaña y finalmente oprimiendo el botón 
 Guardar.  Aunque se sugiere llenar los datos del caso en el orden de las pestañas, 
 podrá pasar de una pestaña a otra e iniciar en la que prefiera. Esto por ejemplo 
@@ -34,15 +40,19 @@ Con SIVeL2 puede editar diversos casos simultanemaente abriendo varias ventanas 
 varias pestaña de su navegador.
 
 La interfaz debe mejorarse continuamente, pero se diseñó con el principio 
-"primero movil," por lo que resulta posible llenar un caso desde un teléfono 
-inteligente con poco ancho de pantalla.  En estos casos es mejor que primero seleccione
-Administrar->Ficha Vertical con lo que el formulario se presentará con
-secciones colapsables verticales en lugar de pestañas horizontales, como esa
-ficha vertical es un diseño adaptativo[4] se ajusta 
-automáticamente a tabletas de diferentes dimensiones --puede probarlo desde una 
-computador de escritorio al cambiar el tamaño de la ventana del navegador para ver 
-como se reorganizan los menús, se escala la imágen de la pantalla inicial y en 
+"primero movil," por lo que resulta posible llenar un caso desde un 
+teléfono inteligente con poco ancho de pantalla.  En estos casos es mejor 
+que primero seleccione __Administrar->Ficha Vertical__ con lo que el 
+formulario se presentará con secciones colapsables verticales en lugar 
+de pestañas horizontales, como esa ficha vertical es un diseño 
+adaptativo[^ingresos.2], se ajusta automáticamente a tabletas de diferentes 
+dimensiones --puede probarlo desde una computador de escritorio al 
+cambiar el tamaño de la ventana del navegador para ver como se 
+reorganizan los menús, se escala la imágen de la pantalla inicial y en 
 general puede llenar un caso.
+
+[^ingresos.2]: En inglés responsive, traducción sugerida en 
+  http://words.carlus.cat/como-podemos-traducir-responsive-web-design/.
 
 #### Datos Básicos {#datos_basicos}
 
@@ -271,15 +281,9 @@ esconder los campos privados.
 Los datos privados de OIK se verán con un color azul diferente a 
 los demás tanto en la ficha como en el resumén.
 
-#### Evento de violencia y seguimiento {#evento_de_violencia_y_seguimiento}
+#### Evento de violencia y seguimiento {#evento_oik}
 
 * Seguimiento jurídico
 * Seguimiento psicosocial y cultural
   
-[^ingresos.1] La numeración es consecutiva --con saltos cuando se borran casos o se 
-insertan en lote de otro SIVeL. Para efectos de conteos es mejor emplear el 
-listado de casos (ver Sección 2, “Listado de Casos”) o las funcionalidades de conteos.
-
-[^ingresos.2] En inglés responsive, traducción sugerida en 
-http://words.carlus.cat/como-podemos-traducir-responsive-web-design/.
 
