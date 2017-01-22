@@ -18,7 +18,8 @@
 
 $(document).on('turbolinks:load ready page:load', function() {
   var root;
-  root = typeof exports !== "undefined" && exports !== null ? exports : window;
+  root = typeof exports !== "undefined" && exports !== null ? 
+	  exports : window;
   root.campo_fecha_ref_edad = 'caso_casosjr_attributes_fecharec'
   sip_prepara_eventos_comunes(root);
   sivel2_gen_prepara_eventos_comunes(root,'antecedentes/causas');
@@ -54,6 +55,14 @@ $(document).on('turbolinks:load ready page:load', function() {
 	  	  placeholder_text_multiple: 'Elije una o varias categorias de violencia',
 		  width: '100%'
 	  })
+  })
+
+  $(document).on('change', '#mostrarprivados', function(e) {
+	  if (this.checked) {
+		  $('.privado').show()
+	  } else {
+		  $('.privado').hide()
+	  }
   })
 });
 

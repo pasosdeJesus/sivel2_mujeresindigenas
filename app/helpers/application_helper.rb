@@ -65,23 +65,6 @@ module ApplicationHelper
     ['SIN INFORMACIÓN', :I]
   ]
 
-  TIENETIERRA = [
-    ["ADJUDICADO", :A],
-    ["COMPRO", :C],
-    [:NO, :N],
-    ["OTRA", :O],
-    [:SI, :S], 
-    ["SIN INFORMACIÓN", :I]
-  ]
-
-  TIPOACOMP = [
-    ["CULTURAL", :C],
-    ["JURÍDICO", :J], 
-    ["JUSTICIA PROPIA", :U], 
-    ["NINGUNO", :N], 
-    ["PSICOSOCIAL", :P]
-  ]
-
   TIPOCONFLICTO = [ 
     ['ARMADO', :A], 
     ['SIN INFORMACIÓN', :I],
@@ -103,6 +86,7 @@ module ApplicationHelper
   end
 
   def self.etiqueta(a, l, sininfoguion=false)
+    return '' if l == ''
     res = a.select do |r|
       r[1].to_s == l.to_s
     end

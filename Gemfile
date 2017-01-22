@@ -6,6 +6,7 @@ source 'https://rubygems.org'
 gem "rails", '~> 5.0.0'
 gem "rails-i18n"
 
+
 # PDF
 gem "prawn"
 gem "prawnto_2",  :require => "prawnto"
@@ -24,7 +25,10 @@ gem "jbuilder"
 
 # SCSS para hojas de estilo
 gem "sass"
-gem "sass-rails"
+
+gem 'font-awesome-rails'   
+
+gem 'chosen'
 
 # Colores en terminal
 gem "colorize"
@@ -53,7 +57,7 @@ gem "chartkick"
 gem "simple_form"
 
 # Formularios anidados (algunos con ajax)
-gem "cocoon", github: "vtamara/cocoon"
+gem "cocoon", git: "https://github.com/vtamara/cocoon.git"
 
 # Autenticación y roles
 gem "devise"
@@ -78,25 +82,24 @@ gem "tzinfo"
 gem "tzinfo-data"
 
 # Motor SIP
-gem 'sip', github: 'pasosdeJesus/sip'
+gem 'sip', git: "https://github.com/pasosdeJesus/sip.git"
 #gem 'sip', path: '../sip'
 
-# Motor de SIVeL 2
-gem 'sivel2_gen', github: 'pasosdeJesus/sivel2_gen'
+# Motor de heb412
+gem 'heb412_gen', git: "https://github.com/pasosdeJesus/heb412_gen.git"
+#gem 'heb412_gen', path: '../heb412_gen'
+
+# Motor de sivel2
+gem 'sivel2_gen', git: "https://github.com/pasosdeJesus/sivel2_gen.git"
 #gem 'sivel2_gen', path: '../sivel2_gen'
 
 # Motor de SIVeL 2 - SJR
-gem 'sivel2_sjr', github: 'pasosdeJesus/sivel2_sjr'
+gem 'sivel2_sjr', git: "https://github.com/pasosdeJesus/sivel2_sjr.git"
 #gem 'sivel2_sjr', path: '../sivel2_sjr'
 
 # Motor Cor1440_gen
-gem 'cor1440_gen', github: 'pasosdeJesus/cor1440_gen'
+gem 'cor1440_gen', git: "https://github.com/pasosdeJesus/cor1440_gen.git"
 #gem "cor1440_gen", path: '../cor1440_gen'
-
-group :doc do
-    # Genera documentación en doc/api con bundle exec rake doc:rails
-    gem "sdoc", require: false
-end
 
 # Los siguientes son para desarrollo o para pruebas con generadores
 group :development do

@@ -22,7 +22,5 @@
 
 [javascriptgoogl] Google JavaScript Style Guide. <http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml>. Rev 2.82. 2013. {#javascritgoogl}
 
-[bdp] Traducción de los evangelios de dominio público y abierta a mejoras. <http://de.geocities.com/nuestroamigoJesus/bdp> 2003. {bdp}
-
-[WEB] World English Bible. <http://www.ebible.org> 2002. {#WEB}
+[bdp] Traducción de los evangelios de dominio público y abierta a mejoras. <http://de.geocities.com/nuestroamigoJesus/bdp> 2003. {#bdp}
 

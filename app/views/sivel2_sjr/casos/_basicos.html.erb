@@ -1,14 +1,26 @@
 <%= f.input :id, readonly: true%>
 
+<%= s.input :consecorg %>
+
+<% if s.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
+  <div class="privado alert-info">
+    <%= s.input :consentimiento, 
+      collection: ApplicationHelper::NOSI,
+      #input_html: {class: 'alert-info'},
+      include_blank: false  %>
+  </div>
+<% end %>
+
 <%= s.input :fecharec, 
-  :input_html => { "data-behaviour" => "datepicker" },
-  :as => :string
+  input_html: { "data-behaviour" => "datepicker" },
+  as: :string
 %>
+
+<%= s.input :docterrenopor %>
 
 <%= s.association :usuario,
   collection: Usuario.all.order(:nombre),
   include_blank: false,
-  #label: "Usuario(a) que diligencia",
   label_method: :nusuario, 
   value_method: :id 
 %>
@@ -27,21 +39,10 @@
   value_method: :id 
 %>
 
-<%= s.input(
-  :tipoacomp, 
-  collection: ApplicationHelper::TIPOACOMP,
-  include_blank: false ) 
+<%= s.association :acompanamiento, 
+  collection: ::Acompanamiento.habilitados,
+  include_blank: false,
+  label_method: :nombre, 
+  value_method: :id 
 %>
 
-<% if s.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
-  <div class="panel panel-default">
-    <div class="panel-heading">Privado ACIN</div>
-    <div class="panel-body">
-      <%= s.input(
-        :consentimiento, 
-        collection: ApplicationHelper::NOSI,
-        include_blank: false ) 
-      %>
-    </div>
-  </div>
-<% end %>

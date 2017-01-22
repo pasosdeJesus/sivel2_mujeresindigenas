@@ -2,16 +2,25 @@ es:
   attributes:
   activerecord:
     models:
-      "sip/oficina":
-        one: "Organización que diligencia"
-        other: "Organizaciones que diligencian"
+      "acompanamiento":
+        one: "Tipo de Acompañamiento"
+        other: "Tipos de Acompañamientos"
       "estadocaso":
         one: "Estado del caso"
         other: "Estados de caso"
+      "sip/oficina":
+        one: "Organización que diligencia"
+        other: "Organizaciones que diligencian"
+      "sivel2_gen/categoria":
+        one: "Hecho Victimizante"
+        other: "Hechos Victimizantes"
     attributes:
+      "acompanamiento":
+        Acompanamiento: "Tipo de Acompañamiento"
+        Acompanamientos: "Tipos de Acompañamientos"
       "consecuenciafamiliar":
-        Consecuenciafamiliar: Afectación familiar
-        Consecuenciasfamiliares: Afectaciones familiares
+        Consecuenciafamiliar: Afectación cultural/familiar/comunitaria
+        Consecuenciasfamiliares: Afectaciones culturales, familiares y comunitarias
       "consecuenciafisica":
         Consecuenciafisica: Afectación física
         Consecuenciasfisicas: Afectaciones físicas
@@ -25,44 +34,54 @@ es:
         Estadocaso: Estado de caso
         Estadoscaso: Estados de caso
       "evento":
+        acompanamiento: Tipo de acompañamiento que necesita
+        acompanamientorec: Tipo de acompañamiento que ha recibido
         acompnecesita: Acompañamiento que necesita
         actividadesdejadas: Actividades que se dejaron de hacer
         afectacionotra: Afectación a otra persona
-        anio: Año
+        anio: Año hecho
         aniodenuncia: Año denuncia
         avancescaso: Avances del caso
         brindadaproteccion: ¿Le ha brindado protección?
         compromisosadquiridos: Compromisos adquiridos ¿Cuales y con quien?
-        consecuenciafamiliar: Afectación familiar
+        comunidad: Comunidad/vereda del hecho
+        consecuenciafamiliar: Afectación cultural/familiar/comunitaria
         consecuenciafisica: Afectación física
         consecuenciaindividual: Afectación individual
+        departamento: Departamento del hecho
         descripcionafectacion: Breve descripción de los hechos
         denuncia: Denuncia
-        dia: Día
+        dia: Día hecho
         diadenuncia: Día denuncia
         etapaproceso: Etapa del proceso
-        fecha: Fecha
+        fecha: Fecha hecho 
         fechadenuncia: Fecha de la denuncia
+        fechaseguimiento: Fecha del seguimiento
         denunciaante: ¿Denuncia ante quien?
         diainexacto: Día inexacto
         diasemana: Día de la semana
         medidasrecibidas: Medidas recibidas
-        mes: Mes
+        mes: Mes hecho
         mesdenuncia: Mes denuncia
         motivonodenuncia: Motivo para no denunciar
+        municipio: Municipio del hecho
         numvecesantes: Número de veces antes
         observaciones: Observaciones generales
+        quereparacion: ¿Cúal reparación?
         quisieradenunciar: ¿Quisiera denunciar?
         reaccionfamiliaycomunidad: Reacción de la familia y la comunidad
         recibidoreparacion: ¿Ha recibido reparación?
         relacionadocon: Relacionado con conflicto
         relacionprvic: Relación entre presunto resp. y víctima
+        resguardo: Resguardo del hecho
+        sancionadovictimario: ¿Ha sido sancionado el victimario?
         seguimientojudicial: Seguimiento Judicial
         seguimientopsicosocial: Seguimiento Psicosocial
         situacionriesgo: Situación de riesgo
         solicitomedidas: Ante quien ha solicitado medidas
         tafectacion: Tipo de afectación
-        tapoyo: Tipo de apoyo
+        tapoyo: Tipo de apoyo que ha recibido
+        telcontacto: Teléfono de contacto
         testigo: Testigo
         valoracionjusticia: Valoración de la atención en materia de justicia
       "motivonodenuncia":
@@ -84,28 +103,35 @@ es:
       "sivel2_gen/caso":
         id: Código
         contacto: Víctima
-        fecharec: Fecha documentación ini.
+        fecharec: Fecha documentación inicial en terreno
         oficina: Organizacion que diligencia
       "sivel2_sjr/casosjr":
+        acompanamiento: "Acompañamiento"
+        consecorg: Código en organización
         contacto: Víctima
+        docterrenopor: Documentado en terreno por
         estadocaso: "Estado del caso"
-        fecharec: Fecha documentación ini.
+        fecharec: Fecha documentación inicial en terreno
+        fechanac: Fecha de nacimiento
         oficina: Organizacion que diligencia
         residencia: Residencia actual
         tipoacomp: Acompañamiento
-        usuario: Documentado por
+        usuario: Sistematizado por
       "sivel2_gen/caso_fuenteprensa":
         ubicacion: "Detalle Otra Fuente"
+      "sivel2_gen/categoria":
+        Categoria: "Hecho Victimizante"
+        Categorias: "Hechos Victimizantes"
       "sivel2_gen/victima":
         etnia: Pueblo indigena / Etnia
-        rangoedad: Rango de edad en fecha de documentacion
-        edad: Edad en fecha de documentación
+        rangoedad: Rango de edad en fecha de documentacion inicial en terreno
+        edad: Edad en fecha de documentación inicial en terreno
       "sivel2_sjr/victimasjr":
         areatierra: Área tierra
         cabezahogar: Cabeza del hogar
         comoingresos: ¿Cómo genera ingresos económicos?
-        comunidadnac: Comunidad de nacimiento
-        comunidadres: Comunidad de residencia
+        comunidadnac: Comunidad/vereda de nacimiento
+        comunidadres: Comunidad/vereda de residencia
         departamentores: Departamento de residencia
         educacionpropia: Educación propia
         escolaridad: Último grado en educación ordinaria
@@ -119,7 +145,6 @@ es:
         sistemasalud: Tiene carnet de salud
         tienetierra: Tiene tierra
         tipoliderazgo: Tipo de liderazgo
-        veredares: Vereda de residencia
       "relacionprvic":
         Relacionprvic: Relación entre presunto resp. y víctima
         Relacionesprvic: Relaciones entre presunto resp. y víctima
@@ -130,4 +155,3 @@ es:
         Tapoyo: Tipo de apoyo
         Tapoyos: Tipos de apoyo
       "usuario":
-        oficina: Organización

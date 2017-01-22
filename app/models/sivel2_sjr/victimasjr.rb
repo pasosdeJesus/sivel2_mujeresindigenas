@@ -13,6 +13,18 @@ class Sivel2Sjr::Victimasjr < ActiveRecord::Base
   belongs_to :municipiores, class_name: 'Sip::Municipio',
     foreign_key: 'municipiores_id', validate: true
 
+  has_many :idioma_victimasjr, class_name: "::IdiomaVictimasjr", 
+    foreign_key: "sivel2_sjr_victimasjr_id", validate: true
+  has_many :idioma, through: :idioma_victimasjr, class_name: "Sivel2Sjr::Idioma"
+
+
+  has_many :tienetierra_victimasjr, 
+    class_name: "::TienetierraVictimasjr", 
+    foreign_key: "sivel2_sjr_victimasjr_id", validate: true
+  has_many :tienetierra, through: :tienetierra_victimasjr, 
+    class_name: "::Tienetierra"
+
+
   #validates :areatierra, null o positivo
   validates :cabezahogar, length: { maximum: 1}
   validates :comoingresos, length: { maximum: 5000 }
@@ -28,6 +40,6 @@ class Sivel2Sjr::Victimasjr < ActiveRecord::Base
   validates :sistemasalud, length: { maximum: 1 }
   validates :tienetierra, length: { maximum: 1}
   validates :tipoliderazgo, length: { maximum: 5000 }
-  validates :veredares, length: { maximum: 500 }
+  #validates :veredares, length: { maximum: 500 }
   validates :vicconflicto, length: { maximum: 1}
 end

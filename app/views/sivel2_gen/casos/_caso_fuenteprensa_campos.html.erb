@@ -4,19 +4,19 @@
         f.object = Sivel2Gen::CasoFuenteprensa.new if !f.object
     %>
 
-    <%= f.input :fecha, 
-      input_html: { 
-        "data-behaviour" => "datepicker",
-        "value" => @caso.fecha
-      },
-      :as => :string, 
-      :label => "Fecha" 
-    %>
-
     <%= f.association :fuenteprensa,
       collection: Sip::Fuenteprensa.habilitados,
       label_method: :nombre,
       value_method: :id 
+    %>
+
+    <%= f.input :fecha, 
+      input_html: { 
+        "data-behaviour" => "datepicker",
+        "value" => f.object.fecha || @caso.fecha
+      },
+      :as => :string, 
+      :label => "Fecha" 
     %>
 
     <%= f.input :ubicacion %>

@@ -28,35 +28,39 @@ de la aplicación por ejemplo:
 * Pestañas: Al ver la ficha de un caso en formato horizontal (como se presenta 
 por omisión), las pestañas corresponden a secciones de la ficha seleccionables 
 con los cuadritos de la parte superior.  Son: Datos básicos, Fuentes, 
-Datos de la víctima, Eventos de violencia, Anexos y Etiquetas.  
+Datos de la víctima, Eventos de violencia y Seguimiento, Anexos y Etiquetas.  
 Al pulsar sobre cada una para seleccionar una sección cambian de color y se 
 despliegan los campos que corresponden a la sección.
  ![Pestañas](img/ej-pestanas.png)
 
 * Campos: Son cada uno de los espacios para completar información del caso por 
-ejemplo en la pestaña Datos básicos Fecha de documentación, 
-Documentado por, Organización, etc.  
+ejemplo en la pestaña Datos básicos Fecha de documentación inicial en terreno, 
+Sistematizado por, Organización, etc.  
 ![Campos](img/ej-campos.png)
-
-	* Campo de selección única: Los identifica porque tienen al lado
-	derecho una pequeña flecha. Al pulsar en un campo de selección única se 
-	despliega una lista de opciones y sólo permite elegir una.
-
-	![Campo de selección única](img/seleccion_unica.png)
-
-	En este tipo de campos selección para elegir más rápido una opción 
-	podrá comenzar a escribir la palabra con la que comienza.
-
-	* Campos de selección múltiple: permiten seleccionar/deseleccionar 
-	varias opciones. Para hacerlo presione la tecla **Control** mientras 
-	pulsa el botón izquierdo del ratón.
-
-	![Campo de selección múltiple](img/selmultiple.png)
-
+	* Campos abiertos: Son campos donde se puede escribir cualquier 
+	    palabra o número sin restricciones.
+	* Campos cerrados: Son campos donde se puede escoger una o varias 
+  	  de las opciones ya establecidas puede ser por una tabla básica.
+	  Pueden ser de dos tipos:
+		* Campo de selección única: Los identifica porque tienen al 
+		  lado derecho una pequeña flecha. Al pulsar en un campo de 
+		  selección única se despliega una lista de opciones y sólo 
+	 	  permite elegir una.  
+	 	  ![Campo de selección única](img/seleccion_unica.png)
+		  En este tipo de campos selección para elegir más rápido 
+		  una opción podrá comenzar a escribir la palabra con la 
+	  	  que comienza.
+		* Campos de selección múltiple: permiten 
+	 	  seleccionar/deseleccionar varias opciones. Para hacerlo 
+		  presione la tecla **Control** mientras pulsa el botón 
+		  izquierdo del ratón.
+		  
+		  ![Campo de selección múltiple](img/selmultiple.png)
+	
 * Botones: Son cajas de color (típicamente azul, gris  o rojo) con un texto 
 que describe la acción que realiza, al colocar el puntero del ratón sobre ellos 
-aparece una manito indicando que al pulsar se realiza la acción. En el
-ejemplo siguiente son botones los marcados con "Validar y Guardar" y 
+aparece una manita indicando que al pulsar se realiza la acción. En el
+ejemplo siguiente son botones los marcados con "Validar y Guardar",  
 "Cancelar".
 
 ![Botones](img/ej-botones.png)
@@ -94,7 +98,7 @@ clave diferente.
 
 Una vez autenticado verá el menú principal.
 
-![Menu Principal](img/menu_principal.png)
+![Menu Principal](img/menu_prin.png)
 
 Dependiendo del rol de su usuario (ver Sección 2, “Recurso Humano”) tendrá o no 
 tendrá acceso a las opciones del menú: Por ejemplo una persona con rol analista no 

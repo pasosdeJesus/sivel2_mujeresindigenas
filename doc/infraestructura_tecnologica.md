@@ -1,15 +1,19 @@
 # Infraestructura Tecnológica  {#infraestructura_tecnologica}
  
 También se requiere mantener una infraestructra tecnológica, que en la 
-personalización de SIVeL2 para Mujeres Indígenas corresponde a la siguiente 
+personalización de SIVeL2 para Mujeres Indígenas corresponde a:
 (ver otras posibles en la documentación de SIVeL genérico en http://sivel.sf.net/):
 
-* **Nivel 6** Una zona desmilitarizada (DMZ), con un cortafuegos en OpenBSD/adJ, una 
-zona para el servidor con SIVeL2 personalizado para Mujeres Indígenas y otra zona 
-para la red local. Soporta usuarios en la red local y en internet. Esta configuración 
-aisla más la red local del servidor.
+* Servidor de Pasos de Jesús colocada en un centro de datos confiable 
+  (el del CINEP).  El hardware se renueva y afina periodicamente.
+* Servidor conectado a Internet mediante un enlace de fibra óptica de 20MB 
+  de bajada y 12MB de subida.  La conexión se afina y mejora periodicamente.
+* Sistema operativo adJ en servidor afinado y actualizado cada 6 meses.
+* Copias de respaldo automáticas diarias y verificación mensual de las mismas.
+* Monitoreo de seguridad mensual a servidor y su tráfico.
 
-![Infraestructura tecnológica](img/nivel6.png)
+Reiteramos la recomendación a los usuarios de utilizar Ubuntu para conectarse
+al servidor para aumentar seguridad.
 
 
 
