@@ -104,6 +104,7 @@ es:
         id: Código
         contacto: Víctima
         fecharec: Fecha documentación inicial en terreno
+        nusuario: Sistematizado por
         oficina: Organizacion que diligencia
       "sivel2_sjr/casosjr":
         acompanamiento: "Acompañamiento"
