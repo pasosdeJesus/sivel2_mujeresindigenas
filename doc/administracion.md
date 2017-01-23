@@ -110,6 +110,31 @@ poniendo una fecha de deshabilitación.
 
 ![Nuevo Usuario](img/nuevo_usuario.png)
 
+### Copia de respaldo cifrada {#copia_de_respaldo_cifrada}
+
+Se recomienda usarlo con periodicidad (por ejemplo mensual) para descargar 
+y archivar un respaldo seguro de los anexos y la base de datos.  Un respaldo 
+de estos se puede usar para reconstruir el sitio o para cambiar de hospedaje 
+o de plataforma si alguna vez lo requieren  (esperamos que no).
+
+Se recomienda elegir una clave que sólo las personas responsables de la 
+organización conozcan y cambiarla por ejemplo anualmente.  
+
+> ![Aviso](img/aviso.png)
+> ***Aviso***  
+> *La clave es indispensable para acceder al archivo de respaldo.*
+> *Si olvidan la clave perderán la información.*
+
+Se realiza desde el menú __Administración->Respaldo cifrado__ que lo
+conducirá a formulario que solicita clave y confirmación. 
+
+Una vez de una clave y su confirmación se descargará un archivo, se trata
+de un comprimido de los anexos y de la base de datos pero cifrado con la
+clave que suministró y un algoritmo de cifrado (AES-256).
+
+Para poder descomprimir y descifrar el archivo descargado se requiere el 
+programa 7-zip disponible en [http://7-zip.org](http://7-zip.org)
+
 
 ## Labores administrativas desde el interprete de comandos {#labores_administrativas_desde_el_interprete_de_comandos}
 
@@ -138,5 +163,5 @@ autorizados.
 ### Configuraciones {#configuraciones}
 
 El directorio de respaldo y la ruta donde se guardan anexos se configuran en 
-```config/initializers/sivel2_gen.rb```
+```config/initializers/sip.rb```
 
