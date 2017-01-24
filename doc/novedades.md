@@ -14,8 +14,9 @@
 	* En el resumen de un caso se elimino "Fecha desplazamiento emb"  
 	
 	* Nuevos campos en ficha común:
-		* En pestaña Datos Básicos se añadió un nuevo campo abierto para 
-	 	  número consecutivo particular de cada organización 
+		* En pestaña Datos Básicos se añadió un nuevo campo 
+		  abierto para número consecutivo particular de cada 
+		  organización
 		* En pestaña Datos básicos se añadió un campo abierto 
 		  "Documentado en terreno por"
 	 	* En pestaña Evento y seguimiento se agregó un campo
@@ -59,7 +60,7 @@
 		  omisión comience con la Fecha de documentación inicial en 
 		  terreno.
 
-	* Re-ordenadas ficha ACIN impresa así como en el sistema:
+	* Reordenadas ficha ACIN impresa así como en el sistema:
 		* En ACIN pestaña Eventos y seguimientos se añadió 
 	 	  campo abierto "Teléfono de contacto" después de 
 		  "Acompañamiento que necesita" 
@@ -101,7 +102,7 @@
 	* Se renombraron
 		* En conteos se renombró columna "Contacto" 
 		  para que fuera "Víctima"
-		* Se re-nombró la tabla básica "Categoría" para que 
+		* Se renombró la tabla básica "Categoría" para que 
 		  fuera "Hechos Victimizantes"
 		* En la pestaña Víctima se unificaron "Vereda de 
 		  residencia" y "Comunidad de residencia" en 
