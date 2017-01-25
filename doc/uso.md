@@ -44,7 +44,7 @@ los elementos visuales de la aplicación por ejemplo:
 
     * Campos abiertos: Son campos donde se puede escribir 
       cualquier palabra o número sin restricciones.  
-      Por ejemplo en la pesta Datos 
+      Por ejemplo en la pestaña Datos 
       básicos el campo __Documentado en terreno por__
       ![Campos](img/ej-campos.png)
 
