@@ -2,7 +2,7 @@
 ## Ingreso de nuevos casos y actualización  
 {#ingreso_de_nuevos_casos_y_actualizacion}
 	 
-### Ficha Común  {#ficha_comun}
+### Ficha Común {#ficha_comun}
 
 En este sistema de información un caso se asocia a una  víctima que acude 
 a alguna de las organizaciones del  Observatorio de violencias contra las 
@@ -29,7 +29,7 @@ asignado automáticamente[^ingresos.1].
   “Listado de Casos”) o las funcionalidades de conteos.
 
 
-El sistema guarda con sólo cambiar de pestaña así como pulsando
+El sistema guarda con solo cambiar de pestaña así como pulsando
 el botón __Validar y Guardar__.  Aunque se sugiere llenar los datos del 
 caso en el orden de las pestañas, podrá pasar de una pestaña a otra e 
 iniciar en la que prefiera. 
@@ -121,7 +121,7 @@ típicamente con el mismo nombre, por ejemplo Rango de Edad, Pueblo
 indígena, Estado civil, Último grado en educación ordinaria.
 
 * Año de nacimiento: Al elegir el año de nacimiento, se completan 
-  automaticamente los campos de __Edad en fecha de documentación 
+  automáticamente los campos de __Edad en fecha de documentación 
   inicial en terreno__, __Edad aniversario actual__ y __Rango de edad__
 * Edad en fecha de documentación inicial en terrerno: Es la cantidad
   de años entre el año de nacimiento y al fecha de documentación. Al 
@@ -195,10 +195,10 @@ creado si queremos borrarlo se pulsa __Eliminar evento__.
   Si necesita borrar una fila pulse el botón __Eliminar__ de la tercera
   columna.
 * Testigo 
-* Tipo de afectación: comunitaria, cultural, económica, familiar, fisica, 
-  individuual, otra, psicosocial y sin información. 
+* Tipo de afectación: comunitaria, cultural, económica, familiar, física, 
+  individual, otra, psicosocial y sin información. 
 * Tipo de apoyo: Comunitario, familiar, institución estatal, ONG, 
-   organización índigena, otro, sin informacón.
+   organización indígena, otro, sin información.
 * Acompañamiento que necesita: Cultural, jurídico, justicia propia, 
   ninguno, sin información.
 * Situación de riesgo: No, si, sin información.
@@ -212,9 +212,9 @@ creado si queremos borrarlo se pulsa __Eliminar evento__.
 * Mes denuncia 
 * Día denuncia
 * Motivo para no denunciar: desconocimiento de donde denunciar, falta de 
-  credibiidad en autoridad indígena, falta de credibiidad en entidades 
-  estatales, miedo a posibles retaeaciones, no considera quel los hechos 
-  son violación a sus derechos, otro, prevenir habladuria, sin 
+  credibilidad en autoridad indígena, falta de credibilidad en entidades 
+  estatales, miedo a posibles retaleaciones, no considera que los hechos 
+  son violación a sus derechos, otro, prevenir habladuría, sin 
   información, vergüenza
 * Valoración de la atención en materia de justicia: sin información, 
   buena, regular, mala.
@@ -229,7 +229,7 @@ quedan almacenados en una partición cifrada. Para bajar un articulo de
 prensa en internet, se guarda en el PC en formato PDF y luego se anexa.
 
 * Fecha: Si es un artículo de prensa la fecha será la misma del artículo.
-* Descripcion: Siempre se debe escribir algún cometario.
+* Descripción: Siempre se debe escribir algún comentario.
 * Archivo: Da la opción de descargar el archivo del computador. 
 
 #### Etiquetas {#etiquetas}
@@ -293,7 +293,7 @@ esconder los campos privados.
   tío, vecino
 * Afectación individual
 * Afectación cultural /familiar /comunitaria
-* Afectacion física
+* Afectación física
 * Actividades que se dejaron de hacer: Se refiere a la actividad que 
   desempeñaba la víctima en el momento de la agresión.
 * Reacción de la familia y la comunidad
@@ -310,7 +310,7 @@ esconder los campos privados.
 ### Datos privados OIK {#datos_privados_oik}
 
 Los datos privados de OIK se verán con un color azul diferente a 
-los demás tanto en la ficha como en el resumén.
+los demás tanto en la ficha como en el resumen.
 
 ![Resumen de un caso OIK](img/oik.png)
 
