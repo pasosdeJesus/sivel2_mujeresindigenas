@@ -27,8 +27,10 @@ Hemos procurado que la operación de SIVeL2 sea simple, basta que
 tenga en cuenta generalidades de la interacción con su navegador y 
 los elementos visuales de la aplicación por ejemplo:
 
-* Menús: Se presentan en la parte superior y permiten ingresar a 
-  las diversas funcionalidades del sistema
+* Menús: Es un conjunto de opciones disponibles para que 
+  el usuario escoja una y permite ingresar a las diversas 
+  funcionalidades del sistema.  Se presenta en la parte 
+  superior.
  ![Menús](img/ej-menus.png)
 
 * Pestañas: En la ficha en formato horizontal son las secciones de 
