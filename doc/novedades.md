@@ -16,7 +16,7 @@
 	* Nuevos campos en ficha común:
 		* En pestaña Datos Básicos se añadió un nuevo campo 
 		  abierto para número consecutivo particular de cada 
-		  organización
+		  organización "Código en organización"
 		* En pestaña Datos básicos se añadió un campo abierto 
 		  "Documentado en terreno por"
 	 	* En pestaña Evento y seguimiento se agregó un campo
@@ -44,7 +44,7 @@
 	   	  a campo de selección múltiple. Se creo con nueva tabla básica 
 	 	  "Tipo de acompañamiento"
 		* En la pestaña "Víctima" se permiten marcar varias 
-		  opciones para el idioma
+		  opciones para "Idioma"
 		* En la pestaña "Eventos y seguimientos" ahora se 
 		  permiten múltiples opciones en "Motivo para no denunciar"
 		* En la pestaña "Eventos y seguimientos" el Tipo de 
@@ -75,7 +75,7 @@
 		  de información "Tipo de acompañamiento" en la pestaña 
 		  Básicos y en la pestaña Eventos "Tipo de acompañamiento 
 		  que ha recibido" y "Tipo de acompañamiento que necesita". 
-		* En pestaña Eventos y seguimientos se re-ubicó 
+		* En pestaña Eventos y seguimientos se reubicó 
 		  "Actividades que se dejaron de hacer", "Reacción de 
 		  familia y comunidad", "Afectación a otra persona" 
 		  después de "Tipo de Apoyo".
@@ -86,15 +86,15 @@
 		* En la pestaña Fuente se intercambió el orden de 
 		  "Fuente" y "Fecha"
 		* En la pestaña Eventos y seguimientos se 
-		  re-ubicó "Avances del caso", "Etapa del proceso" y 
+		  reubicó "Avances del caso", "Etapa del proceso" y 
 		  "Ha recibido reparación" después de "Fecha de la 
 		  denuncia"
 		* En la pestaña Eventos y seguimientos se 
-		  re-ubicó "Afectaciones individuales", Afectaciones 
+		  reubicó "Afectaciones individuales", Afectaciones 
 		  culturales", "Afectaciones familiares y comunitarias"
 		  entre "Tipo de Afectación" y "Tipo de Apoyo"
 		* En la pestaña Eventos y seguimientos se 
-		  re-ubicó "Breve descripción de hechos" 
+		  reubicó "Breve descripción de hechos" 
 		  para que quedara después de "Relacionado 
 		  con el conflicto" 
 	
