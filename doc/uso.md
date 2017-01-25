@@ -57,6 +57,7 @@ los elementos visuales de la aplicación por ejemplo:
           Al pulsar en un campo de selección única se despliega una 
 	  lista de opciones y sólo permite elegir una.  
           ![Campo de selección única](img/seleccion_unica.png)
+	  
           En este tipo de campos selección para elegir más rápido 
 	  una opción podrá comenzar a escribir la palabra con la 
 	  que comienza.  
