@@ -1,6 +1,5 @@
 
-## Ingreso de nuevos casos y actualización  
-{#ingreso_de_nuevos_casos_y_actualizacion}
+## Ingreso de nuevos casos y actualización  {#ingreso_de_nuevos_casos_y_actualizacion}
 	 
 ### Ficha Común {#ficha_comun}
 

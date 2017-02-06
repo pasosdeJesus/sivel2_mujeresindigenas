@@ -1,8 +1,8 @@
  
 # Apéndice A. Novedades {#novedades}
 * Versión 2.0b2 
-	* En Nuevo menú __Administrar->Respaldo Cifrado__ se creo un -- 
-	que tiene como función descargar una copia de respaldo cifrada 
+	* Se creó nuevo menú __Administrar->Respaldo Cifrado__ 
+	que permite descargar una copia de respaldo cifrada 
 	(ver [xref](#copia_de_respaldo_cifrada))
 	* En la ficha de edición de un caso (ver [xref](#ficha_comun))
 	   se retiraron las secciones que decían "Privado ACIN" y 
@@ -35,12 +35,12 @@
   
 
 	* Campos que ahora son cerrados 
-		* En la pestaña Eventos "Tiene tierra" fue cambiado a  
-		  selección múltiple. Fue creada una nueva tabla 
-		  básica "Tiene tierra"
+		* En la pestaña Eventos "Tiene tierra" fue cambiado a 
+		  selección múltiple. Fue creada una nueva tabla básica 
+		  "Tiene tierra"
 
 	* Campos que ahora son de selección múltiple
-		* En pestaña datos básicos, Acompañamiento se cambio a
+		* En pestaña datos básicos, Acompañamiento se cambio
 	   	  a campo de selección múltiple. Se creo con nueva tabla básica 
 	 	  "Tipo de acompañamiento"
 		* En la pestaña "Víctima" se permiten marcar varias 
@@ -59,12 +59,14 @@
 		* Fecha de seguimiento en nuevos Eventos ahora por 
 		  omisión comience con la Fecha de documentación inicial en 
 		  terreno.
+		* Se quitó la validación de fecha de la fuente, para permitir 
+		  que sea anterior a la fecha de registro
 
 	* Reordenadas ficha ACIN impresa así como en el sistema:
-		* En ACIN pestaña Eventos y seguimientos se añadió 
+		* En pestaña Eventos y seguimientos se añadió 
 	 	  campo abierto "Teléfono de contacto" después de 
 		  "Acompañamiento que necesita" 
-		* En ACIN en pestaña Eventos y seguimientos se creo 
+		* En pestaña Eventos y seguimientos se creo 
 		  nuevo campo abierto "¿Cual reparación?" a 
 		  continuación de "Ha recibido reparación" 
 		* En la pestaña Datos Básicos se subió Consentimiento 

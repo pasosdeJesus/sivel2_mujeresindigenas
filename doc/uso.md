@@ -28,7 +28,7 @@ tenga en cuenta generalidades de la interacción con su navegador y
 los elementos visuales de la aplicación por ejemplo:
 
 * Menú: Es un conjunto de opciones disponibles para que 
-  el usuario escoja una y permite ingresar a las diversas 
+  el usuario escoja y permitirle así ingresar a las diversas 
   funcionalidades del sistema.  Se presenta en la parte 
   superior.
  ![Menús](img/ej-menus.png)
@@ -80,8 +80,7 @@ los elementos visuales de la aplicación por ejemplo:
   ![Botones](img/ej-botones.png)
 
 
-### Inicio de una sesión y autenticación 
-{#inicio_de_una_sesion_y_autenticacion}
+### Inicio de una sesión y autenticación {#inicio_de_una_sesion_y_autenticacion}
 
 Desde un computador seguro (preferiblemente con OpenBSD o 
 Ubuntu) ingrese a su navegador y en la barra de direcciones 
