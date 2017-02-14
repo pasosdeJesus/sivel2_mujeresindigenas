@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/cor1440_gen.git
-  revision: 51c7a4a111914ee73d59e27b43415104c99254c5
+  revision: f988539935e535d93f26ecc4e53bf40525b5abc3
   specs:
     cor1440_gen (1.0.b1)
       devise
@@ -10,13 +10,13 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: e5a5288b4646ec430bf5270ec2e8ff9b348bffcb
+  revision: 4eb9f1b11db220d71b8bc6b83e18737700a1be14
   specs:
     heb412_gen (1.0.a1)
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: b4904a0f2db351c9cde19244c86db59b38951612
+  revision: ee7f74f4024e9621949af3519bc381fe83fa6141
   specs:
     sip (2.0.b2)
       bootstrap-datepicker-rails
@@ -36,7 +36,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sivel2_gen.git
-  revision: 16393ac02879c1e5a107e2297385129c9b4bb8b3
+  revision: 97d0e7db1590b9e97b1496903bd42c05e0bb621a
   specs:
     sivel2_gen (2.0b2)
       devise
@@ -45,7 +45,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sivel2_sjr.git
-  revision: fb655494b8f8cbe44fc6c044cc9efb415e3f3663
+  revision: 7168d3b86b2cc6e4a2ba3e48d7ca85963039e571
   specs:
     sivel2_sjr (2.0.b1)
       rails
@@ -100,7 +100,7 @@ GEM
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
     arel (7.1.4)
-    autoprefixer-rails (6.6.1)
+    autoprefixer-rails (6.7.0)
       execjs
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
@@ -113,7 +113,7 @@ GEM
     builder (3.2.3)
     camertron-eprun (1.1.1)
     cancancan (1.15.0)
-    capybara (2.11.0)
+    capybara (2.12.0)
       addressable
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -302,7 +302,7 @@ GEM
     simple_form (3.4.0)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
-    simplecov (0.12.0)
+    simplecov (0.13.0)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
@@ -344,14 +344,14 @@ GEM
     unicorn (5.2.0)
       kgio (~> 2.6)
       raindrops (~> 0.7)
-    warden (1.2.6)
+    warden (1.2.7)
       rack (>= 1.0)
     web-console (3.4.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
       debug_inspector
       railties (>= 5.0)
-    websocket-driver (0.6.4)
+    websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
     will_paginate (3.1.5)
