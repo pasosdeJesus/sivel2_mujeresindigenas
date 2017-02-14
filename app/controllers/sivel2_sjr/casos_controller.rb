@@ -61,7 +61,8 @@ module Sivel2Sjr
           ::Eventopresponsable.delete_all(evento_id: ev.id)
         end
       end
-      sivel2_sjr_destroy
+      @caso.casosjr.destroy if @caso.casosjr
+      sivel2_gen_destroy
     end
 
     def caso_params
