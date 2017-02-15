@@ -104,7 +104,8 @@ selección en la opción SIN INFORMACIÓN.
 * Fuente: familiar, medio de comunicación, otra persona, otro, 
   remisión de otro cabildo, remisión institucional, víctima.
 
-* Fecha
+* Fecha: no debe estar en blanco. No debe haber dos fuentes con la misma 
+  fuente y fecha
 
 * Detalle Otra Fuente
 
