@@ -14,6 +14,9 @@ es:
       "sivel2_gen/categoria":
         one: "Hecho Victimizante"
         other: "Hechos Victimizantes"
+      "tienetierra":
+        one: "Tiene tierra"
+        other: "Tiene tierras"
     attributes:
       "acompanamiento":
         Acompanamiento: "Tipo de Acompañamiento"
@@ -88,7 +91,7 @@ es:
         Motivonodenuncia: Motivo para no denunciar
         Motivosnodenuncia: Motivos para no denunciar
       "religion":
-        Religion: Religion
+        Religion: Religión
         Religiones: Religiones
       "sip/fuenteprensa":
         Fuenteprensa: Fuente
@@ -155,4 +158,7 @@ es:
       "tapoyo":
         Tapoyo: Tipo de apoyo
         Tapoyos: Tipos de apoyo
+      "tienetierra":
+        Tienetierra: Tiene tierra
+        Tienetierras: Tiene tierras
       "usuario":

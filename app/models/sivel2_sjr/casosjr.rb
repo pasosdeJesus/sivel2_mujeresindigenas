@@ -11,7 +11,8 @@ class Sivel2Sjr::Casosjr < ActiveRecord::Base
 
   has_many :acompanamiento_casosjr, 
     class_name: "::AcompanamientoCasosjr", 
-    foreign_key: "sivel2_sjr_casosjr_id", validate: true
+    foreign_key: "sivel2_sjr_casosjr_id", validate: true,
+    dependent: :delete_all
   has_many :acompanamiento, through: :acompanamiento_casosjr, 
     class_name: "::Acompanamiento"
 
