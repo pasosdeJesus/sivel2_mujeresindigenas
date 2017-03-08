@@ -58,7 +58,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=caso_victima_attributes_0_persona_attributes_id_municipio</td>
+	<td>css=#caso_victima_attributes_0_persona_attributes_id_municipio option[value=849]</td>
 	<td></td>
 </tr>
 <tr>
@@ -69,6 +69,11 @@
 <tr>
 	<td>clickAndWait</td>
 	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Eliminar</td>
 	<td></td>
 </tr>
 <tr>
@@ -86,7 +91,6 @@
 	<td>link=Mujeres Indigenas 2.0b2</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

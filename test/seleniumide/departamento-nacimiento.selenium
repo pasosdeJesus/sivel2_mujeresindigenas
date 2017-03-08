@@ -52,11 +52,6 @@
 	<td>label=15</td>
 </tr>
 <tr>
-	<td>select</td>
-	<td>id=caso_victima_attributes_0_persona_attributes_id_departamento</td>
-	<td>label=BOLÍVAR</td>
-</tr>
-<tr>
 	<td>clickAndWait</td>
 	<td>name=commit</td>
 	<td></td>
@@ -81,7 +76,6 @@
 	<td>link=Mujeres Indigenas 2.0b2</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

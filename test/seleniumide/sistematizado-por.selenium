@@ -22,12 +22,12 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
+	<td>clickAndWait</td>
 	<td>link=Nuevo</td>
 	<td></td>
 </tr>
 <tr>
-	<td>typeAndWait</td>
+	<td>waitForElementPresent</td>
 	<td>id=caso_casosjr_attributes_asesor</td>
 	<td></td>
 </tr>
@@ -56,7 +56,6 @@
 	<td>link=Mujeres Indigenas 2.0b2</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
