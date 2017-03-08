@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title>Test Suite</title>
+</head>
+<body>
+<table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
+<tr><td><b>Test Suite</b></td></tr>
+<tr><td><a href="actividades.selenium">actividades</a></td></tr>
+<tr><td><a href="afectaciones-familiares.selenium">afectaciones-familiares</a></td></tr>
+<tr><td><a href="afectaciones-fisicas.selenium">afectaciones-fisicas</a></td></tr>
+<tr><td><a href="afectaciones-individuales.selenium">afectaciones-individuales</a></td></tr>
+<tr><td><a href="anio-hecho.selenium">anio-hecho</a></td></tr>
+<tr><td><a href="antecedentes.selenium">antecedentes</a></td></tr>
+<tr><td><a href="cabeza-de-familia.selenium">cabeza-de-familia</a></td></tr>
+<tr><td><a href="centros-poblados.selenium">centros-poblados</a></td></tr>
+<tr><td><a href="codigo-en organizacion.selenium">codigo-en organizacion</a></td></tr>
+<tr><td><a href="comunidad-nacimiento.selenium">comunidad-nacimiento</a></td></tr>
+<tr><td><a href="departamento-nacimiento.selenium">departamento-nacimiento</a></td></tr>
+<tr><td><a href="departamentos-estados.selenium">departamentos-estados</a></td></tr>
+<tr><td><a href="dia-y-mes-nacimiento.selenium">dia-y-mes-nacimiento</a></td></tr>
+<tr><td><a href="documentado-por.selenium">documentado-por</a></td></tr>
+<tr><td><a href="estado-del-caso.selenium">estado-del-caso</a></td></tr>
+<tr><td><a href="estados-civiles.selenium">estados-civiles</a></td></tr>
+<tr><td><a href="fecha-de-nacimiento.selenium">fecha-de-nacimiento</a></td></tr>
+<tr><td><a href="fecha-seguimiento.selenium">fecha-seguimiento</a></td></tr>
+<tr><td><a href="formas-de-educacion-propia.selenium">formas-de-educacion-propia</a></td></tr>
+<tr><td><a href="fuentes.selenium">fuentes</a></td></tr>
+<tr><td><a href="hechos-victimizantes.selenium">hechos-victimizantes</a></td></tr>
+<tr><td><a href="idiomas.selenium">idiomas</a></td></tr>
+<tr><td><a href="incluido-ruv.selenium">incluido-ruv</a></td></tr>
+<tr><td><a href="liderazgo.selenium">liderazgo</a></td></tr>
+<tr><td><a href="maternidades.selenium">maternidades</a></td></tr>
+<tr><td><a href="motivos-para-no denunciar.selenium">motivos-para-no denunciar</a></td></tr>
+<tr><td><a href="municipio-nacimiento.selenium">municipio-nacimiento</a></td></tr>
+<tr><td><a href="municipios.selenium">municipios</a></td></tr>
+<tr><td><a href="niveles de-escolaridad.selenium">niveles de-escolaridad</a></td></tr>
+<tr><td><a href="organizacion.selenium">organizacion</a></td></tr>
+<tr><td><a href="organizacion-filial.selenium">organizacion-filial</a></td></tr>
+<tr><td><a href="organizaciones.selenium">organizaciones</a></td></tr>
+<tr><td><a href="paises.selenium">paises</a></td></tr>
+<tr><td><a href="presuntos-responsables.selenium">presuntos-responsables</a></td></tr>
+<tr><td><a href="profesiones.selenium">profesiones</a></td></tr>
+<tr><td><a href="pueblo-indigena.selenium">pueblo-indigena</a></td></tr>
+<tr><td><a href="rango-de-edades.selenium">rango-de-edades</a></td></tr>
+<tr><td><a href="relacion-entre-presuntos-responsables-y-victima.selenium">relacion-entre-presuntos-responsables-y-victima</a></td></tr>
+<tr><td><a href="resguardo.selenium">resguardo</a></td></tr>
+<tr><td><a href="resguardo-nacimiento.selenium">resguardo-nacimiento</a></td></tr>
+<tr><td><a href="resultados-de-acciones-belicas.selenium">resultados-de-acciones-belicas</a></td></tr>
+<tr><td><a href="roles-en-familia.selenium">roles-en-familia</a></td></tr>
+<tr><td><a href="sexo.selenium">sexo</a></td></tr>
+<tr><td><a href="sistema-de-salud.selenium">sistema-de-salud</a></td></tr>
+<tr><td><a href="sistematizado-por.selenium">sistematizado-por</a></td></tr>
+<tr><td><a href="supracategoias.selenium">supracategoias</a></td></tr>
+<tr><td><a href="tiene-carnet-salud.selenium">tiene-carnet-salud</a></td></tr>
+<tr><td><a href="tipos-de apoyo.selenium">tipos-de apoyo</a></td></tr>
+<tr><td><a href="tipos-de relaciones-familiares.selenium">tipos-de relaciones-familiares</a></td></tr>
+<tr><td><a href="tipos-de-acompañamiento.selenium">tipos-de-acompañamiento</a></td></tr>
+<tr><td><a href="tipos-de-afectacion.selenium">tipos-de-afectacion</a></td></tr>
+<tr><td><a href="tipos-de-centros- poblado.selenium">tipos-de-centros- poblado</a></td></tr>
+<tr><td><a href="tipos-de-documentos.selenium">tipos-de-documentos</a></td></tr>
+<tr><td><a href="tipos-de-sitios.selenium">tipos-de-sitios</a></td></tr>
+<tr><td><a href="tipos-de-violencia.selenium">tipos-de-violencia</a></td></tr>
+<tr><td><a href="usuario.selenium">usuario</a></td></tr>
+</tbody></table>
+</body>
+</html>
