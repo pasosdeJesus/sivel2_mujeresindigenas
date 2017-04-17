@@ -28,8 +28,6 @@ gem "sass"
 
 gem 'font-awesome-rails'   
 
-gem 'chosen'
-
 # Colores en terminal
 gem "colorize"
 
