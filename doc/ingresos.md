@@ -10,10 +10,11 @@ varias oportunidades o haber recibido ayudas de las organización
 que documenta en diferentes momentos, pero sigue siendo un mismo caso 
 y todo el historial de apoyos y seguimientos institucionales y del 
 Observatorio de violencias contra las mujeres indígenas se registran en 
-el mismo.
+el mismo.  Por lo mismo el número de casos corresponde al número de
+mujeres víctimas a las que se les hace seguimiento.
 
 Por esto antes de ingresar un nuevo caso es recomendable que búsque si 
-ya está registrado por ejemplo utilizando el listado de casos empleando 
+ya está registrado, por ejemplo utilizando el listado de casos empleando 
 el código, la fecha de documentación (o parte de la misma), el lugar 
 en el que ocurrió, el analista que documentó o la organización.
 
@@ -97,7 +98,7 @@ selección en la opción SIN INFORMACIÓN.
 * Acompañamiento: Cultural, jurídico, justicia propia, ninguno, 
   psicosocial.
 
-### Fuentes {#fuentes}
+#### Fuentes {#fuentes}
 
 ![Pestaña Fuentes](img/fuentes.png)
 
@@ -266,6 +267,14 @@ esconder los campos privados.
 #### Datos de la víctima {#acin_datos_victima}
 * Nombres y Apellidos: Se recomienda escribirlos en mayúsculas y con 
   tildes como aparecen en el documento de identificación principal.
+  Tenga en cuenta que mientras el usuario teclea el nombre, el sistema 
+  busca y autocompleta con nombres que ya hay en la base y los presenta, 
+  si el usuario elige uno de los nombres autocompletados está eligiendo 
+  la misma víctima de otro caso (si no elige uno de los nombres presentados 
+  pero usa el mismo nombre y apellido de otro, estará creando un homónimo).
+  Recuerde que no debe haber casos con la misma víctima.  Lo que debe hacer
+  es ubicar el caso donde está la persona y complear la información y
+  de requerirse agregar un seguimiento.
 * Tipo de documento de identidad:  Especifique el tipo y el número. 
   Algunos tipos de documentos no se especifican con un número, sino por 
   ejemplo también con letras. 

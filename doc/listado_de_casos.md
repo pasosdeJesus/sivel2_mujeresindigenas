@@ -11,7 +11,7 @@ En la parte superior verá un botón para crear casos nuevos, un conteo de
 los casos listado y una caja de ingreso en la que puede especificar una o 
 más palabras que permitén filtrar.
 
-Si teclar una palabra y presiona el botón __Filtrar__ se filtran los casos 
+Si teclea una palabra y presiona el botón __Filtrar__ se filtran los casos 
 que contenga la palabra en uno de los campos presentados: Código del caso, 
 fecha de documentación inicial, organización y usuario.
 
@@ -29,7 +29,7 @@ pero cambiando ```3``` por la identificación del caso.
 
 #### Resumen de un caso {#resumen_de_un_caso}
 
-Desde el listado de archivo puede examinar el resumen de caso 
+Desde el listado de archivo puede examinar el resumen de un caso 
 cualquiera (i.e los campos comunes a todas las organizaciones) pulsando 
 sobre la identificación del caso (columna **Código**). 
 
