@@ -402,8 +402,8 @@ CREATE TABLE sivel2_gen_caso (
     memo text NOT NULL,
     grconfiabilidad character varying(5),
     gresclarecimiento character varying(5),
-    grimpunidad character varying(5),
-    grinformacion character varying(5),
+    grimpunidad character varying(8),
+    grinformacion character varying(8),
     bienes text,
     id_intervalo integer DEFAULT 5,
     created_at timestamp without time zone,
@@ -867,18 +867,6 @@ CREATE SEQUENCE consecuenciaindividual_id_seq
 --
 
 ALTER SEQUENCE consecuenciaindividual_id_seq OWNED BY consecuenciaindividual.id;
-
-
---
--- Name: contexto_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE contexto_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
 
 
 --
@@ -2510,6 +2498,18 @@ CREATE TABLE sivel2_gen_acto (
 
 
 --
+-- Name: sivel2_gen_actocolectivo_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE sivel2_gen_actocolectivo_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
 -- Name: sivel2_gen_actocolectivo; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2519,7 +2519,8 @@ CREATE TABLE sivel2_gen_actocolectivo (
     id_grupoper integer NOT NULL,
     id_caso integer NOT NULL,
     created_at timestamp without time zone,
-    updated_at timestamp without time zone
+    updated_at timestamp without time zone,
+    id integer DEFAULT nextval('sivel2_gen_actocolectivo_id_seq'::regclass) NOT NULL
 );
 
 
@@ -2596,8 +2597,6 @@ CREATE TABLE sivel2_gen_antecedente_combatiente (
 
 CREATE TABLE sivel2_gen_antecedente_victima (
     id_antecedente integer NOT NULL,
-    id_persona integer NOT NULL,
-    id_caso integer NOT NULL,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
     id_victima integer
@@ -2970,16 +2969,29 @@ CREATE MATERIALIZED VIEW sivel2_gen_conscaso AS
 
 
 --
+-- Name: sivel2_gen_contexto_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE sivel2_gen_contexto_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
 -- Name: sivel2_gen_contexto; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE sivel2_gen_contexto (
-    id integer DEFAULT nextval('contexto_seq'::regclass) NOT NULL,
+    id integer DEFAULT nextval('sivel2_gen_contexto_id_seq'::regclass) NOT NULL,
     nombre character varying(500) COLLATE public.es_co_utf_8 NOT NULL,
     fechacreacion date NOT NULL,
     fechadeshabilitacion date,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
+    observaciones character varying(5000),
     CONSTRAINT contexto_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
 );
 
@@ -4868,14 +4880,6 @@ ALTER TABLE ONLY sivel2_gen_acto
 
 
 --
--- Name: sivel2_gen_actocolectivo actocolectivo_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY sivel2_gen_actocolectivo
-    ADD CONSTRAINT actocolectivo_pkey PRIMARY KEY (id_presponsable, id_categoria, id_grupoper, id_caso);
-
-
---
 -- Name: actoevento actoevento_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -4929,14 +4933,6 @@ ALTER TABLE ONLY sivel2_gen_antecedente_caso
 
 ALTER TABLE ONLY sivel2_gen_antecedente
     ADD CONSTRAINT antecedente_pkey PRIMARY KEY (id);
-
-
---
--- Name: sivel2_gen_antecedente_victima antecedente_victima_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY sivel2_gen_antecedente_victima
-    ADD CONSTRAINT antecedente_victima_pkey PRIMARY KEY (id_antecedente, id_persona, id_caso);
 
 
 --
@@ -5812,6 +5808,30 @@ ALTER TABLE ONLY cor1440_gen_actividadareas_actividad
 
 
 --
+-- Name: sivel2_gen_actocolectivo sivel2_gen_actocolectivo_id_key; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_gen_actocolectivo
+    ADD CONSTRAINT sivel2_gen_actocolectivo_id_key UNIQUE (id);
+
+
+--
+-- Name: sivel2_gen_actocolectivo sivel2_gen_actocolectivo_id_presponsable_id_categoria_id_gr_key; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_gen_actocolectivo
+    ADD CONSTRAINT sivel2_gen_actocolectivo_id_presponsable_id_categoria_id_gr_key UNIQUE (id_presponsable, id_categoria, id_grupoper, id_caso);
+
+
+--
+-- Name: sivel2_gen_actocolectivo sivel2_gen_actocolectivo_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_gen_actocolectivo
+    ADD CONSTRAINT sivel2_gen_actocolectivo_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: sip_anexo sivel2_gen_anexoactividad_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6377,22 +6397,6 @@ ALTER TABLE ONLY sivel2_gen_antecedente_victimacolectiva
 
 ALTER TABLE ONLY sivel2_gen_antecedente_victima
     ADD CONSTRAINT antecedente_victima_id_antecedente_fkey FOREIGN KEY (id_antecedente) REFERENCES sivel2_gen_antecedente(id);
-
-
---
--- Name: sivel2_gen_antecedente_victima antecedente_victima_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY sivel2_gen_antecedente_victima
-    ADD CONSTRAINT antecedente_victima_id_caso_fkey FOREIGN KEY (id_caso) REFERENCES sivel2_gen_caso(id);
-
-
---
--- Name: sivel2_gen_antecedente_victima antecedente_victima_id_persona_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY sivel2_gen_antecedente_victima
-    ADD CONSTRAINT antecedente_victima_id_persona_fkey FOREIGN KEY (id_persona) REFERENCES sip_persona(id);
 
 
 --
@@ -7732,14 +7736,6 @@ ALTER TABLE ONLY sip_ubicacion
 
 
 --
--- Name: sivel2_gen_antecedente_victima victima_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY sivel2_gen_antecedente_victima
-    ADD CONSTRAINT victima_fkey FOREIGN KEY (id_caso, id_persona) REFERENCES sivel2_gen_victima(id_caso, id_persona);
-
-
---
 -- Name: sivel2_gen_victima victima_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8118,6 +8114,11 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20170413185012'),
 ('20170414035328'),
 ('20170503145807'),
-('20170503145808');
+('20170503145808'),
+('20170526100040'),
+('20170526124219'),
+('20170526131129'),
+('20170529020218'),
+('20170529154413');
 
 
