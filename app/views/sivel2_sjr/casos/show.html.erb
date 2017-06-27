@@ -458,17 +458,6 @@
              <div class="privado alert-info">
     
                <dt><strong>
-                 <%= ::Evento.human_attribute_name(:acompanamientorec) %>:
-               </strong></dt>
-               <dd><%= if evento.acompanamientorec then
-                         evento.acompanamientorec.inject("") { 
-                           |memo, i| 
-                           (memo == "" ? "" : memo + ", ") + i.nombre } 
-                       end 
-                       %> </dd>
-
-
-               <dt><strong>
                  <%= Evento.human_attribute_name(:consecuenciafisica) %>:
                </strong></dt>
                <dd><%= if evento.consecuenciafisica then
