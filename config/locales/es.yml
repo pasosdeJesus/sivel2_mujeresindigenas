@@ -104,9 +104,10 @@ es:
       "sip/persona":
         tdocumento_id: Tipo de documento de identidad
       "sivel2_gen/caso":
-        id: Código
+        asesor: Sistematizado por
         contacto: Víctima
         fecharec: Fecha documentación inicial en terreno
+        id: Código
         nusuario: Sistematizado por
         oficina: Organizacion que diligencia
       "sivel2_sjr/casosjr":
