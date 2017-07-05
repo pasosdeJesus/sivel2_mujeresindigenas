@@ -2,7 +2,10 @@
   <thead>
     <tr>
       <% for i in @incluir do %>
-        <th><%= Sivel2Gen::Caso.human_attribute_name(i.to_sym) %></th>
+        <% c = i == 'contacto'  ? 'alert-info' : '' %>
+        <th class='<%= c %>'>
+          <%= Sivel2Gen::Caso.human_attribute_name(i.to_sym) %>
+        </th>
       <% end %>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -11,7 +14,8 @@
     <% @conscaso.try(:each) do |caso| %>
       <tr>
         <% for i in @incluir do %>
-          <td>
+          <% c = i == 'contacto'  ? 'alert-info' : '' %>
+          <td class='<%= c %>'>
             <% if i == 'casoid' %>
               <%= link_to caso.caso_id, sivel2_gen.caso_path(caso.caso_id) %>
             <% elsif i == 'memo' && @cortamemo > 0 && 

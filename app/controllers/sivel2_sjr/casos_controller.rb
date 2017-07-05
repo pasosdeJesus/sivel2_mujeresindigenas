@@ -9,8 +9,20 @@ module Sivel2Sjr
 
     # Campos por presentar en listado index
     def incluir_inicial
-      ['casoid', 'fecharec', 'oficina',
-       'nusuario'
+      if can? :edit, :casosacin
+        ['casoid', 'fecharec', 'oficina', 'nusuario', 'ubicaciones', 'contacto']
+      else
+        ['casoid', 'fecharec', 'oficina', 'nusuario', 'ubicaciones']
+      end
+    end
+
+    def campos_filtro1
+      [:codigo,
+       :fecharecini, :fecharecfin,
+       :oficina_id, :usuario_id,
+       :departamento_id, :municipio_id,
+       :nombres, :apellidos, :sexo, :rangoedad_id,
+       :categoria_id
       ]
     end
 
@@ -19,14 +31,14 @@ module Sivel2Sjr
       respond_to do |format|
         if (!params[:caso][:caso_etiqueta_attributes].nil?)
           params[:caso][:caso_etiqueta_attributes].each {|k,v|
-            if (v[:id_usuario].nil? || v[:id_usuario] == "") 
+            if (v[:id_usuario].nil? || v[:id_usuario] == "")
               v[:id_usuario] = current_usuario.id
             end
           }
         end
         if (!params[:caso][:respuesta_attributes].nil?)
           params[:caso][:respuesta_attributes].each {|k,v|
-            if (v[:id_caso].nil?) 
+            if (v[:id_caso].nil?)
               v[:id_caso] = @caso.id
             end
           }
@@ -67,113 +79,113 @@ module Sivel2Sjr
 
     def caso_params
       params.require(:caso).permit([
-        :id, :fecha, 
-        :memo, 
+        :id, :fecha,
+        :memo,
         :casosjr_attributes => [
-          :asesor, 
+          :asesor,
           :consecorg,
           :consentimiento,
           :docterrenopor,
           :fecharec,
-          :id, 
-          :oficina_id, 
+          :id,
+          :oficina_id,
           :_destroy,
           :acompanamiento_ids => [],
           :estadocaso_ids => []
-        ], 
+        ],
         :caso_fuenteprensa_attributes => [
-          :fecha, 
-          :fuenteprensa_id, 
-          :id, 
-          :ubicacion, 
+          :fecha,
+          :fuenteprensa_id,
+          :id,
+          :ubicacion,
           :_destroy
         ],
         :victima_attributes => [
-          :hijos, 
-          :id, 
-          :id_etnia, 
-          :id_iglesia, 
-          :id_persona, 
-          :id_profesion, 
-          :id_rangoedad, 
-          :_destroy, 
+          :hijos,
+          :id,
+          :id_etnia,
+          :id_iglesia,
+          :id_persona,
+          :id_profesion,
+          :id_rangoedad,
+          :_destroy,
           :persona_attributes => [
-            :anionac, 
-            :apellidos, 
-            :dianac, 
-            :id, 
-            :id_pais, 
-            :id_departamento, 
-            :id_municipio, 
-            :id_clase, 
-            :mesnac, 
-            :nombres, 
-            :sexo, 
+            :anionac,
+            :apellidos,
+            :dianac,
+            :id,
+            :id_pais,
+            :id_departamento,
+            :id_municipio,
+            :id_clase,
+            :mesnac,
+            :nombres,
+            :sexo,
             :tdocumento_id
           ],
           :victimasjr_attributes => [
             :areatierra,
-            :asisteescuela, 
-            :cabezafamilia, 
-            :cabezahogar, 
+            :asisteescuela,
+            :cabezafamilia,
+            :cabezahogar,
             :comoingresos,
-            :comunidadres, 
-            :comunidadnac, 
-            :departamentores_id, 
+            :comunidadres,
+            :comunidadnac,
+            :departamentores_id,
             :educacionpropia_id,
-            :enfermedad, 
-            :incluidoruv, 
-            :id, 
+            :enfermedad,
+            :incluidoruv,
+            :id,
             :id_actividadoficio,
             :id_escolaridad,
-            :id_estadocivil, 
-            :id_maternidad, 
-            :id_victima, 
-            :liderazgo, 
-            :municipiores_id, 
-            :ndiscapacidad, 
-            :organizacionfilial, 
-            :religion_id, 
-            :resguardores, 
+            :id_estadocivil,
+            :id_maternidad,
+            :id_victima,
+            :liderazgo,
+            :municipiores_id,
+            :ndiscapacidad,
+            :organizacionfilial,
+            :religion_id,
+            :resguardores,
             :resguardonac,
-            :residencia, 
-            :sistemasalud, 
+            :residencia,
+            :sistemasalud,
             :tipoliderazgo,
             :vicconflicto,
-            :idioma_ids => [], 
-            :tienetierra_ids => [], 
+            :idioma_ids => [],
+            :tienetierra_ids => [],
           ]
-        ], 
+        ],
         :ubicacion_attributes => [
-          :id, 
-          :id_clase, 
-          :id_departamento, 
-          :id_municipio, 
-          :id_pais, 
-          :id_tsitio, 
-          :latitud, 
-          :longitud, 
-          :lugar, 
-          :sitio, 
+          :id,
+          :id_clase,
+          :id_departamento,
+          :id_municipio,
+          :id_pais,
+          :id_tsitio,
+          :latitud,
+          :longitud,
+          :lugar,
+          :sitio,
           :_destroy
         ],
         :caso_presponsable_attributes => [
-          :brigada, 
-          :batallon, 
-          :bloque, 
-          :division, 
-          :frente, 
-          :id, 
-          :id_presponsable, 
-          :otro, 
-          :tipo, 
+          :brigada,
+          :batallon,
+          :bloque,
+          :division,
+          :frente,
+          :id,
+          :id_presponsable,
+          :otro,
+          :tipo,
           :_destroy
         ],
         :evento_attributes => [
           :actividadesdejadas,
           :afectacionotra,
-          :anio, 
-          :aniodenuncia, 
+          :anio,
+          :aniodenuncia,
           :avancescaso,
           :brindadaproteccion,
           :comunidad,
@@ -182,8 +194,8 @@ module Sivel2Sjr
           :denunciaante,
           :departamento_id,
           :descripcionafectacion,
-          :dia, 
-          :diadenuncia, 
+          :dia,
+          :diadenuncia,
           :diasemana,
           :etapaproceso,
           :fechadenuncia,
@@ -191,8 +203,8 @@ module Sivel2Sjr
           :hora,
           :id,
           :medidasrecibidas,
-          :mes, 
-          :mesdenuncia, 
+          :mes,
+          :mesdenuncia,
           :municipio_id,
           :numvecesantes,
           :observaciones,
@@ -216,17 +228,17 @@ module Sivel2Sjr
           :acompanamiento_ids => [],
           :acompanamientorec_ids => [],
           :actoevento_attributes => [
-            :categoria_id, 
-            :id, 
-            :presponsable_id, 
+            :categoria_id,
+            :id,
+            :presponsable_id,
             :_destroy,
           ],
           :consecuenciafamiliar_ids => [],
           :consecuenciafisica_ids => [],
           :consecuenciaindividual_ids => [],
           :eventopresponsable_attributes => [
-            :presponsable_id, 
-            :id, 
+            :presponsable_id,
+            :id,
             :_destroy,
             :categoria_ids => [],
           ],
@@ -237,22 +249,22 @@ module Sivel2Sjr
         ],
         :anexo_caso_attributes => [
           :fecha,
-          :id, 
+          :id,
           :id_caso,
           :_destroy,
           :sip_anexo_attributes => [
-            :adjunto, 
-            :descripcion, 
-            :id, 
+            :adjunto,
+            :descripcion,
+            :id,
             :_destroy
           ]
         ],
         :caso_etiqueta_attributes => [
-          :fecha, 
-          :id, 
-          :id_etiqueta, 
-          :id_usuario, 
-          :observaciones, 
+          :fecha,
+          :id,
+          :id_etiqueta,
+          :id_usuario,
+          :observaciones,
           :_destroy
         ]
       ] + otros_params

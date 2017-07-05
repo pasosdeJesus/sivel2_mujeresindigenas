@@ -47,6 +47,41 @@
 
     <div class="row filtro-fila">
       <div class="col-sm-offset-0 col-sm-2 col-md-offset-1 col-md-1">
+        Ubicación
+      </div>
+      <div class="col-sm-offset-0 col-sm-4 col-md-4">
+        <%= f.input :departamento_id,
+          collection: Sip::Departamento.habilitados.where(id_pais: 170),
+          label_method: :nombre,
+          value_method: :id,
+          label: false,
+          include_blank: "-- Departamento"
+        %>
+      </div>
+      <div class="col-md-3">
+        <%= f.input :municipio_id,
+          collection: Sip::Municipio.habilitados,
+          label_method: :nombre,
+          value_method: :id,
+          label: false,
+          include_blank: "-- Municipio",
+          input_html: { disabled: :disabled }
+        %>
+      </div>
+      <div class="col-sm-offset-0 col-sm-1 text-center">
+        <%= f.input :inc_ubicaciones, 
+          as: :boolean, 
+          label: false,
+          input_html: { :checked => "checked" }
+        %>
+      </div>
+      <div class="col-sm-offset-0 col-sm-1 text-center">
+        <%= f.radio_button :orden, :ubicaciones %>
+      </div>
+    </div>
+
+    <div class="row filtro-fila">
+      <div class="col-sm-offset-0 col-sm-2 col-md-offset-1 col-md-1">
         <%= Sivel2Gen::Caso.human_attribute_name(:oficina) %>
       </div>
       <div class="col-sm-offset-0 col-sm-7">
