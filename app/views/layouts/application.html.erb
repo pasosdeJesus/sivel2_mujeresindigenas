@@ -15,7 +15,10 @@
     <% end %>
   <% end %>
   <%= menu_group :pull => :right do %>
-    <%= menu_item "Documentacion", File.join(Rails.configuration.relative_url_root, 'doc/index.html') %>
+    <%= drop_down "Documentos" do %>
+      <%= menu_item "Manual", File.join(Rails.configuration.relative_url_root, 'doc/index.html') %>
+      <%= menu_item "Plantillas", heb412_gen.sisini_path %>
+    <% end %>
     <% if !current_usuario.nil? %>
       <%= drop_down "Administrar" do %>
         <%= menu_item "Clave", main_app.editar_registro_usuario_path %>
@@ -32,6 +35,10 @@
         <% end %>
         <% if can? :manage, Sip::Respaldo7z %>
           <%= menu_item "Respaldo cifrado", sip.respaldo7z_path %>
+        <% end %>
+        <% if can? :manage, Heb412Gen::Plantillahcm %>
+          <%= menu_item "Definir plantilla para listado de casos", 
+            heb412_gen_new_plantillahcm_path %>
         <% end %>
       <% end %>
       <%= menu_item "Salir #{current_usuario.nusuario}", main_app.sign_out_path %>
