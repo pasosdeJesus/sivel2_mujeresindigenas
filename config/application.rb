@@ -29,7 +29,8 @@ module Sivel2Mujeresindigenas
 
     config.x.formato_fecha = 'yyyy-mm-dd'
 
-    config.x.heb412_ruta = Rails.root.join('public', 'heb412')
+    config.x.heb412_ruta = Rails.root.join(
+      'public', 'mujeresindigenas', 'sivel2', 'heb412')
 
     config.action_mailer.default_url_options = { 
       protocol: 'http',

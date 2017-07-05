@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require sip/motor
+//= require heb412_gen/motor
 //= require sivel2_gen/motor
 //= require sivel2_sjr/motor
 //= require chosen-jquery
@@ -22,6 +23,7 @@ $(document).on('turbolinks:load ready page:load', function() {
 	  exports : window;
   root.campo_fecha_ref_edad = 'caso_casosjr_attributes_fecharec'
   sip_prepara_eventos_comunes(root);
+  heb412_gen_prepara_eventos_comunes(root);
   sivel2_gen_prepara_eventos_comunes(root,'antecedentes/causas');
   sivel2_sjr_prepara_eventos_comunes(root);
   sivel2_sjr_prepara_eventos_unicos(root);

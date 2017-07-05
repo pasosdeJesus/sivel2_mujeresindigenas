@@ -36,9 +36,9 @@
         <% if can? :manage, Sip::Respaldo7z %>
           <%= menu_item "Respaldo cifrado", sip.respaldo7z_path %>
         <% end %>
-        <% if can? :manage, Heb412Gen::Plantillahcm %>
-          <%= menu_item "Definir plantilla para listado de casos", 
-            heb412_gen_new_plantillahcm_path %>
+        <% if can? :manage, Heb412Gen::Doc %>
+          <%= menu_item "Asociar plantilla a listado de casos", 
+            heb412_gen.new_plantillahcm_path %>
         <% end %>
       <% end %>
       <%= menu_item "Salir #{current_usuario.nusuario}", main_app.sign_out_path %>

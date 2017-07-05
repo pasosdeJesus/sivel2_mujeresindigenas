@@ -26,7 +26,12 @@ gem "jbuilder"
 # SCSS para hojas de estilo
 gem "sass"
 
+# Iconos
 gem 'font-awesome-rails'   
+
+# Plantilla de hoja de cálculo
+gem 'rspreadsheet'   
+gem 'libxml-ruby'
 
 # Colores en terminal
 gem "colorize"
