@@ -4060,6 +4060,16 @@ CREATE TABLE sivel2_sjr_motivosjr_respuesta (
 
 
 --
+-- Name: sivel2_sjr_oficina_proyectofinanciero; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE sivel2_sjr_oficina_proyectofinanciero (
+    oficina_id bigint NOT NULL,
+    proyectofinanciero_id bigint NOT NULL
+);
+
+
+--
 -- Name: sivel2_sjr_personadesea_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -6918,6 +6928,14 @@ ALTER TABLE ONLY heb412_gen_doc
 
 
 --
+-- Name: sivel2_sjr_oficina_proyectofinanciero fk_rails_3479b42b5c; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_sjr_oficina_proyectofinanciero
+    ADD CONSTRAINT fk_rails_3479b42b5c FOREIGN KEY (oficina_id) REFERENCES sip_oficina(id);
+
+
+--
 -- Name: cor1440_gen_actividad_proyecto fk_rails_395faa0882; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7019,6 +7037,14 @@ ALTER TABLE ONLY sivel2_sjr_motivosjr_derecho
 
 ALTER TABLE ONLY sivel2_gen_combatiente
     ADD CONSTRAINT fk_rails_6485d06d37 FOREIGN KEY (id_vinculoestado) REFERENCES sivel2_gen_vinculoestado(id);
+
+
+--
+-- Name: sivel2_sjr_oficina_proyectofinanciero fk_rails_669494cbb1; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_sjr_oficina_proyectofinanciero
+    ADD CONSTRAINT fk_rails_669494cbb1 FOREIGN KEY (proyectofinanciero_id) REFERENCES cor1440_gen_proyectofinanciero(id);
 
 
 --
@@ -8055,6 +8081,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20170529020218'),
 ('20170529154413'),
 ('20170609131212'),
-('20170705185205');
+('20170705185205'),
+('20170712205819');
 
 
