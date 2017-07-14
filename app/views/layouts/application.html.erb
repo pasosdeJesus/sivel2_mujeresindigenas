@@ -35,6 +35,7 @@
         <% end %>
         <% if can? :manage, Sip::Respaldo7z %>
           <%= menu_item "Respaldo cifrado", sip.respaldo7z_path %>
+          <%= menu_item "Bitácora cifrada", main_app.bitacora7z_path %>
         <% end %>
         <% if can? :manage, Heb412Gen::Doc %>
           <%= menu_item "Asociar plantilla a listado de casos", 

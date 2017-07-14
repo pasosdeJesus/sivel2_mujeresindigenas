@@ -22,7 +22,9 @@ Rails.application.routes.draw do
               :as => 'registro_usuario'            
     end
     resources :usuarios, path_names: { new: 'nuevo', edit: 'edita' } 
- 
+
+    get "/bitacora7z" => 'sip/bitacora7z#new', as: 'bitacora7z'
+    post "/bitacora7z" => 'sip/bitacora7z#create'
     namespace :admin do
       ab = ::Ability.new
       ab.tablasbasicas.each do |t|

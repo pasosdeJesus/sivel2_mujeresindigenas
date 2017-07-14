@@ -93,6 +93,9 @@ es:
       "religion":
         Religion: Religión
         Religiones: Religiones
+      "sip/bitacora7z":
+        clave7z: Clave de cifrado
+        clave7z_confirmation: Confirmación de clave de cifrado 
       "sip/fuenteprensa":
         Fuenteprensa: Fuente
         Fuentesprensa: Fuentes

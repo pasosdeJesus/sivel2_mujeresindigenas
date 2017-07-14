@@ -132,6 +132,7 @@ class Ability < Sivel2Sjr::Ability
         can :manage, Heb412Gen::Doc
         can :manage, Sip::Persona
         can :manage, Sip::Respaldo7z
+        can :manage, Sip::Bitacora7z
         can :manage, Sivel2Gen::Acto
         can :manage, Sivel2Gen::Caso
         can :manage, :tablasbasicas
