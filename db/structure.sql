@@ -2921,6 +2921,79 @@ CREATE MATERIALIZED VIEW sivel2_gen_conscaso AS
 
 
 --
+-- Name: sivel2_gen_etnia_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE sivel2_gen_etnia_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sivel2_gen_etnia; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE sivel2_gen_etnia (
+    id integer DEFAULT nextval('sivel2_gen_etnia_id_seq'::regclass) NOT NULL,
+    nombre character varying(500) COLLATE public.es_co_utf_8 NOT NULL,
+    descripcion character varying(1000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    observaciones character varying(5000),
+    CONSTRAINT etnia_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
+);
+
+
+--
+-- Name: sivel2_gen_consexpcaso; Type: MATERIALIZED VIEW; Schema: public; Owner: -
+--
+
+CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
+ SELECT conscaso.caso_id,
+    conscaso.oficina AS organizacion,
+    casosjr.consecorg AS consecutivo_organizacion,
+        CASE
+            WHEN ((casosjr.consentimiento)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
+            WHEN ((casosjr.consentimiento)::text = 'S'::text) THEN 'SI'::text
+            ELSE 'NO'::text
+        END AS consentimiento,
+    casosjr.created_at AS fecha_creacion,
+    casosjr.updated_at AS fecha_actualizacion,
+    conscaso.nusuario AS sistematizado_por,
+    conscaso.fecharec AS fecha_doc_terreno,
+    casosjr.docterrenopor AS doc_terreno_por,
+    array_to_string(ARRAY( SELECT estadocaso.nombre
+           FROM (estadocaso
+             JOIN casosjr_estadocaso ON ((casosjr_estadocaso.estadocaso_id = estadocaso.id)))
+          WHERE (casosjr_estadocaso.sivel2_sjr_casosjr_id = conscaso.caso_id)), '; '::text) AS estados_caso,
+    array_to_string(ARRAY( SELECT acompanamiento.nombre
+           FROM (acompanamiento
+             JOIN acompanamiento_casosjr ON ((acompanamiento_casosjr.acompanamiento_id = acompanamiento.id)))
+          WHERE (acompanamiento_casosjr.sivel2_sjr_casosjr_id = conscaso.caso_id)), '; '::text) AS acompanamientos_caso,
+    conscaso.contacto AS victima,
+    contacto.nombres AS victima_nombres,
+    contacto.apellidos AS victima_apellidos,
+    COALESCE(tdocumento.sigla, ''::character varying) AS victima_identificacion,
+    contacto.sexo AS victima_sexo,
+    COALESCE(etnia.nombre, ''::character varying) AS victima_etnia,
+    conscaso.ubicaciones
+   FROM ((((((sivel2_gen_conscaso conscaso
+     JOIN sivel2_sjr_casosjr casosjr ON ((casosjr.id_caso = conscaso.caso_id)))
+     JOIN sivel2_gen_caso caso ON ((casosjr.id_caso = caso.id)))
+     JOIN sip_persona contacto ON ((contacto.id = casosjr.contacto)))
+     JOIN sivel2_gen_victima vcontacto ON (((vcontacto.id_persona = contacto.id) AND (vcontacto.id_caso = caso.id))))
+     LEFT JOIN sivel2_gen_etnia etnia ON ((vcontacto.id_etnia = etnia.id)))
+     LEFT JOIN sip_tdocumento tdocumento ON ((contacto.tdocumento_id = tdocumento.id)))
+  WHERE (true = false)
+  WITH NO DATA;
+
+
+--
 -- Name: sivel2_gen_contexto_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -3001,35 +3074,6 @@ CREATE TABLE sivel2_gen_estadocivil (
     updated_at timestamp without time zone,
     observaciones character varying(5000),
     CONSTRAINT estadocivil_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
-);
-
-
---
--- Name: sivel2_gen_etnia_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE sivel2_gen_etnia_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: sivel2_gen_etnia; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE sivel2_gen_etnia (
-    id integer DEFAULT nextval('sivel2_gen_etnia_id_seq'::regclass) NOT NULL,
-    nombre character varying(500) COLLATE public.es_co_utf_8 NOT NULL,
-    descripcion character varying(1000),
-    fechacreacion date NOT NULL,
-    fechadeshabilitacion date,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone,
-    observaciones character varying(5000),
-    CONSTRAINT etnia_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
 );
 
 
