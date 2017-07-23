@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/cor1440_gen.git
-  revision: 8e4abddc31ac2aae6f844ec62fa2fc0563f0707e
+  revision: baf7949bd8b7ce601bd9bcf89fd96b99801ca27b
   specs:
     cor1440_gen (1.0.b1)
       devise
@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: c746885f3eeaca33ccf42c30d8f3e83bcf858e53
+  revision: 21ec9b3d29806ed105c599dd845c97748064c1a4
   specs:
     heb412_gen (1.0.a1)
       chosen-rails
@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sivel2_gen.git
-  revision: 6dc6278a4925159697767acff0db42c62fa46c91
+  revision: 138859877e9a781d692f45b55fe05d10180f9932
   specs:
     sivel2_gen (2.0b2)
       devise
@@ -53,7 +53,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sivel2_sjr.git
-  revision: c8f404e627257ec02bd6ed635ae831b186a1d5f7
+  revision: 424aa853407419aa4dd46cbfefd3aef1192ed07c
   specs:
     sivel2_sjr (2.0.b1)
       rails
