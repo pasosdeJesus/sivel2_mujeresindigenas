@@ -49,6 +49,7 @@ module Sivel2Sjr
         @caso.current_usuario = current_usuario
         @caso.fecha = caso_params[:casosjr_attributes][:fecharec]
         if @caso.update(caso_params)
+          Sivel2Gen::Conscaso.refresca_conscaso
           format.html { redirect_to @caso, notice: 'Caso actualizado.' }
           format.json { head :no_content }
           format.js   { redirect_to @caso, notice: 'Caso actualizado.' }
