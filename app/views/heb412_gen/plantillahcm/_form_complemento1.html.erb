@@ -1,5 +1,6 @@
 <%= f.association :oficina,
   collection: Sip::Oficina.habilitados,
+  label: 'Organización que usará la plantilla',
   include_blank: true,
   label_method: :nombre, 
   value_method: :id ,

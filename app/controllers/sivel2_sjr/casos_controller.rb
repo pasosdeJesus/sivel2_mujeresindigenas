@@ -45,7 +45,7 @@ module Sivel2Sjr
       if can? :manage, Heb412Gen::Doc
         return true
       elsif current_usuario.oficina_id
-        p = Heb412::Plantillahcm.find(idplant)
+        p = Heb412Gen::Plantillahcm.find(idplant)
         if !p.oficina_id || 
           p.oficina_id == current_usuario.oficina_id
           return true
