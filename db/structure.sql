@@ -1,3 +1,10 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.6.1
+-- Dumped by pg_dump version 9.6.1
+
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
@@ -1804,7 +1811,8 @@ CREATE TABLE heb412_gen_plantillahcm (
     licencia character varying(1023),
     vista character varying(127) NOT NULL,
     nombremenu character varying(127) NOT NULL,
-    filainicial integer NOT NULL
+    filainicial integer NOT NULL,
+    oficina_id integer
 );
 
 
@@ -3212,7 +3220,7 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
             WHEN ((casosjr.consentimiento)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
             WHEN ((casosjr.consentimiento)::text = 'S'::text) THEN 'SI'::text
             ELSE 'NO'::text
-        END AS consentimiento,
+        END AS consentimiento_priv_acin,
     casosjr.created_at AS fecha_creacion,
     casosjr.updated_at AS fecha_actualizacion,
     conscaso.nusuario AS sistematizado_por,
@@ -3242,10 +3250,10 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
           WHERE (cf.id_caso = conscaso.caso_id)
           ORDER BY cf.fecha
          LIMIT 1), '; '::text) AS fuente1_detalle,
-    conscaso.contacto AS victima,
-    contacto.nombres AS victima_nombres,
-    contacto.apellidos AS victima_apellidos,
-    COALESCE(tdocumento.sigla, ''::character varying) AS victima_identificacion,
+    conscaso.contacto AS victima_priv_acin,
+    contacto.nombres AS victima_nombres_priv_acin,
+    contacto.apellidos AS victima_apellidos_priv_acin,
+    COALESCE(tdocumento.sigla, ''::character varying) AS victima_identificacion_priv_acin,
     contacto.anionac AS victima_anionac,
     contacto.mesnac AS victima_mesnac,
     contacto.dianac AS victima_dianac,
@@ -3262,15 +3270,15 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
     COALESCE(vmunicipio.nombre, ''::character varying) AS victima_municipionac,
     scontacto.resguardonac AS victima_resguardonac,
     scontacto.comunidadnac AS victima_comunidadnac,
-    COALESCE(sdepartamento.nombre, ''::character varying) AS victima_departamentores,
-    COALESCE(smunicipio.nombre, ''::character varying) AS victima_municipiores,
-    scontacto.resguardores AS victima_resguardores,
-    scontacto.comunidadres AS victima_comunidadres,
-    vcontacto.hijos AS victima_numhijos,
+    COALESCE(sdepartamento.nombre, ''::character varying) AS victima_departamentores_priv_acin,
+    COALESCE(smunicipio.nombre, ''::character varying) AS victima_municipiores_priv_acin,
+    scontacto.resguardores AS victima_resguardores_priv_acin,
+    scontacto.comunidadres AS victima_comunidadres_priv_acin,
+    vcontacto.hijos AS victima_numhijos_priv_acin,
     array_to_string(ARRAY( SELECT idioma.nombre
            FROM (sivel2_sjr_idioma idioma
              JOIN idioma_victimasjr ON ((idioma_victimasjr.sivel2_sjr_idioma_id = idioma.id)))
-          WHERE (idioma_victimasjr.sivel2_sjr_victimasjr_id = scontacto.id_victima)), '; '::text) AS victima_idiomas,
+          WHERE (idioma_victimasjr.sivel2_sjr_victimasjr_id = scontacto.id_victima)), '; '::text) AS victima_idiomas_priv_acin,
     COALESCE(etnia.nombre, ''::character varying) AS victima_etnia,
     COALESCE(estadocivil.nombre, ''::character varying) AS victima_estadocivil,
     COALESCE(escolaridad.nombre, ''::character varying) AS victima_ultgreducacionord,
@@ -3280,14 +3288,14 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
             WHEN ((scontacto.sistemasalud)::text = 'O'::text) THEN 'ORDINARIO'::text
             ELSE 'SIN INFORMACIÓN'::text
         END AS victima_carnetsalud,
-    COALESCE(religion.nombre, ''::character varying) AS victima_religion,
-    scontacto.comoingresos AS victima_comogeneraingresos,
+    COALESCE(religion.nombre, ''::character varying) AS victima_religion_priv_acin,
+    scontacto.comoingresos AS victima_comogeneraingresos_priv_acin,
     array_to_string(ARRAY( SELECT t.nombre
            FROM (tienetierra t
              JOIN tienetierra_victimasjr tv ON ((tv.tienetierra_id = t.id)))
           WHERE (tv.sivel2_sjr_victimasjr_id = scontacto.id_victima)
-          ORDER BY t.nombre), '; '::text) AS victima_tienetierra,
-    scontacto.areatierra AS victima_areatierra,
+          ORDER BY t.nombre), '; '::text) AS victima_tienetierra_priv_acin,
+    scontacto.areatierra AS victima_areatierra_priv_acin,
         CASE
             WHEN (contacto.sexo = 'F'::bpchar) THEN 'MUJER'::text
             WHEN (contacto.sexo = 'M'::bpchar) THEN 'HOMBRE'::text
@@ -3309,7 +3317,7 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
             WHEN ((scontacto.liderazgo)::text = 'N'::text) THEN 'NO'::text
             ELSE 'SIN INFORMACIÓN'::text
         END AS victima_liderazgocomunidad,
-    scontacto.tipoliderazgo AS victima_tipoliderazgo,
+    scontacto.tipoliderazgo AS victima_tipoliderazgo_priv_acin,
     evento.fechaseguimiento AS evento_fechaseguimiento,
     evento.anio AS evento_anio,
     evento.mes AS evento_mes,
@@ -3337,11 +3345,11 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
             WHEN ((evento.relacionadocon)::text = 'S'::text) THEN 'SOCIAL'::text
             ELSE 'SIN INFORMACIÓN'::text
         END AS evento_relacionadoconconflicto,
-    evento.descripcionafectacion AS evento_descripcion,
+    evento.descripcionafectacion AS evento_descripcion_priv_acin,
     array_to_string(ARRAY( SELECT r.nombre
            FROM (evento_relacionprvic er
              JOIN relacionprvic r ON ((er.relacionprvic_id = r.id)))
-          WHERE (er.evento_id = evento.id)), '; '::text) AS evento_relacionesprvic,
+          WHERE (er.evento_id = evento.id)), '; '::text) AS evento_relacionesprvic_priv_acin,
     array_to_string(ARRAY( SELECT p.nombre
            FROM (eventopresponsable ep
              JOIN sivel2_gen_presponsable p ON ((ep.presponsable_id = p.id)))
@@ -3365,11 +3373,11 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
     array_to_string(ARRAY( SELECT c.nombre
            FROM (consecuenciaindividual_evento ce
              JOIN consecuenciaindividual c ON ((ce.consecuenciaindividual_id = c.id)))
-          WHERE (ce.evento_id = evento.id)), '; '::text) AS evento_afectacionesindividual,
+          WHERE (ce.evento_id = evento.id)), '; '::text) AS evento_afectacionesindividual_priv_acin,
     array_to_string(ARRAY( SELECT c.nombre
            FROM (consecuenciafamiliar_evento ce
              JOIN consecuenciafamiliar c ON ((ce.consecuenciafamiliar_id = c.id)))
-          WHERE (ce.evento_id = evento.id)), '; '::text) AS evento_afectacionesfamiliar,
+          WHERE (ce.evento_id = evento.id)), '; '::text) AS evento_afectacionesfamiliar_priv_acin,
     array_to_string(ARRAY( SELECT t.nombre
            FROM (evento_tapoyo et
              JOIN tapoyo t ON ((et.tapoyo_id = t.id)))
@@ -3377,15 +3385,15 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
     array_to_string(ARRAY( SELECT c.nombre
            FROM (consecuenciafisica_evento ce
              JOIN consecuenciafisica c ON ((ce.consecuenciafisica_id = c.id)))
-          WHERE (ce.evento_id = evento.id)), '; '::text) AS evento_afectacionesfisicas,
-    evento.actividadesdejadas AS evento_actividadesdejarondehacer,
-    evento.reaccionfamiliaycomunidad AS evento_reaccionfamiliaycomunidad,
-    evento.afectacionotra AS evento_afectacionaotrapersona,
+          WHERE (ce.evento_id = evento.id)), '; '::text) AS evento_afectacionesfisicas_priv_acin,
+    evento.actividadesdejadas AS evento_actividadesdejarondehacer_priv_acin,
+    evento.reaccionfamiliaycomunidad AS evento_reaccionfamiliaycomunidad_oriv_acin,
+    evento.afectacionotra AS evento_afectacionaotrapersona_priv_acin,
     array_to_string(ARRAY( SELECT a.nombre
            FROM (acompanamiento_evento ae
              JOIN acompanamiento a ON ((ae.acompanamiento_id = a.id)))
           WHERE (ae.evento_id = evento.id)), '; '::text) AS evento_acompanamientosquenecesita,
-    evento.telcontacto AS evento_telcontacto,
+    evento.telcontacto AS evento_telcontacto_priv_acin,
         CASE
             WHEN ((evento.situacionriesgo)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
             WHEN ((evento.situacionriesgo)::text = 'S'::text) THEN 'SI'::text
@@ -3413,19 +3421,19 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
     evento.aniodenuncia AS evento_aniodenuncia,
     evento.mesdenuncia AS evento_mesdenuncia,
     evento.diadenuncia AS evento_diadenuncia,
-    evento.avancescaso AS evento_avancesdelcaso,
-    evento.etapaproceso AS evento_etapadelproceso,
+    evento.avancescaso AS evento_avancesdelcaso_priv_acin,
+    evento.etapaproceso AS evento_etapadelproceso_priv_acin,
         CASE
             WHEN ((evento.recibidoreparacion)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
             WHEN ((evento.recibidoreparacion)::text = 'S'::text) THEN 'SI'::text
             ELSE 'NO'::text
-        END AS evento_harecibidoreparacion,
-    evento.quereparacion AS evento_cualreparacion,
+        END AS evento_harecibidoreparacion_priv_acin,
+    evento.quereparacion AS evento_cualreparacion_priv_acin,
         CASE
             WHEN ((evento.sancionadovictimario)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
             WHEN ((evento.sancionadovictimario)::text = 'S'::text) THEN 'SI'::text
             ELSE 'NO'::text
-        END AS evento_sancionadovictimario,
+        END AS evento_sancionadovictimario_priv_acin,
     array_to_string(ARRAY( SELECT m.nombre
            FROM (evento_motivonodenuncia em
              JOIN motivonodenuncia m ON ((em.motivonodenuncia_id = m.id)))
@@ -3441,8 +3449,10 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
             WHEN ((evento.quisieradenunciar)::text = 'S'::text) THEN 'SI'::text
             ELSE 'NO'::text
         END AS evento_quisieradenunciar,
-    evento.compromisosadquiridos AS evento_compromisosadquiridos,
-    evento.observaciones AS evento_observaciones,
+    evento.compromisosadquiridos AS evento_compromisosadquiridos_priv_acin,
+    evento.observaciones AS evento_observaciones_priv_acin,
+    evento.seguimientojudicial AS evento_seguimientojudicial_priv_oik,
+    evento.seguimientopsicosocial AS evento_seguimientopsicosocial_priv_oik,
     conscaso.ubicaciones
    FROM (((((((((((((((((sivel2_gen_conscaso conscaso
      JOIN sivel2_sjr_casosjr casosjr ON ((casosjr.id_caso = conscaso.caso_id)))
@@ -7618,6 +7628,14 @@ ALTER TABLE ONLY sivel2_sjr_progestado_derecho
 
 
 --
+-- Name: heb412_gen_plantillahcm fk_rails_ecefd8940c; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY heb412_gen_plantillahcm
+    ADD CONSTRAINT fk_rails_ecefd8940c FOREIGN KEY (oficina_id) REFERENCES sip_oficina(id);
+
+
+--
 -- Name: acompanamiento_casosjr fk_rails_efad5b94f4; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8156,246 +8174,4 @@ ALTER TABLE ONLY sivel2_sjr_victimasjr
 --
 -- PostgreSQL database dump complete
 --
-
-SET search_path TO "$user", public;
-
-INSERT INTO "schema_migrations" (version) VALUES
-('20131128151014'),
-('20131204135932'),
-('20131204140000'),
-('20131204143718'),
-('20131204183530'),
-('20131205233111'),
-('20131206081531'),
-('20131210221541'),
-('20131220103409'),
-('20131223175141'),
-('20140117212555'),
-('20140129151136'),
-('20140207102709'),
-('20140207102739'),
-('20140211162355'),
-('20140211164659'),
-('20140211172443'),
-('20140217100541'),
-('20140313012209'),
-('20140317121823'),
-('20140514142421'),
-('20140518120059'),
-('20140527110223'),
-('20140528043115'),
-('20140611110441'),
-('20140611111020'),
-('20140613044320'),
-('20140613200951'),
-('20140620112004'),
-('20140704035033'),
-('20140804194616'),
-('20140804200235'),
-('20140804202100'),
-('20140804202101'),
-('20140804202958'),
-('20140804210000'),
-('20140805030341'),
-('20140814184537'),
-('20140815111351'),
-('20140815111352'),
-('20140815121224'),
-('20140815123542'),
-('20140815124157'),
-('20140815124606'),
-('20140827142659'),
-('20140901105741'),
-('20140901106000'),
-('20140902101425'),
-('20140904033941'),
-('20140904211823'),
-('20140904213327'),
-('20140905121420'),
-('20140909141336'),
-('20140909165233'),
-('20140918115412'),
-('20140922102737'),
-('20140922110956'),
-('20141002140242'),
-('20141111102451'),
-('20141111203313'),
-('20141112111129'),
-('20141126085907'),
-('20141222174237'),
-('20141222174247'),
-('20141222174257'),
-('20141222174267'),
-('20150213114933'),
-('20150217185859'),
-('20150225140336'),
-('20150313153722'),
-('20150317084149'),
-('20150317084737'),
-('20150317090631'),
-('20150413000000'),
-('20150413160156'),
-('20150413160157'),
-('20150413160158'),
-('20150413160159'),
-('20150416074423'),
-('20150416090140'),
-('20150416095646'),
-('20150416101228'),
-('20150417071153'),
-('20150417180000'),
-('20150417180314'),
-('20150419000000'),
-('20150420104520'),
-('20150420110000'),
-('20150420125522'),
-('20150420153835'),
-('20150420200255'),
-('20150503120915'),
-('20150510125926'),
-('20150513112126'),
-('20150513130058'),
-('20150513130510'),
-('20150513160835'),
-('20150520115257'),
-('20150521092657'),
-('20150521181918'),
-('20150521191227'),
-('20150528100944'),
-('20150602094513'),
-('20150602095241'),
-('20150602104342'),
-('20150609094809'),
-('20150609094820'),
-('20150612203808'),
-('20150615024318'),
-('20150616095023'),
-('20150616100351'),
-('20150616100551'),
-('20150624200701'),
-('20150707164448'),
-('20150709203137'),
-('20150710012947'),
-('20150710114451'),
-('20150716085420'),
-('20150716171420'),
-('20150716192356'),
-('20150717101243'),
-('20150717161539'),
-('20150720115701'),
-('20150720120236'),
-('20150723233138'),
-('20150724000152'),
-('20150724003736'),
-('20150724024110'),
-('20150724032940'),
-('20150803082520'),
-('20150809032138'),
-('20150826000000'),
-('20150929112313'),
-('20151006105402'),
-('20151020203420'),
-('20151020203421'),
-('20151030094611'),
-('20151124110943'),
-('20151127102425'),
-('20151130101417'),
-('20160304104001'),
-('20160304104113'),
-('20160308213334'),
-('20160316093659'),
-('20160316094627'),
-('20160316100620'),
-('20160316100621'),
-('20160316100622'),
-('20160316100623'),
-('20160316100624'),
-('20160316100625'),
-('20160316100626'),
-('20160407102539'),
-('20160420080511'),
-('20160420202859'),
-('20160506015049'),
-('20160506022054'),
-('20160519195544'),
-('20160608060056'),
-('20160608082447'),
-('20160608084429'),
-('20160608084935'),
-('20160608090947'),
-('20160608093529'),
-('20160608103650'),
-('20160608105822'),
-('20160608114028'),
-('20160608115006'),
-('20160608121317'),
-('20160608121352'),
-('20160608122717'),
-('20160608122726'),
-('20160608205638'),
-('20160608211647'),
-('20160608213541'),
-('20160609113525'),
-('20160610063404'),
-('20160614023632'),
-('20160719195853'),
-('20160719214520'),
-('20160724160049'),
-('20160724164110'),
-('20160725123242'),
-('20160725125929'),
-('20160725131347'),
-('20160727033937'),
-('20160727103116'),
-('20160727133219'),
-('20160728125841'),
-('20160729110601'),
-('20160729114824'),
-('20160729124259'),
-('20160729125446'),
-('20160805103310'),
-('20160810095928'),
-('20160822112957'),
-('20160822113714'),
-('20160822154512'),
-('20160823144141'),
-('20160823150641'),
-('20160823164245'),
-('20161009111443'),
-('20161010152631'),
-('20161026110802'),
-('20161027233011'),
-('20161103080156'),
-('20161103081041'),
-('20161103083352'),
-('20161108102349'),
-('20161219110016'),
-('20170111104308'),
-('20170111104547'),
-('20170111110923'),
-('20170112104821'),
-('20170112111018'),
-('20170113101237'),
-('20170114022359'),
-('20170114040246'),
-('20170119013801'),
-('20170119034040'),
-('20170119034234'),
-('20170119035252'),
-('20170119143359'),
-('20170405104322'),
-('20170406213334'),
-('20170413185012'),
-('20170414035328'),
-('20170503145807'),
-('20170503145808'),
-('20170526100040'),
-('20170526124219'),
-('20170526131129'),
-('20170529020218'),
-('20170529154413'),
-('20170609131212'),
-('20170705185205'),
-('20170712205819');
-
 

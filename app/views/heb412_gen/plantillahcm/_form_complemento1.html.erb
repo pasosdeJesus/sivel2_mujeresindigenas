@@ -1,0 +1,11 @@
+<%= f.association :oficina,
+  collection: Sip::Oficina.habilitados,
+  include_blank: true,
+  label_method: :nombre, 
+  value_method: :id ,
+  input_html: {
+    "data-toggle" => 'tooltip',
+    "title" => 'Si especifica una será visible sólo para miembros de esa oficina'
+  }
+%>
+
