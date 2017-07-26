@@ -21,7 +21,7 @@ module Sivel2Sjr
        :fecharecini, :fecharecfin,
        :oficina_id, :usuario_id,
        :departamento_id, :municipio_id,
-       :nombres, :apellidos, :sexo, :rangoedad_id,
+       :nombressp, :apellidossp, :sexo, :rangoedad_id,
        :categoria_id
       ]
     end
