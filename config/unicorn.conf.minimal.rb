@@ -13,4 +13,4 @@ worker_processes 3 # this should be >= nr_cpus
 pid APP_PATH + "/tmp/pids/unicorn.pid"
 stderr_path APP_PATH + "/log/unicorn.stderr.log"
 stdout_path APP_PATH + "/log/unicorn.stderr.log"
-
+timeout 3600
