@@ -94,12 +94,12 @@ module Sivel2Sjr
         @caso.evento.each do |ev|
           if ev.eventopresponsable
             ev.eventopresponsable.each do |evp|
-              ::CategoriaEventopresponsable.delete_all(
+              ::CategoriaEventopresponsable.where(
                 eventopresponsable_id: evp.id
-              )
+              ).delete_all
             end
           end
-          ::Eventopresponsable.delete_all(evento_id: ev.id)
+          ev = ::Eventopresponsable.where(evento_id: ev.id).delete_all
         end
       end
       @caso.casosjr.destroy if @caso.casosjr
