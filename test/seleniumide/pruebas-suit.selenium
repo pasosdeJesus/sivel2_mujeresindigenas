@@ -16,7 +16,7 @@
 <tr><td><a href="antecedentes.selenium">antecedentes</a></td></tr>
 <tr><td><a href="cabeza-de-familia.selenium">cabeza-de-familia</a></td></tr>
 <tr><td><a href="centros-poblados.selenium">centros-poblados</a></td></tr>
-<tr><td><a href="codigo-en organizacion.selenium">codigo-en organizacion</a></td></tr>
+<tr><td><a href="codigo-en-organizacion.selenium">codigo-en-organizacion</a></td></tr>
 <tr><td><a href="comunidad-nacimiento.selenium">comunidad-nacimiento</a></td></tr>
 <tr><td><a href="departamento-nacimiento.selenium">departamento-nacimiento</a></td></tr>
 <tr><td><a href="departamentos-estados.selenium">departamentos-estados</a></td></tr>
@@ -33,10 +33,10 @@
 <tr><td><a href="incluido-ruv.selenium">incluido-ruv</a></td></tr>
 <tr><td><a href="liderazgo.selenium">liderazgo</a></td></tr>
 <tr><td><a href="maternidades.selenium">maternidades</a></td></tr>
-<tr><td><a href="motivos-para-no denunciar.selenium">motivos-para-no denunciar</a></td></tr>
+<tr><td><a href="motivos-para-no-denunciar.selenium">motivos-para-no-denunciar</a></td></tr>
 <tr><td><a href="municipio-nacimiento.selenium">municipio-nacimiento</a></td></tr>
 <tr><td><a href="municipios.selenium">municipios</a></td></tr>
-<tr><td><a href="niveles de-escolaridad.selenium">niveles de-escolaridad</a></td></tr>
+<tr><td><a href="niveles-de-escolaridad.selenium">niveles-de-escolaridad</a></td></tr>
 <tr><td><a href="organizacion.selenium">organizacion</a></td></tr>
 <tr><td><a href="organizacion-filial.selenium">organizacion-filial</a></td></tr>
 <tr><td><a href="organizaciones.selenium">organizaciones</a></td></tr>
@@ -55,11 +55,11 @@
 <tr><td><a href="sistematizado-por.selenium">sistematizado-por</a></td></tr>
 <tr><td><a href="supracategoias.selenium">supracategoias</a></td></tr>
 <tr><td><a href="tiene-carnet-salud.selenium">tiene-carnet-salud</a></td></tr>
-<tr><td><a href="tipos-de apoyo.selenium">tipos-de apoyo</a></td></tr>
-<tr><td><a href="tipos-de relaciones-familiares.selenium">tipos-de relaciones-familiares</a></td></tr>
+<tr><td><a href="tipos-de-apoyo.selenium">tipos-de-apoyo</a></td></tr>
+<tr><td><a href="tipos-de-relaciones-familiares.selenium">tipos-de-relaciones-familiares</a></td></tr>
 <tr><td><a href="tipos-de-acompañamiento.selenium">tipos-de-acompañamiento</a></td></tr>
 <tr><td><a href="tipos-de-afectacion.selenium">tipos-de-afectacion</a></td></tr>
-<tr><td><a href="tipos-de-centros- poblado.selenium">tipos-de-centros- poblado</a></td></tr>
+<tr><td><a href="tipos-de-centros-poblados.selenium">tipos-de-centros-poblados</a></td></tr>
 <tr><td><a href="tipos-de-documentos.selenium">tipos-de-documentos</a></td></tr>
 <tr><td><a href="tipos-de-sitios.selenium">tipos-de-sitios</a></td></tr>
 <tr><td><a href="tipos-de-violencia.selenium">tipos-de-violencia</a></td></tr>

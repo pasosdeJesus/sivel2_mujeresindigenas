@@ -18,7 +18,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=b.caret</td>
+	<td>link=Casos</td>
 	<td></td>
 </tr>
 <tr>
@@ -57,14 +57,44 @@
 	<td>label=CÓRDOBA</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#caso_victima_attributes_0_persona_attributes_id_municipio option[value=849]</td>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Editar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Editar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Datos de la Víctima</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Datos de la Víctima</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=caso_victima_attributes_0_persona_attributes_id_municipio</td>
+	<td>label=MOÑITOS</td>
 </tr>
 <tr>
 	<td>select</td>
 	<td>id=caso_victima_attributes_0_persona_attributes_id_municipio</td>
 	<td>label=MOÑITOS</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=commit</td>
+	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
@@ -84,11 +114,6 @@
 <tr>
 	<td>assertConfirmation</td>
 	<td>¿Está seguro(a)?</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Mujeres Indigenas 2.0b2</td>
 	<td></td>
 </tr>
 </tbody></table>

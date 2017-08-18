@@ -27,9 +27,19 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=a.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
 	<td>clickAndWait</td>
 	<td>css=a.btn.btn-primary</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=usuario_nusuario</td>
+	<td>sara</td>
 </tr>
 <tr>
 	<td>type</td>
