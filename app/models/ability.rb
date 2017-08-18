@@ -105,7 +105,7 @@ class Ability < Sivel2Sjr::Ability
         can :read, Sivel2Gen::Caso
         can :new, Sivel2Gen::Caso
         can :nuevo, Sivel2Gen::Caso
-        can [:update, :create, :destroy], Sivel2Gen::Caso, 
+        can [:manage], Sivel2Gen::Caso, 
           casosjr: { oficina_id: usuario.oficina_id }
       when Ability::ROLCOOR
         can :manage, ::Evento
@@ -122,7 +122,7 @@ class Ability < Sivel2Sjr::Ability
         can :read, Sivel2Gen::Caso
         can :new, Sivel2Gen::Caso
         can :nuevo, Sivel2Gen::Caso
-        can [:update, :create, :destroy, :poneretcomp], Sivel2Gen::Caso, 
+        can [:manage], Sivel2Gen::Caso, 
           casosjr: { oficina_id: usuario.oficina_id }
       when Ability::ROLADMIN, Ability::ROLDIR
         can :edit, :casosacin

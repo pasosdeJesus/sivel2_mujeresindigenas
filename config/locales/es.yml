@@ -1,5 +1,9 @@
 es:
   attributes:
+    fechacreacion: Fecha de creación
+    fechacreacion_localizada: Fecha de creación
+    fechadeshabilitacion: Fecha de deshabilitación
+    fechadeshabilitacion_localizada: Fecha de deshabilitación
   activerecord:
     models:
       "acompanamiento":

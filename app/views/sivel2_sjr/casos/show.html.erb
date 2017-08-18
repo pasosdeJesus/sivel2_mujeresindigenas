@@ -250,7 +250,7 @@
             <dt><strong>
               <%= Sivel2Sjr::Victimasjr.human_attribute_name(:religion) %>:
             </strong></dt>
-            <dd><%= victima.victimasjr.religion.nombre if 
+            <dd><%= ApplicationHelper::s_guiones(victima.victimasjr.religion.nombre) if 
              victima.victimasjr && victima.victimasjr.religion %> </dd>
 
             <dt><strong>
