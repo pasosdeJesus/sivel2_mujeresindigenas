@@ -10,9 +10,9 @@ module Sivel2Sjr
     # Campos por presentar en listado index
     def incluir_inicial
       if can? :edit, :casosacin
-        ['casoid', 'fecharec', 'oficina', 'nusuario', 'ubicaciones', 'contacto']
+        ['casoid', 'fecharec', 'oficina', 'nusuario', 'ubicaciones', 'contacto', 'fechahecho']
       else
-        ['casoid', 'fecharec', 'oficina', 'nusuario', 'ubicaciones']
+        ['casoid', 'fecharec', 'oficina', 'nusuario', 'ubicaciones', 'fechahecho']
       end
     end
 
@@ -21,9 +21,38 @@ module Sivel2Sjr
        :fecharecini, :fecharecfin,
        :oficina_id, :usuario_id,
        :departamento_id, :municipio_id,
-       :nombres, :apellidos, :sexo, :rangoedad_id,
-       :categoria_id
+       :nombressp, :apellidossp, :sexo, :rangoedad_id,
+       :categoria_id,
+       :fechahechoini, :fechahechofin,
       ]
+    end
+
+    def inicializa_index
+      rplant = Heb412Gen::Plantillahcm.where(
+        vista: 'Caso')
+      if !can? :manage, Heb412Gen::Doc
+        if current_usuario.oficina_id
+          rplant = rplant.where('(oficina_id IS NULL OR oficina_id=?)',
+                                current_usuario.oficina_id)
+        else
+          authorize! :manage, Heb412Gen::Doc
+        end
+      end
+      @plantillas = rplant.select('nombremenu, id').map { 
+          |c| [c.nombremenu, c.id] }
+    end
+
+    def valida_plantilla(current_usuario, idplant)
+      if can? :manage, Heb412Gen::Doc
+        return true
+      elsif current_usuario.oficina_id
+        p = Heb412Gen::Plantillahcm.find(idplant)
+        if !p.oficina_id || 
+          p.oficina_id == current_usuario.oficina_id
+          return true
+        end
+      end
+      return false
     end
 
     def update
@@ -42,6 +71,12 @@ module Sivel2Sjr
               v[:id_caso] = @caso.id
             end
           }
+        end
+        if (params[:caso][:victima_attributes]["0"][:persona_attributes][:apellidos] == '')
+          params[:caso][:victima_attributes]["0"][:persona_attributes][:apellidos] = 'N'
+        end
+        if (params[:caso][:victima_attributes]["0"][:persona_attributes][:nombres] == '')
+          params[:caso][:victima_attributes]["0"][:persona_attributes][:nombres] = 'N'
         end
         @caso.persona.first.apellidos = 'N'
         @caso.persona.first.nombres = 'N'
@@ -66,12 +101,12 @@ module Sivel2Sjr
         @caso.evento.each do |ev|
           if ev.eventopresponsable
             ev.eventopresponsable.each do |evp|
-              ::CategoriaEventopresponsable.delete_all(
+              ::CategoriaEventopresponsable.where(
                 eventopresponsable_id: evp.id
-              )
+              ).delete_all
             end
           end
-          ::Eventopresponsable.delete_all(evento_id: ev.id)
+          ev = ::Eventopresponsable.where(evento_id: ev.id).delete_all
         end
       end
       @caso.casosjr.destroy if @caso.casosjr

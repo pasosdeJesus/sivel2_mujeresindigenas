@@ -2,10 +2,12 @@
 <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
   <div class="privado alert-info">
     <%= fpersona.input :nombres, placeholder: 'N',
-      value_method: lambda {|t| '' if t.nombres == 'N'} %>
+      value_method: lambda {|t| (t.nombres && t.nombres != '') ? 
+        t.nombres : 'N' } %>
 
     <%= fpersona.input :apellidos, placeholder: 'N',
-      value_method: lambda {|t| '' if t.apellidos == 'N'} %>
+      value_method: lambda {|t| (t.apellidos && t.apellidos != '') ? 
+        t.apellidos: 'N' } %>
 
     <%= fpersona.input :tdocumento_id,
       collection: Sip::Tdocumento.habilitados,

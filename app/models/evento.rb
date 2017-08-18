@@ -56,15 +56,16 @@ class Evento < ActiveRecord::Base
   has_many :motivonodenuncia, through: :evento_motivonodenuncia,
     class_name: "::Motivonodenuncia"
 
-  validates :situacionriesgo, length: { maximum: 1 }
-  validates :solicitomedidas, length: {maximum: 1}
   validates :denuncia, length: {maximum: 1}
   validates :denunciaante, length: {maximum: 1}
-  validates :testigo, length: {maximum: 1}
   validates :quisieradenunciar, length: {maximum: 1}
   validates :recibidoreparacion, length: {maximum: 1}
-  validates :valoracionjusticia, length: {maximum: 1}
   validates :relacionadocon, length: { maximum: 1}
+  validates :sancionadovictimario, length: { maximum: 1 }
+  validates :situacionriesgo, length: { maximum: 1 }
+  validates :solicitomedidas, length: {maximum: 1}
+  validates :testigo, length: {maximum: 1}
+  validates :valoracionjusticia, length: {maximum: 1}
 
   validates :acompnecesita, length: {maximum: 5000}
   validates :afectacionotra, length: {maximum: 500}
@@ -76,11 +77,14 @@ class Evento < ActiveRecord::Base
   validates :descripcionafectacion, length: {maximum: 5000}
   validates :etapaproceso, length: {maximum: 500}
   validates :medidasrecibidas, length: {maximum: 5000}
+  validates :numvecesantes, length: {maximum: 100}
   validates :observaciones, length: {maximum: 5000}
+  validates :quereparacion, length: {maximum: 5120}
   validates :relacionprespvic, length: {maximum: 500}
   validates :resguardo, length: {maximum: 500}
   validates :reaccionfamiliaycomunidad, length: {maximum: 5000}
   validates :seguimientojudicial, length: {maximum: 5000}
   validates :seguimientopsicosocial, length: {maximum: 5000}
+  validates :telcontacto, length: {maximum: 128}
 
 end

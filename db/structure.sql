@@ -1543,18 +1543,18 @@ CREATE TABLE evento (
     solicitomedidas character varying(1) DEFAULT 'I'::character varying,
     denuncia character varying(1) DEFAULT 'I'::character varying,
     testigo character varying(1) DEFAULT 'I'::character varying,
-    afectacionotra character varying(500) DEFAULT 'I'::character varying,
+    afectacionotra character varying(500) DEFAULT ''::character varying,
     quisieradenunciar character varying(1) DEFAULT 'I'::character varying,
     recibidoreparacion character varying(1) DEFAULT 'I'::character varying,
     denunciaante character varying(1) DEFAULT 'I'::character varying,
-    valoracionjusticia character varying(1) DEFAULT 'R'::character varying,
+    valoracionjusticia character varying(1) DEFAULT 'S'::character varying,
     resguardo character varying(500) DEFAULT ''::character varying,
     comunidad character varying(500) DEFAULT ''::character varying,
     medidasrecibidas character varying(5000) DEFAULT ''::character varying,
     brindadaproteccion character varying(5000) DEFAULT ''::character varying,
     descripcionafectacion character varying(5000) DEFAULT ''::character varying,
     relacionprespvic character varying(500) DEFAULT ''::character varying,
-    numvecesantes character varying,
+    numvecesantes character varying(100) DEFAULT ''::character varying,
     actividadesdejadas character varying(5000) DEFAULT ''::character varying,
     reaccionfamiliaycomunidad character varying(5000) DEFAULT ''::character varying,
     avancescaso character varying(5000) DEFAULT ''::character varying,
@@ -1571,13 +1571,13 @@ CREATE TABLE evento (
     aniodenuncia integer,
     departamento_id integer,
     municipio_id integer,
-    relacionadocon character varying(1) DEFAULT 'S'::character varying,
-    seguimientojudicial character varying(5000),
-    seguimientopsicosocial character varying(5000),
-    telcontacto character varying(128),
-    quereparacion character varying(5120),
+    relacionadocon character varying(1) DEFAULT 'I'::character varying,
+    seguimientojudicial character varying(5000) DEFAULT ''::character varying,
+    seguimientopsicosocial character varying(5000) DEFAULT ''::character varying,
+    telcontacto character varying(128) DEFAULT ''::character varying,
+    quereparacion character varying(5120) DEFAULT ''::character varying,
     fechaseguimiento date,
-    sancionadovictimario character varying(1)
+    sancionadovictimario character varying(1) DEFAULT 'I'::character varying
 );
 
 
@@ -1804,7 +1804,8 @@ CREATE TABLE heb412_gen_plantillahcm (
     licencia character varying(1023),
     vista character varying(127) NOT NULL,
     nombremenu character varying(127) NOT NULL,
-    filainicial integer NOT NULL
+    filainicial integer NOT NULL,
+    oficina_id integer
 );
 
 
@@ -2301,8 +2302,8 @@ CREATE SEQUENCE sip_persona_id_seq
 
 CREATE TABLE sip_persona (
     id integer DEFAULT nextval('sip_persona_id_seq'::regclass) NOT NULL,
-    nombres character varying(100) COLLATE public.es_co_utf_8 NOT NULL,
-    apellidos character varying(100) COLLATE public.es_co_utf_8 NOT NULL,
+    nombres character varying(100) COLLATE public.es_co_utf_8 DEFAULT 'N'::character varying NOT NULL,
+    apellidos character varying(100) COLLATE public.es_co_utf_8 DEFAULT 'N'::character varying NOT NULL,
     anionac integer,
     mesnac integer,
     dianac integer,
@@ -2897,7 +2898,12 @@ CREATE VIEW sivel2_gen_conscaso1 AS
           WHERE (evento.caso_id = caso.id)), ', '::text) AS ubicaciones,
     casosjr.fecharec,
     oficina.nombre AS oficina,
-    usuario.nusuario
+    usuario.nusuario,
+    array_to_string(ARRAY( SELECT ((((lpad((COALESCE(evento.anio, 0))::text, 4, '0'::text) || '-'::text) || lpad((COALESCE(evento.mes, 0))::text, 2, '0'::text)) || '-'::text) || lpad((COALESCE(evento.dia, 0))::text, 2, '0'::text))
+           FROM evento
+          WHERE (evento.caso_id = caso.id)
+          ORDER BY evento.id
+         LIMIT 1), ','::text) AS fechahecho
    FROM (((sivel2_sjr_casosjr casosjr
      JOIN sivel2_gen_caso caso ON ((casosjr.id_caso = caso.id)))
      JOIN sip_oficina oficina ON ((oficina.id = casosjr.oficina_id)))
@@ -2915,6 +2921,7 @@ CREATE MATERIALIZED VIEW sivel2_gen_conscaso AS
     sivel2_gen_conscaso1.fecharec,
     sivel2_gen_conscaso1.oficina,
     sivel2_gen_conscaso1.nusuario,
+    sivel2_gen_conscaso1.fechahecho,
     to_tsvector('spanish'::regconfig, unaccent((((((((((sivel2_gen_conscaso1.caso_id || ' '::text) || sivel2_gen_conscaso1.contacto) || ' '::text) || replace(((sivel2_gen_conscaso1.fecharec)::character varying)::text, '-'::text, ' '::text)) || ' '::text) || (sivel2_gen_conscaso1.oficina)::text) || ' '::text) || (sivel2_gen_conscaso1.nusuario)::text) || ' '::text))) AS q
    FROM sivel2_gen_conscaso1
   WITH NO DATA;
@@ -3112,7 +3119,7 @@ CREATE TABLE sivel2_sjr_victimasjr (
     id_municipio integer,
     nivelsisben integer,
     id_regimensalud integer DEFAULT 0,
-    eps character varying(1000),
+    eps character varying(1000) DEFAULT ''::character varying,
     libretamilitar boolean,
     distrito integer,
     progadultomayor boolean,
@@ -3121,8 +3128,8 @@ CREATE TABLE sivel2_sjr_victimasjr (
     updated_at timestamp without time zone,
     id_victima integer NOT NULL,
     id_pais integer,
-    enfermedad character varying(5000),
-    ndiscapacidad character varying(100),
+    enfermedad character varying(5000) DEFAULT ''::character varying,
+    ndiscapacidad character varying(100) DEFAULT ''::character varying,
     incluidoruv character varying(1) DEFAULT 'I'::character varying,
     cabezahogar character varying(1) DEFAULT 'I'::character varying,
     sistemasalud character varying(1) DEFAULT 'I'::character varying,
@@ -3138,10 +3145,10 @@ CREATE TABLE sivel2_sjr_victimasjr (
     educacionpropia_id integer DEFAULT 0,
     departamentores_id integer,
     municipiores_id integer,
-    resguardores character varying(500),
-    comunidadres character varying(500),
-    comoingresos character varying(5000),
-    tipoliderazgo character varying(5000)
+    resguardores character varying(500) DEFAULT ''::character varying,
+    comunidadres character varying(500) DEFAULT ''::character varying,
+    comoingresos character varying(5000) DEFAULT ''::character varying,
+    tipoliderazgo character varying(5000) DEFAULT ''::character varying
 );
 
 
@@ -3212,7 +3219,7 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
             WHEN ((casosjr.consentimiento)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
             WHEN ((casosjr.consentimiento)::text = 'S'::text) THEN 'SI'::text
             ELSE 'NO'::text
-        END AS consentimiento,
+        END AS consentimiento_priv_acin,
     casosjr.created_at AS fecha_creacion,
     casosjr.updated_at AS fecha_actualizacion,
     conscaso.nusuario AS sistematizado_por,
@@ -3242,10 +3249,10 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
           WHERE (cf.id_caso = conscaso.caso_id)
           ORDER BY cf.fecha
          LIMIT 1), '; '::text) AS fuente1_detalle,
-    conscaso.contacto AS victima,
-    contacto.nombres AS victima_nombres,
-    contacto.apellidos AS victima_apellidos,
-    COALESCE(tdocumento.sigla, ''::character varying) AS victima_identificacion,
+    conscaso.contacto AS victima_priv_acin,
+    contacto.nombres AS victima_nombres_priv_acin,
+    contacto.apellidos AS victima_apellidos_priv_acin,
+    COALESCE(tdocumento.sigla, ''::character varying) AS victima_identificacion_priv_acin,
     contacto.anionac AS victima_anionac,
     contacto.mesnac AS victima_mesnac,
     contacto.dianac AS victima_dianac,
@@ -3262,15 +3269,15 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
     COALESCE(vmunicipio.nombre, ''::character varying) AS victima_municipionac,
     scontacto.resguardonac AS victima_resguardonac,
     scontacto.comunidadnac AS victima_comunidadnac,
-    COALESCE(sdepartamento.nombre, ''::character varying) AS victima_departamentores,
-    COALESCE(smunicipio.nombre, ''::character varying) AS victima_municipiores,
-    scontacto.resguardores AS victima_resguardores,
-    scontacto.comunidadres AS victima_comunidadres,
-    vcontacto.hijos AS victima_numhijos,
+    COALESCE(sdepartamento.nombre, ''::character varying) AS victima_departamentores_priv_acin,
+    COALESCE(smunicipio.nombre, ''::character varying) AS victima_municipiores_priv_acin,
+    scontacto.resguardores AS victima_resguardores_priv_acin,
+    scontacto.comunidadres AS victima_comunidadres_priv_acin,
+    vcontacto.hijos AS victima_numhijos_priv_acin,
     array_to_string(ARRAY( SELECT idioma.nombre
            FROM (sivel2_sjr_idioma idioma
              JOIN idioma_victimasjr ON ((idioma_victimasjr.sivel2_sjr_idioma_id = idioma.id)))
-          WHERE (idioma_victimasjr.sivel2_sjr_victimasjr_id = scontacto.id_victima)), '; '::text) AS victima_idiomas,
+          WHERE (idioma_victimasjr.sivel2_sjr_victimasjr_id = scontacto.id_victima)), '; '::text) AS victima_idiomas_priv_acin,
     COALESCE(etnia.nombre, ''::character varying) AS victima_etnia,
     COALESCE(estadocivil.nombre, ''::character varying) AS victima_estadocivil,
     COALESCE(escolaridad.nombre, ''::character varying) AS victima_ultgreducacionord,
@@ -3280,14 +3287,14 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
             WHEN ((scontacto.sistemasalud)::text = 'O'::text) THEN 'ORDINARIO'::text
             ELSE 'SIN INFORMACIÓN'::text
         END AS victima_carnetsalud,
-    COALESCE(religion.nombre, ''::character varying) AS victima_religion,
-    scontacto.comoingresos AS victima_comogeneraingresos,
+    COALESCE(religion.nombre, ''::character varying) AS victima_religion_priv_acin,
+    scontacto.comoingresos AS victima_comogeneraingresos_priv_acin,
     array_to_string(ARRAY( SELECT t.nombre
            FROM (tienetierra t
              JOIN tienetierra_victimasjr tv ON ((tv.tienetierra_id = t.id)))
           WHERE (tv.sivel2_sjr_victimasjr_id = scontacto.id_victima)
-          ORDER BY t.nombre), '; '::text) AS victima_tienetierra,
-    scontacto.areatierra AS victima_areatierra,
+          ORDER BY t.nombre), '; '::text) AS victima_tienetierra_priv_acin,
+    scontacto.areatierra AS victima_areatierra_priv_acin,
         CASE
             WHEN (contacto.sexo = 'F'::bpchar) THEN 'MUJER'::text
             WHEN (contacto.sexo = 'M'::bpchar) THEN 'HOMBRE'::text
@@ -3309,7 +3316,7 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
             WHEN ((scontacto.liderazgo)::text = 'N'::text) THEN 'NO'::text
             ELSE 'SIN INFORMACIÓN'::text
         END AS victima_liderazgocomunidad,
-    scontacto.tipoliderazgo AS victima_tipoliderazgo,
+    scontacto.tipoliderazgo AS victima_tipoliderazgo_priv_acin,
     evento.fechaseguimiento AS evento_fechaseguimiento,
     evento.anio AS evento_anio,
     evento.mes AS evento_mes,
@@ -3337,11 +3344,11 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
             WHEN ((evento.relacionadocon)::text = 'S'::text) THEN 'SOCIAL'::text
             ELSE 'SIN INFORMACIÓN'::text
         END AS evento_relacionadoconconflicto,
-    evento.descripcionafectacion AS evento_descripcion,
+    evento.descripcionafectacion AS evento_descripcion_priv_acin,
     array_to_string(ARRAY( SELECT r.nombre
            FROM (evento_relacionprvic er
              JOIN relacionprvic r ON ((er.relacionprvic_id = r.id)))
-          WHERE (er.evento_id = evento.id)), '; '::text) AS evento_relacionesprvic,
+          WHERE (er.evento_id = evento.id)), '; '::text) AS evento_relacionesprvic_priv_acin,
     array_to_string(ARRAY( SELECT p.nombre
            FROM (eventopresponsable ep
              JOIN sivel2_gen_presponsable p ON ((ep.presponsable_id = p.id)))
@@ -3365,11 +3372,11 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
     array_to_string(ARRAY( SELECT c.nombre
            FROM (consecuenciaindividual_evento ce
              JOIN consecuenciaindividual c ON ((ce.consecuenciaindividual_id = c.id)))
-          WHERE (ce.evento_id = evento.id)), '; '::text) AS evento_afectacionesindividual,
+          WHERE (ce.evento_id = evento.id)), '; '::text) AS evento_afectacionesindividual_priv_acin,
     array_to_string(ARRAY( SELECT c.nombre
            FROM (consecuenciafamiliar_evento ce
              JOIN consecuenciafamiliar c ON ((ce.consecuenciafamiliar_id = c.id)))
-          WHERE (ce.evento_id = evento.id)), '; '::text) AS evento_afectacionesfamiliar,
+          WHERE (ce.evento_id = evento.id)), '; '::text) AS evento_afectacionesfamiliar_priv_acin,
     array_to_string(ARRAY( SELECT t.nombre
            FROM (evento_tapoyo et
              JOIN tapoyo t ON ((et.tapoyo_id = t.id)))
@@ -3377,15 +3384,15 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
     array_to_string(ARRAY( SELECT c.nombre
            FROM (consecuenciafisica_evento ce
              JOIN consecuenciafisica c ON ((ce.consecuenciafisica_id = c.id)))
-          WHERE (ce.evento_id = evento.id)), '; '::text) AS evento_afectacionesfisicas,
-    evento.actividadesdejadas AS evento_actividadesdejarondehacer,
-    evento.reaccionfamiliaycomunidad AS evento_reaccionfamiliaycomunidad,
-    evento.afectacionotra AS evento_afectacionaotrapersona,
+          WHERE (ce.evento_id = evento.id)), '; '::text) AS evento_afectacionesfisicas_priv_acin,
+    evento.actividadesdejadas AS evento_actividadesdejarondehacer_priv_acin,
+    evento.reaccionfamiliaycomunidad AS evento_reaccionfamiliaycomunidad_oriv_acin,
+    evento.afectacionotra AS evento_afectacionaotrapersona_priv_acin,
     array_to_string(ARRAY( SELECT a.nombre
            FROM (acompanamiento_evento ae
              JOIN acompanamiento a ON ((ae.acompanamiento_id = a.id)))
           WHERE (ae.evento_id = evento.id)), '; '::text) AS evento_acompanamientosquenecesita,
-    evento.telcontacto AS evento_telcontacto,
+    evento.telcontacto AS evento_telcontacto_priv_acin,
         CASE
             WHEN ((evento.situacionriesgo)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
             WHEN ((evento.situacionriesgo)::text = 'S'::text) THEN 'SI'::text
@@ -3413,19 +3420,19 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
     evento.aniodenuncia AS evento_aniodenuncia,
     evento.mesdenuncia AS evento_mesdenuncia,
     evento.diadenuncia AS evento_diadenuncia,
-    evento.avancescaso AS evento_avancesdelcaso,
-    evento.etapaproceso AS evento_etapadelproceso,
+    evento.avancescaso AS evento_avancesdelcaso_priv_acin,
+    evento.etapaproceso AS evento_etapadelproceso_priv_acin,
         CASE
             WHEN ((evento.recibidoreparacion)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
             WHEN ((evento.recibidoreparacion)::text = 'S'::text) THEN 'SI'::text
             ELSE 'NO'::text
-        END AS evento_harecibidoreparacion,
-    evento.quereparacion AS evento_cualreparacion,
+        END AS evento_harecibidoreparacion_priv_acin,
+    evento.quereparacion AS evento_cualreparacion_priv_acin,
         CASE
             WHEN ((evento.sancionadovictimario)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
             WHEN ((evento.sancionadovictimario)::text = 'S'::text) THEN 'SI'::text
             ELSE 'NO'::text
-        END AS evento_sancionadovictimario,
+        END AS evento_sancionadovictimario_priv_acin,
     array_to_string(ARRAY( SELECT m.nombre
            FROM (evento_motivonodenuncia em
              JOIN motivonodenuncia m ON ((em.motivonodenuncia_id = m.id)))
@@ -3441,8 +3448,10 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
             WHEN ((evento.quisieradenunciar)::text = 'S'::text) THEN 'SI'::text
             ELSE 'NO'::text
         END AS evento_quisieradenunciar,
-    evento.compromisosadquiridos AS evento_compromisosadquiridos,
-    evento.observaciones AS evento_observaciones,
+    evento.compromisosadquiridos AS evento_compromisosadquiridos_priv_acin,
+    evento.observaciones AS evento_observaciones_priv_acin,
+    evento.seguimientojudicial AS evento_seguimientojudicial_priv_oik,
+    evento.seguimientopsicosocial AS evento_seguimientopsicosocial_priv_oik,
     conscaso.ubicaciones
    FROM (((((((((((((((((sivel2_gen_conscaso conscaso
      JOIN sivel2_sjr_casosjr casosjr ON ((casosjr.id_caso = conscaso.caso_id)))
@@ -7618,6 +7627,14 @@ ALTER TABLE ONLY sivel2_sjr_progestado_derecho
 
 
 --
+-- Name: heb412_gen_plantillahcm fk_rails_ecefd8940c; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY heb412_gen_plantillahcm
+    ADD CONSTRAINT fk_rails_ecefd8940c FOREIGN KEY (oficina_id) REFERENCES sip_oficina(id);
+
+
+--
 -- Name: acompanamiento_casosjr fk_rails_efad5b94f4; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8396,6 +8413,11 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20170529154413'),
 ('20170609131212'),
 ('20170705185205'),
-('20170712205819');
+('20170712205819'),
+('20170723201703'),
+('20170724012755'),
+('20170818002924'),
+('20170818022156'),
+('20170818030012');
 
 

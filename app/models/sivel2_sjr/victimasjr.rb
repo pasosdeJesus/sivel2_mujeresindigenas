@@ -30,6 +30,7 @@ class Sivel2Sjr::Victimasjr < ActiveRecord::Base
   validates :comoingresos, length: { maximum: 5000 }
   validates :comotierra, length: { maximum: 5000 }
   validates :comunidadnac, length: { maximum: 500 }
+  validates :comunidadres, length: { maximum: 500 }
   validates :incluidoruv, length: { maximum: 1}
   validates :liderazgo, length: { maximum: 1}
   validates :municipiores, length: { maximum: 500 }
