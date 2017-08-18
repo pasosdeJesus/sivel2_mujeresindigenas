@@ -276,6 +276,44 @@
 
     <div class="row filtro-fila">
       <div class="col-sm-offset-0 col-sm-2 col-md-offset-1 col-md-1">
+        <%= Sivel2Gen::Caso.human_attribute_name(:fechahecho) %>
+      </div>
+      <div class="col-sm-offset-0 col-sm-3">
+        <%= f.input :fechahechoini,
+          maxlength: 10, 
+          size: 10,
+          label: false,
+          placeholder: 'Inicial',
+          input_html: {
+          "data-behaviour" => "datepicker"
+          }
+        %>
+      </div>
+      <div class="col-sm-offset-1 col-sm-3">
+        <%= f.input :fechahechofin,
+          maxlength: 10, 
+          size: 10,
+          label: false,
+          placeholder: 'Final',
+          input_html: {
+          "data-behaviour" => "datepicker"
+          }
+        %>
+      </div>
+      <div class="col-sm-offset-0 col-sm-1 text-center">
+        <%= f.input :inc_fechahecho, 
+          as: :boolean, 
+          label: false,
+          input_html: { checked: "checked" }
+        %>
+      </div>
+      <div class="col-sm-offset-0 col-sm-1 text-center">
+      </div>
+    </div>
+
+
+    <div class="row filtro-fila">
+      <div class="col-sm-offset-0 col-sm-2 col-md-offset-1 col-md-1">
         Presentación  
       </div>
       <div class="col-sm-offset-1 col-sm-4">

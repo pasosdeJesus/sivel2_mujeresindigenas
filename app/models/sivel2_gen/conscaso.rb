@@ -5,6 +5,22 @@ require 'sivel2_sjr/concerns/models/conscaso'
 class Sivel2Gen::Conscaso < ActiveRecord::Base
   include Sivel2Sjr::Concerns::Models::Conscaso
 
+  scope :filtro_fechahechoini, lambda { |f|
+    where("fechahecho='' OR substring(fechahecho from 1 for 4)='0000' OR 
+          regexp_replace(
+            regexp_replace(replace(fechahecho::text, '-00-00', '-12-31'),
+              '-00-(..)', '-12-\\1'), '-(..)-00', '-\\1-31')
+          >= ?::text", f.to_s)
+  }
+
+  scope :filtro_fechahechofin, lambda { |f|
+    where("fechahecho='' OR substring(fechahecho from 1 for 4)='0000' OR 
+          regexp_replace(
+            regexp_replace(replace(fechahecho::text, '-00-00', '01-01'),
+              '-00-(..)', '-01-\\1'), '-(..)-00', '-\\1-01')
+          <= ?::text", f.to_s)
+  }
+
   scope :filtro_categoria_id, lambda { |id|
     where('caso_id IN (
     SELECT evento.caso_id FROM categoria_eventopresponsable
@@ -49,7 +65,11 @@ class Sivel2Gen::Conscaso < ActiveRecord::Base
         AS ubicaciones,
         casosjr.fecharec,
         oficina.nombre AS oficina,
-        usuario.nusuario
+        usuario.nusuario,
+        ARRAY_TO_STRING(ARRAY(SELECT LPAD(COALESCE(anio, 0)::text, 4, '0') || '-' || 
+        LPAD(COALESCE(mes,0)::text, 2, '0') || '-' || LPAD(COALESCE(dia, 0)::text, 2, '0')
+        FROM evento WHERE evento.caso_id=caso.id ORDER BY id LIMIT 1), ',')
+        AS fechahecho
         FROM sivel2_sjr_casosjr AS casosjr
         JOIN sivel2_gen_caso AS caso ON casosjr.id_caso = caso.id
         JOIN sip_oficina AS oficina ON  oficina.id = casosjr.oficina_id
@@ -58,7 +78,7 @@ class Sivel2Gen::Conscaso < ActiveRecord::Base
       ActiveRecord::Base.connection.execute(
         "CREATE MATERIALIZED VIEW sivel2_gen_conscaso
         AS SELECT caso_id, contacto, ubicaciones, fecharec, oficina,
-          nusuario,
+          nusuario, fechahecho,
           to_tsvector('spanish', unaccent(caso_id || ' ' || contacto ||
             ' ' || replace(cast(fecharec AS varchar), '-', ' ') ||
             ' ' || oficina || ' ' || nusuario || ' ' )) as q

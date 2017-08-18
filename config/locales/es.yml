@@ -4,6 +4,7 @@ es:
     fechacreacion_localizada: Fecha de creación
     fechadeshabilitacion: Fecha de deshabilitación
     fechadeshabilitacion_localizada: Fecha de deshabilitación
+    fechahecho: Fecha del hecho
   activerecord:
     models:
       "acompanamiento":

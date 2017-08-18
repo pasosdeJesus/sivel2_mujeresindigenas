@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://defensor.info:5000/" />
-<title>niveles de-escolaridad</title>
+<link rel="selenium.base" href="https://defensor.info:5000/" />
+<title>tipos-de relaciones-familiares</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">niveles de-escolaridad</td></tr>
+<tr><td rowspan="1" colspan="3">tipos-de relaciones-familiares</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -28,7 +28,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[2]/a/b</td>
+	<td>link=Administrar</td>
 	<td></td>
 </tr>
 <tr>
@@ -38,12 +38,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Niveles de Escolaridad</td>
+	<td>link=Tipos de Relaciones Familiares</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Niveles de Escolaridad</td>
+	<td>link=Tipos de Relaciones Familiares</td>
 	<td></td>
 </tr>
 <tr>
@@ -57,19 +57,29 @@
 	<td></td>
 </tr>
 <tr>
+	<td>click</td>
+	<td>css=a.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
-	<td>id=escolaridad_nombre</td>
+	<td>id=trelacion_id</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=escolaridad_nombre</td>
-	<td>tecnològico</td>
+	<td>id=trelacion_id</td>
+	<td>34</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=escolaridad_nombre</td>
-	<td>tecnológico</td>
+	<td>id=trelacion_nombre</td>
+	<td>desconocido</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=trelacion_inverso</td>
+	<td>hi</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
@@ -84,6 +94,11 @@
 <tr>
 	<td>assertConfirmation</td>
 	<td>¿Está seguro(a)?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Mujeres Indigenas 2.0b2</td>
 	<td></td>
 </tr>
 </tbody></table>

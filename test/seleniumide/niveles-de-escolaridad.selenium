@@ -3,17 +3,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://defensor.info:5000/" />
-<title>tipos-de apoyo</title>
+<link rel="selenium.base" href="https://defensor.info:5000/" />
+<title>niveles de-escolaridad</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">tipos-de apoyo</td></tr>
+<tr><td rowspan="1" colspan="3">niveles de-escolaridad</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
 	<td>/mujeresindigenas/sivel2/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Administrar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Administrar</td>
 	<td></td>
 </tr>
 <tr>
@@ -28,12 +38,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Tipos de apoyo</td>
+	<td>link=Niveles de Escolaridad</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Tipos de apoyo</td>
+	<td>link=Niveles de Escolaridad</td>
 	<td></td>
 </tr>
 <tr>
@@ -48,13 +58,18 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=tapoyo_nombre</td>
+	<td>id=escolaridad_nombre</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=tapoyo_nombre</td>
-	<td>veredal</td>
+	<td>id=escolaridad_nombre</td>
+	<td>tecnològico</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=escolaridad_nombre</td>
+	<td>tecnológico</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
@@ -69,11 +84,6 @@
 <tr>
 	<td>assertConfirmation</td>
 	<td>¿Está seguro(a)?</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Mujeres Indigenas 2.0b2</td>
 	<td></td>
 </tr>
 </tbody></table>

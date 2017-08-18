@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://defensor.info:5000/" />
-<title>tipos-de relaciones-familiares</title>
+<link rel="selenium.base" href="https://defensor.info:5000/" />
+<title>motivos-para-no denunciar</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">tipos-de relaciones-familiares</td></tr>
+<tr><td rowspan="1" colspan="3">motivos-para-no denunciar</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -18,12 +18,12 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Administrar</td>
+	<td>//li[2]/a/b</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Administrar</td>
+	<td>css=li.dropdown.open &gt; a.dropdown-toggle &gt; b.caret</td>
 	<td></td>
 </tr>
 <tr>
@@ -38,48 +38,38 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Tipos de Relaciones Familiares</td>
+	<td>link=Motivos para no denunciar</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Tipos de Relaciones Familiares</td>
+	<td>link=Motivos para no denunciar</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=a.btn.btn-primary</td>
+	<td>xpath=(//a[contains(text(),'Nuevo')])[3]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=a.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=a.btn.btn-primary</td>
+	<td>xpath=(//a[contains(text(),'Nuevo')])[3]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=trelacion_id</td>
+	<td>id=motivonodenuncia_nombre</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=trelacion_id</td>
-	<td>34</td>
+	<td>id=motivonodenuncia_nombre</td>
+	<td>inconciencia</td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=trelacion_nombre</td>
-	<td>desconocido</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=trelacion_inverso</td>
-	<td>hi</td>
+	<td>click</td>
+	<td>name=commit</td>
+	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
