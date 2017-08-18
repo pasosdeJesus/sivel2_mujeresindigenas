@@ -3,7 +3,7 @@
 require 'heb412_gen/concerns/controllers/plantillahcm_controller'
 
 module Heb412Gen
-  class PlantillahcmController < ApplicationController
+  class PlantillahcmController < Sip::ModelosController
  
     include Heb412Gen::Concerns::Controllers::PlantillahcmController    
 

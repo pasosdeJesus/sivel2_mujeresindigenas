@@ -100,6 +100,7 @@ class Ability < Sivel2Sjr::Ability
           oficina: { id: usuario.oficina_id}
         can :read, Cor1440Gen::Informe
         can :read, Heb412Gen::Doc
+        can :read, Heb412Gen::Plantillahcm
         can :manage, Sip::Persona
         can :manage, Sivel2Gen::Acto
         can :read, Sivel2Gen::Caso
@@ -117,6 +118,7 @@ class Ability < Sivel2Sjr::Ability
           oficina: { id: usuario.oficina_id}
         can :manage, Cor1440Gen::Informe
         can :read, Heb412Gen::Doc
+        can :read, Heb412Gen::Plantillahcm
         can :manage, Sip::Persona
         can :manage, Sivel2Gen::Acto
         can :read, Sivel2Gen::Caso
@@ -132,6 +134,7 @@ class Ability < Sivel2Sjr::Ability
         can :manage, Cor1440Gen::Actividad
         can :manage, Cor1440Gen::Informe
         can :manage, Heb412Gen::Doc
+        can :manage, Heb412Gen::Plantillahcm
         can :manage, Sip::Persona
         can :manage, Sip::Respaldo7z
         can :manage, Sip::Bitacora7z
