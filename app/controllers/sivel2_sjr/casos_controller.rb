@@ -71,6 +71,12 @@ module Sivel2Sjr
             end
           }
         end
+        if (params[:caso][:victima_attributes]["0"][:persona_attributes][:apellidos] == '')
+          params[:caso][:victima_attributes]["0"][:persona_attributes][:apellidos] = 'N'
+        end
+        if (params[:caso][:victima_attributes]["0"][:persona_attributes][:nombres] == '')
+          params[:caso][:victima_attributes]["0"][:persona_attributes][:nombres] = 'N'
+        end
         @caso.persona.first.apellidos = 'N'
         @caso.persona.first.nombres = 'N'
         @caso.persona.first.id_pais = 170
