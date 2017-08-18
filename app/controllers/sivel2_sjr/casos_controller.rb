@@ -10,9 +10,9 @@ module Sivel2Sjr
     # Campos por presentar en listado index
     def incluir_inicial
       if can? :edit, :casosacin
-        ['casoid', 'fecharec', 'oficina', 'nusuario', 'ubicaciones', 'contacto']
+        ['casoid', 'fecharec', 'oficina', 'nusuario', 'ubicaciones', 'contacto', 'fechahecho']
       else
-        ['casoid', 'fecharec', 'oficina', 'nusuario', 'ubicaciones']
+        ['casoid', 'fecharec', 'oficina', 'nusuario', 'ubicaciones', 'fechahecho']
       end
     end
 
@@ -22,7 +22,8 @@ module Sivel2Sjr
        :oficina_id, :usuario_id,
        :departamento_id, :municipio_id,
        :nombressp, :apellidossp, :sexo, :rangoedad_id,
-       :categoria_id
+       :categoria_id,
+       :fechahechoini, :fechahechofin,
       ]
     end
 
