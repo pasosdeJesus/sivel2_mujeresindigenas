@@ -119,10 +119,6 @@ group :test do
   # Acelera desarrollo ejecutando en fondo.  https://github.com/jonleighton/spring
   gem "spring"
 
-  # Pruebas con rspec
-  gem 'spring-commands-rspec'
-  gem 'rspec-rails'
-
   # Un proceso para cada prueba -- acelera
   gem 'spork'
 
@@ -138,7 +134,6 @@ group :test do
   # Pruebas de regresión que no requieren javascript
   gem "capybara"
   
-  # Para examinar errores, usar "rescue rspec" en lugar de "rspec"
   gem 'pry-rescue'
   gem 'pry-stack_explorer'
 end
