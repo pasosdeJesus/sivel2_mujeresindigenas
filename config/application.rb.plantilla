@@ -35,14 +35,14 @@ module Sivel2Mujeresindigenas
 
     config.action_mailer.default_url_options = { 
       protocol: 'https',
-      host: 'defensor.info',
-      port: 5000
+      host: 'localhost',
+      port: 2300 
     }
 
     config.action_controller.default_url_options = { 
       protocol: 'https',
-      host: 'defensor.info',
-      port: 5000
+      host: 'localhost',
+      port: 2300 
     }
 
   end
