@@ -15,6 +15,7 @@ before_install:
         - sudo /etc/init.d/postgresql start 9.6
         - psql -c 'CREATE DATABASE sivel2mind_pru;' -U postgres
         - bundle install
+        - cp config/application.rb.plantilla config/application.rb
         - cp config/database.travis.yml config/database.yml
         - cp config/initializers/sip.rb.plantilla config/initializers/sip.rb
         - rake db:setup
