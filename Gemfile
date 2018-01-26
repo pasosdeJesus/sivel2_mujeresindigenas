@@ -11,7 +11,7 @@ gem "prawnto_2",  :require => "prawnto"
 gem "prawn-table"
 
 # Postgresql
-gem "pg"
+gem "pg", '~> 0.21'
 
 gem 'puma'
 
