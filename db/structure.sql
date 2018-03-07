@@ -3810,7 +3810,9 @@ CREATE MATERIALIZED VIEW sivel2_gen_consexpcaso AS
      LEFT JOIN evento ON (((evento.caso_id = conscaso.caso_id) AND (evento.id = ( SELECT min(e.id) AS min
            FROM evento e
           WHERE (e.caso_id = conscaso.caso_id))))))
-  WHERE (true = false)
+  WHERE (conscaso.caso_id IN ( SELECT sivel2_gen_conscaso.caso_id
+           FROM sivel2_gen_conscaso
+          ORDER BY sivel2_gen_conscaso.fecharec DESC, sivel2_gen_conscaso.caso_id))
   WITH NO DATA;
 
 

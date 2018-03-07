@@ -30,12 +30,12 @@ module Sivel2Sjr
     def inicializa_index
       rplant = Heb412Gen::Plantillahcm.where(
         vista: 'Caso')
-      if !can? :manage, Heb412Gen::Doc
+      if !can? :read, Heb412Gen::Doc
         if current_usuario.oficina_id
           rplant = rplant.where('(oficina_id IS NULL OR oficina_id=?)',
                                 current_usuario.oficina_id)
         else
-          authorize! :manage, Heb412Gen::Doc
+          authorize! :read, Heb412Gen::Doc
         end
       end
       @plantillas = rplant.select('nombremenu, id').map { 
