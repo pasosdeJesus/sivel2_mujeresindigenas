@@ -45,5 +45,11 @@ module Sivel2Mujeresindigenas
       port: 2300 
     }
 
+    config.active_job.queue_adapter = 
+      ActiveJob::QueueAdapters::AsyncAdapter.new \
+      min_threads: 1,
+      max_threads: 2 * Concurrent.processor_count,
+      idletime: 3600.seconds
+
   end
 end

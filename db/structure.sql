@@ -1072,6 +1072,36 @@ CREATE TABLE cor1440_gen_actividad_usuario (
 
 
 --
+-- Name: cor1440_gen_actividad_valorcampotind; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE cor1440_gen_actividad_valorcampotind (
+    id bigint NOT NULL,
+    actividad_id integer,
+    valorcampotind_id integer
+);
+
+
+--
+-- Name: cor1440_gen_actividad_valorcampotind_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE cor1440_gen_actividad_valorcampotind_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: cor1440_gen_actividad_valorcampotind_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE cor1440_gen_actividad_valorcampotind_id_seq OWNED BY cor1440_gen_actividad_valorcampotind.id;
+
+
+--
 -- Name: cor1440_gen_actividadarea; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1147,7 +1177,8 @@ CREATE TABLE cor1440_gen_actividadpf (
     nombrecorto character varying(15),
     titulo character varying(255),
     descripcion character varying(5000),
-    resultadopf_id integer
+    resultadopf_id integer,
+    actividadtipo_id integer
 );
 
 
@@ -1202,6 +1233,37 @@ CREATE SEQUENCE cor1440_gen_actividadtipo_id_seq
 --
 
 ALTER SEQUENCE cor1440_gen_actividadtipo_id_seq OWNED BY cor1440_gen_actividadtipo.id;
+
+
+--
+-- Name: cor1440_gen_campoact; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE cor1440_gen_campoact (
+    id bigint NOT NULL,
+    actividadtipo_id integer,
+    nombrecampo character varying(128),
+    ayudauso character varying(1024)
+);
+
+
+--
+-- Name: cor1440_gen_campoact_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE cor1440_gen_campoact_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: cor1440_gen_campoact_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE cor1440_gen_campoact_id_seq OWNED BY cor1440_gen_campoact.id;
 
 
 --
@@ -1579,6 +1641,37 @@ CREATE SEQUENCE cor1440_gen_tipoindicador_id_seq
 --
 
 ALTER SEQUENCE cor1440_gen_tipoindicador_id_seq OWNED BY cor1440_gen_tipoindicador.id;
+
+
+--
+-- Name: cor1440_gen_valorcampoact; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE cor1440_gen_valorcampoact (
+    id bigint NOT NULL,
+    actividad_id integer,
+    campoact_id integer,
+    valor character varying(5000)
+);
+
+
+--
+-- Name: cor1440_gen_valorcampoact_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE cor1440_gen_valorcampoact_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: cor1440_gen_valorcampoact_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE cor1440_gen_valorcampoact_id_seq OWNED BY cor1440_gen_valorcampoact.id;
 
 
 --
@@ -2845,18 +2938,27 @@ CREATE TABLE sivel2_gen_antecedente_victimacolectiva (
 
 
 --
+-- Name: sivel2_gen_caso_categoria_presponsable_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE sivel2_gen_caso_categoria_presponsable_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
 -- Name: sivel2_gen_caso_categoria_presponsable; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE sivel2_gen_caso_categoria_presponsable (
-    id_tviolencia character varying(1) NOT NULL,
-    id_supracategoria integer NOT NULL,
     id_categoria integer NOT NULL,
-    id_caso integer NOT NULL,
-    id_presponsable integer NOT NULL,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    id_caso_presponsable integer NOT NULL
+    id_caso_presponsable integer NOT NULL,
+    id integer DEFAULT nextval('sivel2_gen_caso_categoria_presponsable_id_seq'::regclass) NOT NULL
 );
 
 
@@ -5125,6 +5227,13 @@ ALTER TABLE ONLY cor1440_gen_actividad_rangoedadac ALTER COLUMN id SET DEFAULT n
 
 
 --
+-- Name: cor1440_gen_actividad_valorcampotind id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY cor1440_gen_actividad_valorcampotind ALTER COLUMN id SET DEFAULT nextval('cor1440_gen_actividad_valorcampotind_id_seq'::regclass);
+
+
+--
 -- Name: cor1440_gen_actividadarea id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -5150,6 +5259,13 @@ ALTER TABLE ONLY cor1440_gen_actividadpf ALTER COLUMN id SET DEFAULT nextval('co
 --
 
 ALTER TABLE ONLY cor1440_gen_actividadtipo ALTER COLUMN id SET DEFAULT nextval('cor1440_gen_actividadtipo_id_seq'::regclass);
+
+
+--
+-- Name: cor1440_gen_campoact id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY cor1440_gen_campoact ALTER COLUMN id SET DEFAULT nextval('cor1440_gen_campoact_id_seq'::regclass);
 
 
 --
@@ -5220,6 +5336,13 @@ ALTER TABLE ONLY cor1440_gen_resultadopf ALTER COLUMN id SET DEFAULT nextval('co
 --
 
 ALTER TABLE ONLY cor1440_gen_tipoindicador ALTER COLUMN id SET DEFAULT nextval('cor1440_gen_tipoindicador_id_seq'::regclass);
+
+
+--
+-- Name: cor1440_gen_valorcampoact id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY cor1440_gen_valorcampoact ALTER COLUMN id SET DEFAULT nextval('cor1440_gen_valorcampoact_id_seq'::regclass);
 
 
 --
@@ -5559,14 +5682,6 @@ ALTER TABLE ONLY sivel2_sjr_ayudasjr_respuesta
 
 
 --
--- Name: sivel2_gen_caso_categoria_presponsable caso_categoria_presponsable_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
-    ADD CONSTRAINT caso_categoria_presponsable_pkey PRIMARY KEY (id_tviolencia, id_supracategoria, id_categoria, id_caso_presponsable);
-
-
---
 -- Name: sivel2_gen_caso_contexto caso_contexto_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -5719,6 +5834,14 @@ ALTER TABLE ONLY cor1440_gen_actividad_sip_anexo
 
 
 --
+-- Name: cor1440_gen_actividad_valorcampotind cor1440_gen_actividad_valorcampotind_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY cor1440_gen_actividad_valorcampotind
+    ADD CONSTRAINT cor1440_gen_actividad_valorcampotind_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: cor1440_gen_actividadpf cor1440_gen_actividadpf_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -5732,6 +5855,14 @@ ALTER TABLE ONLY cor1440_gen_actividadpf
 
 ALTER TABLE ONLY cor1440_gen_actividadtipo
     ADD CONSTRAINT cor1440_gen_actividadtipo_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: cor1440_gen_campoact cor1440_gen_campoact_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY cor1440_gen_campoact
+    ADD CONSTRAINT cor1440_gen_campoact_pkey PRIMARY KEY (id);
 
 
 --
@@ -5804,6 +5935,14 @@ ALTER TABLE ONLY cor1440_gen_resultadopf
 
 ALTER TABLE ONLY cor1440_gen_tipoindicador
     ADD CONSTRAINT cor1440_gen_tipoindicador_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: cor1440_gen_valorcampoact cor1440_gen_valorcampoact_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY cor1440_gen_valorcampoact
+    ADD CONSTRAINT cor1440_gen_valorcampoact_pkey PRIMARY KEY (id);
 
 
 --
@@ -6447,6 +6586,30 @@ ALTER TABLE ONLY sip_anexo
 
 
 --
+-- Name: sivel2_gen_caso_categoria_presponsable sivel2_gen_caso_categoria_pre_id_caso_presponsable_id_categ_key; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
+    ADD CONSTRAINT sivel2_gen_caso_categoria_pre_id_caso_presponsable_id_categ_key UNIQUE (id_caso_presponsable, id_categoria);
+
+
+--
+-- Name: sivel2_gen_caso_categoria_presponsable sivel2_gen_caso_categoria_presponsable_id_key; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
+    ADD CONSTRAINT sivel2_gen_caso_categoria_presponsable_id_key UNIQUE (id);
+
+
+--
+-- Name: sivel2_gen_caso_categoria_presponsable sivel2_gen_caso_categoria_presponsable_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
+    ADD CONSTRAINT sivel2_gen_caso_categoria_presponsable_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: sivel2_gen_caso_fotra sivel2_gen_caso_fotra_id_caso_nombre_fecha_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7079,14 +7242,6 @@ ALTER TABLE ONLY sivel2_sjr_ayudasjr_respuesta
 
 
 --
--- Name: sivel2_gen_caso_categoria_presponsable caso_categoria_presponsable_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
-    ADD CONSTRAINT caso_categoria_presponsable_id_caso_fkey FOREIGN KEY (id_caso) REFERENCES sivel2_gen_caso(id);
-
-
---
 -- Name: sivel2_gen_caso_categoria_presponsable caso_categoria_presponsable_id_caso_presponsable_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7100,22 +7255,6 @@ ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
 
 ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
     ADD CONSTRAINT caso_categoria_presponsable_id_categoria_fkey FOREIGN KEY (id_categoria) REFERENCES sivel2_gen_categoria(id);
-
-
---
--- Name: sivel2_gen_caso_categoria_presponsable caso_categoria_presponsable_id_presponsable_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
-    ADD CONSTRAINT caso_categoria_presponsable_id_presponsable_fkey FOREIGN KEY (id_presponsable) REFERENCES sivel2_gen_presponsable(id);
-
-
---
--- Name: sivel2_gen_caso_categoria_presponsable caso_categoria_presponsable_id_tviolencia_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
-    ADD CONSTRAINT caso_categoria_presponsable_id_tviolencia_fkey FOREIGN KEY (id_tviolencia) REFERENCES sivel2_gen_tviolencia(id);
 
 
 --
@@ -7503,6 +7642,14 @@ ALTER TABLE ONLY emprendimiento_respuesta
 
 
 --
+-- Name: cor1440_gen_actividad_valorcampotind fk_rails_0104bf757c; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY cor1440_gen_actividad_valorcampotind
+    ADD CONSTRAINT fk_rails_0104bf757c FOREIGN KEY (valorcampotind_id) REFERENCES cor1440_gen_valorcampotind(id);
+
+
+--
 -- Name: evento_motivonodenuncia fk_rails_0561cf5aee; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7620,6 +7767,14 @@ ALTER TABLE ONLY cor1440_gen_informe
 
 ALTER TABLE ONLY heb412_gen_doc
     ADD CONSTRAINT fk_rails_2dd6d3dac3 FOREIGN KEY (dirpapa) REFERENCES heb412_gen_doc(id);
+
+
+--
+-- Name: cor1440_gen_valorcampoact fk_rails_3060a94455; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY cor1440_gen_valorcampoact
+    ADD CONSTRAINT fk_rails_3060a94455 FOREIGN KEY (campoact_id) REFERENCES cor1440_gen_campoact(id);
 
 
 --
@@ -7951,6 +8106,14 @@ ALTER TABLE ONLY acompanamiento_casosjr
 
 
 --
+-- Name: cor1440_gen_actividadpf fk_rails_c68e2278b2; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY cor1440_gen_actividadpf
+    ADD CONSTRAINT fk_rails_c68e2278b2 FOREIGN KEY (actividadtipo_id) REFERENCES cor1440_gen_actividadtipo(id);
+
+
+--
 -- Name: cor1440_gen_financiador_proyectofinanciero fk_rails_ca93eb04dc; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7972,6 +8135,14 @@ ALTER TABLE ONLY cor1440_gen_actividad_sip_anexo
 
 ALTER TABLE ONLY tienetierra_victimasjr
     ADD CONSTRAINT fk_rails_ccc78f721a FOREIGN KEY (sivel2_sjr_victimasjr_id) REFERENCES sivel2_sjr_victimasjr(id_victima);
+
+
+--
+-- Name: cor1440_gen_campoact fk_rails_ceb6f1a7f0; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY cor1440_gen_campoact
+    ADD CONSTRAINT fk_rails_ceb6f1a7f0 FOREIGN KEY (actividadtipo_id) REFERENCES cor1440_gen_actividadtipo(id);
 
 
 --
@@ -8039,11 +8210,27 @@ ALTER TABLE ONLY sivel2_gen_combatiente
 
 
 --
+-- Name: cor1440_gen_valorcampoact fk_rails_e36cf046d1; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY cor1440_gen_valorcampoact
+    ADD CONSTRAINT fk_rails_e36cf046d1 FOREIGN KEY (actividad_id) REFERENCES cor1440_gen_actividad(id);
+
+
+--
 -- Name: evento fk_rails_e5971f991a; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY evento
     ADD CONSTRAINT fk_rails_e5971f991a FOREIGN KEY (motivonodenuncia_id) REFERENCES motivonodenuncia(id);
+
+
+--
+-- Name: cor1440_gen_actividad_valorcampotind fk_rails_e8cd697f5d; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY cor1440_gen_actividad_valorcampotind
+    ADD CONSTRAINT fk_rails_e8cd697f5d FOREIGN KEY (actividad_id) REFERENCES cor1440_gen_actividad(id);
 
 
 --
@@ -8865,6 +9052,14 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20171130125044'),
 ('20171130133741'),
 ('20171212001011'),
-('20171217135318');
+('20171217135318'),
+('20180126035129'),
+('20180126055129'),
+('20180219032546'),
+('20180220103644'),
+('20180220104234'),
+('20180223091622'),
+('20180225152848'),
+('20180307125759');
 
 
