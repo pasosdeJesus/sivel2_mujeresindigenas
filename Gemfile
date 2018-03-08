@@ -102,10 +102,11 @@ gem 'sivel2_sjr', git: "https://github.com/pasosdeJesus/sivel2_sjr.git"
 gem 'cor1440_gen', git: "https://github.com/pasosdeJesus/cor1440_gen.git"
 #gem "cor1440_gen", path: '../cor1440_gen'
 
+# Depurar
+#gem "byebug"
+
 # Los siguientes son para desarrollo o para pruebas con generadores
 group :development do
-  # Depurar
-  #gem "byebug"
   
   # Consola irb en páginas con excepciones o usando <%= console %> en vistasA
   gem 'web-console'
