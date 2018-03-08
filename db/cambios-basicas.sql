@@ -53,7 +53,7 @@ INSERT INTO sivel2_gen_supracategoria (codigo, nombre, fechacreacion, fechadesha
 -- Data for Name: sivel2_gen_categoria; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-UPDATE sivel2_gen_categoria SET fechadeshabilitacion='2016-06-07' WHERE
+UPDATE sivel2_gen_categoria SET fechadeshabilitacion='2018-03-07' WHERE
 	id NOT IN ( '75', '41', '3009') AND (id<4000 OR id>4999);
 
 INSERT INTO sivel2_gen_categoria (id, nombre, fechacreacion, fechadeshabilitacion, id_pconsolidado, contadaen, tipocat, created_at, updated_at, observaciones, supracategoria_id) VALUES (4000, 'ACCESO CARNAL - VIOLACIÓN (VIOLENCIA SEXUAL)', '2016-06-07', NULL, NULL, NULL, 'I', NULL, NULL, '421', 400);
