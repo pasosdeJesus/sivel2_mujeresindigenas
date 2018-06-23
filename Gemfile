@@ -1,43 +1,40 @@
 source 'https://rubygems.org'
 
+gem 'rails-erd', require: false, group: :development
+
+#ruby ">= 2.2"
+
 # Rails (internacionalización)
 #gem "rails", '~> 5.2.0'
 # Resuelve problema con minitest y rails 5.2.0
 gem "rails", '~> 5.2.0', git: 'https://github.com/rails/rails.git', ref: '4887f97bd8a8859294ad02ccea20d83a94ec0812'
 
-
 gem "rails-i18n"
 
 gem 'bootsnap', '>=1.1.0', require: false
-
-# PDF
-gem "prawn"
-gem "prawnto_2",  :require => "prawnto"
-gem "prawn-table"
 
 # Postgresql
 gem "pg"#, '~> 0.21'
 
 gem 'puma'
 
+# CSS
+gem "sass"
+
+gem 'chosen-rails'
+gem 'font-awesome-rails'
+
+gem 'libxml-ruby'
+gem "rspreadsheet"
+
+# Color en terminal
+gem "colorize"
+
 # Maneja variables de ambiente (como claves y secretos) en .env
-gem "foreman"
+#gem "foreman"
 
 # API JSON facil. Ver: https://github.com/rails/jbuilder
 gem "jbuilder"
-
-# SCSS para hojas de estilo
-gem "sass"
-
-# Iconos
-gem 'font-awesome-rails'   
-
-# Plantilla de hoja de cálculo
-gem 'rspreadsheet'   
-gem 'libxml-ruby'
-
-# Colores en terminal
-gem "colorize"
 
 # Uglifier comprime recursos Javascript
 gem "uglifier"
@@ -47,6 +44,7 @@ gem "coffee-rails"
 
 # jquery como librería JavaScript
 gem "jquery-rails"
+
 gem "jquery-ui-rails"
 
 # Seguir enlaces más rápido. Ver: https://github.com/rails/turbolinks
@@ -55,9 +53,6 @@ gem "turbolinks"
 # Ambiente de CSS
 gem "twitter-bootstrap-rails"
 gem "bootstrap-datepicker-rails"
-gem "bootstrap-sass"
-
-gem "chartkick"
 
 # Formularios simples 
 gem "simple_form"
@@ -72,9 +67,6 @@ gem "devise-i18n"
 gem "cancancan"
 gem "bcrypt"
 
-# Cuadros de seleccion mejores
-gem 'chosen-rails'
-
 # Listados en páginas
 gem "will_paginate"
 
@@ -87,62 +79,62 @@ gem "paperclip"
 # Zonas horarias
 gem "tzinfo"
 
-# Motor SIP
-gem 'sip', git: "https://github.com/pasosdeJesus/sip.git"
+# Motor de sip
+gem 'sip', git: 'https://github.com/pasosdeJesus/sip.git'
 #gem 'sip', path: '../sip'
 
-# Motor de heb412
-gem 'heb412_gen', git: "https://github.com/pasosdeJesus/heb412_gen.git"
-#gem 'heb412_gen', path: '../heb412_gen'
-
-# Motor de sivel2
-gem 'sivel2_gen', git: "https://github.com/pasosdeJesus/sivel2_gen.git"
+# Motor de SIVeL 2
+gem 'sivel2_gen', git: 'https://github.com/pasosdeJesus/sivel2_gen.git'
 #gem 'sivel2_gen', path: '../sivel2_gen'
 
-# Motor de SIVeL 2 - SJR
-gem 'sivel2_sjr', git: "https://github.com/pasosdeJesus/sivel2_sjr.git"
-#gem 'sivel2_sjr', path: '../sivel2_sjr'
+# Motor de nube y plantillas
+gem 'heb412_gen', git: 'https://github.com/pasosdeJesus/heb412_gen.git'
+#gem 'heb412_gen', path: '../heb412_gen'
 
-# Motor Cor1440_gen
-gem 'cor1440_gen', git: "https://github.com/pasosdeJesus/cor1440_gen.git"
-#gem "cor1440_gen", path: '../cor1440_gen'
+group :test, :development do
+  # Depurar
+  #gem 'byebug'
+end
 
-# Depurar
-#gem "byebug"
 
 # Los siguientes son para desarrollo o para pruebas con generadores
 group :development do
-  
-  # Consola irb en páginas con excepciones o usando <%= console %> en vistasA
-  gem 'web-console'
 
+  # Consola irb en páginas con excepciones o usando <%= console %> en vistas
+  gem 'web-console'
 
 end
 
 # Los siguientes son para pruebas y no tiene generadores requeridos en desarrollo
 group :test do
-
-  # Acelera desarrollo ejecutando en fondo.  https://github.com/jonleighton/spring
+  # Acelera ejecutando en fondo.  https://github.com/jonleighton/spring
   gem "spring"
-
-  # Un proceso para cada prueba -- acelera
-  gem 'spork'
 
   gem 'rails-controller-testing'
 
   # Maneja datos de prueba
-  gem "factory_girl_rails", group: [:development, :test]
+  #gem "factory_girl_rails", group: [:development, :test]
 
   # https://www.relishapp.com/womply/rails-style-guide/docs/developing-rails-applications/bundler
   # Lanza programas para examinar resultados
-  #gem "launchy"
+  gem "launchy"
 
-  # Pruebas de regresión que no requieren javascript
-  gem "capybara"
-  
+
+
+
+  # Envia resultados de pruebas desde travis a codeclimate
+  gem 'simplecov'
+
+  gem 'selenium-webdriver'
+  gem "connection_pool"
+  gem "minitest-reporters"
+  gem 'minitest-rails-capybara'
+  gem "poltergeist"
+
   gem 'pry-rescue'
   gem 'pry-stack_explorer'
 end
+
 
 group :production do
   # Para despliegue
@@ -151,4 +143,5 @@ group :production do
   # Requerido por heroku para usar stdout como bitacora
   gem "rails_12factor"
 end
+
 
