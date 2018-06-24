@@ -87,6 +87,13 @@ gem 'sip', git: 'https://github.com/pasosdeJesus/sip.git'
 gem 'sivel2_gen', git: 'https://github.com/pasosdeJesus/sivel2_gen.git'
 #gem 'sivel2_gen', path: '../sivel2_gen'
 
+gem 'sivel2_sjr', git: 'https://github.com/pasosdeJesus/sivel2_sjr.git'
+#gem 'sivel2_sjr', path: '../sivel2_sjr'
+
+# Motor de Cor 1440
+gem 'cor1440_gen', git: 'https://github.com/pasosdeJesus/cor1440_gen.git'
+#gem 'cor1440_gen', path: '../cor1440_gen'
+
 # Motor de nube y plantillas
 gem 'heb412_gen', git: 'https://github.com/pasosdeJesus/heb412_gen.git'
 #gem 'heb412_gen', path: '../heb412_gen'
@@ -107,24 +114,10 @@ end
 
 # Los siguientes son para pruebas y no tiene generadores requeridos en desarrollo
 group :test do
-  # Acelera ejecutando en fondo.  https://github.com/jonleighton/spring
-  gem "spring"
-
-  gem 'rails-controller-testing'
-
-  # Maneja datos de prueba
-  #gem "factory_girl_rails", group: [:development, :test]
-
-  # https://www.relishapp.com/womply/rails-style-guide/docs/developing-rails-applications/bundler
-  # Lanza programas para examinar resultados
+  #gem 'rails-controller-testing'
   gem "launchy"
 
-
-
-
-  # Envia resultados de pruebas desde travis a codeclimate
   gem 'simplecov'
-
   gem 'selenium-webdriver'
   gem "connection_pool"
   gem "minitest-reporters"
