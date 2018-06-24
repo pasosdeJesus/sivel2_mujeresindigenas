@@ -1243,7 +1243,8 @@ CREATE TABLE cor1440_gen_campoact (
     id bigint NOT NULL,
     actividadtipo_id integer,
     nombrecampo character varying(128),
-    ayudauso character varying(1024)
+    ayudauso character varying(1024),
+    tipo integer DEFAULT 1
 );
 
 
@@ -1274,7 +1275,8 @@ CREATE TABLE cor1440_gen_campotind (
     id bigint NOT NULL,
     tipoindicador_id integer NOT NULL,
     nombrecampo character varying(128) NOT NULL,
-    ayudauso character varying(1024)
+    ayudauso character varying(1024),
+    tipo integer DEFAULT 1
 );
 
 
@@ -1351,7 +1353,8 @@ CREATE TABLE cor1440_gen_indicadorpf (
     resultadopf_id integer,
     numero character varying(15) NOT NULL,
     indicador character varying(5000) NOT NULL,
-    tipoindicador_id integer
+    tipoindicador_id integer,
+    objetivopf_id integer
 );
 
 
@@ -2158,6 +2161,39 @@ CREATE SEQUENCE heb412_gen_doc_id_seq
 --
 
 ALTER SEQUENCE heb412_gen_doc_id_seq OWNED BY heb412_gen_doc.id;
+
+
+--
+-- Name: heb412_gen_plantilladoc; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE heb412_gen_plantilladoc (
+    id bigint NOT NULL,
+    ruta character varying(2047),
+    fuente character varying(1023),
+    licencia character varying(1023),
+    vista character varying(127),
+    nombremenu character varying(127)
+);
+
+
+--
+-- Name: heb412_gen_plantilladoc_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE heb412_gen_plantilladoc_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: heb412_gen_plantilladoc_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE heb412_gen_plantilladoc_id_seq OWNED BY heb412_gen_plantilladoc.id;
 
 
 --
@@ -5402,6 +5438,13 @@ ALTER TABLE ONLY heb412_gen_doc ALTER COLUMN id SET DEFAULT nextval('heb412_gen_
 
 
 --
+-- Name: heb412_gen_plantilladoc id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY heb412_gen_plantilladoc ALTER COLUMN id SET DEFAULT nextval('heb412_gen_plantilladoc_id_seq'::regclass);
+
+
+--
 -- Name: heb412_gen_plantillahcm id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -6135,6 +6178,14 @@ ALTER TABLE ONLY heb412_gen_campoplantillahcm
 
 ALTER TABLE ONLY heb412_gen_doc
     ADD CONSTRAINT heb412_gen_doc_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: heb412_gen_plantilladoc heb412_gen_plantilladoc_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY heb412_gen_plantilladoc
+    ADD CONSTRAINT heb412_gen_plantilladoc_pkey PRIMARY KEY (id);
 
 
 --
@@ -7842,6 +7893,14 @@ ALTER TABLE ONLY cor1440_gen_actividad_sip_anexo
 
 
 --
+-- Name: cor1440_gen_indicadorpf fk_rails_4a0bd96143; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY cor1440_gen_indicadorpf
+    ADD CONSTRAINT fk_rails_4a0bd96143 FOREIGN KEY (objetivopf_id) REFERENCES cor1440_gen_objetivopf(id);
+
+
+--
 -- Name: cor1440_gen_valorcampotind fk_rails_4f2fc96457; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9055,12 +9114,19 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20171217135318'),
 ('20180126035129'),
 ('20180126055129'),
+('20180212223621'),
 ('20180219032546'),
 ('20180220103644'),
 ('20180220104234'),
 ('20180223091622'),
 ('20180225152848'),
 ('20180307125759'),
-('20180320230847');
+('20180320230847'),
+('20180427194732'),
+('20180509111948'),
+('20180519102415'),
+('20180611222635'),
+('20180612024009'),
+('20180612030340');
 
 
