@@ -67,7 +67,7 @@ class Ability < Sivel2Sjr::Ability
   def initialize(usuario = nil)
     can :nuevo, ::Evento
     can :contar, Sip::Ubicacion
-    can :manage, Sivel2Gen::GruposperController
+    can :manage, Sip::GruposperController
 
 
     can :read, [Sip::Pais, Sip::Departamento, Sip::Municipio, Sip::Clase]
