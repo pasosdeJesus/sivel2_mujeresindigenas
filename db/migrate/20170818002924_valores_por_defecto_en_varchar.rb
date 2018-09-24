@@ -3,7 +3,7 @@ class ValoresPorDefectoEnVarchar < ActiveRecord::Migration[5.1]
     execute <<-SQL
     DROP MATERIALIZED VIEW IF EXISTS sivel2_gen_consexpcaso CASCADE;
     SQL
-    change_column :evento, :numvecesantes, :string, limit: 100
+    change_column :evento, :numvecesantes, :string, limit: 1000
     change_column_default :evento, :afectacionotra, ''
     change_column_default :evento, :numvecesantes, ''
     change_column_default :evento, :quereparacion, ''

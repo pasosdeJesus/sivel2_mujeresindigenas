@@ -86,3 +86,6 @@ doc/imp/
 config/initializers/sip.rb
 config/application.rb
 public/mujeresindigenas/sivel2/heb412
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
