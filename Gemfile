@@ -93,7 +93,7 @@ gem 'cor1440_gen', git: 'https://github.com/pasosdeJesus/cor1440_gen.git'
 #gem 'cor1440_gen', path: '../cor1440_gen'
 
 # Motor de nube y plantillas
-gem 'heb412_gen', git: 'https://github.com/pasosdeJesus/heb412_gen.git', branch: :hojacalculo_registro
+gem 'heb412_gen', git: 'https://github.com/pasosdeJesus/heb412_gen.git'
 #gem 'heb412_gen', path: '../heb412_gen'
 
 group :test, :development do

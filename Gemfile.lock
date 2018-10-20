@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/cor1440_gen.git
-  revision: a46bfedbf08b032106db4eec51f017b755c11e8f
+  revision: 6fb7d149a2ac43526dbdb1df1304b891bee00699
   specs:
     cor1440_gen (1.0b2)
       devise
@@ -12,8 +12,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: 918d2e3b55ae0992b5a44021e0e11b95edfaa51c
-  branch: hojacalculo_registro
+  revision: 8a17abefbb05f16ae7f3ac6beae822263d82497f
   specs:
     heb412_gen (1.0.a1)
       chosen-rails
@@ -24,7 +23,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: e0663f92a8b43b9a98c5eff84fc8d748bb517fdc
+  revision: 42416a440bb4d18d227a6bb0023f93fd54a8cace
   specs:
     sip (2.0.b5)
       bootstrap-datepicker-rails
@@ -46,7 +45,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sivel2_gen.git
-  revision: e2478fac88c84cc9ad86e7ea28199a57edeca744
+  revision: 6037ec831790194a360762538d07c371209ac2de
   specs:
     sivel2_gen (2.0b7)
       devise
@@ -55,7 +54,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sivel2_sjr.git
-  revision: af60a45c6c1261c29bcafe295bf8527cf7be6c8e
+  revision: 4d29e0e4f9026002f773547384b2cc3a3e38e6db
   specs:
     sivel2_sjr (2.0.b1)
       rails
@@ -436,4 +435,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.16.5
+   1.16.6
