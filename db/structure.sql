@@ -287,45 +287,6 @@ CREATE TABLE public.ar_internal_metadata (
 
 
 --
--- Name: aspsicosocial_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.aspsicosocial_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: aspsicosocial; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.aspsicosocial (
-    id integer DEFAULT nextval('public.aspsicosocial_seq'::regclass) NOT NULL,
-    nombre character varying(100) NOT NULL,
-    fechacreacion date DEFAULT ('now'::text)::date NOT NULL,
-    fechadeshabilitacion date,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone,
-    CONSTRAINT aspsicosocial_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
-);
-
-
---
--- Name: aspsicosocial_respuesta; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.aspsicosocial_respuesta (
-    id_respuesta integer NOT NULL,
-    id_aspsicosocial integer DEFAULT 0 NOT NULL,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone
-);
-
-
---
 -- Name: caso_etiqueta_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -4748,6 +4709,45 @@ CREATE TABLE public.sivel2_sjr_aslegal_respuesta (
 
 
 --
+-- Name: sivel2_sjr_aspsicosocial_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.sivel2_sjr_aspsicosocial_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sivel2_sjr_aspsicosocial; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sivel2_sjr_aspsicosocial (
+    id integer DEFAULT nextval('public.sivel2_sjr_aspsicosocial_id_seq'::regclass) NOT NULL,
+    nombre character varying(100) NOT NULL,
+    fechacreacion date DEFAULT ('now'::text)::date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    CONSTRAINT aspsicosocial_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
+);
+
+
+--
+-- Name: sivel2_sjr_aspsicosocial_respuesta; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sivel2_sjr_aspsicosocial_respuesta (
+    id_respuesta integer NOT NULL,
+    id_aspsicosocial integer DEFAULT 0 NOT NULL,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
 -- Name: sivel2_sjr_ayudaestado_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -5964,18 +5964,10 @@ ALTER TABLE ONLY public.sivel2_sjr_aslegal_respuesta
 
 
 --
--- Name: aspsicosocial aspsicosocial_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_sjr_aspsicosocial_respuesta aspsicosocial_respuesta_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.aspsicosocial
-    ADD CONSTRAINT aspsicosocial_pkey PRIMARY KEY (id);
-
-
---
--- Name: aspsicosocial_respuesta aspsicosocial_respuesta_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.aspsicosocial_respuesta
+ALTER TABLE ONLY public.sivel2_sjr_aspsicosocial_respuesta
     ADD CONSTRAINT aspsicosocial_respuesta_pkey PRIMARY KEY (id_respuesta, id_aspsicosocial);
 
 
@@ -7100,6 +7092,14 @@ ALTER TABLE ONLY public.sivel2_sjr_acreditacion
 
 
 --
+-- Name: sivel2_sjr_aspsicosocial sivel2_sjr_aspsicosocial_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sivel2_sjr_aspsicosocial
+    ADD CONSTRAINT sivel2_sjr_aspsicosocial_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: sivel2_sjr_comosupo sivel2_sjr_comosupo_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7578,18 +7578,18 @@ ALTER TABLE ONLY public.sivel2_sjr_aslegal_respuesta
 
 
 --
--- Name: aspsicosocial_respuesta aspsicosocial_respuesta_id_aspsicosocial_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_sjr_aspsicosocial_respuesta aspsicosocial_respuesta_id_aspsicosocial_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.aspsicosocial_respuesta
-    ADD CONSTRAINT aspsicosocial_respuesta_id_aspsicosocial_fkey FOREIGN KEY (id_aspsicosocial) REFERENCES public.aspsicosocial(id);
+ALTER TABLE ONLY public.sivel2_sjr_aspsicosocial_respuesta
+    ADD CONSTRAINT aspsicosocial_respuesta_id_aspsicosocial_fkey FOREIGN KEY (id_aspsicosocial) REFERENCES public.sivel2_sjr_aspsicosocial(id);
 
 
 --
--- Name: aspsicosocial_respuesta aspsicosocial_respuesta_id_respuesta_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_sjr_aspsicosocial_respuesta aspsicosocial_respuesta_id_respuesta_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.aspsicosocial_respuesta
+ALTER TABLE ONLY public.sivel2_sjr_aspsicosocial_respuesta
     ADD CONSTRAINT aspsicosocial_respuesta_id_respuesta_fkey FOREIGN KEY (id_respuesta) REFERENCES public.sivel2_sjr_respuesta(id);
 
 
@@ -9540,6 +9540,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20181011104537'),
 ('20181012110629'),
 ('20181017094456'),
-('20181018003945');
+('20181018003945'),
+('20181111181411');
 
 
