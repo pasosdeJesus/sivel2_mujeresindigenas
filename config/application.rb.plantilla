@@ -39,11 +39,11 @@ module Sivel2Mujeresindigenas
       port: 2300 
     }
 
-    config.action_controller.default_url_options = { 
-      protocol: 'https',
-      host: 'localhost',
-      port: 2300 
-    }
+#    config.action_controller.default_url_options = { 
+#      protocol: 'https',
+#      host: 'localhost',
+#      port: 2300 
+#    }
 
     config.active_job.queue_adapter = 
       ActiveJob::QueueAdapters::AsyncAdapter.new \

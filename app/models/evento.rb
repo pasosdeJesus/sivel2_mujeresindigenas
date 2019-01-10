@@ -9,6 +9,8 @@ class Evento < ActiveRecord::Base
   belongs_to :municipio, class_name: "Sip::Municipio", 
     foreign_key: "municipio_id"
 
+  # Por el momento no cambiamos a has_many_and_belongs_to porque
+  # hay dos relacioens analogas
   has_many :acompanamiento_evento, validate: true, 
     dependent: :delete_all
   has_many :acompanamiento, through: :acompanamiento_evento
@@ -25,24 +27,29 @@ class Evento < ActiveRecord::Base
   accepts_nested_attributes_for :actoevento,
     reject_if: :all_blank, allow_destroy: true
 
-  has_many :consecuenciaindividual_evento, validate: true, 
-    dependent: :delete_all
-  has_many :consecuenciaindividual, through: :consecuenciaindividual_evento
+  has_and_belongs_to_many :consecuenciaindividual, 
+    validate: true, 
+    join_table: :consecuenciaindividual_evento
 
-  has_many :consecuenciafamiliar_evento, validate: true, dependent: :delete_all
-  has_many :consecuenciafamiliar, through: :consecuenciafamiliar_evento
+  has_and_belongs_to_many :consecuenciafamiliar, 
+    validate: true, 
+    join_table: :consecuenciafamiliar_evento
 
-  has_many :consecuenciafisica_evento, validate: true, dependent: :delete_all
-  has_many :consecuenciafisica, through: :consecuenciafisica_evento
+  has_and_belongs_to_many :consecuenciafisica, 
+    validate: true,
+    join_table: :consecuenciafisica_evento
 
-  has_many :evento_tafectacion, validate: true, dependent: :delete_all
-  has_many :tafectacion, through: :evento_tafectacion
+  has_and_belongs_to_many :tafectacion, 
+    validate: true,
+    join_table: :evento_tafectacion
 
-  has_many :evento_tapoyo, validate: true, dependent: :delete_all
-  has_many :tapoyo, through: :evento_tapoyo
+  has_and_belongs_to_many :tapoyo, 
+    validate: true,
+    join_table: :evento_tapoyo
 
-  has_many :evento_relacionprvic, validate: true, dependent: :delete_all
-  has_many :relacionprvic, through: :evento_relacionprvic
+  has_and_belongs_to_many :relacionprvic, 
+    validate: true,
+    join_table: :evento_relacionprvic
 
   has_many :eventopresponsable, 
     class_name: "::Eventopresponsable",  
@@ -50,11 +57,9 @@ class Evento < ActiveRecord::Base
   accepts_nested_attributes_for :eventopresponsable,
     reject_if: :all_blank, allow_destroy: true
 
-  has_many :evento_motivonodenuncia, 
-    class_name: '::EventoMotivonodenuncia',
-    foreign_key: "evento_id", validate:true, dependent: :delete_all
-  has_many :motivonodenuncia, through: :evento_motivonodenuncia,
-    class_name: "::Motivonodenuncia"
+  has_and_belongs_to_many :motivonodenuncia, 
+    validate: true,
+    join_table: :evento_motivonodenuncia
 
   validates :denuncia, length: {maximum: 1}
   validates :denunciaante, length: {maximum: 1}
