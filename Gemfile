@@ -98,6 +98,10 @@ gem 'cor1440_gen', git: 'https://github.com/pasosdeJesus/cor1440_gen.git'
 gem 'heb412_gen', git: 'https://github.com/pasosdeJesus/heb412_gen.git'
 #gem 'heb412_gen', path: '../heb412_gen'
 
+# Motor de formularios
+gem 'mr519_gen', git: 'https://github.com/pasosdeJesus/mr519_gen.git'
+#gem 'mr519_gen', path: '../mr519_gen'
+
 group :test, :development do
   # Depurar
   #gem 'byebug'
