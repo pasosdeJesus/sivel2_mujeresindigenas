@@ -249,7 +249,7 @@ class Sivel2Gen::Consexpcaso < ActiveRecord::Base
         FROM sivel2_gen_conscaso AS conscaso
         JOIN sivel2_sjr_casosjr AS casosjr ON casosjr.id_caso=conscaso.caso_id
         JOIN sivel2_gen_caso AS caso ON casosjr.id_caso = caso.id 
-        JOIN sip_persona as contacto ON contacto.id=casosjr.contacto
+        JOIN sip_persona as contacto ON contacto.id=casosjr.contacto_id
         JOIN sivel2_gen_victima AS vcontacto ON 
             vcontacto.id_persona = contacto.id AND vcontacto.id_caso = caso.id
         JOIN sivel2_sjr_victimasjr AS scontacto ON 

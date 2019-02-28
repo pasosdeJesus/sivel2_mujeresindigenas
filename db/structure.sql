@@ -453,7 +453,7 @@ CREATE TABLE public.sivel2_sjr_casosjr (
     oficina_id integer DEFAULT 1,
     direccion character varying(1000),
     telefono character varying(1000),
-    contacto integer,
+    contacto_id integer,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
     dependen integer,
@@ -488,11 +488,11 @@ CREATE VIEW public.cben1 AS
  SELECT caso.id AS id_caso,
     victima.id_persona,
         CASE
-            WHEN (casosjr.contacto = victima.id_persona) THEN 1
+            WHEN (casosjr.contacto_id = victima.id_persona) THEN 1
             ELSE 0
         END AS contacto,
         CASE
-            WHEN (casosjr.contacto <> victima.id_persona) THEN 1
+            WHEN (casosjr.contacto_id <> victima.id_persona) THEN 1
             ELSE 0
         END AS beneficiario,
     1 AS npersona,
@@ -3834,7 +3834,7 @@ CREATE VIEW public.sivel2_gen_conscaso1 AS
  SELECT casosjr.id_caso AS caso_id,
     array_to_string(ARRAY( SELECT (((persona.nombres)::text || ' '::text) || (persona.apellidos)::text)
            FROM public.sip_persona persona
-          WHERE (persona.id = casosjr.contacto)), ', '::text) AS contacto,
+          WHERE (persona.id = casosjr.contacto_id)), ', '::text) AS contacto,
     array_to_string(ARRAY( SELECT (((departamento.nombre)::text || ' / '::text) || (municipio.nombre)::text)
            FROM ((public.evento
              LEFT JOIN public.sip_departamento departamento ON ((evento.departamento_id = departamento.id)))
@@ -4400,7 +4400,7 @@ CREATE MATERIALIZED VIEW public.sivel2_gen_consexpcaso AS
    FROM (((((((((((((((((public.sivel2_gen_conscaso conscaso
      JOIN public.sivel2_sjr_casosjr casosjr ON ((casosjr.id_caso = conscaso.caso_id)))
      JOIN public.sivel2_gen_caso caso ON ((casosjr.id_caso = caso.id)))
-     JOIN public.sip_persona contacto ON ((contacto.id = casosjr.contacto)))
+     JOIN public.sip_persona contacto ON ((contacto.id = casosjr.contacto_id)))
      JOIN public.sivel2_gen_victima vcontacto ON (((vcontacto.id_persona = contacto.id) AND (vcontacto.id_caso = caso.id))))
      JOIN public.sivel2_sjr_victimasjr scontacto ON ((vcontacto.id = scontacto.id_victima)))
      LEFT JOIN public.sip_tdocumento tdocumento ON ((contacto.tdocumento_id = tdocumento.id)))
@@ -8273,7 +8273,7 @@ ALTER TABLE ONLY public.sivel2_sjr_casosjr
 --
 
 ALTER TABLE ONLY public.sivel2_sjr_casosjr
-    ADD CONSTRAINT casosjr_contacto_fkey FOREIGN KEY (contacto) REFERENCES public.sip_persona(id);
+    ADD CONSTRAINT casosjr_contacto_fkey FOREIGN KEY (contacto_id) REFERENCES public.sip_persona(id);
 
 
 --
@@ -10240,6 +10240,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190128032125'),
 ('20190205203619'),
 ('20190206005635'),
-('20190208103518');
+('20190208103518'),
+('20190225143501');
 
 
