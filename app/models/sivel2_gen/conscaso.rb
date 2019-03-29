@@ -5,6 +5,22 @@ require 'sivel2_sjr/concerns/models/conscaso'
 class Sivel2Gen::Conscaso < ActiveRecord::Base
   include Sivel2Sjr::Concerns::Models::Conscaso
 
+  scope :filtro_categoria_id, lambda { |id|
+    where('caso_id IN (
+    SELECT evento.caso_id FROM categoria_eventopresponsable
+    JOIN eventopresponsable ON
+    categoria_eventopresponsable.eventopresponsable_id = eventopresponsable.id
+    JOIN evento ON evento.id=eventopresponsable.evento_id
+    WHERE categoria_id = ?)', id.to_i)
+  }
+
+  scope :filtro_departamento_id, lambda { |id|
+    where('caso_id IN (SELECT caso_id
+         FROM evento
+         WHERE evento.departamento_id = ?)', id.to_i)
+  }
+
+
   scope :filtro_fechahechoini, lambda { |f|
     where("fechahecho='' OR substring(fechahecho from 1 for 4)='0000' OR 
           regexp_replace(
@@ -21,26 +37,19 @@ class Sivel2Gen::Conscaso < ActiveRecord::Base
           <= ?::text", f.to_s)
   }
 
-  scope :filtro_categoria_id, lambda { |id|
-    where('caso_id IN (
-    SELECT evento.caso_id FROM categoria_eventopresponsable
-    JOIN eventopresponsable ON
-    categoria_eventopresponsable.eventopresponsable_id = eventopresponsable.id
-    JOIN evento ON evento.id=eventopresponsable.evento_id
-    WHERE categoria_id = ?)', id)
-  }
-
-  scope :filtro_departamento_id, lambda { |id|
-    where('caso_id IN (SELECT caso_id
-         FROM evento
-         WHERE evento.departamento_id = ?)', id)
-  }
-
   scope :filtro_municipio_id, lambda { |id|
     where('caso_id IN (SELECT caso_id
          FROM evento
-         WHERE evento.municipio_id = ?)', id)
+         WHERE evento.municipio_id = ?)', id.to_i)
   }
+
+  scope :filtro_relacionadocon, lambda { |r|
+    where('caso_id IN (SELECT caso_id
+         FROM evento
+         WHERE evento.relacionadocon = ?)', r)
+  }
+
+
 
   # Refresca vista materializa sivel2_gen_conscaso
   # Si cambia la definición de la vista borre sivel2_gen_conscaso1 y

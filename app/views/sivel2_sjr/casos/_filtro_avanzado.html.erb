@@ -193,16 +193,24 @@
     </div>
 
     <div class="row filtro-fila">
+
       <div class="col-sm-offset-0 col-sm-2 col-md-offset-1 col-md-1">
        Hecho victimizante
       </div>
-      <div class="col-sm-offset-0 col-sm-10 col-md-offset-0 col-md-7">
+      <div class="col-sm-offset-0 col-sm-4 col-md-offset-0 col-md-3">
+        <%= f.input :relacionadocon,
+          collection: ::ApplicationHelper::TIPOCONFLICTO,
+          label: false,
+          include_blank: '-- Relacionado con conflicto'
+        %>
+      </div>
+      <div class="col-sm-offset-0 col-sm-4 col-md-offset-0 col-md-4">
         <%= f.input :categoria_id,
           collection: Sivel2Gen::Categoria.habilitados,
           label_method: :nombre,
           value_method: :id,
           label: false,
-          include_blank: true
+          include_blank: '-- Categoria'
         %>
       </div>
       <div class="col-sm-offset-0 col-sm-1 text-center">
@@ -348,6 +356,21 @@
             target: '_blank', 
             onclick: 'heb412_gen_completa_generarp(this, 
               "#filtro_disgenera", null, "casos")' %>
+
+      <!--%= link_to t('.imprimir', :default => 'Generar ODS'), 
+        '#', class: 'btn', 
+        onclick: "heb412_gen_completa_generarp(this, \'#filtro_disgenera\',
+      null,
+      \'casos\')" %-->
+      <!--%= #link_to t('.xlsx', :default => 'Generar XLSX'), '#', class: 'btn', 
+        onclick: "heb412_gen_completa_generarp(this, \'#filtro_disgenera\',
+      null,
+      \'casos\', \'xlsx\')" %-->
+      <!--%= link_to t('.pdf', :default => 'Generar PDF'), '#', class: 'btn', 
+        onclick: "heb412_gen_completa_generarp(this, \'#filtro_disgenera\',
+      null,
+      \'casos\', \'pdf\')" %-->
+
         </div>
         <div class="col-sm-3">
         </div>
