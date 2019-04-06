@@ -205,13 +205,16 @@
         %>
       </div>
       <div class="col-sm-offset-0 col-sm-4 col-md-offset-0 col-md-4">
-        <%= f.input :categoria_id,
+        <%= f.input :categoria_ids,
           collection: Sivel2Gen::Categoria.habilitados,
           label_method: :nombre,
           value_method: :id,
           label: false,
-          include_blank: '-- Categoria'
-        %>
+          include_blank: '-- Categoria',
+          input_html: { 
+            multiple: true,
+            class: 'chosen-select'
+        } %>
       </div>
       <div class="col-sm-offset-0 col-sm-1 text-center">
       </div>
@@ -362,7 +365,7 @@
         onclick: "heb412_gen_completa_generarp(this, \'#filtro_disgenera\',
       null,
       \'casos\')" %-->
-      <!--%= #link_to t('.xlsx', :default => 'Generar XLSX'), '#', class: 'btn', 
+      <!--%= link_to t('.xlsx', :default => 'Generar XLSX'), '#', class: 'btn', 
         onclick: "heb412_gen_completa_generarp(this, \'#filtro_disgenera\',
       null,
       \'casos\', \'xlsx\')" %-->

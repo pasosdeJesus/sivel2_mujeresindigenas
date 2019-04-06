@@ -23,7 +23,7 @@ module Sivel2Sjr
        :departamento_id, :municipio_id,
        :nombressp, :apellidossp, :sexo, :rangoedad_id,
        :relacionadocon,
-       :categoria_id,
+       :categoria_ids,
        :fechahechoini, :fechahechofin,
       ]
     end
