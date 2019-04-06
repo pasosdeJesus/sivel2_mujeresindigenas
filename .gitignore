@@ -89,3 +89,4 @@ public/mujeresindigenas/sivel2/heb412
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+.env
