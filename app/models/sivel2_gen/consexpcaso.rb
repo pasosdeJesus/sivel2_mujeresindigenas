@@ -282,7 +282,19 @@ class Sivel2Gen::Consexpcaso < ActiveRecord::Base
             WHERE e.caso_id = conscaso.caso_id)
       "
   end
-  
+
+    def self.interpreta_ordenar_por(ordenar_por)
+      ordexp = 'x'
+      case ordenar_por
+      when 'ubicaciones'
+        ordexp = 'ubicaciones'
+      when 'codigo'
+        ordexp = 'caso_id'
+      else
+        ordexp = 'fecha_doc_terreno DESC'
+      end
+      return ordexp
+    end
 
 end
 
