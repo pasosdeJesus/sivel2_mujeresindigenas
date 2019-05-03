@@ -385,7 +385,8 @@ CREATE TABLE public.sivel2_gen_caso (
     bienes text,
     id_intervalo integer DEFAULT 5,
     created_at timestamp without time zone,
-    updated_at timestamp without time zone
+    updated_at timestamp without time zone,
+    ubicacion_id integer
 );
 
 
@@ -1336,7 +1337,6 @@ ALTER SEQUENCE public.cor1440_gen_campotind_id_seq OWNED BY public.cor1440_gen_c
 
 CREATE TABLE public.cor1440_gen_caracterizacionpersona (
     id bigint NOT NULL,
-    proyectofinanciero_id integer NOT NULL,
     persona_id integer NOT NULL,
     respuestafor_id integer NOT NULL,
     ulteditor_id integer NOT NULL
@@ -1566,6 +1566,36 @@ CREATE SEQUENCE public.cor1440_gen_objetivopf_id_seq
 --
 
 ALTER SEQUENCE public.cor1440_gen_objetivopf_id_seq OWNED BY public.cor1440_gen_objetivopf.id;
+
+
+--
+-- Name: cor1440_gen_plantillahcm_proyectofinanciero; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.cor1440_gen_plantillahcm_proyectofinanciero (
+    id bigint NOT NULL,
+    plantillahcm_id integer,
+    proyectofinanciero_id integer
+);
+
+
+--
+-- Name: cor1440_gen_plantillahcm_proyectofinanciero_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.cor1440_gen_plantillahcm_proyectofinanciero_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: cor1440_gen_plantillahcm_proyectofinanciero_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.cor1440_gen_plantillahcm_proyectofinanciero_id_seq OWNED BY public.cor1440_gen_plantillahcm_proyectofinanciero.id;
 
 
 --
@@ -2254,7 +2284,7 @@ ALTER SEQUENCE public.heb412_gen_campohc_id_seq OWNED BY public.heb412_gen_campo
 CREATE TABLE public.heb412_gen_campoplantillahcm (
     id integer NOT NULL,
     plantillahcm_id integer,
-    nombrecampo character varying(127),
+    nombrecampo character varying(183),
     columna character varying(5)
 );
 
@@ -2548,7 +2578,8 @@ CREATE TABLE public.mr519_gen_campo (
     ayudauso character varying(1024),
     tipo integer DEFAULT 1 NOT NULL,
     obligatorio boolean,
-    formulario_id integer NOT NULL
+    formulario_id integer NOT NULL,
+    nombreinterno character varying(60)
 );
 
 
@@ -2611,7 +2642,8 @@ ALTER SEQUENCE public.mr519_gen_encuestausuario_id_seq OWNED BY public.mr519_gen
 
 CREATE TABLE public.mr519_gen_formulario (
     id bigint NOT NULL,
-    nombre character varying(500) NOT NULL
+    nombre character varying(500) NOT NULL,
+    nombreinterno character varying(60)
 );
 
 
@@ -2642,7 +2674,7 @@ CREATE TABLE public.mr519_gen_opcioncs (
     id bigint NOT NULL,
     campo_id integer NOT NULL,
     nombre character varying(1024) NOT NULL,
-    valor character varying(1024) NOT NULL
+    valor character varying(60) NOT NULL
 );
 
 
@@ -2704,7 +2736,8 @@ CREATE TABLE public.mr519_gen_valorcampo (
     id bigint NOT NULL,
     campo_id integer NOT NULL,
     valor character varying(5000),
-    respuestafor_id integer NOT NULL
+    respuestafor_id integer NOT NULL,
+    valorjson json
 );
 
 
@@ -5971,6 +6004,13 @@ ALTER TABLE ONLY public.cor1440_gen_objetivopf ALTER COLUMN id SET DEFAULT nextv
 
 
 --
+-- Name: cor1440_gen_plantillahcm_proyectofinanciero id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_plantillahcm_proyectofinanciero ALTER COLUMN id SET DEFAULT nextval('public.cor1440_gen_plantillahcm_proyectofinanciero_id_seq'::regclass);
+
+
+--
 -- Name: cor1440_gen_pmindicadorpf id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -6660,6 +6700,14 @@ ALTER TABLE ONLY public.cor1440_gen_mindicadorpf
 
 ALTER TABLE ONLY public.cor1440_gen_objetivopf
     ADD CONSTRAINT cor1440_gen_objetivopf_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: cor1440_gen_plantillahcm_proyectofinanciero cor1440_gen_plantillahcm_proyectofinanciero_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_plantillahcm_proyectofinanciero
+    ADD CONSTRAINT cor1440_gen_plantillahcm_proyectofinanciero_pkey PRIMARY KEY (id);
 
 
 --
@@ -8893,6 +8941,14 @@ ALTER TABLE ONLY public.sivel2_sjr_motivosjr_derecho
 
 
 --
+-- Name: cor1440_gen_plantillahcm_proyectofinanciero fk_rails_62c9243a43; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_plantillahcm_proyectofinanciero
+    ADD CONSTRAINT fk_rails_62c9243a43 FOREIGN KEY (plantillahcm_id) REFERENCES public.heb412_gen_plantillahcm(id);
+
+
+--
 -- Name: sivel2_gen_combatiente fk_rails_6485d06d37; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8978,6 +9034,14 @@ ALTER TABLE ONLY public.mr519_gen_respuestafor
 
 ALTER TABLE ONLY public.mr519_gen_valorcampo
     ADD CONSTRAINT fk_rails_819cf17399 FOREIGN KEY (campo_id) REFERENCES public.mr519_gen_campo(id);
+
+
+--
+-- Name: sivel2_gen_caso fk_rails_850036942a; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sivel2_gen_caso
+    ADD CONSTRAINT fk_rails_850036942a FOREIGN KEY (ubicacion_id) REFERENCES public.sip_ubicacion(id);
 
 
 --
@@ -9269,6 +9333,14 @@ ALTER TABLE ONLY public.cor1440_gen_indicadorpf
 
 
 --
+-- Name: cor1440_gen_plantillahcm_proyectofinanciero fk_rails_d56d245f70; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_plantillahcm_proyectofinanciero
+    ADD CONSTRAINT fk_rails_d56d245f70 FOREIGN KEY (proyectofinanciero_id) REFERENCES public.cor1440_gen_proyectofinanciero(id);
+
+
+--
 -- Name: eventopresponsable fk_rails_d608eaa15d; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9442,14 +9514,6 @@ ALTER TABLE ONLY public.sivel2_gen_combatiente
 
 ALTER TABLE ONLY public.actoevento
     ADD CONSTRAINT fk_rails_f8f93ca7e5 FOREIGN KEY (evento_id) REFERENCES public.evento(id);
-
-
---
--- Name: cor1440_gen_caracterizacionpersona fk_rails_f910288399; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.cor1440_gen_caracterizacionpersona
-    ADD CONSTRAINT fk_rails_f910288399 FOREIGN KEY (proyectofinanciero_id) REFERENCES public.cor1440_gen_proyectofinanciero(id);
 
 
 --
@@ -9770,14 +9834,6 @@ ALTER TABLE ONLY public.sivel2_gen_victimacolectiva_vinculoestado
 
 ALTER TABLE ONLY public.sivel2_gen_supracategoria
     ADD CONSTRAINT supracategoria_id_tviolencia_fkey FOREIGN KEY (id_tviolencia) REFERENCES public.sivel2_gen_tviolencia(id);
-
-
---
--- Name: sip_trelacion trelacion_inverso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.sip_trelacion
-    ADD CONSTRAINT trelacion_inverso_fkey FOREIGN KEY (inverso) REFERENCES public.sip_trelacion(id);
 
 
 --
@@ -10283,6 +10339,18 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190208103518'),
 ('20190225143501'),
 ('20190308195346'),
-('20190322102311');
+('20190322102311'),
+('20190326150948'),
+('20190331111015'),
+('20190401175521'),
+('20190403202049'),
+('20190406141156'),
+('20190406164301'),
+('20190418011743'),
+('20190418014012'),
+('20190418123920'),
+('20190418142712'),
+('20190426125052'),
+('20190430112229');
 
 

@@ -6,7 +6,7 @@ require 'simplecov'
 SimpleCov.start 'rails'
 require_relative '../config/environment'
 require 'rails/test_help'
-
+require 'active_record/connection_adapters/abstract/connection_pool'
 
 require 'minitest/reporters'
 Minitest::Reporters.use!(
