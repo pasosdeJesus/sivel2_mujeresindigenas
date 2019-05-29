@@ -81,26 +81,26 @@ gem "paperclip"
 gem "tzinfo"
 
 # Motor de sip
-gem 'sip', git: 'https://github.com/pasosdeJesus/sip.git', branch: :rails6
+gem 'sip', git: 'https://github.com/pasosdeJesus/sip.git'
 #gem 'sip', path: '../sip'
 
 # Motor de SIVeL 2
-gem 'sivel2_gen', git: 'https://github.com/pasosdeJesus/sivel2_gen.git', branch: :rails6
+gem 'sivel2_gen', git: 'https://github.com/pasosdeJesus/sivel2_gen.git'
 #gem 'sivel2_gen', path: '../sivel2_gen'
 
-gem 'sivel2_sjr', git: 'https://github.com/pasosdeJesus/sivel2_sjr.git', branch: :rails6
+gem 'sivel2_sjr', git: 'https://github.com/pasosdeJesus/sivel2_sjr.git'
 #gem 'sivel2_sjr', path: '../sivel2_sjr'
 
 # Motor de Cor 1440
-gem 'cor1440_gen', git: 'https://github.com/pasosdeJesus/cor1440_gen.git', branch: :rails6
+gem 'cor1440_gen', git: 'https://github.com/pasosdeJesus/cor1440_gen.git'
 #gem 'cor1440_gen', path: '../cor1440_gen'
 
 # Motor de nube y plantillas
-gem 'heb412_gen', git: 'https://github.com/pasosdeJesus/heb412_gen.git', branch: :rails6
+gem 'heb412_gen', git: 'https://github.com/pasosdeJesus/heb412_gen.git'
 #gem 'heb412_gen', path: '../heb412_gen'
 
 # Motor de formularios
-gem 'mr519_gen', git: 'https://github.com/pasosdeJesus/mr519_gen.git', branch: :rails6
+gem 'mr519_gen', git: 'https://github.com/pasosdeJesus/mr519_gen'
 #gem 'mr519_gen', path: '../mr519_gen'
 
 group :test, :development do
