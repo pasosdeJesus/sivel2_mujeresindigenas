@@ -9,7 +9,7 @@ require 'rails/test_help'
 
 class ActiveSupport::TestCase
 
-  fixtures :all
+  #fixtures :all
   
   protected
   def load_seeds
