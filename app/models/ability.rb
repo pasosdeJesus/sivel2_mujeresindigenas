@@ -47,6 +47,7 @@ class Ability < Sivel2Sjr::Ability
         ['Sivel2Gen', 'vinculoestado'],
         ['Sivel2Sjr', 'acreditacion'],
         ['Sivel2Sjr', 'aslegal'],
+        ['Sivel2Sjr', 'aspsicosocial'],
         ['Sivel2Sjr', 'ayudasjr'],
         ['Sivel2Sjr', 'ayudaestado'],
         ['Sivel2Sjr', 'clasifdesp'],

@@ -5,6 +5,7 @@ SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
 SET check_function_bodies = false;
+SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
@@ -270,6 +271,18 @@ CREATE TABLE public.ar_internal_metadata (
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );
+
+
+--
+-- Name: aspsicosocial_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.aspsicosocial_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
 
 
 --
@@ -2710,7 +2723,8 @@ CREATE TABLE public.mr519_gen_campo (
     nombreinterno character varying(60),
     fila integer,
     columna integer,
-    ancho integer
+    ancho integer,
+    tablabasica character varying(32)
 );
 
 
@@ -2731,6 +2745,41 @@ CREATE SEQUENCE public.mr519_gen_campo_id_seq
 --
 
 ALTER SEQUENCE public.mr519_gen_campo_id_seq OWNED BY public.mr519_gen_campo.id;
+
+
+--
+-- Name: mr519_gen_encuestapersona; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.mr519_gen_encuestapersona (
+    id bigint NOT NULL,
+    persona_id integer,
+    formulario_id integer,
+    fecha date,
+    fechainicio date NOT NULL,
+    fechafin date,
+    adurl character varying(32),
+    respuestafor_id integer
+);
+
+
+--
+-- Name: mr519_gen_encuestapersona_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.mr519_gen_encuestapersona_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: mr519_gen_encuestapersona_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.mr519_gen_encuestapersona_id_seq OWNED BY public.mr519_gen_encuestapersona.id;
 
 
 --
@@ -3572,6 +3621,40 @@ CREATE TABLE public.sip_trelacion (
     inverso character varying(2),
     CONSTRAINT trelacion_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
 );
+
+
+--
+-- Name: sip_trivalente; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sip_trivalente (
+    id bigint NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: sip_trivalente_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.sip_trivalente_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sip_trivalente_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.sip_trivalente_id_seq OWNED BY public.sip_trivalente.id;
 
 
 --
@@ -5300,23 +5383,11 @@ CREATE TABLE public.sivel2_sjr_aslegal_respuesta (
 
 
 --
--- Name: sivel2_sjr_aspsicosocial_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.sivel2_sjr_aspsicosocial_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
 -- Name: sivel2_sjr_aspsicosocial; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.sivel2_sjr_aspsicosocial (
-    id integer DEFAULT nextval('public.sivel2_sjr_aspsicosocial_id_seq'::regclass) NOT NULL,
+    id integer DEFAULT nextval('public.aspsicosocial_seq'::regclass) NOT NULL,
     nombre character varying(100) NOT NULL,
     fechacreacion date DEFAULT ('now'::text)::date NOT NULL,
     fechadeshabilitacion date,
@@ -6373,6 +6444,13 @@ ALTER TABLE ONLY public.mr519_gen_campo ALTER COLUMN id SET DEFAULT nextval('pub
 
 
 --
+-- Name: mr519_gen_encuestapersona id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.mr519_gen_encuestapersona ALTER COLUMN id SET DEFAULT nextval('public.mr519_gen_encuestapersona_id_seq'::regclass);
+
+
+--
 -- Name: mr519_gen_encuestausuario id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -6489,6 +6567,13 @@ ALTER TABLE ONLY public.sip_tdocumento ALTER COLUMN id SET DEFAULT nextval('publ
 --
 
 ALTER TABLE ONLY public.sip_tema ALTER COLUMN id SET DEFAULT nextval('public.sip_tema_id_seq'::regclass);
+
+
+--
+-- Name: sip_trivalente id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sip_trivalente ALTER COLUMN id SET DEFAULT nextval('public.sip_trivalente_id_seq'::regclass);
 
 
 --
@@ -7324,6 +7409,14 @@ ALTER TABLE ONLY public.mr519_gen_campo
 
 
 --
+-- Name: mr519_gen_encuestapersona mr519_gen_encuestapersona_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.mr519_gen_encuestapersona
+    ADD CONSTRAINT mr519_gen_encuestapersona_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: mr519_gen_encuestausuario mr519_gen_encuestausuario_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7689,6 +7782,14 @@ ALTER TABLE ONLY public.sip_sectoractor
 
 ALTER TABLE ONLY public.sip_tema
     ADD CONSTRAINT sip_tema_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: sip_trivalente sip_trivalente_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sip_trivalente
+    ADD CONSTRAINT sip_trivalente_pkey PRIMARY KEY (id);
 
 
 --
@@ -8125,6 +8226,13 @@ CREATE INDEX index_cor1440_gen_actividad_sip_anexo_on_anexo_id ON public.cor1440
 --
 
 CREATE INDEX index_heb412_gen_doc_on_tdoc_type_and_tdoc_id ON public.heb412_gen_doc USING btree (tdoc_type, tdoc_id);
+
+
+--
+-- Name: index_mr519_gen_encuestapersona_on_adurl; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_mr519_gen_encuestapersona_on_adurl ON public.mr519_gen_encuestapersona USING btree (adurl);
 
 
 --
@@ -9226,6 +9334,14 @@ ALTER TABLE ONLY public.cor1440_gen_actividad_proyectofinanciero
 
 
 --
+-- Name: mr519_gen_encuestapersona fk_rails_54b3e0ed5c; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.mr519_gen_encuestapersona
+    ADD CONSTRAINT fk_rails_54b3e0ed5c FOREIGN KEY (persona_id) REFERENCES public.sip_persona(id);
+
+
+--
 -- Name: acompanamiento_evento fk_rails_5564d830d8; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9378,6 +9494,14 @@ ALTER TABLE ONLY public.mr519_gen_valorcampo
 
 
 --
+-- Name: mr519_gen_encuestapersona fk_rails_83755e20b9; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.mr519_gen_encuestapersona
+    ADD CONSTRAINT fk_rails_83755e20b9 FOREIGN KEY (respuestafor_id) REFERENCES public.mr519_gen_respuestafor(id);
+
+
+--
 -- Name: sivel2_gen_caso fk_rails_850036942a; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9391,6 +9515,14 @@ ALTER TABLE ONLY public.sivel2_gen_caso
 
 ALTER TABLE ONLY public.sivel2_sjr_ayudaestado_derecho
     ADD CONSTRAINT fk_rails_863c4c40a3 FOREIGN KEY (ayudaestado_id) REFERENCES public.sivel2_sjr_ayudaestado(id);
+
+
+--
+-- Name: mr519_gen_encuestapersona fk_rails_88eeb03074; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.mr519_gen_encuestapersona
+    ADD CONSTRAINT fk_rails_88eeb03074 FOREIGN KEY (formulario_id) REFERENCES public.mr519_gen_formulario(id);
 
 
 --
@@ -10781,6 +10913,9 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190703044126'),
 ('20190715083916'),
 ('20190715182611'),
-('20190718032712');
+('20190718032712'),
+('20190726203302'),
+('20190804223012'),
+('20190818013251');
 
 
