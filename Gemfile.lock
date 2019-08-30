@@ -441,6 +441,7 @@ DEPENDENCIES
   rails-erd
   rails-i18n
   rails_12factor
+  redcarpet
   rspreadsheet
   sass
   selenium-webdriver

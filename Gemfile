@@ -7,6 +7,8 @@ gem "rails", '~> 6.0.0.rc1'
 
 gem "rails-i18n"
 
+gem 'redcarpet'
+
 gem 'bootsnap', '>=1.1.0', require: false
 
 gem 'bigdecimal'
