@@ -28,7 +28,7 @@ gem 'chosen-rails', git: 'https://github.com/vtamara/chosen-rails.git', branch: 
 gem 'font-awesome-rails'
 
 gem 'libxml-ruby'
-gem "rspreadsheet"
+gem "rspreadsheet", ">= 0.5.1"
 
 # Color en terminal
 gem "colorize"
@@ -128,7 +128,7 @@ end
 group :test do
   gem 'simplecov'
   gem "poltergeist"
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '>= 3.142.4'
 
   gem 'pry-rescue'
   gem 'pry-stack_explorer'
