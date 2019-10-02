@@ -65,6 +65,119 @@ class Ability < Sivel2Sjr::Ability
       ]
   end
 
+  CAMPOS_PLANTILLAS_PROPIAS = {
+    'Caso' => {
+      campos: [
+        :caso_id,
+        :organizacion,
+        :consecutivo_organizacion,
+        :consentimiento_priv_acin,
+        :fecha_creacion,
+        :fecha_actualizacion,
+        :sistematizado_por,
+        :fecha_doc_terreno,
+        :doc_terreno_por,
+        :estados_caso,
+        :acompanamientos_caso,
+        :fuente1_nombre,
+        :fuente1_fecha,
+        :fuente1_detalle,
+        :victima_priv_acin,
+        :victima_nombres_priv_acin,
+        :victima_apellidos_priv_acin,
+        :victima_identificacion_priv_acin,
+        :victima_anionac,
+        :victima_mesnac,
+        :victima_dianac,
+        :victima_edaddocumentacion,
+        :victima_rangoedaddocumentacion,
+        :victima_departamentonac,
+        :victima_municipionac,
+        :victima_resguardonac,
+        :victima_comunidadnac,
+        :victima_departamentores_priv_acin,
+        :victima_municipiores_priv_acin,
+        :victima_resguardores_priv_acin,
+        :victima_comunidadres_priv_acin,
+        :victima_numhijos_priv_acin,
+        :victima_idiomas_priv_acin,
+        :victima_etnia,
+        :victima_estadocivil,
+        :victima_ultgreducacionord,
+        :victima_educacionpropia,
+        :victima_carnetsalud,
+        :victima_religion_priv_acin,
+        :victima_comogeneraingresos_priv_acin,
+        :victima_tienetierra_priv_acin,
+        :victima_areatierra_priv_acin,
+        :victima_sexo,
+        :victima_incluidoruv,
+        :victima_cabezahogar,
+        :victima_liderazgocomunidad,
+        :victima_tipoliderazgo_priv_acin,
+        :evento_fechaseguimiento,
+        :evento_anio,
+        :evento_mes,
+        :evento_dia,
+        :evento_diasemana,
+        :evento_departamento,
+        :evento_municipio,
+        :evento_resguardo,
+        :evento_comunidadvereda,
+        :evento_numvecesantes,
+        :evento_relacionadoconconflicto,
+        :evento_descripcion_priv_acin,
+        :evento_relacionesprvic_priv_acin,
+        :evento_presponsables,
+        :evento_hechosvictimizantes,
+        :evento_testigo,
+        :evento_tiposafectaciones,
+        :evento_afectacionesindividual_priv_acin,
+        :evento_afectacionesfamiliar_priv_acin,
+        :evento_tiposapoyos,
+        :evento_afectacionesfisicas_priv_acin,
+        :evento_actividadesdejarondehacer_priv_acin,
+        :evento_reaccionfamiliaycomunidad_oriv_acin,
+        :evento_afectacionaotrapersona_priv_acin,
+        :evento_acompanamientosquenecesita,
+        :evento_telcontacto_priv_acin,
+        :evento_situacionderiesgo,
+        :evento_antequienmedidas,
+        :evento_medidasrecibidas,
+        :evento_denuncia,
+        :evento_denunciaante,
+        :evento_aniodenuncia,
+        :evento_mesdenuncia,
+        :evento_diadenuncia,
+        :evento_avancesdelcaso_priv_acin,
+        :evento_etapadelproceso_priv_acin,
+        :evento_harecibidoreparacion_priv_acin,
+        :evento_cualreparacion_priv_acin,
+        :evento_sancionadovictimario_priv_acin,
+        :evento_motivosnodenuncia,
+        :evento_valoracionjusticia,
+        :evento_quisieradenunciar,
+        :evento_compromisosadquiridos_priv_acin,
+        :evento_observaciones_priv_acin,
+        :evento_seguimientojudicial_priv_oik,
+        :evento_seguimientopsicosocial_priv_oik,
+        :ubicaciones
+      ],
+      controlador: 'Sivel2Gen::CasosController',
+      ruta: '/casos'
+    }
+  }
+
+  def campos_plantillas 
+    Heb412Gen::Ability::CAMPOS_PLANTILLAS_PROPIAS.
+      clone.merge(Cor1440Gen::Ability::CAMPOS_PLANTILLAS_PROPIAS.clone.merge(
+        Sivel2Gen::Ability::CAMPOS_PLANTILLAS_PROPIAS.clone.merge(
+          Sivel2Sjr::Ability::CAMPOS_PLANTILLAS_PROPIAS.clone.merge (
+            ::Ability::CAMPOS_PLANTILLAS_PROPIAS.clone
+          ))
+    ))
+  end
+
   def initialize(usuario = nil)
     can :nuevo, ::Evento
     can :contar, Sip::Ubicacion
