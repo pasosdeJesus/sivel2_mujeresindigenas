@@ -330,407 +330,6 @@ CREATE TABLE public.categoria_eventopresponsable (
 
 
 --
--- Name: sip_persona_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.sip_persona_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: sip_persona; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.sip_persona (
-    id integer DEFAULT nextval('public.sip_persona_id_seq'::regclass) NOT NULL,
-    nombres character varying(100) COLLATE public.es_co_utf_8 DEFAULT 'N'::character varying NOT NULL,
-    apellidos character varying(100) COLLATE public.es_co_utf_8 DEFAULT 'N'::character varying NOT NULL,
-    anionac integer,
-    mesnac integer,
-    dianac integer,
-    sexo character(1) NOT NULL,
-    numerodocumento character varying(100),
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone,
-    id_pais integer,
-    nacionalde integer,
-    tdocumento_id integer,
-    id_departamento integer,
-    id_municipio integer,
-    id_clase integer,
-    CONSTRAINT persona_check CHECK (((dianac IS NULL) OR (((dianac >= 1) AND (((mesnac = 1) OR (mesnac = 3) OR (mesnac = 5) OR (mesnac = 7) OR (mesnac = 8) OR (mesnac = 10) OR (mesnac = 12)) AND (dianac <= 31))) OR (((mesnac = 4) OR (mesnac = 6) OR (mesnac = 9) OR (mesnac = 11)) AND (dianac <= 30)) OR ((mesnac = 2) AND (dianac <= 29))))),
-    CONSTRAINT persona_mesnac_check CHECK (((mesnac IS NULL) OR ((mesnac >= 1) AND (mesnac <= 12)))),
-    CONSTRAINT persona_sexo_check CHECK (((sexo = 'S'::bpchar) OR (sexo = 'F'::bpchar) OR (sexo = 'M'::bpchar)))
-);
-
-
---
--- Name: sivel2_gen_caso_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.sivel2_gen_caso_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: sivel2_gen_caso; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.sivel2_gen_caso (
-    id integer DEFAULT nextval('public.sivel2_gen_caso_id_seq'::regclass) NOT NULL,
-    titulo character varying(50),
-    fecha date NOT NULL,
-    hora character varying(10),
-    duracion character varying(10),
-    memo text NOT NULL,
-    grconfiabilidad character varying(5),
-    gresclarecimiento character varying(5),
-    grimpunidad character varying(8),
-    grinformacion character varying(8),
-    bienes text,
-    id_intervalo integer DEFAULT 5,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone,
-    ubicacion_id integer
-);
-
-
---
--- Name: victima_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.victima_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: sivel2_gen_victima; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.sivel2_gen_victima (
-    id_persona integer NOT NULL,
-    id_caso integer NOT NULL,
-    hijos integer,
-    id_profesion integer DEFAULT 22 NOT NULL,
-    id_rangoedad integer DEFAULT 6 NOT NULL,
-    id_filiacion integer DEFAULT 10 NOT NULL,
-    id_sectorsocial integer DEFAULT 15 NOT NULL,
-    id_organizacion integer DEFAULT 16 NOT NULL,
-    id_vinculoestado integer DEFAULT 38 NOT NULL,
-    organizacionarmada integer DEFAULT 35 NOT NULL,
-    anotaciones character varying(1000),
-    id_etnia integer DEFAULT 1,
-    id_iglesia integer DEFAULT 1,
-    orientacionsexual character(1) DEFAULT 'S'::bpchar NOT NULL,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone,
-    id integer DEFAULT nextval('public.victima_seq'::regclass) NOT NULL,
-    CONSTRAINT victima_hijos_check CHECK (((hijos IS NULL) OR ((hijos >= 0) AND (hijos <= 100)))),
-    CONSTRAINT victima_orientacionsexual_check CHECK (((orientacionsexual = 'L'::bpchar) OR (orientacionsexual = 'G'::bpchar) OR (orientacionsexual = 'B'::bpchar) OR (orientacionsexual = 'T'::bpchar) OR (orientacionsexual = 'H'::bpchar) OR (orientacionsexual = 'S'::bpchar)))
-);
-
-
---
--- Name: sivel2_sjr_casosjr; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.sivel2_sjr_casosjr (
-    id_caso integer NOT NULL,
-    fecharec date NOT NULL,
-    asesor integer NOT NULL,
-    oficina_id integer DEFAULT 1,
-    direccion character varying(1000),
-    telefono character varying(1000),
-    contacto_id integer,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone,
-    dependen integer,
-    sustento character varying(1000),
-    leerescribir boolean,
-    trabaja boolean,
-    ingresomensual integer,
-    gastos integer,
-    estrato character(1),
-    id_statusmigratorio integer DEFAULT 0,
-    id_proteccion integer DEFAULT 0,
-    consentimientosjr boolean,
-    consentimientobd boolean,
-    fechasalida date,
-    id_salida integer,
-    fechallegada date,
-    id_llegada integer,
-    categoriaref integer,
-    observacionesref character varying(5000),
-    comosupo_id integer DEFAULT 1,
-    consentimiento character varying(1) DEFAULT 'I'::character varying,
-    docterrenopor character varying(512),
-    consecorg character varying(16)
-);
-
-
---
--- Name: cben1; Type: VIEW; Schema: public; Owner: -
---
-
-CREATE VIEW public.cben1 AS
- SELECT caso.id AS id_caso,
-    victima.id_persona,
-        CASE
-            WHEN (casosjr.contacto_id = victima.id_persona) THEN 1
-            ELSE 0
-        END AS contacto,
-        CASE
-            WHEN (casosjr.contacto_id <> victima.id_persona) THEN 1
-            ELSE 0
-        END AS beneficiario,
-    1 AS npersona,
-    persona.sexo
-   FROM public.sivel2_gen_caso caso,
-    public.sivel2_sjr_casosjr casosjr,
-    public.sivel2_gen_victima victima,
-    public.sip_persona persona
-  WHERE ((caso.id = victima.id_caso) AND (caso.id = casosjr.id_caso) AND (caso.id = victima.id_caso) AND (casosjr.oficina_id = 104) AND (persona.id = victima.id_persona));
-
-
---
--- Name: desplazamiento_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.desplazamiento_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: sip_clase_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.sip_clase_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: sip_clase; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.sip_clase (
-    id_clalocal integer,
-    nombre character varying(500) COLLATE public.es_co_utf_8 NOT NULL,
-    id_tclase character varying(10) DEFAULT 'CP'::character varying NOT NULL,
-    latitud double precision,
-    longitud double precision,
-    fechacreacion date NOT NULL,
-    fechadeshabilitacion date,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone,
-    id_municipio integer,
-    id integer DEFAULT nextval('public.sip_clase_id_seq'::regclass) NOT NULL,
-    observaciones character varying(5000) COLLATE public.es_co_utf_8,
-    CONSTRAINT clase_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
-);
-
-
---
--- Name: sip_departamento_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.sip_departamento_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: sip_departamento; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.sip_departamento (
-    id_deplocal integer,
-    nombre character varying(500) COLLATE public.es_co_utf_8 NOT NULL,
-    latitud double precision,
-    longitud double precision,
-    fechacreacion date DEFAULT ('now'::text)::date NOT NULL,
-    fechadeshabilitacion date,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone,
-    id_pais integer DEFAULT 0 NOT NULL,
-    id integer DEFAULT nextval('public.sip_departamento_id_seq'::regclass) NOT NULL,
-    observaciones character varying(5000) COLLATE public.es_co_utf_8,
-    CONSTRAINT departamento_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
-);
-
-
---
--- Name: sip_municipio_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.sip_municipio_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: sip_municipio; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.sip_municipio (
-    id_munlocal integer,
-    nombre character varying(500) COLLATE public.es_co_utf_8 NOT NULL,
-    latitud double precision,
-    longitud double precision,
-    fechacreacion date DEFAULT ('now'::text)::date NOT NULL,
-    fechadeshabilitacion date,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone,
-    id_departamento integer,
-    id integer DEFAULT nextval('public.sip_municipio_id_seq'::regclass) NOT NULL,
-    observaciones character varying(5000) COLLATE public.es_co_utf_8,
-    CONSTRAINT municipio_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
-);
-
-
---
--- Name: sip_ubicacion_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.sip_ubicacion_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: sip_ubicacion; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.sip_ubicacion (
-    id integer DEFAULT nextval('public.sip_ubicacion_id_seq'::regclass) NOT NULL,
-    lugar character varying(500) COLLATE public.es_co_utf_8,
-    sitio character varying(500) COLLATE public.es_co_utf_8,
-    id_tsitio integer DEFAULT 1 NOT NULL,
-    id_caso integer NOT NULL,
-    latitud double precision,
-    longitud double precision,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone,
-    id_pais integer DEFAULT 0,
-    id_departamento integer,
-    id_municipio integer,
-    id_clase integer
-);
-
-
---
--- Name: sivel2_sjr_desplazamiento; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.sivel2_sjr_desplazamiento (
-    id_caso integer NOT NULL,
-    fechaexpulsion date NOT NULL,
-    id_expulsion integer NOT NULL,
-    fechallegada date NOT NULL,
-    id_llegada integer NOT NULL,
-    id_clasifdesp integer DEFAULT 0 NOT NULL,
-    id_tipodesp integer DEFAULT 0 NOT NULL,
-    descripcion character varying(5000),
-    otrosdatos character varying(1000),
-    declaro character(1),
-    hechosdeclarados character varying(5000),
-    fechadeclaracion date,
-    departamentodecl integer,
-    municipiodecl integer,
-    id_declaroante integer DEFAULT 0,
-    id_inclusion integer DEFAULT 0,
-    id_acreditacion integer DEFAULT 0,
-    retornado boolean,
-    reubicado boolean,
-    connacionalretorno boolean,
-    acompestado boolean,
-    connacionaldeportado boolean,
-    oficioantes character varying(5000),
-    id_modalidadtierra integer DEFAULT 0,
-    materialesperdidos character varying(5000),
-    inmaterialesperdidos character varying(5000),
-    protegiorupta boolean,
-    documentostierra character varying(5000),
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone,
-    paisdecl integer,
-    id integer DEFAULT nextval('public.desplazamiento_seq'::regclass) NOT NULL,
-    CONSTRAINT desplazamiento_declaro_check CHECK (((declaro = 'S'::bpchar) OR (declaro = 'N'::bpchar) OR (declaro = 'R'::bpchar)))
-);
-
-
---
--- Name: ultimodesplazamiento; Type: VIEW; Schema: public; Owner: -
---
-
-CREATE VIEW public.ultimodesplazamiento AS
- SELECT sivel2_sjr_desplazamiento.id,
-    s.id_caso,
-    s.fechaexpulsion,
-    sivel2_sjr_desplazamiento.id_expulsion
-   FROM public.sivel2_sjr_desplazamiento,
-    ( SELECT sivel2_sjr_desplazamiento_1.id_caso,
-            max(sivel2_sjr_desplazamiento_1.fechaexpulsion) AS fechaexpulsion
-           FROM public.sivel2_sjr_desplazamiento sivel2_sjr_desplazamiento_1
-          GROUP BY sivel2_sjr_desplazamiento_1.id_caso) s
-  WHERE ((sivel2_sjr_desplazamiento.id_caso = s.id_caso) AND (sivel2_sjr_desplazamiento.fechaexpulsion = s.fechaexpulsion));
-
-
---
--- Name: cben2; Type: VIEW; Schema: public; Owner: -
---
-
-CREATE VIEW public.cben2 AS
- SELECT cben1.id_caso,
-    cben1.id_persona,
-    cben1.contacto,
-    cben1.beneficiario,
-    cben1.npersona,
-    cben1.sexo,
-    ubicacion.id_departamento,
-    departamento.nombre AS departamento_nombre,
-    ubicacion.id_municipio,
-    municipio.nombre AS municipio_nombre,
-    ubicacion.id_clase,
-    clase.nombre AS clase_nombre,
-    ultimodesplazamiento.fechaexpulsion
-   FROM (((((public.cben1
-     LEFT JOIN public.ultimodesplazamiento ON ((cben1.id_caso = ultimodesplazamiento.id_caso)))
-     LEFT JOIN public.sip_ubicacion ubicacion ON ((ultimodesplazamiento.id_expulsion = ubicacion.id)))
-     LEFT JOIN public.sip_departamento departamento ON ((ubicacion.id_departamento = departamento.id)))
-     LEFT JOIN public.sip_municipio municipio ON ((ubicacion.id_municipio = municipio.id)))
-     LEFT JOIN public.sip_clase clase ON ((ubicacion.id_clase = clase.id)));
-
-
---
 -- Name: consecuenciafamiliar; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2023,6 +1622,41 @@ CREATE SEQUENCE public.respuesta_seq
 
 
 --
+-- Name: sivel2_gen_caso_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.sivel2_gen_caso_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sivel2_gen_caso; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sivel2_gen_caso (
+    id integer DEFAULT nextval('public.sivel2_gen_caso_id_seq'::regclass) NOT NULL,
+    titulo character varying(50),
+    fecha date NOT NULL,
+    hora character varying(10),
+    duracion character varying(10),
+    memo text NOT NULL,
+    grconfiabilidad character varying(5),
+    gresclarecimiento character varying(5),
+    grimpunidad character varying(8),
+    grinformacion character varying(8),
+    bienes text,
+    id_intervalo integer DEFAULT 5,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    ubicacion_id integer
+);
+
+
+--
 -- Name: sivel2_sjr_ayudasjr_respuesta; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2031,6 +1665,44 @@ CREATE TABLE public.sivel2_sjr_ayudasjr_respuesta (
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
     id_respuesta integer NOT NULL
+);
+
+
+--
+-- Name: sivel2_sjr_casosjr; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sivel2_sjr_casosjr (
+    id_caso integer NOT NULL,
+    fecharec date NOT NULL,
+    asesor integer NOT NULL,
+    oficina_id integer DEFAULT 1,
+    direccion character varying(1000),
+    telefono character varying(1000),
+    contacto_id integer,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    dependen integer,
+    sustento character varying(1000),
+    leerescribir boolean,
+    trabaja boolean,
+    ingresomensual integer,
+    gastos integer,
+    estrato character(1),
+    id_statusmigratorio integer DEFAULT 0,
+    id_proteccion integer DEFAULT 0,
+    consentimientosjr boolean,
+    consentimientobd boolean,
+    fechasalida date,
+    id_salida integer,
+    fechallegada date,
+    id_llegada integer,
+    categoriaref integer,
+    observacionesref character varying(5000),
+    comosupo_id integer DEFAULT 1,
+    consentimiento character varying(1) DEFAULT 'I'::character varying,
+    docterrenopor character varying(512),
+    consecorg character varying(16)
 );
 
 
@@ -2094,6 +1766,18 @@ CREATE VIEW public.cres1 AS
     public.sivel2_sjr_respuesta respuesta,
     public.sivel2_sjr_ayudasjr_respuesta ayudasjr_respuesta
   WHERE ((caso.id = casosjr.id_caso) AND (caso.id = respuesta.id_caso) AND (respuesta.id = ayudasjr_respuesta.id_respuesta));
+
+
+--
+-- Name: desplazamiento_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.desplazamiento_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
 
 
 --
@@ -3194,6 +2878,71 @@ ALTER SEQUENCE public.sip_anexo_id_seq OWNED BY public.sip_anexo.id;
 
 
 --
+-- Name: sip_clase_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.sip_clase_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sip_clase; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sip_clase (
+    id_clalocal integer,
+    nombre character varying(500) COLLATE public.es_co_utf_8 NOT NULL,
+    id_tclase character varying(10) DEFAULT 'CP'::character varying NOT NULL,
+    latitud double precision,
+    longitud double precision,
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    id_municipio integer,
+    id integer DEFAULT nextval('public.sip_clase_id_seq'::regclass) NOT NULL,
+    observaciones character varying(5000) COLLATE public.es_co_utf_8,
+    CONSTRAINT clase_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
+);
+
+
+--
+-- Name: sip_departamento_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.sip_departamento_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sip_departamento; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sip_departamento (
+    id_deplocal integer,
+    nombre character varying(500) COLLATE public.es_co_utf_8 NOT NULL,
+    latitud double precision,
+    longitud double precision,
+    fechacreacion date DEFAULT ('now'::text)::date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    id_pais integer DEFAULT 0 NOT NULL,
+    id integer DEFAULT nextval('public.sip_departamento_id_seq'::regclass) NOT NULL,
+    observaciones character varying(5000) COLLATE public.es_co_utf_8,
+    CONSTRAINT departamento_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
+);
+
+
+--
 -- Name: sip_etiqueta_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -3316,6 +3065,38 @@ CREATE TABLE public.sip_grupoper (
     anotaciones character varying(1000),
     created_at timestamp without time zone,
     updated_at timestamp without time zone
+);
+
+
+--
+-- Name: sip_municipio_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.sip_municipio_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sip_municipio; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sip_municipio (
+    id_munlocal integer,
+    nombre character varying(500) COLLATE public.es_co_utf_8 NOT NULL,
+    latitud double precision,
+    longitud double precision,
+    fechacreacion date DEFAULT ('now'::text)::date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    id_departamento integer,
+    id integer DEFAULT nextval('public.sip_municipio_id_seq'::regclass) NOT NULL,
+    observaciones character varying(5000) COLLATE public.es_co_utf_8,
+    CONSTRAINT municipio_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
 );
 
 
@@ -3453,6 +3234,45 @@ CREATE SEQUENCE public.sip_perfilactorsocial_id_seq
 --
 
 ALTER SEQUENCE public.sip_perfilactorsocial_id_seq OWNED BY public.sip_perfilactorsocial.id;
+
+
+--
+-- Name: sip_persona_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.sip_persona_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sip_persona; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sip_persona (
+    id integer DEFAULT nextval('public.sip_persona_id_seq'::regclass) NOT NULL,
+    nombres character varying(100) COLLATE public.es_co_utf_8 DEFAULT 'N'::character varying NOT NULL,
+    apellidos character varying(100) COLLATE public.es_co_utf_8 DEFAULT 'N'::character varying NOT NULL,
+    anionac integer,
+    mesnac integer,
+    dianac integer,
+    sexo character(1) NOT NULL,
+    numerodocumento character varying(100),
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    id_pais integer,
+    nacionalde integer,
+    tdocumento_id integer,
+    id_departamento integer,
+    id_municipio integer,
+    id_clase integer,
+    CONSTRAINT persona_check CHECK (((dianac IS NULL) OR (((dianac >= 1) AND (((mesnac = 1) OR (mesnac = 3) OR (mesnac = 5) OR (mesnac = 7) OR (mesnac = 8) OR (mesnac = 10) OR (mesnac = 12)) AND (dianac <= 31))) OR (((mesnac = 4) OR (mesnac = 6) OR (mesnac = 9) OR (mesnac = 11)) AND (dianac <= 30)) OR ((mesnac = 2) AND (dianac <= 29))))),
+    CONSTRAINT persona_mesnac_check CHECK (((mesnac IS NULL) OR ((mesnac >= 1) AND (mesnac <= 12)))),
+    CONSTRAINT persona_sexo_check CHECK (((sexo = 'S'::bpchar) OR (sexo = 'F'::bpchar) OR (sexo = 'M'::bpchar)))
+);
 
 
 --
@@ -3682,6 +3502,39 @@ CREATE TABLE public.sip_tsitio (
     updated_at timestamp without time zone,
     observaciones character varying(5000) COLLATE public.es_co_utf_8,
     CONSTRAINT tsitio_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
+);
+
+
+--
+-- Name: sip_ubicacion_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.sip_ubicacion_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sip_ubicacion; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sip_ubicacion (
+    id integer DEFAULT nextval('public.sip_ubicacion_id_seq'::regclass) NOT NULL,
+    lugar character varying(500) COLLATE public.es_co_utf_8,
+    sitio character varying(500) COLLATE public.es_co_utf_8,
+    id_tsitio integer DEFAULT 1 NOT NULL,
+    id_caso integer NOT NULL,
+    latitud double precision,
+    longitud double precision,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    id_pais integer DEFAULT 0,
+    id_departamento integer,
+    id_municipio integer,
+    id_clase integer
 );
 
 
@@ -4176,6 +4029,34 @@ CREATE MATERIALIZED VIEW public.sivel2_gen_conscaso AS
 
 
 --
+-- Name: sivel2_gen_contexto_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.sivel2_gen_contexto_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sivel2_gen_contexto; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sivel2_gen_contexto (
+    id integer DEFAULT nextval('public.sivel2_gen_contexto_id_seq'::regclass) NOT NULL,
+    nombre character varying(500) COLLATE public.es_co_utf_8 NOT NULL,
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    observaciones character varying(5000),
+    CONSTRAINT contexto_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
+);
+
+
+--
 -- Name: sivel2_gen_escolaridad_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -4257,502 +4138,6 @@ CREATE TABLE public.sivel2_gen_etnia (
     updated_at timestamp without time zone,
     observaciones character varying(5000),
     CONSTRAINT etnia_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
-);
-
-
---
--- Name: sivel2_gen_presponsable_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.sivel2_gen_presponsable_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: sivel2_gen_presponsable; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.sivel2_gen_presponsable (
-    id integer DEFAULT nextval('public.sivel2_gen_presponsable_id_seq'::regclass) NOT NULL,
-    nombre character varying(500) COLLATE public.es_co_utf_8 NOT NULL,
-    papa integer,
-    fechacreacion date DEFAULT ('now'::text)::date NOT NULL,
-    fechadeshabilitacion date,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone,
-    observaciones character varying(5000),
-    CONSTRAINT presponsable_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
-);
-
-
---
--- Name: sivel2_gen_rangoedad_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.sivel2_gen_rangoedad_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: sivel2_gen_rangoedad; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.sivel2_gen_rangoedad (
-    id integer DEFAULT nextval('public.sivel2_gen_rangoedad_id_seq'::regclass) NOT NULL,
-    nombre character varying(20) COLLATE public.es_co_utf_8 NOT NULL,
-    rango character varying(20),
-    limiteinferior integer DEFAULT 0 NOT NULL,
-    limitesuperior integer DEFAULT 0 NOT NULL,
-    fechacreacion date NOT NULL,
-    fechadeshabilitacion date,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone,
-    observaciones character varying(5000),
-    CONSTRAINT rangoedad_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
-);
-
-
---
--- Name: sivel2_sjr_idioma_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.sivel2_sjr_idioma_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: sivel2_sjr_idioma; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.sivel2_sjr_idioma (
-    id integer DEFAULT nextval('public.sivel2_sjr_idioma_id_seq'::regclass) NOT NULL,
-    nombre character varying(100) NOT NULL,
-    fechacreacion date DEFAULT '2014-02-14'::date NOT NULL,
-    fechadeshabilitacion date,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone,
-    observaciones character varying(5000),
-    CONSTRAINT idioma_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
-);
-
-
---
--- Name: sivel2_sjr_victimasjr; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.sivel2_sjr_victimasjr (
-    sindocumento boolean,
-    id_estadocivil integer DEFAULT 0,
-    id_rolfamilia integer DEFAULT 0 NOT NULL,
-    cabezafamilia boolean,
-    id_maternidad integer DEFAULT 0,
-    discapacitado boolean,
-    id_actividadoficio integer DEFAULT 0,
-    id_escolaridad integer DEFAULT 0,
-    asisteescuela boolean,
-    tienesisben boolean,
-    id_departamento integer,
-    id_municipio integer,
-    nivelsisben integer,
-    id_regimensalud integer DEFAULT 0,
-    eps character varying(1000) DEFAULT ''::character varying,
-    libretamilitar boolean,
-    distrito integer,
-    progadultomayor boolean,
-    fechadesagregacion date,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone,
-    id_victima integer NOT NULL,
-    id_pais integer,
-    enfermedad character varying(5000) DEFAULT ''::character varying,
-    ndiscapacidad character varying(100) DEFAULT ''::character varying,
-    incluidoruv character varying(1) DEFAULT 'I'::character varying,
-    cabezahogar character varying(1) DEFAULT 'I'::character varying,
-    sistemasalud character varying(1) DEFAULT 'I'::character varying,
-    vicconflicto character varying(1) DEFAULT 'A'::character varying,
-    liderazgo character varying(1) DEFAULT 'I'::character varying,
-    residencia character varying(5000) DEFAULT ''::character varying,
-    areatierra integer,
-    comotierra character varying(5000) DEFAULT ''::character varying,
-    resguardonac character varying(500) DEFAULT ''::character varying,
-    comunidadnac character varying(500) DEFAULT ''::character varying,
-    organizacionfilial character varying(500) DEFAULT ''::character varying,
-    religion_id integer DEFAULT 0,
-    educacionpropia_id integer DEFAULT 0,
-    departamentores_id integer,
-    municipiores_id integer,
-    resguardores character varying(500) DEFAULT ''::character varying,
-    comunidadres character varying(500) DEFAULT ''::character varying,
-    comoingresos character varying(5000) DEFAULT ''::character varying,
-    tipoliderazgo character varying(5000) DEFAULT ''::character varying
-);
-
-
---
--- Name: tafectacion; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.tafectacion (
-    id integer NOT NULL,
-    nombre character varying(500) NOT NULL,
-    observaciones character varying(5000),
-    fechacreacion date NOT NULL,
-    fechadeshabilitacion date,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
---
--- Name: tapoyo; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.tapoyo (
-    id integer NOT NULL,
-    nombre character varying(500) NOT NULL,
-    observaciones character varying(5000),
-    fechacreacion date NOT NULL,
-    fechadeshabilitacion date,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
---
--- Name: tienetierra; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.tienetierra (
-    id integer NOT NULL,
-    nombre character varying(500) NOT NULL,
-    observaciones character varying(500),
-    fechacreacion date NOT NULL,
-    fechadeshabilitacion date,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
---
--- Name: tienetierra_victimasjr; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.tienetierra_victimasjr (
-    tienetierra_id integer NOT NULL,
-    sivel2_sjr_victimasjr_id integer NOT NULL
-);
-
-
---
--- Name: sivel2_gen_consexpcaso; Type: MATERIALIZED VIEW; Schema: public; Owner: -
---
-
-CREATE MATERIALIZED VIEW public.sivel2_gen_consexpcaso AS
- SELECT conscaso.caso_id,
-    conscaso.oficina AS organizacion,
-    casosjr.consecorg AS consecutivo_organizacion,
-        CASE
-            WHEN ((casosjr.consentimiento)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
-            WHEN ((casosjr.consentimiento)::text = 'S'::text) THEN 'SI'::text
-            ELSE 'NO'::text
-        END AS consentimiento_priv_acin,
-    casosjr.created_at AS fecha_creacion,
-    casosjr.updated_at AS fecha_actualizacion,
-    conscaso.nusuario AS sistematizado_por,
-    conscaso.fecharec AS fecha_doc_terreno,
-    casosjr.docterrenopor AS doc_terreno_por,
-    array_to_string(ARRAY( SELECT estadocaso.nombre
-           FROM (public.estadocaso
-             JOIN public.casosjr_estadocaso ON ((casosjr_estadocaso.estadocaso_id = estadocaso.id)))
-          WHERE (casosjr_estadocaso.sivel2_sjr_casosjr_id = conscaso.caso_id)), '; '::text) AS estados_caso,
-    array_to_string(ARRAY( SELECT acompanamiento.nombre
-           FROM (public.acompanamiento
-             JOIN public.acompanamiento_casosjr ON ((acompanamiento_casosjr.acompanamiento_id = acompanamiento.id)))
-          WHERE (acompanamiento_casosjr.sivel2_sjr_casosjr_id = conscaso.caso_id)), '; '::text) AS acompanamientos_caso,
-    array_to_string(ARRAY( SELECT f.nombre
-           FROM (public.sip_fuenteprensa f
-             JOIN public.sivel2_gen_caso_fuenteprensa cf ON ((cf.fuenteprensa_id = f.id)))
-          WHERE (cf.id_caso = conscaso.caso_id)
-          ORDER BY cf.fecha
-         LIMIT 1), '; '::text) AS fuente1_nombre,
-    array_to_string(ARRAY( SELECT cf.fecha
-           FROM public.sivel2_gen_caso_fuenteprensa cf
-          WHERE (cf.id_caso = conscaso.caso_id)
-          ORDER BY cf.fecha
-         LIMIT 1), '; '::text) AS fuente1_fecha,
-    array_to_string(ARRAY( SELECT cf.ubicacion
-           FROM public.sivel2_gen_caso_fuenteprensa cf
-          WHERE (cf.id_caso = conscaso.caso_id)
-          ORDER BY cf.fecha
-         LIMIT 1), '; '::text) AS fuente1_detalle,
-    conscaso.contacto AS victima_priv_acin,
-    contacto.nombres AS victima_nombres_priv_acin,
-    contacto.apellidos AS victima_apellidos_priv_acin,
-    COALESCE(tdocumento.sigla, ''::character varying) AS victima_identificacion_priv_acin,
-    contacto.anionac AS victima_anionac,
-    contacto.mesnac AS victima_mesnac,
-    contacto.dianac AS victima_dianac,
-        CASE
-            WHEN (contacto.anionac IS NULL) THEN NULL::integer
-            WHEN ((contacto.mesnac IS NULL) OR (contacto.dianac IS NULL)) THEN ((date_part('year'::text, conscaso.fecharec) - (contacto.anionac)::double precision))::integer
-            WHEN ((contacto.mesnac)::double precision < date_part('month'::text, conscaso.fecharec)) THEN ((date_part('year'::text, conscaso.fecharec) - (contacto.anionac)::double precision))::integer
-            WHEN ((contacto.mesnac)::double precision > date_part('month'::text, conscaso.fecharec)) THEN (((date_part('year'::text, conscaso.fecharec) - (contacto.anionac)::double precision) - (1)::double precision))::integer
-            WHEN ((contacto.dianac)::double precision > date_part('day'::text, conscaso.fecharec)) THEN (((date_part('year'::text, conscaso.fecharec) - (contacto.anionac)::double precision) - (1)::double precision))::integer
-            ELSE ((date_part('year'::text, conscaso.fecharec) - (contacto.anionac)::double precision))::integer
-        END AS victima_edaddocumentacion,
-    COALESCE(rangoedad.rango, ''::character varying) AS victima_rangoedaddocumentacion,
-    COALESCE(vdepartamento.nombre, ''::character varying) AS victima_departamentonac,
-    COALESCE(vmunicipio.nombre, ''::character varying) AS victima_municipionac,
-    scontacto.resguardonac AS victima_resguardonac,
-    scontacto.comunidadnac AS victima_comunidadnac,
-    COALESCE(sdepartamento.nombre, ''::character varying) AS victima_departamentores_priv_acin,
-    COALESCE(smunicipio.nombre, ''::character varying) AS victima_municipiores_priv_acin,
-    scontacto.resguardores AS victima_resguardores_priv_acin,
-    scontacto.comunidadres AS victima_comunidadres_priv_acin,
-    vcontacto.hijos AS victima_numhijos_priv_acin,
-    array_to_string(ARRAY( SELECT idioma.nombre
-           FROM (public.sivel2_sjr_idioma idioma
-             JOIN public.idioma_victimasjr ON ((idioma_victimasjr.sivel2_sjr_idioma_id = idioma.id)))
-          WHERE (idioma_victimasjr.sivel2_sjr_victimasjr_id = scontacto.id_victima)), '; '::text) AS victima_idiomas_priv_acin,
-    COALESCE(etnia.nombre, ''::character varying) AS victima_etnia,
-    COALESCE(estadocivil.nombre, ''::character varying) AS victima_estadocivil,
-    COALESCE(escolaridad.nombre, ''::character varying) AS victima_ultgreducacionord,
-    COALESCE(educacionpropia.nombre, ''::character varying) AS victima_educacionpropia,
-        CASE
-            WHEN ((scontacto.sistemasalud)::text = 'P'::text) THEN 'PROPIO'::text
-            WHEN ((scontacto.sistemasalud)::text = 'O'::text) THEN 'ORDINARIO'::text
-            ELSE 'SIN INFORMACIÓN'::text
-        END AS victima_carnetsalud,
-    COALESCE(religion.nombre, ''::character varying) AS victima_religion_priv_acin,
-    scontacto.comoingresos AS victima_comogeneraingresos_priv_acin,
-    array_to_string(ARRAY( SELECT t.nombre
-           FROM (public.tienetierra t
-             JOIN public.tienetierra_victimasjr tv ON ((tv.tienetierra_id = t.id)))
-          WHERE (tv.sivel2_sjr_victimasjr_id = scontacto.id_victima)
-          ORDER BY t.nombre), '; '::text) AS victima_tienetierra_priv_acin,
-    scontacto.areatierra AS victima_areatierra_priv_acin,
-        CASE
-            WHEN (contacto.sexo = 'F'::bpchar) THEN 'MUJER'::text
-            WHEN (contacto.sexo = 'M'::bpchar) THEN 'HOMBRE'::text
-            ELSE 'SIN INFORMACIÓN'::text
-        END AS victima_sexo,
-        CASE
-            WHEN ((scontacto.incluidoruv)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
-            WHEN ((scontacto.incluidoruv)::text = 'S'::text) THEN 'SI'::text
-            ELSE 'NO'::text
-        END AS victima_incluidoruv,
-        CASE
-            WHEN ((scontacto.cabezahogar)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
-            WHEN ((scontacto.cabezahogar)::text = 'S'::text) THEN 'SI'::text
-            ELSE 'NO'::text
-        END AS victima_cabezahogar,
-        CASE
-            WHEN ((scontacto.liderazgo)::text = 'Z'::text) THEN 'EN ZONAS DE CONFLICTO'::text
-            WHEN ((scontacto.liderazgo)::text = 'S'::text) THEN 'SI'::text
-            WHEN ((scontacto.liderazgo)::text = 'N'::text) THEN 'NO'::text
-            ELSE 'SIN INFORMACIÓN'::text
-        END AS victima_liderazgocomunidad,
-    scontacto.tipoliderazgo AS victima_tipoliderazgo_priv_acin,
-    evento.fechaseguimiento AS evento_fechaseguimiento,
-    evento.anio AS evento_anio,
-    evento.mes AS evento_mes,
-    evento.dia AS evento_dia,
-        CASE
-            WHEN (evento.diasemana = 1) THEN 'LUNES'::text
-            WHEN (evento.diasemana = 2) THEN 'MARTES'::text
-            WHEN (evento.diasemana = 3) THEN 'MIÉRCOLES'::text
-            WHEN (evento.diasemana = 4) THEN 'JUEVES'::text
-            WHEN (evento.diasemana = 5) THEN 'VIERNES'::text
-            WHEN (evento.diasemana = 6) THEN 'SÁBADO'::text
-            ELSE 'DOMINGO'::text
-        END AS evento_diasemana,
-    array_to_string(ARRAY( SELECT d.nombre
-           FROM public.sip_departamento d
-          WHERE (d.id = evento.departamento_id)), '; '::text) AS evento_departamento,
-    array_to_string(ARRAY( SELECT m.nombre
-           FROM public.sip_municipio m
-          WHERE (m.id = evento.municipio_id)), '; '::text) AS evento_municipio,
-    evento.resguardo AS evento_resguardo,
-    evento.comunidad AS evento_comunidadvereda,
-    evento.numvecesantes AS evento_numvecesantes,
-        CASE
-            WHEN ((evento.relacionadocon)::text = 'A'::text) THEN 'ARMADO'::text
-            WHEN ((evento.relacionadocon)::text = 'S'::text) THEN 'SOCIAL'::text
-            ELSE 'SIN INFORMACIÓN'::text
-        END AS evento_relacionadoconconflicto,
-    evento.descripcionafectacion AS evento_descripcion_priv_acin,
-    array_to_string(ARRAY( SELECT r.nombre
-           FROM (public.evento_relacionprvic er
-             JOIN public.relacionprvic r ON ((er.relacionprvic_id = r.id)))
-          WHERE (er.evento_id = evento.id)), '; '::text) AS evento_relacionesprvic_priv_acin,
-    array_to_string(ARRAY( SELECT p.nombre
-           FROM (public.eventopresponsable ep
-             JOIN public.sivel2_gen_presponsable p ON ((ep.presponsable_id = p.id)))
-          WHERE (ep.evento_id = evento.id)
-          ORDER BY ep.id), '; '::text) AS evento_presponsables,
-    array_to_string(ARRAY( SELECT c.nombre
-           FROM ((public.categoria_eventopresponsable ce
-             JOIN public.eventopresponsable ep ON ((ce.eventopresponsable_id = ep.id)))
-             JOIN public.sivel2_gen_categoria c ON ((ce.categoria_id = c.id)))
-          WHERE (ep.evento_id = evento.id)
-          ORDER BY ep.id, c.id), '; '::text) AS evento_hechosvictimizantes,
-        CASE
-            WHEN ((evento.testigo)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
-            WHEN ((evento.testigo)::text = 'S'::text) THEN 'SI'::text
-            ELSE 'NO'::text
-        END AS evento_testigo,
-    array_to_string(ARRAY( SELECT t.nombre
-           FROM (public.evento_tafectacion et
-             JOIN public.tafectacion t ON ((et.tafectacion_id = t.id)))
-          WHERE (et.evento_id = evento.id)), '; '::text) AS evento_tiposafectaciones,
-    array_to_string(ARRAY( SELECT c.nombre
-           FROM (public.consecuenciaindividual_evento ce
-             JOIN public.consecuenciaindividual c ON ((ce.consecuenciaindividual_id = c.id)))
-          WHERE (ce.evento_id = evento.id)), '; '::text) AS evento_afectacionesindividual_priv_acin,
-    array_to_string(ARRAY( SELECT c.nombre
-           FROM (public.consecuenciafamiliar_evento ce
-             JOIN public.consecuenciafamiliar c ON ((ce.consecuenciafamiliar_id = c.id)))
-          WHERE (ce.evento_id = evento.id)), '; '::text) AS evento_afectacionesfamiliar_priv_acin,
-    array_to_string(ARRAY( SELECT t.nombre
-           FROM (public.evento_tapoyo et
-             JOIN public.tapoyo t ON ((et.tapoyo_id = t.id)))
-          WHERE (et.evento_id = evento.id)), '; '::text) AS evento_tiposapoyos,
-    array_to_string(ARRAY( SELECT c.nombre
-           FROM (public.consecuenciafisica_evento ce
-             JOIN public.consecuenciafisica c ON ((ce.consecuenciafisica_id = c.id)))
-          WHERE (ce.evento_id = evento.id)), '; '::text) AS evento_afectacionesfisicas_priv_acin,
-    evento.actividadesdejadas AS evento_actividadesdejarondehacer_priv_acin,
-    evento.reaccionfamiliaycomunidad AS evento_reaccionfamiliaycomunidad_oriv_acin,
-    evento.afectacionotra AS evento_afectacionaotrapersona_priv_acin,
-    array_to_string(ARRAY( SELECT a.nombre
-           FROM (public.acompanamiento_evento ae
-             JOIN public.acompanamiento a ON ((ae.acompanamiento_id = a.id)))
-          WHERE (ae.evento_id = evento.id)), '; '::text) AS evento_acompanamientosquenecesita,
-    evento.telcontacto AS evento_telcontacto_priv_acin,
-        CASE
-            WHEN ((evento.situacionriesgo)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
-            WHEN ((evento.situacionriesgo)::text = 'S'::text) THEN 'SI'::text
-            ELSE 'NO'::text
-        END AS evento_situacionderiesgo,
-        CASE
-            WHEN ((evento.solicitomedidas)::text = 'C'::text) THEN 'CABILDO'::text
-            WHEN ((evento.solicitomedidas)::text = 'E'::text) THEN 'ESTADO'::text
-            WHEN ((evento.solicitomedidas)::text = 'Y'::text) THEN 'ESTADO Y CABILDO'::text
-            WHEN ((evento.solicitomedidas)::text = 'N'::text) THEN 'NINGUNO'::text
-            ELSE 'SIN INFORMACIÓN'::text
-        END AS evento_antequienmedidas,
-    evento.medidasrecibidas AS evento_medidasrecibidas,
-        CASE
-            WHEN ((evento.denuncia)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
-            WHEN ((evento.denuncia)::text = 'S'::text) THEN 'SI'::text
-            ELSE 'NO'::text
-        END AS evento_denuncia,
-        CASE
-            WHEN ((evento.denunciaante)::text = 'A'::text) THEN 'AMBOS SISTEMAS'::text
-            WHEN ((evento.denunciaante)::text = 'O'::text) THEN 'ORDINARIA'::text
-            WHEN ((evento.denunciaante)::text = 'P'::text) THEN 'PROPIA'::text
-            ELSE 'SIN INFORMACIÓN'::text
-        END AS evento_denunciaante,
-    evento.aniodenuncia AS evento_aniodenuncia,
-    evento.mesdenuncia AS evento_mesdenuncia,
-    evento.diadenuncia AS evento_diadenuncia,
-    evento.avancescaso AS evento_avancesdelcaso_priv_acin,
-    evento.etapaproceso AS evento_etapadelproceso_priv_acin,
-        CASE
-            WHEN ((evento.recibidoreparacion)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
-            WHEN ((evento.recibidoreparacion)::text = 'S'::text) THEN 'SI'::text
-            ELSE 'NO'::text
-        END AS evento_harecibidoreparacion_priv_acin,
-    evento.quereparacion AS evento_cualreparacion_priv_acin,
-        CASE
-            WHEN ((evento.sancionadovictimario)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
-            WHEN ((evento.sancionadovictimario)::text = 'S'::text) THEN 'SI'::text
-            ELSE 'NO'::text
-        END AS evento_sancionadovictimario_priv_acin,
-    array_to_string(ARRAY( SELECT m.nombre
-           FROM (public.evento_motivonodenuncia em
-             JOIN public.motivonodenuncia m ON ((em.motivonodenuncia_id = m.id)))
-          WHERE (em.evento_id = evento.id)), '; '::text) AS evento_motivosnodenuncia,
-        CASE
-            WHEN ((evento.valoracionjusticia)::text = 'B'::text) THEN 'BUENA'::text
-            WHEN ((evento.valoracionjusticia)::text = 'R'::text) THEN 'REGULAR'::text
-            WHEN ((evento.valoracionjusticia)::text = 'M'::text) THEN 'MALA'::text
-            ELSE 'SIN INFORMACIÓN'::text
-        END AS evento_valoracionjusticia,
-        CASE
-            WHEN ((evento.quisieradenunciar)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
-            WHEN ((evento.quisieradenunciar)::text = 'S'::text) THEN 'SI'::text
-            ELSE 'NO'::text
-        END AS evento_quisieradenunciar,
-    evento.compromisosadquiridos AS evento_compromisosadquiridos_priv_acin,
-    evento.observaciones AS evento_observaciones_priv_acin,
-    evento.seguimientojudicial AS evento_seguimientojudicial_priv_oik,
-    evento.seguimientopsicosocial AS evento_seguimientopsicosocial_priv_oik,
-    conscaso.ubicaciones
-   FROM (((((((((((((((((public.sivel2_gen_conscaso conscaso
-     JOIN public.sivel2_sjr_casosjr casosjr ON ((casosjr.id_caso = conscaso.caso_id)))
-     JOIN public.sivel2_gen_caso caso ON ((casosjr.id_caso = caso.id)))
-     JOIN public.sip_persona contacto ON ((contacto.id = casosjr.contacto_id)))
-     JOIN public.sivel2_gen_victima vcontacto ON (((vcontacto.id_persona = contacto.id) AND (vcontacto.id_caso = caso.id))))
-     JOIN public.sivel2_sjr_victimasjr scontacto ON ((vcontacto.id = scontacto.id_victima)))
-     LEFT JOIN public.sip_tdocumento tdocumento ON ((contacto.tdocumento_id = tdocumento.id)))
-     LEFT JOIN public.sivel2_gen_rangoedad rangoedad ON ((vcontacto.id_rangoedad = rangoedad.id)))
-     LEFT JOIN public.sip_departamento vdepartamento ON ((contacto.id_departamento = vdepartamento.id)))
-     LEFT JOIN public.sip_municipio vmunicipio ON ((contacto.id_municipio = vmunicipio.id)))
-     LEFT JOIN public.sip_departamento sdepartamento ON ((scontacto.departamentores_id = sdepartamento.id)))
-     LEFT JOIN public.sip_municipio smunicipio ON ((scontacto.municipiores_id = smunicipio.id)))
-     LEFT JOIN public.sivel2_gen_etnia etnia ON ((vcontacto.id_etnia = etnia.id)))
-     LEFT JOIN public.sivel2_gen_estadocivil estadocivil ON ((scontacto.id_estadocivil = estadocivil.id)))
-     LEFT JOIN public.sivel2_gen_escolaridad escolaridad ON ((scontacto.id_escolaridad = escolaridad.id)))
-     LEFT JOIN public.educacionpropia ON ((scontacto.educacionpropia_id = educacionpropia.id)))
-     LEFT JOIN public.religion ON ((scontacto.religion_id = religion.id)))
-     LEFT JOIN public.evento ON (((evento.caso_id = conscaso.caso_id) AND (evento.id = ( SELECT min(e.id) AS min
-           FROM public.evento e
-          WHERE (e.caso_id = conscaso.caso_id))))))
-  WHERE (conscaso.caso_id IN ( SELECT sivel2_gen_conscaso.caso_id
-           FROM public.sivel2_gen_conscaso
-          ORDER BY sivel2_gen_conscaso.fecharec DESC, sivel2_gen_conscaso.caso_id))
-  ORDER BY conscaso.fecharec DESC
-  WITH NO DATA;
-
-
---
--- Name: sivel2_gen_contexto_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.sivel2_gen_contexto_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: sivel2_gen_contexto; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.sivel2_gen_contexto (
-    id integer DEFAULT nextval('public.sivel2_gen_contexto_id_seq'::regclass) NOT NULL,
-    nombre character varying(500) COLLATE public.es_co_utf_8 NOT NULL,
-    fechacreacion date NOT NULL,
-    fechadeshabilitacion date,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone,
-    observaciones character varying(5000),
-    CONSTRAINT contexto_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
 );
 
 
@@ -4994,6 +4379,35 @@ CREATE TABLE public.sivel2_gen_pconsolidado (
 
 
 --
+-- Name: sivel2_gen_presponsable_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.sivel2_gen_presponsable_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sivel2_gen_presponsable; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sivel2_gen_presponsable (
+    id integer DEFAULT nextval('public.sivel2_gen_presponsable_id_seq'::regclass) NOT NULL,
+    nombre character varying(500) COLLATE public.es_co_utf_8 NOT NULL,
+    papa integer,
+    fechacreacion date DEFAULT ('now'::text)::date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    observaciones character varying(5000),
+    CONSTRAINT presponsable_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
+);
+
+
+--
 -- Name: sivel2_gen_profesion_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -5030,6 +4444,37 @@ CREATE TABLE public.sivel2_gen_profesion_victimacolectiva (
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
     victimacolectiva_id integer
+);
+
+
+--
+-- Name: sivel2_gen_rangoedad_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.sivel2_gen_rangoedad_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sivel2_gen_rangoedad; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sivel2_gen_rangoedad (
+    id integer DEFAULT nextval('public.sivel2_gen_rangoedad_id_seq'::regclass) NOT NULL,
+    nombre character varying(20) COLLATE public.es_co_utf_8 NOT NULL,
+    rango character varying(20),
+    limiteinferior integer DEFAULT 0 NOT NULL,
+    limitesuperior integer DEFAULT 0 NOT NULL,
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    observaciones character varying(5000),
+    CONSTRAINT rangoedad_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
 );
 
 
@@ -5191,6 +4636,45 @@ CREATE TABLE public.sivel2_gen_tviolencia (
     updated_at timestamp without time zone,
     observaciones character varying(5000),
     CONSTRAINT tviolencia_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
+);
+
+
+--
+-- Name: victima_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.victima_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sivel2_gen_victima; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sivel2_gen_victima (
+    id_persona integer NOT NULL,
+    id_caso integer NOT NULL,
+    hijos integer,
+    id_profesion integer DEFAULT 22 NOT NULL,
+    id_rangoedad integer DEFAULT 6 NOT NULL,
+    id_filiacion integer DEFAULT 10 NOT NULL,
+    id_sectorsocial integer DEFAULT 15 NOT NULL,
+    id_organizacion integer DEFAULT 16 NOT NULL,
+    id_vinculoestado integer DEFAULT 38 NOT NULL,
+    organizacionarmada integer DEFAULT 35 NOT NULL,
+    anotaciones character varying(1000),
+    id_etnia integer DEFAULT 1 NOT NULL,
+    id_iglesia integer DEFAULT 1,
+    orientacionsexual character(1) DEFAULT 'S'::bpchar NOT NULL,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    id integer DEFAULT nextval('public.victima_seq'::regclass) NOT NULL,
+    CONSTRAINT victima_hijos_check CHECK (((hijos IS NULL) OR ((hijos >= 0) AND (hijos <= 100)))),
+    CONSTRAINT victima_orientacionsexual_check CHECK (((orientacionsexual = 'L'::bpchar) OR (orientacionsexual = 'G'::bpchar) OR (orientacionsexual = 'B'::bpchar) OR (orientacionsexual = 'T'::bpchar) OR (orientacionsexual = 'H'::bpchar) OR (orientacionsexual = 'S'::bpchar)))
 );
 
 
@@ -5631,6 +5115,47 @@ CREATE TABLE public.sivel2_sjr_derecho_respuesta (
 
 
 --
+-- Name: sivel2_sjr_desplazamiento; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sivel2_sjr_desplazamiento (
+    id_caso integer NOT NULL,
+    fechaexpulsion date NOT NULL,
+    id_expulsion integer NOT NULL,
+    fechallegada date NOT NULL,
+    id_llegada integer NOT NULL,
+    id_clasifdesp integer DEFAULT 0 NOT NULL,
+    id_tipodesp integer DEFAULT 0 NOT NULL,
+    descripcion character varying(5000),
+    otrosdatos character varying(1000),
+    declaro character(1),
+    hechosdeclarados character varying(5000),
+    fechadeclaracion date,
+    departamentodecl integer,
+    municipiodecl integer,
+    id_declaroante integer DEFAULT 0,
+    id_inclusion integer DEFAULT 0,
+    id_acreditacion integer DEFAULT 0,
+    retornado boolean,
+    reubicado boolean,
+    connacionalretorno boolean,
+    acompestado boolean,
+    connacionaldeportado boolean,
+    oficioantes character varying(5000),
+    id_modalidadtierra integer DEFAULT 0,
+    materialesperdidos character varying(5000),
+    inmaterialesperdidos character varying(5000),
+    protegiorupta boolean,
+    documentostierra character varying(5000),
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    paisdecl integer,
+    id integer DEFAULT nextval('public.desplazamiento_seq'::regclass) NOT NULL,
+    CONSTRAINT desplazamiento_declaro_check CHECK (((declaro = 'S'::bpchar) OR (declaro = 'N'::bpchar) OR (declaro = 'R'::bpchar)))
+);
+
+
+--
 -- Name: sivel2_sjr_etiqueta_usuario; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -5660,6 +5185,34 @@ CREATE SEQUENCE public.sivel2_sjr_etiqueta_usuario_id_seq
 --
 
 ALTER SEQUENCE public.sivel2_sjr_etiqueta_usuario_id_seq OWNED BY public.sivel2_sjr_etiqueta_usuario.id;
+
+
+--
+-- Name: sivel2_sjr_idioma_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.sivel2_sjr_idioma_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sivel2_sjr_idioma; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sivel2_sjr_idioma (
+    id integer DEFAULT nextval('public.sivel2_sjr_idioma_id_seq'::regclass) NOT NULL,
+    nombre character varying(100) NOT NULL,
+    fechacreacion date DEFAULT '2014-02-14'::date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    observaciones character varying(5000),
+    CONSTRAINT idioma_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
+);
 
 
 --
@@ -6044,6 +5597,73 @@ CREATE TABLE public.sivel2_sjr_tipodesp (
 
 
 --
+-- Name: sivel2_sjr_victimasjr; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sivel2_sjr_victimasjr (
+    sindocumento boolean,
+    id_estadocivil integer DEFAULT 0,
+    id_rolfamilia integer DEFAULT 0 NOT NULL,
+    cabezafamilia boolean,
+    id_maternidad integer DEFAULT 0,
+    discapacitado boolean,
+    id_actividadoficio integer DEFAULT 0,
+    id_escolaridad integer DEFAULT 0,
+    asisteescuela boolean,
+    tienesisben boolean,
+    id_departamento integer,
+    id_municipio integer,
+    nivelsisben integer,
+    id_regimensalud integer DEFAULT 0,
+    eps character varying(1000) DEFAULT ''::character varying,
+    libretamilitar boolean,
+    distrito integer,
+    progadultomayor boolean,
+    fechadesagregacion date,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    id_victima integer NOT NULL,
+    id_pais integer,
+    enfermedad character varying(5000) DEFAULT ''::character varying,
+    ndiscapacidad character varying(100) DEFAULT ''::character varying,
+    incluidoruv character varying(1) DEFAULT 'I'::character varying,
+    cabezahogar character varying(1) DEFAULT 'I'::character varying,
+    sistemasalud character varying(1) DEFAULT 'I'::character varying,
+    vicconflicto character varying(1) DEFAULT 'A'::character varying,
+    liderazgo character varying(1) DEFAULT 'I'::character varying,
+    residencia character varying(5000) DEFAULT ''::character varying,
+    areatierra integer,
+    comotierra character varying(5000) DEFAULT ''::character varying,
+    resguardonac character varying(500) DEFAULT ''::character varying,
+    comunidadnac character varying(500) DEFAULT ''::character varying,
+    organizacionfilial character varying(500) DEFAULT ''::character varying,
+    religion_id integer DEFAULT 0,
+    educacionpropia_id integer DEFAULT 0,
+    departamentores_id integer,
+    municipiores_id integer,
+    resguardores character varying(500) DEFAULT ''::character varying,
+    comunidadres character varying(500) DEFAULT ''::character varying,
+    comoingresos character varying(5000) DEFAULT ''::character varying,
+    tipoliderazgo character varying(5000) DEFAULT ''::character varying
+);
+
+
+--
+-- Name: tafectacion; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.tafectacion (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
 -- Name: tafectacion_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -6060,6 +5680,21 @@ CREATE SEQUENCE public.tafectacion_id_seq
 --
 
 ALTER SEQUENCE public.tafectacion_id_seq OWNED BY public.tafectacion.id;
+
+
+--
+-- Name: tapoyo; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.tapoyo (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
 
 
 --
@@ -6082,6 +5717,21 @@ ALTER SEQUENCE public.tapoyo_id_seq OWNED BY public.tapoyo.id;
 
 
 --
+-- Name: tienetierra; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.tienetierra (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(500),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
 -- Name: tienetierra_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -6098,6 +5748,33 @@ CREATE SEQUENCE public.tienetierra_id_seq
 --
 
 ALTER SEQUENCE public.tienetierra_id_seq OWNED BY public.tienetierra.id;
+
+
+--
+-- Name: tienetierra_victimasjr; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.tienetierra_victimasjr (
+    tienetierra_id integer NOT NULL,
+    sivel2_sjr_victimasjr_id integer NOT NULL
+);
+
+
+--
+-- Name: ultimodesplazamiento; Type: VIEW; Schema: public; Owner: -
+--
+
+CREATE VIEW public.ultimodesplazamiento AS
+ SELECT sivel2_sjr_desplazamiento.id,
+    s.id_caso,
+    s.fechaexpulsion,
+    sivel2_sjr_desplazamiento.id_expulsion
+   FROM public.sivel2_sjr_desplazamiento,
+    ( SELECT sivel2_sjr_desplazamiento_1.id_caso,
+            max(sivel2_sjr_desplazamiento_1.fechaexpulsion) AS fechaexpulsion
+           FROM public.sivel2_sjr_desplazamiento sivel2_sjr_desplazamiento_1
+          GROUP BY sivel2_sjr_desplazamiento_1.id_caso) s
+  WHERE ((sivel2_sjr_desplazamiento.id_caso = s.id_caso) AND (sivel2_sjr_desplazamiento.fechaexpulsion = s.fechaexpulsion));
 
 
 --
@@ -11145,6 +10822,10 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190926133640'),
 ('20190926143845'),
 ('20190926165901'),
-('20190926170423');
+('20190926170423'),
+('20191012014000'),
+('20191012014823'),
+('20191012042159'),
+('20191016100031');
 
 

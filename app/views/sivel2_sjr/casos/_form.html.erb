@@ -10,50 +10,50 @@
 
       <div role="tabpanel">       
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#basicos" 
-            class="fichacambia" aria-controls="basicos" role="tab" 
+          <li role="presentation" class="nav-item"><a href="#basicos" 
+            class="fichacambia nav-link active" aria-selected="true" aria-controls="basicos" role="tab" 
             data-toggle="tab">Datos Básicos</a></li>
-          <li role="presentation"><a href="#fuentes" class="fichacambia" 
+          <li role="presentation" class="nav-item"><a href="#fuentes" class="fichacambia nav-link" 
             aria-controls="fuentes" role="tab" 
             data-toggle="tab">Fuentes</a></li>
-          <li role="presentation"><a href="#contacto" class="fichacambia" 
+          <li role="presentation" class="nav-item"><a href="#contacto" class="fichacambia nav-link" 
             aria-controls="contacto" role="tab" 
             data-toggle="tab">Datos de la Víctima</a></li>
-          <li role="presentation"><a href="#eventos" class="fichacambia" 
+          <li role="presentation" class="nav-item"><a href="#eventos" class="fichacambia nav-link" 
             aria-controls="eventos" role="tab" 
             data-toggle="tab">Eventos de Violencia y Seguimiento</a></li>
-          <li role="presentation"><a href="#anexos" class="fichacambia" 
+          <li role="presentation" class="nav-item"><a href="#anexos" class="fichacambia nav-link" 
             aria-controls="anexos" role="tab" 
             data-toggle="tab">Anexos</a></li>
-          <li role="presentation"><a href="#etiquetas" class="fichacambia" 
+          <li role="presentation" class="nav-item"><a href="#etiquetas" class="fichacambia nav-link" 
             aria-controls="etiquetas" role="tab" 
             data-toggle="tab">Etiquetas</a></li>
         </ul>
         <div class="tab-content">
           <%= f.simple_fields_for :casosjr do |s| %>
-            <div role="tabpanel" class="tab-pane active" id="basicos" > 
+            <div role="tabpanel" class="tab-pane fade active show" id="basicos" > 
               <%= render 'basicos', :f => f, :s => s %>
             </div> 
 
-            <div role="tabpanel" class="tab-pane" id="fuentes" > 
+            <div role="tabpanel" class="tab-pane fade" id="fuentes" > 
               <%= render 'sivel2_gen/casos/fuentesprensa', :f => f  %>
             </div>
 
-            <div role="tabpanel" class="tab-pane" id="contacto" > 
+            <div role="tabpanel" class="tab-pane fade" id="contacto" > 
               <%= render 'contacto', :f => f, :s => s %>
             </div>
 
-            <div role="tabpanel" class="tab-pane" id="eventos" > 
+            <div role="tabpanel" class="tab-pane fade" id="eventos" > 
               <%= render 'eventos', :f => f, :fcasosjr => s %>
             </div>
           <% end %>
 
   
-          <div role="tabpanel" class="tab-pane" id="anexos"> 
+          <div role="tabpanel" class="tab-pane fade" id="anexos"> 
             <%= render 'sivel2_gen/casos/anexos', :f => f  %>
           </div>
 
-          <div role="tabpanel" class="tab-pane" id="etiquetas"> 
+          <div role="tabpanel" class="tab-pane fade" id="etiquetas"> 
             <%= render 'sivel2_gen/casos/etiquetas', :f => f  %>
           </div> 
 
