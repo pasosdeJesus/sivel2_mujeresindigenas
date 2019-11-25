@@ -1,7 +1,5 @@
 module ApplicationHelper
 
-  include FontAwesome::Rails::IconHelper 
-
   ANTEQUIENMEDIDAS = [
     ['CABILDO', :C],
     ['ESTADO', :E],

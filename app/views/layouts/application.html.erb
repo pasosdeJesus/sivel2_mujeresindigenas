@@ -4,26 +4,34 @@
 
 
 <% content_for :menu do %>
-  <%= menu_group do %>
+  <%= grupo_menus do %>
     <% if !current_usuario.nil? %>
-        <%= drop_down "Casos" do %>
-          <%= menu_item "Listado", sivel2_gen.casos_path %>
-          <%= menu_item "Nuevo", sivel2_gen.new_caso_path %>
-          <%= menu_item "Conteo Demografía Víctimas", sivel2_sjr.conteos_personas_path %>
-          <!-- %= menu_item "Validaciones", sivel2_gen.validarcasos_path %-->
+        <%= despliega_abajo "Casos" do %>
+          <%= opcion_menu "Listado", sivel2_gen.casos_path,
+            desplegable: true %>
+          <%= opcion_menu "Nuevo", sivel2_gen.new_caso_path,
+            desplegable: true %>
+          <%= opcion_menu "Conteo Demografía Víctimas", 
+            sivel2_sjr.conteos_personas_path,
+            desplegable: true %>
+          <!-- %= opcion_menu "Validaciones", sivel2_gen.validarcasos_path %-->
         <% end %>
     <% end %>
   <% end %>
-  <%= menu_group :pull => :right do %>
-    <%= drop_down "Documentos" do %>
-      <%= menu_item "Manual", File.join(Rails.configuration.relative_url_root, 'doc/index.html') %>
+  <%= grupo_menus :pull => :right do %>
+    <%= despliega_abajo "Documentos" do %>
+      <%= opcion_menu "Manual", 
+        File.join(Rails.configuration.relative_url_root, 'doc/index.html'),
+        desplegable: true %>
       <% if can?(:read,Heb412Gen::Doc) %>
-        <%= menu_item "Plantillas", heb412_gen.sisini_path %>
+        <%= opcion_menu "Plantillas", heb412_gen.sisini_path,
+          desplegable: true %>
       <% end %>
     <% end %>
     <% if !current_usuario.nil? %>
-      <%= drop_down "Administrar" do %>
-        <%= menu_item "Clave", main_app.editar_registro_usuario_path %>
+      <%= despliega_abajo "Administrar" do %>
+        <%= opcion_menu "Clave", main_app.editar_registro_usuario_path,
+          desplegable: true %>
         <% if session[:capturacaso_acordeon] %>
           <%= opcion_menu 'Ficha caso vertical ✓', 
             sivel2_gen.fichacasovertical_path,
@@ -36,24 +44,29 @@
           %>
         <% end %>
         <% if can? :manage, ::Usuario %>
-          <%= menu_item "Usuarios", main_app.usuarios_path %>
+          <%= opcion_menu "Usuarios", main_app.usuarios_path,
+            desplegable: true %>
         <% end %>
         <% if can? :manage, :tablasbasicas %>
-          <%= menu_item "Tablas Básicas", sivel2_gen.tablasbasicas_path %>
+          <%= opcion_menu "Tablas Básicas", sivel2_gen.tablasbasicas_path,
+            desplegable: true %>
         <% end %>
         <% if can? :manage, Sip::Respaldo7z %>
-          <%= menu_item "Respaldo cifrado", sip.respaldo7z_path %>
-          <%= menu_item "Bitácora cifrada", main_app.bitacora7z_path %>
+          <%= opcion_menu "Respaldo cifrado", sip.respaldo7z_path,
+            desplegable: true %>
+          <%= opcion_menu "Bitácora cifrada", main_app.bitacora7z_path,
+            desplegable: true %>
         <% end %>
         <% if can? :manage, Heb412Gen::Doc %>
-          <%= menu_item "Asociar plantilla a listado de casos", 
-            heb412_gen.new_plantillahcm_path %>
+          <%= opcion_menu "Asociar plantilla a listado de casos", 
+            heb412_gen.new_plantillahcm_path,
+            desplegable: true %>
         <% end %>
       <% end %>
-      <%= menu_item "Salir #{current_usuario.nusuario}", main_app.sign_out_path %>
+      <%= opcion_menu "Salir #{current_usuario.nusuario}", main_app.sign_out_path %>
     <% else %>
-      <%= menu_item "Acerca de", sivel2_gen.acercade_path %>
-      <%= menu_item "Iniciar Sesión", main_app.new_usuario_session_path %> 
+      <%= opcion_menu "Acerca de", sivel2_gen.acercade_path %>
+      <%= opcion_menu "Iniciar Sesión", main_app.new_usuario_session_path %> 
     <% end %>
   <% end %>
 <% end %> 
