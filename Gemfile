@@ -66,8 +66,8 @@ gem 'mr519_gen', # Motor de gestion de formularios y encuestas
   #path: '../mr519_gen'
 
 gem 'heb412_gen',  # Motor de nube y llenado de plantillas
-  #git: 'https://github.com/pasosdeJesus/heb412_gen.git'
-  path: '../heb412_gen'
+  git: 'https://github.com/pasosdeJesus/heb412_gen.git'
+  #path: '../heb412_gen'
 
 gem 'cor1440_gen', # Motor de actividades y proyectos financiados con marco lógico
   git: 'https://github.com/pasosdeJesus/cor1440_gen.git'
@@ -78,8 +78,8 @@ gem 'sivel2_gen', # Motor de casos de violencia socio política.
   #path: '../sivel2_gen'
 
 gem 'sivel2_sjr', # Motor de atención a casos
-  #git: 'https://github.com/pasosdeJesus/sivel2_sjr.git'
-  path: '../sivel2_sjr'
+  git: 'https://github.com/pasosdeJesus/sivel2_sjr.git'
+  #path: '../sivel2_sjr'
 
 
 
