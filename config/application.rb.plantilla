@@ -33,11 +33,11 @@ module Sivel2Mujeresindigenas
     config.x.heb412_ruta = Rails.root.join(
       'public', 'mujeresindigenas', 'sivel2', 'heb412')
 
-    config.action_mailer.default_url_options = { 
-      protocol: 'https',
-      host: 'localhost',
-      port: 2300 
-    }
+    #config.action_mailer.default_url_options = { 
+    #  protocol: 'https',
+    #  host: 'localhost',
+    #  port: 2300 
+    #}
 
 #    config.action_controller.default_url_options = { 
 #      protocol: 'https',
