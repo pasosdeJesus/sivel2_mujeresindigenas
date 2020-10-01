@@ -290,18 +290,6 @@ CREATE TABLE public.ar_internal_metadata (
 
 
 --
--- Name: aspsicosocial_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.aspsicosocial_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
 -- Name: caso_etiqueta_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -503,8 +491,8 @@ CREATE TABLE public.cor1440_gen_actividad (
 --
 
 CREATE TABLE public.cor1440_gen_actividad_actividadpf (
-    actividad_id bigint NOT NULL,
-    actividadpf_id bigint NOT NULL
+    actividad_id integer NOT NULL,
+    actividadpf_id integer NOT NULL
 );
 
 
@@ -796,6 +784,7 @@ CREATE TABLE public.cor1440_gen_actividadpf (
 --
 
 CREATE SEQUENCE public.cor1440_gen_actividadpf_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -4226,23 +4215,6 @@ CREATE VIEW public.sivel2_gen_conscaso1 AS
 
 
 --
--- Name: sivel2_gen_conscaso; Type: MATERIALIZED VIEW; Schema: public; Owner: -
---
-
-CREATE MATERIALIZED VIEW public.sivel2_gen_conscaso AS
- SELECT sivel2_gen_conscaso1.caso_id,
-    sivel2_gen_conscaso1.contacto,
-    sivel2_gen_conscaso1.ubicaciones,
-    sivel2_gen_conscaso1.fecharec,
-    sivel2_gen_conscaso1.oficina,
-    sivel2_gen_conscaso1.nusuario,
-    sivel2_gen_conscaso1.fechahecho,
-    to_tsvector('spanish'::regconfig, public.unaccent((((((((((sivel2_gen_conscaso1.caso_id || ' '::text) || sivel2_gen_conscaso1.contacto) || ' '::text) || replace(((sivel2_gen_conscaso1.fecharec)::character varying)::text, '-'::text, ' '::text)) || ' '::text) || (sivel2_gen_conscaso1.oficina)::text) || ' '::text) || (sivel2_gen_conscaso1.nusuario)::text) || ' '::text))) AS q
-   FROM public.sivel2_gen_conscaso1
-  WITH NO DATA;
-
-
---
 -- Name: sivel2_gen_contexto_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -5148,11 +5120,23 @@ CREATE TABLE public.sivel2_sjr_aslegal_respuesta (
 
 
 --
+-- Name: sivel2_sjr_aspsicosocial_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.sivel2_sjr_aspsicosocial_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
 -- Name: sivel2_sjr_aspsicosocial; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.sivel2_sjr_aspsicosocial (
-    id integer DEFAULT nextval('public.aspsicosocial_seq'::regclass) NOT NULL,
+    id integer DEFAULT nextval('public.sivel2_sjr_aspsicosocial_id_seq'::regclass) NOT NULL,
     nombre character varying(100) NOT NULL,
     fechacreacion date DEFAULT ('now'::text)::date NOT NULL,
     fechadeshabilitacion date,
@@ -8247,13 +8231,6 @@ ALTER TABLE ONLY public.sivel2_sjr_victimasjr
 
 ALTER TABLE ONLY public.sivel2_gen_vinculoestado
     ADD CONSTRAINT vinculoestado_pkey PRIMARY KEY (id);
-
-
---
--- Name: busca_conscaso; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX busca_conscaso ON public.sivel2_gen_conscaso USING gin (q);
 
 
 --
