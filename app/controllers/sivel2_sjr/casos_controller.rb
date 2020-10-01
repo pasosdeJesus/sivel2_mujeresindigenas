@@ -289,7 +289,7 @@ module Sivel2Sjr
           :tapoyo_ids => []
         ],
         :anexo_caso_attributes => [
-          :fecha,
+          :fecha_localizada,
           :id,
           :id_caso,
           :_destroy,
