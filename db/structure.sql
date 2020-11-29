@@ -9543,6 +9543,14 @@ ALTER TABLE ONLY public.acompanamiento_evento
 
 
 --
+-- Name: cor1440_gen_actividad_rangoedadac fk_rails_1366d14fb8; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_actividad_rangoedadac
+    ADD CONSTRAINT fk_rails_1366d14fb8 FOREIGN KEY (rangoedadac_id) REFERENCES public.cor1440_gen_rangoedadac(id);
+
+
+--
 -- Name: categoria_eventopresponsable fk_rails_15665aea7a; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9692,6 +9700,14 @@ ALTER TABLE ONLY public.heb412_gen_doc
 
 ALTER TABLE ONLY public.sip_ubicacionpre
     ADD CONSTRAINT fk_rails_2e86701dfb FOREIGN KEY (departamento_id) REFERENCES public.sip_departamento(id);
+
+
+--
+-- Name: cor1440_gen_actividad_rangoedadac fk_rails_2f8fe7fdca; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_actividad_rangoedadac
+    ADD CONSTRAINT fk_rails_2f8fe7fdca FOREIGN KEY (actividad_id) REFERENCES public.cor1440_gen_actividad(id);
 
 
 --
@@ -11665,6 +11681,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20200921123831'),
 ('20201001132215'),
 ('20201009004421'),
-('20201119125643');
+('20201119125643'),
+('20201121162913');
 
 
