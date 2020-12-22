@@ -28,7 +28,7 @@ gem 'pg' # Postgresql
 
 gem 'puma'
 
-gem 'rails', '~> 6.0.0.rc1' # Rails (internacionalización)
+gem 'rails', '~> 6.1.0'
 
 gem 'rails-i18n'
 
