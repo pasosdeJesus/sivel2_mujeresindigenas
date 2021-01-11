@@ -5,13 +5,13 @@ class Sivel2Sjr::Victimasjr < ActiveRecord::Base
   include Sivel2Sjr::Concerns::Models::Victimasjr
 
   belongs_to :religion, class_name: '::Religion',
-    foreign_key: 'religion_id', validate: true
+    foreign_key: 'religion_id', validate: true, optional: true
   belongs_to :educacionpropia, class_name: '::Educacionpropia',
-    foreign_key: 'educacionpropia_id', validate: true
+    foreign_key: 'educacionpropia_id', validate: true, optional: true
   belongs_to :departamentores, class_name: 'Sip::Departamento',
-    foreign_key: 'departamentores_id', validate: true
+    foreign_key: 'departamentores_id', validate: true, optional: true
   belongs_to :municipiores, class_name: 'Sip::Municipio',
-    foreign_key: 'municipiores_id', validate: true
+    foreign_key: 'municipiores_id', validate: true, optional: true
 
   has_many :idioma_victimasjr, class_name: "::IdiomaVictimasjr", 
     foreign_key: "sivel2_sjr_victimasjr_id", validate: true,
