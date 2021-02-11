@@ -28,7 +28,7 @@ gem 'pg' # Postgresql
 
 gem 'puma'
 
-gem 'rails', '~> 6.0.3.4'
+gem 'rails', '~> 6.0.3.5'
 
 gem 'rails-i18n'
 
