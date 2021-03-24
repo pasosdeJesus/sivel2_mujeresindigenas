@@ -80,7 +80,6 @@ gem 'sivel2_sjr', # Motor de atención a casos
   #path: '../sivel2_sjr'
 
 
-
 group :test, :development do
   #gem 'byebug' # Depurar
 

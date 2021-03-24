@@ -21,4 +21,3 @@ test:
 production:
   <<: *default
   database: <%= ENV.fetch('BD_PRO', 'sivel2mind_pro') %>
-
