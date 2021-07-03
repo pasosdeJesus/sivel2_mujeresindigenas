@@ -36,8 +36,8 @@ test:
     - export APT_CACHE_DIR=`pwd`/apt-cache && mkdir -pv $APT_CACHE_DIR
     - apt-get update -yy && apt-get install build-essential libpq-dev postgresql-client -y
     - curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
-    - sudo bash nodesource_setup.sh
-    - sudo apt install -y -qq nodejs
+    - bash ./nodesource_setup.sh
+    - apt install -y -qq nodejs
     - node -v
     - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
     - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
