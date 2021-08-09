@@ -187,31 +187,31 @@ id NOT IN ('1', '14', '2', '25', '26', '27', '28', '35',
 	'36', '37', '4', '7', '5', '105', '106', '107', '109', '112', '113');
 
 
--- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (1, 'ESTADO COLOMBIANO', 39, '2001-01-30', NULL, NULL, NULL, NULL); --INSTITUCIÓN ESTATAL
+-- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa_id,fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (1, 'ESTADO COLOMBIANO', 39, '2001-01-30', NULL, NULL, NULL, NULL); --INSTITUCIÓN ESTATAL
 
 UPDATE sivel2_gen_presponsable SET nombre='INSTITUCIÓN ESTATAL' WHERE id='1';
 
--- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (14, 'PARAMILITARES', 39, '2001-01-30', NULL, NULL, NULL, NULL);
--- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (2, 'FUERZA PUBLICA', 1, '2001-01-30', NULL, NULL, NULL, NULL);
--- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (25, 'GUERRILLA', 40, '2001-01-30', NULL, NULL, NULL, NULL);
--- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (27, 'FARC-EP', 25, '2001-01-30', NULL, NULL, NULL, NULL);
---INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (28, 'ELN', 25, '2001-01-30', NULL, NULL, NULL, NULL);
--- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (35, 'SIN INFORMACIÓN', NULL, '2001-01-30', NULL, NULL, NULL, NULL);
--- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (36, 'OTROS', NULL, '2001-06-13', NULL, NULL, NULL, NULL);
--- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (37, 'COMBATIENTES', NULL, '2004-01-20', NULL, NULL, NULL, NULL); -- ACTOR ARMADO NO IDENTIFICADO
+-- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa_id,fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (14, 'PARAMILITARES', 39, '2001-01-30', NULL, NULL, NULL, NULL);
+-- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa_id,fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (2, 'FUERZA PUBLICA', 1, '2001-01-30', NULL, NULL, NULL, NULL);
+-- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa_id,fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (25, 'GUERRILLA', 40, '2001-01-30', NULL, NULL, NULL, NULL);
+-- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa_id,fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (27, 'FARC-EP', 25, '2001-01-30', NULL, NULL, NULL, NULL);
+--INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa_id,fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (28, 'ELN', 25, '2001-01-30', NULL, NULL, NULL, NULL);
+-- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa_id,fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (35, 'SIN INFORMACIÓN', NULL, '2001-01-30', NULL, NULL, NULL, NULL);
+-- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa_id,fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (36, 'OTROS', NULL, '2001-06-13', NULL, NULL, NULL, NULL);
+-- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa_id,fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (37, 'COMBATIENTES', NULL, '2004-01-20', NULL, NULL, NULL, NULL); -- ACTOR ARMADO NO IDENTIFICADO
 UPDATE sivel2_gen_presponsable SET nombre='ACTOR ARMADO NO IDENTIFICADO' WHERE id='37';
 
--- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (4, 'EJERCITO', 2, '2001-01-30', NULL, NULL, NULL, NULL);
--- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (7, 'POLICÍA', 2, '2001-01-30', NULL, NULL, NULL, NULL);
--- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (5, 'ARMADA', 2, '2001-01-30', NULL, NULL, NULL, NULL); --INFANTERIA DE MARINA
--- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (26, 'MILICIANOS', 25, '2001-01-30', NULL, NULL, '2016-03-03 00:44:26.740055', '');
+-- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa_id,fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (4, 'EJERCITO', 2, '2001-01-30', NULL, NULL, NULL, NULL);
+-- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa_id,fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (7, 'POLICÍA', 2, '2001-01-30', NULL, NULL, NULL, NULL);
+-- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa_id,fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (5, 'ARMADA', 2, '2001-01-30', NULL, NULL, NULL, NULL); --INFANTERIA DE MARINA
+-- INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa_id,fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (26, 'MILICIANOS', 25, '2001-01-30', NULL, NULL, '2016-03-03 00:44:26.740055', '');
 
-INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (105, 'FAMILIA', NULL, '2016-03-02', NULL, '2016-03-03 00:39:49.41372', '2016-03-03 00:39:49.41372', '');
-INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (106, 'VINCULADO AL NARCOTRÁFICO', NULL, '2016-03-02', NULL, '2016-03-03 00:43:16.701619', '2016-03-03 00:43:16.701619', '');
-INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (107, 'ESMAD', NULL, '2016-03-02', NULL, '2016-03-03 00:46:33.569338', '2016-03-03 00:46:33.569338', '');
-INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (109, 'COMUNIDAD', NULL, '2016-03-02', NULL, '2016-03-03 00:46:33.569338', '2016-03-03 00:46:33.569338', '');
-INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (112, 'DESMOVILIZADO GUERRILLA', NULL, '2016-03-02', NULL, '2016-03-03 00:46:33.569338', '2016-03-03 00:46:33.569338', '');
-INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (113, 'DESMOVILIZADO PARAILITAR', NULL, '2016-03-02', NULL, '2016-03-03 00:46:33.569338', '2016-03-03 00:46:33.569338', '');
+INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa_id,fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (105, 'FAMILIA', NULL, '2016-03-02', NULL, '2016-03-03 00:39:49.41372', '2016-03-03 00:39:49.41372', '');
+INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa_id,fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (106, 'VINCULADO AL NARCOTRÁFICO', NULL, '2016-03-02', NULL, '2016-03-03 00:43:16.701619', '2016-03-03 00:43:16.701619', '');
+INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa_id,fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (107, 'ESMAD', NULL, '2016-03-02', NULL, '2016-03-03 00:46:33.569338', '2016-03-03 00:46:33.569338', '');
+INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa_id,fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (109, 'COMUNIDAD', NULL, '2016-03-02', NULL, '2016-03-03 00:46:33.569338', '2016-03-03 00:46:33.569338', '');
+INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa_id,fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (112, 'DESMOVILIZADO GUERRILLA', NULL, '2016-03-02', NULL, '2016-03-03 00:46:33.569338', '2016-03-03 00:46:33.569338', '');
+INSERT INTO public.sivel2_gen_presponsable (id, nombre, papa_id,fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (113, 'DESMOVILIZADO PARAILITAR', NULL, '2016-03-02', NULL, '2016-03-03 00:46:33.569338', '2016-03-03 00:46:33.569338', '');
 
 
 SELECT pg_catalog.setval('public.sivel2_gen_presponsable_id_seq', 113, true);
