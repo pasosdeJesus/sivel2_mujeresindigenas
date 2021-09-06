@@ -1,29 +1,25 @@
-.boolean {
-	height: inherit;
-}
-
 .nav-tabs > li > a {
-	padding: 10px 15px;
-	border-radius: 4px 4px 0 0;
-	line-height: 1.42857143;
-	margin-right: 2px;
-	background-color: #fff;
-	border: 1px solid #eee;
+  padding: 10px 15px;
+  border-radius: 4px 4px 0 0;
+  line-height: 1.42857143;
+  margin-right: 2px;
+  background-color: #fff;
+  border: 1px solid #eee;
 }
 
 .nav-tabs > li.active > a {
-	background-color: #eee;
-	border: 1px solid #aaa;
-	border-bottom-color: transparent;
+  background-color: #eee;
+  border: 1px solid #aaa;
+  border-bottom-color: transparent;
 }
 .panel-heading {
-	text-align: center;
+  text-align: center;
 }
 
 .caso_evento_hora {
-	display: inline-flex;
+  display: inline-flex;
 }
 .centrado {
-	margin-left: auto;
-	margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }

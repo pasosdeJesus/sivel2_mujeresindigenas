@@ -2,72 +2,61 @@
   <li><a href="usuarios/sign_in">Iniciar Sesión</a>
 <%- else  %>
   <article>
-  <%= simple_form_for @caso, :html => { :class => 'form-horizontal' } do |f| %>
-    <div data-role="content" class="form-inputs">
+    <%= simple_form_for @caso, :html => { :class => 'form-horizontal' } do |f| %>
+      <div data-role="content" class="form-inputs">
 
-      <%= render partial: 'sip/hogar/errores', locals: { f: f } %> 
-      <%= render partial: 'sivel2_gen/casos/datos_interjs', locals: { f: f } %>
+        <%= render partial: 'sip/hogar/errores', locals: { f: f } %> 
+        <%= render partial: 'sivel2_gen/casos/datos_interjs', locals: { f: f } %>
 
-      <div role="tabpanel">       
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="nav-item"><a href="#basicos" 
-            class="fichacambia nav-link active" aria-selected="true" aria-controls="basicos" role="tab" 
-            data-toggle="tab">Datos Básicos</a></li>
-          <li role="presentation" class="nav-item"><a href="#fuentes" class="fichacambia nav-link" 
-            aria-controls="fuentes" role="tab" 
-            data-toggle="tab">Fuentes</a></li>
-          <li role="presentation" class="nav-item"><a href="#contacto" class="fichacambia nav-link" 
-            aria-controls="contacto" role="tab" 
-            data-toggle="tab">Datos de la Víctima</a></li>
-          <li role="presentation" class="nav-item"><a href="#eventos" class="fichacambia nav-link" 
-            aria-controls="eventos" role="tab" 
-            data-toggle="tab">Eventos de Violencia y Seguimiento</a></li>
-          <li role="presentation" class="nav-item"><a href="#anexos" class="fichacambia nav-link" 
-            aria-controls="anexos" role="tab" 
-            data-toggle="tab">Anexos</a></li>
-          <li role="presentation" class="nav-item"><a href="#etiquetas" class="fichacambia nav-link" 
-            aria-controls="etiquetas" role="tab" 
-            data-toggle="tab">Etiquetas</a></li>
+          <%= item_nav_pestaña_bs(
+            'basicos', 'Datos Básicos', true, 'fichacambia') %>
+          <%= item_nav_pestaña_bs(
+            'fuentes', 'Fuentes', false, 'fichacambia') %>
+          <%= item_nav_pestaña_bs(
+            'contacto', 'Datos de la Víctima', false, 'fichacambia') %>
+          <%= item_nav_pestaña_bs(
+            'eventos', 'Eventos de Violencia y Seguimiento', false, 'fichacambia') %>
+          <%= item_nav_pestaña_bs(
+            'anexos', 'Anexos', false, 'fichacambia') %>
+          <%= item_nav_pestaña_bs(
+            'etiquetas', 'Etiquetas', false, 'fichacambia') %>
         </ul>
         <div class="tab-content">
           <%= f.simple_fields_for :casosjr do |s| %>
-            <div role="tabpanel" class="tab-pane fade active show" id="basicos" > 
+            <%= contenido_pestaña_bs('basicos', true) do %>
               <%= render 'basicos', :f => f, :s => s %>
-            </div> 
+            <% end %>
 
-            <div role="tabpanel" class="tab-pane fade" id="fuentes" > 
+            <%= contenido_pestaña_bs('fuentes', false) do %>
               <%= render 'sivel2_gen/casos/fuentesprensa', :f => f  %>
-            </div>
+            <% end %>
 
-            <div role="tabpanel" class="tab-pane fade" id="contacto" > 
+            <%= contenido_pestaña_bs('contacto', false) do %>
               <%= render 'contacto', :f => f, :s => s %>
-            </div>
+            <% end %>
 
-            <div role="tabpanel" class="tab-pane fade" id="eventos" > 
+            <%= contenido_pestaña_bs('eventos', false) do %>
               <%= render 'eventos', :f => f, :fcasosjr => s %>
-            </div>
-          <% end %>
+            <% end %>
 
-  
-          <div role="tabpanel" class="tab-pane fade" id="anexos"> 
-            <%= render 'sivel2_gen/casos/anexos', :f => f  %>
-          </div>
+            <%= contenido_pestaña_bs('anexos', false) do %>
+              <%= render 'sivel2_gen/casos/anexos', :f => f  %>
+            <% end %>
 
-          <div role="tabpanel" class="tab-pane fade" id="etiquetas"> 
-            <%= render 'sivel2_gen/casos/etiquetas', :f => f  %>
-          </div> 
-
+            <%= contenido_pestaña_bs('etiquetas', false) do %>
+              <%= render 'sivel2_gen/casos/etiquetas', :f => f  %>
+            <% end %>
+          <% end %> <!-- casosjr -->
         </div> <!-- tab-content -->
-      </div> <!-- tabpanel -->
-    </div> <!-- form-inputs -->
+      </div> <!-- form-inputs -->
 
-    <div class="form-actions">
-      <%= f.button :submit, 'Validar y Guardar', :class => 'btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-        casos_path, :class => 'btn' 
-      %>
-    </div> <!-- form-action -->
-  <% end %> <!-- simple_form_for @caso -->
+      <div class="form-actions">
+        <%= f.button :submit, 'Validar y Guardar', :class => 'btn-primary' %>
+        <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+          casos_path, :class => 'btn' %>
+      </div> <!-- form-action -->
+    <% end %> <!-- simple_form_for @caso -->
   </article>
 <% end %> <!-- else -->
 

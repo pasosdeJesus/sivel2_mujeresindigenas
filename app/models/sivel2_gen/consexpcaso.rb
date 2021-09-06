@@ -70,7 +70,7 @@ class Sivel2Gen::Consexpcaso < ActiveRecord::Base
           ELSE 
             CAST(EXTRACT(YEAR FROM conscaso.fecharec)-contacto.anionac AS INTEGER)
         END AS victima_edaddocumentacion,
-        COALESCE(rangoedad.rango, '') AS victima_rangoedaddocumentacion,
+        COALESCE(rangoedad.nombre, '') AS victima_rangoedaddocumentacion,
         COALESCE(vdepartamento.nombre, '') AS victima_departamentonac,
         COALESCE(vmunicipio.nombre, '') AS victima_municipionac,
         scontacto.resguardonac AS victima_resguardonac,
