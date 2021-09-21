@@ -225,11 +225,11 @@ SELECT pg_catalog.setval('public.sivel2_gen_presponsable_id_seq', 113, true);
 UPDATE sivel2_gen_rangoedad SET fechadeshabilitacion='2016-03-17' WHERE id<100 
 	AND id<>6;
 
-INSERT INTO public.sivel2_gen_rangoedad (id, nombre, rango, limiteinferior, limitesuperior, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (102, '0-9 NIÑAS/NIÑOS', '0-9 NIÑAS/NIÑOS', 0, 9, '2016-03-17', NULL, '2016-03-17 12:06:06.201856', '2016-03-21 18:30:34.222152', '');
-INSERT INTO public.sivel2_gen_rangoedad (id, nombre, rango, limiteinferior, limitesuperior, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (103, '10-18 ADOLESCENTES', '10-18 ADOLESCENTES', 10, 18, '2016-03-17', NULL, '2016-03-17 12:06:39.927169', '2016-03-17 12:07:44.365878', '');
-INSERT INTO public.sivel2_gen_rangoedad (id, nombre, rango, limiteinferior, limitesuperior, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (104, '19-24 JÓVENES', '19-24 JÓVENES', 19, 24, '2016-03-17', NULL, '2016-03-17 12:07:13.059893', '2016-03-17 12:07:58.964103', '');
-INSERT INTO public.sivel2_gen_rangoedad (id, nombre, rango, limiteinferior, limitesuperior, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (105, '25-59 ADULTAS', '25-59 ADULTAS', 25, 59, '2016-03-17', NULL, '2016-03-17 12:10:13.685235', '2016-03-17 12:10:13.685235', '');
-INSERT INTO public.sivel2_gen_rangoedad (id, nombre, rango, limiteinferior, limitesuperior, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (106, '60-125 AD. MAYORES', '60-125 AD. MAYORES', 60, 125, '2016-03-17', NULL, '2016-03-17 12:37:25.707854', '2016-03-17 12:37:25.707854', '');
+INSERT INTO public.sivel2_gen_rangoedad (id, nombre, limiteinferior, limitesuperior, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (102, '0-9 NIÑAS/NIÑOS', 0, 9, '2016-03-17', NULL, '2016-03-17 12:06:06.201856', '2016-03-21 18:30:34.222152', '');
+INSERT INTO public.sivel2_gen_rangoedad (id, nombre, limiteinferior, limitesuperior, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (103, '10-18 ADOLESCENTES', 10, 18, '2016-03-17', NULL, '2016-03-17 12:06:39.927169', '2016-03-17 12:07:44.365878', '');
+INSERT INTO public.sivel2_gen_rangoedad (id, nombre, limiteinferior, limitesuperior, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (104, '19-24 JÓVENES', 19, 24, '2016-03-17', NULL, '2016-03-17 12:07:13.059893', '2016-03-17 12:07:58.964103', '');
+INSERT INTO public.sivel2_gen_rangoedad (id, nombre, limiteinferior, limitesuperior, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (105, '25-59 ADULTAS', 25, 59, '2016-03-17', NULL, '2016-03-17 12:10:13.685235', '2016-03-17 12:10:13.685235', '');
+INSERT INTO public.sivel2_gen_rangoedad (id, nombre, limiteinferior, limitesuperior, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (106, '60-125 AD. MAYORES', 60, 125, '2016-03-17', NULL, '2016-03-17 12:37:25.707854', '2016-03-17 12:37:25.707854', '');
 
 
 SELECT pg_catalog.setval('public.sivel2_gen_rangoedad_id_seq', 106, true);
