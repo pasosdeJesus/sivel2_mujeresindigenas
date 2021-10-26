@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class CreaTienetierraVictimasjr < ActiveRecord::Migration[5.0]
   def up
     create_join_table :tienetierra, :sivel2_sjr_victimasjr, 

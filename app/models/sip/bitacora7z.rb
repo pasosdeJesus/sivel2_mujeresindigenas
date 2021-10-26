@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 module Sip
   class Bitacora7z
     include ActiveModel::Model

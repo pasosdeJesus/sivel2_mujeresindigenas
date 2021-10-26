@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class CreaAcompanamientoCasosjr < ActiveRecord::Migration[5.0]
   def up
     create_join_table :acompanamiento, :sivel2_sjr_casosjr, 

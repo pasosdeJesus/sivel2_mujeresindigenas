@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 require_relative 'application'
 
 ENV['RACK_MULTIPART_LIMIT'] = '1024'

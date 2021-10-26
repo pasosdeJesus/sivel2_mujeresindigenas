@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 class ConsecuenciaindividualEvento < ActiveRecord::Base
 	belongs_to :consecuenciaindividual, class_name: '::Consecuenciaindividual',
     foreign_key: 'consecuenciaindividual_id', validate: true

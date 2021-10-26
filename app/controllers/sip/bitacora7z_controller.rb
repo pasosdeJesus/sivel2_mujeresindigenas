@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 module Sip
   class Bitacora7zController < ApplicationController
     load_and_authorize_resource class: Sip::Bitacora7z

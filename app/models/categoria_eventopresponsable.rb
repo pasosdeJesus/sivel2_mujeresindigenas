@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 class CategoriaEventopresponsable < ActiveRecord::Base
   belongs_to :categoria, class_name: 'Sivel2Gen::Categoria', 
     foreign_key: "categoria_id", inverse_of: :categoria_eventopresponsable

@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class CreaEventoMotivonodenuncia < ActiveRecord::Migration[5.0]
   def up
     create_join_table :evento, :motivonodenuncia, 

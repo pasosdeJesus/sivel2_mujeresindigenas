@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 class EventoRelacionprvic < ActiveRecord::Base
 	belongs_to :evento, class_name: '::Evento',
     foreign_key: 'evento_id', validate: true

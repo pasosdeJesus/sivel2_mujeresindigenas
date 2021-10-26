@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 class Eventopresponsable < ActiveRecord::Base
   belongs_to :evento 
   belongs_to :presponsable, class_name: 'Sivel2Gen::Presponsable',

@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 require 'sivel2_sjr/concerns/models/consexpcaso'
 
 class Sivel2Gen::Consexpcaso < ActiveRecord::Base

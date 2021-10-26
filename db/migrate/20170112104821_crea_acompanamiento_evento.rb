@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class CreaAcompanamientoEvento < ActiveRecord::Migration[5.0]
   def up
     create_join_table :acompanamiento, :evento, 

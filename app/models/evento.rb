@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 class Evento < ActiveRecord::Base 
 
   belongs_to :caso, class_name: "Sivel2Gen::Caso", 

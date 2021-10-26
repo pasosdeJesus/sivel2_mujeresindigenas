@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 FactoryGirl.define do
   factory :consecuenciaindividual, class: 'Consecuenciaindividual' do
     id 1000 # Buscamos que no interfiera con existentes

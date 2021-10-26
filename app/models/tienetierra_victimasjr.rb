@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 class TienetierraVictimasjr < ActiveRecord::Base
 	belongs_to :tienetierra, class_name: '::Tienetierra',
     foreign_key: 'tienetierra_id', validate: true
