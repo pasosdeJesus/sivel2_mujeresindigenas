@@ -36,7 +36,9 @@ module Sivel2Mujeresindigenas
     #                         Heb412Gen::Engine, Mr519Gen::Engine, 
     #                         Sip::Engine, :all]
 
-    config.hosts <<  ENV.fetch('CONFIG_HOSTS', 'defensor.info').downcase
+    puts "CONFIG_HOSTS="+ENV.fetch('CONFIG_HOSTS', 'defensor.info').to_s
+    config.hosts.concat(
+      ENV.fetch('CONFIG_HOSTS', 'defensor.info').downcase.split(";"))
 
     config.relative_url_root = ENV.fetch('RUTA_RELATIVA', '/mujeresindigenas/sivel2')
 

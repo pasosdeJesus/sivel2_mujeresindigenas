@@ -8,4 +8,6 @@ class Sivel2Gen::Caso < ActiveRecord::Base
   accepts_nested_attributes_for :evento, allow_destroy: true, 
     reject_if: :all_blank
 
+  def caso_no_vacio
+  end
 end
