@@ -29,7 +29,7 @@ gem 'parslet'
 
 gem 'pg' # Postgresql
 
-gem 'rails', '~> 6.1'
+gem 'rails', '~> 7.0'
 
 gem 'rails-i18n'
 
@@ -59,27 +59,27 @@ gem 'will_paginate' # Listados en páginas
 # lógico y no alfabetico como las gemas anteriores) 
 
 gem 'sip', # Motor generico
-  git: 'https://github.com/pasosdeJesus/sip.git', branch: :main
+  git: 'https://github.com/pasosdeJesus/sip.git', branch: :rails7jses
   #path: '../sip'
 
 gem 'mr519_gen', # Motor de gestion de formularios y encuestas
-  git: 'https://github.com/pasosdeJesus/mr519_gen.git', branch: :main
+  git: 'https://github.com/pasosdeJesus/mr519_gen.git', branch: :rails7jses
   #path: '../mr519_gen'
 
 gem 'heb412_gen',  # Motor de nube y llenado de plantillas
-  git: 'https://github.com/pasosdeJesus/heb412_gen.git', branch: :main
+  git: 'https://github.com/pasosdeJesus/heb412_gen.git', branch: :rails7jses
   #path: '../heb412_gen'
 
 gem 'cor1440_gen', # Motor de actividades y proyectos financiados con marco lógico
-  git: 'https://github.com/pasosdeJesus/cor1440_gen.git', branch: :main
+  git: 'https://github.com/pasosdeJesus/cor1440_gen.git', branch: :rails7jses
   #path: '../cor1440_gen'
 
 gem 'sivel2_gen', # Motor de casos de violencia socio política.
-  git: 'https://github.com/pasosdeJesus/sivel2_gen.git', branch: :main
+  git: 'https://github.com/pasosdeJesus/sivel2_gen.git', branch: :rails7jses
   #path: '../sivel2_gen'
 
 gem 'sivel2_sjr', # Motor de atención a casos
-  git: 'https://github.com/pasosdeJesus/sivel2_sjr.git', branch: :main
+  git: 'https://github.com/pasosdeJesus/sivel2_sjr.git', branch: :rails7jses
   #path: '../sivel2_sjr'
 
 

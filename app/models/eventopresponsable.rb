@@ -1,7 +1,7 @@
 class Eventopresponsable < ActiveRecord::Base
-  belongs_to :evento 
+  belongs_to :evento , optional: false
   belongs_to :presponsable, class_name: 'Sivel2Gen::Presponsable',
-    foreign_key: "presponsable_id"
+    foreign_key: "presponsable_id", optional: false
 
   has_and_belongs_to_many :categoria, 
     class_name: 'Sivel2Gen::Categoria',

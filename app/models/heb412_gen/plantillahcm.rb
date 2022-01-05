@@ -5,6 +5,6 @@ module Heb412Gen
     include Heb412Gen::Concerns::Models::Plantillahcm
 
     belongs_to :oficina, class_name: 'Sip::Oficina',
-      foreign_key: 'oficina_id', validate: true
+      foreign_key: 'oficina_id', validate: true, optional: false
   end
 end
