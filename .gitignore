@@ -97,3 +97,4 @@ public/mujeresindigenas/sivel2/heb412
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+app/assets/builds
