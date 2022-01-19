@@ -70,7 +70,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sivel2_sjr.git
-  revision: fa7ce483fec485de7e1a8345a52a7b307748d67f
+  revision: 83609831dc37702bc256330cecf3332ada110283
   branch: rails7jses
   specs:
     sivel2_sjr (2.0b11)
@@ -149,6 +149,10 @@ GEM
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     andand (1.3.3)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bcrypt (3.1.16)
     bigdecimal (3.1.1)
     bindex (0.8.1)
@@ -181,6 +185,9 @@ GEM
     colorize (0.8.1)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
+    debug (1.4.0)
+      irb (>= 1.3.6)
+      reline (>= 0.2.7)
     devise (4.8.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -201,6 +208,9 @@ GEM
       activesupport (>= 5.0)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
+    io-console (0.5.11)
+    irb (1.4.1)
+      reline (>= 0.3.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -276,6 +286,8 @@ GEM
     rake (13.0.6)
     redcarpet (3.5.1)
     regexp_parser (2.2.0)
+    reline (0.3.1)
+      io-console (~> 0.5)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -313,13 +325,14 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    stimulus-rails (1.0.2)
+      railties (>= 6.0.0)
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
     thor (1.2.1)
     tilt (2.0.10)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
+    turbo-rails (7.1.1)
+      rails (>= 6.0.0)
     twitter_cldr (6.11.0)
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.1)
@@ -348,6 +361,7 @@ PLATFORMS
   x86_64-openbsd
 
 DEPENDENCIES
+  babel-transpiler
   bcrypt
   bigdecimal
   bootsnap (>= 1.1.0)
@@ -357,6 +371,7 @@ DEPENDENCIES
   coffee-rails
   colorize
   cor1440_gen!
+  debug
   devise
   devise-i18n
   dotenv-rails
@@ -383,7 +398,8 @@ DEPENDENCIES
   sivel2_gen!
   sivel2_sjr!
   sprockets-rails
-  turbolinks
+  stimulus-rails
+  turbo-rails
   twitter_cldr
   tzinfo
   unicorn

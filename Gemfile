@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 gem 'bcrypt'
 
+gem 'babel-transpiler'
+
 gem 'bootsnap', '>=1.1.0', require: false
 
 gem 'bigdecimal'
@@ -47,12 +49,13 @@ gem 'simple_form' # Formularios simples
 
 gem 'sprockets-rails'
 
-gem 'turbolinks' # Seguir enlaces más rápido. 
+gem 'stimulus-rails'
+
+gem 'turbo-rails'
 
 gem 'twitter_cldr' # ICU con CLDR
 
 gem 'tzinfo' # Zonas horarias
-
 
 gem 'will_paginate' # Listados en páginas
 
@@ -87,7 +90,7 @@ gem 'sivel2_sjr', # Motor de atención a casos
 
 
 group :test, :development do
-  #gem 'byebug' # Depurar
+  gem 'debug' # Depurar
 
   gem 'colorize' # Color en terminal
 

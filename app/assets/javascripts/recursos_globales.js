@@ -16,10 +16,9 @@
 //= require sivel2_sjr/motor
 //= require_tree .
 
-document.addEventListener('turbolinks:load', function() {
+document.addEventListener('turbo:load', function() {
   var root;
-  root = typeof exports !== "undefined" && exports !== null ? 
-	  exports : window;
+  root = window;
   root.campo_fecha_ref_edad = 'caso_casosjr_attributes_fecharec'
   sip_prepara_eventos_comunes(root);
   heb412_gen_prepara_eventos_comunes(root);
