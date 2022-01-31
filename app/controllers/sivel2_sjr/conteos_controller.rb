@@ -16,7 +16,7 @@ module Sivel2Sjr
       ]
       @titulo_personas = 'Personas atendidas'
       @titulo_personas_fecha = 'Fecha de Recepción'
-      @pOficina = param_escapa([:filtro, 'oficina_id'])
+      @pOficina = escapar_param(params, [:filtro, 'oficina_id'])
     end
 
     def personas_consulta_final(i, que3, tablas3, where3, qc, gb)
