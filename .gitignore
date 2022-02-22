@@ -98,3 +98,9 @@ public/mujeresindigenas/sivel2/heb412
 yarn-debug.log*
 .yarn-integrity
 app/assets/builds
+app/javascript/controllers/sip
+app/javascript/controllers/mr519_gen
+app/javascript/controllers/heb412_gen
+app/javascript/controllers/cor1440_gen
+app/javascript/controllers/sal7711_gen
+app/javascript/controllers/sivel2_gen
