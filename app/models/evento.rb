@@ -3,9 +3,9 @@ class Evento < ActiveRecord::Base
   belongs_to :caso, class_name: "Sivel2Gen::Caso", 
     foreign_key: "caso_id", optional: false
   belongs_to :departamento, class_name: "Sip::Departamento", 
-    foreign_key: "departamento_id", optional: false
+    foreign_key: "departamento_id", optional: true
   belongs_to :municipio, class_name: "Sip::Municipio", 
-    foreign_key: "municipio_id", optional: false
+    foreign_key: "municipio_id", optional: true
 
   # Por el momento no cambiamos a has_many_and_belongs_to porque
   # hay dos relacioens analogas
