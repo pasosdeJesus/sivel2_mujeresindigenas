@@ -5,7 +5,8 @@
     <%= victima.simple_fields_for :victimasjr do |victimasjr| %>
       <%= victima.simple_fields_for :persona do |p| %>
         
-        <div class='campos_persona'> 
+        <div class='campos_persona campos-persona-con-victima-id'> 
+          <datalist id='fuente-victimas'></datalist>
           <%= render 'victima_camposmezclados',
             :fvictima => victima, 
             :fvictimasjr => victimasjr, 

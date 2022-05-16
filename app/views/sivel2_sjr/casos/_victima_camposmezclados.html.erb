@@ -1,9 +1,16 @@
   
 <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
   <div class="privado alert-info">
-    <%= fpersona.input :nombres, placeholder: 'N',
-      value_method: lambda {|t| (t.nombres && t.nombres != '') ? 
-        t.nombres : 'N' } %>
+    <%= fpersona.input(
+      :nombres, 
+      placeholder: 'N',
+      value_method: lambda {|t| 
+        (t.nombres && t.nombres != '') ? t.nombres : 'N' 
+      },
+      input_html: {
+        list: 'fuente-victimas'
+      }
+    ) %>
 
     <%= fpersona.input :apellidos, placeholder: 'N',
       value_method: lambda {|t| (t.apellidos && t.apellidos != '') ? 

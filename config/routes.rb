@@ -36,8 +36,6 @@ Rails.application.routes.draw do
     end
 
     root 'sip/hogar#index'
-    get "/personas" => 'sivel2_sjr/personas#index'
-    get "/personas/remplazar" => 'sivel2_sjr/personas#remplazar'
     get '/eventos/nuevo' => 'eventos#nuevo'  
 
   end
