@@ -140,6 +140,7 @@ es:
         rangoedad: Rango de edad en fecha de documentacion inicial en terreno
         edad: Edad en fecha de documentación inicial en terreno
       "sivel2_sjr/victimasjr":
+        anioesquema: Año desde el cual cuenta con esquema
         areatierra: Área tierra
         cabezahogar: Cabeza del hogar
         comoingresos: ¿Cómo genera ingresos económicos?
@@ -157,6 +158,7 @@ es:
         resguardores: Resguardo de residencia
         sistemasalud: Tiene carnet de salud
         tienetierra: Tiene tierra
+        tieneesquema: ¿Cuenta con esquema de protección?
         tipoliderazgo: Tipo de liderazgo
       "relacionprvic":
         Relacionprvic: Relación entre presunto resp. y víctima

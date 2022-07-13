@@ -196,6 +196,15 @@
   <div class="privado alert-info">
     <%= fvictimasjr.input :tipoliderazgo %>
   </div>
+
+  <%= fvictimasjr.input(
+    :tieneesquema, 
+    collection: ApplicationHelper::NOSI,
+    include_blank: false)
+  %>
+
+<%= fvictimasjr.input :anioesquema %>
 <% end %>
+
 
 <%= fvictimasjr.input :id_victima, as: :hidden %>

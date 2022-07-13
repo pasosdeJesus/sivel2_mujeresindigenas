@@ -163,6 +163,7 @@ module Sivel2Sjr
             :tdocumento_id
           ],
           :victimasjr_attributes => [
+            :anioesquema,
             :areatierra,
             :asisteescuela,
             :cabezafamilia,
@@ -189,6 +190,7 @@ module Sivel2Sjr
             :resguardonac,
             :residencia,
             :sistemasalud,
+            :tieneesquema,
             :tipoliderazgo,
             :vicconflicto,
             :idioma_ids => [],

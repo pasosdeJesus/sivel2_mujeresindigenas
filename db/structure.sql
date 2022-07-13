@@ -588,7 +588,9 @@ CREATE TABLE public.sivel2_sjr_victimasjr (
     resguardores character varying(500) DEFAULT ''::character varying,
     comunidadres character varying(500) DEFAULT ''::character varying,
     comoingresos character varying(5000) DEFAULT ''::character varying,
-    tipoliderazgo character varying(5000) DEFAULT ''::character varying
+    tipoliderazgo character varying(5000) DEFAULT ''::character varying,
+    tieneesquema character varying(1) DEFAULT 'I'::character varying,
+    anioesquema integer
 );
 
 
@@ -13038,6 +13040,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220428145059'),
 ('20220525122150'),
 ('20220601111520'),
-('20220613224844');
+('20220613224844'),
+('20220710115018'),
+('20220712072542');
 
 

@@ -319,6 +319,19 @@
             <dd><%= victima.victimasjr.tipoliderazgo if 
              victima.victimasjr && victima.victimasjr.tipoliderazgo %> </dd>
           </div>
+          <dt><strong>
+            <%= Sivel2Sjr::Victimasjr.human_attribute_name(:tieneesquema) %>:
+          </strong></dt>
+          <dd><%= ApplicationHelper.etiqueta(
+            ApplicationHelper::NOSI, victima.victimasjr.tieneesquema, true) if 
+            victima.victimasjr && victima.victimasjr.tieneesquema %></dd>
+
+          <dt><strong>
+            <%= Sivel2Sjr::Victimasjr.human_attribute_name(:anioesquema) %>:
+          </strong></dt>
+          <dd>
+          <%= victima.victimasjr.anioesquema if victima.victimasjr.anioesquema %>
+          </dd>
         <% end %>
 
 
