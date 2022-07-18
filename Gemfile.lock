@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 830e8062ec3f9198bfdc734fea22c1cf7a51297a
+  revision: 139c9368a1bd9f3347429b55daa3ccab7e07fad8
   branch: main
   specs:
     sip (2.1a1)
@@ -62,7 +62,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sivel2_gen.git
-  revision: e6966b1af16d5e1445429e11f654d6769552ef4a
+  revision: eb462aa5fa28aa7db1a256e4e3547ec99ba5d12c
   branch: main
   specs:
     sivel2_gen (2.1a1)
@@ -224,7 +224,7 @@ GEM
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
-    i18n (1.11.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     io-console (0.5.11)
     irb (1.4.1)
@@ -446,4 +446,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.3.14
+   2.3.18
