@@ -195,15 +195,14 @@
 <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
   <div class="privado alert-info">
     <%= fvictimasjr.input :tipoliderazgo %>
+
+    <%= fvictimasjr.input(
+      :tieneesquema, 
+      collection: ApplicationHelper::NOSI,
+      include_blank: false) %>
+
+    <%= fvictimasjr.input :anioesquema %>
   </div>
-
-  <%= fvictimasjr.input(
-    :tieneesquema, 
-    collection: ApplicationHelper::NOSI,
-    include_blank: false)
-  %>
-
-<%= fvictimasjr.input :anioesquema %>
 <% end %>
 
 

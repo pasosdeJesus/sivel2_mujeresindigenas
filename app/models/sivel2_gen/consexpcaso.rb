@@ -114,6 +114,8 @@ class Sivel2Gen::Consexpcaso < ActiveRecord::Base
           WHEN scontacto.liderazgo = 'N' THEN 'NO'
           ELSE 'SIN INFORMACIÓN' END AS victima_liderazgocomunidad,
         scontacto.tipoliderazgo AS victima_tipoliderazgo_priv_acin,
+        scontacto.tieneesquema AS victima_tieneesquema_priv_acin,
+        scontacto.anioesquema AS victima_anioesquema_priv_acin,
        " +
        
         # Pestaña Evento (primer evento)

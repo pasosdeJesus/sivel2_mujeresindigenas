@@ -113,6 +113,8 @@ class Ability < Sivel2Sjr::Ability
         :victima_cabezahogar,
         :victima_liderazgocomunidad,
         :victima_tipoliderazgo_priv_acin,
+        :victima_tieneesquema_priv_acin,
+        :victima_anioesquema_priv_acin,
         :evento_fechaseguimiento,
         :evento_anio,
         :evento_mes,
