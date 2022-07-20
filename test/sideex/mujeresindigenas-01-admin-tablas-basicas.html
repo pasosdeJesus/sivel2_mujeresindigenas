@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>mujeresindigenas-01-admin-tablas-basicas</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">tabla-antecedentes</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Administrar<datalist><option>link=Administrar</option><option>css=ul.nav.navbar-nav.navbar-right &gt; li.dropdown &gt; a.dropdown-toggle</option><option>//a[contains(text(),'Administrar')]</option><option>xpath=(//a[contains(@href, '#')])[2]</option><option>//ul[2]/li[2]/a</option></datalist></td><td>43,25</td>
+</tr>
+<tr><td>clickAt</td><td>link=Tablas Básicas<datalist><option>link=Tablas Básicas</option><option>//a[contains(text(),'Tablas Básicas')]</option><option>//a[contains(@href, '/anzorc/sivel2/tablasbasicas')]</option><option>//li[2]/ul/li[4]/a</option></datalist></td><td>68,17</td>
+</tr>
+<tr><td>clickAt</td><td>link=Antecedentes<datalist><option>link=Antecedentes</option><option>//a[contains(text(),'Antecedentes')]</option><option>//a[contains(@href, 'admin/antecedentes')]</option><option>//article/ul/li[2]/a</option></datalist></td><td>50,8</td>
+</tr>
+<tr><td>clickAt</td><td>css=a.btn.btn-primary<datalist><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//div[@id='div_contenido']/form/div[2]/div[2]/a</option><option>//a[contains(@href, '/mujeresindigenas/sivel2/admin/trivalentes/nueva.%23%3CSip::Trivalente::ActiveRecord_Relation:0x00000e3f0c207a98%3E')]</option><option>//div[2]/a</option></datalist></td><td>18,25</td>
+</tr>
+<tr><td>clickAt</td><td>id=antecedente_nombre<datalist><option>id=antecedente_nombre</option><option>name=antecedente[nombre]</option><option>css=#antecedente_nombre</option><option>//input[@id='antecedente_nombre']</option><option>//form[@id='new_antecedente']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>54,23</td>
+</tr>
+<tr><td>type</td><td>id=antecedente_nombre<datalist><option>id=antecedente_nombre</option><option>name=antecedente[nombre]</option><option>css=#antecedente_nombre</option><option>//input[@id='antecedente_nombre']</option><option>//form[@id='new_antecedente']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>aaa</td>
+</tr>
+<tr><td>clickAt</td><td>id=antecedente_observaciones<datalist><option>id=antecedente_observaciones</option><option>name=antecedente[observaciones]</option><option>css=#antecedente_observaciones</option><option>//textarea[@id='antecedente_observaciones']</option><option>//form[@id='new_antecedente']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>44,13</td>
+</tr>
+<tr><td>type</td><td>id=antecedente_observaciones<datalist><option>id=antecedente_observaciones</option><option>name=antecedente[observaciones]</option><option>css=#antecedente_observaciones</option><option>//textarea[@id='antecedente_observaciones']</option><option>//form[@id='new_antecedente']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>bbb</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_antecedente']/div[6]/input</option><option>//div[6]/input</option></datalist></td><td>19,14</td>
+</tr>
+<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>xpath=(//a[contains(@href, '/anzorc/sivel2/admin/antecedentes/101')])[2]</option><option>//a[3]</option></datalist></td><td>15,21</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Antecedentes</td>
+</tr>
+<tr><td>assertText</td><td>css=div.alert.alert-success &gt; span<datalist><option>css=div.alert.alert-success &gt; span</option><option>//div[@id='div_contenido']/div/span</option><option>//div/span</option></datalist></td><td>Sivel2Gen::Antecedente eliminado.</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">tabla-contextos</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Administrar<datalist><option>link=Administrar</option><option>//a[contains(text(),'Administrar')]</option><option>xpath=(//a[contains(@href, '#')])[4]</option><option>//ul[2]/li[2]/a</option></datalist></td><td>45,22</td>
+</tr>
+<tr><td>clickAt</td><td>link=Tablas Básicas<datalist><option>link=Tablas Básicas</option><option>//a[contains(text(),'Tablas Básicas')]</option><option>//a[contains(@href, '/sivel2/tablasbasicas')]</option><option>//li[2]/ul/li[4]/a</option></datalist></td><td>49,14</td>
+</tr>
+<tr><td>clickAt</td><td>link=Contextos<datalist><option>link=Contextos</option><option>//a[contains(text(),'Contextos')]</option><option>//a[contains(@href, 'admin/contextos')]</option><option>//article/ul/li[4]/a</option></datalist></td><td>32,13</td>
+</tr>
+<tr><td>clickAt</td><td>css=a.btn.btn-primary<datalist><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//div[@id='div_contenido']/form/div[2]/div[2]/a</option><option>//a[contains(@href, '/mujeresindigenas/sivel2/admin/trivalentes/nueva.%23%3CSip::Trivalente::ActiveRecord_Relation:0x00000e3f0c207a98%3E')]</option><option>//div[2]/a</option></datalist></td><td>18,25</td>
+</tr>
+<tr><td>clickAt</td><td>id=contexto_nombre<datalist><option>id=contexto_nombre</option><option>name=contexto[nombre]</option><option>css=#contexto_nombre</option><option>//input[@id='contexto_nombre']</option><option>//form[@id='new_contexto']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>39,22</td>
+</tr>
+<tr><td>type</td><td>id=contexto_nombre<datalist><option>id=contexto_nombre</option><option>name=contexto[nombre]</option><option>css=#contexto_nombre</option><option>//input[@id='contexto_nombre']</option><option>//form[@id='new_contexto']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>aaa</td>
+</tr>
+<tr><td>clickAt</td><td>id=contexto_observaciones<datalist><option>id=contexto_observaciones</option><option>name=contexto[observaciones]</option><option>css=#contexto_observaciones</option><option>//textarea[@id='contexto_observaciones']</option><option>//form[@id='new_contexto']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>48,33</td>
+</tr>
+<tr><td>type</td><td>id=contexto_observaciones<datalist><option>id=contexto_observaciones</option><option>name=contexto[observaciones]</option><option>css=#contexto_observaciones</option><option>//textarea[@id='contexto_observaciones']</option><option>//form[@id='new_contexto']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>bbb</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_contexto']/div[6]/input</option><option>//div[6]/input</option></datalist></td><td>27,30</td>
+</tr>
+<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>xpath=(//a[contains(@href, '/sivel2/admin/contextos/101')])[2]</option><option>//div[4]/a</option></datalist></td><td>50,17</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Contextos</td>
+</tr>
+<tr><td>assertText</td><td>css=div.alert.alert-success &gt; span<datalist><option>css=div.alert.alert-success &gt; span</option><option>//div[@id='div_contenido']/div/span</option><option>//div/span</option></datalist></td><td>Sivel2Gen::Contexto eliminado.</td>
+</tr>
+<tr><td>clickAt</td><td>link=Nuevo<datalist><option>link=Nuevo</option><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//a[contains(@href, '/sivel2/admin/contextos/nueva')]</option><option>//div[2]/div/a</option></datalist></td><td>21,27</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">tabla-contextos-victimas</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>id=navbarDropdownAdministrar<datalist><option>id=navbarDropdownAdministrar</option><option>link=Administrar</option><option>css=#navbarDropdownAdministrar</option><option>//a[contains(text(),'Administrar')]</option><option>//a[@id='navbarDropdownAdministrar']</option><option>//div[@id='navbarSupportedContent']/ul[2]/li[2]/a</option><option>xpath=(//a[contains(@href, '#')])[5]</option><option>//ul[2]/li[2]/a</option></datalist></td><td>34,23</td>
+</tr>
+<tr><td>clickAt</td><td>link=Tablas Básicas<datalist><option>link=Tablas Básicas</option><option>//a[contains(text(),'Tablas Básicas')]</option><option>//div[@id='navbarSupportedContent']/ul[2]/li[2]/div/a[5]</option><option>//a[contains(@href, '/sivel2/tablasbasicas')]</option><option>//li[2]/div/a[5]</option></datalist></td><td>67,17</td>
+</tr>
+<tr><td>clickAt</td><td>link=Contextos Víctimas<datalist><option>link=Contextos Víctimas</option><option>//a[contains(text(),'Contextos Víctimas')]</option><option>//div[@id='div_contenido']/article/ul/li[5]/a</option><option>//a[contains(@href, 'admin/contextosvictima')]</option><option>//li[5]/a</option></datalist></td><td>79,6</td>
+</tr>
+<tr><td>clickAt</td><td>css=a.btn.btn-primary<datalist><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//div[@id='div_contenido']/form/div[2]/div[2]/a</option><option>//a[contains(@href, '/mujeresindigenas/sivel2/admin/trivalentes/nueva.%23%3CSip::Trivalente::ActiveRecord_Relation:0x00000e3f0c207a98%3E')]</option><option>//div[2]/a</option></datalist></td><td>18,25</td>
+</tr>
+<tr><td>clickAt</td><td>id=contextovictima_nombre<datalist><option>id=contextovictima_nombre</option><option>name=contextovictima[nombre]</option><option>css=#contextovictima_nombre</option><option>//input[@id='contextovictima_nombre']</option><option>//form[@id='new_contextovictima']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>191,28</td>
+</tr>
+<tr><td>type</td><td>id=contextovictima_nombre<datalist><option>id=contextovictima_nombre</option><option>name=contextovictima[nombre]</option><option>css=#contextovictima_nombre</option><option>//input[@id='contextovictima_nombre']</option><option>//form[@id='new_contextovictima']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>aaa</td>
+</tr>
+<tr><td>clickAt</td><td>id=contextovictima_observaciones<datalist><option>id=contextovictima_observaciones</option><option>name=contextovictima[observaciones]</option><option>css=#contextovictima_observaciones</option><option>//textarea[@id='contextovictima_observaciones']</option><option>//form[@id='new_contextovictima']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>137,27</td>
+</tr>
+<tr><td>type</td><td>id=contextovictima_observaciones<datalist><option>id=contextovictima_observaciones</option><option>name=contextovictima[observaciones]</option><option>css=#contextovictima_observaciones</option><option>//textarea[@id='contextovictima_observaciones']</option><option>//form[@id='new_contextovictima']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>bbb</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_contextovictima']/div[6]/input</option><option>//div[6]/input</option></datalist></td><td>42,17</td>
+</tr>
+<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>//div[@id='div_contenido']/div[4]/form/div/div[4]/a</option><option>xpath=(//a[contains(@href, '/sivel2/admin/contextosvictima/101')])[2]</option><option>//div[4]/a</option></datalist></td><td>42,18</td>
+</tr>
+<tr><td>clickAt</td><td>css=h1<datalist><option>css=h1</option><option>//div[@id='div_contenido']/div[2]/h1</option><option>//h1</option></datalist></td><td>Contextos Víctimas</td>
+</tr>
+<tr><td>assertText</td><td>css=div.alert.alert-success &gt; span<datalist><option>css=div.alert.alert-success &gt; span</option><option>//div[@id='div_contenido']/div/span</option><option>//div/span</option></datalist></td><td>Sivel2Gen::Contextovictima eliminado.</td>
+</tr>
+<tr><td>clickAt</td><td>link=Nuevo<datalist><option>link=Nuevo</option><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//div[@id='div_contenido']/form/div[2]/div[2]/a</option><option>//a[contains(@href, '/sivel2/admin/contextosvictima/nueva')]</option><option>//div[2]/a</option></datalist></td><td>32,24</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">tabla-etiquetas</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Administrar<datalist><option>link=Administrar</option><option>css=ul.nav.navbar-nav.navbar-right &gt; li.dropdown &gt; a.dropdown-toggle</option><option>//a[contains(text(),'Administrar')]</option><option>xpath=(//a[contains(@href, '#')])[2]</option><option>//ul[2]/li[2]/a</option></datalist></td><td>42,26</td>
+</tr>
+<tr><td>clickAt</td><td>link=Tablas Básicas<datalist><option>link=Tablas Básicas</option><option>//a[contains(text(),'Tablas Básicas')]</option><option>//a[contains(@href, '/anzorc/sivel2/tablasbasicas')]</option><option>//li[2]/ul/li[4]/a</option></datalist></td><td>77,12</td>
+</tr>
+<tr><td>clickAt</td><td>link=Etiquetas<datalist><option>link=Etiquetas</option><option>//a[contains(text(),'Etiquetas')]</option><option>//a[contains(@href, 'admin/etiquetas')]</option><option>//li[8]/a</option></datalist></td><td>40,12</td>
+</tr>
+<tr><td>clickAt</td><td>css=a.btn.btn-primary<datalist><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//div[@id='div_contenido']/form/div[2]/div[2]/a</option><option>//a[contains(@href, '/mujeresindigenas/sivel2/admin/trivalentes/nueva.%23%3CSip::Trivalente::ActiveRecord_Relation:0x00000e3f0c207a98%3E')]</option><option>//div[2]/a</option></datalist></td><td>18,25</td>
+</tr>
+<tr><td>clickAt</td><td>id=etiqueta_nombre<datalist><option>id=etiqueta_nombre</option><option>name=etiqueta[nombre]</option><option>css=#etiqueta_nombre</option><option>//input[@id='etiqueta_nombre']</option><option>//form[@id='new_etiqueta']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>91,7</td>
+</tr>
+<tr><td>type</td><td>id=etiqueta_nombre<datalist><option>id=etiqueta_nombre</option><option>name=etiqueta[nombre]</option><option>css=#etiqueta_nombre</option><option>//input[@id='etiqueta_nombre']</option><option>//form[@id='new_etiqueta']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>aaa</td>
+</tr>
+<tr><td>clickAt</td><td>id=etiqueta_observaciones<datalist><option>id=etiqueta_observaciones</option><option>name=etiqueta[observaciones]</option><option>css=#etiqueta_observaciones</option><option>//textarea[@id='etiqueta_observaciones']</option><option>//form[@id='new_etiqueta']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>81,23</td>
+</tr>
+<tr><td>type</td><td>id=etiqueta_observaciones<datalist><option>id=etiqueta_observaciones</option><option>name=etiqueta[observaciones]</option><option>css=#etiqueta_observaciones</option><option>//textarea[@id='etiqueta_observaciones']</option><option>//form[@id='new_etiqueta']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>bbb</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_etiqueta']/div[6]/input</option><option>//div[6]/input</option></datalist></td><td>49,25</td>
+</tr>
+<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>xpath=(//a[contains(@href, '/anzorc/sivel2/admin/etiquetas/102')])[2]</option><option>//a[3]</option></datalist></td><td>53,19</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Etiquetas</td>
+</tr>
+<tr><td>assertText</td><td>css=div.alert.alert-success &gt; span<datalist><option>css=div.alert.alert-success &gt; span</option><option>//div[@id='div_contenido']/div/span</option><option>//div/span</option></datalist></td><td>Sip::Etiqueta eliminada.</td>
+</tr>
+<tr><td>clickAt</td><td>link=Nueva<datalist><option>link=Nueva</option><option>css=a.btn.btn-primary</option><option>//a[contains(text(),'Nueva')]</option><option>//a[contains(@href, '/anzorc/sivel2/admin/etiquetas/nueva')]</option><option>//div[2]/a</option></datalist></td><td>30,19</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">tabla-fuentes-de-prensa</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Administrar<datalist><option>link=Administrar</option><option>css=ul.nav.navbar-nav.navbar-right &gt; li.dropdown &gt; a.dropdown-toggle</option><option>//a[contains(text(),'Administrar')]</option><option>xpath=(//a[contains(@href, '#')])[2]</option><option>//ul[2]/li[2]/a</option></datalist></td><td>36,19</td>
+</tr>
+<tr><td>clickAt</td><td>link=Tablas Básicas<datalist><option>link=Tablas Básicas</option><option>//a[contains(text(),'Tablas Básicas')]</option><option>//a[contains(@href, '/anzorc/sivel2/tablasbasicas')]</option><option>//li[2]/ul/li[4]/a</option></datalist></td><td>62,20</td>
+</tr>
+<tr><td>clickAt</td><td>link=Fuentes<datalist><option>link=Fuentes</option><option>//a[contains(text(),'Fuentes')]</option><option>//div[@id='div_contenido']/article/ul/li[16]/a</option><option>//a[contains(@href, 'admin/fuentesprensa')]</option><option>//li[16]/a</option></datalist></td><td>16,6</td>
+</tr>
+<tr><td>clickAt</td><td>css=a.btn.btn-primary<datalist><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//div[@id='div_contenido']/form/div[2]/div[2]/a</option><option>//a[contains(@href, '/mujeresindigenas/sivel2/admin/trivalentes/nueva.%23%3CSip::Trivalente::ActiveRecord_Relation:0x00000e3f0c207a98%3E')]</option><option>//div[2]/a</option></datalist></td><td>18,25</td>
+</tr>
+<tr><td>clickAt</td><td>id=fuenteprensa_nombre<datalist><option>id=fuenteprensa_nombre</option><option>name=fuenteprensa[nombre]</option><option>css=#fuenteprensa_nombre</option><option>//input[@id='fuenteprensa_nombre']</option><option>//form[@id='new_fuenteprensa']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>54,27</td>
+</tr>
+<tr><td>type</td><td>id=fuenteprensa_nombre<datalist><option>id=fuenteprensa_nombre</option><option>name=fuenteprensa[nombre]</option><option>css=#fuenteprensa_nombre</option><option>//input[@id='fuenteprensa_nombre']</option><option>//form[@id='new_fuenteprensa']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>aaa</td>
+</tr>
+<tr><td>clickAt</td><td>id=fuenteprensa_observaciones<datalist><option>id=fuenteprensa_observaciones</option><option>name=fuenteprensa[observaciones]</option><option>css=#fuenteprensa_observaciones</option><option>//textarea[@id='fuenteprensa_observaciones']</option><option>//form[@id='new_fuenteprensa']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>59,16</td>
+</tr>
+<tr><td>type</td><td>id=fuenteprensa_observaciones<datalist><option>id=fuenteprensa_observaciones</option><option>name=fuenteprensa[observaciones]</option><option>css=#fuenteprensa_observaciones</option><option>//textarea[@id='fuenteprensa_observaciones']</option><option>//form[@id='new_fuenteprensa']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>bbb</td>
+</tr>
+<tr><td>clickAt</td><td>id=fuenteprensa_tfuente<datalist><option>id=fuenteprensa_tfuente</option><option>name=fuenteprensa[tfuente]</option><option>css=#fuenteprensa_tfuente</option><option>//input[@id='fuenteprensa_tfuente']</option><option>//form[@id='new_fuenteprensa']/div[4]/input</option><option>//div[4]/input</option></datalist></td><td>60,17</td>
+</tr>
+<tr><td>type</td><td>id=fuenteprensa_tfuente<datalist><option>id=fuenteprensa_tfuente</option><option>name=fuenteprensa[tfuente]</option><option>css=#fuenteprensa_tfuente</option><option>//input[@id='fuenteprensa_tfuente']</option><option>//form[@id='new_fuenteprensa']/div[4]/input</option><option>//div[4]/input</option></datalist></td><td>indirecta</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_fuenteprensa']/div[7]/input</option><option>//div[7]/input</option></datalist></td><td>44,23</td>
+</tr>
+<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>xpath=(//a[contains(@href, '/anzorc/sivel2/admin/fuentesprensa/104')])[2]</option><option>//a[3]</option></datalist></td><td>41,25</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Fuentes</td>
+</tr>
+<tr><td>assertText</td><td>css=div.alert.alert-success &gt; span<datalist><option>css=div.alert.alert-success &gt; span</option><option>//div[@id='div_contenido']/div/span</option><option>//div/span</option></datalist></td><td>Sip::Fuenteprensa eliminada.</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">tabla-perfiles-en-organizacion-social</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Administrar<datalist><option>link=Administrar</option><option>//a[contains(text(),'Administrar')]</option><option>xpath=(//a[contains(@href, '#')])[4]</option><option>//ul[2]/li[2]/a</option></datalist></td><td>37,20</td>
+</tr>
+<tr><td>clickAt</td><td>link=Tablas Básicas<datalist><option>link=Tablas Básicas</option><option>//a[contains(text(),'Tablas Básicas')]</option><option>//a[contains(@href, '/sivel2/tablasbasicas')]</option><option>//li[2]/ul/li[4]/a</option></datalist></td><td>47,8</td>
+</tr>
+<tr><td>clickAt</td><td>link=Perfiles en organización social<datalist><option>link=Perfiles en organización social</option><option>//a[contains(text(),'Perfiles en organización social')]</option><option>//div[@id='div_contenido']/article/ul/li[18]/a</option><option>//a[contains(@href, 'admin/perfilesactorsocial')]</option><option>//li[18]/a</option></datalist></td><td>134,10</td>
+</tr>
+<tr><td>clickAt</td><td>css=a.btn.btn-primary<datalist><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//div[@id='div_contenido']/form/div[2]/div[2]/a</option><option>//a[contains(@href, '/mujeresindigenas/sivel2/admin/trivalentes/nueva.%23%3CSip::Trivalente::ActiveRecord_Relation:0x00000e3f0c207a98%3E')]</option><option>//div[2]/a</option></datalist></td><td>18,25</td>
+</tr>
+<tr><td>clickAt</td><td>id=perfilorgsocial_nombre<datalist><option>id=perfilorgsocial_nombre</option><option>name=perfilorgsocial[nombre]</option><option>css=#perfilorgsocial_nombre</option><option>//input[@id='perfilorgsocial_nombre']</option><option>//form[@id='new_perfilorgsocial']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>36,16</td>
+</tr>
+<tr><td>type</td><td>id=perfilorgsocial_nombre<datalist><option>id=perfilorgsocial_nombre</option><option>name=perfilorgsocial[nombre]</option><option>css=#perfilorgsocial_nombre</option><option>//input[@id='perfilorgsocial_nombre']</option><option>//form[@id='new_perfilorgsocial']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>aaa</td>
+</tr>
+<tr><td>clickAt</td><td>id=perfilorgsocial_observaciones<datalist><option>id=perfilorgsocial_observaciones</option><option>name=perfilorgsocial[observaciones]</option><option>css=#perfilorgsocial_observaciones</option><option>//textarea[@id='perfilorgsocial_observaciones']</option><option>//form[@id='new_perfilorgsocial']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>88,35</td>
+</tr>
+<tr><td>type</td><td>id=perfilorgsocial_observaciones<datalist><option>id=perfilorgsocial_observaciones</option><option>name=perfilorgsocial[observaciones]</option><option>css=#perfilorgsocial_observaciones</option><option>//textarea[@id='perfilorgsocial_observaciones']</option><option>//form[@id='new_perfilorgsocial']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>bbb</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_perfilorgsocial']/div[6]/input</option><option>//div[6]/input</option></datalist></td><td>29,16</td>
+</tr>
+<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>//div[@id='div_contenido']/div[4]/form/div/div[4]/a</option><option>xpath=(//a[contains(@href, '/sivel2/admin/perfilesactorsocial/101')])[2]</option><option>//div[4]/a</option></datalist></td><td>48,17</td>
+</tr>
+<tr><td>clickAt</td><td>css=h1<datalist><option>css=h1</option><option>//div[@id='div_contenido']/div[2]/h1</option><option>//h1</option></datalist></td><td>Perfiles en organización social</td>
+</tr>
+<tr><td>assertText</td><td>css=div.alert.alert-success &gt; span<datalist><option>css=div.alert.alert-success &gt; span</option><option>//div[@id='div_contenido']/div/span</option><option>//div/span</option></datalist></td><td>Sip::Perfilorgsocial eliminado.</td>
+</tr>
+<tr><td>clickAt</td><td>link=Nuevo<datalist><option>link=Nuevo</option><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//div[@id='div_contenido']/form/div[2]/div[2]/a</option><option>//a[contains(@href, '/sivel2/admin/perfilesactorsocial/nueva')]</option><option>//div[2]/a</option></datalist></td><td>23,25</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">tabla-presuntos-responsables</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Administrar<datalist><option>link=Administrar</option><option>css=ul.nav.navbar-nav.navbar-right &gt; li.dropdown &gt; a.dropdown-toggle</option><option>//a[contains(text(),'Administrar')]</option><option>xpath=(//a[contains(@href, '#')])[2]</option><option>//ul[2]/li[2]/a</option></datalist></td><td>58,16</td>
+</tr>
+<tr><td>clickAt</td><td>link=Tablas Básicas<datalist><option>link=Tablas Básicas</option><option>//a[contains(text(),'Tablas Básicas')]</option><option>//a[contains(@href, '/anzorc/sivel2/tablasbasicas')]</option><option>//li[2]/ul/li[4]/a</option></datalist></td><td>77,14</td>
+</tr>
+<tr><td>clickAt</td><td>link=Presuntos responsables<datalist><option>link=Presuntos responsables</option><option>//a[contains(text(),'Presuntos responsables')]</option><option>//a[contains(@href, 'admin/presponsables')]</option><option>//li[22]/a</option></datalist></td><td>56,5</td>
+</tr>
+<tr><td>clickAt</td><td>css=a.btn.btn-primary<datalist><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//div[@id='div_contenido']/form/div[2]/div[2]/a</option><option>//a[contains(@href, '/mujeresindigenas/sivel2/admin/trivalentes/nueva.%23%3CSip::Trivalente::ActiveRecord_Relation:0x00000e3f0c207a98%3E')]</option><option>//div[2]/a</option></datalist></td><td>18,25</td>
+</tr>
+<tr><td>clickAt</td><td>id=presponsable_nombre<datalist><option>id=presponsable_nombre</option><option>name=presponsable[nombre]</option><option>css=#presponsable_nombre</option><option>//input[@id='presponsable_nombre']</option><option>//form[@id='new_presponsable']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>71,18</td>
+</tr>
+<tr><td>type</td><td>id=presponsable_nombre<datalist><option>id=presponsable_nombre</option><option>name=presponsable[nombre]</option><option>css=#presponsable_nombre</option><option>//input[@id='presponsable_nombre']</option><option>//form[@id='new_presponsable']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>aaa</td>
+</tr>
+<tr><td>clickAt</td><td>id=presponsable_observaciones<datalist><option>id=presponsable_observaciones</option><option>name=presponsable[observaciones]</option><option>css=#presponsable_observaciones</option><option>//textarea[@id='presponsable_observaciones']</option><option>//form[@id='new_presponsable']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>62,17</td>
+</tr>
+<tr><td>type</td><td>id=presponsable_observaciones<datalist><option>id=presponsable_observaciones</option><option>name=presponsable[observaciones]</option><option>css=#presponsable_observaciones</option><option>//textarea[@id='presponsable_observaciones']</option><option>//form[@id='new_presponsable']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>bbb</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_presponsable']/div[6]/input</option><option>//div[6]/input</option></datalist></td><td>35,9</td>
+</tr>
+<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>xpath=(//a[contains(@href, '/anzorc/sivel2/admin/presponsables/108')])[2]</option><option>//a[3]</option></datalist></td><td>23,9</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Presuntos responsables</td>
+</tr>
+<tr><td>assertText</td><td>css=div.alert.alert-success &gt; span<datalist><option>css=div.alert.alert-success &gt; span</option><option>//div[@id='div_contenido']/div/span</option><option>//div/span</option></datalist></td><td>Sivel2Gen::Presponsable eliminado.</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">tabla-resultado-de-acciones-belicas</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Administrar<datalist><option>link=Administrar</option><option>css=ul.nav.navbar-nav.navbar-right &gt; li.dropdown &gt; a.dropdown-toggle</option><option>//a[contains(text(),'Administrar')]</option><option>xpath=(//a[contains(@href, '#')])[2]</option><option>//ul[2]/li[2]/a</option></datalist></td><td>47,19</td>
+</tr>
+<tr><td>clickAt</td><td>link=Tablas Básicas<datalist><option>link=Tablas Básicas</option><option>//a[contains(text(),'Tablas Básicas')]</option><option>//a[contains(@href, '/anzorc/sivel2/tablasbasicas')]</option><option>//li[2]/ul/li[4]/a</option></datalist></td><td>71,19</td>
+</tr>
+<tr><td>clickAt</td><td>link=Resultados de acciones bélicas<datalist><option>link=Resultados de acciones bélicas</option><option>//a[contains(text(),'Resultados de acciones bélicas')]</option><option>//a[contains(@href, 'admin/resagresiones')]</option><option>//li[26]/a</option></datalist></td><td>101,5</td>
+</tr>
+<tr><td>clickAt</td><td>css=a.btn.btn-primary<datalist><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//div[@id='div_contenido']/form/div[2]/div[2]/a</option><option>//a[contains(@href, '/mujeresindigenas/sivel2/admin/trivalentes/nueva.%23%3CSip::Trivalente::ActiveRecord_Relation:0x00000e3f0c207a98%3E')]</option><option>//div[2]/a</option></datalist></td><td>18,25</td>
+</tr>
+<tr><td>clickAt</td><td>id=resagresion_nombre<datalist><option>id=resagresion_nombre</option><option>name=resagresion[nombre]</option><option>css=#resagresion_nombre</option><option>//input[@id='resagresion_nombre']</option><option>//form[@id='new_resagresion']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>144,20</td>
+</tr>
+<tr><td>type</td><td>id=resagresion_nombre<datalist><option>id=resagresion_nombre</option><option>name=resagresion[nombre]</option><option>css=#resagresion_nombre</option><option>//input[@id='resagresion_nombre']</option><option>//form[@id='new_resagresion']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>aaa</td>
+</tr>
+<tr><td>clickAt</td><td>id=resagresion_observaciones<datalist><option>id=resagresion_observaciones</option><option>name=resagresion[observaciones]</option><option>css=#resagresion_observaciones</option><option>//textarea[@id='resagresion_observaciones']</option><option>//form[@id='new_resagresion']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>120,18</td>
+</tr>
+<tr><td>type</td><td>id=resagresion_observaciones<datalist><option>id=resagresion_observaciones</option><option>name=resagresion[observaciones]</option><option>css=#resagresion_observaciones</option><option>//textarea[@id='resagresion_observaciones']</option><option>//form[@id='new_resagresion']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>bbb</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_resagresion']/div[6]/input</option><option>//div[6]/input</option></datalist></td><td>30,26</td>
+</tr>
+<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>xpath=(//a[contains(@href, '/anzorc/sivel2/admin/resagresiones/101')])[2]</option><option>//a[3]</option></datalist></td><td>46,23</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Resultados de acciones bélicas</td>
+</tr>
+<tr><td>assertText</td><td>css=div.alert.alert-success &gt; span<datalist><option>css=div.alert.alert-success &gt; span</option><option>//div[@id='div_contenido']/div/span</option><option>//div/span</option></datalist></td><td>Sivel2Gen::Resagresion eliminado.</td>
+</tr>
+<tr><td>clickAt</td><td>link=Nuevo<datalist><option>link=Nuevo</option><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//a[contains(@href, '/anzorc/sivel2/admin/resagresiones/nueva')]</option><option>//div[2]/a</option></datalist></td><td>11,4</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">tabla-sectores-de-organizaciones-sociales</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Administrar<datalist><option>link=Administrar</option><option>//a[contains(text(),'Administrar')]</option><option>xpath=(//a[contains(@href, '#')])[4]</option><option>//ul[2]/li[2]/a</option></datalist></td><td>59,25</td>
+</tr>
+<tr><td>clickAt</td><td>link=Tablas Básicas<datalist><option>link=Tablas Básicas</option><option>//a[contains(text(),'Tablas Básicas')]</option><option>//a[contains(@href, '/sivel2/tablasbasicas')]</option><option>//li[2]/ul/li[4]/a</option></datalist></td><td>56,25</td>
+</tr>
+<tr><td>clickAt</td><td>link=Sectores de organizaciones sociales<datalist><option>link=Sectores de organizaciones sociales</option><option>//a[contains(text(),'Sectores de organizaciones sociales')]</option><option>//div[@id='div_contenido']/article/ul/li[25]/a</option><option>//a[contains(@href, 'admin/sectoresactores')]</option><option>//li[25]/a</option></datalist></td><td>129,9</td>
+</tr>
+<tr><td>clickAt</td><td>css=a.btn.btn-primary<datalist><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//div[@id='div_contenido']/form/div[2]/div[2]/a</option><option>//a[contains(@href, '/mujeresindigenas/sivel2/admin/trivalentes/nueva.%23%3CSip::Trivalente::ActiveRecord_Relation:0x00000e3f0c207a98%3E')]</option><option>//div[2]/a</option></datalist></td><td>18,25</td>
+</tr>
+<tr><td>clickAt</td><td>id=sectororgsocial_nombre<datalist><option>id=sectororgsocial_nombre</option><option>name=sectororgsocial[nombre]</option><option>css=#sectororgsocial_nombre</option><option>//input[@id='sectororgsocial_nombre']</option><option>//form[@id='new_sectororgsocial']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>48,15</td>
+</tr>
+<tr><td>type</td><td>id=sectororgsocial_nombre<datalist><option>id=sectororgsocial_nombre</option><option>name=sectororgsocial[nombre]</option><option>css=#sectororgsocial_nombre</option><option>//input[@id='sectororgsocial_nombre']</option><option>//form[@id='new_sectororgsocial']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>aaa</td>
+</tr>
+<tr><td>clickAt</td><td>id=sectororgsocial_observaciones<datalist><option>id=sectororgsocial_observaciones</option><option>name=sectororgsocial[observaciones]</option><option>css=#sectororgsocial_observaciones</option><option>//textarea[@id='sectororgsocial_observaciones']</option><option>//form[@id='new_sectororgsocial']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>63,12</td>
+</tr>
+<tr><td>type</td><td>id=sectororgsocial_observaciones<datalist><option>id=sectororgsocial_observaciones</option><option>name=sectororgsocial[observaciones]</option><option>css=#sectororgsocial_observaciones</option><option>//textarea[@id='sectororgsocial_observaciones']</option><option>//form[@id='new_sectororgsocial']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>bbb</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_sectororgsocial']/div[6]/input</option><option>//div[6]/input</option></datalist></td><td>36,16</td>
+</tr>
+<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>//div[@id='div_contenido']/div[4]/form/div/div[4]/a</option><option>xpath=(//a[contains(@href, '/sivel2/admin/sectoresorgsocial/105')])[2]</option><option>//div[4]/a</option></datalist></td><td>22,16</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Sectores de organizaciones sociales</td>
+</tr>
+<tr><td>assertText</td><td>css=div.alert.alert-success &gt; span<datalist><option>css=div.alert.alert-success &gt; span</option><option>//div[@id='div_contenido']/div/span</option><option>//div/span</option></datalist></td><td>Sip::Sectororgsocial eliminado.</td>
+</tr>
+<tr><td>clickAt</td><td>link=Nuevo<datalist><option>link=Nuevo</option><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//a[contains(@href, '/sivel2/admin/sectoresactores/nueva')]</option><option>//div[2]/a</option></datalist></td><td>31,10</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">tabla-supracategorias</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Administrar<datalist><option>link=Administrar</option><option>css=ul.nav.navbar-nav.navbar-right &gt; li.dropdown &gt; a.dropdown-toggle</option><option>//a[contains(text(),'Administrar')]</option><option>xpath=(//a[contains(@href, '#')])[2]</option><option>//ul[2]/li[2]/a</option></datalist></td><td>56,22</td>
+</tr>
+<tr><td>clickAt</td><td>link=Tablas Básicas<datalist><option>link=Tablas Básicas</option><option>//a[contains(text(),'Tablas Básicas')]</option><option>//a[contains(@href, '/anzorc/sivel2/tablasbasicas')]</option><option>//li[2]/ul/li[4]/a</option></datalist></td><td>64,20</td>
+</tr>
+<tr><td>clickAt</td><td>link=Supracategorias<datalist><option>link=Supracategorias</option><option>//a[contains(text(),'Supracategorias')]</option><option>//a[contains(@href, 'admin/supracategorias')]</option><option>//li[29]/a</option></datalist></td><td>70,8</td>
+</tr>
+<tr><td>clickAt</td><td>css=a.btn.btn-primary<datalist><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//div[@id='div_contenido']/form/div[2]/div[2]/a</option><option>//a[contains(@href, '/mujeresindigenas/sivel2/admin/trivalentes/nueva.%23%3CSip::Trivalente::ActiveRecord_Relation:0x00000e3f0c207a98%3E')]</option><option>//div[2]/a</option></datalist></td><td>18,25</td>
+</tr>
+<tr><td>clickAt</td><td>id=supracategoria_nombre<datalist><option>id=supracategoria_nombre</option><option>name=supracategoria[nombre]</option><option>css=#supracategoria_nombre</option><option>//input[@id='supracategoria_nombre']</option><option>//form[@id='new_supracategoria']/div[3]/input</option><option>//div[3]/input</option></datalist></td><td>72,11</td>
+</tr>
+<tr><td>type</td><td>id=supracategoria_nombre<datalist><option>id=supracategoria_nombre</option><option>name=supracategoria[nombre]</option><option>css=#supracategoria_nombre</option><option>//input[@id='supracategoria_nombre']</option><option>//form[@id='new_supracategoria']/div[3]/input</option><option>//div[3]/input</option></datalist></td><td>aaa</td>
+</tr>
+<tr><td>runScript</td><td>$('#supracategoria_id').removeAttr('type')<datalist><option>$('#pais_codiso').removeAttr('type')</option><option>$('#supracategoria_id').removeAttr('type')</option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>id=supracategoria_id<datalist><option>id=supracategoria_id</option><option>name=supracategoria[id]</option><option>css=#supracategoria_id</option><option>//input[@id='supracategoria_id']</option><option>//form[@id='new_supracategoria']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>75,19</td>
+</tr>
+<tr><td>type</td><td>id=supracategoria_id<datalist><option>id=supracategoria_id</option><option>name=supracategoria[id]</option><option>css=#supracategoria_id</option><option>//input[@id='supracategoria_id']</option><option>//form[@id='new_supracategoria']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>231</td>
+</tr>
+<tr><td>runScript</td><td>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')<datalist><option>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')</option></datalist></td><td></td>
+</tr>
+<tr><td>select</td><td>id=supracategoria_id_tviolencia<datalist><option>id=supracategoria_id_tviolencia</option><option>name=supracategoria[id_tviolencia]</option><option>css=#supracategoria_id_tviolencia</option><option>//select[@id='supracategoria_id_tviolencia']</option><option>//form[@id='new_supracategoria']/div[4]/select</option><option>//select</option></datalist></td><td>label=INFRACCIONES AL DIH</td>
+</tr>
+<tr><td>clickAt</td><td>id=supracategoria_id_tviolencia<datalist><option>id=supracategoria_id_tviolencia</option><option>name=supracategoria[id_tviolencia]</option><option>css=#supracategoria_id_tviolencia</option><option>//select[@id='supracategoria_id_tviolencia']</option><option>//form[@id='new_supracategoria']/div[4]/select</option><option>//select</option></datalist></td><td>-68,-307</td>
+</tr>
+<tr><td>clickAt</td><td>id=supracategoria_codigo<datalist><option>id=supracategoria_codigo</option><option>name=supracategoria[codigo]</option><option>css=#supracategoria_codigo</option><option>//input[@id='supracategoria_codigo']</option><option>//form[@id='new_supracategoria']/div[5]/input</option><option>//div[5]/input</option></datalist></td><td>92,13</td>
+</tr>
+<tr><td>clickAt</td><td>id=supracategoria_observaciones<datalist><option>id=supracategoria_observaciones</option><option>name=supracategoria[observaciones]</option><option>css=#supracategoria_observaciones</option><option>//textarea[@id='supracategoria_observaciones']</option><option>//form[@id='new_supracategoria']/div[6]/textarea</option><option>//textarea</option></datalist></td><td>91,6</td>
+</tr>
+<tr><td>type</td><td>id=supracategoria_observaciones<datalist><option>id=supracategoria_observaciones</option><option>name=supracategoria[observaciones]</option><option>css=#supracategoria_observaciones</option><option>//textarea[@id='supracategoria_observaciones']</option><option>//form[@id='new_supracategoria']/div[6]/textarea</option><option>//textarea</option></datalist></td><td>bbb</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_supracategoria']/div[9]/input</option><option>//div[9]/input</option></datalist></td><td>42,10</td>
+</tr>
+<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>xpath=(//a[contains(@href, '/anzorc/sivel2/admin/supracategorias/573')])[2]</option><option>//a[3]</option></datalist></td><td>41,10</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Supracategorias</td>
+</tr>
+<tr><td>assertText</td><td>css=div.alert.alert-success &gt; span<datalist><option>css=div.alert.alert-success &gt; span</option><option>//div[@id='div_contenido']/div/span</option><option>//div/span</option></datalist></td><td>Sivel2Gen::Supracategoria eliminada.</td>
+</tr>
+<tr><td>clickAt</td><td>link=Nueva<datalist><option>link=Nueva</option><option>css=a.btn.btn-primary</option><option>//a[contains(text(),'Nueva')]</option><option>//a[contains(@href, '/anzorc/sivel2/admin/supracategorias/nueva')]</option><option>//div[2]/div/a</option></datalist></td><td>28,24</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">tabla-temas</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Administrar<datalist><option>link=Administrar</option><option>css=ul.nav.navbar-nav.navbar-right &gt; li.dropdown &gt; a.dropdown-toggle</option><option>//a[contains(text(),'Administrar')]</option><option>xpath=(//a[contains(@href, '#')])[2]</option><option>//ul[2]/li[2]/a</option></datalist></td><td>59,22</td>
+</tr>
+<tr><td>clickAt</td><td>link=Tablas Básicas<datalist><option>link=Tablas Básicas</option><option>//a[contains(text(),'Tablas Básicas')]</option><option>//div[@id='navbarSupportedContent']/ul[2]/li[2]/div/a[4]</option><option>//a[contains(@href, '/sivel2/tablasbasicas')]</option><option>//ul[2]/li[2]/div/a[4]</option></datalist></td><td>56,10</td>
+</tr>
+<tr><td>clickAt</td><td>link=Temas<datalist><option>link=Temas</option><option>//a[contains(text(),'Temas')]</option><option>//div[@id='div_contenido']/article/ul/li[26]/a</option><option>//a[contains(@href, 'admin/temas')]</option><option>//li[26]/a</option></datalist></td><td>25,2</td>
+</tr>
+<tr><td>clickAt</td><td>css=a.btn.btn-primary<datalist><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//div[@id='div_contenido']/form/div[2]/div[2]/a</option><option>//a[contains(@href, '/mujeresindigenas/sivel2/admin/trivalentes/nueva.%23%3CSip::Trivalente::ActiveRecord_Relation:0x00000e3f0c207a98%3E')]</option><option>//div[2]/a</option></datalist></td><td>18,25</td>
+</tr>
+<tr><td>clickAt</td><td>id=tema_nombre<datalist><option>id=tema_nombre</option><option>name=tema[nombre]</option><option>css=#tema_nombre</option><option>//input[@id='tema_nombre']</option><option>//form[@id='new_tema']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>190,18</td>
+</tr>
+<tr><td>type</td><td>id=tema_nombre<datalist><option>id=tema_nombre</option><option>name=tema[nombre]</option><option>css=#tema_nombre</option><option>//input[@id='tema_nombre']</option><option>//form[@id='new_tema']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>VERDE</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_fondo").val("#ff0000")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_fondo").val("#ff0000")</option></datalist></td><td>1</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_color_fuente").val("#ff4d4d")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_color_fuente").val("#c35456")</option><option>$("#tema_color_fuente").val("#ff4d4d")</option></datalist></td><td>2</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_color_flota_subitem_fuente").val("#ff8080")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_color_flota_subitem_fuente").val("#04646f")</option><option>$("#tema_color_flota_subitem_fuente").val("#ff8080")</option></datalist></td><td>3</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_color_flota_subitem_fondo").val("#ffb3b3")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_color_flota_subitem_fondo").val("#c34456")</option><option>$("#tema_color_flota_subitem_fondo").val("#ffb3b3")</option></datalist></td><td>4</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_nav_ini").val("#ffe6e6")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_nav_ini").val("#5c906e")</option><option>$("#tema_nav_ini").val("#ffe6e6")</option></datalist></td><td>5</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_nav_fin").val("#226600")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_nav_fin").val("#4bbb6f")</option><option>$("#tema_nav_fin").val("#226600")</option></datalist></td><td>6</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_nav_fuente").val("#339900")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_nav_fuente").val("#1cb760")</option><option>$("#tema_nav_fuente").val("#339900")</option></datalist></td><td>7</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_fondo_lista").val("#4ce600")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_fondo_lista").val("#e7bc3a")</option><option>$("#tema_fondo_lista").val("#4ce600")</option></datalist></td><td>8</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_btn_primario_fondo_ini").val("#99ff66")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_fondo").val("#303a36")</option><option>$("#tema_btn_primario_fondo_ini").val("#99ff66")</option></datalist></td><td>9</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_btn_primario_fondo_fin").val("#ccffb3")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_fondo").val("#f5c30f")</option><option>$("#tema_btn_primario_fondo_fin").val("#ccffb3")</option></datalist></td><td>10</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_btn_primario_fuente").val("#cccc00")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_fondo").val("#a09a45")</option><option>$("#tema_btn_primario_fuente").val("#cccc00")</option></datalist></td><td>11</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_btn_peligro_fondo_ini").val("#ffff00")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_fondo").val("#f64b4b")</option><option>$("#tema_btn_peligro_fondo_ini").val("#ffff00")</option></datalist></td><td>12</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_btn_peligro_fondo_fin").val("#ffff66")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_fondo").val("#a50e0e")</option><option>$("#tema_btn_peligro_fondo_fin").val("#ffff66")</option></datalist></td><td>13</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_btn_peligro_fuente").val("#ffff99")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_fondo").val("#46f1e9")</option><option>$("#tema_btn_peligro_fuente").val("#ffff99")</option></datalist></td><td>14</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_btn_accion_fondo_ini").val("#ffffb3")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_fondo").val("#bc8181")</option><option>$("#tema_btn_accion_fondo_ini").val("#ffffb3")</option></datalist></td><td>15</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_btn_accion_fondo_fin").val("#e600e6")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_fondo").val("#b61111")</option><option>$("#tema_btn_accion_fondo_fin").val("#e600e6")</option></datalist></td><td>16</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_btn_accion_fuente").val("#ffb3ff")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_fondo").val("#f3e4e4")</option><option>$("#tema_btn_accion_fuente").val("#ffb3ff")</option></datalist></td><td>17</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_alerta_exito_fondo").val("6c516b")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_fondo").val("#ecb194")</option><option>$("#tema_alerta_exito_fondo").val("eeccff")</option><option>$("#tema_alerta_exito_fondo").val("6c516b")</option></datalist></td><td>18</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_alerta_exito_fuente").val("#003399")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_nav_fin").val("#61a188")</option><option>$("#tema_alerta_exito_fuente").val("#003399")</option></datalist></td><td>19</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_alerta_problema_fondo").val("#4d88ff")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_nav_fuente").val("#ead76b")</option><option>$("#tema_alerta_problema_fondo").val("#4d88ff")</option></datalist></td><td>20</td>
+</tr>
+<tr><td>runScript</td><td>$("#tema_alerta_problema_fuente").val("#99bbff")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option><option>$("#tema_alerta_problema_fuente").val("#56eeb5")</option><option>$("#tema_alerta_problema_fuente").val("#99bbff")</option></datalist></td><td>21</td>
+</tr>
+<tr><td>clickAt</td><td>id=tema_observaciones<datalist><option>id=tema_observaciones</option><option>name=tema[observaciones]</option><option>css=#tema_observaciones</option><option>//input[@id='tema_observaciones']</option><option>//form[@id='new_tema']/div[24]/input</option><option>//div[24]/input</option></datalist></td><td>221,16</td>
+</tr>
+<tr><td>type</td><td>id=tema_observaciones<datalist><option>id=tema_observaciones</option><option>name=tema[observaciones]</option><option>css=#tema_observaciones</option><option>//input[@id='tema_observaciones']</option><option>//form[@id='new_tema']/div[24]/input</option><option>//div[24]/input</option></datalist></td><td>bbb</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_tema']/div[27]/input</option><option>//div[27]/input</option></datalist></td><td>37,16</td>
+</tr>
+<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>xpath=(//a[contains(@href, '/sivel2/admin/municipios/100004')])[2]</option><option>//div[4]/a</option></datalist></td><td>12,19</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Temas</td>
+</tr>
+<tr><td>assertText</td><td>css=div.alert.alert-success &gt; span<datalist><option>css=div.alert.alert-success &gt; span</option><option>//div[@id='div_contenido']/div/span</option><option>//div/span</option></datalist></td><td>Sip::Tema eliminado.</td>
+</tr>
+<tr><td>clickAt</td><td>link=Nuevo<datalist><option>link=Nuevo</option><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//div[@id='div_contenido']/form/div/div[2]/a</option><option>//a[contains(@href, '/sivel2/admin/temas/nueva')]</option><option>//div[2]/a</option></datalist></td><td>39,22</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">tabla-tipos-de-relaciones-familiares</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Administrar<datalist><option>link=Administrar</option><option>css=ul.nav.navbar-nav.navbar-right &gt; li.dropdown &gt; a.dropdown-toggle</option><option>//a[contains(text(),'Administrar')]</option><option>xpath=(//a[contains(@href, '#')])[2]</option><option>//ul[2]/li[2]/a</option></datalist></td><td>53,17</td>
+</tr>
+<tr><td>clickAt</td><td>link=Tablas Básicas<datalist><option>link=Tablas Básicas</option><option>//a[contains(text(),'Tablas Básicas')]</option><option>//a[contains(@href, '/anzorc/sivel2/tablasbasicas')]</option><option>//li[2]/ul/li[4]/a</option></datalist></td><td>57,13</td>
+</tr>
+<tr><td>clickAt</td><td>link=Tipos de relaciones familiares<datalist><option>link=Tipos de relaciones familiares</option><option>//a[contains(text(),'Tipos de relaciones familiares')]</option><option>//a[contains(@href, 'admin/trelaciones')]</option><option>//li[32]/a</option></datalist></td><td>111,7</td>
+</tr>
+<tr><td>clickAt</td><td>css=a.btn.btn-primary<datalist><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//div[@id='div_contenido']/form/div[2]/div[2]/a</option><option>//a[contains(@href, '/mujeresindigenas/sivel2/admin/trivalentes/nueva.%23%3CSip::Trivalente::ActiveRecord_Relation:0x00000e3f0c207a98%3E')]</option><option>//div[2]/a</option></datalist></td><td>18,25</td>
+</tr>
+<tr><td>clickAt</td><td>id=trelacion_id<datalist><option>id=trelacion_id</option><option>name=trelacion[id]</option><option>css=#trelacion_id</option><option>//input[@id='trelacion_id']</option><option>//form[@id='new_trelacion']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>57,25</td>
+</tr>
+<tr><td>type</td><td>id=trelacion_id<datalist><option>id=trelacion_id</option><option>name=trelacion[id]</option><option>css=#trelacion_id</option><option>//input[@id='trelacion_id']</option><option>//form[@id='new_trelacion']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>7</td>
+</tr>
+<tr><td>clickAt</td><td>id=trelacion_nombre<datalist><option>id=trelacion_nombre</option><option>name=trelacion[nombre]</option><option>css=#trelacion_nombre</option><option>//input[@id='trelacion_nombre']</option><option>//form[@id='new_trelacion']/div[3]/input</option><option>//div[3]/input</option></datalist></td><td>61,17</td>
+</tr>
+<tr><td>type</td><td>id=trelacion_nombre<datalist><option>id=trelacion_nombre</option><option>name=trelacion[nombre]</option><option>css=#trelacion_nombre</option><option>//input[@id='trelacion_nombre']</option><option>//form[@id='new_trelacion']/div[3]/input</option><option>//div[3]/input</option></datalist></td><td>aa</td>
+</tr>
+<tr><td>clickAt</td><td>id=trelacion_inverso<datalist><option>id=trelacion_inverso</option><option>name=trelacion[inverso]</option><option>css=#trelacion_inverso</option><option>//input[@id='trelacion_inverso']</option><option>//form[@id='new_trelacion']/div[4]/input</option><option>//div[4]/input</option></datalist></td><td>68,20</td>
+</tr>
+<tr><td>type</td><td>id=trelacion_inverso<datalist><option>id=trelacion_inverso</option><option>name=trelacion[inverso]</option><option>css=#trelacion_inverso</option><option>//input[@id='trelacion_inverso']</option><option>//form[@id='new_trelacion']/div[4]/input</option><option>//div[4]/input</option></datalist></td><td>ab</td>
+</tr>
+<tr><td>clickAt</td><td>id=trelacion_observaciones<datalist><option>id=trelacion_observaciones</option><option>name=trelacion[observaciones]</option><option>css=#trelacion_observaciones</option><option>//textarea[@id='trelacion_observaciones']</option><option>//form[@id='new_trelacion']/div[5]/textarea</option><option>//textarea</option></datalist></td><td>68,27</td>
+</tr>
+<tr><td>type</td><td>id=trelacion_observaciones<datalist><option>id=trelacion_observaciones</option><option>name=trelacion[observaciones]</option><option>css=#trelacion_observaciones</option><option>//textarea[@id='trelacion_observaciones']</option><option>//form[@id='new_trelacion']/div[5]/textarea</option><option>//textarea</option></datalist></td><td>bbb</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_trelacion']/div[8]/input</option><option>//div[8]/input</option></datalist></td><td>33,23</td>
+</tr>
+<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>xpath=(//a[contains(@href, '/anzorc/sivel2/admin/trelaciones/7%20')])[2]</option><option>//a[3]</option></datalist></td><td>54,12</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Tipos de relaciones familiares</td>
+</tr>
+<tr><td>assertText</td><td>css=div.alert.alert-success &gt; span<datalist><option>css=div.alert.alert-success &gt; span</option><option>//div[@id='div_contenido']/div/span</option><option>//div/span</option></datalist></td><td>Sip::Trelacion eliminado.</td>
+</tr>
+<tr><td>clickAt</td><td>link=Nuevo<datalist><option>link=Nuevo</option><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//a[contains(@href, '/anzorc/sivel2/admin/trelaciones/nueva')]</option><option>//div[2]/div/a</option></datalist></td><td>38,13</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">tabla-tipos-de-sitios</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Administrar<datalist><option>link=Administrar</option><option>css=ul.nav.navbar-nav.navbar-right &gt; li.dropdown &gt; a.dropdown-toggle</option><option>//a[contains(text(),'Administrar')]</option><option>xpath=(//a[contains(@href, '#')])[2]</option><option>//ul[2]/li[2]/a</option></datalist></td><td>29,23</td>
+</tr>
+<tr><td>clickAt</td><td>link=Tablas Básicas<datalist><option>link=Tablas Básicas</option><option>//a[contains(text(),'Tablas Básicas')]</option><option>//a[contains(@href, '/anzorc/sivel2/tablasbasicas')]</option><option>//li[2]/ul/li[4]/a</option></datalist></td><td>66,16</td>
+</tr>
+<tr><td>clickAt</td><td>link=Tipos de sitios<datalist><option>link=Tipos de sitios</option><option>//a[contains(text(),'Tipos de sitios')]</option><option>//a[contains(@href, 'admin/tsitios')]</option><option>//li[33]/a</option></datalist></td><td>42,14</td>
+</tr>
+<tr><td>clickAt</td><td>css=a.btn.btn-primary<datalist><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//div[@id='div_contenido']/form/div[2]/div[2]/a</option><option>//a[contains(@href, '/mujeresindigenas/sivel2/admin/trivalentes/nueva.%23%3CSip::Trivalente::ActiveRecord_Relation:0x00000e3f0c207a98%3E')]</option><option>//div[2]/a</option></datalist></td><td>18,25</td>
+</tr>
+<tr><td>clickAt</td><td>id=tsitio_nombre<datalist><option>id=tsitio_nombre</option><option>name=tsitio[nombre]</option><option>css=#tsitio_nombre</option><option>//input[@id='tsitio_nombre']</option><option>//form[@id='new_tsitio']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>112,27</td>
+</tr>
+<tr><td>type</td><td>id=tsitio_nombre<datalist><option>id=tsitio_nombre</option><option>name=tsitio[nombre]</option><option>css=#tsitio_nombre</option><option>//input[@id='tsitio_nombre']</option><option>//form[@id='new_tsitio']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>aaa</td>
+</tr>
+<tr><td>clickAt</td><td>id=tsitio_observaciones<datalist><option>id=tsitio_observaciones</option><option>name=tsitio[observaciones]</option><option>css=#tsitio_observaciones</option><option>//textarea[@id='tsitio_observaciones']</option><option>//form[@id='new_tsitio']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>69,29</td>
+</tr>
+<tr><td>type</td><td>id=tsitio_observaciones<datalist><option>id=tsitio_observaciones</option><option>name=tsitio[observaciones]</option><option>css=#tsitio_observaciones</option><option>//textarea[@id='tsitio_observaciones']</option><option>//form[@id='new_tsitio']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>bbb</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_tsitio']/div[6]/input</option><option>//div[6]/input</option></datalist></td><td>27,16</td>
+</tr>
+<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>xpath=(//a[contains(@href, '/anzorc/sivel2/admin/tsitios/101')])[2]</option><option>//a[3]</option></datalist></td><td>46,24</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Tipos de sitios</td>
+</tr>
+<tr><td>assertText</td><td>css=div.alert.alert-success &gt; span<datalist><option>css=div.alert.alert-success &gt; span</option><option>//div[@id='div_contenido']/div/span</option><option>//div/span</option></datalist></td><td>Sip::Tsitio eliminado.</td>
+</tr>
+<tr><td>clickAt</td><td>link=Nuevo<datalist><option>link=Nuevo</option><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//a[contains(@href, '/anzorc/sivel2/admin/tsitios/nueva')]</option><option>//div[2]/a</option></datalist></td><td>20,23</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">tabla-tiposorg</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>id=navbarDropdownAdministrar<datalist><option>id=navbarDropdownAdministrar</option><option>link=Administrar</option><option>css=#navbarDropdownAdministrar</option><option>//a[contains(text(),'Administrar')]</option><option>//a[@id='navbarDropdownAdministrar']</option><option>//div[@id='navbarSupportedContent']/ul[2]/li[2]/a</option><option>xpath=(//a[contains(@href, '#')])[6]</option><option>//ul[2]/li[2]/a</option></datalist></td><td>30,24</td>
+</tr>
+<tr><td>clickAt</td><td>link=Tablas Básicas<datalist><option>link=Tablas Básicas</option><option>//a[contains(text(),'Tablas Básicas')]</option><option>//div[@id='navbarSupportedContent']/ul[2]/li[2]/ul/li[6]/a</option><option>//a[contains(@href, '/sivel2_1/tablasbasicas')]</option><option>//ul[2]/li[2]/ul/li[6]/a</option></datalist></td><td>48,11</td>
+</tr>
+<tr><td>clickAt</td><td>link=Tiposorg<datalist><option>link=Tiposorg</option><option>//a[contains(text(),'Tiposorg')]</option><option>//div[@id='div_contenido']/article/ul/li[40]/a</option><option>//a[contains(@href, 'admin/tiposorg')]</option><option>//li[40]/a</option></datalist></td><td>35,8</td>
+</tr>
+<tr><td>clickAt</td><td>css=a.btn.btn-primary<datalist><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//div[@id='div_contenido']/form/div[2]/div[2]/a</option><option>//a[contains(@href, '/mujeresindigenas/sivel2/admin/trivalentes/nueva.%23%3CSip::Trivalente::ActiveRecord_Relation:0x00000e3f0c207a98%3E')]</option><option>//div[2]/a</option></datalist></td><td>18,25</td>
+</tr>
+<tr><td>clickAt</td><td>id=tipoorg_nombre<datalist><option>id=tipoorg_nombre</option><option>name=tipoorg[nombre]</option><option>css=#tipoorg_nombre</option><option>//input[@id='tipoorg_nombre']</option><option>//form[@id='new_tipoorg']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>90,7</td>
+</tr>
+<tr><td>type</td><td>id=tipoorg_nombre<datalist><option>id=tipoorg_nombre</option><option>name=tipoorg[nombre]</option><option>css=#tipoorg_nombre</option><option>//input[@id='tipoorg_nombre']</option><option>//form[@id='new_tipoorg']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>aaa</td>
+</tr>
+<tr><td>clickAt</td><td>id=tipoorg_observaciones<datalist><option>id=tipoorg_observaciones</option><option>name=tipoorg[observaciones]</option><option>css=#tipoorg_observaciones</option><option>//textarea[@id='tipoorg_observaciones']</option><option>//form[@id='new_tipoorg']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>86,22</td>
+</tr>
+<tr><td>type</td><td>id=tipoorg_observaciones<datalist><option>id=tipoorg_observaciones</option><option>name=tipoorg[observaciones]</option><option>css=#tipoorg_observaciones</option><option>//textarea[@id='tipoorg_observaciones']</option><option>//form[@id='new_tipoorg']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>bbb</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_tipoorg']/div[6]/input</option><option>//div[6]/input</option></datalist></td><td>39,19</td>
+</tr>
+<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>//div[@id='div_contenido']/div[5]/form/div/div[4]/a</option><option>xpath=(//a[contains(@href, '/sivel2_1/admin/tiposorg/106')])[2]</option><option>//div[4]/a</option></datalist></td><td>38,17</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//div[@id='div_contenido']/div[3]/h1</option><option>//h1</option></datalist></td><td>Tiposorg</td>
+</tr>
+<tr><td>assertText</td><td>css=div.alert.alert-success.alert-dismissible.fade.show &gt; span<datalist><option>css=div.alert.alert-success.alert-dismissible.fade.show &gt; span</option><option>//div[@id='div_contenido']/div[2]/span</option><option>//div[2]/span</option></datalist></td><td>Sip::Tipoorg eliminado.</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">tabla-trivalentes</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Tablas Básicas<datalist><option>link=Tablas Básicas</option><option>//a[contains(text(),'Tablas Básicas')]</option><option>//div[@id='navbarSupportedContent']/ul[2]/li[2]/div/a[4]</option><option>//a[contains(@href, '/sivel2/tablasbasicas')]</option><option>//ul[2]/li[2]/div/a[4]</option></datalist></td><td>63,12</td>
+</tr>
+<tr><td>clickAt</td><td>link=Trivalentes<datalist><option>link=Trivalentes</option><option>//a[contains(text(),'Trivalentes')]</option><option>//div[@id='div_contenido']/article/ul/li[32]/a</option><option>//a[contains(@href, 'admin/trivalentes')]</option><option>//li[32]/a</option></datalist></td><td>18,3</td>
+</tr>
+<tr><td>clickAt</td><td>css=a.btn.btn-primary<datalist><option>css=a.btn.btn-primary</option><option>xpath=(//a[contains(text(),'Nuevo')])[2]</option><option>//div[@id='div_contenido']/form/div[2]/div[2]/a</option><option>//a[contains(@href, '/mujeresindigenas/sivel2/admin/trivalentes/nueva.%23%3CSip::Trivalente::ActiveRecord_Relation:0x00000e3f0c207a98%3E')]</option><option>//div[2]/a</option></datalist></td><td>18,25</td>
+</tr>
+<tr><td>clickAt</td><td>id=trivalente_nombre<datalist><option>id=trivalente_nombre</option><option>name=trivalente[nombre]</option><option>css=#trivalente_nombre</option><option>//input[@id='trivalente_nombre']</option><option>//form[@id='new_trivalente']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>101,22</td>
+</tr>
+<tr><td>type</td><td>id=trivalente_nombre<datalist><option>id=trivalente_nombre</option><option>name=trivalente[nombre]</option><option>css=#trivalente_nombre</option><option>//input[@id='trivalente_nombre']</option><option>//form[@id='new_trivalente']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>aaa</td>
+</tr>
+<tr><td>clickAt</td><td>id=trivalente_observaciones<datalist><option>id=trivalente_observaciones</option><option>name=trivalente[observaciones]</option><option>css=#trivalente_observaciones</option><option>//input[@id='trivalente_observaciones']</option><option>//form[@id='new_trivalente']/div[3]/input</option><option>//div[3]/input</option></datalist></td><td>72,10</td>
+</tr>
+<tr><td>type</td><td>id=trivalente_observaciones<datalist><option>id=trivalente_observaciones</option><option>name=trivalente[observaciones]</option><option>css=#trivalente_observaciones</option><option>//input[@id='trivalente_observaciones']</option><option>//form[@id='new_trivalente']/div[3]/input</option><option>//div[3]/input</option></datalist></td><td>bbb</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_trivalente']/div[6]/input</option><option>//div[6]/input</option></datalist></td><td>52,24</td>
+</tr>
+<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-sm.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>//div[@id='div_contenido']/form/table/tbody/tr/td[6]/a[2]</option><option>xpath=(//a[contains(@href, '/sivel2/admin/trivalentes/101')])[3]</option><option>//td[6]/a[2]</option></datalist></td><td>41,9</td>
+</tr>
+<tr><td>clickAt</td><td>css=h1<datalist><option>css=h1</option><option>//div[@id='div_contenido']/div[2]/h1</option><option>//h1</option></datalist></td><td>Trivalentes</td>
+</tr>
+<tr><td>assertText</td><td>css=div.alert.alert-success &gt; span<datalist><option>css=div.alert.alert-success &gt; span</option><option>//div[@id='div_contenido']/div/span</option><option>//div/span</option></datalist></td><td>Sip::Trivalente eliminado.</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">tabla-actividades-y-oficios</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Administrar<datalist><option>link=Administrar</option><option>css=ul.nav.navbar-nav.navbar-right &gt; li.dropdown &gt; a.dropdown-toggle</option><option>//a[contains(text(),'Administrar')]</option><option>xpath=(//a[contains(@href, '#')])[2]</option><option>//ul[2]/li[2]/a</option></datalist></td><td>43,25</td>
+</tr>
+<tr><td>clickAt</td><td>link=Tablas Básicas<datalist><option>link=Tablas Básicas</option><option>//a[contains(text(),'Tablas Básicas')]</option><option>//a[contains(@href, '/anzorc/sivel2/tablasbasicas')]</option><option>//li[2]/ul/li[4]/a</option></datalist></td><td>68,17</td>
+</tr>
+<tr><td>clickAt</td><td>link=Actividades y Oficios<datalist><option>link=Actividades y Oficios</option><option>css=article &gt; ul &gt; li &gt; a</option><option>//a[contains(text(),'Actividades y Oficios')]</option><option>//div[@id='div_contenido']/article/ul/li/a</option><option>//a[contains(@href, 'admin/actividadoficios')]</option><option>//article/ul/li/a</option></datalist></td><td>43,5</td>
+</tr>
+<tr><td>clickAt</td><td>link=Nueva<datalist><option>link=Nueva</option><option>css=a.btn.btn-primary</option><option>//a[contains(text(),'Nueva')]</option><option>//div[@id='div_contenido']/form/div/div/a</option><option>//a[contains(@href, '/mujeresindigenas/sivel2/admin/actividadoficios/nueva.%23%3CSivel2Gen::Actividadoficio::ActiveRecord_Relation:0x00000e3f1e00eec8%3E')]</option><option>//div/div/a</option></datalist></td><td>34,21</td>
+</tr>
+<tr><td>clickAt</td><td>id=actividadoficio_nombre<datalist><option>id=actividadoficio_nombre</option><option>name=actividadoficio[nombre]</option><option>css=#actividadoficio_nombre</option><option>//input[@id='actividadoficio_nombre']</option><option>//form[@id='new_actividadoficio']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>62,19</td>
+</tr>
+<tr><td>type</td><td>id=actividadoficio_nombre<datalist><option>id=actividadoficio_nombre</option><option>name=actividadoficio[nombre]</option><option>css=#actividadoficio_nombre</option><option>//input[@id='actividadoficio_nombre']</option><option>//form[@id='new_actividadoficio']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>aaa</td>
+</tr>
+<tr><td>clickAt</td><td>id=actividadoficio_observaciones<datalist><option>id=actividadoficio_observaciones</option><option>name=actividadoficio[observaciones]</option><option>css=#actividadoficio_observaciones</option><option>//textarea[@id='actividadoficio_observaciones']</option><option>//form[@id='new_actividadoficio']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>57,32</td>
+</tr>
+<tr><td>type</td><td>id=actividadoficio_observaciones<datalist><option>id=actividadoficio_observaciones</option><option>name=actividadoficio[observaciones]</option><option>css=#actividadoficio_observaciones</option><option>//textarea[@id='actividadoficio_observaciones']</option><option>//form[@id='new_actividadoficio']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>bbb</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_actividadoficio']/div[6]/input</option><option>//div[6]/input</option></datalist></td><td>33,29</td>
+</tr>
+<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>//div[@id='div_contenido']/div[5]/form/div/div[4]/a</option><option>xpath=(//a[contains(@href, '/mujeresindigenas/sivel2/admin/actividadoficios/103')])[2]</option><option>//div[4]/a</option></datalist></td><td>40,22</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//div[@id='div_contenido']/div[3]/h1</option><option>//h1</option></datalist></td><td>Actividades y Oficios</td>
+</tr>
+<tr><td>assertText</td><td>css=div.alert.alert-success.alert-dismissible.fade.show &gt; span<datalist><option>css=div.alert.alert-success.alert-dismissible.fade.show &gt; span</option><option>//div[@id='div_contenido']/div[2]/span</option><option>//div[2]/span</option></datalist></td><td>Sivel2Gen::Actividadoficio eliminada.</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">tabla-afectaciones-culturales-familiares-y-comunitarias</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Administrar<datalist><option>link=Administrar</option><option>css=ul.nav.navbar-nav.navbar-right &gt; li.dropdown &gt; a.dropdown-toggle</option><option>//a[contains(text(),'Administrar')]</option><option>xpath=(//a[contains(@href, '#')])[2]</option><option>//ul[2]/li[2]/a</option></datalist></td><td>43,25</td>
+</tr>
+<tr><td>clickAt</td><td>link=Tablas Básicas<datalist><option>link=Tablas Básicas</option><option>//a[contains(text(),'Tablas Básicas')]</option><option>//a[contains(@href, '/anzorc/sivel2/tablasbasicas')]</option><option>//li[2]/ul/li[4]/a</option></datalist></td><td>68,17</td>
+</tr>
+<tr><td>clickAt</td><td>link=Afectaciones culturales, familiares y comunitarias<datalist><option>link=Afectaciones culturales, familiares y comunitarias</option><option>//a[contains(text(),'Afectaciones culturales, familiares y comunitarias')]</option><option>//div[@id='div_contenido']/article/ul/li[2]/a</option><option>//a[contains(@href, 'admin/consecuenciasfamiliares')]</option><option>//article/ul/li[2]/a</option></datalist></td><td>63,13</td>
+</tr>
+<tr><td>clickAt</td><td>link=Nueva<datalist><option>link=Nueva</option><option>css=a.btn.btn-primary</option><option>//a[contains(text(),'Nueva')]</option><option>//div[@id='div_contenido']/form/div/div/a</option><option>//a[contains(@href, '/mujeresindigenas/sivel2/admin/consecuenciasfamiliares/nueva.%23%3CConsecuenciafamiliar::ActiveRecord_Relation:0x00000e3f4ffc6a38%3E')]</option><option>//div/div/a</option></datalist></td><td>28,24</td>
+</tr>
+<tr><td>clickAt</td><td>id=consecuenciafamiliar_nombre<datalist><option>id=consecuenciafamiliar_nombre</option><option>name=consecuenciafamiliar[nombre]</option><option>css=#consecuenciafamiliar_nombre</option><option>//input[@id='consecuenciafamiliar_nombre']</option><option>//form[@id='new_consecuenciafamiliar']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>71,19</td>
+</tr>
+<tr><td>type</td><td>id=consecuenciafamiliar_nombre<datalist><option>id=consecuenciafamiliar_nombre</option><option>name=consecuenciafamiliar[nombre]</option><option>css=#consecuenciafamiliar_nombre</option><option>//input[@id='consecuenciafamiliar_nombre']</option><option>//form[@id='new_consecuenciafamiliar']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>aaa</td>
+</tr>
+<tr><td>clickAt</td><td>id=consecuenciafamiliar_observaciones<datalist><option>id=consecuenciafamiliar_observaciones</option><option>name=consecuenciafamiliar[observaciones]</option><option>css=#consecuenciafamiliar_observaciones</option><option>//textarea[@id='consecuenciafamiliar_observaciones']</option><option>//form[@id='new_consecuenciafamiliar']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>86,12</td>
+</tr>
+<tr><td>type</td><td>id=consecuenciafamiliar_observaciones<datalist><option>id=consecuenciafamiliar_observaciones</option><option>name=consecuenciafamiliar[observaciones]</option><option>css=#consecuenciafamiliar_observaciones</option><option>//textarea[@id='consecuenciafamiliar_observaciones']</option><option>//form[@id='new_consecuenciafamiliar']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>bbb</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_consecuenciafamiliar']/div[6]/input</option><option>//div[6]/input</option></datalist></td><td>28,29</td>
+</tr>
+<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>//div[@id='div_contenido']/div[5]/form/div/div[4]/a</option><option>xpath=(//a[contains(@href, '/mujeresindigenas/sivel2/admin/consecuenciasfamiliares/101')])[2]</option><option>//div[4]/a</option></datalist></td><td>38,12</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//div[@id='div_contenido']/div[3]/h1</option><option>//h1</option></datalist></td><td>Afectaciones culturales, familiares y comunitarias</td>
+</tr>
+<tr><td>assertText</td><td>css=div.alert.alert-success.alert-dismissible.fade.show &gt; span<datalist><option>css=div.alert.alert-success.alert-dismissible.fade.show &gt; span</option><option>//div[@id='div_contenido']/div[2]/span</option><option>//div[2]/span</option></datalist></td><td>::Consecuenciafamiliar eliminada.</td>
+</tr>
+</tbody></table>
+</body>
+</html>
