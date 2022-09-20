@@ -62,7 +62,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sivel2_gen.git
-  revision: b24645189639dd3ee29fd77e80efe7f66c0ba0b3
+  revision: 71f374d6b6a3df4cb9573935b3f2ada992ab9fe0
   branch: main
   specs:
     sivel2_gen (2.1a2)
@@ -78,6 +78,13 @@ GIT
     sivel2_sjr (2.1a1)
       rails
       sivel2_gen
+
+GIT
+  remote: https://github.com/styd/apexcharts.rb.git
+  revision: d72c88c265828c810ef0094d84e61825020f4dbc
+  branch: master
+  specs:
+    apexcharts (0.2.0)
 
 GIT
   remote: https://github.com/vtamara/cocoon.git
@@ -399,6 +406,7 @@ PLATFORMS
   x86_64-openbsd
 
 DEPENDENCIES
+  apexcharts!
   babel-transpiler
   bcrypt
   bigdecimal

@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
 
+gem 'apexcharts',
+  git: 'https://github.com/styd/apexcharts.rb.git', branch: :master
+
 gem 'bcrypt'
 
 gem 'babel-transpiler'
