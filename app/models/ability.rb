@@ -179,6 +179,7 @@ class Ability < Sivel2Sjr::Ability
   end
 
   def initialize(usuario = nil)
+    initialize_sivel2_gen(usuario)
     can :nuevo, ::Evento
     can :contar, Sip::Ubicacion
     can :manage, Sip::GruposperController
@@ -188,6 +189,7 @@ class Ability < Sivel2Sjr::Ability
     if !usuario || usuario.fechadeshabilitacion
       return
     end
+    cannot :solocambiaretiquetas, Sivel2Gen::Caso
     can :contar, Sivel2Gen::Caso
     can :contar, Sip::Ubicacion
     can :buscar, Sivel2Gen::Caso
@@ -240,6 +242,7 @@ class Ability < Sivel2Sjr::Ability
         can :nuevo, Sivel2Gen::Caso
         can [:manage], Sivel2Gen::Caso, 
           casosjr: { oficina_id: usuario.oficina_id }
+        cannot :solocambiaretiquetas, Sivel2Gen::Caso
       when Ability::ROLADMIN, Ability::ROLDIR
         can :edit, :casosacin
         can :edit, :casosoik
@@ -259,6 +262,7 @@ class Ability < Sivel2Sjr::Ability
           c = Ability.tb_clase(t)
           can :manage, c
         end
+        cannot :solocambiaretiquetas, Sivel2Gen::Caso
       end
     end
 

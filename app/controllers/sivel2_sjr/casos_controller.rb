@@ -222,6 +222,19 @@ module Sivel2Sjr
           :tipo,
           :_destroy
         ],
+        :caso_solicitud_attributes => [
+          :id, 
+          :_destroy,
+          :solicitud_attributes => [
+            :id,
+            :usuario_id, 
+            :fecha,
+            :fecha_localizada,
+            :solicitud,
+            :estadosol_id,
+            :usuarionotificar_ids => []
+          ]
+        ],
         :evento_attributes => [
           :actividadesdejadas,
           :afectacionotra,
