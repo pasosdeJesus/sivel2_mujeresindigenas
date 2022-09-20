@@ -14,6 +14,7 @@ module Sivel2Sjr
       p.delete('ORGANIZACIÓN')
       p.delete('SECTOR SOCIAL')
       p.delete('VÍNCULO CON EL ESTADO')
+      p.delete('PROFESIÓN')
       #p.delete('')
       return p
     end
