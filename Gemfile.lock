@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/cor1440_gen.git
-  revision: 2d92a504fb2a3ebe653f83de6b57ad243a1511ef
+  revision: 82acb6d5cab4d48ff8983a08993105a2b6454aed
   branch: main
   specs:
     cor1440_gen (2.1a1)
@@ -24,7 +24,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: e7706ff27223c08cd79c3ad9c190deda4338bdc8
+  revision: 914077be2656548ab623c4cb718b7d1a51f514ff
   branch: main
   specs:
     heb412_gen (2.1a1)
@@ -35,7 +35,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/mr519_gen.git
-  revision: d90beea40aaa720fe214a70b8f06c6108251d5d9
+  revision: 0bd30b7f15f632451649e3b12bb7967dc291592f
   branch: main
   specs:
     mr519_gen (2.1a1)
@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 5fecad1f736630688397537a615938ef439fb914
+  revision: 0edcb5f90cc658042b5636950d5d21aa91919088
   branch: main
   specs:
     sip (2.1a2)
@@ -62,7 +62,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sivel2_gen.git
-  revision: 71f374d6b6a3df4cb9573935b3f2ada992ab9fe0
+  revision: f704159d4b5f9099710785dbc300efa567b9cac9
   branch: main
   specs:
     sivel2_gen (2.1a2)
@@ -72,7 +72,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sivel2_sjr.git
-  revision: 3b7f71c7ddc0695b7745f942cc0c28ca20835029
+  revision: eebc36a26682036f845fa5ec181de12b53f04f32
   branch: main
   specs:
     sivel2_sjr (2.1a1)
@@ -215,7 +215,6 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (1.10.2)
       devise (>= 4.8.0)
-    digest (3.1.0)
     docile (1.4.0)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
@@ -259,20 +258,14 @@ GEM
     mini_portile2 (2.8.0)
     minitest (5.16.3)
     msgpack (1.5.6)
-    net-imap (0.2.3)
-      digest
+    net-imap (0.3.1)
       net-protocol
-      strscan
-    net-pop (0.1.1)
-      digest
+    net-pop (0.1.2)
       net-protocol
-      timeout
     net-protocol (0.1.3)
       timeout
-    net-smtp (0.3.1)
-      digest
+    net-smtp (0.3.2)
       net-protocol
-      timeout
     nio4r (2.5.8)
     nokogiri (1.13.8)
       mini_portile2 (~> 2.8.0)
@@ -324,7 +317,7 @@ GEM
     raindrops (0.20.0)
     rake (13.0.6)
     redcarpet (3.5.1)
-    regexp_parser (2.5.0)
+    regexp_parser (2.6.0)
     reline (0.3.1)
       io-console (~> 0.5)
     responders (3.0.1)
@@ -345,7 +338,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    selenium-webdriver (4.4.0)
+    selenium-webdriver (4.5.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -367,13 +360,12 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.1.0)
       railties (>= 6.0.0)
-    strscan (3.0.4)
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.0)
-    turbo-rails (1.1.1)
+    turbo-rails (1.3.0)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
