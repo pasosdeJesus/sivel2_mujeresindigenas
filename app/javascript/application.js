@@ -11,7 +11,6 @@ window.Rails = Rails
 
 import 'gridstack'
 import './jquery'
-import '../../vendedor/recursos/javascripts/jquery-ui'
 
 import 'popper.js'              // Dialogos emergentes usados por bootstrap
 import * as bootstrap from 'bootstrap'              // Maquetacion y elementos de diseño
