@@ -7947,6 +7947,14 @@ ALTER TABLE ONLY public.sivel2_gen_contexto
 
 
 --
+-- Name: cor1440_gen_actividad cor1440_gen_actividad_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_actividad
+    ADD CONSTRAINT cor1440_gen_actividad_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: cor1440_gen_actividad_proyecto cor1440_gen_actividad_proyecto_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9043,14 +9051,6 @@ ALTER TABLE ONLY public.sip_vereda
 
 
 --
--- Name: cor1440_gen_actividad sivel2_gen_actividad_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.cor1440_gen_actividad
-    ADD CONSTRAINT sivel2_gen_actividad_pkey PRIMARY KEY (id);
-
-
---
 -- Name: cor1440_gen_actividad_rangoedadac sivel2_gen_actividad_rangoedadac_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9591,6 +9591,20 @@ ALTER TABLE ONLY public.sivel2_gen_vinculoestado
 --
 
 CREATE INDEX busca_conscaso ON public.sivel2_gen_conscaso USING gin (q);
+
+
+--
+-- Name: cor1440_gen_actividad_id_actividadpf_id_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX cor1440_gen_actividad_id_actividadpf_id_idx ON public.cor1440_gen_actividad_actividadpf USING btree (actividad_id, actividadpf_id);
+
+
+--
+-- Name: cor1440_gen_actividad_id_persona_id_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX cor1440_gen_actividad_id_persona_id_idx ON public.cor1440_gen_asistencia USING btree (actividad_id, persona_id);
 
 
 --
@@ -13344,6 +13358,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220822132754'),
 ('20221005165307'),
 ('20221102144613'),
-('20221102145906');
+('20221102145906'),
+('20221112113323');
 
 
