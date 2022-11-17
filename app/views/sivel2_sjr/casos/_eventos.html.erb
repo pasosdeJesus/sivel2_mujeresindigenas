@@ -4,12 +4,13 @@
 <div class="links">
   <%= link_to_add_association 'Añadir Evento y Seguimiento', f, 
     :evento, {
-    :class => 'btn btn-sm btn-primary', 
-    "data-ajax" => File.join(
-      Rails.configuration.relative_url_root, 
-      "eventos/nuevo"
-    ), 
-    partial: 'evento_campos',
-    "data-ajaxdata" => "caso_id" }
-  %>
+      class: 'btn btn-sm btn-primary',
+      style: 'margin-bottom: 1em',
+      "data-ajax" => File.join(
+        Rails.configuration.relative_url_root, 
+        "eventos/nuevo"
+      ), 
+      partial: 'evento_campos',
+      "data-ajaxdata" => "caso_id" 
+    } %>
 </div>
