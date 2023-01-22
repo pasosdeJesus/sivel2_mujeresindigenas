@@ -7,9 +7,9 @@ class Sivel2Sjr::Victimasjr < ActiveRecord::Base
     foreign_key: 'religion_id', validate: true, optional: true
   belongs_to :educacionpropia, class_name: '::Educacionpropia',
     foreign_key: 'educacionpropia_id', validate: true, optional: true
-  belongs_to :departamentores, class_name: 'Sip::Departamento',
+  belongs_to :departamentores, class_name: 'Msip::Departamento',
     foreign_key: 'departamentores_id', validate: true, optional: true
-  belongs_to :municipiores, class_name: 'Sip::Municipio',
+  belongs_to :municipiores, class_name: 'Msip::Municipio',
     foreign_key: 'municipiores_id', validate: true, optional: true
 
   has_many :idioma_victimasjr, class_name: "::IdiomaVictimasjr", 

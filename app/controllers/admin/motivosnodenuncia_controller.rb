@@ -1,5 +1,5 @@
 module Admin
-  class MotivosnodenunciaController < Sip::Admin::BasicasController
+  class MotivosnodenunciaController < Msip::Admin::BasicasController
     before_action :set_motivonodenuncia, 
       only: [:show, :edit, :update, :destroy]
     load_and_authorize_resource  class: ::Motivonodenuncia

@@ -68,15 +68,15 @@ class Sivel2Gen::Conscaso < ActiveRecord::Base
         "CREATE OR REPLACE VIEW sivel2_gen_conscaso1
         AS SELECT casosjr.id_caso as caso_id,
         ARRAY_TO_STRING(ARRAY(SELECT nombres || ' ' || apellidos
-          FROM public.sip_persona AS persona
+          FROM public.msip_persona AS persona
           WHERE persona.id=casosjr.contacto_id), ', ')
           AS contacto,
         ARRAY_TO_STRING(ARRAY(SELECT departamento.nombre ||  ' / '
         || municipio.nombre
         FROM public.evento
-          LEFT JOIN sip_departamento AS departamento
+          LEFT JOIN msip_departamento AS departamento
             ON (evento.departamento_id = departamento.id)
-          LEFT JOIN sip_municipio AS municipio
+          LEFT JOIN msip_municipio AS municipio
             ON (evento.municipio_id=municipio.id)
           WHERE evento.caso_id = caso.id), ', ')
         AS ubicaciones,
@@ -89,7 +89,7 @@ class Sivel2Gen::Conscaso < ActiveRecord::Base
         AS fechahecho
         FROM public.sivel2_sjr_casosjr AS casosjr
         JOIN sivel2_gen_caso AS caso ON casosjr.id_caso = caso.id
-        JOIN sip_oficina AS oficina ON  oficina.id = casosjr.oficina_id
+        JOIN msip_oficina AS oficina ON  oficina.id = casosjr.oficina_id
         JOIN usuario ON usuario.id = casosjr.asesor"
       )
       ActiveRecord::Base.connection.execute(

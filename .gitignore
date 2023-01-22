@@ -83,7 +83,7 @@ archivos/
 .byebug_history
 doc/img/*eps
 doc/imp/
-config/initializers/sip.rb
+config/initializers/msip.rb
 config/application.rb
 public/mujeresindigenas/sivel2/heb412
 
@@ -98,7 +98,7 @@ public/mujeresindigenas/sivel2/heb412
 yarn-debug.log*
 .yarn-integrity
 app/assets/builds
-app/javascript/controllers/sip
+app/javascript/controllers/msip
 app/javascript/controllers/mr519_gen
 app/javascript/controllers/heb412_gen
 app/javascript/controllers/cor1440_gen

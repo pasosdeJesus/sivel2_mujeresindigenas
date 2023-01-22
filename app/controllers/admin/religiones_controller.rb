@@ -1,5 +1,5 @@
 module Admin
-  class ReligionesController < Sip::Admin::BasicasController
+  class ReligionesController < Msip::Admin::BasicasController
     before_action :set_religion, 
       only: [:show, :edit, :update, :destroy]
     load_and_authorize_resource  class: ::Religion

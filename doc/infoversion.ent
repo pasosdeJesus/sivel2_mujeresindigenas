@@ -543,7 +543,7 @@
 <!ENTITY p-py-qscintilla "py-qscintilla-2.8p0">
 <!ENTITY p-py-qt4 "py-qt4-4.11.4v0">
 <!ENTITY p-py-setuptools "py-setuptools-3.4.4p2v0">
-<!ENTITY p-py-sip "py-sip-4.16.8">
+<!ENTITY p-py-msip "py-msip-4.16.8">
 <!ENTITY p-python "python-2.7.10">
 <!ENTITY p-python "python-3.4.3">
 <!ENTITY p-python-tkinter "python-tkinter-2.7.10">

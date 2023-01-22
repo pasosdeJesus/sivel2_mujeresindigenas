@@ -51,7 +51,7 @@
       </div>
       <div class="offset-sm-0 col-sm-4 col-md-4">
         <%= f.input :departamento_id,
-          collection: Sip::Departamento.habilitados.where(id_pais: 170),
+          collection: Msip::Departamento.habilitados.where(id_pais: 170),
           label_method: :nombre,
           value_method: :id,
           label: false,
@@ -60,7 +60,7 @@
       </div>
       <div class="col-md-3">
         <%= f.input :municipio_id,
-          collection: Sip::Municipio.habilitados,
+          collection: Msip::Municipio.habilitados,
           label_method: :nombre,
           value_method: :id,
           label: false,
@@ -86,7 +86,7 @@
       </div>
       <div class="offset-sm-0 col-sm-7">
         <%= f.input :oficina_id,
-          collection: Sip::Oficina.habilitados,
+          collection: Msip::Oficina.habilitados,
           label_method: :nombre,
           value_method: :id,
           label: false,
@@ -235,7 +235,7 @@
       </div>
       <div class="offset-sm-0 col-sm-2">
         <%= f.input :etiqueta1,
-          collection: Sip::Etiqueta.habilitados,
+          collection: Msip::Etiqueta.habilitados,
           label_method: :nombre,
           value_method: :id,
           label: false,
@@ -251,7 +251,7 @@
       </div>
       <div class="offset-sm-0 col-sm-2">
         <%= f.input :etiqueta2,
-          collection: Sip::Etiqueta.habilitados,
+          collection: Msip::Etiqueta.habilitados,
           label_method: :nombre,
           value_method: :id,
           label: false,

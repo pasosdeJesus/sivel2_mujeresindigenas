@@ -1,3 +1,3 @@
 class Estadocaso < ActiveRecord::Base
-	include Sip::Basica
+	include Msip::Basica
 end

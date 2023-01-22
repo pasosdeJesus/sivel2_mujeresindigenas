@@ -21,14 +21,14 @@
       ) 
     %>
     <%= f.association :departamento,
-      collection: Sip::Departamento.habilitados.where(id_pais: 170),
+      collection: Msip::Departamento.habilitados.where(id_pais: 170),
       include_blank: true,
       label_method: :nombre, 
       value_method: :id
     %>
     
     <%= f.association :municipio,
-      collection: ( Sip::Municipio.habilitados.where(
+      collection: ( Msip::Municipio.habilitados.where(
         id_departamento: f.object.departamento_id)),
       include_blank: true,
       label_method: :nombre, 

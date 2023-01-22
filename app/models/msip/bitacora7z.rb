@@ -1,4 +1,4 @@
-module Sip
+module Msip
   class Bitacora7z
     include ActiveModel::Model
 
@@ -12,7 +12,7 @@ module Sip
 
     validate :existe_7z
     def existe_7z
-      if Sip::TareasrakeHelper.which('7z').nil?
+      if Msip::TareasrakeHelper.which('7z').nil?
         errors[:base] << 'No se encontró el programa 7z en el servidor'
       end
     end

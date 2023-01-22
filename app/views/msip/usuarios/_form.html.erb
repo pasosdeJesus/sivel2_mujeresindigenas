@@ -3,7 +3,7 @@
   <%= render 'usuario', :f => f %>
 
   <%= f.association :oficina, 
-    collection: Sip::Oficina.habilitados.where("id<>'1'"),
+    collection: Msip::Oficina.habilitados.where("id<>'1'"),
     label_method: :nombre,
     value_method: :id,
     include_blank: true

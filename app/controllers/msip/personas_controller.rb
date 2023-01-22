@@ -1,9 +1,9 @@
 require 'sivel2_sjr/concerns/controllers/personas_controller'
 
-module Sip
+module Msip
   class PersonasController < Heb412Gen::ModelosController
 
-    load_and_authorize_resource class: Sip::Persona
+    load_and_authorize_resource class: Msip::Persona
 
     include Sivel2Sjr::Concerns::Controllers::PersonasController
 
@@ -50,7 +50,7 @@ module Sip
           #redirect_to sivel2_gen.edit_caso_path(@caso)
           begin
             @personaant.destroy
-            render partial: '/sip/personas/remplazar', layout: false
+            render partial: '/msip/personas/remplazar', layout: false
           rescue
           end
           return false # buscar obligar el redirect_to

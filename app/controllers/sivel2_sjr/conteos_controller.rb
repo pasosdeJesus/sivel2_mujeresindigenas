@@ -62,13 +62,13 @@ module Sivel2Sjr
 #            FROM
 #                    #{personas_cons1} JOIN sivel2_gen_caso AS caso ON
 #              (#{personas_cons1}.id_caso = caso.id) 
-#            LEFT JOIN sip_ubicacion AS ubicacion ON
+#            LEFT JOIN msip_ubicacion AS ubicacion ON
 #              (caso.ubicacion_id = ubicacion.id) 
-#            LEFT JOIN sip_departamento AS departamento ON 
+#            LEFT JOIN msip_departamento AS departamento ON 
 #              (ubicacion.id_departamento=departamento.id) 
-#            LEFT JOIN sip_municipio AS municipio ON 
+#            LEFT JOIN msip_municipio AS municipio ON 
 #              (ubicacion.id_municipio=municipio.id)
-#            LEFT JOIN sip_clase AS clase ON 
+#            LEFT JOIN msip_clase AS clase ON 
 #              (ubicacion.id_clase=clase.id)
 #            GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15", que3, tablas3, where3]
 #    end

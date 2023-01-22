@@ -1,5 +1,5 @@
 module Admin
-  class RelacionesprvicController < Sip::Admin::BasicasController
+  class RelacionesprvicController < Msip::Admin::BasicasController
     before_action :set_relacionprvic, 
       only: [:show, :edit, :update, :destroy]
     load_and_authorize_resource  class: ::Relacionprvic

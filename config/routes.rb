@@ -22,8 +22,8 @@ Rails.application.routes.draw do
     end
     resources :usuarios, path_names: { new: 'nuevo', edit: 'edita' } 
 
-    get "/bitacora7z" => 'sip/bitacora7z#new', as: 'bitacora7z'
-    post "/bitacora7z" => 'sip/bitacora7z#create'
+    get "/bitacora7z" => 'msip/bitacora7z#new', as: 'bitacora7z'
+    post "/bitacora7z" => 'msip/bitacora7z#create'
     namespace :admin do
       ab = ::Ability.new
       ab.tablasbasicas.each do |t|
@@ -35,7 +35,7 @@ Rails.application.routes.draw do
       end
     end
 
-    root 'sip/hogar#index'
+    root 'msip/hogar#index'
     get '/eventos/nuevo' => 'eventos#nuevo'  
 
   end
@@ -45,7 +45,7 @@ Rails.application.routes.draw do
   mount Cor1440Gen::Engine, at: rutarel, as: 'cor1440_gen'
   mount Mr519Gen::Engine, at: rutarel, as: 'mr519_gen'
   mount Heb412Gen::Engine, at: rutarel, as: 'heb412_gen'
-  mount Sip::Engine, at: rutarel, as: 'sip'
+  mount Msip::Engine, at: rutarel, as: 'msip'
 
 end
 

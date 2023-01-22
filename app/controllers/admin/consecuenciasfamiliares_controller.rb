@@ -1,5 +1,5 @@
 module Admin
-  class ConsecuenciasfamiliaresController < Sip::Admin::BasicasController
+  class ConsecuenciasfamiliaresController < Msip::Admin::BasicasController
     before_action :set_consecuenciafamiliar, 
       only: [:show, :edit, :update, :destroy]
     load_and_authorize_resource  class: ::Consecuenciafamiliar

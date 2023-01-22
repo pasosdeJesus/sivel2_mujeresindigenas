@@ -9,33 +9,33 @@ SET search_path = public, pg_catalog;
 
 
 --
--- Data for Name: sip_fuenteprensa; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: msip_fuenteprensa; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-UPDATE sip_fuenteprensa SET fechadeshabilitacion='2016-05-05' WHERE id<100;
+UPDATE msip_fuenteprensa SET fechadeshabilitacion='2016-05-05' WHERE id<100;
 
-INSERT INTO public.sip_fuenteprensa (id, nombre, tfuente, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (101, 'VÍCTIMA', NULL, '2016-05-05', NULL, '2016-05-05 00:00:00', NULL, NULL);
-INSERT INTO public.sip_fuenteprensa (id, nombre, tfuente, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (102, 'FAMILIAR', NULL, '2016-05-05', NULL, '2016-05-05 00:00:00', NULL, NULL);
-INSERT INTO public.sip_fuenteprensa (id, nombre, tfuente, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (103, 'OTRA PERSONA', NULL, '2016-05-05', NULL, '2016-05-05 00:00:00', NULL, NULL);
-INSERT INTO public.sip_fuenteprensa (id, nombre, tfuente, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (104, 'MEDIO DE COMUNICACIÓN', NULL, '2016-05-05', NULL, '2016-05-05 00:00:00', NULL, NULL);
-INSERT INTO public.sip_fuenteprensa (id, nombre, tfuente, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (105, 'REMISIÓN INSTITUCIONAL', NULL, '2016-05-05', NULL, '2016-05-05 00:00:00', NULL, NULL);
-INSERT INTO public.sip_fuenteprensa (id, nombre, tfuente, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (106, 'REMISIÓN DE OTRO CABILDO', NULL, '2016-05-05', NULL, '2016-05-05 00:00:00', NULL, NULL);
-INSERT INTO public.sip_fuenteprensa (id, nombre, tfuente, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (107, 'OTRO', NULL, '2016-05-05', NULL, '2016-05-05 00:00:00', NULL, NULL);
+INSERT INTO public.msip_fuenteprensa (id, nombre, tfuente, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (101, 'VÍCTIMA', NULL, '2016-05-05', NULL, '2016-05-05 00:00:00', NULL, NULL);
+INSERT INTO public.msip_fuenteprensa (id, nombre, tfuente, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (102, 'FAMILIAR', NULL, '2016-05-05', NULL, '2016-05-05 00:00:00', NULL, NULL);
+INSERT INTO public.msip_fuenteprensa (id, nombre, tfuente, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (103, 'OTRA PERSONA', NULL, '2016-05-05', NULL, '2016-05-05 00:00:00', NULL, NULL);
+INSERT INTO public.msip_fuenteprensa (id, nombre, tfuente, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (104, 'MEDIO DE COMUNICACIÓN', NULL, '2016-05-05', NULL, '2016-05-05 00:00:00', NULL, NULL);
+INSERT INTO public.msip_fuenteprensa (id, nombre, tfuente, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (105, 'REMISIÓN INSTITUCIONAL', NULL, '2016-05-05', NULL, '2016-05-05 00:00:00', NULL, NULL);
+INSERT INTO public.msip_fuenteprensa (id, nombre, tfuente, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (106, 'REMISIÓN DE OTRO CABILDO', NULL, '2016-05-05', NULL, '2016-05-05 00:00:00', NULL, NULL);
+INSERT INTO public.msip_fuenteprensa (id, nombre, tfuente, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (107, 'OTRO', NULL, '2016-05-05', NULL, '2016-05-05 00:00:00', NULL, NULL);
 
-SELECT pg_catalog.setval('public.sip_fuenteprensa_id_seq', 107, true);
+SELECT pg_catalog.setval('public.msip_fuenteprensa_id_seq', 107, true);
 
 
 --
--- Data for Name: sip_oficina; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: msip_oficina; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO public.sip_oficina (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (101, 'CODACOP', '2016-02-29', NULL, '2016-03-01 00:59:37.519474', '2016-03-01 00:59:37.519474', '');
-INSERT INTO public.sip_oficina (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (102, 'ONIC', '2016-02-29', NULL, '2016-03-01 00:59:51.472342', '2016-03-01 00:59:51.472342', '');
-INSERT INTO public.sip_oficina (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (103, 'OIK', '2016-02-29', NULL, '2016-03-01 01:00:11.831346', '2016-03-01 01:00:11.831346', '');
-INSERT INTO public.sip_oficina (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (104, 'ACIN', '2016-02-29', NULL, '2016-03-01 01:00:25.009325', '2016-03-01 01:00:25.009325', '');
+INSERT INTO public.msip_oficina (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (101, 'CODACOP', '2016-02-29', NULL, '2016-03-01 00:59:37.519474', '2016-03-01 00:59:37.519474', '');
+INSERT INTO public.msip_oficina (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (102, 'ONIC', '2016-02-29', NULL, '2016-03-01 00:59:51.472342', '2016-03-01 00:59:51.472342', '');
+INSERT INTO public.msip_oficina (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (103, 'OIK', '2016-02-29', NULL, '2016-03-01 01:00:11.831346', '2016-03-01 01:00:11.831346', '');
+INSERT INTO public.msip_oficina (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (104, 'ACIN', '2016-02-29', NULL, '2016-03-01 01:00:25.009325', '2016-03-01 01:00:25.009325', '');
 
 
-SELECT pg_catalog.setval('public.sip_oficina_id_seq', 104, true);
+SELECT pg_catalog.setval('public.msip_oficina_id_seq', 104, true);
 
 --
 -- Data for Name: sivel2_gen_tviolencia; Type: TABLE DATA; Schema: public; Owner: -

@@ -1,5 +1,5 @@
 module Admin
-  class ConsecuenciasindividualesController < Sip::Admin::BasicasController
+  class ConsecuenciasindividualesController < Msip::Admin::BasicasController
     before_action :set_consecuenciaindividual, 
       only: [:show, :edit, :update, :destroy]
     load_and_authorize_resource  class: ::Consecuenciaindividual

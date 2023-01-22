@@ -21,7 +21,7 @@ if (test "$CONFIG_HOSTS" = "") then {
 } fi;
 if (test "$RAILS_ENV" = "development") then {
 	if (test "$SININD" = "") then {
-		bundle exec rake sip:indices
+		bundle exec rake msip:indices
 	} fi;
 	CONFIG_HOSTS=$CONFIG_HOSTS bin/rails s -p $PUERTODES -b $IPDES
 } else {

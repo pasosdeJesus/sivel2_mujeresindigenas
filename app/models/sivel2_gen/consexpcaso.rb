@@ -30,7 +30,7 @@ class Sivel2Gen::Consexpcaso < ActiveRecord::Base
          " +
 
          # Pestaña fuentes, primera solamente
-         "ARRAY_TO_STRING(ARRAY(SELECT nombre FROM public.sip_fuenteprensa AS f
+         "ARRAY_TO_STRING(ARRAY(SELECT nombre FROM public.msip_fuenteprensa AS f
          JOIN public.sivel2_gen_caso_fuenteprensa AS cf ON 
            cf.fuenteprensa_id=f.id
          WHERE cf.id_caso=conscaso.caso_id 
@@ -131,11 +131,11 @@ class Sivel2Gen::Consexpcaso < ActiveRecord::Base
           WHEN evento.diasemana = '6' THEN 'SÁBADO'
           ELSE 'DOMINGO' END AS evento_diasemana,
         ARRAY_TO_STRING(ARRAY(SELECT nombre
-         FROM public.sip_departamento AS d
+         FROM public.msip_departamento AS d
          WHERE d.id=evento.departamento_id), '; ')
          AS evento_departamento,
         ARRAY_TO_STRING(ARRAY(SELECT nombre
-         FROM public.sip_municipio AS m
+         FROM public.msip_municipio AS m
          WHERE m.id=evento.municipio_id), '; ')
          AS evento_municipio,
         evento.resguardo AS evento_resguardo,
@@ -249,22 +249,22 @@ class Sivel2Gen::Consexpcaso < ActiveRecord::Base
         FROM public.sivel2_gen_conscaso AS conscaso
         JOIN public.sivel2_sjr_casosjr AS casosjr ON casosjr.id_caso=conscaso.caso_id
         JOIN public.sivel2_gen_caso AS caso ON casosjr.id_caso = caso.id 
-        JOIN public.sip_persona as contacto ON contacto.id=casosjr.contacto_id
+        JOIN public.msip_persona as contacto ON contacto.id=casosjr.contacto_id
         JOIN public.sivel2_gen_victima AS vcontacto ON 
             vcontacto.id_persona = contacto.id AND vcontacto.id_caso = caso.id
         JOIN public.sivel2_sjr_victimasjr AS scontacto ON 
             vcontacto.id = scontacto.id_victima
-        LEFT JOIN public.sip_tdocumento AS tdocumento ON
+        LEFT JOIN public.msip_tdocumento AS tdocumento ON
             contacto.tdocumento_id=tdocumento.id
         LEFT JOIN public.sivel2_gen_rangoedad AS rangoedad ON
           vcontacto.id_rangoedad = rangoedad.id
-        LEFT JOIN public.sip_departamento AS vdepartamento ON
+        LEFT JOIN public.msip_departamento AS vdepartamento ON
           contacto.id_departamento = vdepartamento.id
-        LEFT JOIN public.sip_municipio AS vmunicipio ON
+        LEFT JOIN public.msip_municipio AS vmunicipio ON
           contacto.id_municipio = vmunicipio.id
-        LEFT JOIN public.sip_departamento AS sdepartamento ON
+        LEFT JOIN public.msip_departamento AS sdepartamento ON
           scontacto.departamentores_id = sdepartamento.id
-        LEFT JOIN public.sip_municipio AS smunicipio ON
+        LEFT JOIN public.msip_municipio AS smunicipio ON
           scontacto.municipiores_id = smunicipio.id
         LEFT JOIN public.sivel2_gen_etnia AS etnia ON
             vcontacto.id_etnia=etnia.id

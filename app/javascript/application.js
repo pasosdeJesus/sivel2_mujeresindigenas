@@ -56,7 +56,7 @@ promesaRecursosSprocketsYDocumento.then((mensaje) => {
   var root = window;
 
   root.campo_fecha_ref_edad = 'caso_casosjr_attributes_fecharec'
-  sip_prepara_eventos_comunes(root);
+  msip_prepara_eventos_comunes(root);
   heb412_gen_prepara_eventos_comunes(root);
   sivel2_gen_prepara_eventos_comunes(root,'antecedentes/causas');
   sivel2_sjr_prepara_eventos_comunes(root);
@@ -111,7 +111,7 @@ document.addEventListener('turbo:load', (e) => {
   
   console.log('Escuchador turbo:load')
 
-  sip_ejecutarAlCargarPagina(window)
+  msip_ejecutarAlCargarPagina(window)
 })
 
 import "./controllers"

@@ -17,7 +17,7 @@
         t.apellidos: 'N' } %>
 
     <%= fpersona.input :tdocumento_id,
-      collection: Sip::Tdocumento.habilitados,
+      collection: Msip::Tdocumento.habilitados,
       label_method: :nombre,
       value_method: :id %>
   </div>
@@ -60,13 +60,13 @@
 %>
 
 <%= fpersona.association :departamento,
-  collection: (Sip::Departamento.habilitados.where(id_pais: 170)),
+  collection: (Msip::Departamento.habilitados.where(id_pais: 170)),
   label: "Departamento de Nacimiento", label_method: :nombre,
   value_method: :id 
 %>
 <%= fpersona.association :municipio,
   collection: 
-  ( Sip::Municipio.habilitados.where(
+  ( Msip::Municipio.habilitados.where(
     id_departamento: fpersona.object.id_departamento)
   ),
   label: "Municipio de Nacimiento",
@@ -82,14 +82,14 @@
 <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
   <div class="privado alert-info">
     <%= fvictimasjr.association :departamentores,
-      collection: Sip::Departamento.habilitados.where(id_pais: 170),
+      collection: Msip::Departamento.habilitados.where(id_pais: 170),
       include_blank: true,
       label_method: :nombre, 
       value_method: :id %>
 
     <%= fvictimasjr.association :municipiores,
       collection: 
-      ( Sip::Municipio.habilitados.where(
+      ( Msip::Municipio.habilitados.where(
         id_departamento: fvictimasjr.object.departamentores_id
       )),
       include_blank: true,

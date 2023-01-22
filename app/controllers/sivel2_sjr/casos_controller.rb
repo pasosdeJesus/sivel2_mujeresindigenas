@@ -306,7 +306,7 @@ module Sivel2Sjr
           :id,
           :id_caso,
           :_destroy,
-          :sip_anexo_attributes => [
+          :msip_anexo_attributes => [
             :adjunto,
             :descripcion,
             :id,

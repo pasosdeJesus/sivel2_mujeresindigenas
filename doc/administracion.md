@@ -163,5 +163,5 @@ autorizados.
 ### Configuraciones {#configuraciones}
 
 El directorio de respaldo y la ruta donde se guardan anexos se configuran en 
-```config/initializers/sip.rb```
+```config/initializers/msip.rb```
 

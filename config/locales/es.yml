@@ -13,7 +13,7 @@ es:
       "estadocaso":
         one: "Estado del caso"
         other: "Estados de caso"
-      "sip/oficina":
+      "msip/oficina":
         one: "Organización que diligencia"
         other: "Organizaciones que diligencian"
       "sivel2_gen/categoria":
@@ -98,18 +98,18 @@ es:
       "religion":
         Religion: Religión
         Religiones: Religiones
-      "sip/bitacora7z":
+      "msip/bitacora7z":
         clave7z: Clave de cifrado
         clave7z_confirmation: Confirmación de clave de cifrado 
-      "sip/fuenteprensa":
+      "msip/fuenteprensa":
         Fuenteprensa: Fuente
         Fuentesprensa: Fuentes
-      "sip/oficina":
+      "msip/oficina":
         oficina: "Organización que diligencia"
         oficinas: "Organizaciones que diligencian"
         Oficina: "Organización que diligencia"
         Oficinas: "Organizaciones que diligencian"
-      "sip/persona":
+      "msip/persona":
         tdocumento_id: Tipo de documento de identidad
       "sivel2_gen/caso":
         asesor: Sistematizado por

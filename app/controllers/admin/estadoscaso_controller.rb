@@ -1,5 +1,5 @@
 module Admin
-  class EstadoscasoController < Sip::Admin::BasicasController
+  class EstadoscasoController < Msip::Admin::BasicasController
     before_action :set_estadocaso, 
       only: [:show, :edit, :update, :destroy]
     load_and_authorize_resource  class: ::Estadocaso

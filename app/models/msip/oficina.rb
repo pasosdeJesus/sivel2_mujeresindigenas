@@ -1,8 +1,8 @@
-require 'sip/concerns/models/oficina'
+require 'msip/concerns/models/oficina'
 
-module Sip
+module Msip
   class Oficina < ActiveRecord::Base
-    include Sip::Concerns::Models::Oficina
+    include Msip::Concerns::Models::Oficina
 
     has_many :plantillahcm, 
       class_name: "Heb412Gen::Plantillahcm",  

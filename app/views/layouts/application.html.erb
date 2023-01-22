@@ -1,5 +1,5 @@
 <% content_for :titulo do %>
-    <%= Sip.titulo %>
+    <%= Msip.titulo %>
 <% end %>
 
 
@@ -53,8 +53,8 @@
         <% end %>
         <%= opcion_menu "Árbol de presuntos responsables",
           sivel2_gen.arbol_presponsables_path, desplegable: true %>
-        <% if can? :manage, Sip::Respaldo7z %>
-          <%= opcion_menu "Respaldo cifrado", sip.respaldo7z_path,
+        <% if can? :manage, Msip::Respaldo7z %>
+          <%= opcion_menu "Respaldo cifrado", msip.respaldo7z_path,
             desplegable: true %>
           <%= opcion_menu "Bitácora cifrada", main_app.bitacora7z_path,
             desplegable: true %>
@@ -79,4 +79,4 @@
     </span></p>
 <% end %>
 
-<%= render template: "layouts/sip/application" %>
+<%= render template: "layouts/msip/application" %>

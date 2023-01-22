@@ -1,5 +1,5 @@
 module Admin
-  class ConsecuenciasfisicasController < Sip::Admin::BasicasController
+  class ConsecuenciasfisicasController < Msip::Admin::BasicasController
     before_action :set_consecuenciafisica, 
       only: [:show, :edit, :update, :destroy]
     load_and_authorize_resource  class: ::Consecuenciafisica

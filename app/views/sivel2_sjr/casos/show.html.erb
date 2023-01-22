@@ -128,7 +128,7 @@
             <dd><%= victima.persona.apellidos if victima.persona.apellidos %></dd>
 
             <dt><strong>
-              <%= Sip::Persona.human_attribute_name(:tdocumento_id) %>:
+              <%= Msip::Persona.human_attribute_name(:tdocumento_id) %>:
             </strong></dt>
             <dd><%= victima.persona.tdocumento_id if victima.persona.tdocumento_id %></dd>
 
@@ -149,12 +149,12 @@
         <dd><%= ApplicationHelper::s_guiones(victima.rangoedad.nombre) %></dd>
 
         <dt><strong>
-          <%= Sip::Persona.human_attribute_name(:departamento) %>:
+          <%= Msip::Persona.human_attribute_name(:departamento) %>:
         </strong></dt>
         <dd><%= victima.persona.departamento.nombre if victima.persona.departamento %> </dd>
 
         <dt><strong>
-          <%= Sip::Persona.human_attribute_name(:municipio) %>:
+          <%= Msip::Persona.human_attribute_name(:municipio) %>:
         </strong></dt>
         <dd><%= victima.persona.municipio.nombre if victima.persona.municipio %> </dd>
 
@@ -278,7 +278,7 @@
         <% end %>
 
         <dt><strong>
-          <%= Sip::Persona.human_attribute_name(:sexo) %>:
+          <%= Msip::Persona.human_attribute_name(:sexo) %>:
         </strong></dt>
         <dd> <%= ApplicationHelper.etiqueta(
           ApplicationHelper::SEXO, victima.persona.sexo, true ) if 

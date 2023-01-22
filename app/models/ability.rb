@@ -28,11 +28,11 @@ class Ability < Sivel2Sjr::Ability
   ]
 
   def tablasbasicas 
-    Sip::Ability::BASICAS_PROPIAS + 
+    Msip::Ability::BASICAS_PROPIAS + 
       Sivel2Gen::Ability::BASICAS_PROPIAS + 
       Sivel2Sjr::Ability::BASICAS_PROPIAS + 
       BASICAS_PROPIAS  - [
-        ['Sip', 'grupo'],
+        ['Msip', 'grupo'],
         ['Sivel2Gen', 'filiacion'],
         ['Sivel2Gen', 'iglesia'],
         ['Sivel2Gen', 'intervalo'],
@@ -181,23 +181,23 @@ class Ability < Sivel2Sjr::Ability
   def initialize(usuario = nil)
     initialize_sivel2_gen(usuario)
     can :nuevo, ::Evento
-    can :contar, Sip::Ubicacion
-    can :manage, Sip::GruposperController
+    can :contar, Msip::Ubicacion
+    can :manage, Msip::GruposperController
 
 
-    can :read, [Sip::Pais, Sip::Departamento, Sip::Municipio, Sip::Clase]
+    can :read, [Msip::Pais, Msip::Departamento, Msip::Municipio, Msip::Clase]
     if !usuario || usuario.fechadeshabilitacion
       return
     end
     cannot :solocambiaretiquetas, Sivel2Gen::Caso
     can :contar, Sivel2Gen::Caso
-    can :contar, Sip::Ubicacion
+    can :contar, Msip::Ubicacion
     can :buscar, Sivel2Gen::Caso
     can :lista, Sivel2Gen::Caso
-    can :descarga_anexo, Sip::Anexo
+    can :descarga_anexo, Msip::Anexo
     can :nuevo, Sivel2Sjr::Desplazamiento
     can :nuevo, Sivel2Sjr::Respuesta
-    can :nuevo, Sip::Ubicacion
+    can :nuevo, Msip::Ubicacion
     can :nuevo, Sivel2Gen::Presponsable
     can :nuevo, Sivel2Gen::Victima
     if !usuario.nil? && !usuario.rol.nil? then
@@ -217,7 +217,7 @@ class Ability < Sivel2Sjr::Ability
         can :read, Cor1440Gen::Informe
         can :read, Heb412Gen::Doc
         can :read, Heb412Gen::Plantillahcm
-        can :manage, Sip::Persona
+        can :manage, Msip::Persona
         can :manage, Sivel2Gen::Acto
         can :read, Sivel2Gen::Caso
         can :new, Sivel2Gen::Caso
@@ -235,7 +235,7 @@ class Ability < Sivel2Sjr::Ability
         can :manage, Cor1440Gen::Informe
         can :read, Heb412Gen::Doc
         can :read, Heb412Gen::Plantillahcm
-        can :manage, Sip::Persona
+        can :manage, Msip::Persona
         can :manage, Sivel2Gen::Acto
         can :read, Sivel2Gen::Caso
         can :new, Sivel2Gen::Caso
@@ -252,9 +252,9 @@ class Ability < Sivel2Sjr::Ability
         can :manage, Cor1440Gen::Informe
         can :manage, Heb412Gen::Doc
         can :manage, Heb412Gen::Plantillahcm
-        can :manage, Sip::Persona
-        can :manage, Sip::Respaldo7z
-        can :manage, Sip::Bitacora7z
+        can :manage, Msip::Persona
+        can :manage, Msip::Respaldo7z
+        can :manage, Msip::Bitacora7z
         can :manage, Sivel2Gen::Acto
         can :manage, Sivel2Gen::Caso
         can :manage, :tablasbasicas

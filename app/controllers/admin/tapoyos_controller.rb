@@ -1,5 +1,5 @@
 module Admin
-  class TapoyosController < Sip::Admin::BasicasController
+  class TapoyosController < Msip::Admin::BasicasController
     before_action :set_tapoyo, 
       only: [:show, :edit, :update, :destroy]
     load_and_authorize_resource  class: ::Tapoyo

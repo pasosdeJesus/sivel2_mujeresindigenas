@@ -1,5 +1,5 @@
 module Admin
-  class AcompanamientosController < Sip::Admin::BasicasController
+  class AcompanamientosController < Msip::Admin::BasicasController
     before_action :set_acompanamiento, 
       only: [:show, :edit, :update, :destroy]
     load_and_authorize_resource  class: ::Acompanamiento

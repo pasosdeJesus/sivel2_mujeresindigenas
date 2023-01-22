@@ -1,6 +1,6 @@
-module Sip
+module Msip
   class Bitacora7zController < ApplicationController
-    load_and_authorize_resource class: Sip::Bitacora7z
+    load_and_authorize_resource class: Msip::Bitacora7z
 
 
     def new 
@@ -16,7 +16,7 @@ module Sip
         if @bitacora7z.valid?
           archcopia = File.join(Rails.root, 
                                     'log', 'unicorn.stderr.log')
-          #desturl = File.join( Sip.dir_bitacora7z, "#{archcopia}.7z")
+          #desturl = File.join( Msip.dir_bitacora7z, "#{archcopia}.7z")
           #dest = File.join( Rails.root, 'public', desturl)
           # Quitamos el .sql final de archcopia
           dest = "#{archcopia[0..-5]}.7z"

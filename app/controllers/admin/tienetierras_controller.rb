@@ -1,5 +1,5 @@
 module Admin
-  class TienetierrasController < Sip::Admin::BasicasController
+  class TienetierrasController < Msip::Admin::BasicasController
     before_action :set_tienetierra, 
       only: [:show, :edit, :update, :destroy]
     load_and_authorize_resource  class: ::Tienetierra

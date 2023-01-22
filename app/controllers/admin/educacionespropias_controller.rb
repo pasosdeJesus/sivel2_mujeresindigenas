@@ -1,5 +1,5 @@
 module Admin
-  class EducacionespropiasController < Sip::Admin::BasicasController
+  class EducacionespropiasController < Msip::Admin::BasicasController
     before_action :set_educacionpropia, 
       only: [:show, :edit, :update, :destroy]
     load_and_authorize_resource  class: ::Educacionpropia
