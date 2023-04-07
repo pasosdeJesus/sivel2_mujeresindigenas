@@ -50,26 +50,26 @@ module Sivel2Sjr
 #      end
 #
 #      return ["CREATE VIEW #{personas_cons2} AS SELECT #{personas_cons1}.*,
-#            ubicacion.id_departamento, 
-#            departamento.id_deplocal AS departamento_divipola,
+#            ubicacion.departamento_id, 
+#            departamento.deplocal_cod AS departamento_divipola,
 #            departamento.nombre AS departamento_nombre, 
-#            ubicacion.id_municipio, 
-#            municipio.id_munlocal AS municipio_divipola,
+#            ubicacion.municipio_id, 
+#            municipio.munlocal_cod AS municipio_divipola,
 #            municipio.nombre AS municipio_nombre, 
-#            ubicacion.id_clase, 
-#            clase.id_clalocal AS clase_divipola,
+#            ubicacion.clase_id, 
+#            clase.clalocal_cod AS clase_divipola,
 #            clase.nombre AS clase_nombre
 #            FROM
 #                    #{personas_cons1} JOIN sivel2_gen_caso AS caso ON
-#              (#{personas_cons1}.id_caso = caso.id) 
+#              (#{personas_cons1}.caso_id = caso.id) 
 #            LEFT JOIN msip_ubicacion AS ubicacion ON
 #              (caso.ubicacion_id = ubicacion.id) 
 #            LEFT JOIN msip_departamento AS departamento ON 
-#              (ubicacion.id_departamento=departamento.id) 
+#              (ubicacion.departamento_id=departamento.id) 
 #            LEFT JOIN msip_municipio AS municipio ON 
-#              (ubicacion.id_municipio=municipio.id)
+#              (ubicacion.municipio_id=municipio.id)
 #            LEFT JOIN msip_clase AS clase ON 
-#              (ubicacion.id_clase=clase.id)
+#              (ubicacion.clase_id=clase.id)
 #            GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15", que3, tablas3, where3]
 #    end
 

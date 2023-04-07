@@ -66,7 +66,7 @@ class Sivel2Gen::Conscaso < ActiveRecord::Base
     if !ActiveRecord::Base.connection.data_source_exists? 'sivel2_gen_conscaso'
       ActiveRecord::Base.connection.execute(
         "CREATE OR REPLACE VIEW sivel2_gen_conscaso1
-        AS SELECT casosjr.id_caso as caso_id,
+        AS SELECT casosjr.caso_id as caso_id,
         ARRAY_TO_STRING(ARRAY(SELECT nombres || ' ' || apellidos
           FROM public.msip_persona AS persona
           WHERE persona.id=casosjr.contacto_id), ', ')
@@ -88,7 +88,7 @@ class Sivel2Gen::Conscaso < ActiveRecord::Base
         FROM public.evento WHERE evento.caso_id=caso.id ORDER BY id LIMIT 1), ',')
         AS fechahecho
         FROM public.sivel2_sjr_casosjr AS casosjr
-        JOIN sivel2_gen_caso AS caso ON casosjr.id_caso = caso.id
+        JOIN sivel2_gen_caso AS caso ON casosjr.caso_id = caso.id
         JOIN msip_oficina AS oficina ON  oficina.id = casosjr.oficina_id
         JOIN usuario ON usuario.id = casosjr.asesor"
       )

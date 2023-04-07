@@ -58,7 +58,7 @@
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=municipio_id_departamento</td>
+	<td>id=municipio_departamento_id</td>
 	<td>label=AMAZONAS / COLOMBIA</td>
 </tr>
 <tr>

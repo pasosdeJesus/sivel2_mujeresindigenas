@@ -48,7 +48,7 @@
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=caso_victima_attributes_0_victimasjr_attributes_id_estadocivil</td>
+	<td>id=caso_victima_attributes_0_victimasjr_attributes_estadocivil_id</td>
 	<td>label=SEPARADO/A</td>
 </tr>
 <tr>

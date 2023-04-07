@@ -63,7 +63,7 @@
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=supracategoria_id_tviolencia</td>
+	<td>id=supracategoria_tviolencia_id</td>
 	<td>label=DERECHO INTERNACIONAL REFUGIO</td>
 </tr>
 <tr>

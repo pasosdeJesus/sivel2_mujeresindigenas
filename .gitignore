@@ -108,3 +108,5 @@ cobertura-sistema/
 cobertura-unitarias/
 config/credentials.yml.enc
 public/mujeresindigenas/sivel2/
+public/mujeresindigenas/sivel2assets/
+public/mujeresindigenas/sivel2cobertura/

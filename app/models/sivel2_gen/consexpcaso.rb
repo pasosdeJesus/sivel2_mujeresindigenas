@@ -33,17 +33,17 @@ class Sivel2Gen::Consexpcaso < ActiveRecord::Base
          "ARRAY_TO_STRING(ARRAY(SELECT nombre FROM public.msip_fuenteprensa AS f
          JOIN public.sivel2_gen_caso_fuenteprensa AS cf ON 
            cf.fuenteprensa_id=f.id
-         WHERE cf.id_caso=conscaso.caso_id 
+         WHERE cf.caso_id=conscaso.caso_id 
          ORDER BY fecha LIMIT 1), '; ')
          AS fuente1_nombre,
          ARRAY_TO_STRING(ARRAY(SELECT fecha 
          FROM public.sivel2_gen_caso_fuenteprensa AS cf
-         WHERE cf.id_caso=conscaso.caso_id
+         WHERE cf.caso_id=conscaso.caso_id
          ORDER BY fecha LIMIT 1), '; ')
          AS fuente1_fecha,
          ARRAY_TO_STRING(ARRAY(SELECT ubicacion
          FROM public.sivel2_gen_caso_fuenteprensa AS cf
-         WHERE cf.id_caso=conscaso.caso_id
+         WHERE cf.caso_id=conscaso.caso_id
          ORDER BY fecha LIMIT 1), '; ')
          AS fuente1_detalle,
          " +
@@ -81,7 +81,7 @@ class Sivel2Gen::Consexpcaso < ActiveRecord::Base
         ARRAY_TO_STRING(ARRAY(SELECT nombre FROM public.sivel2_sjr_idioma AS idioma
          JOIN public.idioma_victimasjr ON 
            idioma_victimasjr.sivel2_sjr_idioma_id=idioma.id WHERE 
-         idioma_victimasjr.sivel2_sjr_victimasjr_id=scontacto.id_victima), '; ')
+         idioma_victimasjr.sivel2_sjr_victimasjr_id=scontacto.victima_id), '; ')
          AS victima_idiomas_priv_acin,
         COALESCE(etnia.nombre, '') AS victima_etnia,
         COALESCE(estadocivil.nombre, '') AS victima_estadocivil,
@@ -97,7 +97,7 @@ class Sivel2Gen::Consexpcaso < ActiveRecord::Base
          FROM public.tienetierra AS t
          JOIN public.tienetierra_victimasjr AS tv ON
           tv.tienetierra_id=t.id
-         WHERE tv.sivel2_sjr_victimasjr_id=scontacto.id_victima
+         WHERE tv.sivel2_sjr_victimasjr_id=scontacto.victima_id
          ORDER BY nombre), '; ') AS victima_tienetierra_priv_acin,
         scontacto.areatierra AS victima_areatierra_priv_acin,
         CASE WHEN contacto.sexo = 'F' THEN 'MUJER'
@@ -247,31 +247,31 @@ class Sivel2Gen::Consexpcaso < ActiveRecord::Base
         conscaso.ubicaciones AS ubicaciones
         
         FROM public.sivel2_gen_conscaso AS conscaso
-        JOIN public.sivel2_sjr_casosjr AS casosjr ON casosjr.id_caso=conscaso.caso_id
-        JOIN public.sivel2_gen_caso AS caso ON casosjr.id_caso = caso.id 
+        JOIN public.sivel2_sjr_casosjr AS casosjr ON casosjr.caso_id=conscaso.caso_id
+        JOIN public.sivel2_gen_caso AS caso ON casosjr.caso_id = caso.id 
         JOIN public.msip_persona as contacto ON contacto.id=casosjr.contacto_id
         JOIN public.sivel2_gen_victima AS vcontacto ON 
-            vcontacto.id_persona = contacto.id AND vcontacto.id_caso = caso.id
+            vcontacto.persona_id = contacto.id AND vcontacto.caso_id = caso.id
         JOIN public.sivel2_sjr_victimasjr AS scontacto ON 
-            vcontacto.id = scontacto.id_victima
+            vcontacto.id = scontacto.victima_id
         LEFT JOIN public.msip_tdocumento AS tdocumento ON
             contacto.tdocumento_id=tdocumento.id
         LEFT JOIN public.sivel2_gen_rangoedad AS rangoedad ON
-          vcontacto.id_rangoedad = rangoedad.id
+          vcontacto.rangoedad_id = rangoedad.id
         LEFT JOIN public.msip_departamento AS vdepartamento ON
-          contacto.id_departamento = vdepartamento.id
+          contacto.departamento_id = vdepartamento.id
         LEFT JOIN public.msip_municipio AS vmunicipio ON
-          contacto.id_municipio = vmunicipio.id
+          contacto.municipio_id = vmunicipio.id
         LEFT JOIN public.msip_departamento AS sdepartamento ON
           scontacto.departamentores_id = sdepartamento.id
         LEFT JOIN public.msip_municipio AS smunicipio ON
           scontacto.municipiores_id = smunicipio.id
         LEFT JOIN public.sivel2_gen_etnia AS etnia ON
-            vcontacto.id_etnia=etnia.id
+            vcontacto.etnia_id=etnia.id
         LEFT JOIN public.sivel2_gen_estadocivil AS estadocivil ON
-            scontacto.id_estadocivil=estadocivil.id
+            scontacto.estadocivil_id=estadocivil.id
         LEFT JOIN public.sivel2_gen_escolaridad AS escolaridad ON
-            scontacto.id_escolaridad=escolaridad.id
+            scontacto.escolaridad_id=escolaridad.id
         LEFT JOIN public.educacionpropia ON
             scontacto.educacionpropia_id = educacionpropia.id
         LEFT JOIN public.religion ON

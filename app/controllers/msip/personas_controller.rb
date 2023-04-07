@@ -16,16 +16,16 @@ module Msip
     def remplazar_antes_salvar_v
       ce = Sivel2Sjr::Casosjr.where(contacto: @persona.id)
       if ce.count > 0
-        render json: "Víctima ya está en el caso #{ce.take.id_caso}.",
+        render json: "Víctima ya está en el caso #{ce.take.caso_id}.",
           status: :unprocessable_entity
         return false
       end
       ve = Sivel2Sjr::Victimasjr.joins('JOIN sivel2_gen_victima ' +
-                                       ' ON sivel2_gen_victima.id = sivel2_sjr_victimasjr.id_victima').
-                                       where('sivel2_gen_victima.id_persona' => @persona.id).
+                                       ' ON sivel2_gen_victima.id = sivel2_sjr_victimasjr.victima_id').
+                                       where('sivel2_gen_victima.persona_id' => @persona.id).
                                        where(fechadesagregacion: nil)
       if ve.count > 0
-        render json: "Víctima ya está en el caso #{ve.take.victima.id_caso}", 
+        render json: "Víctima ya está en el caso #{ve.take.victima.caso_id}", 
           status: :unprocessable_entity
         return false
       end
@@ -42,8 +42,8 @@ module Msip
           ppb=@caso.casosjr.contacto_id
           @caso.casosjr.contacto_id = nil
           @caso.casosjr.save!(validate: false)
-          vic = @caso.victima.where(id_persona: ppb).take
-          vic.id_persona=@persona.id
+          vic = @caso.victima.where(persona_id: ppb).take
+          vic.persona_id=@persona.id
           vic.save(validate: false)
           @caso.casosjr.contacto_id = @persona.id
           @caso.casosjr.save!(validate: false)

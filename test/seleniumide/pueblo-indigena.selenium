@@ -43,7 +43,7 @@
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=caso_victima_attributes_0_id_etnia</td>
+	<td>id=caso_victima_attributes_0_etnia_id</td>
 	<td>label=PIJAO</td>
 </tr>
 <tr>

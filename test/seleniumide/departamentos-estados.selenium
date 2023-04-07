@@ -58,7 +58,7 @@
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=departamento_id_pais</td>
+	<td>id=departamento_pais_id</td>
 	<td>label=COLOMBIA</td>
 </tr>
 <tr>

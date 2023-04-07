@@ -58,12 +58,12 @@
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=clase_id_municipio</td>
+	<td>id=clase_municipio_id</td>
 	<td>label=ABEJORRAL / ANTIOQUIA / COLOMBIA</td>
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=clase_id_tclase</td>
+	<td>id=clase_tclase_id</td>
 	<td>label=CORREGIMIENTO</td>
 </tr>
 <tr>

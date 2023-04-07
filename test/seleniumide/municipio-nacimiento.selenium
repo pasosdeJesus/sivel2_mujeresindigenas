@@ -53,7 +53,7 @@
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=caso_victima_attributes_0_persona_attributes_id_departamento</td>
+	<td>id=caso_victima_attributes_0_persona_attributes_departamento_id</td>
 	<td>label=CÓRDOBA</td>
 </tr>
 <tr>
@@ -83,12 +83,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=caso_victima_attributes_0_persona_attributes_id_municipio</td>
+	<td>id=caso_victima_attributes_0_persona_attributes_municipio_id</td>
 	<td>label=MOÑITOS</td>
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=caso_victima_attributes_0_persona_attributes_id_municipio</td>
+	<td>id=caso_victima_attributes_0_persona_attributes_municipio_id</td>
 	<td>label=MOÑITOS</td>
 </tr>
 <tr>

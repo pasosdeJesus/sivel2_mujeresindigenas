@@ -63,15 +63,15 @@ module Sivel2Sjr
       respond_to do |format|
         if (!params[:caso][:caso_etiqueta_attributes].nil?)
           params[:caso][:caso_etiqueta_attributes].each {|k,v|
-            if (v[:id_usuario].nil? || v[:id_usuario] == "")
-              v[:id_usuario] = current_usuario.id
+            if (v[:usuario_id].nil? || v[:usuario_id] == "")
+              v[:usuario_id] = current_usuario.id
             end
           }
         end
         if (!params[:caso][:respuesta_attributes].nil?)
           params[:caso][:respuesta_attributes].each {|k,v|
-            if (v[:id_caso].nil?)
-              v[:id_caso] = @caso.id
+            if (v[:caso_id].nil?)
+              v[:caso_id] = @caso.id
             end
           }
         end
@@ -83,7 +83,7 @@ module Sivel2Sjr
         end
         @caso.persona.first.apellidos = 'N'
         @caso.persona.first.nombres = 'N'
-        @caso.persona.first.id_pais = 170
+        @caso.persona.first.pais_id = 170
         @caso.current_usuario = current_usuario
         @caso.fecha = caso_params[:casosjr_attributes][:fecharec]
         if @caso.update(caso_params)
@@ -142,21 +142,21 @@ module Sivel2Sjr
         :victima_attributes => [
           :hijos,
           :id,
-          :id_etnia,
-          :id_iglesia,
-          :id_persona,
-          :id_profesion,
-          :id_rangoedad,
+          :etnia_id,
+          :iglesia_id,
+          :persona_id,
+          :profesion_id,
+          :rangoedad_id,
           :_destroy,
           :persona_attributes => [
             :anionac,
             :apellidos,
             :dianac,
             :id,
-            :id_pais,
-            :id_departamento,
-            :id_municipio,
-            :id_clase,
+            :pais_id,
+            :departamento_id,
+            :municipio_id,
+            :clase_id,
             :mesnac,
             :nombres,
             :sexo,
@@ -176,11 +176,11 @@ module Sivel2Sjr
             :enfermedad,
             :incluidoruv,
             :id,
-            :id_actividadoficio,
-            :id_escolaridad,
-            :id_estadocivil,
-            :id_maternidad,
-            :id_victima,
+            :actividadoficio_id,
+            :escolaridad_id,
+            :estadocivil_id,
+            :maternidad_id,
+            :victima_id,
             :liderazgo,
             :municipiores_id,
             :ndiscapacidad,
@@ -199,11 +199,11 @@ module Sivel2Sjr
         ],
         :ubicacion_attributes => [
           :id,
-          :id_clase,
-          :id_departamento,
-          :id_municipio,
-          :id_pais,
-          :id_tsitio,
+          :clase_id,
+          :departamento_id,
+          :municipio_id,
+          :pais_id,
+          :tsitio_id,
           :latitud,
           :longitud,
           :lugar,
@@ -217,7 +217,7 @@ module Sivel2Sjr
           :division,
           :frente,
           :id,
-          :id_presponsable,
+          :presponsable_id,
           :otro,
           :tipo,
           :_destroy
@@ -304,7 +304,7 @@ module Sivel2Sjr
         :anexo_caso_attributes => [
           :fecha_localizada,
           :id,
-          :id_caso,
+          :caso_id,
           :_destroy,
           :msip_anexo_attributes => [
             :adjunto,
@@ -316,8 +316,8 @@ module Sivel2Sjr
         :caso_etiqueta_attributes => [
           :fecha,
           :id,
-          :id_etiqueta,
-          :id_usuario,
+          :etiqueta_id,
+          :usuario_id,
           :observaciones,
           :_destroy
         ]

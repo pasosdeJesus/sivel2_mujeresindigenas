@@ -51,7 +51,7 @@
       </div>
       <div class="offset-sm-0 col-sm-4 col-md-4">
         <%= f.input :departamento_id,
-          collection: Msip::Departamento.habilitados.where(id_pais: 170),
+          collection: Msip::Departamento.habilitados.where(pais_id: 170),
           label_method: :nombre,
           value_method: :id,
           label: false,
