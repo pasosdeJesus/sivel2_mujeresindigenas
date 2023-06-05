@@ -3917,6 +3917,41 @@ CREATE TABLE public.msip_etiqueta_municipio (
 
 
 --
+-- Name: msip_etiqueta_persona; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.msip_etiqueta_persona (
+    id bigint NOT NULL,
+    etiqueta_id integer NOT NULL,
+    persona_id integer NOT NULL,
+    usuario_id integer NOT NULL,
+    fecha date NOT NULL,
+    observaciones character varying(5000),
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: msip_etiqueta_persona_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.msip_etiqueta_persona_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: msip_etiqueta_persona_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.msip_etiqueta_persona_id_seq OWNED BY public.msip_etiqueta_persona.id;
+
+
+--
 -- Name: msip_fuenteprensa_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -7658,6 +7693,13 @@ ALTER TABLE ONLY public.msip_estadosol ALTER COLUMN id SET DEFAULT nextval('publ
 
 
 --
+-- Name: msip_etiqueta_persona id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.msip_etiqueta_persona ALTER COLUMN id SET DEFAULT nextval('public.msip_etiqueta_persona_id_seq'::regclass);
+
+
+--
 -- Name: msip_grupo id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -8867,6 +8909,14 @@ ALTER TABLE ONLY public.msip_departamento
 
 ALTER TABLE ONLY public.msip_estadosol
     ADD CONSTRAINT msip_estadosol_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: msip_etiqueta_persona msip_etiqueta_persona_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.msip_etiqueta_persona
+    ADD CONSTRAINT msip_etiqueta_persona_pkey PRIMARY KEY (id);
 
 
 --
@@ -11040,6 +11090,14 @@ ALTER TABLE ONLY public.evento_motivonodenuncia
 
 
 --
+-- Name: msip_etiqueta_persona fk_rails_05a9a878fd; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.msip_etiqueta_persona
+    ADD CONSTRAINT fk_rails_05a9a878fd FOREIGN KEY (etiqueta_id) REFERENCES public.msip_etiqueta(id);
+
+
+--
 -- Name: cor1440_gen_mindicadorpf fk_rails_06564b910d; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -11197,6 +11255,14 @@ ALTER TABLE ONLY public.categoria_eventopresponsable
 
 ALTER TABLE ONLY public.cor1440_gen_actividadpf
     ADD CONSTRAINT fk_rails_16d8cc3b46 FOREIGN KEY (heredade_id) REFERENCES public.cor1440_gen_actividadpf(id);
+
+
+--
+-- Name: msip_etiqueta_persona fk_rails_1856abc5d3; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.msip_etiqueta_persona
+    ADD CONSTRAINT fk_rails_1856abc5d3 FOREIGN KEY (usuario_id) REFERENCES public.usuario(id);
 
 
 --
@@ -12053,6 +12119,14 @@ ALTER TABLE ONLY public.cor1440_gen_actividad_actividadpf
 
 ALTER TABLE ONLY public.cor1440_gen_anexo_efecto
     ADD CONSTRAINT fk_rails_bcd8d7b7ad FOREIGN KEY (anexo_id) REFERENCES public.msip_anexo(id);
+
+
+--
+-- Name: msip_etiqueta_persona fk_rails_beb3a49837; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.msip_etiqueta_persona
+    ADD CONSTRAINT fk_rails_beb3a49837 FOREIGN KEY (persona_id) REFERENCES public.msip_persona(id);
 
 
 --
@@ -13540,6 +13614,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220722000850'),
 ('20220722192214'),
 ('20220805181901'),
+('20220808141102'),
 ('20220822132754'),
 ('20221005165307'),
 ('20221020172553'),
@@ -13580,6 +13655,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20230406021624'),
 ('20230406023817'),
 ('20230406092509'),
-('20230418194845');
+('20230418194845'),
+('20230504084246');
 
 
