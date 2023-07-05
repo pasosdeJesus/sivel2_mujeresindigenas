@@ -52,8 +52,12 @@
       </div> <!-- form-inputs -->
 
       <div class="form-actions">
-        <%= f.button :submit, 'Validar y Guardar', :class => 'btn btn-primary',
-          'data-turbo' => false %>
+        <%= f.button :submit, 'Validar y Guardar', 
+          :class => 'btn btn-primary',
+          data: {
+            disable_with: false,
+            turbo: false
+          } %>
 
         <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
           casos_path, :class => 'btn' %>
