@@ -180,10 +180,10 @@ module Sivel2Sjr
             end
           }
         end
-        if (params & params[:caso] && params[:caso][:victima_attributes] && params[:caso][:victima_attributes]["0"][:persona_attributes][:apellidos] == '')
+        if (params && params[:caso] && params[:caso][:victima_attributes] && params[:caso][:victima_attributes]["0"][:persona_attributes][:apellidos] == '')
           params[:caso][:victima_attributes]["0"][:persona_attributes][:apellidos] = 'N'
         end
-        if (params & params[:caso] && params[:caso][:victima_attributes] && params[:caso][:victima_attributes]["0"][:persona_attributes][:nombres] == '')
+        if (params && params[:caso] && params[:caso][:victima_attributes] && params[:caso][:victima_attributes]["0"][:persona_attributes][:nombres] == '')
           params[:caso][:victima_attributes]["0"][:persona_attributes][:nombres] = 'N'
         end
         @caso.persona.first.apellidos = 'N'
