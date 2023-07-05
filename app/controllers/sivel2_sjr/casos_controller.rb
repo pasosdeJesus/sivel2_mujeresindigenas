@@ -166,24 +166,24 @@ module Sivel2Sjr
     def update
       # No deben venir validaciones en controlador
       respond_to do |format|
-        if (!params[:caso][:caso_etiqueta_attributes].nil?)
+        if (params && params[:caso] && params[:caso][:caso_etiqueta_attributes])
           params[:caso][:caso_etiqueta_attributes].each {|k,v|
             if (v[:usuario_id].nil? || v[:usuario_id] == "")
               v[:usuario_id] = current_usuario.id
             end
           }
         end
-        if (!params[:caso][:respuesta_attributes].nil?)
+        if (params && params[:caso] && !params[:caso][:respuesta_attributes].nil?)
           params[:caso][:respuesta_attributes].each {|k,v|
             if (v[:caso_id].nil?)
               v[:caso_id] = @caso.id
             end
           }
         end
-        if (params[:caso][:victima_attributes]["0"][:persona_attributes][:apellidos] == '')
+        if (params & params[:caso] && params[:caso][:victima_attributes] && params[:caso][:victima_attributes]["0"][:persona_attributes][:apellidos] == '')
           params[:caso][:victima_attributes]["0"][:persona_attributes][:apellidos] = 'N'
         end
-        if (params[:caso][:victima_attributes]["0"][:persona_attributes][:nombres] == '')
+        if (params & params[:caso] && params[:caso][:victima_attributes] && params[:caso][:victima_attributes]["0"][:persona_attributes][:nombres] == '')
           params[:caso][:victima_attributes]["0"][:persona_attributes][:nombres] = 'N'
         end
         @caso.persona.first.apellidos = 'N'
