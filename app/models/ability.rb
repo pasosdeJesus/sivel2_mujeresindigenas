@@ -181,7 +181,8 @@ class Ability < Sivel2Sjr::Ability
   def initialize(usuario = nil)
     initialize_sivel2_gen(usuario)
     can :nuevo, ::Evento
-    can :contar, Msip::Ubicacion
+    #can :contar, Msip::Ubicacion
+    #debugger
     can :manage, Msip::GruposperController
 
 
@@ -195,7 +196,6 @@ class Ability < Sivel2Sjr::Ability
     can :buscar, Sivel2Gen::Caso
     can :lista, Sivel2Gen::Caso
     can :descarga_anexo, Msip::Anexo
-    can :nuevo, Sivel2Sjr::Desplazamiento
     can :nuevo, Sivel2Sjr::Respuesta
     can :nuevo, Msip::Ubicacion
     can :nuevo, Sivel2Gen::Presponsable
