@@ -662,7 +662,9 @@
         @caso.casosjr.oficina)) 
   %>
       <%= link_to t('.edit', :default => t("helpers.links.edit")),
-        edit_caso_path(@caso), :class => 'btn' %>
+        edit_caso_path(@caso),
+        "data-turbo": false,
+        :class => 'btn' %>
       <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
         caso_path(@caso),
         :method => 'delete',

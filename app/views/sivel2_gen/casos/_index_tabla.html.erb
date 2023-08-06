@@ -35,7 +35,9 @@
                     Sivel2Sjr::Casosjr.find(caso.caso_id).oficina)) 
           %>
             <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              sivel2_gen.edit_caso_path(caso.caso_id), :class => 'btn btn-sm' 
+              sivel2_gen.edit_caso_path(caso.caso_id),
+              "data-turbo": false,
+              :class => 'btn btn-sm' 
             %>
             <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                   sivel2_gen.caso_path(caso.caso_id),
