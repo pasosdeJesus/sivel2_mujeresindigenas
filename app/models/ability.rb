@@ -186,7 +186,7 @@ class Ability < Sivel2Sjr::Ability
     can :manage, Msip::GruposperController
 
 
-    can :read, [Msip::Pais, Msip::Departamento, Msip::Municipio, Msip::Clase]
+    can :read, [Msip::Pais, Msip::Departamento, Msip::Municipio, Msip::Centropoblado]
     if !usuario || usuario.fechadeshabilitacion
       return
     end

@@ -19,7 +19,7 @@ module Sivel2Sjr
       return p
     end
 
-    # Llena variables de clase: @opsegun, @titulo_personas,
+    # Llena variables de centropoblado: @opsegun, @titulo_personas,
     # @titulo_personas_fecha y otras nuevas relacionads con filtros
     # (prefijo p)
     def personas_filtros_especializados
@@ -56,9 +56,9 @@ module Sivel2Sjr
 #            ubicacion.municipio_id, 
 #            municipio.munlocal_cod AS municipio_divipola,
 #            municipio.nombre AS municipio_nombre, 
-#            ubicacion.clase_id, 
-#            clase.clalocal_cod AS clase_divipola,
-#            clase.nombre AS clase_nombre
+#            ubicacion.centropoblado_id, 
+#            centropoblado.cplocal_cod AS centropoblado_divipola,
+#            centropoblado.nombre AS centropoblado_nombre
 #            FROM
 #                    #{personas_cons1} JOIN sivel2_gen_caso AS caso ON
 #              (#{personas_cons1}.caso_id = caso.id) 
@@ -68,8 +68,8 @@ module Sivel2Sjr
 #              (ubicacion.departamento_id=departamento.id) 
 #            LEFT JOIN msip_municipio AS municipio ON 
 #              (ubicacion.municipio_id=municipio.id)
-#            LEFT JOIN msip_clase AS clase ON 
-#              (ubicacion.clase_id=clase.id)
+#            LEFT JOIN msip_centropoblado AS centropoblado ON 
+#              (ubicacion.centropoblado_id=centropoblado.id)
 #            GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15", que3, tablas3, where3]
 #    end
 

@@ -48,17 +48,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=tclase_id</td>
+	<td>id=tcentropoblado_id</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=tclase_id</td>
+	<td>id=tcentropoblado_id</td>
 	<td>345</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=tclase_nombre</td>
+	<td>id=tcentropoblado_nombre</td>
 	<td>caracerio</td>
 </tr>
 <tr>
