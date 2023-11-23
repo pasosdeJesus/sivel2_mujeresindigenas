@@ -88,7 +88,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/sivel2_sjr.git
-  revision: 75784dd9c4e0386affb5f9f43f84226e0f4b1ca0
+  revision: cfc8273ead9d7fabe4bd28cec0efdc13722462ef
   branch: renclase
   specs:
     sivel2_sjr (2.2.0.beta2)
@@ -459,4 +459,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.4.20
+   2.4.22

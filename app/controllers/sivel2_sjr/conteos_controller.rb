@@ -19,7 +19,7 @@ module Sivel2Sjr
       return p
     end
 
-    # Llena variables de centropoblado: @opsegun, @titulo_personas,
+    # Llena variables de clase: @opsegun, @titulo_personas,
     # @titulo_personas_fecha y otras nuevas relacionads con filtros
     # (prefijo p)
     def personas_filtros_especializados
