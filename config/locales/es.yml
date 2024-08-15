@@ -182,3 +182,4 @@ es:
         Tienetierra: Tiene tierra
         Tienetierras: Tiene tierras
       "usuario":
+        encrypted_password: Clave
