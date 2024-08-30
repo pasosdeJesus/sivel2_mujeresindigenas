@@ -2,21 +2,33 @@
 
 console.log('Hola Mundo desde ESM')
 
-
-
 import Rails from "@rails/ujs";
+if (typeof window.Rails == 'undefined') { 
+    Rails.start();
+    window.Rails = Rails;
+}
 import "@hotwired/turbo-rails";
-Rails.start();
-window.Rails = Rails
+
+import Msip__Motor from "./controllers/msip/motor"
+window.Msip__Motor = Msip__Motor
+Msip__Motor.iniciar()  // Este se ejecuta una vez cuando se está cargando la aplicación tal vez antes que la página completa o los recursos
+
+import TomSelect from 'tom-select';
+window.TomSelect = TomSelect;
+window.configuracionTomSelect = {
+  create: false,
+  diacritics: true, //no sensitivo a acentos
+  sortField: {
+    field: "text",
+    direction: "asc"
+  }
+}
 
 import 'gridstack'
 import './jquery'
 
 import 'popper.js'              // Dialogos emergentes usados por bootstrap
 import * as bootstrap from 'bootstrap'              // Maquetacion y elementos de diseño
-import 'chosen-js/chosen.jquery';       // Cuadros de seleccion potenciados
-import 'bootstrap-datepicker'
-import 'bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js'
 
 // Apexcharts
 import ApexCharts from 'apexcharts'
@@ -62,35 +74,15 @@ promesaRecursosSprocketsYDocumento.then((mensaje) => {
   sivel2_sjr_prepara_eventos_comunes(root);
   sivel2_sjr_prepara_eventos_unicos(root);
 
-  $('#caso_casosjr_attributes_fecharec').datepicker({
-    format: 'yyyy-mm-dd',
-    autoclose: true,
-    todayHighlight: true,
-    language: 'es'
-  }).on('changeDate', function (ev) {
-    //  Cambiar edades
-    $('[id^=caso_victima_attributes][id$=persona_attributes_anionac]').change()
-  }
-  )
-
   $(document).on('change', 'select[id$=_departamentores_id]', function(e) {
     llena_municipio($(this), root);
   })
 
-  $('.chosen-select').chosen({
-    allow_single_deselect: true,
-    no_results_text: 'No hay resultados',
-    placeholder_text_multiple: 'Elije una o varias categorias de violencia',
-    width: '100%'
-  })
+  Msip__Motor.ejecutarAlCargarDocumentoYRecursos()  // Este se ejecuta cada vez que se carga una página que no está en cache y tipicamente después de que se ha cargado la página completa y los recursos
+
 
   $(document).on('cocoon:after-insert', function (e) {
-    $('.chosen-select').chosen({
-      allow_single_deselect: true,
-      no_results_text: 'No hay resultados',
-      placeholder_text_multiple: 'Elije una o varias categorias de violencia',
-      width: '100%'
-    })
+    Msip__Motor.configurarElementosTomSelect()
   })
 
   $(document).on('change', '#mostrarprivados', function(e) {

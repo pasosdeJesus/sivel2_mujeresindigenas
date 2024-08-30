@@ -1,4 +1,4 @@
-require 'sivel2_sjr/version'
+require 'jos19/version'
 Msip.setup do |config|
   config.ruta_anexos = ENV.fetch('MSIP_RUTA_ANEXOS', 
                                  "#{Rails.root}/archivos/anexos")

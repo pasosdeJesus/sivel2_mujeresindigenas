@@ -1,6 +1,18 @@
 require_relative 'boot'
 
-require 'rails/all'
+require "rails"
+# Elige los marcos de trabajo que necesitas:
+require "active_model/railtie"
+require "active_job/railtie"
+require "active_record/railtie"
+# require "active_storage/engine"
+require "action_controller/railtie"
+require "action_mailer/railtie"
+# require "action_mailbox/engine"
+# require "action_text/engine"
+require "action_view/railtie"
+# require "action_cable/engine"
+require "rails/test_unit/railtie"
 
 # Requerir las gemas listas en el Gemfile, incluyendo gemas que haya
 # limitado a :test, :development, o :production.
@@ -9,7 +21,9 @@ Bundler.require(*Rails.groups)
 module Sivel2Mujeresindigenas
   class Application < Rails::Application
 
-    config.load_defaults 7.0
+    config.load_defaults Rails::VERSION::STRING.to_f
+
+    config.autoload_lib(ignore: %w(assets tasks))
 
     # Las configuraciones de config/environments/* tienen precedencia
     # sobre las especifciadas aquí.

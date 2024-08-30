@@ -455,7 +455,7 @@ module Sivel2Sjr
             :id,
             :usuario_id, 
             :fecha,
-            :fecha_localizada,
+            :fecha,
             :solicitud,
             :estadosol_id,
             :usuarionotificar_ids => []
@@ -528,7 +528,7 @@ module Sivel2Sjr
           :tapoyo_ids => []
         ],
         :anexo_caso_attributes => [
-          :fecha_localizada,
+          :fecha,
           :id,
           :caso_id,
           :_destroy,

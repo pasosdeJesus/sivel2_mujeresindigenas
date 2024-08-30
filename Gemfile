@@ -36,7 +36,7 @@ gem "parslet"
 
 gem "pg" # Postgresql
 
-gem "rails", ">= 7.0", "< 7.1"
+gem "rails", "~> 7.2"
 
 gem "rails-i18n"
 
@@ -87,8 +87,8 @@ gem "sivel2_gen", # Motor de casos de violencia socio política.
   git: "https://gitlab.com/pasosdeJesus/sivel2_gen.git", branch: "main"
   #path: "../sivel2_gen"
 
-gem "sivel2_sjr", # Motor de atención a casos
-  git: "https://gitlab.com/pasosdeJesus/sivel2_sjr.git", branch: "main"
+gem "jos19", # Motor de atención a casos
+  git: "https://gitlab.com/pasosdeJesus/jos19.git", branch: "main"
   #path: "../sivel2_sjr"
 
 
