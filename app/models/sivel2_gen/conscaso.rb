@@ -1,7 +1,10 @@
-require 'sivel2_sjr/concerns/models/conscaso'
+require 'sivel2_gen/concerns/models/conscaso'
 
 class Sivel2Gen::Conscaso < ActiveRecord::Base
-  include Sivel2Sjr::Concerns::Models::Conscaso
+  include Sivel2Gen::Concerns::Models::Conscaso
+
+  has_one :casosjr, class_name: 'Sivel2Sjr::Casosjr',
+    foreign_key: "caso_id", primary_key: 'caso_id'
 
   scope :filtro_categoria_ids, lambda { |ids|
     where('caso_id IN (

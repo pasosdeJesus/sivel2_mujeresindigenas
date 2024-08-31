@@ -1,7 +1,7 @@
-require 'sivel2_sjr/concerns/models/persona'
+require 'jos19/concerns/models/persona'
 
 class Msip::Persona < ActiveRecord::Base
-  include Sivel2Sjr::Concerns::Models::Persona
+  include Jos19::Concerns::Models::Persona
 
   def vformatonumdoc
   end

@@ -71,8 +71,7 @@ promesaRecursosSprocketsYDocumento.then((mensaje) => {
   msip_prepara_eventos_comunes(root);
   heb412_gen_prepara_eventos_comunes(root);
   sivel2_gen_prepara_eventos_comunes(root,'antecedentes/causas');
-  sivel2_sjr_prepara_eventos_comunes(root);
-  sivel2_sjr_prepara_eventos_unicos(root);
+  sivel2_gen_prepara_eventos_unicos(root);
 
   $(document).on('change', 'select[id$=_departamentores_id]', function(e) {
     llena_municipio($(this), root);

@@ -10,7 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require sivel2_sjr/application.css
+ *= require heb412_gen/application.css
+ *= require sivel2_gen/application.css
  *= require tom-select/dist/css/tom-select.bootstrap5.min.css
  *= require_tree .
  *= require_self

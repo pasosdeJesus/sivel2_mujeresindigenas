@@ -13,5 +13,4 @@
 //= require msip/motor
 //= require heb412_gen/motor
 //= require sivel2_gen/motor
-//= require sivel2_sjr/motor
 //= require_tree .

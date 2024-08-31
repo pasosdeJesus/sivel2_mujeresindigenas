@@ -1,7 +1,7 @@
-require 'sivel2_sjr/concerns/models/caso'
+require 'sivel2_gen/concerns/models/caso'
 
 class Sivel2Gen::Caso < ActiveRecord::Base
-  include Sivel2Sjr::Concerns::Models::Caso
+  include Sivel2Gen::Concerns::Models::Caso
 
   has_many :actosjr, class_name: 'Sivel2Sjr::Actosjr',
     :through => :acto, dependent: :destroy
