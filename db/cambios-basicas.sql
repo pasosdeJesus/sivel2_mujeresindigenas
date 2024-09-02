@@ -115,66 +115,66 @@ SELECT pg_catalog.setval('public.sivel2_gen_escolaridad_id_seq', 103, true);
 
 
 --
--- Data for Name: sivel2_gen_etnia; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: msip_etnia; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-UPDATE sivel2_gen_etnia SET fechadeshabilitacion='2016-06-07' WHERE id IN
+UPDATE msip_etnia SET fechadeshabilitacion='2016-06-07' WHERE id IN
 ('7', '9', '64', '65', '15', '66', '71', '70', '72', '73', '102', '27', '103', 
 	'28', '105', '79', '82', '85', '60', '90', '97', '51', '101');
-UPDATE sivel2_gen_etnia SET nombre='CARAPANA' WHERE id='31';
-UPDATE sivel2_gen_etnia SET nombre='CURRIPAKO' WHERE id='33';
-UPDATE sivel2_gen_etnia SET nombre='KOREGUAJE' WHERE id='18';
-UPDATE sivel2_gen_etnia SET nombre='KOKONUCO' WHERE id='69';
-UPDATE sivel2_gen_etnia SET nombre='KOFAN' WHERE id='17';
-UPDATE sivel2_gen_etnia SET nombre='EMBERA DÓBIDA' WHERE id='23';
-UPDATE sivel2_gen_etnia SET nombre='EPERARA SIAPIDARA' WHERE id='76';
-UPDATE sivel2_gen_etnia SET nombre='EMBERA EYABIDA – EMBERA KATÍO' WHERE id='74';
-UPDATE sivel2_gen_etnia SET nombre='GUANACO' WHERE id='26';
-UPDATE sivel2_gen_etnia SET nombre='HITNÜ- MACAGUÁN' WHERE id='33';
-UPDATE sivel2_gen_etnia SET nombre='KAMËNTSÁ' WHERE id='14';
-UPDATE sivel2_gen_etnia SET nombre='MAKAGUAJE' WHERE id='35';
-UPDATE sivel2_gen_etnia SET nombre='MAKUNA' WHERE id='34';
-UPDATE sivel2_gen_etnia SET nombre='MUINA MURUI' WHERE id='81';
-UPDATE sivel2_gen_etnia SET nombre='PASTO' WHERE id='40';
-UPDATE sivel2_gen_etnia SET nombre='QUILLACINGA' WHERE id='89';
-UPDATE sivel2_gen_etnia SET nombre='TAIWANO-EDURIA' WHERE id='92';
-UPDATE sivel2_gen_etnia SET nombre='TAMA DUJO' WHERE id='93';
-UPDATE sivel2_gen_etnia SET nombre='TIKUNA' WHERE id='96';
-UPDATE sivel2_gen_etnia SET nombre='TUKANO' WHERE id='50';
-UPDATE sivel2_gen_etnia SET nombre='TUYUKA' WHERE id='98';
-UPDATE sivel2_gen_etnia SET nombre='WIWA' WHERE id='54';
-UPDATE sivel2_gen_etnia SET nombre='YUKUNA' WHERE id='58';
-UPDATE sivel2_gen_etnia SET nombre='ZENÚ-SENÚ' WHERE id='58';
-UPDATE sivel2_gen_etnia SET nombre='MESTIZA' WHERE id='2';
-UPDATE sivel2_gen_etnia SET nombre='BLANCA' WHERE id='3';
+UPDATE msip_etnia SET nombre='CARAPANA' WHERE id='31';
+UPDATE msip_etnia SET nombre='CURRIPAKO' WHERE id='33';
+UPDATE msip_etnia SET nombre='KOREGUAJE' WHERE id='18';
+UPDATE msip_etnia SET nombre='KOKONUCO' WHERE id='69';
+UPDATE msip_etnia SET nombre='KOFAN' WHERE id='17';
+UPDATE msip_etnia SET nombre='EMBERA DÓBIDA' WHERE id='23';
+UPDATE msip_etnia SET nombre='EPERARA SIAPIDARA' WHERE id='76';
+UPDATE msip_etnia SET nombre='EMBERA EYABIDA – EMBERA KATÍO' WHERE id='74';
+UPDATE msip_etnia SET nombre='GUANACO' WHERE id='26';
+UPDATE msip_etnia SET nombre='HITNÜ- MACAGUÁN' WHERE id='33';
+UPDATE msip_etnia SET nombre='KAMËNTSÁ' WHERE id='14';
+UPDATE msip_etnia SET nombre='MAKAGUAJE' WHERE id='35';
+UPDATE msip_etnia SET nombre='MAKUNA' WHERE id='34';
+UPDATE msip_etnia SET nombre='MUINA MURUI' WHERE id='81';
+UPDATE msip_etnia SET nombre='PASTO' WHERE id='40';
+UPDATE msip_etnia SET nombre='QUILLACINGA' WHERE id='89';
+UPDATE msip_etnia SET nombre='TAIWANO-EDURIA' WHERE id='92';
+UPDATE msip_etnia SET nombre='TAMA DUJO' WHERE id='93';
+UPDATE msip_etnia SET nombre='TIKUNA' WHERE id='96';
+UPDATE msip_etnia SET nombre='TUKANO' WHERE id='50';
+UPDATE msip_etnia SET nombre='TUYUKA' WHERE id='98';
+UPDATE msip_etnia SET nombre='WIWA' WHERE id='54';
+UPDATE msip_etnia SET nombre='YUKUNA' WHERE id='58';
+UPDATE msip_etnia SET nombre='ZENÚ-SENÚ' WHERE id='58';
+UPDATE msip_etnia SET nombre='MESTIZA' WHERE id='2';
+UPDATE msip_etnia SET nombre='BLANCA' WHERE id='3';
 
 
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (111, 'KANKUAMO', 'Pueblo de la Sierra Nevada', '2016-02-29', NULL, '2016-03-01 01:45:17.392312', '2016-05-05 19:59:17.373387', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (112, 'AMBALÓ', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:15:33.967956', '2016-05-05 19:15:33.967956', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (113, 'GUANE', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:16:19.543235', '2016-05-05 19:16:19.543235', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (114, 'GUANADULE-TULE-CUNA', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:17:12.006747', '2016-05-05 19:17:12.006747', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (115, 'HUPDË-HUPDAH-HUPDU', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:18:25.920845', '2016-05-05 19:18:25.920845', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (116, 'IJKU', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:18:58.208147', '2016-05-05 19:18:58.208147', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (117, 'JIW', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:20:01.638311', '2016-05-05 19:20:01.638311', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (118, 'JUHUP-YUJU', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:23:24.36791', '2016-05-05 19:23:24.36791', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (119, 'KAKUA', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:23:56.791321', '2016-05-05 19:23:56.791321', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (120, 'KARIJONA', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:24:23.737231', '2016-05-05 19:24:23.737231', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (121, 'KAWIYARI', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:29:17.154062', '2016-05-05 19:29:17.154062', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (122, 'QUICHUA', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:29:39.481066', '2016-05-05 19:29:39.481066', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (123, 'QUIZGÓ', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:30:04.8679', '2016-05-05 19:30:04.8679', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (124, 'WIPIJIWI', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:30:25.497195', '2016-05-05 19:30:25.497195', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (125, 'YAMALERO', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:30:54.638141', '2016-05-05 19:30:54.638141', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (126, 'MAIBÉN MASIWARE-PODIPODI', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 22:21:09.758125', '2016-05-05 22:21:09.758125', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (127, 'MAPAYERRI', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 22:21:33.333111', '2016-05-05 22:21:33.333111', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (128, 'NUTABE', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 22:21:53.247968', '2016-05-05 22:21:53.247968', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (129, 'PUBENSE', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 22:22:14.306931', '2016-05-05 22:22:14.306931', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (130, 'TUBÚ-SIRIANO', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 22:22:33.647579', '2016-05-05 22:22:33.647579', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (131, 'YARI', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 22:22:52.512255', '2016-05-05 22:22:52.512255', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (132, 'YARURO', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 22:23:13.307858', '2016-05-05 22:23:13.307858', '');
-INSERT INTO public.sivel2_gen_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (133, 'YERAL', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 22:23:32.961683', '2016-05-05 22:23:32.961683', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (111, 'KANKUAMO', 'Pueblo de la Sierra Nevada', '2016-02-29', NULL, '2016-03-01 01:45:17.392312', '2016-05-05 19:59:17.373387', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (112, 'AMBALÓ', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:15:33.967956', '2016-05-05 19:15:33.967956', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (113, 'GUANE', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:16:19.543235', '2016-05-05 19:16:19.543235', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (114, 'GUANADULE-TULE-CUNA', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:17:12.006747', '2016-05-05 19:17:12.006747', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (115, 'HUPDË-HUPDAH-HUPDU', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:18:25.920845', '2016-05-05 19:18:25.920845', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (116, 'IJKU', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:18:58.208147', '2016-05-05 19:18:58.208147', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (117, 'JIW', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:20:01.638311', '2016-05-05 19:20:01.638311', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (118, 'JUHUP-YUJU', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:23:24.36791', '2016-05-05 19:23:24.36791', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (119, 'KAKUA', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:23:56.791321', '2016-05-05 19:23:56.791321', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (120, 'KARIJONA', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:24:23.737231', '2016-05-05 19:24:23.737231', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (121, 'KAWIYARI', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:29:17.154062', '2016-05-05 19:29:17.154062', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (122, 'QUICHUA', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:29:39.481066', '2016-05-05 19:29:39.481066', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (123, 'QUIZGÓ', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:30:04.8679', '2016-05-05 19:30:04.8679', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (124, 'WIPIJIWI', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:30:25.497195', '2016-05-05 19:30:25.497195', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (125, 'YAMALERO', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 19:30:54.638141', '2016-05-05 19:30:54.638141', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (126, 'MAIBÉN MASIWARE-PODIPODI', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 22:21:09.758125', '2016-05-05 22:21:09.758125', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (127, 'MAPAYERRI', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 22:21:33.333111', '2016-05-05 22:21:33.333111', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (128, 'NUTABE', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 22:21:53.247968', '2016-05-05 22:21:53.247968', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (129, 'PUBENSE', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 22:22:14.306931', '2016-05-05 22:22:14.306931', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (130, 'TUBÚ-SIRIANO', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 22:22:33.647579', '2016-05-05 22:22:33.647579', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (131, 'YARI', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 22:22:52.512255', '2016-05-05 22:22:52.512255', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (132, 'YARURO', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 22:23:13.307858', '2016-05-05 22:23:13.307858', '');
+INSERT INTO public.msip_etnia (id, nombre, descripcion, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (133, 'YERAL', 'Listado de Mujeres indígenas', '2016-05-05', NULL, '2016-05-05 22:23:32.961683', '2016-05-05 22:23:32.961683', '');
 
 
-SELECT pg_catalog.setval('public.sivel2_gen_etnia_id_seq', 133, true);
+SELECT pg_catalog.setval('public.msip_etnia_id_seq', 133, true);
 
 
 

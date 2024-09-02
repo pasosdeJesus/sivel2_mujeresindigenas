@@ -266,7 +266,7 @@ class Sivel2Gen::Consexpcaso < ActiveRecord::Base
           scontacto.departamentores_id = sdepartamento.id
         LEFT JOIN public.msip_municipio AS smunicipio ON
           scontacto.municipiores_id = smunicipio.id
-        LEFT JOIN public.sivel2_gen_etnia AS etnia ON
+        LEFT JOIN public.msip_etnia AS etnia ON
             vcontacto.etnia_id=etnia.id
         LEFT JOIN public.sivel2_gen_estadocivil AS estadocivil ON
             scontacto.estadocivil_id=estadocivil.id
