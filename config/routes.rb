@@ -27,6 +27,38 @@ Rails.application.routes.draw do
   end
   resources :usuarios, path_names: { new: 'nuevo', edit: 'edita' } 
 
+
+  # De sivel2_sjr
+
+  get '/casos/lista' => 'sivel2_sjr/casos#lista'
+  get '/casos/mapaosm' => 'sivel2_sjr/casos#mapaosm'
+  get '/casos/nuevaubicacion' => 'sivel2_sjr/casos#nueva_ubicacion'
+  get '/casos/nuevavictima' => 'sivel2_sjr/casos#nueva_victima'
+  get '/casos/nuevopresponsable' => 'sivel2_sjr/casos#nuevo_presponsable'
+  get '/casos/busca' => 'sivel2_sjr/casos#busca'
+  get '/casos/filtro' => 'sivel2_sjr/casos#index', as: :casos_filtro
+  post '/casos/filtro' => 'sivel2_sjr/casos#index', as: :envia_casos_filtro
+
+  get '/conteos/personas' => 'sivel2_sjr/conteos#personas', as: :conteos_personas
+  post "/conteos/personas" => 'sivel2_sjr/conteos#personas', as: :post_conteos_personas
+  get '/conteos/respuestas' => 'sivel2_sjr/conteos#respuestas', as: :conteos_respuestas
+
+  get '/desplazamientos/nuevo' => 'sivel2_sjr/desplazamientos#nuevo'
+
+  get '/respuestas/nuevo' => 'sivel2_sjr/respuestas#nuevo'
+
+  #  get '/victimas' => 'victimas#index', as: :victimas
+  #  get '/victimas/nuevo' => 'victimas#nuevo'
+  get '/victimascolectivas/nuevo' => 'sivel2_sjr/victimascolectivas#nuevo'
+
+  get "/api/sivel2sjr/poblacion_sexo_rangoedadac" => 'sivel2_sjr/casos#poblacion_sexo_rangoedadac',
+    as: :sivel2sjr_poblacion_sexo_rangoedadac
+
+  resources :casos, path_names: { new: 'nuevo', edit: 'edita' }, 
+    controller: 'sivel2_sjr/casos'
+
+  # Fin de sivel2_sjr
+
   get "/bitacora7z" => 'msip/bitacora7z#new', as: 'bitacora7z'
   post "/bitacora7z" => 'msip/bitacora7z#create'
   namespace :admin do
