@@ -13,6 +13,7 @@
   <tbody>
     <% @conscaso.try(:each) do |caso| %>
       <tr>
+        <% debugger %>
         <% for i in @incluir do %>
 <% debugger %>
           <% c = i == 'contacto'  ? 'alert-info' : '' %>

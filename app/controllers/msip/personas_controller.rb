@@ -1,11 +1,16 @@
-require 'sivel2_sjr/concerns/controllers/personas_controller'
+require 'jos19/concerns/controllers/personas_controller'
 
 module Msip
   class PersonasController < Heb412Gen::ModelosController
 
+    before_action :set_persona, only: [:show, :edit, :update, :destroy]
     load_and_authorize_resource class: Msip::Persona
 
-    include Sivel2Sjr::Concerns::Controllers::PersonasController
+    include Jos19::Concerns::Controllers::PersonasController
+
+    def registrar_en_bitacora
+      true
+    end
 
     # Están listas @persona, @victima, @personaant, @caso
     # Y está listo para salvar la nueva persona @persona en
@@ -25,15 +30,15 @@ module Msip
                                        where('sivel2_gen_victima.persona_id' => @persona.id).
                                        where(fechadesagregacion: nil)
       if ve.count > 0
-        render json: "Víctima ya está en el caso #{ve.take.victima.caso_id}", 
+        render json: "Víctima ya está en el caso #{ve.take.victima.caso_id}",
           status: :unprocessable_entity
         return false
       end
       # Si se está remplazando el contacto, borra la persona
-      # vacía que era contacto --y por lo mismo sólo permite 
+      # vacía que era contacto --y por lo mismo sólo permite
       # cuando es un contacto vacío.
       if @caso.casosjr.contacto && @personaant &&
-          @caso.casosjr.contacto_id == @personaant.id 
+          @caso.casosjr.contacto_id == @personaant.id
         if true
           render json: "No se ha implementado reemplazar datos de la persona",
             status: :unprocessable_entity

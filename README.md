@@ -18,7 +18,9 @@ Aplican las mismas instrucciones de SIVeL 2
 https://github.com/pasosdeJesus/sivel2
 
 ### Arquitectura
-Se usa junto con msip, sivel2_gen y sivel2_sjr ver
-https://github.com/pasosdeJesus/msip
-https://github.com/pasosdeJesus/sivel2_gen
-https://github.com/pasosdeJesus/sivel2_sjr
+Se usa junto con msip, mr512_gen, heb412_gen, cor1440_gen y sivel2_gen, ver
+https://gitlab.com/pasosdeJesus/msip
+https://gitlab.com/pasosdeJesus/mr519_gen
+https://gitlab.com/pasosdeJesus/heb412_gen
+https://gitlab.com/pasosdeJesus/cor1440_gen
+https://gitlab.com/pasosdeJesus/sivel2_gen
