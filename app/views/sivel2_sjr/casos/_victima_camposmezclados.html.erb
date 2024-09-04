@@ -1,209 +1,317 @@
-  
-<% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
-  <div class="privado alert-info">
-    <%= fpersona.input(
-      :nombres, 
-      placeholder: 'N',
-      value_method: lambda {|t| 
-        (t.nombres && t.nombres != '') ? t.nombres : 'N' 
-      },
-      input_html: {
-        list: 'fuente-victimas'
-      }
-    ) %>
-
-    <%= fpersona.input :apellidos, placeholder: 'N',
-      value_method: lambda {|t| (t.apellidos && t.apellidos != '') ? 
-        t.apellidos: 'N' } %>
-
-    <%= fpersona.input :tdocumento_id,
-      collection: Msip::Tdocumento.habilitados,
-      label_method: :nombre,
-      value_method: :id %>
-  </div>
-<% else %>
-  <%= fpersona.input :apellidos, :as => :hidden, 
-    :input_html => { :value => "N" } %>
-  <%= fpersona.input :nombres, :as => :hidden, 
-    :input_html => { :value => "N" } %>
+<% if Rails.configuration.x.msip_docid_obligatorio === true %>
+  <% cont = "msip--sindocaut" %>
 <% end %>
 
-<%= fpersona.input :id, as: :hidden %>
+<div class='campos_persona' data-controller="<%= cont %>">
+  <%= fpersona.input :id, as: :hidden,
+    input_html: {
+      "data-msip--sindocaut-target": "id",
+    } %>
 
-<div class="row">
-  <div class="col-sm-4">
-    <% @anios = *(1900..Date.today.year) %>
-    <%= fpersona.input :anionac, 
-      collection: @anios,
-      label: 'Año Nacimiento'
-    %>
+  <% if (fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin)) ||
+      (fcasosjr.object.oficina_id == 103 && can?(:edit, :casosoik)) then %>
+    <div class="privado alert-info">
+      <div class="row">
+        <div class="col-sm-6">
+          <%= fpersona.input(
+            :nombres, 
+            placeholder: 'N',
+            value_method: lambda {|t| 
+              (t.nombres && t.nombres != '') ? t.nombres : 'N' 
+            },
+            input_html: {
+              list: 'fuente-victimas'
+            }) %>
+        </div>
+        <div class="col-sm-6">
+          <%= fpersona.input :apellidos, placeholder: 'N',
+            value_method: lambda {|t| 
+              (t.apellidos && t.apellidos != '') ? 
+                t.apellidos: 'N' 
+            } %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <%= fpersona.input :apellidos, :as => :hidden, 
+      :input_html => { :value => "N" } %>
+    <%= fpersona.input :nombres, :as => :hidden, 
+      :input_html => { :value => "N" } %>
+  <% end %>
+
+
+  <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
+    <div class="privado alert-info">
+      <%= fpersona.input :tdocumento_id,
+        collection: Msip::Tdocumento.habilitados,
+        label_method: :nombre,
+        value_method: :id %>
+    </div>
+  <% elsif (fcasosjr.object.oficina_id == 103 && can?(:edit, :casosoik)) then %>
+    <div class="privado alert-info">
+      <div class="row">
+          <div class="col-md-6">
+            <%= render partial: 'msip/personas/campo_tdocumento_nobusca',
+              locals: {f: fpersona} %>
+          </div>
+          <div class="col-md-6">
+            <%= render partial: 'msip/personas/campo_numerodocumento_nobusca',
+              locals: {
+                f: fpersona,
+                titulo_tooltip: "Si el tipo de documento es cédula de ciudadania "\
+                "teclee solo digitos"
+              } %>
+          </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <%= render partial: "msip/personas/campo_anionac_caso",
+        locals: { f: fpersona, fvictima: fvictima } %>
+    </div>
+    <div class="col-sm-4">
+      <%= render partial: "msip/personas/campo_edad_caso",
+        locals: { f: fpersona, fvictima: fvictima } %>
+    </div>
+    <div class="col-sm-4">
+      <%= render partial: "msip/personas/campo_edadactual_caso",
+
+        locals: { f: fpersona, fvictima: fvictima } %>
+    </div>
   </div>
-  <div class="col-sm-4">
-    <%= fvictima.input :edad, as: :integer %>
+
+
+  <div class="row">
+    <div class="col-md-4">
+      <%= fpersona.input :mesnac,
+        collection: ApplicationHelper::MESES,
+        input_html:{
+          data: { 
+            action: "change->sivel2-gen--edad#actualizarEdad",
+            "sivel2-gen--edad-target": "mesnac"
+          }
+        } %>
+    </div>
+    <div class="col-md-4">
+      <%= fpersona.input :dianac, 
+        collection: @dias, 
+        input_html:{
+          data: { 
+            action: "change->sivel2-gen--edad#actualizarEdad",
+            "sivel2-gen--edad-target": "dianac"
+          },
+        } %>
+    </div>
+    <div class="col-md-4">
+      <%= render partial: "msip/personas/campo_rangoedad_caso",
+        locals: { f: fpersona, fvictima: fvictima } %>
+    </div>
   </div>
-  <div class="col-sm-4">
-    <%= fvictima.input :edadactual, as: :integer %>
+
+  <div class="row">
+    <div class="col-md-6">
+      <%= fpersona.association :departamento,
+        collection: (Msip::Departamento.habilitados.where(pais_id: 170)),
+        label: "Departamento de Nacimiento", label_method: :nombre,
+        value_method: :id %>
+    </div>
+    <div class="col-md-6">
+      <%= fpersona.association :municipio,
+        collection: 
+        ( Msip::Municipio.habilitados.where(
+          departamento_id: fpersona.object.departamento_id)
+        ),
+        label: "Municipio de Nacimiento",
+        label_method: :nombre,
+        value_method: :id %>
+    </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <%= fvictimasjr.input :resguardonac %>
+    </div>
+    <div class="col-md-6">
+      <%= fvictimasjr.input :comunidadnac %>
+    </div>
+  </div>
+
+  <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
+    <div class="privado alert-info">
+      <div class="row">
+        <div class="col-md-6">
+          <%= fvictimasjr.association :departamentores,
+            collection: Msip::Departamento.habilitados.where(pais_id: 170),
+            include_blank: true,
+            label_method: :nombre, 
+            value_method: :id %>
+        </div>
+        <div class="col-md-6">
+          <%= fvictimasjr.association :municipiores,
+            collection: 
+            ( Msip::Municipio.habilitados.where(
+              departamento_id: fvictimasjr.object.departamentores_id
+            )),
+            include_blank: true,
+            label_method: :nombre, 
+            value_method: :id %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <%= fvictimasjr.input :resguardores %>
+        </div>
+        <div class="col-md-6">
+          <%= fvictimasjr.input :comunidadres %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <%= fvictima.input :hijos %>
+        </div>
+        <div class="col-md-6">
+          <%= fvictimasjr.association :idioma,
+            collection: Sivel2Sjr::Idioma.habilitados,
+            include_blank: false,
+            label_method: :nombre, 
+            value_method: :id %>
+        </div>
+      </div>
+
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-6">
+      <%= fpersona.association :etnia,
+        collection: Msip::Etnia.habilitados,
+        include_blank: false,
+        label_method: :nombre, 
+        value_method: :id %>
+    </div>
+    <div class="col-md-6">
+      <%= fvictimasjr.association :estadocivil,
+        collection: Sivel2Gen::Estadocivil.habilitados,
+        include_blank: false,
+        label_method: :nombre, 
+        value_method: :id %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <%= fvictimasjr.association :escolaridad,
+        collection: Sivel2Gen::Escolaridad.habilitados,
+        include_blank: false,
+        label_method: :nombre, 
+        value_method: :id %>
+    </div>
+    <div class="col-md-6">
+      <%= fvictimasjr.association :educacionpropia,
+        collection: ::Educacionpropia.habilitados,
+        include_blank: false,
+        label_method: :nombre, 
+        value_method: :id %>
+    </div>
+  </div>
+
+  <%= fvictimasjr.input :sistemasalud, 
+    collection: ApplicationHelper::NOSI,
+    include_blank: false %>
+
+  <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
+    <div class="privado alert-info">
+
+      <div class="row">
+        <div class="col-md-6">
+          <%= fvictimasjr.association :religion,
+            collection: ::Religion.habilitados,
+            include_blank: false,
+            label_method: :nombre, 
+            value_method: :id %>
+        </div>
+        <div class="col-md-6">
+          <%= fvictimasjr.input :comoingresos %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <%= fvictimasjr.association :tienetierra,
+            collection: ::Tienetierra.habilitados,
+            include_blank: false,
+            label_method: :nombre, 
+            value_method: :id %>
+        </div>
+        <div class="col-md-6">
+          <%= fvictimasjr.input :areatierra %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-6">
+      <%= fpersona.input :sexo, 
+        collection:ApplicationHelper::SEXO,
+        include_blank: false %>
+    </div>
+    <div class="col-md-6">
+      <% if (fcasosjr.object.oficina_id == 103 && can?(:edit, :casosoik)) then %>
+        <div class="privado alert-info">
+          <%= render partial: 'sivel2_gen/victimas/campo_orientacionsexual',
+            locals: { f: fvictima } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <%= fvictimasjr.input :organizacionfilial %>
+
+  <%= fvictima.input :id, as: :hidden %>
+
+  <div class="row">
+    <div class="col-md-4">
+      <%= fvictimasjr.input(
+        :incluidoruv, 
+        collection: ApplicationHelper::NOSI,
+        include_blank: false) %>
+    </div>
+    <div class="col-md-4">
+      <%= fvictimasjr.input(
+        :cabezahogar, 
+        collection: ApplicationHelper::NOSI,
+        include_blank: false) %>
+    </div>
+    <div class="col-md-4">
+      <%= fvictimasjr.input(
+        :liderazgo, 
+        collection: ApplicationHelper::LIDERAZGO,
+        include_blank: false) %>
+    </div>
+  </div>
+
+  <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
+    <div class="privado alert-info">
+      <div class="row">
+        <div class="col-md-4">
+          <%= fvictimasjr.input :tipoliderazgo %>
+        </div>
+        <div class="col-md-4">
+          <%= fvictimasjr.input(
+            :tieneesquema, 
+            collection: ApplicationHelper::NOSI,
+            include_blank: false) %>
+        </div>
+        <div class="col-md-4">
+          <%= fvictimasjr.input :anioesquema %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <%= fvictimasjr.input :victima_id, as: :hidden %>
 </div>
 
-<%= fpersona.input :mesnac, 
-  collection: ApplicationHelper::MESES,
-  label: 'Mes Nacimiento' %>
-<% @dias = *(1..31) %>
-<%= fpersona.input :dianac, collection: @dias, label: 'Día Nacimiento' %>
-
-<%= fvictima.association :rangoedad,
-  collection: Sivel2Gen::Rangoedad.habilitados,
-  include_blank: false,
-  label_method: :nombre, 
-  value_method: :id 
-%>
-
-<%= fpersona.association :departamento,
-  collection: (Msip::Departamento.habilitados.where(pais_id: 170)),
-  label: "Departamento de Nacimiento", label_method: :nombre,
-  value_method: :id 
-%>
-<%= fpersona.association :municipio,
-  collection: 
-  ( Msip::Municipio.habilitados.where(
-    departamento_id: fpersona.object.departamento_id)
-  ),
-  label: "Municipio de Nacimiento",
-  label_method: :nombre,
-  value_method: :id 
-%>
-
-<%= fvictimasjr.input :resguardonac %>
-
-<%= fvictimasjr.input :comunidadnac %>
-
-
-<% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
-  <div class="privado alert-info">
-    <%= fvictimasjr.association :departamentores,
-      collection: Msip::Departamento.habilitados.where(pais_id: 170),
-      include_blank: true,
-      label_method: :nombre, 
-      value_method: :id %>
-
-    <%= fvictimasjr.association :municipiores,
-      collection: 
-      ( Msip::Municipio.habilitados.where(
-        departamento_id: fvictimasjr.object.departamentores_id
-      )),
-      include_blank: true,
-      label_method: :nombre, 
-      value_method: :id %>
-
-    <%= fvictimasjr.input :resguardores %>
-
-    <%= fvictimasjr.input :comunidadres %>
-
-    <%= fvictima.input :hijos %>
-
-    <%= fvictimasjr.association :idioma,
-      collection: Sivel2Sjr::Idioma.habilitados,
-      include_blank: false,
-      label_method: :nombre, 
-      value_method: :id %>
-  </div>
-<% end %>
-
-<%= fvictima.association :etnia,
-	collection: Msip::Etnia.habilitados,
-	include_blank: false,
-	label_method: :nombre, 
-	value_method: :id 
-%>
-
-<%= fvictimasjr.association :estadocivil,
-  collection: Sivel2Gen::Estadocivil.habilitados,
-  include_blank: false,
-  label_method: :nombre, 
-  value_method: :id 
-%>
-
-<%= fvictimasjr.association :escolaridad,
-  collection: Sivel2Gen::Escolaridad.habilitados,
-  include_blank: false,
-  label_method: :nombre, 
-  value_method: :id
-%>
-
-<%= fvictimasjr.association :educacionpropia,
-  collection: ::Educacionpropia.habilitados,
-  include_blank: false,
-  label_method: :nombre, 
-  value_method: :id
-%>
-
-<%= fvictimasjr.input(
-  :sistemasalud, 
-  collection: ApplicationHelper::NOSI,
-  include_blank: false
-)
-%>
-
-<% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
-  <div class="privado alert-info">
-    <%= fvictimasjr.association :religion,
-      collection: ::Religion.habilitados,
-      include_blank: false,
-      label_method: :nombre, 
-      value_method: :id %>
-
-    <%= fvictimasjr.input :comoingresos %>
-
-    <%= fvictimasjr.association :tienetierra,
-      collection: ::Tienetierra.habilitados,
-      include_blank: false,
-      label_method: :nombre, 
-      value_method: :id %>
-
-    <%= fvictimasjr.input :areatierra %>
-  </div>
-<% end %>
-
-<%= fpersona.input :sexo, 
-  collection:ApplicationHelper::SEXO,
-  include_blank: false 
-%>
-
-<%= fvictimasjr.input :organizacionfilial %>
-
-<%= fvictima.input :id, as: :hidden %>
-
-<%= fvictimasjr.input(
-  :incluidoruv, 
-  collection: ApplicationHelper::NOSI,
-  include_blank: false)
-%>
-
-<%= fvictimasjr.input(
-  :cabezahogar, 
-  collection: ApplicationHelper::NOSI,
-  include_blank: false)
-%>
-
-<%= fvictimasjr.input(
-  :liderazgo, 
-  collection: ApplicationHelper::LIDERAZGO,
-  include_blank: false)
-%>
-
-<% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
-  <div class="privado alert-info">
-    <%= fvictimasjr.input :tipoliderazgo %>
-
-    <%= fvictimasjr.input(
-      :tieneesquema, 
-      collection: ApplicationHelper::NOSI,
-      include_blank: false) %>
-
-    <%= fvictimasjr.input :anioesquema %>
-  </div>
-<% end %>
-
-
-<%= fvictimasjr.input :victima_id, as: :hidden %>
