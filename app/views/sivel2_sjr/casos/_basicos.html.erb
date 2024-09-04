@@ -1,6 +1,11 @@
-<%= f.input :id, readonly: true%>
-
-<%= s.input :consecorg %>
+<div class="row">
+  <div class="col-sm-6">
+    <%= f.input :id, readonly: true%>
+  </div>
+  <div class="col-sm-6">
+    <%= s.input :consecorg %>
+  </div>
+</div>
 
 <% if s.object && s.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
   <div class="privado alert-info">
@@ -11,38 +16,55 @@
   </div>
 <% end %>
 
-<%= s.input :fecharec, 
-  input_html: { type: "date" },
-  as: :string
-%>
+<div class="row">
+  <div class="col-sm-6">
+    <%= s.input :fecharec,
+      input_html: { type: "date" },
+      as: :string
+    %>
+  </div>
+  <div class="col-sm-6">
+    <%= s.input :docterrenopor %>
+  </div>
+</div>
 
-<%= s.input :docterrenopor %>
-
-<%= s.association :usuario,
-  collection: Usuario.all.order(:nombre),
-  include_blank: false,
-  label_method: :nusuario, 
-  value_method: :id 
-%>
-
-<%= s.association :oficina,
-  collection: Msip::Oficina.habilitados,
-  include_blank: false,
-  label_method: :nombre, 
-  value_method: :id 
-%>
+<div class="row">
+  <div class="col-sm-6">
+    <%= s.association :usuario,
+      collection: Usuario.all.order(:nombre),
+      include_blank: false,
+      label_method: :nusuario, 
+      value_method: :id %>
+  </div>
+  <div class="col-sm-6">
+    <%= s.association :oficina,
+      collection: Msip::Oficina.habilitados,
+      include_blank: false,
+      label_method: :nombre, 
+      value_method: :id %>
+  </div>
+</div>
 
 <%= s.association :estadocaso, 
   collection: ::Estadocaso.habilitados,
   include_blank: false,
   label_method: :nombre, 
-  value_method: :id 
-%>
+  value_method: :id %>
 
-<%= s.association :acompanamiento, 
-  collection: ::Acompanamiento.habilitados,
-  include_blank: false,
-  label_method: :nombre, 
-  value_method: :id 
-%>
+<div class="row">
+  <div class="col-sm-6">
+    <%= s.association :acompanamiento, 
+      collection: ::Acompanamiento.habilitados,
+      include_blank: false,
+      label_method: :nombre, 
+      value_method: :id %>
+  </div>
+  <div class="col-sm-6">
+    <% if (s.object.oficina_id == 103 && can?(:edit, :casosoik)) then %>
+      <div class="privado alert-info">
+        <%= s.input :otroacompanamiento, as: :text %>
+      </div>
+    <% end %>
+  </div>
+</div>
 

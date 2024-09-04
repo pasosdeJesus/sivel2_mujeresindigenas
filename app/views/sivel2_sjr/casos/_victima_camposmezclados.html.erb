@@ -66,6 +66,20 @@
     </div>
   <% end %>
 
+
+  <% if (fcasosjr.object.oficina_id == 103 && can?(:edit, :casosoik)) then %>
+    <div class="privado alert-info">
+      <div class="row">
+        <div class="col-md-6">
+          <%= fvictimasjr.input :contacto %>
+        </div>
+        <div class="col-md-6">
+          <%= fvictimasjr.input :contactodeconfianza %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
   <div class="row">
     <div class="col-sm-4">
       <%= render partial: "msip/personas/campo_anionac_caso",
@@ -138,7 +152,8 @@
     </div>
   </div>
 
-  <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
+  <% if (fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin)) ||
+      (fcasosjr.object.oficina_id == 103 && can?(:edit, :casosoik)) then %>
     <div class="privado alert-info">
       <div class="row">
         <div class="col-md-6">
@@ -168,19 +183,20 @@
           <%= fvictimasjr.input :comunidadres %>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-md-6">
-          <%= fvictima.input :hijos %>
+      <% if (fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin)) %>
+        <div class="row">
+          <div class="col-md-6">
+            <%= fvictima.input :hijos %>
+          </div>
+          <div class="col-md-6">
+            <%= fvictimasjr.association :idioma,
+              collection: Sivel2Sjr::Idioma.habilitados,
+              include_blank: false,
+              label_method: :nombre, 
+              value_method: :id %>
+          </div>
         </div>
-        <div class="col-md-6">
-          <%= fvictimasjr.association :idioma,
-            collection: Sivel2Sjr::Idioma.habilitados,
-            include_blank: false,
-            label_method: :nombre, 
-            value_method: :id %>
-        </div>
-      </div>
+      <% end %>
 
     </div>
   <% end %>
@@ -219,10 +235,6 @@
     </div>
   </div>
 
-  <%= fvictimasjr.input :sistemasalud, 
-    collection: ApplicationHelper::NOSI,
-    include_blank: false %>
-
   <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
     <div class="privado alert-info">
 
@@ -260,14 +272,26 @@
         include_blank: false %>
     </div>
     <div class="col-md-6">
-      <% if (fcasosjr.object.oficina_id == 103 && can?(:edit, :casosoik)) then %>
-        <div class="privado alert-info">
+      <%= fvictimasjr.input :sistemasalud, 
+        collection: ApplicationHelper::NOSI,
+        include_blank: false %>
+    </div>
+  </div>
+
+  <% if (fcasosjr.object.oficina_id == 103 && can?(:edit, :casosoik)) then %>
+    <div class="privado alert-info">
+      <div class="row">
+        <div class="col-md-6">
           <%= render partial: 'sivel2_gen/victimas/campo_orientacionsexual',
             locals: { f: fvictima } %>
         </div>
-      <% end %>
+        <div class="col-md-6">
+          <%= fvictimasjr.input :eps %>
+        </div>
+      </div>
+      <%= fvictimasjr.input :ocupacion %>
     </div>
-  </div>
+  <% end %>
 
   <%= fvictimasjr.input :organizacionfilial %>
 
@@ -294,6 +318,16 @@
     </div>
   </div>
 
+  <% if fcasosjr.object.oficina_id == 103 && can?(:edit, :casosoik) then %>
+    <div class="privado alert-info">
+      <%= fvictimasjr.association :poblacionespecial,
+        collection: ::Poblacionespecial.habilitados,
+        include_blank: false,
+        label_method: :nombre, 
+        value_method: :id %>
+    </div>
+  <% end %>
+
   <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
     <div class="privado alert-info">
       <div class="row">
@@ -312,6 +346,7 @@
       </div>
     </div>
   <% end %>
+
   <%= fvictimasjr.input :victima_id, as: :hidden %>
 </div>
 

@@ -3518,7 +3518,8 @@ CREATE TABLE public.sivel2_sjr_casosjr (
     comosupo_id integer DEFAULT 1,
     consentimiento character varying(1) DEFAULT 'I'::character varying,
     docterrenopor character varying(512),
-    consecorg character varying(16)
+    consecorg character varying(16),
+    otroacompanamiento character varying(5000)
 );
 
 
@@ -4231,7 +4232,11 @@ CREATE TABLE public.sivel2_sjr_victimasjr (
     comoingresos character varying(5000) DEFAULT ''::character varying,
     tipoliderazgo character varying(5000) DEFAULT ''::character varying,
     tieneesquema character varying(1) DEFAULT 'I'::character varying,
-    anioesquema integer
+    anioesquema integer,
+    contacto character varying(255),
+    contactodeconfianza character varying(255),
+    ocupacion character varying(255),
+    poblacionespecial_id integer
 );
 
 
@@ -5675,6 +5680,40 @@ CREATE SEQUENCE public.msip_vereda_id_seq
 --
 
 ALTER SEQUENCE public.msip_vereda_id_seq OWNED BY public.msip_vereda.id;
+
+
+--
+-- Name: poblacionespecial; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.poblacionespecial (
+    id bigint NOT NULL,
+    nombre character varying(500) NOT NULL COLLATE public.es_co_utf_8,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: poblacionespecial_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.poblacionespecial_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: poblacionespecial_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.poblacionespecial_id_seq OWNED BY public.poblacionespecial.id;
 
 
 --
@@ -8748,6 +8787,13 @@ ALTER TABLE ONLY public.msip_vereda ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
+-- Name: poblacionespecial id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.poblacionespecial ALTER COLUMN id SET DEFAULT nextval('public.poblacionespecial_id_seq'::regclass);
+
+
+--
 -- Name: refugio id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -10171,6 +10217,14 @@ ALTER TABLE ONLY public.sivel2_gen_pconsolidado
 
 ALTER TABLE ONLY public.sivel2_sjr_personadesea
     ADD CONSTRAINT personadesea_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: poblacionespecial poblacionespecial_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.poblacionespecial
+    ADD CONSTRAINT poblacionespecial_pkey PRIMARY KEY (id);
 
 
 --
@@ -13432,6 +13486,14 @@ ALTER TABLE ONLY public.cor1440_gen_proyectofinanciero_usuario
 
 
 --
+-- Name: sivel2_sjr_victimasjr fk_rails_c7b3d5ee6c; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sivel2_sjr_victimasjr
+    ADD CONSTRAINT fk_rails_c7b3d5ee6c FOREIGN KEY (poblacionespecial_id) REFERENCES public.poblacionespecial(id);
+
+
+--
 -- Name: msip_ubicacionpre fk_rails_c8024a90df; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -14382,6 +14444,9 @@ ALTER TABLE ONLY public.sivel2_sjr_victimasjr
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20240904074641'),
+('20240904070457'),
+('20240904053708'),
 ('20240806082036'),
 ('20240723152453'),
 ('20240723140427'),

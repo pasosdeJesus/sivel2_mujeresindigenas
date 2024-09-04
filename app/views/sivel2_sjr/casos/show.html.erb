@@ -79,6 +79,16 @@
           @caso.casosjr.acompanamiento
         %></dd>
 
+      <% if @caso.casosjr && @caso.casosjr.oficina_id == 103 && 
+          can?(:edit, :casosoik) then %>
+        <div class="privado alert-info">
+          <dt><strong>
+              <%= Sivel2Sjr::Casosjr.human_attribute_name(:otroacompanamiento) %>:
+            </strong></dt>
+            <dd><%= @caso.casosjr.otroacompanamiento.to_s %></dd>
+        </div>
+      <% end %>
+
       <dt><strong>
         <%= Sivel2Gen::Caso.human_attribute_name(:created_at) %>:
       </strong></dt>
@@ -113,9 +123,10 @@
           <hr>
         <% end %>
         <% numvic += 1 %>
-  
-        <% if @caso.casosjr && @caso.casosjr.oficina_id == 104 && 
-             can?(:edit, :casosacin) then %>
+
+        <% if @caso.casosjr &&
+            ((@caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin)) || 
+             (@caso.casosjr.oficina_id == 103 && can?(:edit, :casosoik))) then %>
           <div class="privado alert-info">
             <dt><strong>
               <%= Sivel2Sjr::Casosjr.human_attribute_name(:nombres) %>:
@@ -130,7 +141,29 @@
             <dt><strong>
               <%= Msip::Persona.human_attribute_name(:tdocumento_id) %>:
             </strong></dt>
-            <dd><%= victima.persona.tdocumento_id if victima.persona.tdocumento_id %></dd>
+            <dd><%= victima.persona.tdocumento.sigla if victima.persona.tdocumento_id %></dd>
+
+            <% if @caso.casosjr.oficina_id == 103 && can?(:edit, :casosoik) %>
+              <dt><strong>
+                  <%= Msip::Persona.human_attribute_name(:numerodocumento) %>:
+                </strong>
+              </dt>
+              <dd><%= victima.persona.numerodocumento.to_s %></dd>
+
+              <dt><strong>
+                  <%= Sivel2Sjr::Victimasjr.human_attribute_name(:contacto) %>:
+                </strong>
+              </dt>
+              <dd><%= victima.victimasjr.contacto.to_s %></dd>
+
+              <dt><strong>
+                  <%= Sivel2Sjr::Victimasjr.human_attribute_name(:contactodeconfianza) %>:
+                </strong>
+              </dt>
+              <dd><%= victima.victimasjr.contactodeconfianza.to_s %></dd>
+
+
+            <% end %>
 
           </div>
         <% end %>
@@ -168,7 +201,9 @@
         </strong></dt>
         <dd><%= victima.victimasjr.comunidadnac if victima.victimasjr && victima.victimasjr.comunidadnac %></dd>
 
-        <% if @caso.casosjr && @caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
+        <% if @caso.casosjr && 
+            ((@caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin)) ||
+            (@caso.casosjr.oficina_id == 103 && can?(:edit, :casosoik))) then %>
           <div class="privado alert-info">
             <dt><strong>
               <%= Sivel2Sjr::Victimasjr.human_attribute_name(:departamentores) %>:
@@ -187,26 +222,30 @@
             </strong></dt>
             <dd><%= victima.victimasjr.resguardores if 
               victima.victimasjr && victima.victimasjr.resguardores %> </dd>
-            
+
             <dt><strong>
               <%= Sivel2Sjr::Victimasjr.human_attribute_name(:comunidadres) %>:
             </strong></dt>
             <dd><%= victima.victimasjr.comunidadres if 
               victima.victimasjr && victima.victimasjr.comunidadres %> </dd>
 
-            <dt><strong>
-              <%= Sivel2Gen::Victima.human_attribute_name(:hijos) %>:
-            </strong></dt>
-            <dd><%= victima.hijos if victima.hijos %></dd>
+            <% if @caso.casosjr && @caso.casosjr.oficina_id == 104 && 
+                can?(:edit, :casosacin) then %>
+              <dt><strong>
+                  <%= Sivel2Gen::Victima.human_attribute_name(:hijos) %>:
+                </strong>
+              </dt>
+              <dd><%= victima.hijos if victima.hijos %></dd>
 
-            <dt><strong>
-              <%= Sivel2Sjr::Victimasjr.human_attribute_name(:idioma) %>:
-            </strong></dt>
-            <dd><%= victima.victimasjr.idioma.inject("") { 
-              |memo, i| 
-              (memo == "" ? "" : memo + ", ") + i.nombre } if 
-                victima.victimasjr && victima.victimasjr.idioma
-            %></dd>
+              <dt><strong>
+                  <%= Sivel2Sjr::Victimasjr.human_attribute_name(:idioma) %>:
+                </strong></dt>
+                <dd>
+                  <%= victima.victimasjr.idioma.inject("") { |memo, i| 
+                    (memo == "" ? "" : memo + ", ") + i.nombre } if 
+                  victima.victimasjr && victima.victimasjr.idioma %>
+                </dd>
+              <% end %>
           </div>
         <% end %>
 
@@ -242,6 +281,17 @@
           ApplicationHelper::NOSI, victima.victimasjr.sistemasalud, true) if
           victima.victimasjr && victima.victimasjr.sistemasalud %></dd>
 
+        <% if @caso.casosjr && @caso.casosjr.oficina_id == 103 && 
+            can?(:edit, :casosoik) then %>
+          <div class="privado alert-info">
+            <dt>
+              <strong>
+                <%= Sivel2Sjr::Victimasjr.human_attribute_name(:eps) %>:
+              </strong>
+            </dt>
+            <dd><%= victima.victimasjr.eps.to_s %></dd>
+          </div>
+        <% end %>
 
         <% if @caso.casosjr && @caso.casosjr.oficina_id == 104 && 
              can?(:edit, :casosacin) then %>
@@ -283,6 +333,20 @@
         <dd> <%= ApplicationHelper.etiqueta(
           ApplicationHelper::SEXO, victima.persona.sexo, true ) if 
           victima.persona.sexo %> </dd>
+        <% if @caso.casosjr && @caso.casosjr.oficina_id == 103 && 
+            can?(:edit, :casosoik) then %>
+          <div class="privado alert-info">
+            <dt><strong>
+              <%= Sivel2Gen::Victima.human_attribute_name(:orientacionsexual) %>:
+            </strong></dt>
+            <dd><%= victima.orientacionsexual.to_s %></dd>
+            <dt><strong>
+              <%= Sivel2Sjr::Victimasjr.human_attribute_name(:ocupacion) %>:
+            </strong></dt>
+            <dd><%= victima.victimasjr.ocupacion.to_s %></dd>
+
+          </div>
+        <% end %>
 
         <dt><strong>
           <%= Sivel2Sjr::Victimasjr.human_attribute_name(:organizacionfilial) %>:
@@ -309,6 +373,15 @@
         <dd><%= ApplicationHelper.etiqueta(
           ApplicationHelper::LIDERAZGO, victima.victimasjr.liderazgo, true) if 
            victima.victimasjr && victima.victimasjr.liderazgo %></dd>
+        <% if @caso.casosjr && @caso.casosjr.oficina_id == 103 && 
+            can?(:edit, :casosoik) then %>
+          <div class="privado alert-info">
+            <dt><strong>
+                <%= Sivel2Sjr::Victimasjr.human_attribute_name(:poblacionespecial) %>:
+              </strong></dt>
+              <dd><%= victima.victimasjr.poblacionespecial.nombre if  victima.victimasjr && victima.victimasjr.poblacionespecial %></dd>
+          </div>
+        <% end %>
 
         <% if @caso.casosjr && @caso.casosjr.oficina_id == 104 && 
              can?(:edit, :casosacin) then %>

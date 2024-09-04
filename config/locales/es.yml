@@ -112,6 +112,9 @@ es:
       "msip/persona":
         sexo: Sexo de nacimiento
         tdocumento_id: Tipo de documento de identidad
+      "poblacionespecial":
+        Poblacionespecial: Población especial
+        Poblacionesespeciales: Poblaciones especiales
       "sivel2_gen/caso":
         asesor: Sistematizado por
         contacto: Víctima
@@ -128,6 +131,7 @@ es:
         fecharec: Fecha documentación inicial en terreno
         fechanac: Fecha de nacimiento
         oficina: Organizacion que diligencia
+        otroacompanamiento: Otro acompañamiento
         residencia: Residencia actual
         tipoacomp: Acompañamiento
         usuario: Sistematizado por
@@ -147,6 +151,8 @@ es:
         comoingresos: ¿Cómo genera ingresos económicos?
         comunidadnac: Comunidad/vereda de nacimiento
         comunidadres: Comunidad/vereda de residencia
+        contacto: Contacto
+        contactodeconfianza: Contacto de confianza
         departamentores: Departamento de residencia
         educacionpropia: Educación propia
         escolaridad: Último grado en educación ordinaria
@@ -154,7 +160,9 @@ es:
         incluidoruv: Incluido en RUV
         municipiores: Municipio de residencia
         ndiscapacidad: Condición de discapacidad
+        ocupacion: Ocupación
         organizacionfilial: Organización Filial
+        poblacionespecial: Población especial
         resguardonac: Resguardo de nacimiento
         resguardores: Resguardo de residencia
         sistemasalud: Tiene carnet de salud

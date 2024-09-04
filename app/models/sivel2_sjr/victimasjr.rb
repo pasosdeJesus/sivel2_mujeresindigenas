@@ -29,6 +29,11 @@ module Sivel2Sjr
       foreign_key: 'municipiores_id', validate: true, optional: true
     belongs_to :pais, class_name: "Msip::Pais", 
       foreign_key: "pais_id", validate: true, optional: true
+    belongs_to :poblacionespecial, 
+      class_name: "::Poblacionespecial", 
+      foreign_key: "poblacionespecial_id", 
+      validate: true, 
+      optional: true
     belongs_to :regimensalud, class_name: "Sivel2Sjr::Regimensalud", 
       foreign_key: "regimensalud_id", validate: true, optional: true
     belongs_to :religion, class_name: '::Religion',
@@ -60,9 +65,12 @@ module Sivel2Sjr
     validates :comotierra, length: { maximum: 5000 }
     validates :comunidadnac, length: { maximum: 500 }
     validates :comunidadres, length: { maximum: 500 }
+    validates :contacto, length: { maximum: 255 }
+    validates :contactodeconfianza, length: { maximum: 255 }
     validates :incluidoruv, length: { maximum: 1}
     validates :liderazgo, length: { maximum: 1}
     validates :municipiores, length: { maximum: 500 }
+    validates :ocupacion, length: { maximum: 255 }
     validates :organizacionfilial, length: { maximum: 500 }
     validates :resguardonac, length: { maximum: 500 }
     validates :resguardores, length: { maximum: 500 }

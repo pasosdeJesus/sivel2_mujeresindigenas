@@ -20,6 +20,7 @@ class Ability < Sivel2Gen::Ability
 	  ['', 'educacionpropia'],
     ['', 'estadocaso'],
     ['', 'motivonodenuncia'],
+    ['', 'poblacionespecial'],
     ['', 'relacionprvic'],
 	  ['', 'religion'],
 	  ['', 'tafectacion'],

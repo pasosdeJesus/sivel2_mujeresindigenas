@@ -20,6 +20,7 @@ module Sivel2Sjr
       class_name: "::Acompanamiento"
 
     validates :consentimiento, length: { maximum: 1}
+    validates :otroacompanamiento, length: { maximum: 5000}
 
     # Ordenados por foreign_key para comparar con esquema en base
     belongs_to :usuario, class_name: "Usuario", 
