@@ -11,7 +11,6 @@ module Sivel2Sjr
 
     # Campos por presentar en listado index
     def incluir_inicial
-      debugger
       if can? :edit, :casosacin
         ['casoid', 'fecharec', 'oficina', 'nusuario', 'ubicaciones', 'contacto', 'fechahecho']
       else
@@ -35,6 +34,10 @@ module Sivel2Sjr
     # Ordenamiento inicial por este campo
     def campoord_inicial
       'fecharec'
+    end
+
+
+    def self.asegura_camposdinamicos(registro, current_usuario_id, otro)
     end
 
     def cortamemo
@@ -79,14 +82,6 @@ module Sivel2Sjr
     def show
       # En models/ability.rb agregar
       # can :read, Sivel2Gen::Caso,  etiqueta: { id: usuario.etiqueta.map(&:id) } 
-      if current_usuario.rol == Ability::ROLINV
-        ace = @caso.caso_etiqueta.map { |ce| ce.etiqueta_id }
-        aeu = current_usuario.etiqueta_usuario.map { |eu| eu.etiqueta_id }
-        ie = ace & aeu
-        if (ie.size == 0)
-          raise CanCan::AccessDenied.new("Invitado no autorizado!", :read, Caso)
-        end
-      end
       show_sivel2_gen
     end
 
@@ -261,7 +256,6 @@ module Sivel2Sjr
           format.json { render inline: 'Falta variable term' }
         end
       else
-        debugger
         term = Sivel2Gen::Caso.connection.quote_string(params[:term])
         consNom = term.downcase.strip #sin_tildes
         consNom.gsub!(/ +/, ":* & ")
@@ -367,10 +361,11 @@ module Sivel2Sjr
           :_destroy
         ],
         :victima_attributes => [
+          :etnia_id,
           :hijos,
           :id,
-          :etnia_id,
           :iglesia_id,
+          :orientacionsexual,
           :persona_id,
           :profesion_id,
           :rangoedad_id,
@@ -378,14 +373,15 @@ module Sivel2Sjr
           :persona_attributes => [
             :anionac,
             :apellidos,
+            :centropoblado_id,
+            :departamento_id,
             :dianac,
             :id,
-            :pais_id,
-            :departamento_id,
-            :municipio_id,
-            :centropoblado_id,
             :mesnac,
+            :municipio_id,
             :nombres,
+            :numerodocumento,
+            :pais_id,
             :sexo,
             :tdocumento_id
           ],

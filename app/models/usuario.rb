@@ -19,7 +19,6 @@ class Usuario < ActiveRecord::Base
   validate :rol_usuario
   def rol_usuario
     if oficina && (rol == Ability::ROLADMIN ||
-        rol == Ability::ROLINV || 
         rol == Ability::ROLDIR)
       errors.add(:oficina, "Oficina debe estar en blanco para el rol elegido")
     end

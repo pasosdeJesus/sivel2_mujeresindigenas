@@ -24,6 +24,8 @@ window.configuracionTomSelect = {
   }
 }
 
+window.selectorCampoFechaCaso = "#caso_casosjr_attributes_fecharec"
+
 import 'gridstack'
 import './jquery'
 

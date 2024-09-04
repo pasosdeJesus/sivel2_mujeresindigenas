@@ -110,6 +110,7 @@ es:
         Oficina: "Organización que diligencia"
         Oficinas: "Organizaciones que diligencian"
       "msip/persona":
+        sexo: Sexo de nacimiento
         tdocumento_id: Tipo de documento de identidad
       "sivel2_gen/caso":
         asesor: Sistematizado por

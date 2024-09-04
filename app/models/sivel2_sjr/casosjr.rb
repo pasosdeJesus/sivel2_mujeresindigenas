@@ -59,6 +59,15 @@ module Sivel2Sjr
     has_many :victimasjr, class_name: 'Sivel2Sjr::Victimasjr', validate: true,
       through: :victima
 
+    # Verifica que un usuariosea de la misma oficina de otro
+    def self.asesor_de_oficina(current_usuario, usuario, oficina)
+      current_usuario.rol == Ability::ROLADMIN ||
+        current_usuario.rol == Ability::ROLDIR ||
+        usuario.rol == Ability::ROLADMIN ||
+        usuario.rol == Ability::ROLDIR ||
+        usuario.oficina_id == oficina.id || oficina.id == 1
+    end
+
 
     # Verifica que un usuario edita caso de su oficina
     def self.asesor_edita_de_su_oficina(current_usuario, oficina)
@@ -66,6 +75,7 @@ module Sivel2Sjr
        current_usuario.rol != Ability::ROLANALI) ||
       oficina.id == current_usuario.oficina_id
     end
+
 
     validate :rol_usuario
     def rol_usuario
