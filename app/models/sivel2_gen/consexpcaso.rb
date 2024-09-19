@@ -1,8 +1,14 @@
-require 'sivel2_sjr/concerns/models/consexpcaso'
+require 'sivel2_gen/concerns/models/consexpcaso'
 
 class Sivel2Gen::Consexpcaso < ActiveRecord::Base
-  include Sivel2Sjr::Concerns::Models::Consexpcaso
-  
+  include Sivel2Gen::Concerns::Models::Consexpcaso
+
+  belongs_to :casosjr, class_name: 'Sivel2Sjr::Casosjr',
+    primary_key: 'caso_id', foreign_key: 'caso_id', optional: false
+
+  has_many :victimasjr, through: :casosjr,
+    class_name: 'Sivel2Sjr::Victimasjr'
+
   def self.consulta_consexpcaso
         "SELECT " +
         # Pestaña Basicos
@@ -267,7 +273,7 @@ class Sivel2Gen::Consexpcaso < ActiveRecord::Base
         LEFT JOIN public.msip_municipio AS smunicipio ON
           scontacto.municipiores_id = smunicipio.id
         LEFT JOIN public.msip_etnia AS etnia ON
-            vcontacto.etnia_id=etnia.id
+            contacto.etnia_id=etnia.id
         LEFT JOIN public.sivel2_gen_estadocivil AS estadocivil ON
             scontacto.estadocivil_id=estadocivil.id
         LEFT JOIN public.sivel2_gen_escolaridad AS escolaridad ON
