@@ -8,7 +8,7 @@ module Sivel2Gen
       foreign_key: "caso_id", primary_key: 'caso_id'
 
     scope :filtro_categoria_ids, lambda { |ids|
-      where('caso_id IN (
+      where('sivel2_sjr_casosjr.caso_id IN (
     SELECT evento.caso_id FROM public.categoria_eventopresponsable
     JOIN eventopresponsable ON
     categoria_eventopresponsable.eventopresponsable_id = eventopresponsable.id
@@ -18,7 +18,7 @@ module Sivel2Gen
 
 
     scope :filtro_categoria_id, lambda { |id|
-      where('caso_id IN (
+      where('sivel2_sjr_casosjr.caso_id IN (
     SELECT evento.caso_id FROM public.categoria_eventopresponsable
     JOIN eventopresponsable ON
     categoria_eventopresponsable.eventopresponsable_id = eventopresponsable.id
@@ -27,11 +27,25 @@ module Sivel2Gen
     }
 
     scope :filtro_departamento_id, lambda { |id|
-      where('caso_id IN (SELECT caso_id
+      where('sivel2_sjr_casosjr.caso_id IN (SELECT caso_id
          FROM public.evento
          WHERE evento.departamento_id = ?)', id.to_i)
     }
 
+
+    scope :filtro_nombressp, lambda { |a|
+      joins(:casosjr).joins(:persona).
+        where('sivel2_sjr_casosjr.contacto_id = msip_persona.id ' +
+              'AND msip_persona.nombres ILIKE \'%' +
+              ActiveRecord::Base.connection.quote_string(a) + '%\'')
+    }
+
+    scope :filtro_apellidossp, lambda { |a|
+      joins(:casosjr).joins(:persona).
+        where('sivel2_sjr_casosjr.contacto_id = msip_persona.id ' +
+              'AND msip_persona.apellidos ILIKE \'%' +
+              ActiveRecord::Base.connection.quote_string(a) + '%\'')
+    }
 
     scope :filtro_fechahechoini, lambda { |f|
       where("fechahecho='' OR substring(fechahecho from 1 for 4)='0000' OR 
@@ -49,18 +63,31 @@ module Sivel2Gen
           <= ?::text", f.to_s)
     }
 
+    scope :filtro_fecharecini, lambda { |f|
+      where('sivel2_gen_conscaso.fecharec >= ?', f)
+    }
+
+    scope :filtro_fecharecfin, lambda { |f|
+      where('sivel2_gen_conscaso.fecharec <= ?', f)
+    }
+
     scope :filtro_municipio_id, lambda { |id|
-      where('caso_id IN (SELECT caso_id
+      where('sivel2_sjr_casosjr.caso_id IN (SELECT caso_id
          FROM public.evento
          WHERE evento.municipio_id = ?)', id.to_i)
     }
 
     scope :filtro_relacionadocon, lambda { |r|
-      where('caso_id IN (SELECT caso_id
+      where('sivel2_sjr_casosjr.caso_id IN (SELECT caso_id
          FROM public.evento
          WHERE evento.relacionadocon = ?)', r)
     }
 
+
+    scope :filtro_oficina_id, lambda { |id|
+      where('sivel2_sjr_casosjr.oficina_id = ?', id).
+        joins(:casosjr)
+    }
 
     scope :ordenar_por, lambda { |campo|
       critord = ""
