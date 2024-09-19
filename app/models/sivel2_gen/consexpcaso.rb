@@ -1,16 +1,18 @@
 require 'sivel2_gen/concerns/models/consexpcaso'
 
-class Sivel2Gen::Consexpcaso < ActiveRecord::Base
-  include Sivel2Gen::Concerns::Models::Consexpcaso
+module Sivel2Gen
+  class Consexpcaso < ActiveRecord::Base
+    include Sivel2Gen::Concerns::Models::Consexpcaso
 
-  belongs_to :casosjr, class_name: 'Sivel2Sjr::Casosjr',
-    primary_key: 'caso_id', foreign_key: 'caso_id', optional: false
+    belongs_to :casosjr, class_name: 'Sivel2Sjr::Casosjr',
+      primary_key: 'caso_id', foreign_key: 'caso_id', optional: false
 
-  has_many :victimasjr, through: :casosjr,
-    class_name: 'Sivel2Sjr::Victimasjr'
+    has_many :victimasjr, through: :casosjr,
+      class_name: 'Sivel2Sjr::Victimasjr'
 
-  def self.consulta_consexpcaso
-        "SELECT " +
+
+    def self.consulta_consexpcaso
+      "SELECT " +
         # Pestaña Basicos
         "conscaso.caso_id,
         conscaso.oficina AS organizacion,
@@ -33,10 +35,10 @@ class Sivel2Gen::Consexpcaso < ActiveRecord::Base
            acompanamiento_casosjr.acompanamiento_id=acompanamiento.id
          WHERE acompanamiento_casosjr.sivel2_sjr_casosjr_id=conscaso.caso_id), '; ')
          AS acompanamientos_caso,
-         " +
+      " +
 
-         # Pestaña fuentes, primera solamente
-         "ARRAY_TO_STRING(ARRAY(SELECT nombre FROM public.msip_fuenteprensa AS f
+      # Pestaña fuentes, primera solamente
+      "ARRAY_TO_STRING(ARRAY(SELECT nombre FROM public.msip_fuenteprensa AS f
          JOIN public.sivel2_gen_caso_fuenteprensa AS cf ON 
            cf.fuenteprensa_id=f.id
          WHERE cf.caso_id=conscaso.caso_id 
@@ -52,10 +54,10 @@ class Sivel2Gen::Consexpcaso < ActiveRecord::Base
          WHERE cf.caso_id=conscaso.caso_id
          ORDER BY fecha LIMIT 1), '; ')
          AS fuente1_detalle,
-         " +
+      " +
 
-        # Pestaña victima
-        "conscaso.contacto AS victima_priv_acin,
+      # Pestaña victima
+      "conscaso.contacto AS victima_priv_acin,
         contacto.nombres AS victima_nombres_priv_acin,
         contacto.apellidos AS victima_apellidos_priv_acin,
         COALESCE(tdocumento.sigla, '') AS victima_identificacion_priv_acin,
@@ -122,10 +124,10 @@ class Sivel2Gen::Consexpcaso < ActiveRecord::Base
         scontacto.tipoliderazgo AS victima_tipoliderazgo_priv_acin,
         scontacto.tieneesquema AS victima_tieneesquema_priv_acin,
         scontacto.anioesquema AS victima_anioesquema_priv_acin,
-       " +
-       
-        # Pestaña Evento (primer evento)
-        "evento.fechaseguimiento AS evento_fechaseguimiento,
+      " +
+
+      # Pestaña Evento (primer evento)
+      "evento.fechaseguimiento AS evento_fechaseguimiento,
         evento.anio AS evento_anio,
         evento.mes AS evento_mes,
         evento.dia AS evento_dia,
@@ -251,7 +253,7 @@ class Sivel2Gen::Consexpcaso < ActiveRecord::Base
         evento.seguimientopsicosocial AS evento_seguimientopsicosocial_priv_oik,
 
         conscaso.ubicaciones AS ubicaciones
-        
+
         FROM public.sivel2_gen_conscaso AS conscaso
         JOIN public.sivel2_sjr_casosjr AS casosjr ON casosjr.caso_id=conscaso.caso_id
         JOIN public.sivel2_gen_caso AS caso ON casosjr.caso_id = caso.id 
@@ -287,7 +289,7 @@ class Sivel2Gen::Consexpcaso < ActiveRecord::Base
             AND evento.id = (SELECT MIN(e.id) FROM public.evento AS e 
             WHERE e.caso_id = conscaso.caso_id)
       "
-  end
+    end
 
     def self.interpreta_ordenar_por(ordenar_por)
       ordexp = 'x'
@@ -302,5 +304,5 @@ class Sivel2Gen::Consexpcaso < ActiveRecord::Base
       return ordexp
     end
 
+  end
 end
-
