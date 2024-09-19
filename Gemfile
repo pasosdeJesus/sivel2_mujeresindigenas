@@ -98,6 +98,8 @@ group :test, :development do
   gem "colorize" # Color en terminal
 
   gem "dotenv-rails"
+
+  gem "rails-controller-testing"
 end
 
 

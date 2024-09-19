@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: aba2fcfa68000aeccf893e5443199f3832f13b6a
+  revision: 4cf7b80443506733fff8635fa4dd2fd2f07a7630
   branch: main
   specs:
     cor1440_gen (2.2.0.beta6)
@@ -38,7 +38,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/heb412_gen.git
-  revision: 7eea7af9fade94b84d2ea674eefdf24971815c47
+  revision: 2b147472a5c20744343886deed03ecbb0d647d1a
   branch: main
   specs:
     heb412_gen (2.3.0.alfa2)
@@ -57,7 +57,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/mr519_gen.git
-  revision: 2d58a40a419d5e8b27f0d12b61e72f4420625996
+  revision: 9a1973bdb7beec016923dc244e788442f350fff0
   branch: main
   specs:
     mr519_gen (2.3.0.alfa2)
@@ -66,7 +66,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: dc7da1e51a6f00823cfb274f37d67341278fc132
+  revision: 216c62b9faece183f4b40cec57dad1ca138e2085
   branch: main
   specs:
     msip (2.3.0.alfa2)
@@ -86,7 +86,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/sivel2_gen.git
-  revision: ab46498f4ef06c533b9e34c54240d8a6c391bdff
+  revision: cff3579011e26e01903f0ad73bc2e792a66cef20
   branch: main
   specs:
     sivel2_gen (2.3.0.alfa2)
@@ -244,7 +244,7 @@ GEM
     irb (1.14.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
-    jbuilder (2.12.0)
+    jbuilder (2.13.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jsbundling-rails (1.3.1)
@@ -284,11 +284,11 @@ GEM
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parslet (2.0.0)
-    pg (1.5.7)
+    pg (1.5.8)
     psych (5.1.2)
       stringio
     public_suffix (6.0.1)
-    puma (6.4.2)
+    puma (6.4.3)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.1.7)
@@ -313,6 +313,10 @@ GEM
       activesupport (= 7.2.1)
       bundler (>= 1.15.0)
       railties (= 7.2.1)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.2.0)
       activesupport (>= 5.0.0)
       minitest
@@ -458,6 +462,7 @@ DEPENDENCIES
   pg
   puma
   rails (~> 7.2)
+  rails-controller-testing
   rails-erd
   rails-i18n
   redcarpet
@@ -478,4 +483,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.5.18
+   2.5.19

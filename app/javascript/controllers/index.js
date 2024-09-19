@@ -22,6 +22,9 @@ application.register("msip--geodep", Msip__GeodepController)
 import Msip__SindocautController from "./msip/sindocaut_controller"
 application.register("msip--sindocaut", Msip__SindocautController)
 
+import Sivel2Gen__ContarAutomaticoController from "./sivel2_gen/contar_automatico_controller"
+application.register("sivel2-gen--contar-automatico", Sivel2Gen__ContarAutomaticoController)
+
 import Sivel2Gen__EdadController from "./sivel2_gen/edad_controller"
 application.register("sivel2-gen--edad", Sivel2Gen__EdadController)
 
@@ -33,6 +36,3 @@ application.register("sivel2-gen--filtro-avanzado", Sivel2Gen__FiltroAvanzadoCon
 
 import Sivel2Gen__MapaosmController from "./sivel2_gen/mapaosm_controller"
 application.register("sivel2-gen--mapaosm", Sivel2Gen__MapaosmController)
-
-import Sivel2Gen__MotorController from "./sivel2_gen/motor_controller"
-application.register("sivel2-gen--motor", Sivel2Gen__MotorController)
