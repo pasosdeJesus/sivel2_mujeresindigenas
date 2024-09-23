@@ -28,12 +28,12 @@
           </td>
         <% end %>
         <td>
-          <% 
-              if (caso && current_usuario &&
-                  Sivel2Sjr::Casosjr::asesor_edita_de_su_oficina(
-                    current_usuario, 
-                    Sivel2Sjr::Casosjr.find(caso.caso_id).oficina)) 
-          %>
+          <% if (caso && current_usuario &&
+              Sivel2Sjr::Casosjr.where(caso_id: caso.caso_id).count > 0 &&
+              Sivel2Sjr::Casosjr::asesor_edita_de_su_oficina(
+                current_usuario, 
+                Sivel2Sjr::Casosjr.find(caso.caso_id).oficina
+              )) %>
             <%= link_to t('.edit', :default => t("helpers.links.edit")),
               sivel2_gen.edit_caso_path(caso.caso_id),
               "data-turbo": false,
