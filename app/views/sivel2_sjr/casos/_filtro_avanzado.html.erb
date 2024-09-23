@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" data-controller="msip--geodep">
     <div class="row filtro-fila">
       <div class="text-center offset-sm-0 col-sm-10 offset-md-1 col-md-8">
         Filtro
@@ -52,20 +52,33 @@
       <div class="offset-sm-0 col-sm-4 col-md-4">
         <%= f.input :departamento_id,
           collection: Msip::Departamento.habilitados.where(pais_id: 170),
-          label_method: :nombre,
-          value_method: :id,
+          input_html: {
+            class: 'tom-select', 
+            data: {
+              action: "change->msip--geodep#cambiar_departamento",
+              "msip--geodep-target": "departamento"
+            }
+          },
+          include_blank: "-- Departamento",
           label: false,
-          include_blank: "-- Departamento"
+          label_method: :nombre,
+          value_method: :id
         %>
       </div>
       <div class="col-md-3">
         <%= f.input :municipio_id,
           collection: Msip::Municipio.habilitados,
-          label_method: :nombre,
-          value_method: :id,
-          label: false,
           include_blank: "-- Municipio",
-          input_html: { disabled: :disabled }
+          input_html: {
+            class: 'tom-select', 
+            data: {
+              action: "change->msip--geodep#cambiar_municipio",
+              "msip--geodep-target": "municipio"
+            }
+          },
+          label: false,
+          label_method: :nombre,
+          value_method: :id
         %>
       </div>
       <div class="offset-sm-0 col-sm-1 text-center">

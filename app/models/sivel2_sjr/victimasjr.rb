@@ -33,7 +33,7 @@ module Sivel2Sjr
       class_name: "::Poblacionespecial", 
       foreign_key: "poblacionespecial_id", 
       validate: true, 
-      optional: true
+      optional: false
     belongs_to :regimensalud, class_name: "Sivel2Sjr::Regimensalud", 
       foreign_key: "regimensalud_id", validate: true, optional: true
     belongs_to :religion, class_name: '::Religion',

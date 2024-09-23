@@ -8,7 +8,7 @@ module Sivel2Gen
       foreign_key: "caso_id", primary_key: 'caso_id'
 
     scope :filtro_categoria_ids, lambda { |ids|
-      where('sivel2_sjr_casosjr.caso_id IN (
+      where('sivel2_gen_conscaso.caso_id IN (
     SELECT evento.caso_id FROM public.categoria_eventopresponsable
     JOIN eventopresponsable ON
     categoria_eventopresponsable.eventopresponsable_id = eventopresponsable.id
@@ -18,7 +18,7 @@ module Sivel2Gen
 
 
     scope :filtro_categoria_id, lambda { |id|
-      where('sivel2_sjr_casosjr.caso_id IN (
+      where('sivel2_gen_conscaso.caso_id IN (
     SELECT evento.caso_id FROM public.categoria_eventopresponsable
     JOIN eventopresponsable ON
     categoria_eventopresponsable.eventopresponsable_id = eventopresponsable.id
@@ -27,7 +27,7 @@ module Sivel2Gen
     }
 
     scope :filtro_departamento_id, lambda { |id|
-      where('sivel2_sjr_casosjr.caso_id IN (SELECT caso_id
+      where('sivel2_gen_conscaso.caso_id IN (SELECT caso_id
          FROM public.evento
          WHERE evento.departamento_id = ?)', id.to_i)
     }
@@ -72,13 +72,13 @@ module Sivel2Gen
     }
 
     scope :filtro_municipio_id, lambda { |id|
-      where('sivel2_sjr_casosjr.caso_id IN (SELECT caso_id
+      where('sivel2_gen_conscaso.caso_id IN (SELECT caso_id
          FROM public.evento
          WHERE evento.municipio_id = ?)', id.to_i)
     }
 
     scope :filtro_relacionadocon, lambda { |r|
-      where('sivel2_sjr_casosjr.caso_id IN (SELECT caso_id
+      where('sivel2_gen_conscaso.caso_id IN (SELECT caso_id
          FROM public.evento
          WHERE evento.relacionadocon = ?)', r)
     }
