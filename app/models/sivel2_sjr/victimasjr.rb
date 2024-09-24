@@ -65,8 +65,9 @@ module Sivel2Sjr
     validates :comotierra, length: { maximum: 5000 }
     validates :comunidadnac, length: { maximum: 500 }
     validates :comunidadres, length: { maximum: 500 }
-    validates :contacto, length: { maximum: 255 }
+    validates :telefono, length: { maximum: 255 }
     validates :contactodeconfianza, length: { maximum: 255 }
+    validates :telefonocontactodeconfianza, length: { maximum: 64 }
     validates :incluidoruv, length: { maximum: 1}
     validates :liderazgo, length: { maximum: 1}
     validates :municipiores, length: { maximum: 500 }

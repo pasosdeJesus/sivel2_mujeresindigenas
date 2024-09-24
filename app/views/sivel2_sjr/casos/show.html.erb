@@ -151,16 +151,24 @@
               <dd><%= victima.persona.numerodocumento.to_s %></dd>
 
               <dt><strong>
-                  <%= Sivel2Sjr::Victimasjr.human_attribute_name(:contacto) %>:
+                  <%= Sivel2Sjr::Victimasjr.human_attribute_name(:telefono) %>:
                 </strong>
               </dt>
-              <dd><%= victima.victimasjr.contacto.to_s %></dd>
+              <dd><%= victima.victimasjr.telefono.to_s %></dd>
 
               <dt><strong>
                   <%= Sivel2Sjr::Victimasjr.human_attribute_name(:contactodeconfianza) %>:
                 </strong>
               </dt>
               <dd><%= victima.victimasjr.contactodeconfianza.to_s %></dd>
+
+              <dt><strong>
+                  <%= Sivel2Sjr::Victimasjr.human_attribute_name(
+                    :telefonocontactodeconfianza
+                  ) %>:
+                </strong>
+              </dt>
+              <dd><%= victima.victimasjr.telefonocontactodeconfianza.to_s %></dd>
 
 
             <% end %>
