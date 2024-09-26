@@ -384,10 +384,53 @@
         <% if @caso.casosjr && @caso.casosjr.oficina_id == 103 && 
             can?(:edit, :casosoik) then %>
           <div class="privado alert-info">
-            <dt><strong>
+            <dt>
+              <strong>
                 <%= Sivel2Sjr::Victimasjr.human_attribute_name(:poblacionespecial) %>:
-              </strong></dt>
-              <dd><%= victima.victimasjr.poblacionespecial.nombre if  victima.victimasjr && victima.victimasjr.poblacionespecial %></dd>
+              </strong>
+            </dt>
+            <dd>
+              <%= victima.victimasjr.poblacionespecial.nombre if  victima.victimasjr && victima.victimasjr.poblacionespecial %>
+            </dd>
+
+            <dt>
+              <strong>
+                <%= Sivel2Sjr::Victimasjr.human_attribute_name(:dependientes) %>:
+              </strong>
+            </dt>
+            <dd>
+              <%= victima.victimasjr.dependientes.to_i %>
+            </dd>
+
+            <dt>
+              <strong>
+                <%= Sivel2Sjr::Victimasjr.human_attribute_name(:dependientesmenores) %>:
+              </strong>
+            </dt>
+            <dd>
+              <%= victima.victimasjr.dependientesmenores.to_i %>
+            </dd>
+
+            <dt>
+              <strong>
+                <%= Sivel2Sjr::Victimasjr.human_attribute_name(:dependientesmayores) %>:
+              </strong>
+            </dt>
+            <dd>
+              <%= victima.victimasjr.dependientesmayores.to_i %>
+            </dd>
+
+            <dt>
+              <strong>
+                <%= Sivel2Sjr::Victimasjr.human_attribute_name(:dependientesdiversidad) %>:
+              </strong>
+            </dt>
+            <dd>
+              <%= victima.victimasjr.dependientesdiversidad.to_i %>
+            </dd>
+
+
+
           </div>
         <% end %>
 

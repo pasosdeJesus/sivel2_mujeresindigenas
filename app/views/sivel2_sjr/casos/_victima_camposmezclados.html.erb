@@ -50,17 +50,20 @@
   <% elsif (fcasosjr.object.oficina_id == 103 && can?(:edit, :casosoik)) then %>
     <div class="privado alert-info">
       <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-4">
             <%= render partial: 'msip/personas/campo_tdocumento_nobusca',
               locals: {f: fpersona} %>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <%= render partial: 'msip/personas/campo_numerodocumento_nobusca',
               locals: {
                 f: fpersona,
                 titulo_tooltip: "Si el tipo de documento es cédula de ciudadania "\
                 "teclee solo digitos"
               } %>
+          </div>
+          <div class="col-md-4">
+            <%= fvictimasjr.input :telefono %>
           </div>
       </div>
     </div>
@@ -71,12 +74,9 @@
     <div class="privado alert-info">
       <div class="row">
         <div class="col-md-6">
-          <%= fvictimasjr.input :telefono %>
-        </div>
-        <div class="col-md-6">
           <%= fvictimasjr.input :contactodeconfianza %>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
           <%= fvictimasjr.input :telefonocontactodeconfianza %>
         </div>
       </div>
@@ -323,12 +323,31 @@
 
   <% if fcasosjr.object.oficina_id == 103 && can?(:edit, :casosoik) then %>
     <div class="privado alert-info">
-      <%= fvictimasjr.association :poblacionespecial,
-        collection: ::Poblacionespecial.habilitados,
-        include_blank: false,
-        label_method: :nombre, 
-        value_method: :id %>
+      <div class="row">
+        <div class="col-md-6">
+          <%= fvictimasjr.association :poblacionespecial,
+            collection: ::Poblacionespecial.habilitados,
+            include_blank: false,
+            label_method: :nombre, 
+            value_method: :id %>
+        </div>
+        <div class="col-md-6">
+          <%= fvictimasjr.input :dependientes %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <%= fvictimasjr.input :dependientesmenores %>
+        </div>
+        <div class="col-md-4">
+          <%= fvictimasjr.input :dependientesmayores %>
+        </div>
+        <div class="col-md-4">
+          <%= fvictimasjr.input :dependientesdiversidad %>
+        </div>
+      </div>
     </div>
+
   <% end %>
 
   <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>

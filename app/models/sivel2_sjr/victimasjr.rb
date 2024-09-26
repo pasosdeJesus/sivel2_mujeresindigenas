@@ -80,5 +80,27 @@ module Sivel2Sjr
     validates :tipoliderazgo, length: { maximum: 5000 }
     validates :vicconflicto, length: { maximum: 1}
 
+    validates :dependientes,
+      numericality: { greater_than_or_equal_to: 0.0 }, allow_nil: true
+    validates :dependientesmenores,
+      numericality: { greater_than_or_equal_to: 0.0 }, allow_nil: true
+    validates :dependientesmayores,
+      numericality: { greater_than_or_equal_to: 0.0 }, allow_nil: true
+    validates :dependientesdiversidad,
+      numericality: { greater_than_or_equal_to: 0.0 }, allow_nil: true
+
+    validate :suma_dependientes
+    def suma_dependientes
+      sd = self.dependientesdiversidad.to_i +
+        self.dependientesmayores.to_i +
+        self.dependientesmenores.to_i
+      if sd > self.dependientes.to_i
+        errors.add(
+          :dependientes,
+          "Suma de dependientes caracterizados (#{sd}) no debe ser mayor que el total de dependientes (#{self.dependientes})"
+        )
+      end
+    end
+
   end
 end
