@@ -72,6 +72,7 @@ class Evento < ActiveRecord::Base
 
   validates :acompnecesita, length: {maximum: 5000}
   validates :afectacionotra, length: {maximum: 500}
+  validates :agresion, length: {maximum: 5000}
   validates :actividadesdejadas, length: {maximum: 5000}
   validates :avancescaso, length: {maximum: 5000}
   validates :brindadaproteccion, length: {maximum: 5000}
@@ -83,6 +84,7 @@ class Evento < ActiveRecord::Base
   validates :numvecesantes, length: {maximum: 100}
   validates :observaciones, length: {maximum: 5000}
   validates :quereparacion, length: {maximum: 5120}
+  validates :quepaso, length: {maximum: 5000}
   validates :relacionprespvic, length: {maximum: 500}
   validates :resguardo, length: {maximum: 500}
   validates :reaccionfamiliaycomunidad, length: {maximum: 5000}

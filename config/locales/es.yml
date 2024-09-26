@@ -47,6 +47,7 @@ es:
         acompnecesita: Acompañamiento que necesita
         actividadesdejadas: Actividades que se dejaron de hacer
         afectacionotra: Afectación a otra persona
+        agresion: ¿De qué manera se sintió agredida? 
         anio: Año hecho
         aniodenuncia: Año denuncia
         avancescaso: Avances del caso
@@ -75,6 +76,7 @@ es:
         municipio: Municipio del hecho
         numvecesantes: Número de veces antes
         observaciones: Observaciones generales
+        quepaso: ¿Qué pasó?
         quereparacion: ¿Cúal reparación?
         quisieradenunciar: ¿Quisiera denunciar?
         reaccionfamiliaycomunidad: Reacción de la familia y la comunidad
@@ -154,6 +156,10 @@ es:
         contacto: Contacto
         contactodeconfianza: Contacto de confianza
         departamentores: Departamento de residencia
+        dependientes: Dependientes
+        dependientesmenores: Dependientes menores de edad
+        dependientesmayores: Dependientes mayores de edad
+        dependientesdiversidad: Dependientes con diversidad funcional
         educacionpropia: Educación propia
         escolaridad: Último grado en educación ordinaria
         estadocivil: Estado civil

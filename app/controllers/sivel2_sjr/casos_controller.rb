@@ -472,6 +472,7 @@ module Sivel2Sjr
         :evento_attributes => [
           :actividadesdejadas,
           :afectacionotra,
+          :agresion,
           :anio,
           :aniodenuncia,
           :avancescaso,
@@ -496,6 +497,7 @@ module Sivel2Sjr
           :municipio_id,
           :numvecesantes,
           :observaciones,
+          :quepaso,
           :quereparacion,
           :quisieradenunciar,
           :reaccionfamiliaycomunidad,

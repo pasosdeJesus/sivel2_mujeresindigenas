@@ -429,8 +429,6 @@
               <%= victima.victimasjr.dependientesdiversidad.to_i %>
             </dd>
 
-
-
           </div>
         <% end %>
 
@@ -487,6 +485,19 @@
             ApplicationHelper::DIASEMANA, evento.diasemana, true) if 
             evento.diasemana %> </dd>
 
+          <% if @caso.casosjr && @caso.casosjr.oficina_id == 103 && 
+              can?(:edit, :casosoik) then %>
+             <div class="privado alert-info">
+               <dt>
+                 <strong>Hora:</strong>
+               </dt>
+               <dd>
+                 <%=  evento.hora.strftime("%I:%M %p") %>
+               </dd>
+             </div>
+          <% end %>
+JO
+
           <dt><strong>
             <%= ::Evento.human_attribute_name(:ubicacion) %>:</strong></dt>
           <dd>
@@ -525,6 +536,34 @@
                  (memo == "" ? "" : memo + ", ") + i.nombre } if 
                evento.relacionprvic %></dd>
 
+            </div>
+          <% end %>
+
+          <% if @caso.casosjr && @caso.casosjr.oficina_id == 103 && 
+              can?(:edit, :casosoik) then %>
+            <div class="privado alert-info">
+              <dt>
+                <strong>Descripción detallada de los hechos</strong>
+              </dt>
+              <dd>
+                <%= evento.descripcionafectacion if evento.descripcionafectacion %>
+              </dd>
+              <dt>
+                <strong>
+                  <%= Evento.human_attribute_name(:quepaso) %>:
+                </strong>
+              </dt>
+              <dd>
+                <%= evento.quepaso.to_s %>
+              </dd>
+              <dt>
+                <strong>
+                  <%= Evento.human_attribute_name(:agresion) %>:
+                </strong>
+              </dt>
+              <dd>
+                <%= evento.agresion.to_s %>
+              </dd>
             </div>
           <% end %>
 
