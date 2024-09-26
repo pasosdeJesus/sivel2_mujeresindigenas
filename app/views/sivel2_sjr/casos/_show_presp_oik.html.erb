@@ -1,0 +1,73 @@
+<% if @caso.casosjr && @caso.casosjr.oficina_id == 103 && 
+    can?(:edit, :casosoik) then %>
+  <div class="privado alert-info">
+    <dt>
+      <strong>
+        <%= Evento.human_attribute_name(:prespnombre) %>:
+      </strong>
+    </dt>
+    <dd>
+      <%= evento.prespnombre.to_s %>
+    </dd>
+    <dt>
+      <strong>
+        <%= Evento.human_attribute_name(:prespsexo) %>:
+      </strong>
+    </dt>
+    <dd>
+      <%= evento.prespsexo.to_s %>
+    </dd>
+    <dt>
+      <strong>
+        <%= Evento.human_attribute_name(:prespexterno) %>:
+      </strong>
+    </dt>
+    <dd>
+      <%= evento.prespexterno.to_s %>
+    </dd>
+    <dt>
+      <strong>
+        <%= Evento.human_attribute_name(:prespnumid) %>:
+      </strong>
+    </dt>
+    <dd>
+      <%= evento.prespnumid.to_s %>
+    </dd>
+
+    <dt>
+      <strong>
+        <%= Evento.human_attribute_name(:prespetnia) %>:
+      </strong>
+    </dt>
+    <dd>
+      <%= evento.prespetnia_id.to_s %>
+    </dd>
+
+    <dt>
+      <strong>
+        <%= Evento.human_attribute_name(:prespocupacion) %>:
+      </strong>
+    </dt>
+    <dd>
+      <%= evento.prespocupacion.to_s %>
+    </dd>
+
+    <dt>
+      <strong>
+        <%= Evento.human_attribute_name(:prespresidencia) %>:
+      </strong>
+    </dt>
+    <dd>
+      <%= evento.prespresidencia.to_s %>
+    </dd>
+
+    <dt>
+      <strong>
+        <%= Evento.human_attribute_name(:prespcomunidad) %>:
+      </strong>
+    </dt>
+    <dd>
+      <%= evento.prespcomunidad.to_s %>
+    </dd>
+  </div>
+<% end %>

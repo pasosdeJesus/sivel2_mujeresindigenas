@@ -82,18 +82,11 @@
     <% if (f.object.caso.casosjr.oficina_id == 104 &&
         can?(:edit, :casosacin)) then %>
       <div class="privado alert-info">
-
         <%= f.input :descripcionafectacion,
           as: :text,
           input_html: {
             rows: 3
           } %>
-
-        <%= f.association :relacionprvic,
-          collection: ::Relacionprvic.habilitados,
-          include_blank: false,
-          label_method: :nombre,
-          value_method: :id %>
 
       </div>
     <% end %>
@@ -120,12 +113,32 @@
       </div>
     <% end %>
 
-    <%= render 'eventopresponsable', :f => f %>
+    <div class="panel panel-default">
+      <div class="panel-heading">Presunto Responsable</div>
+      <div class="panel-body">
+        <%= render 'eventopresponsable', :f => f %>
 
-    <%= f.input :testigo,
-      collection: ApplicationHelper::NOSI,
-      include_blank: false
-    %>
+        <% if (f.object.caso.casosjr.oficina_id == 103 && can?(:edit, :casosoik)) || 
+            (f.object.caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin)) then %>
+          <div class="privado alert-info">
+            <%= f.association :relacionprvic,
+              collection: ::Relacionprvic.habilitados,
+              include_blank: false,
+              label_method: :nombre,
+              value_method: :id %>
+          </div>
+        <% end %>
+
+        <% if (f.object.caso.casosjr.oficina_id == 103 && 
+            can?(:edit, :casosoik)) then %>
+          <%= render partial: 'evento_presp_oik', locals: {f: f} %>
+        <% end %>
+
+        <%= f.input :testigo,
+          collection: ApplicationHelper::NOSI,
+          include_blank: false %>
+      </div>
+    </div>
 
   <div class="panel panel-default">
     <div class="panel-heading">Afectaciones</div>

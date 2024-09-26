@@ -527,15 +527,6 @@ JO
                  <%= Evento.human_attribute_name(:descripcionafectacion) %>:
                </strong></dt>
                <dd><%= evento.descripcionafectacion if evento.descripcionafectacion %></dd>
-
-               <dt><strong>
-                 <%= ::Evento.human_attribute_name(:relacionprvic) %>:
-               </strong></dt>
-               <dd><%= evento.relacionprvic.inject("") { 
-                 |memo, i| 
-                 (memo == "" ? "" : memo + ", ") + i.nombre } if 
-               evento.relacionprvic %></dd>
-
             </div>
           <% end %>
 
@@ -577,6 +568,22 @@ JO
             </p>
           <% end %>
           </dd>
+
+          <% if @caso.casosjr && ((@caso.casosjr.oficina_id == 104 && 
+              can?(:edit, :casosacin)) || (@caso.casosjr.oficina_id == 103 && 
+              can?(:edit, :casosoik))) then %>
+             <div class="privado alert-info">
+               <dt><strong>
+                 <%= ::Evento.human_attribute_name(:relacionprvic) %>:
+               </strong></dt>
+               <dd><%= evento.relacionprvic.inject("") { 
+                 |memo, i| 
+                 (memo == "" ? "" : memo + ", ") + i.nombre } if 
+               evento.relacionprvic %></dd>
+            </div>
+          <% end %>
+
+          <%= render partial: "show_presp_oik", locals: { evento: evento } %>
 
           <dt><strong>
             <%= ::Evento.human_attribute_name(:testigo) %>:

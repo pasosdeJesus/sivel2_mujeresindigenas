@@ -76,6 +76,14 @@ es:
         municipio: Municipio del hecho
         numvecesantes: Número de veces antes
         observaciones: Observaciones generales
+        prespcomunidad:  Comunidad del P. Resp.
+        prespetnia: Etnia del P. Resp.
+        prespexterno:  ¿Presunto Resp. externo al Resguardo?
+        prespnombre: Nombre del P. Resp.
+        prespocupacion:  Ocupación  del P. Resp.
+        prespnumid:  Número de identificación del P. Resp.
+        prespresidencia:  Residencia del P. Resp.
+        prespsexo: Sexo del P. Resp.
         quepaso: ¿Qué pasó?
         quereparacion: ¿Cúal reparación?
         quisieradenunciar: ¿Quisiera denunciar?

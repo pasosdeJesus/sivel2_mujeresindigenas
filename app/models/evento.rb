@@ -7,6 +7,9 @@ class Evento < ActiveRecord::Base
   belongs_to :municipio, class_name: "Msip::Municipio", 
     foreign_key: "municipio_id", optional: true
 
+  belongs_to :prespetnia, class_name: "Msip::Etnia", 
+    foreign_key: "prespetnia_id", optional: true
+
   # Por el momento no cambiamos a has_many_and_belongs_to porque
   # hay dos relacioens analogas
   has_many :acompanamiento_evento, validate: true, 
@@ -83,6 +86,12 @@ class Evento < ActiveRecord::Base
   validates :medidasrecibidas, length: {maximum: 5000}
   validates :numvecesantes, length: {maximum: 100}
   validates :observaciones, length: {maximum: 5000}
+  validates :prespcomunidad, length: {maximum: 255}
+  validates :prespnombre, length: {maximum: 255}
+  validates :prespnumid, length: {maximum: 64}
+  validates :prespocupacion, length: {maximum: 255}
+  validates :prespresidencia, length: {maximum: 255}
+  validates :prespsexo, length: {maximum: 1}
   validates :quereparacion, length: {maximum: 5120}
   validates :quepaso, length: {maximum: 5000}
   validates :relacionprespvic, length: {maximum: 500}
