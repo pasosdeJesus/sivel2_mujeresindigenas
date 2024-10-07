@@ -12,7 +12,7 @@ SET search_path = public, pg_catalog;
 -- Data for Name: msip_fuenteprensa; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-UPDATE msip_fuenteprensa SET fechadeshabilitacion='2016-05-05' WHERE id<100;
+UPDATE msip_fuenteprensa SET fechadeshabilitacion=NOW() WHERE id<100;
 
 INSERT INTO public.msip_fuenteprensa (id, nombre, tfuente, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (101, 'VÍCTIMA', NULL, '2016-05-05', NULL, '2016-05-05 00:00:00', NULL, NULL);
 INSERT INTO public.msip_fuenteprensa (id, nombre, tfuente, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (102, 'FAMILIAR', NULL, '2016-05-05', NULL, '2016-05-05 00:00:00', NULL, NULL);
@@ -53,8 +53,8 @@ INSERT INTO public.sivel2_gen_supracategoria (codigo, nombre, fechacreacion, fec
 -- Data for Name: sivel2_gen_categoria; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-UPDATE sivel2_gen_categoria SET fechadeshabilitacion='2018-03-07' WHERE
-	id NOT IN ( '75', '41', '3009') AND (id<4000 OR id>4999);
+UPDATE sivel2_gen_categoria SET fechadeshabilitacion=NOW() WHERE
+id NOT IN ( '75', '41', '3009') AND (id<4000 OR id>4999);
 
 INSERT INTO public.sivel2_gen_categoria (id, nombre, fechacreacion, fechadeshabilitacion, pconsolidado_id, contadaen, tipocat, created_at, updated_at, observaciones, supracategoria_id) VALUES (4000, 'ACCESO CARNAL - VIOLACIÓN (VIOLENCIA SEXUAL)', '2016-06-07', NULL, NULL, NULL, 'I', NULL, NULL, '421', 400);
 INSERT INTO public.sivel2_gen_categoria (id, nombre, fechacreacion, fechadeshabilitacion, pconsolidado_id, contadaen, tipocat, created_at, updated_at, observaciones, supracategoria_id) VALUES (4001, 'ACTO SEXUAL (VIOLENCIA SEXUAL)', '2016-06-07', NULL, NULL, NULL, 'I', NULL, NULL, '426', 400);
@@ -118,7 +118,7 @@ SELECT pg_catalog.setval('public.sivel2_gen_escolaridad_id_seq', 103, true);
 -- Data for Name: msip_etnia; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-UPDATE msip_etnia SET fechadeshabilitacion='2016-06-07' WHERE id IN
+UPDATE msip_etnia SET fechadeshabilitacion=NOW() WHERE id IN
 ('7', '9', '64', '65', '15', '66', '71', '70', '72', '73', '102', '27', '103', 
 	'28', '105', '79', '82', '85', '60', '90', '97', '51', '101');
 UPDATE msip_etnia SET nombre='CARAPANA' WHERE id='31';
@@ -182,7 +182,7 @@ SELECT pg_catalog.setval('public.msip_etnia_id_seq', 133, true);
 -- Data for Name: sivel2_gen_presponsable; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-UPDATE sivel2_gen_presponsable SET fechadeshabilitacion='2016-06-07' WHERE 
+UPDATE sivel2_gen_presponsable SET fechadeshabilitacion=NOW() WHERE 
 id NOT IN ('1', '14', '2', '25', '26', '27', '28', '35', 
 	'36', '37', '4', '7', '5', '105', '106', '107', '109', '112', '113');
 
@@ -222,7 +222,7 @@ SELECT pg_catalog.setval('public.sivel2_gen_presponsable_id_seq', 113, true);
 -- Data for Name: sivel2_gen_rangoedad; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-UPDATE sivel2_gen_rangoedad SET fechadeshabilitacion='2016-03-17' WHERE id<100 
+UPDATE sivel2_gen_rangoedad SET fechadeshabilitacion=NOW() WHERE id<100 
 	AND id<>6;
 
 INSERT INTO public.sivel2_gen_rangoedad (id, nombre, limiteinferior, limitesuperior, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (102, '0-9 NIÑAS/NIÑOS', 0, 9, '2016-03-17', NULL, '2016-03-17 12:06:06.201856', '2016-03-21 18:30:34.222152', '');
@@ -238,7 +238,7 @@ SELECT pg_catalog.setval('public.sivel2_gen_rangoedad_id_seq', 106, true);
 -- Data for Name: sivel2_sjr_idioma; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-UPDATE sivel2_sjr_idioma SET fechadeshabilitacion='2016-06-07' 
+UPDATE sivel2_sjr_idioma SET fechadeshabilitacion=NOW()
 	WHERE id NOT IN ('0', '1', '10', '100', '101');
 
 -- INSERT INTO public.sivel2_sjr_idioma (id, nombre, fechacreacion, fechadeshabilitacion, created_at, updated_at, observaciones) VALUES (0, 'SIN INFORMACIÓN', '2014-02-18', NULL, NULL, NULL, NULL);
