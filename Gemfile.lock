@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/styd/apexcharts.rb.git
-  revision: 3c04fbc3eecc07f2b5fd433dae03798f329b1692
+  revision: ff8643ba959fb93998b1c51fd5e6c351379f709b
   branch: master
   specs:
     apexcharts (0.2.0)
@@ -25,10 +25,10 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: 4cf7b80443506733fff8635fa4dd2fd2f07a7630
-  branch: main
+  revision: 3e07256fc1615b3ae4b3d8aa6db0cf4e16107630
+  branch: v2.2
   specs:
-    cor1440_gen (2.2.0.beta6)
+    cor1440_gen (2.2.0.beta7)
       devise
       heb412_gen
       kt-paperclip
@@ -38,10 +38,10 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/heb412_gen.git
-  revision: 2b147472a5c20744343886deed03ecbb0d647d1a
-  branch: main
+  revision: f98dc89f1bc83878ad6c7d71802fb53ad63c629e
+  branch: v2.2
   specs:
-    heb412_gen (2.3.0.alfa2)
+    heb412_gen (2.2.0.beta7)
       mr519_gen
       msip
       redcarpet
@@ -49,27 +49,26 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/jos19.git
-  revision: 6b2183d60eaf4caff5f15fd3e1da087191426dcb
-  branch: main
+  revision: c74707a61e258cb18c32fe199e14efcad78e0858
+  branch: v2.2
   specs:
     jos19 (2.2.0.beta6)
-      rails (>= 7.0.4)
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/mr519_gen.git
-  revision: 9a1973bdb7beec016923dc244e788442f350fff0
-  branch: main
+  revision: 920b688159c414e74159d71a12625fe67490f988
+  branch: v2.2
   specs:
-    mr519_gen (2.3.0.alfa2)
+    mr519_gen (2.2.0.beta7)
       msip
       rails
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 216c62b9faece183f4b40cec57dad1ca138e2085
-  branch: main
+  revision: a4106aee602528687161ed278b98e114497bb126
+  branch: v2.2
   specs:
-    msip (2.3.0.alfa2)
+    msip (2.2.0.beta7)
       cancancan (~> 3)
       devise (~> 4)
       devise-i18n (~> 1)
@@ -86,10 +85,10 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/sivel2_gen.git
-  revision: cff3579011e26e01903f0ad73bc2e792a66cef20
-  branch: main
+  revision: 2d3250426e25739420f04f5b874d75ae88bfebfb
+  branch: v2.2
   specs:
-    sivel2_gen (2.3.0.alfa2)
+    sivel2_gen (2.2.0.beta7)
       color
       devise
       rails
@@ -223,9 +222,9 @@ GEM
     devise-i18n (1.12.1)
       devise (>= 4.9.0)
     docile (1.4.1)
-    dotenv (3.1.2)
-    dotenv-rails (3.1.2)
-      dotenv (= 3.1.2)
+    dotenv (3.1.4)
+    dotenv-rails (3.1.4)
+      dotenv (= 3.1.4)
       railties (>= 6.1)
     drb (2.2.1)
     erubi (1.13.0)
@@ -238,10 +237,10 @@ GEM
     ffi (1.17.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    i18n (1.14.5)
+    i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     io-console (0.7.2)
-    irb (1.14.0)
+    irb (1.14.1)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     jbuilder (2.13.0)
@@ -262,14 +261,15 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.2)
-    mime-types (3.5.2)
+    mime-types (3.6.0)
+      logger
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2024.0820)
+    mime-types-data (3.2024.1001)
     mini_mime (1.1.5)
     mini_portile2 (2.8.7)
     minitest (5.25.1)
-    msgpack (1.7.2)
-    net-imap (0.4.15)
+    msgpack (1.7.3)
+    net-imap (0.4.16)
       date
       net-protocol
     net-pop (0.1.2)
@@ -346,13 +346,12 @@ GEM
       psych (>= 4.0.0)
     redcarpet (3.6.0)
     regexp_parser (2.9.2)
-    reline (0.5.9)
+    reline (0.5.10)
       io-console (~> 0.5)
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rexml (3.3.6)
-      strscan
+    rexml (3.3.8)
     rspreadsheet (0.5.3)
       andand (>= 1.3)
       rubyzip (>= 1.3)
@@ -368,7 +367,7 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.3.1)
-    selenium-webdriver (4.24.0)
+    selenium-webdriver (4.25.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
@@ -381,7 +380,7 @@ GEM
       docile (~> 1.1)
       simplecov-html (~> 0.11)
       simplecov_json_formatter (~> 0.1)
-    simplecov-html (0.12.3)
+    simplecov-html (0.13.1)
     simplecov_json_formatter (0.1.4)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
@@ -393,7 +392,6 @@ GEM
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.1.1)
-    strscan (3.1.0)
     terrapin (1.0.1)
       climate_control
     thor (1.3.2)
@@ -420,7 +418,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webrick (1.8.1)
+    webrick (1.8.2)
     websocket (1.2.11)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
@@ -484,4 +482,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.5.19
+   2.5.21
