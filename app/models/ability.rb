@@ -13,6 +13,7 @@ class Ability < Sivel2Gen::Ability
   ]
 
   BASICAS_PROPIAS = [
+    ['', 'rutaactivable'],
     ['', 'acompanamiento'],
     ['', 'consecuenciafamiliar'],
     ['', 'consecuenciafisica'],

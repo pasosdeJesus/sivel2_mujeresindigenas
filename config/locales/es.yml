@@ -105,6 +105,9 @@ es:
       "motivonodenuncia":
         Motivonodenuncia: Motivo para no denunciar
         Motivosnodenuncia: Motivos para no denunciar
+      "rutaactivable":
+        Rutaactivable: Ruta activable
+        Rutasactivables: Rutas activables
       "religion":
         Religion: Religión
         Religiones: Religiones

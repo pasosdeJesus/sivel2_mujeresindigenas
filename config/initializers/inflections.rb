@@ -23,6 +23,7 @@ ActiveSupport::Inflector.inflections do |inflect|
 	inflect.irregular 'motivonodenuncia', 'motivosnodenuncia'
 	inflect.irregular 'poblacionespecial', 'poblacionesespeciales'
 	inflect.irregular 'religion', 'religiones'
+	inflect.irregular 'rutaactivable', 'rutasactivables'
 	inflect.irregular 'tafectacion', 'tafectaciones'
 	inflect.irregular 'tapoyo', 'tapoyos'
 	inflect.irregular 'relacionprvic', 'relacionesprvic'
