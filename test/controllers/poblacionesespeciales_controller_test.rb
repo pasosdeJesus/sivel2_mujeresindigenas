@@ -15,7 +15,7 @@ module Admin
       updated_at: '2024-09-04',
     }
 
-    IDEX = 10
+    IDEX = 3
 
     include Rails.application.routes.url_helpers
     include Devise::Test::IntegrationHelpers
@@ -68,7 +68,7 @@ module Admin
     end
 
     test "debe eliminar" do
-      r = Poblacionespecial.create!(POBLACIONESPECIAL_NUEVO)
+      r = Poblacionespecial.create!(POBLACIONESPECIAL_NUEVA)
       assert_difference('Poblacionespecial.count', -1) do
         delete admin_poblacionespecial_url(Poblacionespecial.find(r.id))
       end

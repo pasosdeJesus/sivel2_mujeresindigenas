@@ -19,6 +19,46 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
+-- Data for Name: rutaactivable; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO public.rutaactivable (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (1, 'Ruta propia', '', '2024-09-29', NULL, '2024-09-30 00:00:00', '2024-09-30 00:00:00');
+INSERT INTO public.rutaactivable (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (2, 'Ruta occidental', '', '2024-09-29', NULL, '2024-09-30 00:00:00', '2024-09-30 00:00:00');
+INSERT INTO public.rutaactivable (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (3, 'Ruta interjurisdiccional', '', '2024-09-29', NULL, '2024-09-30 00:00:00', '2024-09-30 00:00:00');
+INSERT INTO public.rutaactivable (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (4, 'No se activó ruta', '', '2024-09-29', NULL, '2024-09-30 00:00:00', '2024-09-30 00:00:00');
+
+
+--
+-- Name: rutaactivable_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.rutaactivable_id_seq', 100, true);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
+SELECT pg_catalog.setval('public.rutaactivable_id_seq', 100, true);
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 16.2
+-- Dumped by pg_dump version 16.2
+
+SET statement_timeout = 0;
+
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
 -- Data for Name: acompanamiento; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -378,7 +418,7 @@ SET row_security = off;
 
 INSERT INTO public.poblacionespecial (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (1, 'SIN INFORMACIÓN', NULL, '2024-09-04', NULL, '2024-09-03 00:00:00', '2024-09-04 00:00:00');
 INSERT INTO public.poblacionespecial (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (2, 'MUJER LIDER', NULL, '2024-09-04', NULL, '2024-09-03 00:00:00', '2024-09-04 00:00:00');
-INSERT INTO public.poblacionespecial (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (3, 'CON DISCAPACIDAD', NULL, '2024-09-04', NULL, '2024-09-03 00:00:00', '2024-09-04 00:00:00');
+INSERT INTO public.poblacionespecial (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (3, 'CON DISCAPACIDAD', '', '2024-09-04', NULL, '2024-09-03 00:00:00', '2024-09-04 07:23:31.149492');
 INSERT INTO public.poblacionespecial (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (4, 'VÍCTIMA DEL CONFLICTO', NULL, '2024-09-04', NULL, '2024-09-03 00:00:00', '2024-09-04 00:00:00');
 INSERT INTO public.poblacionespecial (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (5, 'MIGRANTE', NULL, '2024-09-04', NULL, '2024-09-03 00:00:00', '2024-09-04 00:00:00');
 INSERT INTO public.poblacionespecial (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (6, 'OTROS', NULL, '2024-09-04', NULL, '2024-09-03 00:00:00', '2024-09-04 00:00:00');
@@ -529,6 +569,7 @@ INSERT INTO public.tafectacion (id, nombre, observaciones, fechacreacion, fechad
 INSERT INTO public.tafectacion (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (6, 'COMUNITARIA', NULL, '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-06-07 00:00:00');
 INSERT INTO public.tafectacion (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (7, 'FAMILIAR', NULL, '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-06-07 00:00:00');
 INSERT INTO public.tafectacion (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (8, 'INDIVIDUAL', NULL, '2016-06-07', NULL, '2016-06-07 00:00:00', '2016-06-07 00:00:00');
+INSERT INTO public.tafectacion (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (9, 'ESPIRITUAL', NULL, '2024-09-26', NULL, '2024-09-26 00:00:00', '2024-09-26 00:00:00');
 
 
 --

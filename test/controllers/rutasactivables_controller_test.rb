@@ -15,7 +15,7 @@ module Admin
       updated_at: '2024-09-29',
     }
 
-    IDEX = 10
+    IDEX = 1
 
     include Rails.application.routes.url_helpers
     include Devise::Test::IntegrationHelpers
@@ -68,7 +68,7 @@ module Admin
     end
 
     test "debe eliminar" do
-      r = Rutaactivable.create!(RUTAACTIVABLE_NUEVO)
+      r = Rutaactivable.create!(RUTAACTIVABLE_NUEVA)
       assert_difference('Rutaactivable.count', -1) do
         delete admin_rutaactivable_url(Rutaactivable.find(r.id))
       end
