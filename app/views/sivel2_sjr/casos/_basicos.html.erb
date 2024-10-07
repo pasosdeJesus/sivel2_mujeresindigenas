@@ -48,6 +48,9 @@
 <%= s.association :estadocaso, 
   collection: ::Estadocaso.habilitados,
   include_blank: false,
+  input_html: {
+    class: 'tom-select'
+  },
   label_method: :nombre, 
   value_method: :id %>
 
@@ -56,6 +59,9 @@
     <%= s.association :acompanamiento, 
       collection: ::Acompanamiento.habilitados,
       include_blank: false,
+      input_html: {
+        class: 'tom-select'
+      },
       label_method: :nombre, 
       value_method: :id %>
   </div>
