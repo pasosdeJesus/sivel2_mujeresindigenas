@@ -704,6 +704,9 @@ JO
              <%= ::Evento.human_attribute_name(:medidasrecibidas) %>:
            </strong></dt>
            <dd><%= evento.medidasrecibidas %></dd>
+ 
+           <%= render partial: "show_justicia_oik", 
+             locals: { evento: evento } %>
 
            <dt><strong>
              <%= ::Evento.human_attribute_name(:denuncia) %>:

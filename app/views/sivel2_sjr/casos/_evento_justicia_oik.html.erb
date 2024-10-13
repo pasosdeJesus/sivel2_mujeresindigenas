@@ -1,0 +1,30 @@
+<div class="privado alert-info">
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.association :rutaactivable,
+        collection: ::Rutaactivable.habilitados,
+        include_blank: false,
+        label_method: :nombre, 
+        value_method: :id %>
+    </div>
+    <div class="col-md-6">
+      <%= f.input :otrarutaactivable %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.input :contextoagresion,
+        as: :text,
+        input_html: {
+          rows: 3
+        } %>
+    </div>
+    <div class="col-md-6">
+      <%= f.input :datosadicionales,
+        as: :text,
+        input_html: {
+          rows: 3
+        } %>
+    </div>
+  </div>
+</div>

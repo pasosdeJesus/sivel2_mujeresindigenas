@@ -10,6 +10,9 @@ class Evento < ActiveRecord::Base
   belongs_to :prespetnia, class_name: "Msip::Etnia", 
     foreign_key: "prespetnia_id", optional: true
 
+  belongs_to :rutaactivable, class_name: "::Rutaactivable", 
+    foreign_key: "rutaactivable_id", optional: true
+
   # Por el momento no cambiamos a has_many_and_belongs_to porque
   # hay dos relacioens analogas
   has_many :acompanamiento_evento, validate: true, 
@@ -81,11 +84,14 @@ class Evento < ActiveRecord::Base
   validates :brindadaproteccion, length: {maximum: 5000}
   validates :compromisosadquiridos, length: {maximum: 5000}
   validates :comunidad, length: {maximum: 500}
+  validates :contextoagresion, length: {maximum: 5000}
+  validates :datosadicionales, length: {maximum: 5000}
   validates :descripcionafectacion, length: {maximum: 5000}
   validates :etapaproceso, length: {maximum: 500}
   validates :medidasrecibidas, length: {maximum: 5000}
   validates :numvecesantes, length: {maximum: 100}
   validates :observaciones, length: {maximum: 5000}
+  validates :otrarutaactivable, length: {maximum: 127}
   validates :prespcomunidad, length: {maximum: 255}
   validates :prespnombre, length: {maximum: 255}
   validates :prespnumid, length: {maximum: 64}

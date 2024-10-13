@@ -57,6 +57,8 @@ es:
         consecuenciafamiliar: Afectación cultural/familiar/comunitaria
         consecuenciafisica: Afectación física
         consecuenciaindividual: Afectación individual
+        contextoagresion: Contexto de la agresión
+        datosadicionales: Datos adicionales
         departamento: Departamento del hecho
         descripcionafectacion: Breve descripción de los hechos
         denuncia: Denuncia
@@ -76,6 +78,7 @@ es:
         municipio: Municipio del hecho
         numvecesantes: Número de veces antes
         observaciones: Observaciones generales
+        otrarutaactivable: ¿Qué otra ruta activo?
         prespcomunidad:  Comunidad del P. Resp.
         prespetnia: Etnia del P. Resp.
         prespexterno:  ¿Presunto Resp. externo al Resguardo?
@@ -92,6 +95,7 @@ es:
         relacionadocon: Relacionado con conflicto
         relacionprvic: Relación entre presunto resp. y víctima
         resguardo: Resguardo del hecho
+        rutaactivable: ¿Qué ruta activo?
         sancionadovictimario: ¿Ha sido sancionado el victimario?
         seguimientojudicial: Seguimiento Judicial
         seguimientopsicosocial: Seguimiento Psicosocial

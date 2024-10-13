@@ -258,6 +258,12 @@
     <div class="panel-heading">Acceso a la Justicia</div>
     <div class="panel-body">
 
+      <% if (f.object.caso.casosjr.oficina_id == 103 && 
+          can?(:edit, :casosoik)) then %>
+        <%= render partial: 'evento_justicia_oik', locals: {f: f} %>
+      <% end %>
+
+
       <div class="row">
         <div class="col-md-6">
           <%= f.input :denuncia,

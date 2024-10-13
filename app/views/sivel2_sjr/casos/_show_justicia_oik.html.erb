@@ -1,0 +1,38 @@
+<% if @caso.casosjr && @caso.casosjr.oficina_id == 103 && 
+    can?(:edit, :casosoik) then %>
+  <div class="privado alert-info">
+    <dt>
+      <strong>
+        <%= Evento.human_attribute_name(:rutaactivable) %>:
+      </strong>
+    </dt>
+    <dd>
+      <%= evento.rutaactivable.nombre.to_s if evento.rutaactivable_id %>
+    </dd>
+    <dt>
+      <strong>
+        <%= Evento.human_attribute_name(:otrarutaactivable) %>:
+      </strong>
+    </dt>
+    <dd>
+      <%= evento.otrarutaactivable.to_s %>
+    </dd>
+    <dt>
+      <strong>
+        <%= Evento.human_attribute_name(:contextoagresion) %>:
+      </strong>
+    </dt>
+    <dd>
+      <%= evento.contextoagresion.to_s %>
+    </dd>
+    <dt>
+      <strong>
+        <%= Evento.human_attribute_name(:datosadicionales) %>:
+      </strong>
+    </dt>
+    <dd>
+      <%= evento.datosadicionales.to_s %>
+    </dd>
+
+  </div>
+<% end %>
