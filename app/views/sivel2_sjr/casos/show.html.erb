@@ -492,7 +492,7 @@
                  <strong>Hora:</strong>
                </dt>
                <dd>
-                 <%=  evento.hora.strftime("%I:%M %p") %>
+                 <%=  evento.hora.strftime("%I:%M %p") if (evento.hora && evento.hora.respond_to?(:strftime)) %>
                </dd>
              </div>
           <% end %>
