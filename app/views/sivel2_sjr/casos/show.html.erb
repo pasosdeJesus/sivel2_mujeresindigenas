@@ -826,6 +826,23 @@ JO
 
 </dl>
 
+<% anexosc = Sivel2Gen::AnexoCaso.where(caso_id: caso.id) %>
+<% unless anexosc.length == 0 %>
+  ANEXO(S):
+  <ul>
+    <% anexosc.each do |ac| %>
+      <li>
+        <%= render partial: 'msip/anexos/vistaprevia',
+          locals: {
+            anexo: ac.msip_anexo,
+            fecha: ac.fecha,
+            total_casos: (@conscaso.nil? ? 1 : @conscaso.count)
+          } %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               casos_path, :class => 'btn'  %>
