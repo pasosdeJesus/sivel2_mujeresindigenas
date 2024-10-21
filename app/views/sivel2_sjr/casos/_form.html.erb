@@ -2,7 +2,12 @@
   <li><a href="usuarios/sign_in">Iniciar Sesión</a>
 <%- else  %>
   <article>
-    <%= simple_form_for @caso, :html => { :class => 'form-horizontal' } do |f| %>
+    <%= simple_form_for @caso,
+      multipart: true,
+      html: { 
+        class: 'form-horizontal'
+      } do |f|
+    %>
       <div data-role="content" class="form-inputs">
 
         <%= render partial: 'msip/hogar/errores', locals: { f: f } %> 
