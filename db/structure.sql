@@ -3755,16 +3755,16 @@ CREATE TABLE public.evento (
     sancionadovictimario character varying(1) DEFAULT 'I'::character varying,
     quepaso character varying(5000),
     agresion character varying(5000),
-    prespcomunidad character varying(255),
+    prespcomunidad character varying(255) DEFAULT ''::character varying,
     prespetnia_id integer,
     prespexterno boolean,
-    prespnombre character varying(255),
-    prespocupacion character varying(255),
-    prespnumid character varying(64),
-    prespresidencia character varying(255),
-    prespsexo character varying(1),
+    prespnombre character varying(255) DEFAULT ''::character varying,
+    prespocupacion character varying(255) DEFAULT ''::character varying,
+    prespnumid character varying(64) DEFAULT ''::character varying,
+    prespresidencia character varying(255) DEFAULT ''::character varying,
+    prespsexo character varying(1) DEFAULT 'S'::character varying,
     rutaactivable_id integer,
-    otrarutaactivable character varying(127),
+    otrarutaactivable character varying(127) DEFAULT ''::character varying,
     contextoagresion character varying(5000),
     datosadicionales character varying(5000)
 );
@@ -14806,6 +14806,7 @@ ALTER TABLE ONLY public.sivel2_sjr_victimasjr
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20241021184658'),
 ('20241013103104'),
 ('20241007161343'),
 ('20241006115708'),
