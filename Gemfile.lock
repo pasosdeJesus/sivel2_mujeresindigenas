@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/styd/apexcharts.rb.git
-  revision: 3031dc6390fcf13c70a5647c6850c29ba61e56c1
+  revision: 2a620f8ffe3ad2402d081002f886ae2d4d3ffa93
   branch: master
   specs:
     apexcharts (0.2.0)
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: 560d55bccd905e69d6e6848fc54897f7d06ddbc0
+  revision: 19f2e50868090a23be6822c4768472130ef05e5a
   branch: v2.2
   specs:
     cor1440_gen (2.2.0.beta7)
@@ -38,7 +38,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/heb412_gen.git
-  revision: ec21b45d679142f8129e08a6ee3e86e397d3cc7e
+  revision: 1eb514580b22f3ae50bf1681ced77bf21953ad80
   branch: v2.2
   specs:
     heb412_gen (2.2.0.beta7)
@@ -49,14 +49,14 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/jos19.git
-  revision: 242bdc3d2cf594353cdd1e9a44fe33098ca91d6c
+  revision: b700efa5e8cdcd309e800ea8d573f0bdbf338665
   branch: v2.2
   specs:
     jos19 (2.2.0.beta7)
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/mr519_gen.git
-  revision: a1f4c171371af06da20667d8036cf0d115325e52
+  revision: e52c0bacd4ea9ce761122ea118935e4726e41dd2
   branch: v2.2
   specs:
     mr519_gen (2.2.0.beta7)
@@ -65,7 +65,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: b86454c007d6a29df5a375899fc963082285b8e9
+  revision: 4360d38892e22341355be982ace131a71317b0da
   branch: v2.2
   specs:
     msip (2.2.0.beta7)
@@ -85,7 +85,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/sivel2_gen.git
-  revision: fbe3edf271f4acfcf642a8dbbbeb547316efe277
+  revision: ff9f6797f8e544800afa0759124bfd95c6ae080a
   branch: v2.2
   specs:
     sivel2_gen (2.2.0.beta7)
