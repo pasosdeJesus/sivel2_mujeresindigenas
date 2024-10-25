@@ -35,6 +35,7 @@ module Sivel2Gen
            acompanamiento_casosjr.acompanamiento_id=acompanamiento.id
          WHERE acompanamiento_casosjr.sivel2_sjr_casosjr_id=conscaso.caso_id), '; ')
          AS acompanamientos_caso,
+        casosjr.otroacompanamiento AS otro_acompanamiento,
       " +
 
       # Pestaña fuentes, primera solamente
@@ -61,6 +62,10 @@ module Sivel2Gen
         contacto.nombres AS victima_nombres_priv_acin,
         contacto.apellidos AS victima_apellidos_priv_acin,
         COALESCE(tdocumento.sigla, '') AS victima_identificacion_priv_acin,
+        contacto.numerodocumento AS victima_docid,
+        scontacto.telefono AS victima_telefono,
+        scontacto.contactodeconfianza AS victima_contacto_de_confianza,
+        scontacto.telefonocontactodeconfianza AS victima_telefono_contacto,
         contacto.anionac AS victima_anionac,
         contacto.mesnac AS victima_mesnac,
         contacto.dianac AS victima_dianac,
@@ -108,9 +113,12 @@ module Sivel2Gen
          WHERE tv.sivel2_sjr_victimasjr_id=scontacto.victima_id
          ORDER BY nombre), '; ') AS victima_tienetierra_priv_acin,
         scontacto.areatierra AS victima_areatierra_priv_acin,
+        scontacto.eps AS victima_eps,
         CASE WHEN contacto.sexo = 'F' THEN 'MUJER'
           WHEN contacto.sexo = 'M' THEN 'HOMBRE'
           ELSE 'SIN INFORMACIÓN' END AS victima_sexo,
+        vcontacto.orientacionsexual AS victima_orientacion_sexual,
+        scontacto.ocupacion AS victima_ocupacion,
         CASE WHEN scontacto.incluidoruv = 'I' THEN 'SIN INFORMACIÓN'
           WHEN scontacto.incluidoruv = 'S' THEN 'SI'
           ELSE 'NO' END AS victima_incluidoruv,
@@ -121,6 +129,11 @@ module Sivel2Gen
           WHEN scontacto.liderazgo = 'S' THEN 'SI'
           WHEN scontacto.liderazgo = 'N' THEN 'NO'
           ELSE 'SIN INFORMACIÓN' END AS victima_liderazgocomunidad,
+        COALESCE(poblacionespecial.nombre, '') AS victima_poblacion_especial,
+        scontacto.dependientes AS victima_dependientes,
+        scontacto.dependientesmenores AS victima_dependientes_menores,
+        scontacto.dependientesmayores AS victima_dependientes_mayores,
+        scontacto.dependientesdiversidad AS victima_dependientes_diversidad,
         scontacto.tipoliderazgo AS victima_tipoliderazgo_priv_acin,
         scontacto.tieneesquema AS victima_tieneesquema_priv_acin,
         scontacto.anioesquema AS victima_anioesquema_priv_acin,
@@ -284,6 +297,8 @@ module Sivel2Gen
             scontacto.educacionpropia_id = educacionpropia.id
         LEFT JOIN public.religion ON
             scontacto.religion_id = religion.id
+        LEFT JOIN public.poblacionespecial ON
+            scontacto.poblacionespecial_id = poblacionespecial.id
         LEFT JOIN public.evento ON
             evento.caso_id = conscaso.caso_id
             AND evento.id = (SELECT MIN(e.id) FROM public.evento AS e 

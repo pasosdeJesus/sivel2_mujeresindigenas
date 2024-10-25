@@ -65,6 +65,7 @@ class Ability < Sivel2Gen::Ability
         :doc_terreno_por,
         :estados_caso,
         :acompanamientos_caso,
+        :otro_acompanamiento,
         :fuente1_nombre,
         :fuente1_fecha,
         :fuente1_detalle,
@@ -72,6 +73,10 @@ class Ability < Sivel2Gen::Ability
         :victima_nombres_priv_acin,
         :victima_apellidos_priv_acin,
         :victima_identificacion_priv_acin,
+        :victima_docid,
+        :victima_telefono,
+        :victima_contacto_de_confianza,
+        :victima_telefono_contacto,
         :victima_anionac,
         :victima_mesnac,
         :victima_dianac,
@@ -96,7 +101,10 @@ class Ability < Sivel2Gen::Ability
         :victima_comogeneraingresos_priv_acin,
         :victima_tienetierra_priv_acin,
         :victima_areatierra_priv_acin,
+        :victima_eps,
         :victima_sexo,
+        :victima_orientacion_sexual,
+        :victima_ocupacion,
         :victima_incluidoruv,
         :victima_cabezahogar,
         :victima_liderazgocomunidad,
@@ -157,13 +165,13 @@ class Ability < Sivel2Gen::Ability
   }
 
   def campos_plantillas 
-    Heb412Gen::Ability::CAMPOS_PLANTILLAS_PROPIAS.
-      clone.merge(Cor1440Gen::Ability::CAMPOS_PLANTILLAS_PROPIAS.clone.merge(
+    Heb412Gen::Ability::CAMPOS_PLANTILLAS_PROPIAS.clone.merge(
+      Cor1440Gen::Ability::CAMPOS_PLANTILLAS_PROPIAS.clone.merge(
         Sivel2Gen::Ability::CAMPOS_PLANTILLAS_PROPIAS.clone.merge(
-          Sivel2Sjr::Ability::CAMPOS_PLANTILLAS_PROPIAS.clone.merge (
-            ::Ability::CAMPOS_PLANTILLAS_PROPIAS.clone
-          ))
-    ))
+          ::Ability::CAMPOS_PLANTILLAS_PROPIAS.clone
+        )
+      )
+    )
   end
 
   def initialize(usuario = nil)

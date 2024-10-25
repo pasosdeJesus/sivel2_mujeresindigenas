@@ -6676,6 +6676,7 @@ CREATE MATERIALIZED VIEW public.sivel2_gen_consexpcaso AS
            FROM (public.acompanamiento
              JOIN public.acompanamiento_casosjr ON ((acompanamiento_casosjr.acompanamiento_id = acompanamiento.id)))
           WHERE (acompanamiento_casosjr.sivel2_sjr_casosjr_id = conscaso.caso_id)), '; '::text) AS acompanamientos_caso,
+    casosjr.otroacompanamiento AS otro_acompanamiento,
     array_to_string(ARRAY( SELECT f.nombre
            FROM (public.msip_fuenteprensa f
              JOIN public.sivel2_gen_caso_fuenteprensa cf ON ((cf.fuenteprensa_id = f.id)))
@@ -6696,6 +6697,10 @@ CREATE MATERIALIZED VIEW public.sivel2_gen_consexpcaso AS
     contacto.nombres AS victima_nombres_priv_acin,
     contacto.apellidos AS victima_apellidos_priv_acin,
     COALESCE(tdocumento.sigla, ''::character varying) AS victima_identificacion_priv_acin,
+    contacto.numerodocumento AS victima_docid,
+    scontacto.telefono AS victima_telefono,
+    scontacto.contactodeconfianza AS victima_contacto_de_confianza,
+    scontacto.telefonocontactodeconfianza AS victima_telefono_contacto,
     contacto.anionac AS victima_anionac,
     contacto.mesnac AS victima_mesnac,
     contacto.dianac AS victima_dianac,
@@ -6738,11 +6743,14 @@ CREATE MATERIALIZED VIEW public.sivel2_gen_consexpcaso AS
           WHERE (tv.sivel2_sjr_victimasjr_id = scontacto.victima_id)
           ORDER BY t.nombre), '; '::text) AS victima_tienetierra_priv_acin,
     scontacto.areatierra AS victima_areatierra_priv_acin,
+    scontacto.eps AS victima_eps,
         CASE
             WHEN (contacto.sexo = 'F'::bpchar) THEN 'MUJER'::text
             WHEN (contacto.sexo = 'M'::bpchar) THEN 'HOMBRE'::text
             ELSE 'SIN INFORMACIÓN'::text
         END AS victima_sexo,
+    vcontacto.orientacionsexual AS victima_orientacion_sexual,
+    scontacto.ocupacion AS victima_ocupacion,
         CASE
             WHEN ((scontacto.incluidoruv)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
             WHEN ((scontacto.incluidoruv)::text = 'S'::text) THEN 'SI'::text
@@ -6919,17 +6927,9 @@ CREATE MATERIALIZED VIEW public.sivel2_gen_consexpcaso AS
            FROM public.evento e
           WHERE (e.caso_id = conscaso.caso_id))))))
   WHERE (conscaso.caso_id IN ( SELECT sivel2_gen_conscaso.caso_id
-           FROM ((((public.sivel2_gen_conscaso
-             JOIN public.sivel2_sjr_casosjr ON ((sivel2_sjr_casosjr.caso_id = sivel2_gen_conscaso.caso_id)))
-             JOIN public.sivel2_gen_caso ON ((sivel2_gen_caso.id = sivel2_gen_conscaso.caso_id)))
-             JOIN public.sivel2_gen_victima ON ((sivel2_gen_victima.caso_id = sivel2_gen_caso.id)))
-             JOIN public.msip_persona ON ((msip_persona.id = sivel2_gen_victima.persona_id)))
-          WHERE ((sivel2_gen_conscaso.caso_id IN ( SELECT sivel2_gen_caso_1.id
-                   FROM public.sivel2_gen_caso sivel2_gen_caso_1)) AND (sivel2_gen_conscaso.fecharec <= '2016-08-04'::date) AND (sivel2_sjr_casosjr.oficina_id = 103) AND (sivel2_sjr_casosjr.caso_id IN ( SELECT evento_1.caso_id
-                   FROM public.evento evento_1
-                  WHERE (evento_1.departamento_id = 20))) AND ((sivel2_sjr_casosjr.contacto_id = msip_persona.id) AND ((msip_persona.nombres)::text ~~* '%n%'::text)) AND ((sivel2_sjr_casosjr.contacto_id = msip_persona.id) AND ((msip_persona.apellidos)::text ~~* '%N%'::text)) AND (sivel2_sjr_casosjr.caso_id IN ( SELECT evento_1.caso_id
-                   FROM public.evento evento_1
-                  WHERE ((evento_1.relacionadocon)::text = 'A'::text))) AND ((sivel2_gen_conscaso.fechahecho = ''::text) OR (SUBSTRING(sivel2_gen_conscaso.fechahecho FROM 1 FOR 4) = '0000'::text) OR (regexp_replace(regexp_replace(replace(sivel2_gen_conscaso.fechahecho, '-00-00'::text, '01-01'::text), '-00-(..)'::text, '-01-\1'::text), '-(..)-00'::text, '-\1-01'::text) <= '2000-02-02'::text)))
+           FROM public.sivel2_gen_conscaso
+          WHERE ((sivel2_gen_conscaso.caso_id IN ( SELECT sivel2_gen_caso.id
+                   FROM public.sivel2_gen_caso)) AND (sivel2_gen_conscaso.fecharec >= '2024-10-01'::date))
           ORDER BY sivel2_gen_conscaso.fecharec DESC, sivel2_gen_conscaso.caso_id))
   ORDER BY conscaso.fecharec DESC
   WITH NO DATA;
@@ -14806,6 +14806,7 @@ ALTER TABLE ONLY public.sivel2_sjr_victimasjr
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20241025103838'),
 ('20241021184658'),
 ('20241013103104'),
 ('20241007161343'),
