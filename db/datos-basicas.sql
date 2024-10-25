@@ -336,6 +336,10 @@ INSERT INTO public.estadocaso (id, nombre, observaciones, fechacreacion, fechade
 INSERT INTO public.estadocaso (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (101, 'IDENTIFICADO', '', '2016-11-16', NULL, '2016-11-16 16:43:15.98194', '2016-11-16 16:43:15.98194');
 INSERT INTO public.estadocaso (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (2, 'DOCUMENTADO', NULL, '2016-07-27', NULL, '2016-07-27 00:00:00', '2016-07-27 00:00:00');
 INSERT INTO public.estadocaso (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (3, 'REGISTRADO', NULL, '2016-07-27', NULL, '2016-07-27 00:00:00', '2016-07-27 00:00:00');
+INSERT INTO public.estadocaso (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (5, 'IDENTIFICACIÓN Y ATENCIÓN (OIK)', NULL, '2024-10-24', NULL, '2024-10-24 00:00:00', '2024-10-24 00:00:00');
+INSERT INTO public.estadocaso (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (6, 'REGISTRO Y/O DOCUMENTACIÓN (OIK)', NULL, '2024-10-24', NULL, '2024-10-24 00:00:00', '2024-10-24 00:00:00');
+INSERT INTO public.estadocaso (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (7, 'PREVENCIÓN Y/O PROMOCIÓN (OIK)', NULL, '2024-10-24', NULL, '2024-10-24 00:00:00', '2024-10-24 00:00:00');
+INSERT INTO public.estadocaso (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (8, 'REMISIÓN Y/O SEGUIMIENTO (OIK)', NULL, '2024-10-24', NULL, '2024-10-24 00:00:00', '2024-10-24 00:00:00');
 
 
 --
