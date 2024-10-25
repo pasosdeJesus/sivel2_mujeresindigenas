@@ -151,6 +151,7 @@ module Sivel2Gen
           WHEN evento.diasemana = '5' THEN 'VIERNES'
           WHEN evento.diasemana = '6' THEN 'SÁBADO'
           ELSE 'DOMINGO' END AS evento_diasemana,
+        to_char(evento.hora - time '5:00', 'HH24:MI') AS evento_hora,
         ARRAY_TO_STRING(ARRAY(SELECT nombre
          FROM public.msip_departamento AS d
          WHERE d.id=evento.departamento_id), '; ')
@@ -166,6 +167,8 @@ module Sivel2Gen
           WHEN evento.relacionadocon = 'S' THEN 'SOCIAL'
           ELSE 'SIN INFORMACIÓN' END AS evento_relacionadoconconflicto,
         evento.descripcionafectacion AS evento_descripcion_priv_acin,
+        evento.quepaso AS evento_que_paso,
+        evento.quepaso AS evento_agresion,
         ARRAY_TO_STRING(ARRAY(SELECT r.nombre FROM
           public.evento_relacionprvic AS er JOIN public.relacionprvic AS r
           ON er.relacionprvic_id=r.id
@@ -183,6 +186,16 @@ module Sivel2Gen
           ON ce.categoria_id = c.id
           WHERE ep.evento_id=evento.id ORDER BY ep.id, c.id), '; ') 
           AS evento_hechosvictimizantes,
+        evento.prespnombre AS evento_presp_nombre,
+        evento.prespsexo AS evento_presp_sexo,
+        CASE WHEN evento.prespexterno THEN 'Sí'
+          WHEN evento.prespexterno = 'f' THEN 'No'
+          ELSE '' END AS evento_presp_externo,
+        evento.prespnumid AS evento_presp_numid,
+        COALESCE(prespetnia.nombre, '') AS evento_presp_etnia,
+        evento.prespocupacion AS evento_presp_ocupacion,
+        evento.prespresidencia AS evento_presp_residencia,
+        evento.prespcomunidad AS evento_presp_comunidad,
         CASE WHEN evento.testigo = 'I' THEN 'SIN INFORMACIÓN'
           WHEN evento.testigo = 'S' THEN 'SI'
           ELSE 'NO' END AS evento_testigo,
@@ -229,6 +242,10 @@ module Sivel2Gen
           WHEN evento.solicitomedidas= 'N' THEN 'NINGUNO'
           ELSE 'SIN INFORMACIÓN' END AS evento_antequienmedidas,
         evento.medidasrecibidas AS evento_medidasrecibidas,
+        COALESCE(rutaactivable.nombre, '') AS evento_ruta_activada,
+        evento.otrarutaactivable AS evento_otra_ruta,
+        evento.contextoagresion AS evento_contexto_agresion,
+        evento.datosadicionales AS evento_datos_adicionales,
         CASE WHEN evento.denuncia= 'I' THEN 'SIN INFORMACIÓN'
           WHEN evento.denuncia= 'S' THEN 'SI'
           ELSE 'NO' END AS evento_denuncia,
@@ -303,6 +320,10 @@ module Sivel2Gen
             evento.caso_id = conscaso.caso_id
             AND evento.id = (SELECT MIN(e.id) FROM public.evento AS e 
             WHERE e.caso_id = conscaso.caso_id)
+        LEFT JOIN public.msip_etnia AS prespetnia ON
+          evento.prespetnia_id = prespetnia.id
+        LEFT JOIN public.rutaactivable ON
+          evento.rutaactivable_id = rutaactivable.id
       "
     end
 

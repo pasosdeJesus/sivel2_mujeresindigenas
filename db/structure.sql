@@ -6767,6 +6767,11 @@ CREATE MATERIALIZED VIEW public.sivel2_gen_consexpcaso AS
             WHEN ((scontacto.liderazgo)::text = 'N'::text) THEN 'NO'::text
             ELSE 'SIN INFORMACIÓN'::text
         END AS victima_liderazgocomunidad,
+    COALESCE(poblacionespecial.nombre, ''::character varying) AS victima_poblacion_especial,
+    scontacto.dependientes AS victima_dependientes,
+    scontacto.dependientesmenores AS victima_dependientes_menores,
+    scontacto.dependientesmayores AS victima_dependientes_mayores,
+    scontacto.dependientesdiversidad AS victima_dependientes_diversidad,
     scontacto.tipoliderazgo AS victima_tipoliderazgo_priv_acin,
     scontacto.tieneesquema AS victima_tieneesquema_priv_acin,
     scontacto.anioesquema AS victima_anioesquema_priv_acin,
@@ -6906,7 +6911,7 @@ CREATE MATERIALIZED VIEW public.sivel2_gen_consexpcaso AS
     evento.seguimientojudicial AS evento_seguimientojudicial_priv_oik,
     evento.seguimientopsicosocial AS evento_seguimientopsicosocial_priv_oik,
     conscaso.ubicaciones
-   FROM (((((((((((((((((public.sivel2_gen_conscaso conscaso
+   FROM ((((((((((((((((((public.sivel2_gen_conscaso conscaso
      JOIN public.sivel2_sjr_casosjr casosjr ON ((casosjr.caso_id = conscaso.caso_id)))
      JOIN public.sivel2_gen_caso caso ON ((casosjr.caso_id = caso.id)))
      JOIN public.msip_persona contacto ON ((contacto.id = casosjr.contacto_id)))
@@ -6923,6 +6928,7 @@ CREATE MATERIALIZED VIEW public.sivel2_gen_consexpcaso AS
      LEFT JOIN public.sivel2_gen_escolaridad escolaridad ON ((scontacto.escolaridad_id = escolaridad.id)))
      LEFT JOIN public.educacionpropia ON ((scontacto.educacionpropia_id = educacionpropia.id)))
      LEFT JOIN public.religion ON ((scontacto.religion_id = religion.id)))
+     LEFT JOIN public.poblacionespecial ON ((scontacto.poblacionespecial_id = poblacionespecial.id)))
      LEFT JOIN public.evento ON (((evento.caso_id = conscaso.caso_id) AND (evento.id = ( SELECT min(e.id) AS min
            FROM public.evento e
           WHERE (e.caso_id = conscaso.caso_id))))))
@@ -14806,6 +14812,7 @@ ALTER TABLE ONLY public.sivel2_sjr_victimasjr
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20241025131927'),
 ('20241025103838'),
 ('20241021184658'),
 ('20241013103104'),
