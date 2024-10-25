@@ -6788,6 +6788,7 @@ CREATE MATERIALIZED VIEW public.sivel2_gen_consexpcaso AS
             WHEN (evento.diasemana = 6) THEN 'SÁBADO'::text
             ELSE 'DOMINGO'::text
         END AS evento_diasemana,
+    to_char((evento.hora - '05:00:00'::time without time zone), 'HH24:MI'::text) AS evento_hora,
     array_to_string(ARRAY( SELECT d.nombre
            FROM public.msip_departamento d
           WHERE (d.id = evento.departamento_id)), '; '::text) AS evento_departamento,
@@ -6803,6 +6804,8 @@ CREATE MATERIALIZED VIEW public.sivel2_gen_consexpcaso AS
             ELSE 'SIN INFORMACIÓN'::text
         END AS evento_relacionadoconconflicto,
     evento.descripcionafectacion AS evento_descripcion_priv_acin,
+    evento.quepaso AS evento_que_paso,
+    evento.quepaso AS evento_agresion,
     array_to_string(ARRAY( SELECT r.nombre
            FROM (public.evento_relacionprvic er
              JOIN public.relacionprvic r ON ((er.relacionprvic_id = r.id)))
@@ -6818,6 +6821,18 @@ CREATE MATERIALIZED VIEW public.sivel2_gen_consexpcaso AS
              JOIN public.sivel2_gen_categoria c ON ((ce.categoria_id = c.id)))
           WHERE (ep.evento_id = evento.id)
           ORDER BY ep.id, c.id), '; '::text) AS evento_hechosvictimizantes,
+    evento.prespnombre AS evento_presp_nombre,
+    evento.prespsexo AS evento_presp_sexo,
+        CASE
+            WHEN evento.prespexterno THEN 'Sí'::text
+            WHEN (evento.prespexterno = false) THEN 'No'::text
+            ELSE ''::text
+        END AS evento_presp_externo,
+    evento.prespnumid AS evento_presp_numid,
+    COALESCE(prespetnia.nombre, ''::character varying) AS evento_presp_etnia,
+    evento.prespocupacion AS evento_presp_ocupacion,
+    evento.prespresidencia AS evento_presp_residencia,
+    evento.prespcomunidad AS evento_presp_comunidad,
         CASE
             WHEN ((evento.testigo)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
             WHEN ((evento.testigo)::text = 'S'::text) THEN 'SI'::text
@@ -6864,6 +6879,10 @@ CREATE MATERIALIZED VIEW public.sivel2_gen_consexpcaso AS
             ELSE 'SIN INFORMACIÓN'::text
         END AS evento_antequienmedidas,
     evento.medidasrecibidas AS evento_medidasrecibidas,
+    COALESCE(rutaactivable.nombre, ''::character varying) AS evento_ruta_activada,
+    evento.otrarutaactivable AS evento_otra_ruta,
+    evento.contextoagresion AS evento_contexto_agresion,
+    evento.datosadicionales AS evento_datos_adicionales,
         CASE
             WHEN ((evento.denuncia)::text = 'I'::text) THEN 'SIN INFORMACIÓN'::text
             WHEN ((evento.denuncia)::text = 'S'::text) THEN 'SI'::text
@@ -6911,7 +6930,7 @@ CREATE MATERIALIZED VIEW public.sivel2_gen_consexpcaso AS
     evento.seguimientojudicial AS evento_seguimientojudicial_priv_oik,
     evento.seguimientopsicosocial AS evento_seguimientopsicosocial_priv_oik,
     conscaso.ubicaciones
-   FROM ((((((((((((((((((public.sivel2_gen_conscaso conscaso
+   FROM ((((((((((((((((((((public.sivel2_gen_conscaso conscaso
      JOIN public.sivel2_sjr_casosjr casosjr ON ((casosjr.caso_id = conscaso.caso_id)))
      JOIN public.sivel2_gen_caso caso ON ((casosjr.caso_id = caso.id)))
      JOIN public.msip_persona contacto ON ((contacto.id = casosjr.contacto_id)))
@@ -6932,6 +6951,8 @@ CREATE MATERIALIZED VIEW public.sivel2_gen_consexpcaso AS
      LEFT JOIN public.evento ON (((evento.caso_id = conscaso.caso_id) AND (evento.id = ( SELECT min(e.id) AS min
            FROM public.evento e
           WHERE (e.caso_id = conscaso.caso_id))))))
+     LEFT JOIN public.msip_etnia prespetnia ON ((evento.prespetnia_id = prespetnia.id)))
+     LEFT JOIN public.rutaactivable ON ((evento.rutaactivable_id = rutaactivable.id)))
   WHERE (conscaso.caso_id IN ( SELECT sivel2_gen_conscaso.caso_id
            FROM public.sivel2_gen_conscaso
           WHERE ((sivel2_gen_conscaso.caso_id IN ( SELECT sivel2_gen_caso.id
@@ -14812,6 +14833,7 @@ ALTER TABLE ONLY public.sivel2_sjr_victimasjr
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20241025171742'),
 ('20241025131927'),
 ('20241025103838'),
 ('20241021184658'),

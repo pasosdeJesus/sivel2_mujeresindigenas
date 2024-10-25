@@ -68,6 +68,7 @@ INSERT INTO public.acompanamiento (id, nombre, observaciones, fechacreacion, fec
 INSERT INTO public.acompanamiento (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (4, 'JUSTICIA PROPIA', NULL, '2017-01-11', NULL, '2017-01-11 00:00:00', '2017-01-11 00:00:00');
 INSERT INTO public.acompanamiento (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (5, 'PSICOSOCIAL', NULL, '2017-01-11', NULL, '2017-01-11 00:00:00', '2017-01-11 00:00:00');
 INSERT INTO public.acompanamiento (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (6, 'SIN INFORMACION', '', '2017-02-08', NULL, '2017-02-08 20:07:27.520184', '2017-02-08 20:07:27.520184');
+INSERT INTO public.acompanamiento (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (7, 'OTRO', NULL, '2024-10-24', NULL, '2024-10-24 00:00:00', '2024-10-24 00:00:00');
 
 
 --
@@ -418,7 +419,7 @@ SET row_security = off;
 
 INSERT INTO public.poblacionespecial (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (1, 'SIN INFORMACIÓN', NULL, '2024-09-04', NULL, '2024-09-03 00:00:00', '2024-09-04 00:00:00');
 INSERT INTO public.poblacionespecial (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (2, 'MUJER LIDER', NULL, '2024-09-04', NULL, '2024-09-03 00:00:00', '2024-09-04 00:00:00');
-INSERT INTO public.poblacionespecial (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (3, 'CON DISCAPACIDAD', '', '2024-09-04', NULL, '2024-09-03 00:00:00', '2024-09-04 07:23:31.149492');
+INSERT INTO public.poblacionespecial (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (3, 'CON DISCAPACIDAD', NULL, '2024-09-04', NULL, '2024-09-03 00:00:00', '2024-09-04 00:00:00');
 INSERT INTO public.poblacionespecial (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (4, 'VÍCTIMA DEL CONFLICTO', NULL, '2024-09-04', NULL, '2024-09-03 00:00:00', '2024-09-04 00:00:00');
 INSERT INTO public.poblacionespecial (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (5, 'MIGRANTE', NULL, '2024-09-04', NULL, '2024-09-03 00:00:00', '2024-09-04 00:00:00');
 INSERT INTO public.poblacionespecial (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (6, 'OTROS', NULL, '2024-09-04', NULL, '2024-09-03 00:00:00', '2024-09-04 00:00:00');
