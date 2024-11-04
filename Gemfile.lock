@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/styd/apexcharts.rb.git
-  revision: 2a620f8ffe3ad2402d081002f886ae2d4d3ffa93
+  revision: c572f8f6feee608c3c02d573ec93794b5f407e2a
   branch: master
   specs:
     apexcharts (0.2.0)
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: 19f2e50868090a23be6822c4768472130ef05e5a
+  revision: 953f9fd0a5aa7772445fdc761ba9c5206ffa5072
   branch: v2.2
   specs:
     cor1440_gen (2.2.0.beta7)
@@ -38,7 +38,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/heb412_gen.git
-  revision: 50cc814f99a54635c88b551a3cc5eacded3385d4
+  revision: 478c77757536017e2ef4bfd217510805e06fbc12
   branch: v2.2
   specs:
     heb412_gen (2.2.0.beta7)
@@ -49,14 +49,14 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/jos19.git
-  revision: b700efa5e8cdcd309e800ea8d573f0bdbf338665
+  revision: b33b24b900ecf9d32caafd71e67ed9c4eabfd3b0
   branch: v2.2
   specs:
     jos19 (2.2.0.beta7)
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/mr519_gen.git
-  revision: e52c0bacd4ea9ce761122ea118935e4726e41dd2
+  revision: 2c6a15a787fa354e7fae3c029a7af8723ef37031
   branch: v2.2
   specs:
     mr519_gen (2.2.0.beta7)
@@ -65,7 +65,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 4360d38892e22341355be982ace131a71317b0da
+  revision: c59efb3e1642d0b13df2d8f19651d65b49cdaf0f
   branch: v2.2
   specs:
     msip (2.2.0.beta7)
@@ -85,7 +85,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/sivel2_gen.git
-  revision: ff9f6797f8e544800afa0759124bfd95c6ae080a
+  revision: 9cf97bf9706adbbf4ca4efec722c2530e02e26ac
   branch: v2.2
   specs:
     sivel2_gen (2.2.0.beta7)
@@ -284,7 +284,7 @@ GEM
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parslet (2.0.0)
-    pg (1.5.8)
+    pg (1.5.9)
     psych (5.1.2)
       stringio
     public_suffix (6.0.1)
@@ -329,7 +329,7 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
-    rails-i18n (7.0.9)
+    rails-i18n (7.0.10)
       i18n (>= 0.7, < 2)
       railties (>= 6.0.0, < 8)
     railties (7.2.1.1)
@@ -367,7 +367,7 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.3.1)
-    selenium-webdriver (4.25.0)
+    selenium-webdriver (4.26.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
