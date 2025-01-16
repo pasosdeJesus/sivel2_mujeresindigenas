@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: 28db4314af4b6e1017f7d40886b9fc06d29bf3aa
+  revision: f4ff5bb8dee35972ab8ee4d8e768caa751f68fb9
   branch: v2.2
   specs:
     cor1440_gen (2.2.0.beta7)
@@ -38,7 +38,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/heb412_gen.git
-  revision: da1340e054d49d1c0ca2df0ca238be029857163c
+  revision: 81a91751111fa7e202c2651faaf55592433efdfa
   branch: v2.2
   specs:
     heb412_gen (2.2.0.beta7)
@@ -49,14 +49,14 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/jos19.git
-  revision: 7f8e15138455ffbe8ae3cbc1f78bc1f650b12a4a
+  revision: 31dcd11bfc259009966bcf8a844e06b38a36b1df
   branch: v2.2
   specs:
     jos19 (2.2.0.beta7)
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/mr519_gen.git
-  revision: dadbe717ccecb196cba584e9ac47be199ff22830
+  revision: 988d3c46f3cd97fa14242d346283a94467a0933a
   branch: v2.2
   specs:
     mr519_gen (2.2.0.beta7)
@@ -65,7 +65,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 4ac4e16b93cf76f7355087627e1bfdc65823f787
+  revision: ca3339d957b7f8fe702b30d1ef47411c7a071c5e
   branch: v2.2
   specs:
     msip (2.2.0.beta7)
@@ -85,7 +85,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/sivel2_gen.git
-  revision: 969acee5fad3108a241156dcedf632958d59ffed
+  revision: 7b64f25ec870570d42cbe78a75fb1c71ae3fd992
   branch: v2.2
   specs:
     sivel2_gen (2.2.0.beta7)
@@ -357,7 +357,7 @@ GEM
       rubyzip (>= 1.3)
     ruby-graphviz (1.2.5)
       rexml
-    rubyzip (2.3.2)
+    rubyzip (2.4.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
