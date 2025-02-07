@@ -49,7 +49,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/jos19.git
-  revision: 6ea544b2509bfa570e592ff67f145519977a14f3
+  revision: 3bc24cab758768bb14fb2413fd24edbfd57aee8b
   branch: v2.2
   specs:
     jos19 (2.2.0.beta7)
@@ -85,7 +85,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/sivel2_gen.git
-  revision: f18f835f4c84b75e28e36e407b335e69b149db76
+  revision: fbd2ae589d8e8d84326142b231ff74a99f23ac81
   branch: v2.2
   specs:
     sivel2_gen (2.2.0.beta7)
