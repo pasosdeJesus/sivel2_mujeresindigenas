@@ -13,7 +13,8 @@ class UsuariosController < Msip::ModelosController
       :oficina_id,
       :email,
       :tema,
-      :created_at_localizada
+      :created_at_localizada,
+     :habilitado,
     ]
   end
 
