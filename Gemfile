@@ -19,6 +19,8 @@ gem "cocoon", git: "https://github.com/vtamara/cocoon.git", branch: "new_id_with
 # CoffeeScript para recuersos .js.coffee y vistas
 gem "coffee-rails"
 
+gem "csv" 
+
 gem "devise" # Autenticación y roles
 
 gem "devise-i18n"
