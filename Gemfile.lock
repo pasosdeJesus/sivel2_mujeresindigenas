@@ -49,7 +49,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/jos19.git
-  revision: aa3f16b2aed0df8783be4d80aa72404836e78fd1
+  revision: c497a9b8f48e38f91f63e7a0625bc62eb4e02658
   branch: v2.2
   specs:
     jos19 (2.2.0.beta8)
@@ -85,7 +85,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/sivel2_gen.git
-  revision: 73de9a2f9aee4690c1f3cfabd6bae8b3c2509eb6
+  revision: 133d77fcc6b06aecad853d0885e3ab1cc0510d59
   branch: v2.2
   specs:
     sivel2_gen (2.2.0.beta8)
@@ -326,7 +326,7 @@ GEM
     puma (6.6.0)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (2.2.13)
+    rack (2.2.14)
     rack-session (1.0.2)
       rack (< 3)
     rack-test (2.2.0)
@@ -402,7 +402,7 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.4.1)
-    selenium-webdriver (4.31.0)
+    selenium-webdriver (4.32.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
