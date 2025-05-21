@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: 1d220ef4761f5f4ad3e38ecbdc85874a2daecc28
+  revision: 45fa5dfb9e560ca99d9e05250b8c73b41655cb39
   branch: v2.2
   specs:
     cor1440_gen (2.2.0.beta8)
@@ -38,10 +38,10 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/heb412_gen.git
-  revision: 46e2672eb906871e84fa71824ea4ac0348f43374
+  revision: c3cb5f1d08cc2f61fdcd039dd829aa756d005664
   branch: v2.2
   specs:
-    heb412_gen (2.2.0.beta8)
+    heb412_gen (2.2.0)
       mr519_gen
       msip
       redcarpet
@@ -49,26 +49,26 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/jos19.git
-  revision: c497a9b8f48e38f91f63e7a0625bc62eb4e02658
+  revision: 29129824287c661beb35a7e24412d258a7ff3417
   branch: v2.2
   specs:
     jos19 (2.2.0.beta8)
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/mr519_gen.git
-  revision: 6e8f08e36db76f4a50e12b22313a836034b7b9d1
+  revision: 47ee2caf4dc4521b56f08e5fd92489da2d291580
   branch: v2.2
   specs:
-    mr519_gen (2.2.0.beta8)
+    mr519_gen (2.2.0)
       msip
       rails
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 6e7ee561235b6ce30f37b32ad87e8acf390f23e9
+  revision: 2d1fb0e91feab9a33687507ee02e9c920e6c1afa
   branch: v2.2
   specs:
-    msip (2.2.0.beta8)
+    msip (2.2.0)
       cancancan (~> 3)
       devise (~> 4)
       devise-i18n (~> 1)
@@ -85,10 +85,10 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/sivel2_gen.git
-  revision: 133d77fcc6b06aecad853d0885e3ab1cc0510d59
+  revision: a76d913cc75e47370d0483a91c6c6e6177036f10
   branch: v2.2
   specs:
-    sivel2_gen (2.2.0.beta8)
+    sivel2_gen (2.2.0)
       color
       devise
       rails
@@ -179,7 +179,7 @@ GEM
     benchmark (0.4.0)
     bigdecimal (3.1.9)
     bindex (0.8.1)
-    bootsnap (1.18.4)
+    bootsnap (1.18.6)
       msgpack (~> 1.2)
     builder (3.3.0)
     camertron-eprun (1.1.1)
@@ -209,9 +209,9 @@ GEM
     connection_pool (2.5.0)
     crass (1.0.6)
     csv (3.3.4)
-    cuprite (0.15.1)
+    cuprite (0.17)
       capybara (~> 3.0)
-      ferrum (~> 0.15.0)
+      ferrum (~> 0.17.0)
     date (3.4.1)
     debug (1.10.0)
       irb (~> 1.10)
@@ -233,8 +233,9 @@ GEM
     drb (2.2.1)
     erubi (1.13.1)
     execjs (2.10.0)
-    ferrum (0.15)
+    ferrum (0.17.1)
       addressable (~> 2.5)
+      base64 (~> 0.2)
       concurrent-ruby (~> 1.1)
       webrick (~> 1.7)
       websocket-driver (~> 0.7)
@@ -264,7 +265,7 @@ GEM
     jsbundling-rails (1.3.1)
       railties (>= 6.0.0)
     kgio (2.11.4)
-    libxml-ruby (5.0.3)
+    libxml-ruby (5.0.4)
     logger (1.6.6)
     loofah (2.24.0)
       crass (~> 1.0.2)
@@ -326,7 +327,7 @@ GEM
     puma (6.6.0)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (2.2.14)
+    rack (2.2.15)
     rack-session (1.0.2)
       rack (< 3)
     rack-test (2.2.0)
@@ -531,4 +532,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.6.8
+   2.6.9
