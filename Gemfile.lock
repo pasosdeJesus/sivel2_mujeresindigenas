@@ -25,10 +25,10 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: 45fa5dfb9e560ca99d9e05250b8c73b41655cb39
+  revision: 515829a3db2555bc084d0c34cae3e1075ba2102b
   branch: v2.2
   specs:
-    cor1440_gen (2.2.0.beta8)
+    cor1440_gen (2.2.0)
       devise
       heb412_gen
       kt-paperclip
@@ -49,7 +49,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/jos19.git
-  revision: 29129824287c661beb35a7e24412d258a7ff3417
+  revision: a9319b0a44cc98fe0f20861e2406f10b20c7214c
   branch: v2.2
   specs:
     jos19 (2.2.0.beta8)
@@ -85,7 +85,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/sivel2_gen.git
-  revision: a76d913cc75e47370d0483a91c6c6e6177036f10
+  revision: 0afc579acb9eb94fce2bf99502f91e4adb869652
   branch: v2.2
   specs:
     sivel2_gen (2.2.0)
@@ -327,7 +327,7 @@ GEM
     puma (6.6.0)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (2.2.15)
+    rack (2.2.16)
     rack-session (1.0.2)
       rack (< 3)
     rack-test (2.2.0)
@@ -403,7 +403,7 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.4.1)
-    selenium-webdriver (4.32.0)
+    selenium-webdriver (4.33.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
