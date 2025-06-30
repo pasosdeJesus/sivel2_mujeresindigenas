@@ -6801,7 +6801,9 @@ CREATE MATERIALIZED VIEW public.sivel2_gen_consexpcaso AS
   WHERE (conscaso.caso_id IN ( SELECT sivel2_gen_conscaso.caso_id
            FROM public.sivel2_gen_conscaso
           WHERE ((sivel2_gen_conscaso.caso_id IN ( SELECT sivel2_gen_caso.id
-                   FROM public.sivel2_gen_caso)) AND (sivel2_gen_conscaso.fecharec >= '2024-10-01'::date))
+                   FROM public.sivel2_gen_caso)) AND (sivel2_gen_conscaso.caso_id IN ( SELECT sivel2_gen_caso_etiqueta.caso_id
+                   FROM public.sivel2_gen_caso_etiqueta
+                  WHERE (sivel2_gen_caso_etiqueta.etiqueta_id = 119))))
           ORDER BY sivel2_gen_conscaso.fecharec DESC, sivel2_gen_conscaso.caso_id))
   ORDER BY conscaso.fecharec DESC
   WITH NO DATA;
