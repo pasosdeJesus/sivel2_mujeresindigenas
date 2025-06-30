@@ -209,7 +209,7 @@ class Ability < Sivel2Gen::Ability
     can :descarga_anexo, Msip::Anexo
     can :nuevo, Sivel2Sjr::Respuesta
     can :nuevo, Msip::Ubicacion
-    can :nuevo, Sivel2Gen::Presponsable
+    can [:arbol, :nuevo], Sivel2Gen::Presponsable
     can :nuevo, Sivel2Gen::Victima
     if !usuario.nil? && !usuario.rol.nil? then
       if usuario.oficina && usuario.oficina.id  == 104
