@@ -3,7 +3,8 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<% if @caso.casosjr && @caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
+<% if ApplicationHelper::campos_acin?(@caso.casosjr, current_ability) || 
+    ApplicationHelper::campos_oik?(@caso.casosjr, current_ability) %>
   <p style='text-align: right'>
     <label>
       Mostrar campos privados
@@ -28,7 +29,7 @@
       </strong></dt>
       <dd><%= @caso.casosjr.consecorg if @caso.casosjr && @caso.casosjr.consecorg %></dd>
 
-      <% if @caso.casosjr && @caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
+      <% if ApplicationHelper::campos_acin?(@caso.casosjr, current_ability) %>
         <div class="privado alert-info">
           <dt><strong>
             <%= Sivel2Sjr::Casosjr.human_attribute_name(:consentimiento) %>:
@@ -79,8 +80,8 @@
           @caso.casosjr.acompanamiento
         %></dd>
 
-      <% if @caso.casosjr && @caso.casosjr.oficina_id == 103 && 
-          can?(:edit, :casosoik) then %>
+      
+      <% if ApplicationHelper::campos_oik?(@caso.casosjr, current_ability) %>
         <div class="privado alert-info">
           <dt><strong>
               <%= Sivel2Sjr::Casosjr.human_attribute_name(:otroacompanamiento) %>:
@@ -124,9 +125,8 @@
         <% end %>
         <% numvic += 1 %>
 
-        <% if @caso.casosjr &&
-            ((@caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin)) || 
-             (@caso.casosjr.oficina_id == 103 && can?(:edit, :casosoik))) then %>
+        <% if ApplicationHelper::campos_acin?(@caso.casosjr, current_ability) ||
+            ApplicationHelper::campos_oik?(@caso.casosjr, current_ability) %>
           <div class="privado alert-info">
             <dt><strong>
               <%= Sivel2Sjr::Casosjr.human_attribute_name(:nombres) %>:
@@ -143,7 +143,8 @@
             </strong></dt>
             <dd><%= victima.persona.tdocumento.sigla if victima.persona.tdocumento_id %></dd>
 
-            <% if @caso.casosjr.oficina_id == 103 && can?(:edit, :casosoik) %>
+            <% if ApplicationHelper::campos_oik?(
+                @caso.casosjr, current_ability) %>
               <dt><strong>
                   <%= Msip::Persona.human_attribute_name(:numerodocumento) %>:
                 </strong>
@@ -209,9 +210,8 @@
         </strong></dt>
         <dd><%= victima.victimasjr.comunidadnac if victima.victimasjr && victima.victimasjr.comunidadnac %></dd>
 
-        <% if @caso.casosjr && 
-            ((@caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin)) ||
-            (@caso.casosjr.oficina_id == 103 && can?(:edit, :casosoik))) then %>
+        <% if ApplicationHelper::campos_acin?(@caso.casosjr, current_ability) ||
+            ApplicationHelper::campos_oik?(@caso.casosjr, current_ability) %>
           <div class="privado alert-info">
             <dt><strong>
               <%= Sivel2Sjr::Victimasjr.human_attribute_name(:departamentores) %>:
@@ -237,8 +237,8 @@
             <dd><%= victima.victimasjr.comunidadres if 
               victima.victimasjr && victima.victimasjr.comunidadres %> </dd>
 
-            <% if @caso.casosjr && @caso.casosjr.oficina_id == 104 && 
-                can?(:edit, :casosacin) then %>
+            <% if ApplicationHelper::campos_acin?(
+                @caso.casosjr, current_ability) %>
               <dt><strong>
                   <%= Sivel2Gen::Victima.human_attribute_name(:hijos) %>:
                 </strong>
@@ -289,8 +289,8 @@
           ApplicationHelper::NOSI, victima.victimasjr.sistemasalud, true) if
           victima.victimasjr && victima.victimasjr.sistemasalud %></dd>
 
-        <% if @caso.casosjr && @caso.casosjr.oficina_id == 103 && 
-            can?(:edit, :casosoik) then %>
+        <% if ApplicationHelper::campos_oik?(
+            @caso.casosjr, current_ability) %>
           <div class="privado alert-info">
             <dt>
               <strong>
@@ -301,36 +301,36 @@
           </div>
         <% end %>
 
-        <% if @caso.casosjr && @caso.casosjr.oficina_id == 104 && 
-             can?(:edit, :casosacin) then %>
-           <div class="privado alert-info">
+
+        <% if ApplicationHelper::campos_acin?(@caso.casosjr, current_ability) %>
+          <div class="privado alert-info">
 
             <dt><strong>
-              <%= Sivel2Sjr::Victimasjr.human_attribute_name(:religion) %>:
-            </strong></dt>
-            <dd><%= ApplicationHelper::s_guiones(victima.victimasjr.religion.nombre) if 
-             victima.victimasjr && victima.victimasjr.religion %> </dd>
+                <%= Sivel2Sjr::Victimasjr.human_attribute_name(:religion) %>:
+              </strong></dt>
+              <dd><%= ApplicationHelper::s_guiones(victima.victimasjr.religion.nombre) if 
+              victima.victimasjr && victima.victimasjr.religion %> </dd>
 
-            <dt><strong>
-              <%= Sivel2Sjr::Victimasjr.human_attribute_name(:comoingresos) %>:
-            </strong></dt>
-            <dd><%= victima.victimasjr.comoingresos if 
-             victima.victimasjr && victima.victimasjr.comoingresos %> </dd>
+              <dt><strong>
+                  <%= Sivel2Sjr::Victimasjr.human_attribute_name(:comoingresos) %>:
+                </strong></dt>
+                <dd><%= victima.victimasjr.comoingresos if 
+                victima.victimasjr && victima.victimasjr.comoingresos %> </dd>
 
-            <dt><strong>
-              <%= Sivel2Sjr::Victimasjr.human_attribute_name(:tienetierra) %>:
-            </strong></dt>
-            <dd><%= victima.victimasjr.tienetierra.inject("") { 
-              |memo, i| 
-              (memo == "" ? "" : memo + ", ") + i.nombre } if 
-                victima.victimasjr && victima.victimasjr.tienetierra
-            %></dd>
+                <dt><strong>
+                    <%= Sivel2Sjr::Victimasjr.human_attribute_name(:tienetierra) %>:
+                  </strong></dt>
+                  <dd><%= victima.victimasjr.tienetierra.inject("") { 
+                    |memo, i| 
+                    (memo == "" ? "" : memo + ", ") + i.nombre } if 
+                  victima.victimasjr && victima.victimasjr.tienetierra
+                  %></dd>
 
-            <dt><strong>
-              <%= Sivel2Sjr::Victimasjr.human_attribute_name(:areatierra) %>:
-            </strong></dt>
-            <dd><%= victima.victimasjr.areatierra if 
-             victima.victimasjr && victima.victimasjr.areatierra %> </dd>
+                  <dt><strong>
+                      <%= Sivel2Sjr::Victimasjr.human_attribute_name(:areatierra) %>:
+                    </strong></dt>
+                    <dd><%= victima.victimasjr.areatierra if 
+                    victima.victimasjr && victima.victimasjr.areatierra %> </dd>
 
           </div>
         <% end %>
@@ -341,8 +341,8 @@
         <dd> <%= ApplicationHelper.etiqueta(
           ApplicationHelper::SEXO, victima.persona.sexo, true ) if 
           victima.persona.sexo %> </dd>
-        <% if @caso.casosjr && @caso.casosjr.oficina_id == 103 && 
-            can?(:edit, :casosoik) then %>
+        <% if ApplicationHelper::campos_oik?(
+            @caso.casosjr, current_ability) %>
           <div class="privado alert-info">
             <dt><strong>
               <%= Sivel2Gen::Victima.human_attribute_name(:orientacionsexual) %>:
@@ -380,9 +380,9 @@
         </strong></dt>
         <dd><%= ApplicationHelper.etiqueta(
           ApplicationHelper::LIDERAZGO, victima.victimasjr.liderazgo, true) if 
-           victima.victimasjr && victima.victimasjr.liderazgo %></dd>
-        <% if @caso.casosjr && @caso.casosjr.oficina_id == 103 && 
-            can?(:edit, :casosoik) then %>
+          victima.victimasjr && victima.victimasjr.liderazgo %></dd>
+        <% if ApplicationHelper::campos_oik?(
+            @caso.casosjr, current_ability) %>
           <div class="privado alert-info">
             <dt>
               <strong>
@@ -432,8 +432,7 @@
           </div>
         <% end %>
 
-        <% if @caso.casosjr && @caso.casosjr.oficina_id == 104 && 
-             can?(:edit, :casosacin) then %>
+        <% if ApplicationHelper::campos_acin?(@caso.casosjr, current_ability) %>
           <div class="privado alert-info">
             <dt><strong>
               <%= Sivel2Sjr::Victimasjr.human_attribute_name(:tipoliderazgo) %>:
@@ -485,8 +484,8 @@
             ApplicationHelper::DIASEMANA, evento.diasemana, true) if 
             evento.diasemana %> </dd>
 
-          <% if @caso.casosjr && @caso.casosjr.oficina_id == 103 && 
-              can?(:edit, :casosoik) then %>
+          <% if ApplicationHelper::campos_oik?(
+              @caso.casosjr, current_ability) %>
              <div class="privado alert-info">
                <dt>
                  <strong>Hora:</strong>
@@ -520,18 +519,18 @@ JO
             ApplicationHelper::TIPOCONFLICTO, evento.relacionadocon, true) if 
             evento.relacionadocon %></dd>
 
-          <% if @caso.casosjr && @caso.casosjr.oficina_id == 104 && 
-               can?(:edit, :casosacin) then %>
-             <div class="privado alert-info">
-               <dt><strong>
-                 <%= Evento.human_attribute_name(:descripcionafectacion) %>:
-               </strong></dt>
-               <dd><%= evento.descripcionafectacion if evento.descripcionafectacion %></dd>
+          <% if ApplicationHelper::campos_acin?(
+              @caso.casosjr, current_ability) %>
+            <div class="privado alert-info">
+              <dt><strong>
+                  <%= Evento.human_attribute_name(:descripcionafectacion) %>:
+                </strong></dt>
+                <dd><%= evento.descripcionafectacion if evento.descripcionafectacion %></dd>
             </div>
           <% end %>
 
-          <% if @caso.casosjr && @caso.casosjr.oficina_id == 103 && 
-              can?(:edit, :casosoik) then %>
+          <% if ApplicationHelper::campos_oik?(
+              @caso.casosjr, current_ability) %>
             <div class="privado alert-info">
               <dt>
                 <strong>Descripción detallada de los hechos</strong>
@@ -569,9 +568,9 @@ JO
           <% end %>
           </dd>
 
-          <% if @caso.casosjr && ((@caso.casosjr.oficina_id == 104 && 
-              can?(:edit, :casosacin)) || (@caso.casosjr.oficina_id == 103 && 
-              can?(:edit, :casosoik))) then %>
+          <% if ApplicationHelper::campos_acin?(
+              @caso.casosjr, current_ability) ||
+             ApplicationHelper::campos_oik?(@caso.casosjr, current_ability) %>
              <div class="privado alert-info">
                <dt><strong>
                  <%= ::Evento.human_attribute_name(:relacionprvic) %>:
@@ -602,29 +601,29 @@ JO
                   end %> 
           </dd>
 
-          <% if @caso.casosjr && @caso.casosjr.oficina_id == 104 && 
-               can?(:edit, :casosacin) then %>
-             <div class="privado alert-info">
+          <% if ApplicationHelper::campos_acin?(
+              @caso.casosjr, current_ability) %>
+            <div class="privado alert-info">
 
-               <dt><strong>
-                 <%= Evento.human_attribute_name(:consecuenciaindividual) %>:
-               </strong></dt>
-               <dd><%= if evento.consecuenciaindividual then
-                         evento.consecuenciaindividual.inject("") { 
-                           |memo, i| 
-                           (memo == "" ? "" : memo + ", ") + i.nombre } 
-                       end %> </dd>
+              <dt><strong>
+                  <%= Evento.human_attribute_name(:consecuenciaindividual) %>:
+                </strong></dt>
+                <dd><%= if evento.consecuenciaindividual then
+                          evento.consecuenciaindividual.inject("") { 
+                            |memo, i| 
+                            (memo == "" ? "" : memo + ", ") + i.nombre } 
+                        end %> </dd>
 
-               <dt><strong>
-                 <%= Evento.human_attribute_name(:consecuenciafamiliar) %>:
-               </strong></dt>
-               <dd><%= if evento.consecuenciafamiliar then
-                         evento.consecuenciafamiliar.inject("") { 
-                           |memo, i| 
-                           (memo == "" ? "" : memo + ", ") + i.nombre } 
-                       end %></dd>
-             </div>
-           <% end %>
+                <dt><strong>
+                    <%= Evento.human_attribute_name(:consecuenciafamiliar) %>:
+                  </strong></dt>
+                  <dd><%= if evento.consecuenciafamiliar then
+                            evento.consecuenciafamiliar.inject("") { 
+                              |memo, i| 
+                              (memo == "" ? "" : memo + ", ") + i.nombre } 
+                          end %></dd>
+            </div>
+          <% end %>
 
            <dt><strong>
              <%= ::Evento.human_attribute_name(:tapoyo) %>:
@@ -636,8 +635,9 @@ JO
                    end 
                    %> </dd>
 
-           <% if @caso.casosjr && @caso.casosjr.oficina_id == 104 && 
-               can?(:edit, :casosacin) then %>
+
+           <% if ApplicationHelper::campos_acin?(
+               @caso.casosjr, current_ability) %>
              <div class="privado alert-info">
     
                <dt><strong>
@@ -675,8 +675,8 @@ JO
                    end 
                    %> </dd>
 
-           <% if @caso.casosjr && @caso.casosjr.oficina_id == 104 && 
-               can?(:edit, :casosacin) then %>
+           <% if ApplicationHelper::campos_acin?(
+               @caso.casosjr, current_ability) %>
              <div class="privado alert-info">
                <dt><strong>
                  <%= Evento.human_attribute_name(:telcontacto) %>:
@@ -730,38 +730,38 @@ JO
            <%= evento.diadenuncia if evento.diadenuncia %>
            </dd>
 
-           <% if @caso.casosjr && @caso.casosjr.oficina_id == 104 && 
-                can?(:edit, :casosacin) then %>
-              <div class="privado alert-info">
+           <% if ApplicationHelper::campos_acin?(
+               @caso.casosjr, current_ability) %>
+             <div class="privado alert-info">
 
-                <dt><strong>
-                  <%= Evento.human_attribute_name(:avancescaso) %>:
-                </strong></dt>
-                <dd><%= evento.avancescaso if evento.avancescaso %></dd>
+               <dt><strong>
+                   <%= Evento.human_attribute_name(:avancescaso) %>:
+                 </strong></dt>
+                 <dd><%= evento.avancescaso if evento.avancescaso %></dd>
 
-                <dt><strong>
-                  <%= Evento.human_attribute_name(:etapaproceso) %>:
-                </strong></dt>
-                <dd><%= evento.etapaproceso if evento.etapaproceso %></dd>
+                 <dt><strong>
+                     <%= Evento.human_attribute_name(:etapaproceso) %>:
+                   </strong></dt>
+                   <dd><%= evento.etapaproceso if evento.etapaproceso %></dd>
 
-                <dt><strong>
-                  <%= Evento.human_attribute_name(:recibidoreparacion) %>:
-                </strong></dt>
-                <dd><%= ApplicationHelper.etiqueta(
-                  ApplicationHelper::NOSI, evento.recibidoreparacion, true) if 
-                  evento.recibidoreparacion %> </dd>
+                   <dt><strong>
+                       <%= Evento.human_attribute_name(:recibidoreparacion) %>:
+                     </strong></dt>
+                     <dd><%= ApplicationHelper.etiqueta(
+                       ApplicationHelper::NOSI, evento.recibidoreparacion, true) if 
+                       evento.recibidoreparacion %> </dd>
 
-                <dt><strong>
-                  <%= Evento.human_attribute_name(:quereparacion) %>:
-                </strong></dt>
-                <dd><%= evento.quereparacion if evento.quereparacion %></dd>
-              
-                <dt><strong>
-                  <%= Evento.human_attribute_name(:sancionadovictimario) %>:
-                </strong></dt>
-                <dd><%= ApplicationHelper.etiqueta(
-                  ApplicationHelper::NOSI, evento.sancionadovictimario, true) if 
-                  evento.sancionadovictimario%></dd>
+                     <dt><strong>
+                         <%= Evento.human_attribute_name(:quereparacion) %>:
+                       </strong></dt>
+                       <dd><%= evento.quereparacion if evento.quereparacion %></dd>
+
+                       <dt><strong>
+                           <%= Evento.human_attribute_name(:sancionadovictimario) %>:
+                         </strong></dt>
+                         <dd><%= ApplicationHelper.etiqueta(
+                           ApplicationHelper::NOSI, evento.sancionadovictimario, true) if 
+                           evento.sancionadovictimario%></dd>
 
              </div>
            <% end %>
@@ -789,7 +789,8 @@ JO
             evento.quisieradenunciar %></dd>
 
 
-          <% if @caso.casosjr && @caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin) then %>
+          <% if ApplicationHelper::campos_acin?(
+              @caso.casosjr, current_ability) %>
             <div class="privado alert-info">
 
               <dt><strong>
@@ -805,8 +806,8 @@ JO
             </div>
           <% end %>
 
-          <% if @caso.casosjr && @caso.casosjr.oficina_id == 103 && 
-               can?(:edit, :casosoik) then %>
+          <% if ApplicationHelper::campos_oik?(
+              @caso.casosjr, current_ability) %>
             <%= render 'muestra_evento_oik', :evento => evento %>
           <% end %>
 

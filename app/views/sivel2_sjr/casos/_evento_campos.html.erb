@@ -31,7 +31,8 @@
       </div>
     </div>
 
-    <% if f.object.caso.casosjr.oficina_id == 103 && can?(:edit, :casosoik) then %>
+    <% if ApplicationHelper::campos_oik?(
+        f.object.caso.casosjr, current_ability) %>
       <div class="privado alert-info">
         <div class="row">
           <%= f.input :hora, as: :time, html5: true %>
@@ -79,8 +80,8 @@
       </div>
     </div>
 
-    <% if (f.object.caso.casosjr.oficina_id == 104 &&
-        can?(:edit, :casosacin)) then %>
+    <% if ApplicationHelper::campos_acin?(
+        f.object.caso.casosjr, current_ability) %>
       <div class="privado alert-info">
         <%= f.input :descripcionafectacion,
           as: :text,
@@ -91,8 +92,8 @@
       </div>
     <% end %>
 
-    <% if (f.object.caso.casosjr.oficina_id == 103 &&
-        can?(:edit, :casosoik)) then %>
+    <% if ApplicationHelper::campos_oik?(
+        f.object.caso.casosjr, current_ability) %>
       <div class="privado alert-info">
         <%= f.input :descripcionafectacion,
           as: :text,
@@ -106,10 +107,10 @@
             rows: 2
           } %>
         <%= f.input :agresion,
-        as: :text,
-        input_html: {
-          rows: 2
-        } %>
+          as: :text,
+          input_html: {
+            rows: 2
+          } %>
       </div>
     <% end %>
 
@@ -118,254 +119,256 @@
       <div class="panel-body">
         <%= render 'eventopresponsable', :f => f %>
 
-        <% if (f.object.caso.casosjr.oficina_id == 103 && can?(:edit, :casosoik)) || 
-            (f.object.caso.casosjr.oficina_id == 104 && can?(:edit, :casosacin)) then %>
-          <div class="privado alert-info">
-            <%= f.association :relacionprvic,
-              collection: ::Relacionprvic.habilitados,
+        <% if ApplicationHelper::campos_acin?(
+            f.object.caso.casosjr, current_ability) ||
+           ApplicationHelper::campos_oik?(
+             f.object.caso.casosjr, current_ability) %>
+           <div class="privado alert-info">
+             <%= f.association :relacionprvic,
+               collection: ::Relacionprvic.habilitados,
+               include_blank: false,
+               label_method: :nombre,
+               value_method: :id %>
+           </div>
+         <% end %>
+
+         <% if ApplicationHelper::campos_oik?(
+             f.object.caso.casosjr, current_ability) %>
+           <%= render partial: 'evento_presp_oik', locals: {f: f} %>
+         <% end %>
+
+         <%= f.input :testigo,
+           collection: ApplicationHelper::NOSI,
+           include_blank: false %>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Afectaciones</div>
+      <div class="panel-body">
+
+        <div class="row">
+          <div class="col-md-6">
+            <%= f.association :tafectacion,
+              collection: ::Tafectacion.habilitados,
               include_blank: false,
               label_method: :nombre,
               value_method: :id %>
           </div>
-        <% end %>
-
-        <% if (f.object.caso.casosjr.oficina_id == 103 && 
-            can?(:edit, :casosoik)) then %>
-          <%= render partial: 'evento_presp_oik', locals: {f: f} %>
-        <% end %>
-
-        <%= f.input :testigo,
-          collection: ApplicationHelper::NOSI,
-          include_blank: false %>
-      </div>
-    </div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading">Afectaciones</div>
-    <div class="panel-body">
-
-      <div class="row">
-        <div class="col-md-6">
-          <%= f.association :tafectacion,
-            collection: ::Tafectacion.habilitados,
-            include_blank: false,
-            label_method: :nombre,
-            value_method: :id %>
-        </div>
-        <div class="col-md-6">
-          <%= f.association :tapoyo,
-            collection: ::Tapoyo.habilitados,
-            include_blank: false,
-            label_method: :nombre,
-            value_method: :id %>
-        </div>
-      </div>
-
-
-      <% if f.object.caso.casosjr.oficina_id == 104 &&
-           can?(:edit, :casosacin) then %>
-        <div class="privado alert-info">
-
-          <div class="row">
-            <div class="col-md-6">
-              <%= f.association :consecuenciaindividual,
-                collection: ::Consecuenciaindividual.habilitados,
-                include_blank: false,
-                label_method: :nombre,
-                value_method: :id %>
-            </div>
-            <div class="col-md-6">
-              <%= f.association :consecuenciafamiliar,
-                collection: ::Consecuenciafamiliar.habilitados,
-                include_blank: false,
-                label_method: :nombre,
-                value_method: :id %>
-            </div>
+          <div class="col-md-6">
+            <%= f.association :tapoyo,
+              collection: ::Tapoyo.habilitados,
+              include_blank: false,
+              label_method: :nombre,
+              value_method: :id %>
           </div>
-
         </div>
-      <% end %>
 
-      <% if f.object.caso.casosjr.oficina_id == 104 &&
-           can?(:edit, :casosacin) then %>
-         <div class="privado alert-info">
 
-          <%= f.association :consecuenciafisica,
-            collection: ::Consecuenciafisica.habilitados,
-            as: :check_boxes,
-            wrapper_html: { class: 'trescolumnas' },
-            input_html: { style: 'margin-left: 0px;' },
-            include_blank: false,
-            label_method: :nombre,
-            value_method: :id
-          %>
+        <% if ApplicationHelper::campos_acin?(
+            f.object.caso.casosjr, current_ability) %>
+          <div class="privado alert-info">
+
+            <div class="row">
+              <div class="col-md-6">
+                <%= f.association :consecuenciaindividual,
+                  collection: ::Consecuenciaindividual.habilitados,
+                  include_blank: false,
+                  label_method: :nombre,
+                  value_method: :id %>
+              </div>
+              <div class="col-md-6">
+                <%= f.association :consecuenciafamiliar,
+                  collection: ::Consecuenciafamiliar.habilitados,
+                  include_blank: false,
+                  label_method: :nombre,
+                  value_method: :id %>
+              </div>
+            </div>
+
+          </div>
+        <% end %>
+
+        <% if ApplicationHelper::campos_acin?(
+            f.object.caso.casosjr, current_ability) %>
+          <div class="privado alert-info">
+
+            <%= f.association :consecuenciafisica,
+              collection: ::Consecuenciafisica.habilitados,
+              as: :check_boxes,
+              wrapper_html: { class: 'trescolumnas' },
+              input_html: { style: 'margin-left: 0px;' },
+              include_blank: false,
+              label_method: :nombre,
+              value_method: :id
+            %>
 
           <%= f.input :actividadesdejadas %>
 
           <%= f.input :reaccionfamiliaycomunidad %>
 
           <%= f.input :afectacionotra %>
-        </div>
-      <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">Protección</div>
-    <div class="panel-body">
+    <div class="panel panel-default">
+      <div class="panel-heading">Protección</div>
+      <div class="panel-body">
 
 
-      <div class="row">
-        <div class="col-md-6">
-          <%= f.association :acompanamiento,
-            collection: ::Acompanamiento.habilitados,
-            include_blank: false,
-            label_method: :nombre,
-            value_method: :id %>
+        <div class="row">
+          <div class="col-md-6">
+            <%= f.association :acompanamiento,
+              collection: ::Acompanamiento.habilitados,
+              include_blank: false,
+              label_method: :nombre,
+              value_method: :id %>
+          </div>
+          <div class="col-md-6">
+            <%= f.input(
+              :situacionriesgo,
+              collection: ApplicationHelper::NOSI,
+              include_blank: false) %>
+          </div>
         </div>
-        <div class="col-md-6">
-          <%= f.input(
-            :situacionriesgo,
-            collection: ApplicationHelper::NOSI,
-            include_blank: false) %>
+
+
+        <% if ApplicationHelper::campos_acin?(
+            f.object.caso.casosjr, current_ability) %>
+          <div class="privado alert-info">
+            <%= f.input :telcontacto %>
+          </div>
+        <% end %>
+
+        <div class="row">
+          <div class="col-md-6">
+            <%= f.input(
+              :solicitomedidas,
+              collection: ApplicationHelper::ANTEQUIENMEDIDAS,
+              include_blank: false) %>
+          </div>
+          <div class="col-md-6">
+            <%= f.input :medidasrecibidas %>
+          </div>
         </div>
+
       </div>
-
-
-      <% if f.object.caso.casosjr.oficina_id == 104 &&
-           can?(:edit, :casosacin) then %>
-         <div class="privado alert-info">
-           <%= f.input :telcontacto %>
-         </div>
-       <% end %>
-
-      <div class="row">
-        <div class="col-md-6">
-          <%= f.input(
-            :solicitomedidas,
-            collection: ApplicationHelper::ANTEQUIENMEDIDAS,
-            include_blank: false) %>
-        </div>
-        <div class="col-md-6">
-          <%= f.input :medidasrecibidas %>
-        </div>
-      </div>
-
     </div>
-  </div>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">Acceso a la Justicia</div>
-    <div class="panel-body">
+    <div class="panel panel-default">
+      <div class="panel-heading">Acceso a la Justicia</div>
+      <div class="panel-body">
 
-      <% if (f.object.caso.casosjr.oficina_id == 103 && 
-          can?(:edit, :casosoik)) then %>
-        <%= render partial: 'evento_justicia_oik', locals: {f: f} %>
-      <% end %>
+        <% if ApplicationHelper::campos_oik?(
+            f.object.caso.casosjr, current_ability) %>
+          <%= render partial: 'evento_justicia_oik', locals: {f: f} %>
+        <% end %>
 
 
-      <div class="row">
-        <div class="col-md-6">
-          <%= f.input :denuncia,
-            collection: ApplicationHelper::NOSI,
-            include_blank: false %>
+        <div class="row">
+          <div class="col-md-6">
+            <%= f.input :denuncia,
+              collection: ApplicationHelper::NOSI,
+              include_blank: false %>
+          </div>
+          <div class="col-md-6">
+            <%= f.input :denunciaante,
+              collection: ApplicationHelper::DENUNCIAANTE,
+              include_blank: true %>
+          </div>
         </div>
-        <div class="col-md-6">
-          <%= f.input :denunciaante,
-            collection: ApplicationHelper::DENUNCIAANTE,
-            include_blank: true %>
+
+        <div class="row">
+          <div class="col-md-4">
+            <%= f.input :aniodenuncia,
+              collection: @anios %>
+          </div>
+          <div class="col-md-4">
+            <%= f.input :mesdenuncia,
+              collection: ApplicationHelper::MESES %>
+          </div>
+          <div class="col-md-4">
+            <%= f.input :diadenuncia,
+              collection: @dias %>
+          </div>
         </div>
+
+        <% if ApplicationHelper::campos_acin?(
+            f.object.caso.casosjr, current_ability) %>
+          <div class="privado alert-info">
+
+            <div class="row">
+              <div class="col-md-6">
+                <%= f.input :avancescaso %>
+              </div>
+              <div class="col-md-6">
+                <%= f.input :etapaproceso %>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <%= f.input :recibidoreparacion,
+                  collection: ApplicationHelper::NOSI,
+                  include_blank: false %>
+              </div>
+              <div class="col-md-4">
+                <%= f.input :quereparacion %>
+              </div>
+              <div class="col-md-4">
+                <%= f.input :sancionadovictimario,
+                  collection: ApplicationHelper::NOSI,
+                  include_blank: false %>
+              </div>
+            </div>
+
+          </div>
+        <% end %>
+
+
+        <div class="row">
+          <div class="col-md-4">
+            <%= f.association :motivonodenuncia,
+              collection: ::Motivonodenuncia.habilitados,
+              include_blank: false,
+              label_method: :nombre,
+              value_method: :id %>
+          </div>
+          <div class="col-md-4">
+            <%= f.input :valoracionjusticia,
+              collection: ApplicationHelper::VALORACIONBRM,
+              include_blank: true %>
+          </div>
+          <div class="col-md-4">
+            <%= f.input :quisieradenunciar,
+              collection: ApplicationHelper::NOSI,
+              include_blank: true %>
+          </div>
+        </div>
+
+
+        <% if ApplicationHelper::campos_acin?(
+            f.object.caso.casosjr, current_ability) %>
+          <div class="privado alert-info">
+
+            <%= f.input :compromisosadquiridos %>
+
+            <%= f.input :observaciones %>
+
+          </div>
+        <% end %>
+
       </div>
-
-      <div class="row">
-        <div class="col-md-4">
-          <%= f.input :aniodenuncia,
-            collection: @anios %>
-        </div>
-        <div class="col-md-4">
-          <%= f.input :mesdenuncia,
-            collection: ApplicationHelper::MESES %>
-        </div>
-        <div class="col-md-4">
-          <%= f.input :diadenuncia,
-            collection: @dias %>
-        </div>
-      </div>
-
-      <% if f.object.caso.casosjr.oficina_id == 104 &&
-       can?(:edit, :casosacin) then %>
-       <div class="privado alert-info">
-
-         <div class="row">
-           <div class="col-md-6">
-             <%= f.input :avancescaso %>
-           </div>
-           <div class="col-md-6">
-             <%= f.input :etapaproceso %>
-           </div>
-         </div>
-
-         <div class="row">
-           <div class="col-md-4">
-             <%= f.input :recibidoreparacion,
-               collection: ApplicationHelper::NOSI,
-               include_blank: false %>
-           </div>
-           <div class="col-md-4">
-             <%= f.input :quereparacion %>
-           </div>
-           <div class="col-md-4">
-             <%= f.input :sancionadovictimario,
-               collection: ApplicationHelper::NOSI,
-               include_blank: false %>
-           </div>
-         </div>
-
-       </div>
-     <% end %>
-
-
-     <div class="row">
-       <div class="col-md-4">
-         <%= f.association :motivonodenuncia,
-           collection: ::Motivonodenuncia.habilitados,
-           include_blank: false,
-           label_method: :nombre,
-           value_method: :id %>
-       </div>
-       <div class="col-md-4">
-         <%= f.input :valoracionjusticia,
-           collection: ApplicationHelper::VALORACIONBRM,
-           include_blank: true %>
-       </div>
-       <div class="col-md-4">
-         <%= f.input :quisieradenunciar,
-           collection: ApplicationHelper::NOSI,
-           include_blank: true %>
-       </div>
-     </div>
-
-
-      <% if f.object.caso.casosjr.oficina_id == 104 &&
-           can?(:edit, :casosacin) then %>
-         <div class="privado alert-info">
-
-           <%= f.input :compromisosadquiridos %>
-
-           <%= f.input :observaciones %>
-
-         </div>
-       <% end %>
-
     </div>
-  </div>
 
 
-    <% if f.object.caso.casosjr.oficina_id == 103 &&
-         can?(:edit, :casosoik) then %>
+    <% if ApplicationHelper::campos_oik?(
+        f.object.caso.casosjr, current_ability) %>
       <div class="privado alert-info">
-         <%= render 'evento_oik_campos', :f => f %>
-       </div>
+        <%= render 'evento_oik_campos', :f => f %>
+      </div>
     <% end %>
 
     <center><%= link_to_remove_association "Eliminar Evento", f,

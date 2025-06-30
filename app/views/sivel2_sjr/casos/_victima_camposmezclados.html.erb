@@ -9,8 +9,8 @@
       "data-msip--sindocaut-target": "id",
     } %>
 
-  <% if (fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin)) ||
-      (fcasosjr.object.oficina_id == 103 && can?(:edit, :casosoik)) then %>
+  <% if ApplicationHelper::campos_acin?(fcasosjr.object, current_ability) ||
+      ApplicationHelper::campos_oik?(fcasosjr.object, current_ability) %>
     <div class="privado alert-info">
       <div class="row">
         <div class="col-sm-6">
@@ -41,14 +41,16 @@
   <% end %>
 
 
-  <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
+  <% if ApplicationHelper::campos_acin?(fcasosjr.object, current_ability) %>
     <div class="privado alert-info">
       <%= fpersona.input :tdocumento_id,
         collection: Msip::Tdocumento.habilitados,
         label_method: :nombre,
         value_method: :id %>
     </div>
-  <% elsif (fcasosjr.object.oficina_id == 103 && can?(:edit, :casosoik)) then %>
+
+  <% elsif ApplicationHelper::campos_oik?(fcasosjr.object, current_ability) %>
+
     <div class="privado alert-info">
       <div class="row">
           <div class="col-md-4">
@@ -71,7 +73,7 @@
   <% end %>
 
 
-  <% if (fcasosjr.object.oficina_id == 103 && can?(:edit, :casosoik)) then %>
+  <% if ApplicationHelper::campos_oik?(fcasosjr.object, current_ability) %>
     <div class="privado alert-info">
       <div class="row">
         <div class="col-md-6">
@@ -156,8 +158,8 @@
     </div>
   </div>
 
-  <% if (fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin)) ||
-      (fcasosjr.object.oficina_id == 103 && can?(:edit, :casosoik)) then %>
+  <% if ApplicationHelper::campos_acin?(fcasosjr.object, current_ability) ||
+      ApplicationHelper::campos_oik?(fcasosjr.object, current_ability) %>
     <div class="privado alert-info">
       <div class="row">
         <div class="col-md-6">
@@ -187,7 +189,8 @@
           <%= fvictimasjr.input :comunidadres %>
         </div>
       </div>
-      <% if (fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin)) %>
+
+      <% if ApplicationHelper::campos_acin?(fcasosjr.object, current_ability) %>
         <div class="row">
           <div class="col-md-6">
             <%= fvictima.input :hijos %>
@@ -239,7 +242,7 @@
     </div>
   </div>
 
-  <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
+  <% if ApplicationHelper::campos_acin?(fcasosjr.object, current_ability) %>
     <div class="privado alert-info">
 
       <div class="row">
@@ -282,7 +285,7 @@
     </div>
   </div>
 
-  <% if (fcasosjr.object.oficina_id == 103 && can?(:edit, :casosoik)) then %>
+  <% if ApplicationHelper::campos_oik?(fcasosjr.object, current_ability) %>
     <div class="privado alert-info">
       <div class="row">
         <div class="col-md-6">
@@ -322,7 +325,7 @@
     </div>
   </div>
 
-  <% if fcasosjr.object.oficina_id == 103 && can?(:edit, :casosoik) then %>
+  <% if ApplicationHelper::campos_oik?(fcasosjr.object, current_ability) %>
     <div class="privado alert-info">
       <div class="row">
         <div class="col-md-6">
@@ -351,7 +354,7 @@
 
   <% end %>
 
-  <% if fcasosjr.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
+  <% if ApplicationHelper::campos_acin?(fcasosjr.object, current_ability) %>
     <div class="privado alert-info">
       <div class="row">
         <div class="col-md-4">

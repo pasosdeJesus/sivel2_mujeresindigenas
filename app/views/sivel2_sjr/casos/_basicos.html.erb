@@ -7,7 +7,7 @@
   </div>
 </div>
 
-<% if s.object && s.object.oficina_id == 104 && can?(:edit, :casosacin) then %>
+<% if ApplicationHelper::campos_acin?(s.object, current_ability) %>
   <div class="privado alert-info">
     <%= s.input :consentimiento, 
       collection: ApplicationHelper::NOSI,
@@ -66,7 +66,7 @@
       value_method: :id %>
   </div>
   <div class="col-sm-6">
-    <% if (s.object.oficina_id == 103 && can?(:edit, :casosoik)) then %>
+    <% if ApplicationHelper::campos_oik?(s.object, current_ability) %>
       <div class="privado alert-info">
         <%= s.input :otroacompanamiento, as: :text %>
       </div>

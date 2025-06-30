@@ -212,11 +212,14 @@ class Ability < Sivel2Gen::Ability
     can [:arbol, :nuevo], Sivel2Gen::Presponsable
     can :nuevo, Sivel2Gen::Victima
     if !usuario.nil? && !usuario.rol.nil? then
+      if usuario.oficina && usuario.oficina.id  == 103
+        can :edit, :casosoik
+      end
       if usuario.oficina && usuario.oficina.id  == 104
         can :edit, :casosacin
       end
-      if usuario.oficina && usuario.oficina.id  == 103
-        can :edit, :casosoik
+      if usuario.oficina && usuario.oficina.id  == 107
+        can :edit, :casoscanamomo
       end
       case usuario.rol 
       when Ability::ROLANALI
@@ -256,6 +259,7 @@ class Ability < Sivel2Gen::Ability
         cannot :solocambiaretiquetas, Sivel2Gen::Caso
       when Ability::ROLADMIN, Ability::ROLDIR
         can :edit, :casosacin
+        can :edit, :casoscanamomo
         can :edit, :casosoik
         can :manage, ::Evento
         can :manage, ::Usuario

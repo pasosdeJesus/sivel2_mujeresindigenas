@@ -100,4 +100,21 @@ module ApplicationHelper
     end
   end
 
+  def self.campos_acin?(casosjr, habilidad)
+    if !casosjr
+      return false
+    end
+    return (casosjr.oficina_id == 104 && 
+            habilidad.can?(:edit, :casosacin)
+           ) || (
+             casosjr.oficina_id == 107 && 
+             habilidad.can?(:edit, :casoscanamomo)
+           )
+  end
+
+  def self.campos_oik?(casosjr, habilidad)
+    return casosjr && casosjr.oficina_id == 103 && 
+        habilidad.can?(:edit, :casosoik)
+  end
+
 end
