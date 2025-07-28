@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: 676f5eeb8a1eacc91ee8af6e139390a82e202965
+  revision: 1bd8db71bd8c94d359253f8d8b789cb89817bf6e
   branch: v2.2
   specs:
     cor1440_gen (2.2.0)
@@ -38,7 +38,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/heb412_gen.git
-  revision: 929486d51e06194cd6d2d5fbce1efdc71dc43dca
+  revision: 1597b9c8dfb8c9651b4ea914ed0261aad8708c40
   branch: v2.2
   specs:
     heb412_gen (2.2.0)
@@ -49,14 +49,14 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/jos19.git
-  revision: 013a7edb2a1b1d87cae2341a2ba0a31f1aac2f04
+  revision: f92329837fea19e37e8d38d6bd0ea1f159094a5f
   branch: v2.2
   specs:
     jos19 (2.2.0)
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/mr519_gen.git
-  revision: e5f8273271bc470c94aeb0123f6bda258ccecd0e
+  revision: 24608f1fe0d9dedb6fb3ffccaf791a4fd06c7817
   branch: v2.2
   specs:
     mr519_gen (2.2.0)
@@ -65,7 +65,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 62afa27d6c671fad26e872d843299ba6065a37f8
+  revision: c1ffbe951e6a4bcff7bc95b3232a944794ea53e5
   branch: v2.2
   specs:
     msip (2.2.0)
@@ -85,7 +85,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/sivel2_gen.git
-  revision: c53b39d4bf7a389767e181e6eaae6526fa4791bd
+  revision: f9be723958ebb4291e4dcf14777712d40ecbab86
   branch: v2.2
   specs:
     sivel2_gen (2.2.0)
@@ -316,7 +316,11 @@ GEM
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parslet (2.0.0)
-    pg (1.5.9)
+    pg (1.6.0)
+    pg (1.6.0-aarch64-linux)
+    pg (1.6.0-arm64-darwin)
+    pg (1.6.0-x86_64-darwin)
+    pg (1.6.0-x86_64-linux)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
@@ -532,4 +536,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.7.0
+   2.7.1
