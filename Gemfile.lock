@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/styd/apexcharts.rb.git
-  revision: c572f8f6feee608c3c02d573ec93794b5f407e2a
+  revision: 272d60ff21bd65bee897672aa5dca48db76d7e12
   branch: master
   specs:
     apexcharts (0.2.0)
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: aaa270166d59ff5b775c719999e93ab9dfa7b69b
+  revision: ac843f00367f8a5134149135796582965d801056
   branch: v2.2
   specs:
     cor1440_gen (2.2.0)
@@ -38,7 +38,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/heb412_gen.git
-  revision: 5589d48a6aebb7da3554eba55a690953b425c8ee
+  revision: 63522c2557872900c3a1a394a90b35e94d91517a
   branch: v2.2
   specs:
     heb412_gen (2.2.0)
@@ -49,14 +49,14 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/jos19.git
-  revision: cba68d91f3b4ef26dee2fdfb39b603ca7dec43c5
+  revision: 57d5fe536d3938aed594c510b166653b9f64ad49
   branch: v2.2
   specs:
     jos19 (2.2.0)
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/mr519_gen.git
-  revision: 29e4172aa2f1c4e18f9b80861d9cd3015fec46c4
+  revision: 9d78d5a6f70c6bab4d682ebf35703367ecbb8b20
   branch: v2.2
   specs:
     mr519_gen (2.2.0)
@@ -65,7 +65,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 2ae74d86b37ab12279ac322d5f2e7cf680b91fdd
+  revision: b08f30c60c6d61f1f2b458b41c2385d8a0e0ae36
   branch: v2.2
   specs:
     msip (2.2.0)
@@ -81,11 +81,11 @@ GIT
       sprockets-rails (~> 3)
       stimulus-rails (~> 1)
       twitter_cldr (~> 6)
-      will_paginate (~> 3)
+      will_paginate (~> 4)
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/sivel2_gen.git
-  revision: d42cf3432aeaa577ad62ad540618147b14f46e16
+  revision: 4e1d683b7603df9f550625962d5f6217d8c968d0
   branch: v2.2
   specs:
     sivel2_gen (2.2.0)
@@ -330,7 +330,7 @@ GEM
       date
       stringio
     public_suffix (6.0.1)
-    puma (7.0.3)
+    puma (7.0.4)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (2.2.17)
@@ -467,7 +467,7 @@ GEM
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    will_paginate (3.3.1)
+    will_paginate (4.0.1)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.7.2)
