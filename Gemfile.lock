@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: 58f63e5b25daf7b5925882b215eb3d0bd172c08c
+  revision: 94acf527ae45386fc300859ba53200ebf5bdcb45
   branch: v2.2
   specs:
     cor1440_gen (2.2.0)
@@ -38,7 +38,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/heb412_gen.git
-  revision: 495f234500a21d10486067992b528699d64dc359
+  revision: 1d7afb60fb6936bb75282b56ba85e96e69830702
   branch: v2.2
   specs:
     heb412_gen (2.2.0)
@@ -49,14 +49,14 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/jos19.git
-  revision: 2c8d894447f15bba0bd4c985ba63557480086f09
+  revision: 7680828914acd27dc259f872072586a1534bf4ae
   branch: v2.2
   specs:
     jos19 (2.2.0)
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/mr519_gen.git
-  revision: 65b0a38f986fe5e3f1686fa1a622fbff0f8b351f
+  revision: e3899be51f64d3735ec0642655b6266e2f42ab31
   branch: v2.2
   specs:
     mr519_gen (2.2.0)
@@ -65,7 +65,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 2593894b0c98961d7f8f9cb1f726a593d8065a69
+  revision: 81858f15aba918be59e347edd7b1a487d72eb76d
   branch: v2.2
   specs:
     msip (2.2.0)
@@ -85,7 +85,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/sivel2_gen.git
-  revision: 7614d9ae4025168e7b5c202e2ee0ce219312b188
+  revision: abcd280a1a3a3219cf687b8cd7723c1643f2041e
   branch: v2.2
   specs:
     sivel2_gen (2.2.0)
@@ -175,7 +175,7 @@ GEM
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     base64 (0.2.0)
-    bcrypt (3.1.20)
+    bcrypt (3.1.21)
     benchmark (0.4.0)
     bigdecimal (4.0.1)
     bindex (0.8.1)
@@ -316,13 +316,13 @@ GEM
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parslet (2.0.0)
-    pg (1.6.2)
-    pg (1.6.2-aarch64-linux)
-    pg (1.6.2-aarch64-linux-musl)
-    pg (1.6.2-arm64-darwin)
-    pg (1.6.2-x86_64-darwin)
-    pg (1.6.2-x86_64-linux)
-    pg (1.6.2-x86_64-linux-musl)
+    pg (1.6.3)
+    pg (1.6.3-aarch64-linux)
+    pg (1.6.3-aarch64-linux-musl)
+    pg (1.6.3-arm64-darwin)
+    pg (1.6.3-x86_64-darwin)
+    pg (1.6.3-x86_64-linux)
+    pg (1.6.3-x86_64-linux-musl)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
@@ -415,7 +415,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 4.0)
       websocket (~> 1.0)
-    simple_form (5.4.0)
+    simple_form (5.4.1)
       actionpack (>= 7.0)
       activemodel (>= 7.0)
     simplecov (0.22.0)
