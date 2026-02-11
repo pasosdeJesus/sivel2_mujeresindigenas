@@ -121,6 +121,8 @@ group :test do
 
   gem "cuprite"
 
+  gem "minitest", "~> 5"
+
   gem "selenium-webdriver"
 
   gem "simplecov"
