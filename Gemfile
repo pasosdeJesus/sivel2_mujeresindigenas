@@ -32,7 +32,7 @@ gem "jsbundling-rails"
 gem "kt-paperclip",                 # Anexos
   git: "https://github.com/kreeti/kt-paperclip.git"
 
-gem "libxml-ruby"
+gem "libxml-ruby", "< 6.0"
 
 gem "parslet"
 
