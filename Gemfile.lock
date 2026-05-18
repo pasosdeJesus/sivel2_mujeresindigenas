@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/kreeti/kt-paperclip.git
-  revision: df454e1ed383f2b5887fed1888f1893079a0447a
+  revision: 10e3600ca81d831decf214b8b9f03d4543452f18
   specs:
     kt-paperclip (7.4.0)
       activemodel (>= 4.2.0)
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: fa5e90e27a968d7f2fd19f96e78d644cfd5d1a28
+  revision: 33ffb0aa5dde805f629eabcd41642151e846780b
   branch: v2.2
   specs:
     cor1440_gen (2.2.0)
@@ -38,7 +38,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/heb412_gen.git
-  revision: 4f3d35dd9d0c6540e4b2f8b77d73cf0aa8a46fe2
+  revision: cff4e1b633fa3653def90b576945144f2e1bbfb3
   branch: v2.2
   specs:
     heb412_gen (2.2.0)
@@ -49,14 +49,14 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/jos19.git
-  revision: df928c3b86276846f9f4739376d2d601e47bbcce
+  revision: 2995de03b2674b7297635db9bc933f162e7fcb3d
   branch: v2.2
   specs:
     jos19 (2.2.0)
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/mr519_gen.git
-  revision: 4b35eb3170ad5f59d0fc759b19d66006f0b2cc61
+  revision: 4e0a277beb09b27a6503d67efa154cc0def61917
   branch: v2.2
   specs:
     mr519_gen (2.2.0)
@@ -65,7 +65,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 80094fc11adf2d0656d36ac69ca3e83600b687d6
+  revision: 12147f34c2ac0e70a9c20e799ce8cbd1b28d99cd
   branch: v2.2
   specs:
     msip (2.2.0)
@@ -85,7 +85,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/sivel2_gen.git
-  revision: 76a8c49a6f8fa7938e4e22f79dafd46a33f1f986
+  revision: a0220e8cad0dae6d9027abda6681136f27d8c48d
   branch: v2.2
   specs:
     sivel2_gen (2.2.0)
@@ -264,7 +264,7 @@ GEM
       prism (>= 1.3.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
-    jbuilder (2.14.1)
+    jbuilder (2.15.0)
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
     jsbundling-rails (1.3.1)
@@ -483,7 +483,7 @@ GEM
     will_paginate (4.0.1)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.7.5)
+    zeitwerk (2.8.0)
 
 PLATFORMS
   aarch64-linux-gnu
