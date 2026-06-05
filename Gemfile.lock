@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/kreeti/kt-paperclip.git
-  revision: 10e3600ca81d831decf214b8b9f03d4543452f18
+  revision: 92b1b036923bf6e3564c1c4e658eb5bc59ab7cfe
   specs:
     kt-paperclip (7.4.0)
       activemodel (>= 4.2.0)
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: ded2f8a4a3d8bb52170dacb773093c4d91062539
+  revision: 250f5b43777edd24822be8e55e683057fa9e6331
   branch: v2.2
   specs:
     cor1440_gen (2.2.0)
@@ -38,7 +38,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/heb412_gen.git
-  revision: 9caa40a72df60024287df8aae1e48135f5818d32
+  revision: d538f70cf006943ae0e01dc052e7dfc9bb858c81
   branch: v2.2
   specs:
     heb412_gen (2.2.0)
@@ -49,14 +49,14 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/jos19.git
-  revision: 22de150d63d9ae83b4a752ea16a8e175ee565da3
+  revision: 20565c978df64a7c046178b694a8d32b51826a9e
   branch: v2.2
   specs:
     jos19 (2.2.0)
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/mr519_gen.git
-  revision: 7afedfd250df54e399e66ffabb9565acd77857e0
+  revision: 4420dc797f4c0ff7be1e89375e1dff41e842d3b7
   branch: v2.2
   specs:
     mr519_gen (2.2.0)
@@ -65,7 +65,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 2d14ac4219400b7af6c71c687f2d2e47849b22fa
+  revision: 9923e5899df9ba8da339ffc46cc2a360413b2ed0
   branch: v2.2
   specs:
     msip (2.2.0)
@@ -85,7 +85,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/sivel2_gen.git
-  revision: 279cdd5821d5da03b4980117865d71a5146fd603
+  revision: 860db94079a642af40f3ad0a4f566da91914da67
   branch: v2.2
   specs:
     sivel2_gen (2.2.0)
@@ -181,7 +181,7 @@ GEM
     benchmark (0.5.0)
     bigdecimal (4.1.2)
     bindex (0.8.1)
-    bootsnap (1.24.4)
+    bootsnap (1.24.6)
       msgpack (~> 1.2)
     builder (3.3.0)
     camertron-eprun (1.1.1)
@@ -264,7 +264,7 @@ GEM
       prism (>= 1.3.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
-    jbuilder (2.15.0)
+    jbuilder (2.15.1)
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
     jsbundling-rails (1.3.1)
@@ -290,7 +290,7 @@ GEM
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
     minitest (5.27.0)
-    msgpack (1.8.0)
+    msgpack (1.8.1)
     net-imap (0.6.4)
       date
       net-protocol
@@ -333,11 +333,11 @@ GEM
       prettyprint
     prettyprint (0.2.0)
     prism (1.9.0)
-    psych (5.3.1)
+    psych (5.4.0)
       date
       stringio
     public_suffix (7.0.5)
-    puma (8.0.1)
+    puma (8.0.2)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (2.2.23)
@@ -476,14 +476,14 @@ GEM
       railties (>= 6.0.0)
     webrick (1.9.2)
     websocket (1.2.11)
-    websocket-driver (0.8.0)
+    websocket-driver (0.8.1)
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     will_paginate (4.0.1)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.8.1)
+    zeitwerk (2.8.2)
 
 PLATFORMS
   aarch64-linux-gnu
@@ -552,4 +552,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-  4.0.12
+  4.0.13
