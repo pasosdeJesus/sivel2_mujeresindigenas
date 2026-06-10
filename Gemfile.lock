@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: 250f5b43777edd24822be8e55e683057fa9e6331
+  revision: 210fa541ba393f0b9f28f89734adac5861e8c529
   branch: v2.2
   specs:
     cor1440_gen (2.2.0)
@@ -38,7 +38,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/heb412_gen.git
-  revision: d538f70cf006943ae0e01dc052e7dfc9bb858c81
+  revision: fdbf57a3aff751fbf598ba0ee1dfffae87a9e3ef
   branch: v2.2
   specs:
     heb412_gen (2.2.0)
@@ -49,14 +49,14 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/jos19.git
-  revision: 20565c978df64a7c046178b694a8d32b51826a9e
+  revision: 73086d63b944b57eadb8239fc5f77e05cc8479fc
   branch: v2.2
   specs:
     jos19 (2.2.0)
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/mr519_gen.git
-  revision: 4420dc797f4c0ff7be1e89375e1dff41e842d3b7
+  revision: 54c008bf760e8b3230ddaeeecc062c2615f9dcf4
   branch: v2.2
   specs:
     mr519_gen (2.2.0)
@@ -65,7 +65,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 9923e5899df9ba8da339ffc46cc2a360413b2ed0
+  revision: 2e3cbe0b92445364d542b81c99d2d3c98ad25e05
   branch: v2.2
   specs:
     msip (2.2.0)
@@ -85,7 +85,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/sivel2_gen.git
-  revision: 860db94079a642af40f3ad0a4f566da91914da67
+  revision: ee15b3fecb73487da13494a473ea3b3e2af49fd2
   branch: v2.2
   specs:
     sivel2_gen (2.2.0)
@@ -290,8 +290,8 @@ GEM
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
     minitest (5.27.0)
-    msgpack (1.8.1)
-    net-imap (0.6.4)
+    msgpack (1.8.3)
+    net-imap (0.6.4.1)
       date
       net-protocol
     net-pop (0.1.2)
@@ -321,6 +321,7 @@ GEM
     nokogiri (1.19.3-x86_64-linux-musl)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    ostruct (0.6.3)
     parslet (2.0.0)
     pg (1.6.3)
     pg (1.6.3-aarch64-linux)
@@ -370,11 +371,11 @@ GEM
       activesupport (>= 5.0.0)
       minitest
       nokogiri (>= 1.6)
-    rails-erd (1.7.2)
-      activerecord (>= 4.2)
-      activesupport (>= 4.2)
+    rails-erd (2.0.1)
+      activerecord (>= 7.0)
+      activesupport (>= 7.0)
       choice (~> 0.2.0)
-      ruby-graphviz (~> 1.2)
+      ostruct
     rails-html-sanitizer (1.7.0)
       loofah (~> 2.25)
       nokogiri (>= 1.15.7, != 1.16.7, != 1.16.6, != 1.16.5, != 1.16.4, != 1.16.3, != 1.16.2, != 1.16.1, != 1.16.0.rc1, != 1.16.0)
@@ -408,8 +409,6 @@ GEM
     rspreadsheet (0.5.3)
       andand (>= 1.3)
       rubyzip (>= 1.3)
-    ruby-graphviz (1.2.5)
-      rexml
     rubyzip (2.4.1)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -552,4 +551,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-  4.0.13
+  4.0.14
