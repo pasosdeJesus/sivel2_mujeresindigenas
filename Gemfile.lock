@@ -1,15 +1,4 @@
 GIT
-  remote: https://github.com/kreeti/kt-paperclip.git
-  revision: 92b1b036923bf6e3564c1c4e658eb5bc59ab7cfe
-  specs:
-    kt-paperclip (7.4.0)
-      activemodel (>= 4.2.0)
-      activesupport (>= 4.2.0)
-      marcel (>= 1.0.1)
-      mime-types
-      terrapin (>= 0.6.0)
-
-GIT
   remote: https://github.com/styd/apexcharts.rb.git
   revision: b8e85db5d927442eed665ff8bc1dc2e2b0e6250e
   branch: master
@@ -25,7 +14,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: 210fa541ba393f0b9f28f89734adac5861e8c529
+  revision: 16946631df7fd4c50e39118f52d5a5cced210451
   branch: v2.2
   specs:
     cor1440_gen (2.2.0)
@@ -38,7 +27,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/heb412_gen.git
-  revision: fdbf57a3aff751fbf598ba0ee1dfffae87a9e3ef
+  revision: 4cca52622ed36c8555119e63afb54e56a5f2dfe7
   branch: v2.2
   specs:
     heb412_gen (2.2.0)
@@ -49,14 +38,14 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/jos19.git
-  revision: 73086d63b944b57eadb8239fc5f77e05cc8479fc
+  revision: 50d33c21e8eddf4e22de3f5a07b76ab1cf658061
   branch: v2.2
   specs:
     jos19 (2.2.0)
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/mr519_gen.git
-  revision: 54c008bf760e8b3230ddaeeecc062c2615f9dcf4
+  revision: edc38facbc22296fe27c73d5bfc5f7277105c77c
   branch: v2.2
   specs:
     mr519_gen (2.2.0)
@@ -65,7 +54,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 2e3cbe0b92445364d542b81c99d2d3c98ad25e05
+  revision: 59f13795dd144db4669de40708a4ec55c6336f32
   branch: v2.2
   specs:
     msip (2.2.0)
@@ -85,7 +74,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/sivel2_gen.git
-  revision: ee15b3fecb73487da13494a473ea3b3e2af49fd2
+  revision: 313e0df6c23b9a6ebcff60d5f212bb53657d3a1c
   branch: v2.2
   specs:
     sivel2_gen (2.2.0)
@@ -195,7 +184,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    cgi (0.5.1)
+    cgi (0.5.2)
     choice (0.2.0)
     cldr-plurals-runtime-rb (1.1.0)
     climate_control (1.2.0)
@@ -208,10 +197,10 @@ GEM
     coffee-script-source (1.12.2)
     color (2.2.0)
     colorize (1.1.0)
-    concurrent-ruby (1.3.6)
+    concurrent-ruby (1.3.8)
     connection_pool (3.0.2)
-    crass (1.0.6)
-    csv (3.3.5)
+    crass (1.0.7)
+    csv (3.3.6)
     cuprite (0.17)
       capybara (~> 3.0)
       ferrum (~> 0.17.0)
@@ -228,13 +217,12 @@ GEM
     devise-i18n (1.15.0)
       devise (>= 4.9.0)
       rails-i18n
-    docile (1.4.1)
     dotenv (3.2.0)
     dotenv-rails (3.2.0)
       dotenv (= 3.2.0)
       railties (>= 6.1)
     drb (2.2.3)
-    erb (6.0.4)
+    erb (6.0.6)
     erubi (1.13.1)
     execjs (2.10.1)
     ferrum (0.17.2)
@@ -254,9 +242,9 @@ GEM
     ffi (1.17.4-x86_64-darwin)
     ffi (1.17.4-x86_64-linux-gnu)
     ffi (1.17.4-x86_64-linux-musl)
-    globalid (1.3.0)
+    globalid (1.4.0)
       activesupport (>= 6.1)
-    i18n (1.14.8)
+    i18n (1.15.2)
       concurrent-ruby (~> 1.0)
     io-console (0.8.2)
     irb (1.18.0)
@@ -270,28 +258,34 @@ GEM
     jsbundling-rails (1.3.1)
       railties (>= 6.0.0)
     kgio (2.11.4)
+    kt-paperclip (7.3.0)
+      activemodel (>= 4.2.0)
+      activesupport (>= 4.2.0)
+      marcel (~> 1.0.1)
+      mime-types
+      terrapin (>= 0.6.0, < 2.0)
     libxml-ruby (5.0.6)
     logger (1.7.0)
-    loofah (2.25.1)
+    loofah (2.25.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
-    mail (2.9.0)
+    mail (2.9.1)
       logger
       mini_mime (>= 0.1.1)
       net-imap
       net-pop
       net-smtp
-    marcel (1.2.1)
+    marcel (1.0.4)
     matrix (0.4.3)
     mime-types (3.7.0)
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
-    mime-types-data (3.2026.0414)
+    mime-types-data (3.2026.0701)
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
     minitest (5.27.0)
-    msgpack (1.8.3)
-    net-imap (0.6.4.1)
+    msgpack (1.8.4)
+    net-imap (0.6.6)
       date
       net-protocol
     net-pop (0.1.2)
@@ -301,24 +295,24 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.5)
-    nokogiri (1.19.3)
+    nokogiri (1.19.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    nokogiri (1.19.3-aarch64-linux-gnu)
+    nokogiri (1.19.4-aarch64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.19.3-aarch64-linux-musl)
+    nokogiri (1.19.4-aarch64-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.19.3-arm-linux-gnu)
+    nokogiri (1.19.4-arm-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.19.3-arm-linux-musl)
+    nokogiri (1.19.4-arm-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.19.3-arm64-darwin)
+    nokogiri (1.19.4-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.3-x86_64-darwin)
+    nokogiri (1.19.4-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.3-x86_64-linux-gnu)
+    nokogiri (1.19.4-x86_64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.19.3-x86_64-linux-musl)
+    nokogiri (1.19.4-x86_64-linux-musl)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     ostruct (0.6.3)
@@ -330,13 +324,10 @@ GEM
     pg (1.6.3-x86_64-darwin)
     pg (1.6.3-x86_64-linux)
     pg (1.6.3-x86_64-linux-musl)
-    pp (0.6.3)
+    pp (0.6.4)
       prettyprint
     prettyprint (0.2.0)
     prism (1.9.0)
-    psych (5.4.0)
-      date
-      stringio
     public_suffix (7.0.5)
     puma (8.0.2)
       nio4r (~> 2.0)
@@ -371,13 +362,13 @@ GEM
       activesupport (>= 5.0.0)
       minitest
       nokogiri (>= 1.6)
-    rails-erd (2.0.1)
+    rails-erd (2.1.0)
       activerecord (>= 7.0)
       activesupport (>= 7.0)
       choice (~> 0.2.0)
       ostruct
-    rails-html-sanitizer (1.7.0)
-      loofah (~> 2.25)
+    rails-html-sanitizer (1.7.1)
+      loofah (~> 2.25, >= 2.25.2)
       nokogiri (>= 1.15.7, != 1.16.7, != 1.16.6, != 1.16.5, != 1.16.4, != 1.16.3, != 1.16.2, != 1.16.1, != 1.16.0.rc1, != 1.16.0)
     rails-i18n (7.0.10)
       i18n (>= 0.7, < 2)
@@ -394,9 +385,14 @@ GEM
       zeitwerk (~> 2.6)
     raindrops (0.20.1)
     rake (13.4.2)
-    rdoc (7.2.0)
+    rbs (4.1.0)
+      logger
+      prism (>= 1.6.0)
+      tsort
+    rdoc (8.0.0)
       erb
-      psych (>= 4.0.0)
+      prism (>= 1.6.0)
+      rbs (>= 4.0.0)
       tsort
     redcarpet (3.6.1)
     regexp_parser (2.12.0)
@@ -419,7 +415,7 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.4.1)
-    selenium-webdriver (4.44.0)
+    selenium-webdriver (4.46.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
@@ -428,12 +424,7 @@ GEM
     simple_form (5.4.1)
       actionpack (>= 7.0)
       activemodel (>= 7.0)
-    simplecov (0.22.0)
-      docile (~> 1.1)
-      simplecov-html (~> 0.11)
-      simplecov_json_formatter (~> 0.1)
-    simplecov-html (0.13.2)
-    simplecov_json_formatter (0.1.4)
+    simplecov (1.0.3)
     sprockets (4.2.2)
       concurrent-ruby (~> 1.0)
       logger
@@ -444,11 +435,10 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
-    stringio (3.2.0)
     terrapin (1.1.1)
       climate_control
     thor (1.5.0)
-    tilt (2.7.0)
+    tilt (2.8.0)
     timeout (0.6.1)
     tsort (0.2.0)
     turbo-rails (1.5.0)
@@ -475,7 +465,7 @@ GEM
       railties (>= 6.0.0)
     webrick (1.9.2)
     websocket (1.2.11)
-    websocket-driver (0.8.1)
+    websocket-driver (0.8.2)
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -520,7 +510,7 @@ DEPENDENCIES
   jbuilder
   jos19!
   jsbundling-rails
-  kt-paperclip!
+  kt-paperclip
   libxml-ruby (< 6.0)
   minitest (~> 5)
   mr519_gen!
@@ -551,4 +541,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-  4.0.14
+  4.0.17
