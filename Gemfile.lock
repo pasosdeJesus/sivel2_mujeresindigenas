@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: 7f0277c5053820fe3aedf4ec3cb111252258a576
+  revision: 3021cd531bb94206bced5a999c969922fc30fb8e
   branch: v2.2
   specs:
     cor1440_gen (2.2.0)
@@ -27,7 +27,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/heb412_gen.git
-  revision: 467f1d6be8ab00acc95944cda72debcd22f130c1
+  revision: e3352e8991d1d4279ecff1976f86d2878669abd9
   branch: v2.2
   specs:
     heb412_gen (2.2.0)
@@ -38,14 +38,14 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/jos19.git
-  revision: 6a67d13bb21e5ddb92096411447b8b37096c1b78
+  revision: 971075bab2f394a1cdc65dd037c9e651e7029118
   branch: v2.2
   specs:
     jos19 (2.2.0)
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/mr519_gen.git
-  revision: 2cb1b0952de5f2c6601dc27429e42a9a145ce496
+  revision: f1e48809a0a91961cfc26a3d49a6f080515418a7
   branch: v2.2
   specs:
     mr519_gen (2.2.0)
@@ -54,7 +54,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 373911046d5c4f47402ba214695902bb4583cbc8
+  revision: b2721c66927d2be700bdfeac0e91dc578800ee59
   branch: v2.2
   specs:
     msip (2.2.0)
@@ -74,7 +74,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/sivel2_gen.git
-  revision: b5c9e812db3ea3db7cb58faba5742ff3459a36d9
+  revision: d97b9ad15e03da27a6d503afd4e531c8ec6ae342
   branch: v2.2
   specs:
     sivel2_gen (2.2.0)
@@ -317,7 +317,6 @@ GEM
     nokogiri (1.19.4-x86_64-linux-musl)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    ostruct (0.6.3)
     parslet (2.0.0)
     pg (1.6.3)
     pg (1.6.3-aarch64-linux)
@@ -364,11 +363,10 @@ GEM
       activesupport (>= 5.0.0)
       minitest
       nokogiri (>= 1.6)
-    rails-erd (2.1.0)
+    rails-erd (2.2.0)
       activerecord (>= 7.0)
       activesupport (>= 7.0)
       choice (~> 0.2.0)
-      ostruct
     rails-html-sanitizer (1.7.1)
       loofah (~> 2.25, >= 2.25.2)
       nokogiri (>= 1.15.7, != 1.16.7, != 1.16.6, != 1.16.5, != 1.16.4, != 1.16.3, != 1.16.2, != 1.16.1, != 1.16.0.rc1, != 1.16.0)
@@ -400,7 +398,7 @@ GEM
     regexp_parser (2.12.0)
     reline (0.7.0)
       io-console (~> 0.5)
-    responders (3.2.0)
+    responders (3.2.1)
       actionpack (>= 7.0)
       railties (>= 7.0)
     rexml (3.4.4)
@@ -417,7 +415,7 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.4.1)
-    selenium-webdriver (4.47.0)
+    selenium-webdriver (4.48.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
