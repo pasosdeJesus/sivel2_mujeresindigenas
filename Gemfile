@@ -29,6 +29,8 @@ gem "jbuilder" # API JSON facil. Ver: https://github.com/rails/jbuilder
 
 gem "jsbundling-rails"
 
+gem "json", "<3"              # Por rails  7
+
 gem "kt-paperclip"                 # Anexos
 
 gem "libxml-ruby", "< 6.0"
@@ -122,15 +124,13 @@ group :test do
 
   gem "minitest", "~> 5"
 
-  gem "selenium-webdriver"
-
   gem "simplecov"
 
 end
 
 
 group :production do
-  
+
   gem "unicorn" # Para despliegue
 
 end
