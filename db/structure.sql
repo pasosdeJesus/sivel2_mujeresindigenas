@@ -1922,7 +1922,7 @@ CREATE TABLE public.consecuenciaindividual (
 --
 
 CREATE TABLE public.consecuenciaindividual_evento (
-    consecuenciaindividual_id integer NOT NULL,
+    consecuenciaindividual_id integer CONSTRAINT consecuenciaindividual_event_consecuenciaindividual_id_not_null NOT NULL,
     evento_id integer NOT NULL
 );
 
@@ -2086,7 +2086,7 @@ CREATE SEQUENCE public.cor1440_gen_actividad_proyectofinanciero_id_seq
 
 CREATE TABLE public.cor1440_gen_actividad_proyectofinanciero (
     actividad_id integer NOT NULL,
-    proyectofinanciero_id integer NOT NULL,
+    proyectofinanciero_id integer CONSTRAINT cor1440_gen_actividad_proyectofi_proyectofinanciero_id_not_null NOT NULL,
     id integer DEFAULT nextval('public.cor1440_gen_actividad_proyectofinanciero_id_seq'::regclass) NOT NULL
 );
 
@@ -2491,8 +2491,8 @@ ALTER SEQUENCE public.cor1440_gen_datointermedioti_id_seq OWNED BY public.cor144
 
 CREATE TABLE public.cor1440_gen_datointermedioti_pmindicadorpf (
     id bigint NOT NULL,
-    datointermedioti_id integer NOT NULL,
-    pmindicadorpf_id integer NOT NULL,
+    datointermedioti_id integer CONSTRAINT cor1440_gen_datointermedioti_pmind_datointermedioti_id_not_null NOT NULL,
+    pmindicadorpf_id integer CONSTRAINT cor1440_gen_datointermedioti_pmindica_pmindicadorpf_id_not_null NOT NULL,
     valor double precision,
     rutaevidencia character varying(5000)
 );
@@ -2643,8 +2643,8 @@ ALTER SEQUENCE public.cor1440_gen_financiador_id_seq OWNED BY public.cor1440_gen
 --
 
 CREATE TABLE public.cor1440_gen_financiador_proyectofinanciero (
-    financiador_id integer NOT NULL,
-    proyectofinanciero_id integer NOT NULL
+    financiador_id integer CONSTRAINT cor1440_gen_financiador_proyectofinanci_financiador_id_not_null NOT NULL,
+    proyectofinanciero_id integer CONSTRAINT cor1440_gen_financiador_proyecto_proyectofinanciero_id_not_null NOT NULL
 );
 
 
@@ -3032,7 +3032,7 @@ ALTER SEQUENCE public.cor1440_gen_proyecto_id_seq OWNED BY public.cor1440_gen_pr
 
 CREATE TABLE public.cor1440_gen_proyecto_proyectofinanciero (
     proyecto_id integer NOT NULL,
-    proyectofinanciero_id integer NOT NULL
+    proyectofinanciero_id integer CONSTRAINT cor1440_gen_proyecto_proyectofin_proyectofinanciero_id_not_null NOT NULL
 );
 
 
@@ -3097,7 +3097,7 @@ ALTER SEQUENCE public.cor1440_gen_proyectofinanciero_id_seq OWNED BY public.cor1
 
 CREATE TABLE public.cor1440_gen_proyectofinanciero_usuario (
     id bigint NOT NULL,
-    proyectofinanciero_id integer NOT NULL,
+    proyectofinanciero_id integer CONSTRAINT cor1440_gen_proyectofinanciero_u_proyectofinanciero_id_not_null NOT NULL,
     usuario_id integer,
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL
@@ -5906,7 +5906,7 @@ CREATE TABLE public.sivel2_gen_antecedente_victima (
 
 CREATE TABLE public.sivel2_gen_antecedente_victimacolectiva (
     antecedente_id integer NOT NULL,
-    victimacolectiva_id integer NOT NULL
+    victimacolectiva_id integer CONSTRAINT sivel2_gen_antecedente_victimacole_victimacolectiva_id_not_null NOT NULL
 );
 
 
@@ -5930,7 +5930,7 @@ CREATE TABLE public.sivel2_gen_caso_categoria_presponsable (
     categoria_id integer NOT NULL,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    caso_presponsable_id integer NOT NULL,
+    caso_presponsable_id integer CONSTRAINT sivel2_gen_caso_categoria_prespon_caso_presponsable_id_not_null NOT NULL,
     id integer DEFAULT nextval('public.sivel2_gen_caso_categoria_presponsable_id_seq'::regclass) NOT NULL
 );
 
@@ -6800,11 +6800,14 @@ CREATE MATERIALIZED VIEW public.sivel2_gen_consexpcaso AS
      LEFT JOIN public.msip_etnia prespetnia ON ((evento.prespetnia_id = prespetnia.id)))
      LEFT JOIN public.rutaactivable ON ((evento.rutaactivable_id = rutaactivable.id)))
   WHERE (conscaso.caso_id IN ( SELECT sivel2_gen_conscaso.caso_id
-           FROM public.sivel2_gen_conscaso
+           FROM (public.sivel2_gen_conscaso
+             JOIN public.sivel2_sjr_casosjr ON ((sivel2_sjr_casosjr.caso_id = sivel2_gen_conscaso.caso_id)))
           WHERE ((sivel2_gen_conscaso.caso_id IN ( SELECT sivel2_gen_caso.id
-                   FROM public.sivel2_gen_caso)) AND (sivel2_gen_conscaso.caso_id IN ( SELECT sivel2_gen_caso_etiqueta.caso_id
-                   FROM public.sivel2_gen_caso_etiqueta
-                  WHERE (sivel2_gen_caso_etiqueta.etiqueta_id = 119))))
+                   FROM public.sivel2_gen_caso)) AND (sivel2_sjr_casosjr.oficina_id = 107) AND (sivel2_gen_conscaso.caso_id IN ( SELECT sivel2_gen_caso_usuario.caso_id
+                   FROM public.sivel2_gen_caso_usuario
+                  WHERE (sivel2_gen_caso_usuario.usuario_id = 117))) AND (sivel2_gen_conscaso.caso_id IN ( SELECT evento_1.caso_id
+                   FROM public.evento evento_1
+                  WHERE (evento_1.departamento_id = 13))))
           ORDER BY sivel2_gen_conscaso.fecharec DESC, sivel2_gen_conscaso.caso_id))
   ORDER BY conscaso.fecharec DESC
   WITH NO DATA;
@@ -6948,7 +6951,7 @@ CREATE TABLE public.sivel2_gen_filiacion (
 
 CREATE TABLE public.sivel2_gen_filiacion_victimacolectiva (
     filiacion_id integer NOT NULL,
-    victimacolectiva_id integer NOT NULL
+    victimacolectiva_id integer CONSTRAINT sivel2_gen_filiacion_victimacolect_victimacolectiva_id_not_null NOT NULL
 );
 
 
@@ -7143,8 +7146,8 @@ CREATE TABLE public.sivel2_gen_organizacion (
 --
 
 CREATE TABLE public.sivel2_gen_organizacion_victimacolectiva (
-    organizacion_id integer NOT NULL,
-    victimacolectiva_id integer NOT NULL
+    organizacion_id integer CONSTRAINT sivel2_gen_organizacion_victimacolecti_organizacion_id_not_null NOT NULL,
+    victimacolectiva_id integer CONSTRAINT sivel2_gen_organizacion_victimacol_victimacolectiva_id_not_null NOT NULL
 );
 
 
@@ -7253,7 +7256,7 @@ ALTER SEQUENCE public.sivel2_gen_profesion_victima_id_seq OWNED BY public.sivel2
 
 CREATE TABLE public.sivel2_gen_profesion_victimacolectiva (
     profesion_id integer NOT NULL,
-    victimacolectiva_id integer NOT NULL
+    victimacolectiva_id integer CONSTRAINT sivel2_gen_profesion_victimacolect_victimacolectiva_id_not_null NOT NULL
 );
 
 
@@ -7263,7 +7266,7 @@ CREATE TABLE public.sivel2_gen_profesion_victimacolectiva (
 
 CREATE TABLE public.sivel2_gen_rangoedad_victimacolectiva (
     rangoedad_id integer NOT NULL,
-    victimacolectiva_id integer NOT NULL
+    victimacolectiva_id integer CONSTRAINT sivel2_gen_rangoedad_victimacolect_victimacolectiva_id_not_null NOT NULL
 );
 
 
@@ -7362,8 +7365,8 @@ CREATE TABLE public.sivel2_gen_sectorsocial (
 --
 
 CREATE TABLE public.sivel2_gen_sectorsocial_victimacolectiva (
-    sectorsocial_id integer NOT NULL,
-    victimacolectiva_id integer NOT NULL
+    sectorsocial_id integer CONSTRAINT sivel2_gen_sectorsocial_victimacolecti_sectorsocial_id_not_null NOT NULL,
+    victimacolectiva_id integer CONSTRAINT sivel2_gen_sectorsocial_victimacol_victimacolectiva_id_not_null NOT NULL
 );
 
 
@@ -7456,8 +7459,8 @@ CREATE TABLE public.sivel2_gen_victimacolectiva (
 --
 
 CREATE TABLE public.sivel2_gen_victimacolectiva_vinculoestado (
-    victimacolectiva_id integer NOT NULL,
-    vinculoestado_id integer NOT NULL
+    victimacolectiva_id integer CONSTRAINT sivel2_gen_victimacolectiva_vincul_victimacolectiva_id_not_null NOT NULL,
+    vinculoestado_id integer CONSTRAINT sivel2_gen_victimacolectiva_vinculoes_vinculoestado_id_not_null NOT NULL
 );
 
 
@@ -8100,7 +8103,7 @@ CREATE TABLE public.sivel2_sjr_motivosjr_respuesta (
 
 CREATE TABLE public.sivel2_sjr_oficina_proyectofinanciero (
     oficina_id bigint NOT NULL,
-    proyectofinanciero_id bigint NOT NULL
+    proyectofinanciero_id bigint CONSTRAINT sivel2_sjr_oficina_proyectofinan_proyectofinanciero_id_not_null NOT NULL
 );
 
 

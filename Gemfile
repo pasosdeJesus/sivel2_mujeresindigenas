@@ -130,9 +130,7 @@ end
 
 
 group :production do
-
-  gem "unicorn" # Para despliegue
-
+  gem "unicorn", path: "/var/www/bundler/ruby/4.0/gems/unicorn-6.1.0.68.ge9862"
 end
 
 
